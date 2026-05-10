@@ -1,0 +1,261 @@
+/* CORIN Dashboard — グラスモーフィズム＋色テーマ自動変化 */
+
+:root {
+  /* デフォルト（平日朝・黄色グラデ） */
+  --bg-1: #fdf8f4;
+  --bg-2: #f6c97a;
+  --accent: #b8936a;
+  --accent-2: #d4a574;
+  --text-main: #3a2e26;
+  --text-sub: #6b5d52;
+  --card-bg: rgba(255, 255, 255, 0.55);
+  --card-border: rgba(255, 255, 255, 0.85);
+  --shadow: 0 8px 32px rgba(184, 147, 106, 0.18);
+}
+
+/* === 色テーマ === */
+body.theme-weekend {
+  --bg-1: #fff5f7;
+  --bg-2: #f8bbd0;
+  --accent: #d47a9a;
+  --accent-2: #f48fb1;
+  --text-main: #4a2e3a;
+}
+body.theme-rainy {
+  --bg-1: #fff4e6;
+  --bg-2: #ffb74d;
+  --accent: #e8843c;
+  --accent-2: #ffa726;
+  --text-main: #4a3526;
+}
+body.theme-spring {
+  --bg-1: #fdf8f4;
+  --bg-2: #fce4ec;
+  --accent: #d47a9a;
+}
+body.theme-summer {
+  --bg-1: #e3f2fd;
+  --bg-2: #90caf9;
+  --accent: #5b87b8;
+  --accent-2: #7eb3e8;
+  --text-main: #1e3a5a;
+}
+body.theme-autumn {
+  --bg-1: #fbe9e7;
+  --bg-2: #ffab91;
+  --accent: #c46f5a;
+  --accent-2: #ff8a65;
+  --text-main: #4a2820;
+}
+body.theme-winter {
+  --bg-1: #e8f5e9;
+  --bg-2: #a5d6a7;
+  --accent: #4a8c4f;
+  --accent-2: #66bb6a;
+  --text-main: #1e3520;
+}
+body.theme-special {
+  --bg-1: #fff9c4;
+  --bg-2: #ffd54f;
+  --accent: #d4a017;
+  --accent-2: #f9b934;
+  --text-main: #4a3a0a;
+}
+
+/* === ベース === */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  background: linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 100%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+  padding: 32px 16px 64px;
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* === Hero === */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 16px 24px;
+  margin-bottom: 24px;
+}
+.date-main {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.date-week {
+  font-size: 18px;
+  margin-left: 8px;
+  color: var(--text-sub);
+}
+.theme-tag {
+  font-size: 13px;
+  color: var(--text-sub);
+  font-style: italic;
+}
+
+/* === Card共通 === */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 24px 28px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+}
+.card h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-weight: 600;
+}
+.card p, .card .placeholder {
+  font-size: 14px;
+  color: var(--text-sub);
+  margin-bottom: 12px;
+}
+
+/* === Letter Card === */
+.letter-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1.5px solid var(--card-border);
+}
+.ascii-art {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  white-space: pre;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  color: var(--text-main);
+}
+.letter-greeting {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.letter-text {
+  font-size: 15px;
+  color: var(--text-main);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+.letter-sign {
+  text-align: right;
+  font-size: 14px;
+  color: var(--text-sub);
+  font-style: italic;
+}
+
+/* === Grid === */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.grid-2 .card {
+  margin-bottom: 0;
+}
+
+/* === Button === */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-right: 8px;
+  margin-top: 4px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--accent);
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--accent-2);
+  transition: all 0.2s;
+}
+.btn:hover {
+  background: var(--accent);
+  color: white;
+}
+.btn.primary {
+  background: var(--accent);
+  color: white;
+}
+.btn.primary:hover {
+  background: var(--accent-2);
+}
+
+/* === Brand Card === */
+.brand-content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.brand-image-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--bg-2), var(--accent-2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.brand-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.brand-info {
+  flex: 1;
+}
+.brand-info h3 {
+  font-size: 20px;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.brand-info .insight {
+  font-style: italic;
+  color: var(--accent);
+  border-left: 3px solid var(--accent-2);
+  padding-left: 12px;
+  margin: 10px 0;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 12px;
+  color: var(--text-sub);
+  opacity: 0.7;
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  body { padding: 16px 8px 32px; }
+  .hero { flex-direction: column; align-items: flex-start; gap: 4px; padding: 8px 16px; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .brand-content { flex-direction: column; }
+  .brand-image-placeholder { width: 100%; height: 200px; }
+  .card { padding: 18px 20px; }
+}

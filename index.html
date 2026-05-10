@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CORIN Dashboard 🌸 ゆりこの朝3分</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+  <header class="hero">
+    <div class="date-block">
+      <span class="date-main" id="date-main">YYYY-MM-DD</span>
+      <span class="date-week" id="date-week">（曜）</span>
+    </div>
+    <div class="theme-tag" id="theme-tag">— 朝の3分 —</div>
+  </header>
+
+  <section class="card letter-card" id="letter-section">
+    <div class="ascii-art" id="letter-ascii">
+ /) /)
+(  • •)
+⊃ 🍵
+    </div>
+    <div class="letter-body" id="letter-body">
+      <p class="letter-greeting">ゆりこ、おはよ！</p>
+      <p class="letter-text">今朝の手紙はまだ準備中だよ。<br>aggregate.py が動き出すと、天気・カレンダー・倉庫から1ネタ・進捗を踏まえた手紙が毎朝届くようになる。</p>
+      <p class="letter-sign">— CORIN</p>
+    </div>
+  </section>
+
+  <section class="grid-2">
+    <div class="card">
+      <h2>📅 今日のカレンダー</h2>
+      <p class="placeholder">Google Calendar を開く</p>
+      <a class="btn" href="https://calendar.google.com/" target="_blank">仕事カレンダー</a>
+      <a class="btn" href="https://calendar.google.com/calendar/u/1/r" target="_blank">プライベート</a>
+    </div>
+    <div class="card">
+      <h2>✅ 今週のタスク</h2>
+      <p class="placeholder">Notion タスクDB</p>
+      <a class="btn" href="https://www.notion.so/" target="_blank">タスクを開く</a>
+    </div>
+  </section>
+
+  <section class="card report-card">
+    <h2>🤖 AI 最新</h2>
+    <p class="placeholder" id="ai-summary">最新のAIトレンド3記事＋全件URL（Phase 2でここに自動表示）</p>
+    <a class="btn primary" id="ai-link" href="#" target="_blank">本日のレポートを開く</a>
+  </section>
+
+  <section class="card report-card">
+    <h2>👗 ファッション</h2>
+    <p class="placeholder" id="fashion-summary">日本・韓国・世界のトレンド3記事（Phase 2で自動表示）</p>
+    <a class="btn primary" id="fashion-link" href="#" target="_blank">本日のレポートを開く</a>
+  </section>
+
+  <section class="card report-card">
+    <h2>🎨 トレンドダイジェスト</h2>
+    <p class="placeholder" id="trend-summary">#trend-feed の24h要約（Phase 2で自動表示）</p>
+    <a class="btn" href="obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company%2Fsecretary%2Fnotes%2Ftrend-digest" target="_blank">Obsidianで開く</a>
+  </section>
+
+  <section class="card report-card">
+    <h2>🐦 X Watch</h2>
+    <p class="placeholder" id="xwatch-summary">11アカウントの新着投稿まとめ（Phase 2で自動表示）</p>
+    <a class="btn" href="obsidian://advanced-uri?vault=corin&filepath=20_%F0%9F%93%82%20Zettelkasten%2Fx-watch" target="_blank">Obsidianで開く</a>
+  </section>
+
+  <section class="card brand-card" id="brand-section">
+    <h2>🎨 今日のブランド</h2>
+    <div class="brand-content">
+      <div class="brand-image-placeholder" id="brand-image">
+        <span>🌟</span>
+      </div>
+      <div class="brand-info">
+        <h3 id="brand-name">準備中</h3>
+        <p id="brand-tagline">aggregate.py が brand-analysis HTML群からランダムで1件ピックします。</p>
+        <p id="brand-insight" class="insight">忘れた頃にブランドと再会する3分。</p>
+        <a class="btn" id="brand-link" href="#" target="_blank">詳しく見る</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>📰 IP 動向（社内共有・参考）</h2>
+    <p class="placeholder">月曜配信の最新IP動向レポート</p>
+    <a class="btn" id="ip-link" href="https://fujimoto-cpu.github.io/ip-news-reporter/" target="_blank">最新を開く</a>
+  </section>
+
+  <footer>
+    <p>🌸 made with 💌 by CORIN — pull型・通知ゼロ・読みたい時に</p>
+  </footer>
+
+</div>
+
+<script src="theme.js"></script>
+<script src="data.js" onerror="console.log('Phase 1: data.js not yet generated')"></script>
+</body>
+</html>
