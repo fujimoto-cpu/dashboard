@@ -2,22 +2,48 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CORIN Dashboard 🌸 ゆりこの朝3分</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#fafaf7">
+<title>CORIN Dashboard 🦋 ゆりこの朝3分</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%8B%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="mode-work">
 <div class="container">
 
   <header class="hero">
-    <div class="date-block">
-      <span class="date-main" id="date-main">YYYY-MM-DD</span>
-      <span class="date-week" id="date-week">（曜）</span>
+    <div class="hero-row">
+      <div class="date-block">
+        <span class="date-main" id="date-main">YYYY-MM-DD</span>
+        <span class="date-week" id="date-week">（曜）</span>
+      </div>
+      <div class="clock private-only" id="clock">--:--</div>
+      <div class="mode-toggle" id="mode-toggle" title="モード切替">
+        <span class="mode-label work">💼</span>
+        <label class="switch">
+          <input type="checkbox" id="mode-switch">
+          <span class="slider"></span>
+        </label>
+        <span class="mode-label private">🎀</span>
+      </div>
     </div>
-    <div class="theme-tag" id="theme-tag">— 朝の3分 —</div>
+    <div class="hero-row">
+      <div>
+        <span class="weather-mini" id="weather-mini">—</span>
+        <span class="theme-tag" id="theme-tag" style="margin-left:8px;">— 朝の3分 —</span>
+      </div>
+    </div>
+    <div class="countdown-row" id="countdown-row">
+      <span class="countdown-label" id="countdown-label">次のイベント</span>
+      <span><span class="countdown-days" id="countdown-days">--</span> days</span>
+    </div>
   </header>
 
-  <section class="card letter-card" id="letter-section">
+  <!-- 💌 CORIN手紙（プライベートのみ） -->
+  <section class="card letter-card color-coral private-only" id="letter-section">
+    <span class="tape t-pink"></span>
+    <span class="card-no">No.01</span>
     <div class="ascii-art" id="letter-ascii">
  /) /)
 (  • •)
@@ -25,50 +51,99 @@
     </div>
     <div class="letter-body" id="letter-body">
       <p class="letter-greeting">ゆりこ、おはよ！</p>
-      <p class="letter-text">今朝の手紙はまだ準備中だよ。<br>aggregate.py が動き出すと、天気・カレンダー・倉庫から1ネタ・進捗を踏まえた手紙が毎朝届くようになる。</p>
+      <p class="letter-text">今朝の手紙はまだ準備中。aggregate.py が動くと天気・カレンダー・倉庫から手紙が届くよ。</p>
       <p class="letter-sign">— CORIN</p>
     </div>
   </section>
 
-  <section class="grid-2">
-    <div class="card">
-      <h2>📅 今日のカレンダー</h2>
-      <p class="placeholder">Google Calendar を開く</p>
-      <a class="btn" href="https://calendar.google.com/" target="_blank">仕事カレンダー</a>
-      <a class="btn" href="https://calendar.google.com/calendar/u/1/r" target="_blank">プライベート</a>
-    </div>
-    <div class="card">
-      <h2>✅ 今週のタスク</h2>
-      <p class="placeholder">Notion タスクDB</p>
-      <a class="btn" href="https://www.notion.so/" target="_blank">タスクを開く</a>
+  <!-- 📷 今日の推し画像（プライベートのみ） -->
+  <section class="card oshi-card color-pink private-only" id="oshi-section">
+    <span class="tape t-coral"></span>
+    <span class="card-no">No.02</span>
+    <div id="oshi-content">
+      <div class="oshi-empty">
+        <span class="big-emoji">🦋</span>
+        <p>コレクションがまだ空っぽ。<br>/collection で好きなものを追加すると、ここに登場するよ！</p>
+      </div>
     </div>
   </section>
 
-  <section class="card report-card">
+  <!-- ✨ 朝のチェックリスト（プライベートのみ） -->
+  <section class="card morning-todo private-only" id="morning-todo-section">
+    <span class="card-no">No.03</span>
+    <h2>✨ 今朝これだけはやる</h2>
+    <p class="placeholder" style="font-size:12px;">3つまで。チェックすると紙吹雪🎉</p>
+    <div class="todo-input-wrap">
+      <input type="text" class="todo-input" id="todo-input" placeholder="例: メール返信3件" maxlength="40">
+      <button class="todo-add-btn" id="todo-add-btn">追加</button>
+    </div>
+    <ul class="todo-list" id="todo-list"></ul>
+  </section>
+
+  <!-- 🌙 今夜の楽しみ（プライベートのみ） -->
+  <section class="card tonight-card private-only" id="tonight-section" style="display:none;">
+    <span class="tape t-pink"></span>
+    <span class="card-no">No.04</span>
+    <h2>🌙 今夜の楽しみ</h2>
+    <p class="tonight-text" id="tonight-text">—</p>
+  </section>
+
+  <!-- 📅 カレンダー & ✅ タスク -->
+  <section class="grid-2">
+    <div class="card color-blue">
+      <span class="card-no">No.05</span>
+      <h2>📅 仕事カレンダー</h2>
+      <p class="placeholder">primary（fujimoto@konnekt-i.com）</p>
+      <a class="btn primary" href="https://calendar.google.com/" target="_blank">開く</a>
+    </div>
+    <div class="card color-green">
+      <span class="card-no">No.06</span>
+      <h2>✅ Notionタスク</h2>
+      <p class="placeholder">今週の優先タスク</p>
+      <a class="btn primary" href="https://www.notion.so/3cd58cff41724c0bb8c9db1d875226d3" target="_blank">開く</a>
+    </div>
+  </section>
+
+  <!-- 🤖 AI 最新 -->
+  <section class="card color-lavender">
+    <span class="tape t-lavender"></span>
+    <span class="card-no">No.07</span>
     <h2>🤖 AI 最新</h2>
-    <p class="placeholder" id="ai-summary">最新のAIトレンド3記事＋全件URL（Phase 2でここに自動表示）</p>
+    <p class="placeholder" id="ai-summary">最新のAIトレンド</p>
     <a class="btn primary" id="ai-link" href="#" target="_blank">本日のレポートを開く</a>
   </section>
 
-  <section class="card report-card">
+  <!-- 👗 ファッション -->
+  <section class="card color-pink">
+    <span class="tape t-coral"></span>
+    <span class="card-no">No.08</span>
     <h2>👗 ファッション</h2>
-    <p class="placeholder" id="fashion-summary">日本・韓国・世界のトレンド3記事（Phase 2で自動表示）</p>
+    <p class="placeholder" id="fashion-summary">日本・韓国・世界のトレンド</p>
     <a class="btn primary" id="fashion-link" href="#" target="_blank">本日のレポートを開く</a>
   </section>
 
-  <section class="card report-card">
+  <!-- 🎨 トレンドダイジェスト -->
+  <section class="card color-sage">
+    <span class="tape t-sage"></span>
+    <span class="card-no">No.09</span>
     <h2>🎨 トレンドダイジェスト</h2>
-    <p class="placeholder" id="trend-summary">#trend-feed の24h要約（Phase 2で自動表示）</p>
+    <p class="placeholder" id="trend-summary">#trend-feed の24h要約</p>
     <a class="btn" href="obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company%2Fsecretary%2Fnotes%2Ftrend-digest" target="_blank">Obsidianで開く</a>
   </section>
 
-  <section class="card report-card">
+  <!-- 🐦 X Watch -->
+  <section class="card color-skyblue">
+    <span class="tape t-blue"></span>
+    <span class="card-no">No.10</span>
     <h2>🐦 X Watch</h2>
-    <p class="placeholder" id="xwatch-summary">11アカウントの新着投稿まとめ（Phase 2で自動表示）</p>
+    <p class="placeholder" id="xwatch-summary">11アカウントの新着投稿</p>
     <a class="btn" href="obsidian://advanced-uri?vault=corin&filepath=20_%F0%9F%93%82%20Zettelkasten%2Fx-watch" target="_blank">Obsidianで開く</a>
   </section>
 
-  <section class="card brand-card" id="brand-section">
+  <!-- 🎨 今日のブランド -->
+  <section class="card brand-card color-cream" id="brand-section">
+    <span class="tape t-coral"></span>
+    <span class="card-no">No.11</span>
     <h2>🎨 今日のブランド</h2>
     <div class="brand-content">
       <div class="brand-image-placeholder" id="brand-image">
@@ -76,32 +151,56 @@
       </div>
       <div class="brand-info">
         <h3 id="brand-name">準備中</h3>
-        <p id="brand-tagline">aggregate.py が brand-analysis HTML群からランダムで1件ピックします。</p>
+        <p id="brand-tagline">aggregate.py がランダムでピックします。</p>
         <p id="brand-insight" class="insight">忘れた頃にブランドと再会する3分。</p>
         <a class="btn" id="brand-link" href="#" target="_blank">詳しく見る</a>
       </div>
     </div>
   </section>
 
-  <section class="card">
+  <!-- 📰 IP動向 -->
+  <section class="card color-gray">
+    <span class="card-no">No.12</span>
     <h2>📰 IP 動向（社内共有・参考）</h2>
     <p class="placeholder">月曜配信の最新IP動向レポート</p>
     <a class="btn" id="ip-link" href="https://fujimoto-cpu.github.io/ip-news-reporter/" target="_blank">最新を開く</a>
   </section>
 
-  <section class="card" id="meadow-section">
+  <!-- 📷 今日の一枚（プライベートのみ） -->
+  <section class="card polaroid-card private-only" id="polaroid-section" style="display:none;">
+    <span class="card-no">No.13</span>
+    <h2>📷 今日の一枚</h2>
+    <div id="polaroid-wrap"></div>
+  </section>
+
+  <!-- 🌸 コレクション統計（プライベートのみ） -->
+  <section class="card color-sage private-only" id="coll-stats-section">
+    <span class="tape t-sage"></span>
+    <span class="card-no">No.14</span>
+    <h2>🌸 コレクション統計</h2>
+    <p class="placeholder" style="font-size:12px;">今月追加した好きなもの</p>
+    <div class="coll-stats" id="coll-stats">
+      <p class="placeholder">aggregate.py が読み込みます</p>
+    </div>
+    <a class="btn" href="obsidian://advanced-uri?vault=corin&filepath=01_%F0%9F%8F%A0%20private%2Fmeadow%2Fcollection%2Findex.html" target="_blank" style="margin-top:10px;">コレクションを開く</a>
+  </section>
+
+  <!-- 🦋 MEADOW.（プライベートのみ） -->
+  <section class="card color-coral private-only" id="meadow-section">
+    <span class="tape t-pink"></span>
+    <span class="card-no">No.15</span>
     <h2>🦋 MEADOW.</h2>
-    <p class="placeholder" id="meadow-summary">ゆりこのライフブランド進捗（aggregate.py が読み込みます）</p>
+    <p class="placeholder" id="meadow-summary">ゆりこのライフブランド進捗</p>
     <a class="btn" href="obsidian://advanced-uri?vault=corin&filepath=01_%F0%9F%8F%A0%20private%2Fmeadow" target="_blank">Obsidianで開く</a>
   </section>
 
   <footer>
-    <p>🌸 made with 💌 by CORIN — pull型・通知ゼロ・読みたい時に</p>
+    <p>🦋 made with <span class="heart-icon">❤</span> by <span id="corin-logo" style="cursor:pointer;">CORIN</span> — pull型・通知ゼロ・読みたい時に</p>
   </footer>
 
 </div>
 
 <script src="theme.js"></script>
-<script src="data.js" onerror="console.log('Phase 1: data.js not yet generated')"></script>
+<script src="data.js" onerror="console.log('data.js not yet generated')"></script>
 </body>
 </html>

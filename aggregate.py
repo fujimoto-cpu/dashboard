@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """
-CORIN Dashboard — daily aggregator
-Phase 2: 既存リポのHTMLリンク組み立て + brand-analysis ランダム抽出
-       + trend-digest MD読み込み + CORIN手紙生成 + 天気取得
-ローカル実行用。/ohayo の Step 1.5-D から起動される想定。
+CORIN Dashboard v2 — daily aggregator
+- 天気 / brand-analysis / trend-digest / x-watch / MEADOW.
+- v2追加: /collection 連携で推し画像 / 今夜の楽しみ / 今日の一枚 / コレクション統計
 """
 
 import datetime
@@ -13,7 +12,6 @@ import random
 import re
 import subprocess
 import sys
-import urllib.request
 from pathlib import Path
 
 # === パス設定 ===
@@ -23,10 +21,30 @@ DASHBOARD_ROOT = HOME / "Documents/dashboard"
 NOTES_DIR = CORIN_ROOT / "00_🏢 company/secretary/notes"
 TREND_DIGEST_DIR = NOTES_DIR / "trend-digest"
 XWATCH_DIR = CORIN_ROOT / "20_📂 Zettelkasten/x-watch"
+DAILY_NOTE_DIR = CORIN_ROOT / "03_📒 Daily Note/daily"
+COLLECTION_DATA = CORIN_ROOT / "01_🏠 private/meadow/collection/data.json"
+OSHI_HISTORY = DASHBOARD_ROOT / "oshi_history.json"
 
-# === 天気取得（wttr.in・APIキー不要） ===
+# === 天気取得 ===
+WEATHER_ICONS = [
+    (r"晴|sunny|clear", "☀️"),
+    (r"雨|rain|shower", "🌧"),
+    (r"雪|snow", "❄️"),
+    (r"雷|thunder", "⛈"),
+    (r"曇|cloud|overcast", "☁️"),
+    (r"霧|fog|mist", "🌫"),
+]
+
+def weather_icon(desc):
+    if not desc:
+        return "☁️"
+    low = desc.lower()
+    for pattern, icon in WEATHER_ICONS:
+        if re.search(pattern, low):
+            return icon
+    return "☁️"
+
 def get_weather():
-    """wttr.in を curl 経由で取得（macOSのPython SSL問題回避）"""
     try:
         result = subprocess.run(
             ["curl", "-s", "--max-time", "10", "https://wttr.in/Tokyo?format=j1"],
@@ -37,12 +55,13 @@ def get_weather():
         data = json.loads(result.stdout)
         cur = data["current_condition"][0]
         desc = cur.get("lang_ja", [{}])[0].get("value") or cur.get("weatherDesc", [{}])[0].get("value", "")
-        return {"desc": desc, "temp": cur["temp_C"]}
+        temp = cur["temp_C"]
+        return {"desc": desc, "temp": temp, "icon": weather_icon(desc)}
     except Exception as e:
         print(f"[weather] failed: {e}", file=sys.stderr)
         return None
 
-# === ブランド分析ランダム1件 ===
+# === ブランド分析 ===
 def pick_brand():
     if not NOTES_DIR.exists():
         return None
@@ -55,7 +74,6 @@ def pick_brand():
     except Exception:
         return None
 
-    # ブランド名抽出（hero-title優先、なければtitleタグ）
     hero_title = re.search(r'<h1[^>]*class=["\'][^"\']*hero-title[^"\']*["\'][^>]*>(.*?)</h1>', html, re.IGNORECASE | re.DOTALL)
     if hero_title:
         raw = re.sub(r"<[^>]+>", " ", hero_title.group(1))
@@ -64,12 +82,10 @@ def pick_brand():
         title_match = re.search(r"<title>([^<]+)</title>", html, re.IGNORECASE)
         if title_match:
             name = title_match.group(1).strip()
-            # 「— ブランド分析レポート」「- Brand Analysis」等を除去
             name = re.sub(r"\s*[-–—].*?(ブランド分析|Brand Analysis).*$", "", name, flags=re.IGNORECASE).strip()
         else:
             name = chosen.stem.replace("-brand-analysis", "").replace("-", " ").title()
 
-    # タグライン（hero-sub）
     sub_match = re.search(r'<p[^>]*class=["\'][^"\']*hero-sub[^"\']*["\'][^>]*>(.*?)</p>', html, re.IGNORECASE | re.DOTALL)
     if sub_match:
         raw = re.sub(r"<[^>]+>", " ", sub_match.group(1))
@@ -77,7 +93,6 @@ def pick_brand():
     else:
         tagline = name
 
-    # ヒーロー画像（リモートURL優先・ローカルパスは除外）
     image_url = None
     for m in re.finditer(r'<img[^>]+src=["\']([^"\']+)["\']', html, re.IGNORECASE):
         src = m.group(1)
@@ -85,7 +100,6 @@ def pick_brand():
             image_url = src
             break
 
-    # INSIGHT タイトル ランダム1件（span/div両対応）
     insight_titles = re.findall(
         r'<(?:span|div)[^>]*class=["\'][^"\']*insight-title[^"\']*["\'][^>]*>([^<]+)</(?:span|div)>',
         html, re.IGNORECASE
@@ -93,7 +107,6 @@ def pick_brand():
     if insight_titles:
         insight = random.choice(insight_titles).strip()
     else:
-        # fallback: insight クラス全般
         any_insight = re.search(
             r'<[^>]+class=["\'][^"\']*insight[^"\']*["\'][^>]*>(.*?)</[a-z]+>',
             html, re.IGNORECASE | re.DOTALL
@@ -112,7 +125,7 @@ def pick_brand():
         "local_path": f"00_🏢 company/secretary/notes/{chosen.name}",
     }
 
-# === trend-digest MD ===
+# === trend-digest ===
 def read_trend_digest(today_str):
     path = TREND_DIGEST_DIR / f"{today_str}.md"
     if not path.exists():
@@ -121,7 +134,6 @@ def read_trend_digest(today_str):
         text = path.read_text(encoding="utf-8")
     except Exception:
         return None
-    # 各カテゴリの先頭タイトル（##や### 直下のboldタイトル）を拾う
     items = re.findall(r"\*\*\[([^\]]+)\]\*\*", text)
     if not items:
         items = re.findall(r"^###?\s+(.+)$", text, re.MULTILINE)
@@ -130,12 +142,11 @@ def read_trend_digest(today_str):
         return None
     return {"summary": "<br>".join(f"• {i}" for i in items)}
 
-# === x-watch MD ===
+# === x-watch ===
 def read_xwatch(today_str, hour):
     timing = "morning" if hour < 12 else "evening"
     path = XWATCH_DIR / f"{today_str}-{timing}.md"
     if not path.exists():
-        # fallback: 直近のファイル
         if XWATCH_DIR.exists():
             files = sorted(XWATCH_DIR.glob("*.md"), reverse=True)
             if files:
@@ -148,7 +159,6 @@ def read_xwatch(today_str, hour):
         text = path.read_text(encoding="utf-8")
     except Exception:
         return None
-    # ハイライトTOP3 抽出（callout内 or リスト）
     highlights = re.findall(r"🥇\s*\[?([^\]\n]+)\]?", text)
     highlights += re.findall(r"🥈\s*\[?([^\]\n]+)\]?", text)
     highlights += re.findall(r"🥉\s*\[?([^\]\n]+)\]?", text)
@@ -158,6 +168,154 @@ def read_xwatch(today_str, hour):
         return None
     return {"summary": "<br>".join(f"• {h.strip()}" for h in highlights[:5])}
 
+# === MEADOW. ===
+def read_meadow(today_dt):
+    meadow_dir = CORIN_ROOT / "01_🏠 private/meadow"
+    if not meadow_dir.exists():
+        return None
+
+    month_str = today_dt.strftime("%Y-%m")
+    iso_year, iso_week, _ = today_dt.isocalendar()
+    week_str = f"{iso_year}-W{iso_week:02d}"
+
+    theme_party_file = meadow_dir / "theme-party" / f"{month_str}.md"
+    theme_party_status = "企画済み" if theme_party_file.exists() else "未企画"
+
+    magazine_dir = meadow_dir / "magazine"
+    latest_magazine = None
+    if magazine_dir.exists():
+        vol_dirs = sorted([d for d in magazine_dir.iterdir() if d.is_dir() and d.name.startswith("VOL-")])
+        if vol_dirs:
+            latest_magazine = vol_dirs[-1].name
+
+    dashboard_file = meadow_dir / "dashboard" / f"{week_str}.md"
+    this_week_dashboard = dashboard_file.exists()
+
+    summary_lines = [
+        f"🍡 今月のテーマ会: {theme_party_status}",
+        f"📖 最新Magazine: {latest_magazine or '未生成'}",
+        f"📋 今週のダッシュボード: {'更新済み' if this_week_dashboard else '/lifeで生成'}",
+    ]
+    return {
+        "summary": "  /  ".join(summary_lines),
+        "theme_party_status": theme_party_status,
+        "latest_magazine": latest_magazine,
+        "this_week_dashboard": this_week_dashboard,
+    }
+
+# === /collection 連携 ===
+def load_collection():
+    if not COLLECTION_DATA.exists():
+        return None
+    try:
+        return json.loads(COLLECTION_DATA.read_text(encoding="utf-8"))
+    except Exception as e:
+        print(f"[collection] load failed: {e}", file=sys.stderr)
+        return None
+
+def all_collection_items(coll):
+    """全カテゴリのitemをフラット化（category_key/category_label付与）"""
+    if not coll or "categories" not in coll:
+        return []
+    items = []
+    for key, cat in coll["categories"].items():
+        for it in cat.get("items", []):
+            items.append({**it, "category_key": key, "category_label": cat.get("label", key)})
+    return items
+
+def pick_oshi(coll):
+    """画像付きitemから直近3枚を除外してランダム1枚"""
+    items = [it for it in all_collection_items(coll) if it.get("image_path") or it.get("image")]
+    if not items:
+        return None
+    history = []
+    if OSHI_HISTORY.exists():
+        try:
+            history = json.loads(OSHI_HISTORY.read_text(encoding="utf-8"))
+        except Exception:
+            history = []
+    recent = set(history[-3:])
+    pool = [it for it in items if (it.get("id") or it.get("image_path") or it.get("image")) not in recent]
+    if not pool:
+        pool = items
+    chosen = random.choice(pool)
+    chosen_id = chosen.get("id") or chosen.get("image_path") or chosen.get("image")
+    history.append(chosen_id)
+    history = history[-10:]
+    try:
+        OSHI_HISTORY.write_text(json.dumps(history, ensure_ascii=False), encoding="utf-8")
+    except Exception:
+        pass
+    img = chosen.get("image_path") or chosen.get("image")
+    # ローカルパスはfile:// に変換（GitHub Pagesでは表示できないが、ローカル閲覧時はOK）
+    if img and not img.startswith(("http://", "https://", "data:", "file://")):
+        # 相対パスならcollection相対 → 絶対パス → file://
+        cp = COLLECTION_DATA.parent / img
+        if cp.exists():
+            img = "file://" + str(cp)
+    return {
+        "image": img,
+        "title": chosen.get("title") or chosen.get("name", ""),
+        "caption": chosen.get("caption") or chosen.get("note") or chosen.get("description", ""),
+        "category_label": chosen.get("category_label", ""),
+    }
+
+def collection_stats(coll, today_dt):
+    """今月追加されたitemをカテゴリ別に集計"""
+    if not coll or "categories" not in coll:
+        return None
+    month_prefix = today_dt.strftime("%Y-%m")
+    rows = []
+    total = 0
+    for key, cat in coll["categories"].items():
+        c = 0
+        for it in cat.get("items", []):
+            ts = it.get("created") or it.get("date") or it.get("added_at") or ""
+            if ts.startswith(month_prefix):
+                c += 1
+        rows.append({"key": key, "label": cat.get("label", key), "count": c})
+        total += c
+    return {"categories": rows, "total": total}
+
+# === 今夜の楽しみ（Daily Note Day Plannerから18時以降を抽出） ===
+def read_tonight(today_str):
+    path = DAILY_NOTE_DIR / f"{today_str}.md"
+    if not path.exists():
+        return None
+    try:
+        text = path.read_text(encoding="utf-8")
+    except Exception:
+        return None
+    # Day Plannerセクション抽出
+    section = re.search(r"Day [Pp]lanner.*?(?=\n##|\Z)", text, re.DOTALL)
+    if not section:
+        return None
+    block = section.group(0)
+    # `- [ ] HH:MM - HH:MM 内容` または `- [x]` パターン
+    pattern = re.compile(r"-\s*\[[ x]\]\s*(\d{1,2}):(\d{2})\s*-\s*(?:\d{1,2}:\d{2}|__:__)\s+(.+?)(?:\n|$)")
+    candidates = []
+    for mm in pattern.finditer(block):
+        h = int(mm.group(1))
+        mn = int(mm.group(2))
+        content = mm.group(3).strip()
+        # #private タグや 🎀 で始まる楽しみ予定を優先
+        is_private = "#private" in content or "🎀" in content
+        if h >= 18 and h <= 26:
+            content_clean = re.sub(r"#\w+", "", content).strip()
+            content_clean = re.sub(r"\s+", " ", content_clean)
+            candidates.append({
+                "hour": h,
+                "time": f"{h:02d}:{mn:02d}",
+                "summary": content_clean,
+                "is_private": is_private,
+            })
+    if not candidates:
+        return None
+    # プライベート優先 → 早い順
+    candidates.sort(key=lambda x: (not x["is_private"], x["hour"]))
+    pick = candidates[0]
+    return {"time": pick["time"], "summary": pick["summary"]}
+
 # === CORIN手紙 ===
 ASCII_ARTS = [
     " /) /)\n(  • •)\n⊃ 🍵",
@@ -166,17 +324,16 @@ ASCII_ARTS = [
     " /)/)\n( ≧ ▽≦)\n⊃  🎶",
 ]
 
-def make_letter(weather, brand, today_dt, weekday_jp):
+def make_letter(weather, brand, today_dt):
     is_weekend = today_dt.weekday() >= 5
     is_monday = today_dt.weekday() == 0
     is_friday = today_dt.weekday() == 4
 
-    greeting_pool = [
+    greeting = random.choice([
         "ゆりこ、おはよ！",
         "ゆりこ！おはよう〜",
         "おはよ、ゆりこ。",
-    ]
-    greeting = random.choice(greeting_pool)
+    ])
 
     body_lines = []
     if weather:
@@ -210,8 +367,7 @@ def git_push():
         print("[git] not a git repo, skipping push", file=sys.stderr)
         return
     try:
-        subprocess.run(["git", "-C", str(DASHBOARD_ROOT), "add", "data.js"], check=True)
-        # diff があれば commit
+        subprocess.run(["git", "-C", str(DASHBOARD_ROOT), "add", "data.js", "oshi_history.json"], check=False)
         result = subprocess.run(
             ["git", "-C", str(DASHBOARD_ROOT), "diff", "--cached", "--quiet"]
         )
@@ -228,49 +384,6 @@ def git_push():
     except subprocess.CalledProcessError as e:
         print(f"[git] failed: {e}", file=sys.stderr)
 
-# === MEADOW. セクション読み込み ===
-def read_meadow(today_dt):
-    """🦋 MEADOW. の進捗情報を読み込む"""
-    meadow_dir = CORIN_ROOT / "01_🏠 private/meadow"
-    if not meadow_dir.exists():
-        return None
-
-    month_str = today_dt.strftime("%Y-%m")
-    iso_year, iso_week, _ = today_dt.isocalendar()
-    week_str = f"{iso_year}-W{iso_week:02d}"
-
-    # 今月のテーマ会
-    theme_party_file = meadow_dir / "theme-party" / f"{month_str}.md"
-    theme_party_status = "未企画"
-    if theme_party_file.exists():
-        theme_party_status = "企画済み"
-
-    # 最新Magazine
-    magazine_dir = meadow_dir / "magazine"
-    latest_magazine = None
-    if magazine_dir.exists():
-        vol_dirs = sorted([d for d in magazine_dir.iterdir() if d.is_dir() and d.name.startswith("VOL-")])
-        if vol_dirs:
-            latest_magazine = vol_dirs[-1].name
-
-    # 今週のダッシュボード
-    dashboard_file = meadow_dir / "dashboard" / f"{week_str}.md"
-    this_week_dashboard = dashboard_file.exists()
-
-    summary_lines = []
-    summary_lines.append(f"🍡 今月のテーマ会: {theme_party_status}")
-    summary_lines.append(f"📖 最新Magazine: {latest_magazine or '未生成'}")
-    summary_lines.append(f"📋 今週のダッシュボード: {'更新済み' if this_week_dashboard else '/lifeで生成'}")
-
-    return {
-        "summary": "  /  ".join(summary_lines),
-        "theme_party_status": theme_party_status,
-        "theme_party_file": str(theme_party_file) if theme_party_file.exists() else None,
-        "latest_magazine": latest_magazine,
-        "this_week_dashboard": this_week_dashboard,
-    }
-
-
 # === メイン ===
 def main():
     today_dt = datetime.date.today()
@@ -278,7 +391,7 @@ def main():
     weekday_jp = ["月", "火", "水", "木", "金", "土", "日"][today_dt.weekday()]
     hour = datetime.datetime.now().hour
 
-    print(f"=== CORIN Dashboard aggregate {today_str}（{weekday_jp}）===")
+    print(f"=== CORIN Dashboard v2 aggregate {today_str}（{weekday_jp}）===")
 
     weather = get_weather()
     print(f"[weather] {weather}")
@@ -291,17 +404,22 @@ def main():
     meadow = read_meadow(today_dt)
     print(f"[meadow] {meadow['summary'] if meadow else 'none'}")
 
-    letter = make_letter(weather, brand, today_dt, weekday_jp)
+    coll = load_collection()
+    oshi = pick_oshi(coll) if coll else None
+    print(f"[oshi] {'image: ' + (oshi.get('image') or '') if oshi else 'none (collection empty)'}")
+    coll_stats = collection_stats(coll, today_dt) if coll else None
+    print(f"[collection_stats] total={coll_stats['total'] if coll_stats else 0}")
+    tonight = read_tonight(today_str)
+    print(f"[tonight] {tonight['summary'] if tonight else 'none'}")
+
+    letter = make_letter(weather, brand, today_dt)
 
     data = {
         "date": today_str,
+        "weather": weather,
         "letter": letter,
-        "ai": {
-            "summary": f"X AIトレンド本日のレポート（HTMLで全10件解説）"
-        },
-        "fashion": {
-            "summary": f"日本・韓国・世界のトレンド計6本（HTMLで全件解説）"
-        },
+        "ai": {"summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"},
+        "fashion": {"summary": "日本・韓国・世界のトレンド計6本（HTMLで全件解説）"},
         "trend": trend or {"summary": "（本日のtrend-digestはまだ作成されていません）"},
         "xwatch": xwatch or {"summary": "Obsidian x-watch/ で確認してね"},
         "brand": brand or {
@@ -313,6 +431,10 @@ def main():
         },
         "ip": {"url": "https://fujimoto-cpu.github.io/ip-news-reporter/"},
         "meadow": meadow or {"summary": "🦋 MEADOW. ディレクトリ未検出"},
+        "oshi": oshi,
+        "collection_stats": coll_stats,
+        "tonight": tonight,
+        "daily_photo": None,
     }
 
     output = DASHBOARD_ROOT / "data.js"
@@ -322,7 +444,6 @@ def main():
     )
     print(f"✅ data.js generated: {output}")
 
-    # 自動 git commit & push（オプション）
     if os.environ.get("DASHBOARD_AUTO_PUSH", "1") == "1":
         git_push()
 
