@@ -294,7 +294,14 @@
     logo.addEventListener('click', () => {
       const now = Date.now();
       clickTimes.push(now);
-      clickTimes = clickTimes.filter(t => now - t < 1500);
+      clickTimes = clickTimes.filter(t => now - t < 3000);
+      logo.style.transition = 'transform 0.2s, color 0.2s';
+      logo.style.transform = 'scale(1.2)';
+      logo.style.color = '#EE7B6A';
+      setTimeout(() => {
+        logo.style.transform = '';
+        logo.style.color = '';
+      }, 200);
       if (clickTimes.length >= 3) {
         clickTimes = [];
         showEgg();

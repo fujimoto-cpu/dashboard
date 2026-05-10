@@ -1,35 +1,38 @@
 /* ============================================
-   CORIN Dashboard v2 — Stationery Palette
-   フラットブロックカラー＋方眼グリッド＋モード制御
+   CORIN Dashboard v2.1 — Stationery Palette
+   リファレンス: pocket pages / 365 notebooks
+   彩度高めブロックカラー＋方眼グリッド
    ============================================ */
 
 :root {
   /* ベース */
-  --bg-base: #fafaf7;
-  --grid-line: rgba(60, 60, 60, 0.06);
-  --text-main: #2a2a2a;
+  --bg-base: #f7f5ee;
+  --grid-line: rgba(60, 60, 60, 0.07);
+  --text-dark: #2a2a2a;
+  --text-on-light: #1a1a1a;
+  --text-on-dark: #ffffff;
   --text-sub: #6b6b6b;
   --text-mute: #9a9a9a;
-  --border-soft: #e8e8e3;
-  --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.04);
+  --border-soft: #e6e3d9;
+  --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.06);
 
-  /* Stationery Block Colors */
-  --c-coral: #f08c7a;
-  --c-coral-soft: #fde2dc;
-  --c-blue: #4a9be8;
-  --c-blue-soft: #d9ebf9;
-  --c-lavender: #c8b6e2;
-  --c-lavender-soft: #ece6f5;
-  --c-green: #3fa86a;
-  --c-green-soft: #d4ecdc;
-  --c-sage: #b8c9a4;
-  --c-sage-soft: #e6ecdf;
-  --c-pink: #e8c4d0;
-  --c-pink-soft: #f6e6ec;
-  --c-skyblue: #a9d4f0;
-  --c-skyblue-soft: #e3f1fa;
-  --c-cream: #f4ead4;
-  --c-gray: #d8d8d2;
+  /* リファレンス由来の彩度高めパレット */
+  --c-cobalt: #2168c4;       /* 1-365 ブルー */
+  --c-cobalt-deep: #134a99;
+  --c-kelly: #2e9657;        /* Day Plan グリーン */
+  --c-kelly-deep: #1f7a44;
+  --c-coral: #ee7b6a;        /* Things To Do コーラル */
+  --c-coral-deep: #d6604f;
+  --c-lavender: #b8a7dc;     /* lavender pages */
+  --c-lavender-deep: #8b78b6;
+  --c-baby-pink: #f1c5d2;    /* 2026/365 ピンク */
+  --c-baby-pink-deep: #e094a8;
+  --c-sage: #b3bc8c;         /* 2026/365 セージ */
+  --c-sage-deep: #8a9469;
+  --c-sky: #92cae8;          /* sky blue accent */
+  --c-butter: #f3d772;       /* butter yellow */
+  --c-cream: #ede6c8;
+  --c-stone: #d8d4c2;
 }
 
 /* === ベース === */
@@ -38,10 +41,9 @@
 html, body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont,
                "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-  color: var(--text-main);
+  color: var(--text-dark);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -55,19 +57,16 @@ body {
   padding: 24px 16px 64px;
 }
 
-.container {
-  max-width: 760px;
-  margin: 0 auto;
-}
+.container { max-width: 760px; margin: 0 auto; }
 
 /* === ヘッダー === */
 .hero {
   position: sticky;
   top: 12px;
   z-index: 50;
-  background: rgba(250, 250, 247, 0.92);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(247, 245, 238, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border-soft);
   border-radius: 18px;
   padding: 14px 18px;
@@ -85,74 +84,38 @@ body {
   gap: 12px;
 }
 
-.date-block {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-}
+.date-block { display: flex; align-items: baseline; gap: 6px; }
 .date-main {
   font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
 }
-.date-week {
-  font-size: 14px;
-  color: var(--text-sub);
-  font-weight: 500;
-}
+.date-week { font-size: 14px; color: var(--text-sub); font-weight: 600; }
 
 .clock {
   font-family: "SF Mono", "Menlo", ui-monospace, monospace;
   font-size: 28px;
-  font-weight: 700;
-  color: var(--text-main);
+  font-weight: 800;
+  color: var(--text-dark);
   letter-spacing: 0.04em;
   font-variant-numeric: tabular-nums;
 }
 
-.weather-mini {
-  font-size: 13px;
-  color: var(--text-sub);
-  font-weight: 500;
-}
-
-.theme-tag {
-  font-size: 12px;
-  color: var(--text-mute);
-  font-style: italic;
-}
+.weather-mini { font-size: 13px; color: var(--text-sub); font-weight: 600; }
+.theme-tag { font-size: 12px; color: var(--text-mute); font-style: italic; }
 
 /* モードトグル */
-.mode-toggle {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-}
-.mode-toggle .mode-label {
-  font-weight: 600;
-  color: var(--text-sub);
-  user-select: none;
-  transition: color 0.3s;
-}
-.mode-toggle .mode-label.active {
-  color: var(--c-coral);
-}
-body.mode-work .mode-toggle .mode-label.work { color: var(--c-blue); }
-body.mode-private .mode-toggle .mode-label.private { color: var(--c-coral); }
+.mode-toggle { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.mode-toggle .mode-label { user-select: none; }
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 44px;
-  height: 24px;
-}
+.switch { position: relative; display: inline-block; width: 44px; height: 24px; }
 .switch input { opacity: 0; width: 0; height: 0; }
 .slider {
   position: absolute;
   cursor: pointer;
   inset: 0;
-  background: var(--c-blue);
+  background: var(--c-cobalt);
   border-radius: 24px;
   transition: background 0.3s;
 }
@@ -171,7 +134,7 @@ body.mode-private .mode-toggle .mode-label.private { color: var(--c-coral); }
 input:checked + .slider { background: var(--c-coral); }
 input:checked + .slider::before { transform: translateX(20px); }
 
-/* カウントダウン行 */
+/* カウントダウン */
 .countdown-row {
   display: flex;
   justify-content: space-between;
@@ -180,11 +143,11 @@ input:checked + .slider::before { transform: translateX(20px); }
   color: var(--text-sub);
   border-top: 1px dashed var(--border-soft);
   padding-top: 8px;
+  font-weight: 600;
 }
-.countdown-label { font-weight: 500; }
 .countdown-days {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 800;
   color: var(--c-coral);
   font-variant-numeric: tabular-nums;
 }
@@ -195,7 +158,7 @@ input:checked + .slider::before { transform: translateX(20px); }
   background: white;
   border: 1px solid var(--border-soft);
   border-radius: 18px;
-  padding: 24px 24px 22px;
+  padding: 26px 24px 22px;
   margin-bottom: 14px;
   box-shadow: var(--shadow-soft);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
@@ -203,105 +166,143 @@ input:checked + .slider::before { transform: translateX(20px); }
 }
 .card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 12px 32px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
 .card h2 {
-  font-size: 16px;
+  font-size: 17px;
   margin-bottom: 12px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--text-main);
+  font-weight: 800;
+  letter-spacing: -0.015em;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 .card p, .card .placeholder {
   font-size: 14px;
-  color: var(--text-sub);
   margin-bottom: 10px;
+  font-weight: 500;
 }
 
-/* カード番号スタンプ */
 .card-no {
   position: absolute;
-  top: 14px;
+  top: 16px;
   right: 18px;
   font-family: "SF Mono", "Menlo", ui-monospace, monospace;
   font-size: 11px;
-  font-weight: 700;
-  color: var(--text-mute);
-  letter-spacing: 0.08em;
+  font-weight: 800;
+  letter-spacing: 0.1em;
   user-select: none;
+  opacity: 0.6;
 }
 
-/* マスキングテープ風タブ */
-.tape {
-  position: absolute;
-  top: -8px;
-  left: 28px;
-  width: 64px;
-  height: 22px;
+/* マスキングテープは廃止 */
+.tape { display: none !important; }
+
+/* === カード色（彩度高め・notebookっぽく） === */
+/* 濃い色（白文字） */
+.card.color-cobalt {
+  background: var(--c-cobalt);
+  border-color: var(--c-cobalt-deep);
+  color: var(--text-on-dark);
+}
+.card.color-kelly {
+  background: var(--c-kelly);
+  border-color: var(--c-kelly-deep);
+  color: var(--text-on-dark);
+}
+.card.color-coral {
+  background: var(--c-coral);
+  border-color: var(--c-coral-deep);
+  color: var(--text-on-dark);
+}
+.card.color-lavender {
+  background: var(--c-lavender);
+  border-color: var(--c-lavender-deep);
+  color: var(--text-on-dark);
+}
+
+/* 薄い色（黒文字） */
+.card.color-pink {
+  background: var(--c-baby-pink);
+  border-color: var(--c-baby-pink-deep);
+  color: var(--text-on-light);
+}
+.card.color-sage {
+  background: var(--c-sage);
+  border-color: var(--c-sage-deep);
+  color: var(--text-on-light);
+}
+.card.color-sky {
+  background: var(--c-sky);
+  border-color: #6daed1;
+  color: var(--text-on-light);
+}
+.card.color-butter {
+  background: var(--c-butter);
+  border-color: #d4ba47;
+  color: var(--text-on-light);
+}
+.card.color-cream {
   background: var(--c-cream);
-  opacity: 0.85;
-  transform: rotate(-2deg);
-  border-radius: 2px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  border-color: #c9bf8f;
+  color: var(--text-on-light);
 }
-.tape::before, .tape::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(transparent, rgba(255,255,255,0.5));
+.card.color-stone {
+  background: var(--c-stone);
+  border-color: #b0aa92;
+  color: var(--text-on-light);
 }
-.tape::before { left: 0; }
-.tape::after { right: 0; }
-.tape.t-coral { background: var(--c-coral-soft); }
-.tape.t-blue { background: var(--c-blue-soft); }
-.tape.t-green { background: var(--c-green-soft); }
-.tape.t-pink { background: var(--c-pink-soft); }
-.tape.t-sage { background: var(--c-sage-soft); }
-.tape.t-lavender { background: var(--c-lavender-soft); }
 
-/* === カードのカラーバリエーション === */
-.card.color-coral { background: var(--c-coral-soft); border-color: var(--c-coral); }
-.card.color-blue { background: var(--c-blue-soft); border-color: var(--c-blue); }
-.card.color-green { background: var(--c-green-soft); border-color: var(--c-green); }
-.card.color-lavender { background: var(--c-lavender-soft); border-color: var(--c-lavender); }
-.card.color-pink { background: var(--c-pink-soft); border-color: var(--c-pink); }
-.card.color-sage { background: var(--c-sage-soft); border-color: var(--c-sage); }
-.card.color-skyblue { background: var(--c-skyblue-soft); border-color: var(--c-skyblue); }
-.card.color-cream { background: var(--c-cream); border-color: #d4c69c; }
-.card.color-gray { background: #f0f0eb; border-color: var(--c-gray); }
+/* カード内テキストの色を背景に応じて統一 */
+.card.color-cobalt h2,
+.card.color-kelly h2,
+.card.color-coral h2,
+.card.color-lavender h2,
+.card.color-cobalt p,
+.card.color-kelly p,
+.card.color-coral p,
+.card.color-lavender p,
+.card.color-cobalt .placeholder,
+.card.color-kelly .placeholder,
+.card.color-coral .placeholder,
+.card.color-lavender .placeholder {
+  color: var(--text-on-dark) !important;
+}
+.card.color-cobalt .card-no,
+.card.color-kelly .card-no,
+.card.color-coral .card-no,
+.card.color-lavender .card-no {
+  color: rgba(255, 255, 255, 0.7);
+}
 
-/* === Letter Card（コーラル） === */
+/* === Letter Card（コーラル白文字） === */
 .letter-card .ascii-art {
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
   white-space: pre;
   font-size: 13px;
   line-height: 1.5;
   margin-bottom: 14px;
-  color: var(--text-main);
+  color: var(--text-on-dark);
 }
 .letter-greeting {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--c-coral);
+  font-size: 19px;
+  font-weight: 800;
   margin-bottom: 8px !important;
+  color: var(--text-on-dark) !important;
 }
 .letter-text {
   font-size: 14px;
-  color: var(--text-main) !important;
   line-height: 1.85;
   margin-bottom: 12px !important;
+  color: var(--text-on-dark) !important;
+  font-weight: 500;
 }
 .letter-sign {
   text-align: right;
   font-size: 13px;
-  color: var(--text-sub) !important;
   font-style: italic;
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 
 /* === Grid === */
@@ -318,27 +319,43 @@ input:checked + .slider::before { transform: translateX(20px); }
   display: inline-block;
   padding: 8px 14px;
   margin-right: 6px;
-  margin-top: 4px;
+  margin-top: 6px;
   background: white;
-  color: var(--text-main);
+  color: var(--text-dark);
   text-decoration: none;
   border-radius: 10px;
   font-size: 13px;
-  font-weight: 600;
-  border: 1px solid var(--border-soft);
+  font-weight: 700;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   transition: all 0.18s;
 }
 .btn:hover {
-  background: var(--text-main);
+  background: var(--text-dark);
   color: white;
-  border-color: var(--text-main);
 }
 .btn.primary {
-  background: var(--text-main);
+  background: var(--text-dark);
   color: white;
-  border-color: var(--text-main);
+  border-color: var(--text-dark);
 }
 .btn.primary:hover { background: #444; }
+
+/* 濃い色カード上のボタンは白＋黒文字（コントラスト確保） */
+.card.color-cobalt .btn,
+.card.color-kelly .btn,
+.card.color-coral .btn,
+.card.color-lavender .btn {
+  background: white;
+  color: var(--text-dark);
+  border-color: white;
+}
+.card.color-cobalt .btn:hover,
+.card.color-kelly .btn:hover,
+.card.color-coral .btn:hover,
+.card.color-lavender .btn:hover {
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+}
 
 /* === Brand Card === */
 .brand-content {
@@ -357,7 +374,7 @@ input:checked + .slider::before { transform: translateX(20px); }
   font-size: 44px;
   flex-shrink: 0;
   overflow: hidden;
-  border: 1px solid var(--border-soft);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .brand-image-placeholder img {
   width: 100%;
@@ -366,20 +383,19 @@ input:checked + .slider::before { transform: translateX(20px); }
 }
 .brand-info { flex: 1; }
 .brand-info h3 {
-  font-size: 19px;
-  color: var(--text-main);
+  font-size: 20px;
   margin-bottom: 6px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 800;
+  letter-spacing: -0.015em;
 }
 .brand-info .insight {
   font-style: italic;
-  color: var(--c-lavender);
-  border-left: 3px solid var(--c-lavender);
+  border-left: 3px solid currentColor;
   padding-left: 12px;
   margin: 10px 0;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
+  opacity: 0.95;
 }
 
 /* === 推し画像カード === */
@@ -389,7 +405,7 @@ input:checked + .slider::before { transform: translateX(20px); }
   height: 280px;
   object-fit: cover;
   display: block;
-  background: var(--c-pink-soft);
+  background: var(--c-baby-pink);
 }
 .oshi-meta {
   padding: 14px 20px 18px;
@@ -398,20 +414,15 @@ input:checked + .slider::before { transform: translateX(20px); }
   align-items: center;
   gap: 10px;
 }
-.oshi-caption {
-  font-size: 13px;
-  color: var(--text-sub);
-  flex: 1;
-  margin: 0 !important;
-}
+.oshi-caption { font-size: 13px; flex: 1; margin: 0 !important; font-weight: 500; }
 .oshi-empty {
-  padding: 40px 24px;
+  padding: 50px 24px;
   text-align: center;
-  color: var(--text-sub);
 }
-.oshi-empty .big-emoji { font-size: 40px; display: block; margin-bottom: 10px; }
+.oshi-empty .big-emoji { font-size: 44px; display: block; margin-bottom: 10px; }
+.oshi-empty p { font-weight: 500; }
 
-/* === 今日の一枚（ポラロイド） === */
+/* === ポラロイド === */
 .polaroid-card { background: white; }
 .polaroid {
   display: block;
@@ -420,7 +431,7 @@ input:checked + .slider::before { transform: translateX(20px); }
   margin: 8px auto 4px;
   background: white;
   padding: 12px 12px 36px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
   transform: rotate(-1.2deg);
   transition: transform 0.3s;
 }
@@ -429,79 +440,68 @@ input:checked + .slider::before { transform: translateX(20px); }
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  background: var(--c-skyblue-soft);
+  background: var(--c-sky);
 }
 .polaroid-caption {
   text-align: center;
   font-size: 12px;
-  color: var(--text-sub);
   margin-top: 8px;
-  font-family: "Caveat", "Hiragino Maru Gothic ProN", cursive;
+  color: var(--text-sub);
 }
 
 /* === 今夜の楽しみ === */
-.tonight-card { background: var(--c-pink-soft); border-color: var(--c-pink); }
 .tonight-emoji { font-size: 28px; margin-right: 6px; vertical-align: middle; }
-.tonight-text {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text-main) !important;
-  margin: 4px 0 !important;
-}
-.tonight-time { color: var(--c-coral); font-weight: 700; margin-right: 8px; }
+.tonight-text { font-size: 16px; font-weight: 700; margin: 4px 0 !important; }
+.tonight-time { font-weight: 800; margin-right: 8px; }
 
 /* === 朝のチェックリスト === */
-.morning-todo { padding: 18px 20px; background: var(--c-cream); border-color: #d4c69c; }
+.morning-todo .placeholder { font-size: 12px; }
 .todo-input-wrap { display: flex; gap: 6px; margin-top: 8px; }
 .todo-input {
   flex: 1;
-  padding: 6px 10px;
-  border: 1px solid var(--border-soft);
+  padding: 8px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 8px;
   font-size: 13px;
   font-family: inherit;
+  background: white;
+  color: var(--text-dark);
+  font-weight: 500;
 }
-.todo-input:focus { outline: none; border-color: var(--text-main); }
+.todo-input:focus { outline: none; border-color: var(--text-dark); }
 .todo-add-btn {
-  padding: 6px 12px;
-  border: 1px solid var(--text-main);
-  background: var(--text-main);
+  padding: 8px 14px;
+  border: 1px solid var(--text-dark);
+  background: var(--text-dark);
   color: white;
   border-radius: 8px;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
 }
-.todo-list {
-  list-style: none;
-  margin: 10px 0 0;
-  padding: 0;
-}
+.todo-list { list-style: none; margin: 10px 0 0; padding: 0; }
 .todo-list li {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 6px 0;
   font-size: 14px;
-  color: var(--text-main);
+  font-weight: 600;
 }
-.todo-list li.done {
-  color: var(--text-mute);
-  text-decoration: line-through;
-}
+.todo-list li.done { opacity: 0.6; text-decoration: line-through; }
 .todo-checkbox {
   width: 18px;
   height: 18px;
   cursor: pointer;
-  accent-color: var(--c-green);
+  accent-color: var(--c-kelly);
 }
 .todo-delete {
   margin-left: auto;
   background: none;
   border: none;
-  color: var(--text-mute);
+  color: rgba(0, 0, 0, 0.4);
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
   opacity: 0;
   transition: opacity 0.2s;
 }
@@ -514,32 +514,33 @@ input:checked + .slider::before { transform: translateX(20px); }
   align-items: center;
   gap: 10px;
   font-size: 13px;
+  font-weight: 600;
 }
-.coll-stat-label { width: 110px; color: var(--text-sub); }
+.coll-stat-label { width: 110px; }
 .coll-stat-bar {
   flex: 1;
   height: 8px;
-  background: rgba(0, 0, 0, 0.04);
+  background: rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   overflow: hidden;
 }
 .coll-stat-fill {
   height: 100%;
-  background: var(--c-sage);
+  background: rgba(0, 0, 0, 0.55);
   transition: width 0.4s ease;
 }
 .coll-stat-count {
   min-width: 32px;
   text-align: right;
-  font-weight: 700;
-  color: var(--text-main);
+  font-weight: 800;
   font-variant-numeric: tabular-nums;
 }
 .coll-total {
   text-align: right;
   font-size: 12px;
-  color: var(--text-mute);
   margin-top: 8px;
+  opacity: 0.7;
+  font-weight: 600;
 }
 
 /* === Footer === */
@@ -548,6 +549,7 @@ footer {
   margin-top: 32px;
   font-size: 11px;
   color: var(--text-mute);
+  font-weight: 600;
 }
 footer .heart-icon { color: var(--c-coral); }
 
@@ -565,7 +567,7 @@ footer .heart-icon { color: var(--c-coral); }
   100% { transform: translateY(120vh) rotate(720deg); opacity: 0; }
 }
 
-/* === Easter Egg ポップアップ === */
+/* === Easter Egg === */
 .egg-popup {
   position: fixed;
   bottom: 24px;
@@ -574,10 +576,11 @@ footer .heart-icon { color: var(--c-coral); }
   border: 2px solid var(--c-coral);
   border-radius: 16px;
   padding: 16px 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   z-index: 9998;
   font-size: 13px;
   max-width: 280px;
+  font-weight: 600;
   animation: pop-in 0.3s ease-out;
 }
 .egg-popup .egg-ascii {
@@ -587,38 +590,24 @@ footer .heart-icon { color: var(--c-coral); }
   line-height: 1.4;
   color: var(--c-coral);
   margin-bottom: 6px;
+  font-weight: 400;
 }
 @keyframes pop-in {
   from { transform: scale(0.7) translateY(20px); opacity: 0; }
   to { transform: scale(1) translateY(0); opacity: 1; }
 }
 
-/* === モード切替制御 === */
-/* 仕事モードでは隠す要素 */
-body.mode-work .private-only { display: none !important; }
-/* プライベートモードでは仕事専用要素は隠さなくてOK（全表示） */
+#corin-logo { font-weight: 700; }
 
-/* モードトランジション */
-.private-only {
-  transition: opacity 0.3s ease;
-}
+/* === モード切替 === */
+body.mode-work .private-only { display: none !important; }
 
 /* === Responsive === */
 @media (max-width: 640px) {
-  body {
-    padding: 12px 10px 40px;
-    background-size: 18px 18px;
-  }
+  body { padding: 12px 10px 40px; background-size: 18px 18px; }
   .container { max-width: 100%; }
-  .hero {
-    top: 8px;
-    padding: 12px 14px;
-    border-radius: 14px;
-  }
-  .hero-row {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
+  .hero { top: 8px; padding: 12px 14px; border-radius: 14px; }
+  .hero-row { flex-wrap: wrap; gap: 8px; }
   .date-main { font-size: 18px; }
   .date-week { font-size: 12px; }
   .clock { font-size: 22px; }
@@ -629,13 +618,9 @@ body.mode-work .private-only { display: none !important; }
   .brand-content { flex-direction: column; }
   .brand-image-placeholder { width: 100%; height: 180px; }
 
-  .card {
-    padding: 18px 18px 16px;
-    border-radius: 14px;
-  }
+  .card { padding: 22px 18px 18px; border-radius: 14px; }
   .card h2 { font-size: 15px; }
-  .card-no { top: 12px; right: 14px; font-size: 10px; }
-  .tape { left: 18px; width: 50px; height: 18px; }
+  .card-no { top: 14px; right: 14px; font-size: 10px; }
 
   .oshi-image { height: 220px; }
   .polaroid { max-width: 100%; padding: 10px 10px 28px; }
