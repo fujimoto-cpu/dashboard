@@ -109,5 +109,12 @@
     if (data.ip && data.ip.url) {
       document.getElementById('ip-link').href = data.ip.url;
     }
+    // 🦋 MEADOW.
+    if (data.meadow && data.meadow.summary) {
+      const meadowSummary = document.getElementById('meadow-summary');
+      if (meadowSummary) {
+        meadowSummary.innerHTML = data.meadow.summary.replace(/  \/  /g, '<br>');
+      }
+    }
   }
 })();
