@@ -277,6 +277,62 @@ def collection_stats(coll, today_dt):
         total += c
     return {"categories": rows, "total": total}
 
+# === 📚 ライブラリ（fujimoto-cpu の GitHub Pages リポ自動取得） ===
+LIBRARY_ICONS = [
+    (r"dashboard", "🦋"),
+    (r"basket|nba|bleague", "🏀"),
+    (r"cowork", "📘"),
+    (r"ai|trend", "🤖"),
+    (r"fashion", "👗"),
+    (r"brand", "🎨"),
+    (r"ip[-_]|news", "📰"),
+    (r"literature|reader", "📚"),
+    (r"manifesto", "✊"),
+    (r"rag|guide", "🎀"),
+    (r"sns|x[-_]", "🐦"),
+]
+
+def library_icon(name):
+    low = name.lower()
+    for pattern, icon in LIBRARY_ICONS:
+        if re.search(pattern, low):
+            return icon
+    return "📄"
+
+def get_library():
+    """gh CLI で fujimoto-cpu の公開リポ一覧を取得し、dashboard 本体を除外して返す"""
+    try:
+        result = subprocess.run(
+            ["gh", "repo", "list", "fujimoto-cpu", "--limit", "100",
+             "--no-archived", "--visibility", "public",
+             "--json", "name,description,homepageUrl,pushedAt"],
+            capture_output=True, text=True, timeout=15
+        )
+        if result.returncode != 0 or not result.stdout:
+            print(f"[library] gh failed: {result.stderr}", file=sys.stderr)
+            return []
+        repos = json.loads(result.stdout)
+    except Exception as e:
+        print(f"[library] failed: {e}", file=sys.stderr)
+        return []
+
+    items = []
+    for r in repos:
+        name = r.get("name", "")
+        if name == "dashboard":
+            continue  # 自分自身は除外
+        url = r.get("homepageUrl") or f"https://fujimoto-cpu.github.io/{name}/"
+        items.append({
+            "name": name,
+            "description": r.get("description") or "",
+            "url": url,
+            "icon": library_icon(name),
+            "pushed_at": r.get("pushedAt", ""),
+        })
+    # 直近更新順
+    items.sort(key=lambda x: x.get("pushed_at", ""), reverse=True)
+    return items
+
 # === 今夜の楽しみ（Daily Note Day Plannerから18時以降を抽出） ===
 def read_tonight(today_str):
     path = DAILY_NOTE_DIR / f"{today_str}.md"
@@ -411,6 +467,8 @@ def main():
     print(f"[collection_stats] total={coll_stats['total'] if coll_stats else 0}")
     tonight = read_tonight(today_str)
     print(f"[tonight] {tonight['summary'] if tonight else 'none'}")
+    library = get_library()
+    print(f"[library] {len(library)} repos")
 
     letter = make_letter(weather, brand, today_dt)
 
@@ -435,6 +493,7 @@ def main():
         "collection_stats": coll_stats,
         "tonight": tonight,
         "daily_photo": None,
+        "library": library,
     }
 
     output = DASHBOARD_ROOT / "data.js"

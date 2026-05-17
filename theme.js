@@ -53,6 +53,7 @@
 
   // ======== カウントダウン（一番近い未来のイベントを表示） ========
   // 5/9 結婚式は過ぎたので除外（過去日は自動スキップ）
+  const today0 = new Date(y, m - 1, d);
   const events = [
     { md: '05-23', label: '🤵 葉月ちゃん結婚式' },
     { md: '03-12', label: '🎂 ゆりこの誕生日' },
@@ -62,7 +63,6 @@
   // 毎月28日 MEADOW. Magazine
   events.push({ md: monthlyMagazineDate(), label: '🦋 MEADOW. Magazine' });
 
-  const today0 = new Date(y, m - 1, d);
   let bestDiff = Infinity, bestEvent = null;
   for (const ev of events) {
     if (!ev.md) continue;
@@ -150,6 +150,30 @@
 
     // コレクション統計
     if (data.collection_stats) renderCollectionStats(data.collection_stats);
+
+    // 📚 ライブラリ
+    if (data.library) renderLibrary(data.library);
+  }
+
+  function renderLibrary(items) {
+    const list = document.getElementById('library-list');
+    const meta = document.getElementById('library-meta');
+    if (!list) return;
+    if (!items || items.length === 0) {
+      list.innerHTML = '<li class="library-empty">公開リポが見つかりません</li>';
+      return;
+    }
+    if (meta) meta.textContent = `GitHub Pages で公開中のまとめ・ガイド（全 ${items.length} 件）`;
+    list.innerHTML = items.map(it => `
+      <li class="library-item">
+        <a href="${it.url}" target="_blank" rel="noopener">
+          <span class="library-icon">${it.icon || '📄'}</span>
+          <span class="library-info">
+            <span class="library-name">${escapeHtml(it.name)}</span>
+            ${it.description ? `<span class="library-desc">${escapeHtml(it.description)}</span>` : ''}
+          </span>
+        </a>
+      </li>`).join('');
   }
 
   function renderOshi(oshi) {
