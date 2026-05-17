@@ -281,6 +281,7 @@ def collection_stats(coll, today_dt):
 LIBRARY_ICONS = [
     (r"dashboard", "🦋"),
     (r"basket|nba|bleague", "🏀"),
+    (r"heike|kabuki|theater|noh|opera", "🎭"),
     (r"cowork", "📘"),
     (r"ai|trend", "🤖"),
     (r"fashion", "👗"),

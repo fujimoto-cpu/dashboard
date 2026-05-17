@@ -7,7 +7,7 @@ window.CORIN_DATA = {
   },
   "letter": {
     "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はClear 、20度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Sporty &amp; Rich</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はClear 、20度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Gentle Monster</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Sporty &amp; Rich",
-    "tagline": "70年代テニスクラブのライフスタイルとヴィンテージスポーツ美学を融合させた、Emily Oberg創設のウェルネスファッションブランド。",
-    "insight": "ウェルネス × ファッションの交点を狙う",
+    "name": "Gentle Monster",
+    "tagline": "店舗をキネティックアートに変え、アイウェアを超えたK-ライフスタイル帝国を築いた韓国発の革命的ブランド。",
+    "insight": "マルチブランドで「生活を侵食する」",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/sportyrich-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/gentle-monster-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -76,6 +76,13 @@ window.CORIN_DATA = {
   "tonight": null,
   "daily_photo": null,
   "library": [
+    {
+      "name": "heike-guide",
+      "description": "🎭 平家終焉 — 蒼月の契り 観劇前ガイド（平家物語超入門）",
+      "url": "https://fujimoto-cpu.github.io/heike-guide/",
+      "icon": "🎭",
+      "pushed_at": "2026-05-17T12:51:54Z"
+    },
     {
       "name": "basketball-rules",
       "description": "🏀 バスケットボール観戦ガイド",
