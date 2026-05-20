@@ -280,6 +280,7 @@ def collection_stats(coll, today_dt):
 # === 📚 ライブラリ（fujimoto-cpu の GitHub Pages リポ自動取得） ===
 LIBRARY_ICONS = [
     (r"dashboard", "🦋"),
+    (r"bigbang|kpop|k-pop|idol", "👑"),
     (r"basket|nba|bleague", "🏀"),
     (r"heike|kabuki|theater|noh|opera", "🎭"),
     (r"cowork", "📘"),

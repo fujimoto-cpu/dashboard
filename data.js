@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-05-17",
+  "date": "2026-05-21",
   "weather": {
-    "desc": "Clear ",
-    "temp": "20",
-    "icon": "☀️"
+    "desc": "Patchy rain nearby",
+    "temp": "21",
+    "icon": "🌧"
   },
   "letter": {
-    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はClear 、20度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Gentle Monster</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はPatchy rain nearby、21度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Aimé Leon Dore</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Gentle Monster",
-    "tagline": "店舗をキネティックアートに変え、アイウェアを超えたK-ライフスタイル帝国を築いた韓国発の革命的ブランド。",
-    "insight": "マルチブランドで「生活を侵食する」",
+    "name": "Aimé Leon Dore",
+    "tagline": "クイーンズ育ちのギリシャ系NYCデザイナーが創り出した「ブルックリン・プレップ」。ストリートと知性が交差するニューヨークの美意識を体現するライフスタイルブランド。",
+    "insight": "「コラボレーター」から「インサイダー」へ昇格する道筋",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/gentle-monster-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/ald-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -77,6 +77,55 @@ window.CORIN_DATA = {
   "daily_photo": null,
   "library": [
     {
+      "name": "bigbang-guide",
+      "description": "👑 BIGBANG 超入門ガイド — K-POPの伝説を何も知らない人が学べるアプリ",
+      "url": "https://fujimoto-cpu.github.io/bigbang-guide/",
+      "icon": "👑",
+      "pushed_at": "2026-05-20T18:24:34Z"
+    },
+    {
+      "name": "reading-monthly",
+      "description": "A private reading journal for Yuriko Fujimoto, edited by CORIN.",
+      "url": "https://fujimoto-cpu.github.io/reading-monthly/",
+      "icon": "📄",
+      "pushed_at": "2026-05-20T18:14:17Z"
+    },
+    {
+      "name": "ai-pulse",
+      "description": "AI Pulse - KONNEKT INTERNATIONAL 社員AI活用度可視化アプリ",
+      "url": "https://fujimoto-cpu.github.io/ai-pulse/",
+      "icon": "🤖",
+      "pushed_at": "2026-05-20T17:59:38Z"
+    },
+    {
+      "name": "artist-knowledge",
+      "description": "Personal artist knowledge archive (private)",
+      "url": "https://fujimoto-cpu.github.io/artist-knowledge/",
+      "icon": "📄",
+      "pushed_at": "2026-05-20T17:12:14Z"
+    },
+    {
+      "name": "literature",
+      "description": "Literature Notes reader",
+      "url": "https://fujimoto-cpu.github.io/literature/",
+      "icon": "📚",
+      "pushed_at": "2026-05-20T15:11:14Z"
+    },
+    {
+      "name": "shopify-connector-guide",
+      "description": "Shopify connector setup guide for KONNEKT INTERNATIONAL",
+      "url": "https://fujimoto-cpu.github.io/shopify-connector-guide/",
+      "icon": "🎀",
+      "pushed_at": "2026-05-19T06:55:08Z"
+    },
+    {
+      "name": "ip-report",
+      "description": "KONNEKT INTERNATIONAL IP News Daily Report",
+      "url": "https://fujimoto-cpu.github.io/ip-report",
+      "icon": "📰",
+      "pushed_at": "2026-05-18T00:19:58Z"
+    },
+    {
       "name": "heike-guide",
       "description": "🎭 平家終焉 — 蒼月の契り 観劇前ガイド（平家物語超入門）",
       "url": "https://fujimoto-cpu.github.io/heike-guide/",
@@ -105,13 +154,6 @@ window.CORIN_DATA = {
       "pushed_at": "2026-05-12T02:16:39Z"
     },
     {
-      "name": "ip-report",
-      "description": "KONNEKT INTERNATIONAL IP News Daily Report",
-      "url": "https://fujimoto-cpu.github.io/ip-report",
-      "icon": "📰",
-      "pushed_at": "2026-05-11T08:48:55Z"
-    },
-    {
       "name": "brand-analysis",
       "description": "Brand Research Library — fashion / lifestyle brand deep dives",
       "url": "https://fujimoto-cpu.github.io/brand-analysis/",
@@ -124,13 +166,6 @@ window.CORIN_DATA = {
       "url": "https://fujimoto-cpu.github.io/manifesto/",
       "icon": "✊",
       "pushed_at": "2026-05-10T09:40:25Z"
-    },
-    {
-      "name": "literature",
-      "description": "Literature Notes reader",
-      "url": "https://fujimoto-cpu.github.io/literature/",
-      "icon": "📚",
-      "pushed_at": "2026-04-19T05:30:47Z"
     },
     {
       "name": "fashion-report",
