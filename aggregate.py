@@ -24,6 +24,11 @@ XWATCH_DIR = CORIN_ROOT / "20_📂 Zettelkasten/x-watch"
 DAILY_NOTE_DIR = CORIN_ROOT / "03_📒 Daily Note/daily"
 COLLECTION_DATA = CORIN_ROOT / "01_🏠 private/meadow/collection/data.json"
 OSHI_HISTORY = DASHBOARD_ROOT / "oshi_history.json"
+PROJECTS_OVERVIEW = CORIN_ROOT / "30_🧠 context/projects-overview.md"
+PROJECTS_DIR = CORIN_ROOT / "00_🏢 company/projects"
+HTML_INDEX = CORIN_ROOT / "00_🏢 company/secretary/outputs/INDEX.md"
+ZETTEL_DIR = CORIN_ROOT / "20_📂 Zettelkasten"
+LINKS_CONFIG = DASHBOARD_ROOT / "links_config.json"
 
 # === 天気取得 ===
 WEATHER_ICONS = [
@@ -419,13 +424,244 @@ def make_letter(weather, brand, today_dt):
     )
     return {"ascii": random.choice(ASCII_ARTS), "html": html}
 
+# === Mission Control 用4関数（2026-05-30 追加） ===
+
+# プロジェクト概要 → カテゴリ別案件
+def parse_projects_overview():
+    """projects-overview.md のテーブルからカテゴリ別案件リストを抽出"""
+    if not PROJECTS_OVERVIEW.exists():
+        return []
+    text = PROJECTS_OVERVIEW.read_text(encoding="utf-8")
+    categories = []
+    current_cat = None
+    cat_emojis = {
+        "🎨 デザイン・制作": "design",
+        "🤖 AI推進": "ai",
+        "⚙️ 自動化・ツール": "auto",
+        "🦋 プライベート": "private",
+        "✅ 完了案件": "done",
+    }
+    for line in text.split("\n"):
+        # H2 セクション検出
+        m_h2 = re.match(r"^##\s+(.+?)(?:\s*\(.*\))?$", line)
+        if m_h2:
+            title = m_h2.group(1).strip()
+            slug = cat_emojis.get(title)
+            if slug:
+                current_cat = {"name": title, "slug": slug, "projects": []}
+                categories.append(current_cat)
+            else:
+                current_cat = None
+            continue
+        # テーブル行検出（| **xxx** | ... | ... | ... |）
+        if current_cat and line.startswith("|") and "**" in line:
+            cols = [c.strip() for c in line.split("|")[1:-1]]
+            if len(cols) < 4:
+                continue
+            name_col = cols[0]
+            hub_col = cols[1]
+            status_col = cols[2]
+            desc_col = cols[3]
+            # 案件名抽出（**name** から）
+            m_name = re.search(r"\*\*(.+?)\*\*", name_col)
+            if not m_name:
+                continue
+            name = m_name.group(1).replace("*", "").strip()
+            # ハブmd wiki-link 抽出
+            hub_link = None
+            m_hub = re.search(r"\[\[(.+?)\]\]", hub_col)
+            if m_hub:
+                hub_link = m_hub.group(1).split("|")[0].strip()
+            # 残りの説明列
+            status_clean = status_col.replace("**", "").strip()
+            desc_clean = desc_col.replace("**", "").strip()
+            current_cat["projects"].append({
+                "name": name,
+                "hub": hub_link,  # 案件名（wiki-linkのファイル名・None=未作成）
+                "status": status_clean,
+                "desc": desc_clean[:80],
+            })
+    return categories
+
+
+def check_hub_md(hub_name):
+    """指定された名前のハブmdを探して frontmatter + 関連リンク抽出"""
+    if not hub_name:
+        return None
+    # PROJECTS_DIR 配下から hub_name.md を再帰検索
+    candidates = list(PROJECTS_DIR.rglob(f"{hub_name}.md"))
+    candidates = [c for c in candidates if "/bk/" not in str(c) and "/_templates/" not in str(c)]
+    if not candidates:
+        return None
+    hub_path = candidates[0]
+    try:
+        content = hub_path.read_text(encoding="utf-8")
+    except Exception:
+        return None
+    # frontmatter
+    fm = {}
+    m = re.match(r"^---\n(.*?)\n---\n", content, re.DOTALL)
+    if m:
+        for line in m.group(1).split("\n"):
+            mm = re.match(r"^([a-zA-Z案件_]+):\s*(.+?)\s*$", line)
+            if mm:
+                fm[mm.group(1)] = mm.group(2).strip('"').strip("'")
+    # 「🔗 関連リンク」セクションから URL 抽出
+    # H2 形式 or callout 形式（> [!note] 🔗 関連リンク）の両方対応
+    links = []
+    section_patterns = [
+        r"##\s*🔗\s*関連リンク.*?(?=\n##\s|\n---|\Z)",
+        r">\s*\[![\w-]+\]-?\s*🔗\s*関連リンク.*?(?=\n---|\n##\s|\n\n[^>]|\Z)",
+    ]
+    for pat in section_patterns:
+        section_match = re.search(pat, content, re.DOTALL)
+        if not section_match:
+            continue
+        section = section_match.group(0)
+        # Markdownリンク [text](url)
+        for label, url in re.findall(r"\[([^\[\]]+)\]\(([^)]+)\)", section):
+            if url.startswith("http") or url.startswith("obsidian://"):
+                links.append({"label": label.strip(), "url": url.strip()})
+        # 内部wiki-link（オプション・Obsidian URI化）
+        for wiki in re.findall(r"\[\[([^\]|]+?)(?:\|[^\]]+)?\]\]", section):
+            from urllib.parse import quote
+            uri = f"obsidian://advanced-uri?vault=corin&filepath={quote(wiki + '.md')}"
+            links.append({"label": wiki[:18], "url": uri})
+        break  # 最初にマッチしたセクションで打ち切り
+    # Obsidian URI（ハブmdを開く）
+    vault_path = str(hub_path).replace(str(CORIN_ROOT) + "/", "")
+    from urllib.parse import quote
+    obsidian_uri = f"obsidian://advanced-uri?vault=corin&filepath={quote(vault_path)}"
+    return {
+        "exists": True,
+        "path": str(hub_path),
+        "obsidian_uri": obsidian_uri,
+        "frontmatter": fm,
+        "links": links[:6],  # 多すぎ防止
+    }
+
+
+def find_meeting_notes(project_name):
+    """Zettelkasten から案件名一致する議事メモ wiki-link 候補を取得"""
+    if not ZETTEL_DIR.exists() or not project_name:
+        return []
+    keywords = [project_name]
+    # 案件名にスペースあれば分割
+    if " " in project_name:
+        keywords.extend(project_name.split())
+    results = []
+    for md in ZETTEL_DIR.rglob("*.md"):
+        if "/bk/" in str(md) or "/_templates/" in str(md):
+            continue
+        name = md.stem
+        if any(kw in name for kw in keywords if len(kw) >= 2):
+            results.append(name)
+    return sorted(results)[:5]
+
+
+def get_active_projects():
+    """projects-overview.md パース + 各案件のハブmd判定 + 議事録紐付け"""
+    categories = parse_projects_overview()
+    for cat in categories:
+        for proj in cat["projects"]:
+            proj["hub_info"] = check_hub_md(proj["hub"])
+            proj["meetings"] = find_meeting_notes(proj["name"])
+    return categories
+
+
+def _normalize_for_dedup(title: str) -> str:
+    """バージョン違いの重複検出用にタイトルを正規化"""
+    t = title.strip()
+    # 末尾の v数字・_v数字・(モック vN) を削除
+    t = re.sub(r"[（(]\s*モック\s+v\s*\d+\s*[）)]\s*$", "", t)
+    t = re.sub(r"\s*[_-]?v\s*\d+\s*$", "", t, flags=re.IGNORECASE)
+    t = re.sub(r"\s+", " ", t).strip()
+    return t.lower()
+
+
+def get_recent_html(limit=20):
+    """INDEX.md パース → 新しい順N件 + MD骨子存在判定（バージョン違い重複制御）"""
+    if not HTML_INDEX.exists():
+        return []
+    text = HTML_INDEX.read_text(encoding="utf-8")
+    entries = []
+    current_category = None
+    # 簡易パース：H2セクション + テーブル行
+    for line in text.split("\n"):
+        m_h2 = re.match(r"^##\s+(.+?)$", line)
+        if m_h2:
+            current_category = m_h2.group(1).strip()
+            # 「📝 運用メモ」等メタセクションはスキップ
+            if "運用" in current_category:
+                current_category = None
+            continue
+        if not current_category or not line.startswith("|"):
+            continue
+        if line.startswith("|---") or "日付" in line:
+            continue
+        cols = [c.strip() for c in line.split("|")[1:-1]]
+        if len(cols) < 4:
+            continue
+        date_str = cols[0]
+        title_col = cols[1]
+        html_col = cols[2]
+        md_col = cols[3]
+        # 日付形式チェック
+        if not re.match(r"\d{4}-\d{2}-\d{2}", date_str):
+            continue
+        # HTML パス抽出（[📄 HTML](/path)）
+        m_url = re.search(r"\(([^)]+\.html)\)", html_col)
+        html_path = m_url.group(1) if m_url else ""
+        # タイトル抽出（wiki-link または平文）
+        m_title = re.search(r"\[\[([^\]|]+)(?:\|[^\]]+)?\]\]\s*(.*)", title_col)
+        if m_title:
+            wiki_name = m_title.group(1).strip()
+            display = (m_title.group(2) or wiki_name).strip()
+        else:
+            wiki_name = ""
+            display = title_col.strip()
+        has_md = "⚠" not in md_col
+        entries.append({
+            "date": date_str,
+            "title": display[:60],
+            "wiki": wiki_name,
+            "category": current_category,
+            "html_path": html_path,
+            "html_url": f"file://{html_path}" if html_path else "",
+            "has_md": has_md,
+        })
+    # 新しい順
+    entries.sort(key=lambda e: e["date"], reverse=True)
+    # バージョン違いを最新1件に絞る
+    seen_keys = set()
+    deduped = []
+    for e in entries:
+        key = (e["category"], _normalize_for_dedup(e["title"]))
+        if key in seen_keys:
+            continue
+        seen_keys.add(key)
+        deduped.append(e)
+    return deduped[:limit]
+
+
+def get_static_links():
+    """links_config.json を読む（仕事/プライベート両方）"""
+    if not LINKS_CONFIG.exists():
+        return {"work": [], "private": []}
+    try:
+        return json.loads(LINKS_CONFIG.read_text(encoding="utf-8"))
+    except Exception as e:
+        print(f"[links_config] parse failed: {e}", file=sys.stderr)
+        return {"work": [], "private": []}
+
+
 # === git commit & push ===
 def git_push():
     if not (DASHBOARD_ROOT / ".git").exists():
         print("[git] not a git repo, skipping push", file=sys.stderr)
         return
     try:
-        subprocess.run(["git", "-C", str(DASHBOARD_ROOT), "add", "data.js", "oshi_history.json"], check=False)
+        subprocess.run(["git", "-C", str(DASHBOARD_ROOT), "add", "data.js", "oshi_history.json", "links_config.json", "index.html", "style.css", "theme.js", "scripts/"], check=False)
         result = subprocess.run(
             ["git", "-C", str(DASHBOARD_ROOT), "diff", "--cached", "--quiet"]
         )
@@ -474,6 +710,14 @@ def main():
 
     letter = make_letter(weather, brand, today_dt)
 
+    # === Mission Control データ ===
+    active_projects = get_active_projects()
+    print(f"[mission-control] active_projects: {sum(len(c['projects']) for c in active_projects)} 件")
+    recent_html = get_recent_html(limit=20)
+    print(f"[mission-control] recent_html: {len(recent_html)} 件")
+    static_links = get_static_links()
+    print(f"[mission-control] static_links: {sum(len(g['links']) for g in static_links.get('work', []))} (work)")
+
     data = {
         "date": today_str,
         "weather": weather,
@@ -496,6 +740,10 @@ def main():
         "tonight": tonight,
         "daily_photo": None,
         "library": library,
+        # Mission Control（2026-05-30 追加）
+        "active_projects": active_projects,
+        "recent_html": recent_html,
+        "static_links": static_links,
     }
 
     output = DASHBOARD_ROOT / "data.js"

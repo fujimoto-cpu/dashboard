@@ -658,6 +658,256 @@ footer .heart-icon { color: var(--c-coral); }
 
 /* === モード切替 === */
 body.mode-work .private-only { display: none !important; }
+body:not(.mode-work) .work-only { display: none !important; }
+
+/* === Mission Control（No.17-19）（2026-05-30 追加） === */
+/* カテゴリ別パステル */
+:root {
+  --mc-design: #FFB6C1;
+  --mc-design-bg: #FFF0F5;
+  --mc-ai: #87CEEB;
+  --mc-ai-bg: #E0F6FF;
+  --mc-auto: #DDA0DD;
+  --mc-auto-bg: #F5E6F5;
+  --mc-private: #E6E6FA;
+  --mc-private-bg: #F8F4FF;
+  --mc-done: #98FB98;
+  --mc-done-bg: #F0FFF0;
+}
+
+/* === No.17 アクティブ案件 === */
+.active-header, .recent-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.active-header h2, .recent-header h2 { margin: 0; }
+.active-meta, .recent-meta {
+  font-size: 11px;
+  color: #888;
+  letter-spacing: 0.5px;
+}
+.active-cat-group { margin-bottom: 16px; }
+.active-cat-title {
+  font-size: 12px;
+  font-weight: 700;
+  margin: 8px 0 6px;
+  padding: 4px 10px;
+  display: inline-block;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+}
+.active-cat-design .active-cat-title { background: var(--mc-design-bg); color: #c9526b; }
+.active-cat-ai .active-cat-title { background: var(--mc-ai-bg); color: #2c7fad; }
+.active-cat-auto .active-cat-title { background: var(--mc-auto-bg); color: #8a4d8a; }
+.active-cat-private .active-cat-title { background: var(--mc-private-bg); color: #6e5a9e; }
+.active-cat-done .active-cat-title { background: var(--mc-done-bg); color: #3a8052; }
+
+.active-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+}
+.active-project-card {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px 10px 10px;
+  border: 1px solid #ececec;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.active-project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+/* マステ風カラー帯（カード上端） */
+.active-project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12px;
+  right: 12px;
+  height: 4px;
+  border-radius: 0 0 4px 4px;
+}
+.active-cat-design .active-project-card::before { background: var(--mc-design); }
+.active-cat-ai .active-project-card::before { background: var(--mc-ai); }
+.active-cat-auto .active-project-card::before { background: var(--mc-auto); }
+.active-cat-private .active-project-card::before { background: var(--mc-private); }
+.active-cat-done .active-project-card::before { background: var(--mc-done); }
+
+.active-project-card.hub-missing {
+  border-style: dashed;
+  opacity: 0.85;
+  background: #fafafa;
+}
+.active-project-card.hub-missing::before {
+  background: repeating-linear-gradient(90deg, #ccc 0 6px, transparent 6px 10px);
+}
+
+.ap-name {
+  font-weight: 700;
+  font-size: 13px;
+  color: #222;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.ap-status {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 6px;
+}
+.ap-desc {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.ap-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.ap-link {
+  font-size: 10px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  padding: 2px 7px;
+  text-decoration: none;
+  color: #444;
+  border: 1px solid #e0e0e0;
+}
+.ap-link:hover { background: #fff8dc; }
+.ap-hub-warn {
+  font-size: 10px;
+  color: #b85c00;
+  background: #fff4e0;
+  border-radius: 10px;
+  padding: 2px 7px;
+  display: inline-block;
+}
+
+/* === No.18 最近のHTML === */
+.recent-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+}
+.recent-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #fafafa;
+  margin-bottom: 6px;
+  border-left: 3px solid #ddd;
+  transition: background 0.15s;
+}
+.recent-item:hover { background: #f5f0e0; }
+.recent-item.is-fresh {
+  background: #fffbe0;
+  border-left-color: #ffd700;
+  animation: pop-in 0.4s ease-out;
+}
+@keyframes pop-in {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.recent-cat-emoji {
+  font-size: 18px;
+  flex-shrink: 0;
+  width: 24px;
+  text-align: center;
+}
+.recent-info { flex: 1; min-width: 0; }
+.recent-date {
+  font-size: 10px;
+  color: #999;
+  letter-spacing: 0.4px;
+}
+.recent-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.recent-actions { display: flex; gap: 4px; flex-shrink: 0; }
+.recent-actions a {
+  font-size: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2px 7px;
+  text-decoration: none;
+  color: #555;
+}
+.recent-actions a:hover { background: #fff8dc; }
+.recent-actions .no-md {
+  background: #fff4e0;
+  color: #b85c00;
+  border-color: #ffd9a0;
+}
+.fresh-sparkle {
+  font-size: 11px;
+  color: #d4a300;
+  margin-right: 2px;
+}
+
+/* === No.19 重要リンク === */
+.static-links-wrap { display: flex; flex-direction: column; gap: 14px; }
+.static-link-group { }
+.static-link-group h3 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #555;
+  margin: 0 0 6px;
+  letter-spacing: 0.5px;
+}
+.static-link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 6px;
+}
+.static-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  font-size: 11px;
+  color: #444;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.15s;
+}
+.static-link-btn:hover {
+  background: #fffbe0;
+  transform: translateY(-1px);
+}
+.static-link-icon { font-size: 14px; flex-shrink: 0; }
+.static-link-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* === Mission Control レスポンシブ === */
+@media (max-width: 640px) {
+  .active-projects-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .active-project-card { padding: 10px 8px 8px; }
+  .ap-name { font-size: 12px; }
+  .recent-title { font-size: 11px; }
+  .static-link-grid { grid-template-columns: 1fr 1fr; }
+}
 
 /* === Responsive === */
 @media (max-width: 640px) {

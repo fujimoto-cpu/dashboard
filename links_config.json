@@ -1,0 +1,51 @@
+{
+  "work": [
+    {
+      "group": "📓 Notion DB",
+      "links": [
+        {"label": "タスクDB", "icon": "✅", "url": "https://www.notion.so/3cd58cff41724c0bb8c9db1d875226d3"},
+        {"label": "Index DB（プロジェクト）", "icon": "📋", "url": "https://www.notion.so/f3af83315c8d499990e7c9a430eeef8e"},
+        {"label": "Literature DB", "icon": "📚", "url": "https://www.notion.so/172ec59fa90f815b8a97000b377e9cb2"},
+        {"label": "Log DB", "icon": "📝", "url": "https://www.notion.so/180ec59fa90f810e99e9000be5cdd6b3"},
+        {"label": "Permanent DB", "icon": "💎", "url": "https://www.notion.so/2674fba23ca14e8b9277d31640a84fe8"}
+      ]
+    },
+    {
+      "group": "🗂 Vault エントリーポイント",
+      "links": [
+        {"label": "案件ボード", "icon": "🎴", "url": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company%2Fprojects%2F%E6%A1%88%E4%BB%B6%E3%83%9C%E3%83%BC%E3%83%89.base"},
+        {"label": "Projects Overview", "icon": "🌐", "url": "obsidian://advanced-uri?vault=corin&filepath=30_%F0%9F%A7%A0%20context%2Fprojects-overview.md"},
+        {"label": "HTML INDEX", "icon": "📁", "url": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company%2Fsecretary%2Foutputs%2FINDEX.md"},
+        {"label": "Literature Reader", "icon": "📖", "url": "https://fujimoto-cpu.github.io/literature/"}
+      ]
+    },
+    {
+      "group": "🌐 リンク集（Notion）",
+      "links": [
+        {"label": "マスターインデックス", "icon": "🗺", "url": "https://www.notion.so/34e7f11c9bd0814991faf391588abeb1"}
+      ]
+    }
+  ],
+  "private": [
+    {
+      "group": "🦋 MEADOW.",
+      "links": [
+        {"label": "MEADOW. ホーム", "icon": "🦋", "url": "obsidian://advanced-uri?vault=corin&filepath=01_%F0%9F%8F%A0%20private%2Fmeadow"},
+        {"label": "コレクション", "icon": "🌸", "url": "obsidian://advanced-uri?vault=corin&filepath=01_%F0%9F%8F%A0%20private%2Fmeadow%2Fcollection%2Findex.html"},
+        {"label": "Reading月刊", "icon": "📚", "url": "https://fujimoto-cpu.github.io/reading-monthly/"}
+      ]
+    },
+    {
+      "group": "📓 Notion（個人）",
+      "links": [
+        {"label": "Diary Journal", "icon": "📔", "url": "https://www.notion.so/79073cd32f39474d94c626e43a223734"}
+      ]
+    },
+    {
+      "group": "🔗 SNS",
+      "links": [
+        {"label": "SNS bookmarks", "icon": "📌", "url": "obsidian://advanced-uri?vault=corin&filepath=20_%F0%9F%93%82%20Zettelkasten%2Fliterature"}
+      ]
+    }
+  ]
+}

@@ -153,7 +153,133 @@
 
     // 📚 ライブラリ
     if (data.library) renderLibrary(data.library);
+
+    // Mission Control（2026-05-30 追加）
+    if (data.active_projects) renderActiveProjects(data.active_projects);
+    if (data.recent_html) renderRecentHtml(data.recent_html);
+    if (data.static_links) renderStaticLinks(data.static_links);
   }
+
+  // ======== Mission Control レンダリング ========
+  function renderActiveProjects(categories) {
+    const list = document.getElementById('active-projects-list');
+    const meta = document.getElementById('active-meta');
+    if (!list) return;
+    const total = categories.reduce((s, c) => s + c.projects.length, 0);
+    const active = categories.reduce((s, c) =>
+      s + c.projects.filter(p => !p.status.includes('完了') && !p.status.includes('✅')).length, 0);
+    const noHub = categories.reduce((s, c) =>
+      s + c.projects.filter(p => !p.hub_info || !p.hub_info.exists).length, 0);
+    if (meta) meta.innerHTML = `${total}件 / ⚠ ハブmd未作成 ${noHub}件`;
+
+    list.innerHTML = categories.map(cat => {
+      if (!cat.projects.length) return '';
+      const slug = cat.slug || 'design';
+      const cards = cat.projects.map(p => renderProjectCard(p)).join('');
+      return `<div class="active-cat-group active-cat-${slug}">
+        <div class="active-cat-title">${escapeHtml(cat.name)} (${cat.projects.length})</div>
+        <div class="active-projects-grid">${cards}</div>
+      </div>`;
+    }).join('');
+  }
+
+  function renderProjectCard(p) {
+    const status = p.status || '';
+    const hubInfo = p.hub_info;
+    const hubExists = hubInfo && hubInfo.exists;
+    const cardClass = hubExists ? '' : ' hub-missing';
+    const titleLink = hubExists ? hubInfo.obsidian_uri : '';
+    const nameHtml = hubExists
+      ? `<a href="${titleLink}" class="ap-name-link" target="_blank">${escapeHtml(p.name)}</a>`
+      : escapeHtml(p.name);
+    const linksHtml = hubExists && hubInfo.links.length
+      ? hubInfo.links.map(l => `<a class="ap-link" href="${l.url}" target="_blank">${escapeHtml(l.label.slice(0, 12))}</a>`).join('')
+      : (hubExists ? '' : '<span class="ap-hub-warn">⚠ ハブmd未作成</span>');
+    const meetingsHtml = (p.meetings && p.meetings.length)
+      ? `<a class="ap-link" href="obsidian://advanced-uri?vault=corin&filepath=20_%F0%9F%93%82%20Zettelkasten%2F${encodeURIComponent(p.meetings[0])}.md" target="_blank">📝議事録${p.meetings.length}</a>`
+      : '';
+    return `<div class="active-project-card${cardClass}">
+      <div class="ap-name">${nameHtml}</div>
+      <div class="ap-status">${escapeHtml(status)}</div>
+      <div class="ap-desc">${escapeHtml(p.desc || '')}</div>
+      <div class="ap-links">${linksHtml}${meetingsHtml}</div>
+    </div>`;
+  }
+
+  function renderRecentHtml(items) {
+    const list = document.getElementById('recent-html-list');
+    const meta = document.getElementById('recent-meta');
+    if (!list) return;
+    if (!items.length) {
+      list.innerHTML = '<li class="placeholder">HTMLが見つかりません</li>';
+      return;
+    }
+    // 2日以内を「新着」判定
+    const now = new Date();
+    const twoDaysAgo = new Date(now.getTime() - 2 * 24 * 60 * 60 * 1000);
+    let freshCount = 0;
+    if (meta) meta.textContent = `${items.length}本`;
+    list.innerHTML = items.map(it => {
+      const date = new Date(it.date);
+      const isFresh = date >= twoDaysAgo;
+      if (isFresh) freshCount++;
+      const catEmoji = pickCategoryEmoji(it.category);
+      const obsidianLink = it.wiki ? `obsidian://advanced-uri?vault=corin&filepath=${encodeURIComponent(it.wiki + '.md')}` : '';
+      return `<li class="recent-item${isFresh ? ' is-fresh' : ''}">
+        <div class="recent-cat-emoji">${catEmoji}</div>
+        <div class="recent-info">
+          <div class="recent-date">${isFresh ? '<span class="fresh-sparkle">✨</span>' : ''}${escapeHtml(it.date)}</div>
+          <div class="recent-title">${escapeHtml(it.title)}</div>
+        </div>
+        <div class="recent-actions">
+          <a href="${it.html_url}" target="_blank" title="HTML">📄</a>
+          ${it.has_md && obsidianLink
+            ? `<a href="${obsidianLink}" target="_blank" title="MD">📝</a>`
+            : '<a class="no-md" title="MD未生成">⚠️</a>'}
+        </div>
+      </li>`;
+    }).join('');
+    if (meta && freshCount > 0) meta.innerHTML = `${items.length}本 / <span class="fresh-sparkle">✨${freshCount}本新着</span>`;
+  }
+
+  function pickCategoryEmoji(cat) {
+    if (!cat) return '📄';
+    if (cat.includes('CORIN出力')) return '🟣';
+    if (cat.includes('ブランド分析') || cat.includes('トレンド')) return '🎨';
+    if (cat.includes('AI推進')) return '🤖';
+    if (cat.includes('案件')) return '📁';
+    if (cat.includes('プラン')) return '📋';
+    if (cat.includes('MEADOW')) return '🦋';
+    return '📄';
+  }
+
+  function renderStaticLinks(linksObj) {
+    const wrap = document.getElementById('static-links-wrap');
+    if (!wrap) return;
+    const isWork = document.body.classList.contains('mode-work');
+    const groups = isWork ? (linksObj.work || []) : (linksObj.private || []);
+    if (!groups.length) {
+      wrap.innerHTML = '<p class="placeholder">リンクが設定されていません</p>';
+      return;
+    }
+    wrap.innerHTML = groups.map(g => `
+      <div class="static-link-group">
+        <h3>${escapeHtml(g.group)}</h3>
+        <div class="static-link-grid">
+          ${g.links.map(l => `
+            <a class="static-link-btn" href="${l.url}" target="_blank">
+              <span class="static-link-icon">${l.icon || '🔗'}</span>
+              <span class="static-link-label">${escapeHtml(l.label)}</span>
+            </a>`).join('')}
+        </div>
+      </div>`).join('');
+  }
+  // モード切替時に重要リンクを再レンダリング
+  document.getElementById('mode-switch')?.addEventListener('change', () => {
+    if (window.CORIN_DATA && window.CORIN_DATA.static_links) {
+      renderStaticLinks(window.CORIN_DATA.static_links);
+    }
+  });
 
   function renderLibrary(items) {
     const list = document.getElementById('library-list');

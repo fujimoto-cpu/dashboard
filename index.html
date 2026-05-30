@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#f7f5ee">
 <title>CORIN Dashboard 🦋 ゆりこの朝3分</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%8B%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css?v=20260517">
+<link rel="stylesheet" href="style.css?v=20260530">
 </head>
 <body class="mode-work">
 <div class="container">
@@ -99,6 +99,40 @@
       <h2>✅ Notionタスク</h2>
       <p class="placeholder">今週の優先タスク</p>
       <a class="btn" href="https://www.notion.so/3cd58cff41724c0bb8c9db1d875226d3" target="_blank">開く</a>
+    </div>
+  </section>
+
+  <!-- 🎯 アクティブ案件（仕事モードのみ・カテゴリ別カラー） -->
+  <section class="card color-pink work-only" id="active-projects-section">
+    <span class="card-no">No.17</span>
+    <div class="active-header">
+      <h2>🎯 アクティブ案件</h2>
+      <span class="active-meta" id="active-meta">—</span>
+    </div>
+    <div class="active-list" id="active-projects-list">
+      <p class="placeholder">aggregate.py が読み込みます</p>
+    </div>
+  </section>
+
+  <!-- 📄 最近のHTML（両モード） -->
+  <section class="card color-stone" id="recent-html-section">
+    <span class="card-no">No.18</span>
+    <div class="recent-header">
+      <h2>📄 最近のHTML</h2>
+      <span class="recent-meta" id="recent-meta">—</span>
+    </div>
+    <ul class="recent-list" id="recent-html-list">
+      <li class="placeholder">aggregate.py が読み込みます</li>
+    </ul>
+    <a class="btn" href="obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company%2Fsecretary%2Foutputs%2FINDEX.md" target="_blank">すべて見る (INDEX.md)</a>
+  </section>
+
+  <!-- 🔗 重要リンク（モード別レイアウト） -->
+  <section class="card color-cream" id="static-links-section">
+    <span class="card-no">No.19</span>
+    <h2>🔗 重要リンク</h2>
+    <div class="static-links-wrap" id="static-links-wrap">
+      <p class="placeholder">aggregate.py が読み込みます</p>
     </div>
   </section>
 
@@ -201,7 +235,7 @@
 
 </div>
 
-<script src="data.js?v=20260517" onerror="console.log('data.js not yet generated')"></script>
-<script src="theme.js?v=20260517"></script>
+<script src="data.js?v=20260530" onerror="console.log('data.js not yet generated')"></script>
+<script src="theme.js?v=20260530"></script>
 </body>
 </html>
