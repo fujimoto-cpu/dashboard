@@ -161,26 +161,44 @@
   }
 
   // ======== Mission Control レンダリング ========
+  function isArchived(p) {
+    return (p.status && p.status.includes('archived')) ||
+           (p.hub_info && p.hub_info.frontmatter && p.hub_info.frontmatter.status === 'archived');
+  }
+
   function renderActiveProjects(categories) {
     const list = document.getElementById('active-projects-list');
     const meta = document.getElementById('active-meta');
     if (!list) return;
     const total = categories.reduce((s, c) => s + c.projects.length, 0);
-    const active = categories.reduce((s, c) =>
-      s + c.projects.filter(p => !p.status.includes('完了') && !p.status.includes('✅')).length, 0);
-    const noHub = categories.reduce((s, c) =>
-      s + c.projects.filter(p => !p.hub_info || !p.hub_info.exists).length, 0);
-    if (meta) meta.innerHTML = `${total}件 / ⚠ ハブmd未作成 ${noHub}件`;
+    const archivedCount = categories.reduce((s, c) => s + c.projects.filter(isArchived).length, 0);
+    const activeCount = total - archivedCount;
+    if (meta) meta.innerHTML = `🔄 ${activeCount}件 進行中`;
 
-    list.innerHTML = categories.map(cat => {
-      if (!cat.projects.length) return '';
+    // 進行中カードをカテゴリ別に表示
+    const activeHtml = categories.map(cat => {
+      const actives = cat.projects.filter(p => !isArchived(p));
+      if (!actives.length) return '';
       const slug = cat.slug || 'design';
-      const cards = cat.projects.map(p => renderProjectCard(p)).join('');
+      const cards = actives.map(p => renderProjectCard(p)).join('');
       return `<div class="active-cat-group active-cat-${slug}">
-        <div class="active-cat-title">${escapeHtml(cat.name)} (${cat.projects.length})</div>
+        <div class="active-cat-title">${escapeHtml(cat.name)} (${actives.length})</div>
         <div class="active-projects-grid">${cards}</div>
       </div>`;
     }).join('');
+
+    // archived は全カテゴリまとめて折りたたみ
+    const archived = categories.flatMap(c => c.projects.filter(isArchived));
+    let archivedHtml = '';
+    if (archived.length) {
+      const cards = archived.map(p => renderProjectCard(p)).join('');
+      archivedHtml = `<details class="archived-fold">
+        <summary>📦 過去案件 ${archived.length}件（クリックで開く）</summary>
+        <div class="active-projects-grid" style="margin-top:10px;">${cards}</div>
+      </details>`;
+    }
+
+    list.innerHTML = activeHtml + archivedHtml;
   }
 
   function renderProjectCard(p) {
