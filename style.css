@@ -792,6 +792,57 @@ body:not(.mode-work) .work-only { display: none !important; }
   display: inline-block;
 }
 
+/* === 11工程ループ進捗ボード（案件カード内） === */
+.proc-progress {
+  margin: 8px 0 6px;
+  padding: 8px 10px;
+  background: linear-gradient(135deg, #fafaf7 0%, #f8f4ec 100%);
+  border-radius: 6px;
+  border-left: 3px solid #c9a96e;
+}
+.proc-summary {
+  font-size: 10px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 5px;
+  letter-spacing: 0.04em;
+}
+.proc-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+.proc-dot {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 3px;
+  letter-spacing: 0.02em;
+  border: 1px solid;
+  cursor: help;
+}
+.proc-dot.proc-done {
+  background: #d4edda;
+  color: #155724;
+  border-color: #a8d4af;
+}
+.proc-dot.proc-in-progress {
+  background: #fff3a6;
+  color: #856404;
+  border-color: #e6c95b;
+}
+.proc-dot.proc-todo {
+  background: #f0f0f0;
+  color: #aaa;
+  border-color: #d8d8d8;
+}
+.proc-dot.proc-na {
+  background: #f8f8f8;
+  color: #ccc;
+  border-color: #e8e8e8;
+  text-decoration: line-through;
+}
+
 /* === No.18 最近のHTML === */
 .recent-list {
   list-style: none;

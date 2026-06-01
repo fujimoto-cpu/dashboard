@@ -216,11 +216,44 @@
     const meetingsHtml = (p.meetings && p.meetings.length)
       ? `<a class="ap-link" href="obsidian://advanced-uri?vault=corin&filepath=20_%F0%9F%93%82%20Zettelkasten%2F${encodeURIComponent(p.meetings[0])}.md" target="_blank">📝議事録${p.meetings.length}</a>`
       : '';
+    // 11工程進捗ボード（ハブmdに「📊 走らせた工程」セクションがあれば表示）
+    const progressHtml = hubExists && hubInfo.process_progress
+      ? renderProcessProgress(hubInfo.process_progress)
+      : '';
     return `<div class="active-project-card${cardClass}">
       <div class="ap-name">${nameHtml}</div>
       <div class="ap-status">${escapeHtml(status)}</div>
       <div class="ap-desc">${escapeHtml(p.desc || '')}</div>
+      ${progressHtml}
       <div class="ap-links">${linksHtml}${meetingsHtml}</div>
+    </div>`;
+  }
+
+  function renderProcessProgress(prog) {
+    const steps = [
+      { key: 'K', emoji: '🇰', label: 'K' },
+      { key: '0', emoji: '🅾', label: '0' },
+      { key: '0-1', emoji: '🅾', label: '0-1' },
+      { key: 'A', emoji: '🅰️', label: 'A' },
+      { key: 'B', emoji: '🅱️', label: 'B' },
+      { key: 'C', emoji: '🅲', label: 'C' },
+      { key: 'Z', emoji: '🅩', label: 'Z' },
+      { key: 'V', emoji: '🇻', label: 'V' },
+      { key: 'Y', emoji: '🇾', label: 'Y' },
+      { key: 'R-mid', emoji: '🇷', label: 'Rm' },
+      { key: 'R-final', emoji: '🇷', label: 'Rf' },
+    ];
+    const dots = steps.map(s => {
+      const status = prog[s.key] || '⬜';
+      const cls = status === '✅' ? 'done' : status === '🔄' ? 'in-progress' : status === 'N/A' ? 'na' : 'todo';
+      return `<span class="proc-dot proc-${cls}" title="${s.key}: ${status}">${s.label}</span>`;
+    }).join('');
+    const completed = prog.completed_count || 0;
+    const inProgress = prog.in_progress_count || 0;
+    const total = prog.total_count || 11;
+    return `<div class="proc-progress" title="11工程ループ進捗">
+      <div class="proc-summary">📊 ${completed}/${total} 完了${inProgress ? ` ・ ${inProgress} 進行中` : ''}</div>
+      <div class="proc-dots">${dots}</div>
     </div>`;
   }
 

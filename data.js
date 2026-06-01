@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-05-31",
+  "date": "2026-06-02",
   "weather": {
-    "desc": "Partly Cloudy ",
-    "temp": "23",
+    "desc": "Overcast ",
+    "temp": "22",
     "icon": "☁️"
   },
   "letter": {
-    "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はPartly Cloudy 、23度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Stone Island</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はOvercast 、22度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Marni</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Stone Island",
-    "tagline": "「素材研究がデザイン。機能が美しさ」——コンパスバッジとテキスタイル実験で40年以上ファッションの境界を拡張し続けるイタリア発ブランド。",
-    "insight": "Ghost Piece：「引き算」で深みを出す",
+    "name": "Marni",
+    "tagline": "1994年ミラン発。大胆な色彩、職人技、芸術的自由が交差するイタリアン・ラグジュアリー。Consuelo Castiglioni が創設し、Francesco Risso が継承した「着るアート」の哲学。",
+    "insight": "Uniqloで「アクセシブル・ラグジュアリー」を実証",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/stoneisland-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/marni-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -77,18 +77,25 @@ window.CORIN_DATA = {
   "daily_photo": null,
   "library": [
     {
+      "name": "am-board-2026",
+      "description": "26AW fashion image board (internal reference, noindex)",
+      "url": "https://fujimoto-cpu.github.io/am-board-2026/",
+      "icon": "📄",
+      "pushed_at": "2026-06-01T10:46:08Z"
+    },
+    {
+      "name": "ip-report",
+      "description": "KONNEKT INTERNATIONAL IP News Daily Report",
+      "url": "https://fujimoto-cpu.github.io/ip-report",
+      "icon": "📰",
+      "pushed_at": "2026-06-01T06:42:19Z"
+    },
+    {
       "name": "recall-recorder",
       "description": "Recall — KONNEKT社内議事録録音アプリ（PWA）",
       "url": "https://fujimoto-cpu.github.io/recall-recorder/",
       "icon": "📄",
       "pushed_at": "2026-05-31T06:47:04Z"
-    },
-    {
-      "name": "am-board-2026",
-      "description": "26AW fashion image board (internal reference, noindex)",
-      "url": "https://fujimoto-cpu.github.io/am-board-2026/",
-      "icon": "📄",
-      "pushed_at": "2026-05-31T02:13:25Z"
     },
     {
       "name": "graphic-taste-gallery",
@@ -117,13 +124,6 @@ window.CORIN_DATA = {
       "url": "https://fujimoto-cpu.github.io/literature/",
       "icon": "📚",
       "pushed_at": "2026-05-25T23:21:50Z"
-    },
-    {
-      "name": "ip-report",
-      "description": "KONNEKT INTERNATIONAL IP News Daily Report",
-      "url": "https://fujimoto-cpu.github.io/ip-report",
-      "icon": "📰",
-      "pushed_at": "2026-05-25T00:20:43Z"
     },
     {
       "name": "ai-pulse",
@@ -244,7 +244,8 @@ window.CORIN_DATA = {
               "created": "2025-11-25",
               "last_updated": "2026-05-31"
             },
-            "links": []
+            "links": [],
+            "process_progress": null
           },
           "meetings": [
             "@2026年5月13日_Armillary._川田はるくんとの打ち合わせ_議事メモ",
@@ -290,7 +291,23 @@ window.CORIN_DATA = {
                 "label": "@2026年5月13日_Armill",
                 "url": "obsidian://advanced-uri?vault=corin&filepath=%402026%E5%B9%B45%E6%9C%8813%E6%97%A5_Armillary._%E5%B7%9D%E7%94%B0%E3%81%AF%E3%82%8B%E3%81%8F%E3%82%93%E3%81%A8%E3%81%AE%E6%89%93%E3%81%A1%E5%90%88%E3%82%8F%E3%81%9B_%E8%AD%B0%E4%BA%8B%E3%83%A1%E3%83%A2.md"
               }
-            ]
+            ],
+            "process_progress": {
+              "K": "🔄",
+              "0": "✅",
+              "0-1": "⬜",
+              "A": "✅",
+              "B": "✅",
+              "C": "✅",
+              "Z": "✅",
+              "V": "⬜",
+              "Y": "⬜",
+              "R-mid": "⬜",
+              "R-final": "⬜",
+              "completed_count": 5,
+              "in_progress_count": 1,
+              "total_count": 11
+            }
           },
           "meetings": [
             "@2026年5月13日_Armillary._川田はるくんとの打ち合わせ_議事メモ",
@@ -319,7 +336,8 @@ window.CORIN_DATA = {
               "created": "2026-05-31",
               "last_updated": "2026-05-31"
             },
-            "links": []
+            "links": [],
+            "process_progress": null
           },
           "meetings": [
             "@2026年5月13日_Armillary._川田はるくんとの打ち合わせ_議事メモ",
@@ -357,7 +375,8 @@ window.CORIN_DATA = {
                 "label": "2026-05-18_さぶさん依頼事",
                 "url": "obsidian://advanced-uri?vault=corin&filepath=2026-05-18_%E3%81%95%E3%81%B6%E3%81%95%E3%82%93%E4%BE%9D%E9%A0%BC%E4%BA%8B%E9%A0%85.md"
               }
-            ]
+            ],
+            "process_progress": null
           },
           "meetings": [
             "📄 LDH_BDグッズ提案_ハブmd",
@@ -386,7 +405,8 @@ window.CORIN_DATA = {
               "created": "2026-05-31",
               "last_updated": "2026-05-31"
             },
-            "links": []
+            "links": [],
+            "process_progress": null
           },
           "meetings": [
             "👗️ LAVANDA"
@@ -413,7 +433,8 @@ window.CORIN_DATA = {
               "created": "2026-05-31",
               "last_updated": "2026-05-31"
             },
-            "links": []
+            "links": [],
+            "process_progress": null
           },
           "meetings": [
             "👗️ LAVANDA"
@@ -440,7 +461,8 @@ window.CORIN_DATA = {
               "created": "2026-03-02",
               "last_updated": "2026-05-31"
             },
-            "links": []
+            "links": [],
+            "process_progress": null
           },
           "meetings": [
             "2026-05-29_kemio抹茶_打ち合わせ_議事メモ",
@@ -471,7 +493,8 @@ window.CORIN_DATA = {
               "created": "2026-05-31",
               "last_updated": "2026-05-31"
             },
-            "links": []
+            "links": [],
+            "process_progress": null
           },
           "meetings": [
             "2026-05-29_kemio抹茶_打ち合わせ_議事メモ",
@@ -502,7 +525,8 @@ window.CORIN_DATA = {
               "created": "2026-05-31",
               "last_updated": "2026-05-31"
             },
-            "links": []
+            "links": [],
+            "process_progress": null
           },
           "meetings": [
             "🌌 PS_This is the art of Brand World Building 🌍",
@@ -531,7 +555,8 @@ window.CORIN_DATA = {
               "created": "2026-05-31",
               "last_updated": "2026-05-31"
             },
-            "links": []
+            "links": [],
+            "process_progress": null
           },
           "meetings": []
         },
@@ -556,7 +581,8 @@ window.CORIN_DATA = {
               "created": "2026-05-31",
               "last_updated": "2026-05-31"
             },
-            "links": []
+            "links": [],
+            "process_progress": null
           },
           "meetings": []
         },
@@ -581,7 +607,8 @@ window.CORIN_DATA = {
               "created": "2026-05-31",
               "last_updated": "2026-05-31"
             },
-            "links": []
+            "links": [],
+            "process_progress": null
           },
           "meetings": []
         },
@@ -606,7 +633,8 @@ window.CORIN_DATA = {
               "created": "2026-05-31",
               "last_updated": "2026-05-31"
             },
-            "links": []
+            "links": [],
+            "process_progress": null
           },
           "meetings": [
             "2026-05-18-existing-asset-audit-before-new-build",
@@ -637,7 +665,8 @@ window.CORIN_DATA = {
               "created": "2026-05-31",
               "last_updated": "2026-05-31"
             },
-            "links": []
+            "links": [],
+            "process_progress": null
           },
           "meetings": [
             "👗 unblend_store_ナップサック発売告知",
@@ -666,7 +695,8 @@ window.CORIN_DATA = {
               "created": "2026-05-31",
               "last_updated": "2026-05-31"
             },
-            "links": []
+            "links": [],
+            "process_progress": null
           },
           "meetings": []
         },
@@ -691,7 +721,8 @@ window.CORIN_DATA = {
               "created": "2026-05-29",
               "last_updated": "2026-05-29"
             },
-            "links": []
+            "links": [],
+            "process_progress": null
           },
           "meetings": [
             "2026-05-29_ONE社内打ち合わせ_議事メモ"
@@ -713,7 +744,8 @@ window.CORIN_DATA = {
               "created": "2026-05-24",
               "updated": "2026-05-25"
             },
-            "links": []
+            "links": [],
+            "process_progress": null
           },
           "meetings": [
             "2026-05-21_BIGBANG_MTG_議事メモ",
@@ -741,7 +773,8 @@ window.CORIN_DATA = {
               "created": "2026-05-31",
               "last_updated": "2026-05-31"
             },
-            "links": []
+            "links": [],
+            "process_progress": null
           },
           "meetings": [
             "📍 avex"
@@ -768,7 +801,8 @@ window.CORIN_DATA = {
               "created": "2026-05-31",
               "last_updated": "2026-05-31"
             },
-            "links": []
+            "links": [],
+            "process_progress": null
           },
           "meetings": []
         }

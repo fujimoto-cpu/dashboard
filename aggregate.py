@@ -532,13 +532,89 @@ def check_hub_md(hub_name):
     vault_path = str(hub_path).replace(str(CORIN_ROOT) + "/", "")
     from urllib.parse import quote
     obsidian_uri = f"obsidian://advanced-uri?vault=corin&filepath={quote(vault_path)}"
+    # 11工程進捗抽出
+    process_progress = extract_process_progress(content)
     return {
         "exists": True,
         "path": str(hub_path),
         "obsidian_uri": obsidian_uri,
         "frontmatter": fm,
         "links": links[:6],  # 多すぎ防止
+        "process_progress": process_progress,
     }
+
+
+def extract_process_progress(content):
+    """ハブmdから『📊 走らせた工程』セクションを抽出して11工程の状態を返す
+
+    Returns:
+        {
+            "K": "✅"|"🔄"|"⬜"|"N/A",
+            "0": "...",
+            ...
+            "R-final": "...",
+            "completed_count": int,
+            "total_count": int,  # N/A除外
+        }
+    """
+    # デフォルト：全工程未着手
+    progress_keys = ["K", "0", "0-1", "A", "B", "C", "Z", "V", "Y", "R-mid", "R-final"]
+    result = {k: "⬜" for k in progress_keys}
+
+    # セクション抽出
+    section_match = re.search(
+        r"##\s*📊\s*走らせた工程.*?(?=\n##\s|\n---|\Z)",
+        content, re.DOTALL
+    )
+    if not section_match:
+        return None  # セクション無い場合は None
+    section = section_match.group(0)
+
+    # 工程記号 → 工程キーのマッピング
+    process_map = [
+        ("🇰", "K"),
+        ("🅾-1", "0-1"),   # 0-1 を 0 より先にチェック（順序重要）
+        ("🅾", "0"),
+        ("🅰️", "A"),
+        ("🅱️", "B"),
+        ("🅲", "C"),
+        ("🅩", "Z"),
+        ("🇻", "V"),
+        ("🇾", "Y"),
+        ("🇷-mid", "R-mid"),
+        ("🇷-final", "R-final"),
+    ]
+
+    # 状態判定の優先順位
+    status_patterns = [
+        ("✅", "✅"),
+        ("🔄", "🔄"),
+        ("N/A", "N/A"),
+        ("⬜", "⬜"),
+    ]
+
+    for line in section.split("\n"):
+        if not line.startswith("|"):
+            continue
+        # 各工程に対してマッチング
+        for emoji, key in process_map:
+            if emoji in line:
+                # 状態判定
+                for pattern, status in status_patterns:
+                    if pattern in line:
+                        result[key] = status
+                        break
+                break  # 1行1工程
+
+    # 集計
+    total = sum(1 for v in result.values() if v != "N/A")
+    completed = sum(1 for v in result.values() if v == "✅")
+    in_progress = sum(1 for v in result.values() if v == "🔄")
+
+    result["completed_count"] = completed
+    result["in_progress_count"] = in_progress
+    result["total_count"] = total
+    return result
 
 
 def find_meeting_notes(project_name):
