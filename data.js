@@ -7,7 +7,7 @@ window.CORIN_DATA = {
   },
   "letter": {
     "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はSunny、22度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>KITH</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はSunny、22度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>APOTHEKE FRAGRANCE</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "KITH",
-    "tagline": "NYCのクイーンズから生まれた、コラボをDNAに持つモダンストリートライフスタイルの巨人。スニーカー文化を起点に、シリアルバー・BMW・ヴェルサーチまで射程に入れた全方位ブランド。",
-    "insight": "グローバル展開しながらNYCのオーラを失わない",
+    "name": "APOTHEKE FRAGRANCE",
+    "tagline": "千葉のアトリエで全てを手作りする日本のクラフトフレグランスブランド。古来の日本の感性と現代デザインを橋渡しし、お香で「家に置いてオシャレ」を再定義した。",
+    "insight": "INSIGHT 01",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/kith-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -931,183 +931,183 @@ window.CORIN_DATA = {
   ],
   "recent_html": [
     {
-      "date": "2026-05-30",
-      "title": "フレグランス3ブランド比較リサーチ — APFR × Diptyque × Aēsop",
-      "wiki": "2026-05-30_フレグランス3ブランド比較リサーチ_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 2本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/kemio/20260310_kemio抹茶ブランド/_ai-drafts/2026-05-30_フレグランス3ブランド比較リサーチ_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/kemio/20260310_kemio抹茶ブランド/_ai-drafts/2026-05-30_フレグランス3ブランド比較リサーチ_v1.html",
+      "date": "2026-06-02",
+      "title": "9工程ループ 自己レビュー — CEO（CORIN）v1",
+      "wiki": "2026-06-02_企画テンプレ_自己レビュー_v1",
+      "category": "🤖 CORIN出力（outputs/） 7本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-02_企画テンプレ_自己レビュー_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-02_企画テンプレ_自己レビュー_v1.html",
+      "has_md": false
+    },
+    {
+      "date": "2026-06-02",
+      "title": "Armillary. 26AW グッズ構成提案 v3 — 11本柱・A+B+C 統合版",
+      "wiki": "Armillary_26AW_グッズ提案_リファレンス版_v3",
+      "category": "📁 案件ドラフト（_ai-drafts/） 11本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_グッズ提案_リファレンス版_v3.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_グッズ提案_リファレンス版_v3.html",
       "has_md": true
     },
     {
-      "date": "2026-05-29",
-      "title": "🧹 メモリ整理 カードスワイプ — 2026-05-28",
-      "wiki": "memory_review_2026-05-28",
-      "category": "🤖 CORIN出力（outputs/） 4本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/memory_review_2026-05-28.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/memory_review_2026-05-28.html",
+      "date": "2026-06-02",
+      "title": "Armillary. 全コレクション 受注期間ランキング",
+      "wiki": "Armillary_26AW_セッションA_過去販売データ分析_v1",
+      "category": "📁 案件ドラフト（_ai-drafts/） 11本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_セッションA_過去販売データ分析_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_セッションA_過去販売データ分析_v1.html",
+      "has_md": false
+    },
+    {
+      "date": "2026-06-01",
+      "title": "企画テンプレ 改善提案 — CEO（CORIN）視点 v1",
+      "wiki": "2026-06-01_企画テンプレ改善提案_CORIN_v1",
+      "category": "🤖 CORIN出力（outputs/） 7本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-01_企画テンプレ改善提案_CORIN_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-01_企画テンプレ改善提案_CORIN_v1.html",
       "has_md": true
     },
     {
-      "date": "2026-05-29",
-      "title": "KONNEKT 経営ダッシュボード（モック v1）",
-      "wiki": "dashboard_mockup_v1",
-      "category": "🤖 AI推進資料（ai/） 15本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260529_経営ダッシュボード/_ai-drafts/dashboard_mockup_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260529_経営ダッシュボード/_ai-drafts/dashboard_mockup_v1.html",
+      "date": "2026-06-01",
+      "title": "Armillary. 26AW イメージボード — 参考ブランド＆画像",
+      "wiki": "Armillary_26AW_イメージボード_v3",
+      "category": "📁 案件ドラフト（_ai-drafts/） 11本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_イメージボード_v3.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_イメージボード_v3.html",
+      "has_md": false
+    },
+    {
+      "date": "2026-06-01",
+      "title": "Armillary. 26AW グッズ構成提案 v2 — 10本柱・過去ランキング × 参考ブランド",
+      "wiki": "Armillary_26AW_グッズ提案_リファレンス版_v1",
+      "category": "📁 案件ドラフト（_ai-drafts/） 11本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_グッズ提案_リファレンス版_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_グッズ提案_リファレンス版_v1.html",
       "has_md": true
     },
     {
-      "date": "2026-05-28",
-      "title": "CORIN's CEO PICK — 2026-05-28",
-      "wiki": "2026-05-28_ceo_literature_pick",
-      "category": "🤖 CORIN出力（outputs/） 4本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-05-28_ceo_literature_pick.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-05-28_ceo_literature_pick.html",
+      "date": "2026-05-31",
+      "title": "📋 議事録ダッシュボード — corin",
+      "wiki": "2026-05-31_議事録ダッシュボード",
+      "category": "🤖 CORIN出力（outputs/） 7本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-05-31_議事録ダッシュボード.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-05-31_議事録ダッシュボード.html",
       "has_md": true
     },
     {
-      "date": "2026-05-28",
-      "title": "Vault蘇生プラン — 4層マップ実装ロードマップ",
-      "wiki": "2026-05-28_obsidian_4layer_plan",
-      "category": "🤖 CORIN出力（outputs/） 4本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-05-28_obsidian_4layer_plan.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-05-28_obsidian_4layer_plan.html",
+      "date": "2026-05-31",
+      "title": "ADER ERROR — ブランド分析レポート",
+      "wiki": "ader-error-brand-analysis",
+      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/ader-error-brand-analysis.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/ader-error-brand-analysis.html",
       "has_md": true
     },
     {
-      "date": "2026-05-28",
-      "title": "4層マップ × ゆりこ — Obsidian蘇生診断",
-      "wiki": "2026-05-28_obsidian_4layer_yuriko",
-      "category": "🤖 CORIN出力（outputs/） 4本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-05-28_obsidian_4layer_yuriko.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-05-28_obsidian_4layer_yuriko.html",
+      "date": "2026-05-31",
+      "title": "Aesop — ブランド分析レポート",
+      "wiki": "aesop-brand-analysis",
+      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/aesop-brand-analysis.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/aesop-brand-analysis.html",
       "has_md": true
     },
     {
-      "date": "2026-05-27",
-      "title": "グラフィック・テイスト図鑑",
-      "wiki": "graphic-taste-gallery",
-      "category": "🎨 ブランド分析・トレンド（notes/） 31本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/graphic-taste-gallery.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/graphic-taste-gallery.html",
+      "date": "2026-05-31",
+      "title": "AMBUSH — Brand Analysis \\",
+      "wiki": "ambush-brand-analysis",
+      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
+      "html_path": "",
+      "html_url": "",
       "has_md": true
     },
     {
-      "date": "2026-05-27",
+      "date": "2026-05-31",
+      "title": "APOTHEKE FRAGRANCE — ブランド分析レポート",
+      "wiki": "apotheke-fragrance-brand-analysis",
+      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html",
+      "has_md": false
+    },
+    {
+      "date": "2026-05-31",
+      "title": "Casablanca — Brand Analysis \\",
+      "wiki": "casablanca-brand-analysis",
+      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
+      "html_path": "",
+      "html_url": "",
+      "has_md": true
+    },
+    {
+      "date": "2026-05-31",
+      "title": "CULLNI — ブランド分析レポート",
+      "wiki": "cullni-brand-analysis",
+      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/cullni-brand-analysis.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/cullni-brand-analysis.html",
+      "has_md": false
+    },
+    {
+      "date": "2026-05-31",
+      "title": "Diptyque — ブランド分析レポート",
+      "wiki": "diptyque-brand-analysis",
+      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/diptyque-brand-analysis.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/diptyque-brand-analysis.html",
+      "has_md": false
+    },
+    {
+      "date": "2026-05-31",
+      "title": "Fear of God — ブランド分析レポート",
+      "wiki": "fog-brand-analysis",
+      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/fog-brand-analysis.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/fog-brand-analysis.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-05-31",
+      "title": "Gentle Monster — ブランド分析レポート",
+      "wiki": "gentle-monster-brand-analysis",
+      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/gentle-monster-brand-analysis.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/gentle-monster-brand-analysis.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-05-31",
+      "title": "Humanrace — ブランド分析レポート",
+      "wiki": "humanrace-brand-analysis",
+      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/humanrace-brand-analysis.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/humanrace-brand-analysis.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-05-31",
       "title": "ブランド分析 — Brand Research Library",
       "wiki": "index",
-      "category": "🎨 ブランド分析・トレンド（notes/） 31本",
+      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/index.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/index.html",
       "has_md": true
     },
     {
-      "date": "2026-05-27",
-      "title": "LAVANDA 3Dシール｜カット線の作り方（引き継ぎ）",
-      "wiki": "カット線の作り方_引き継ぎ_20260527",
-      "category": "📁 案件ドラフト（_ai-drafts/） 2本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/LAVANDA_ボンドロシール/_ai-drafts/カット線の作り方_引き継ぎ_20260527.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/LAVANDA_ボンドロシール/_ai-drafts/カット線の作り方_引き継ぎ_20260527.html",
+      "date": "2026-05-31",
+      "title": "Jacquemus — ブランド分析レポート",
+      "wiki": "jacquemus-brand-analysis",
+      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/jacquemus-brand-analysis.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/jacquemus-brand-analysis.html",
       "has_md": true
     },
     {
-      "date": "2026-05-26",
-      "title": "Design Howto Atlas — 画像から逆引きデザインノウハウ集",
-      "wiki": "design-howto-atlas",
-      "category": "🎨 ブランド分析・トレンド（notes/） 31本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/design-howto-atlas.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/design-howto-atlas.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-05-25",
-      "title": "MoneyForward 請求書作成手順 - ゆりこ用メモ",
-      "wiki": "index",
-      "category": "🎨 ブランド分析・トレンド（notes/） 31本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/20260525_moneyforward-invoice-howto/index.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/20260525_moneyforward-invoice-howto/index.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-05-25",
-      "title": "📚 手順書ライブラリ - ゆりこ用",
-      "wiki": "index",
-      "category": "🎨 ブランド分析・トレンド（notes/） 31本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/手順書/index.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/手順書/index.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-05-24",
-      "title": "🎴 Task Shuffle \\",
-      "wiki": "card-shuffle",
-      "category": "🎨 ブランド分析・トレンド（notes/） 31本",
-      "html_path": "",
-      "html_url": "",
-      "has_md": true
-    },
-    {
-      "date": "2026-05-24",
-      "title": "🌱 ゆりこ事業OS化プラン v5 — フル機能版",
-      "wiki": "2026-05-24_todo再設計プラン",
-      "category": "📋 プラン・設計書（_plans/） 1本",
-      "html_path": "/Users/yuriko/Documents/corin/30_🧠 context/_plans/2026-05-24_todo再設計プラン.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/30_🧠 context/_plans/2026-05-24_todo再設計プラン.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-05-21",
-      "title": "The Reading Monthly — Issue 01",
-      "wiki": "2026-05-21_リテラチャー2週間分析",
-      "category": "🎨 ブランド分析・トレンド（notes/） 31本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/2026-05-21_リテラチャー2週間分析.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/2026-05-21_リテラチャー2週間分析.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-05-20",
-      "title": "議事録自動化 現状整理 - 2026-05-20",
-      "wiki": "議事録自動化_現状整理_v1",
-      "category": "🤖 AI推進資料（ai/） 15本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/議事録自動化_現状整理_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/議事録自動化_現状整理_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-05-19",
-      "title": "ShopifyをClaudeに接続する手順 — KONNEKT INTERNATIONAL",
-      "wiki": "index",
-      "category": "🤖 AI推進資料（ai/） 15本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260519_Shopify_コネクタ手順/index.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260519_Shopify_コネクタ手順/index.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-05-17",
-      "title": "AMBUSH — Brand Analysis \\",
-      "wiki": "ambush-brand-analysis",
-      "category": "🎨 ブランド分析・トレンド（notes/） 31本",
-      "html_path": "",
-      "html_url": "",
-      "has_md": true
-    },
-    {
-      "date": "2026-05-17",
-      "title": "Stüssy — Brand Analysis \\",
-      "wiki": "stussy-brand-analysis",
-      "category": "🎨 ブランド分析・トレンド（notes/） 31本",
-      "html_path": "",
-      "html_url": "",
-      "has_md": true
-    },
-    {
-      "date": "2026-05-16",
-      "title": "Sacai — Brand Analysis",
-      "wiki": "sacai-brand-analysis",
-      "category": "🎨 ブランド分析・トレンド（notes/） 31本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/sacai-brand-analysis.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/sacai-brand-analysis.html",
+      "date": "2026-05-31",
+      "title": "KITH — Brand Analysis",
+      "wiki": "kith-brand-analysis",
+      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/kith-brand-analysis.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/kith-brand-analysis.html",
       "has_md": true
     }
   ],
