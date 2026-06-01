@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-06-02",
   "weather": {
-    "desc": "Overcast ",
+    "desc": "Sunny",
     "temp": "22",
-    "icon": "☁️"
+    "icon": "☀️"
   },
   "letter": {
-    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はOvercast 、22度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Marni</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はSunny、22度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>KITH</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Marni",
-    "tagline": "1994年ミラン発。大胆な色彩、職人技、芸術的自由が交差するイタリアン・ラグジュアリー。Consuelo Castiglioni が創設し、Francesco Risso が継承した「着るアート」の哲学。",
-    "insight": "Uniqloで「アクセシブル・ラグジュアリー」を実証",
+    "name": "KITH",
+    "tagline": "NYCのクイーンズから生まれた、コラボをDNAに持つモダンストリートライフスタイルの巨人。スニーカー文化を起点に、シリアルバー・BMW・ヴェルサーチまで射程に入れた全方位ブランド。",
+    "insight": "グローバル展開しながらNYCのオーラを失わない",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/marni-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/kith-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -245,7 +245,22 @@ window.CORIN_DATA = {
               "last_updated": "2026-05-31"
             },
             "links": [],
-            "process_progress": null
+            "process_progress": {
+              "K": "⬜",
+              "0": "⬜",
+              "0-1": "⬜",
+              "A": "⬜",
+              "B": "⬜",
+              "C": "⬜",
+              "Z": "⬜",
+              "V": "⬜",
+              "Y": "⬜",
+              "R-mid": "⬜",
+              "R-final": "⬜",
+              "completed_count": 0,
+              "in_progress_count": 0,
+              "total_count": 11
+            }
           },
           "meetings": [
             "@2026年5月13日_Armillary._川田はるくんとの打ち合わせ_議事メモ",
@@ -337,7 +352,22 @@ window.CORIN_DATA = {
               "last_updated": "2026-05-31"
             },
             "links": [],
-            "process_progress": null
+            "process_progress": {
+              "K": "⬜",
+              "0": "⬜",
+              "0-1": "⬜",
+              "A": "⬜",
+              "B": "⬜",
+              "C": "⬜",
+              "Z": "⬜",
+              "V": "⬜",
+              "Y": "⬜",
+              "R-mid": "⬜",
+              "R-final": "⬜",
+              "completed_count": 0,
+              "in_progress_count": 0,
+              "total_count": 11
+            }
           },
           "meetings": [
             "@2026年5月13日_Armillary._川田はるくんとの打ち合わせ_議事メモ",
@@ -376,7 +406,22 @@ window.CORIN_DATA = {
                 "url": "obsidian://advanced-uri?vault=corin&filepath=2026-05-18_%E3%81%95%E3%81%B6%E3%81%95%E3%82%93%E4%BE%9D%E9%A0%BC%E4%BA%8B%E9%A0%85.md"
               }
             ],
-            "process_progress": null
+            "process_progress": {
+              "K": "⬜",
+              "0": "⬜",
+              "0-1": "⬜",
+              "A": "⬜",
+              "B": "⬜",
+              "C": "⬜",
+              "Z": "⬜",
+              "V": "⬜",
+              "Y": "⬜",
+              "R-mid": "⬜",
+              "R-final": "⬜",
+              "completed_count": 0,
+              "in_progress_count": 0,
+              "total_count": 11
+            }
           },
           "meetings": [
             "📄 LDH_BDグッズ提案_ハブmd",
@@ -556,7 +601,22 @@ window.CORIN_DATA = {
               "last_updated": "2026-05-31"
             },
             "links": [],
-            "process_progress": null
+            "process_progress": {
+              "K": "⬜",
+              "0": "⬜",
+              "0-1": "⬜",
+              "A": "⬜",
+              "B": "⬜",
+              "C": "⬜",
+              "Z": "⬜",
+              "V": "⬜",
+              "Y": "⬜",
+              "R-mid": "⬜",
+              "R-final": "⬜",
+              "completed_count": 0,
+              "in_progress_count": 0,
+              "total_count": 11
+            }
           },
           "meetings": []
         },
@@ -582,7 +642,22 @@ window.CORIN_DATA = {
               "last_updated": "2026-05-31"
             },
             "links": [],
-            "process_progress": null
+            "process_progress": {
+              "K": "⬜",
+              "0": "⬜",
+              "0-1": "⬜",
+              "A": "⬜",
+              "B": "⬜",
+              "C": "⬜",
+              "Z": "⬜",
+              "V": "⬜",
+              "Y": "⬜",
+              "R-mid": "⬜",
+              "R-final": "⬜",
+              "completed_count": 0,
+              "in_progress_count": 0,
+              "total_count": 11
+            }
           },
           "meetings": []
         },
@@ -696,7 +771,22 @@ window.CORIN_DATA = {
               "last_updated": "2026-05-31"
             },
             "links": [],
-            "process_progress": null
+            "process_progress": {
+              "K": "⬜",
+              "0": "⬜",
+              "0-1": "⬜",
+              "A": "⬜",
+              "B": "⬜",
+              "C": "⬜",
+              "Z": "⬜",
+              "V": "⬜",
+              "Y": "⬜",
+              "R-mid": "⬜",
+              "R-final": "⬜",
+              "completed_count": 0,
+              "in_progress_count": 0,
+              "total_count": 11
+            }
           },
           "meetings": []
         },
@@ -745,7 +835,22 @@ window.CORIN_DATA = {
               "updated": "2026-05-25"
             },
             "links": [],
-            "process_progress": null
+            "process_progress": {
+              "K": "⬜",
+              "0": "⬜",
+              "0-1": "⬜",
+              "A": "⬜",
+              "B": "⬜",
+              "C": "⬜",
+              "Z": "⬜",
+              "V": "⬜",
+              "Y": "⬜",
+              "R-mid": "⬜",
+              "R-final": "⬜",
+              "completed_count": 0,
+              "in_progress_count": 0,
+              "total_count": 11
+            }
           },
           "meetings": [
             "2026-05-21_BIGBANG_MTG_議事メモ",
@@ -774,7 +879,22 @@ window.CORIN_DATA = {
               "last_updated": "2026-05-31"
             },
             "links": [],
-            "process_progress": null
+            "process_progress": {
+              "K": "⬜",
+              "0": "⬜",
+              "0-1": "⬜",
+              "A": "⬜",
+              "B": "⬜",
+              "C": "⬜",
+              "Z": "⬜",
+              "V": "⬜",
+              "Y": "⬜",
+              "R-mid": "⬜",
+              "R-final": "⬜",
+              "completed_count": 0,
+              "in_progress_count": 0,
+              "total_count": 11
+            }
           },
           "meetings": [
             "📍 avex"
