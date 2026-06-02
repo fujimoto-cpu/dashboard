@@ -379,6 +379,38 @@ def read_tonight(today_str):
     pick = candidates[0]
     return {"time": pick["time"], "summary": pick["summary"]}
 
+def read_schedule(today_str):
+    """Daily Note の `## 📅 今日のカレンダー` テーブルから今日の予定をパース。"""
+    path = DAILY_NOTE_DIR / f"{today_str}.md"
+    if not path.exists():
+        return {"events": [], "note_exists": False}
+    try:
+        text = path.read_text(encoding="utf-8")
+    except Exception:
+        return {"events": [], "note_exists": False}
+
+    section = re.search(r"##\s*[📅🗓].*?今日のカレンダー.*?(?=\n##|\Z)", text, re.DOTALL)
+    if not section:
+        return {"events": [], "note_exists": True}
+
+    block = section.group(0)
+    row_pat = re.compile(
+        r"^\|\s*(\d{1,2}:\d{2})\s*-\s*(\d{1,2}:\d{2})\s*\|\s*(.+?)\s*\|\s*(.+?)\s*\|\s*$",
+        re.MULTILINE,
+    )
+    events = []
+    for m in row_pat.finditer(block):
+        start, end, content, cal = m.group(1), m.group(2), m.group(3).strip(), m.group(4).strip()
+        is_private = "プライベート" in cal or "🎀" in content or "private" in cal.lower()
+        title = re.sub(r"^\[🎀\]\s*", "", content).strip()
+        events.append({
+            "start": start,
+            "end": end,
+            "title": title,
+            "tag": "private" if is_private else "work",
+        })
+    return {"events": events, "note_exists": True}
+
 # === CORIN手紙 ===
 ASCII_ARTS = [
     " /) /)\n(  • •)\n⊃ 🍵",
@@ -427,8 +459,104 @@ def make_letter(weather, brand, today_dt):
 # === Mission Control 用4関数（2026-05-30 追加） ===
 
 # プロジェクト概要 → カテゴリ別案件
+def categorize_by_tags(tags_str, client):
+    """tags / client から表示カテゴリ slug を推定"""
+    t = (tags_str or "").lower()
+    c = (client or "").lower()
+    # 優先順：AI推進 → 自動化 → プライベート → デザイン（デフォルト）
+    if any(k in t for k in ["ai推進", "ai-推進", "ai効果", "ai活用", "rag", "ai_pulse"]):
+        return "ai", "🤖 AI推進"
+    if any(k in t for k in ["自動化", "automation", "スキル", "ツール", "skill"]):
+        return "auto", "⚙️ 自動化・ツール"
+    if any(k in t for k in ["meadow", "private", "プライベート"]) or "meadow" in c:
+        return "private", "🦋 プライベート"
+    return "design", "🎨 デザイン・制作"
+
+
+def parse_project_hubs():
+    """projects/ 配下の type:project ハブmd を全スキャン → カテゴリ別グループ化（projects-overview.md 廃止後の新方式・2026-06-02）"""
+    cats_map = {
+        "design": {"name": "🎨 デザイン・制作", "slug": "design", "projects": []},
+        "ai": {"name": "🤖 AI推進", "slug": "ai", "projects": []},
+        "auto": {"name": "⚙️ 自動化・ツール", "slug": "auto", "projects": []},
+        "private": {"name": "🦋 プライベート", "slug": "private", "projects": []},
+        "done": {"name": "✅ 完了案件", "slug": "done", "projects": []},
+    }
+
+    for hub_path in PROJECTS_DIR.rglob("*.md"):
+        sp = str(hub_path)
+        if "/bk/" in sp or "/_templates/" in sp or "/終了した案件/" in sp:
+            continue
+        try:
+            content = hub_path.read_text(encoding="utf-8")
+        except Exception:
+            continue
+        m = re.match(r"^---\n(.*?)\n---", content, re.DOTALL)
+        if not m:
+            continue
+        fm_raw = m.group(1)
+        fm = {}
+        for line in fm_raw.split("\n"):
+            mm = re.match(r"^([a-zA-Z案件_-]+):\s*(.+?)\s*$", line)
+            if mm:
+                fm[mm.group(1)] = mm.group(2).strip('"').strip("'")
+        if fm.get("type") != "project":
+            continue
+        # tags チェック（project-board 必須）
+        tags = fm.get("tags", "")
+        if "project-board" not in tags.lower():
+            continue
+        status = fm.get("status", "in-progress").lower()
+        client = fm.get("client", "")
+        proj_key = fm.get("案件") or hub_path.stem
+        name = client or proj_key
+        # status からカテゴリ判定
+        if status in ("done", "archived", "cancelled"):
+            cat_slug = "done"
+            status_label = "📦 archived" if status in ("archived", "done") else "❌ " + status
+        else:
+            cat_slug, _ = categorize_by_tags(tags, client)
+            status_emoji = {"in-progress": "🔄", "planning": "⏳", "waiting": "⏸", "paused": "🔵"}.get(status, "🔄")
+            status_label = f"{status_emoji} {status}"
+
+        # 説明：本文の最初の意味ある行を取る（## 📋 概要 or 最初の文）
+        body = content[m.end():]
+        desc = ""
+        for line in body.split("\n"):
+            s = line.strip()
+            if not s or s.startswith("#") or s.startswith(">") or s.startswith("|") or s.startswith("-"):
+                continue
+            if s.startswith("---") or s.startswith("```"):
+                continue
+            desc = s[:80]
+            break
+
+        cats_map[cat_slug]["projects"].append({
+            "name": name,
+            "hub": hub_path.stem,
+            "status": status_label,
+            "desc": desc,
+            "_last_updated": fm.get("last_updated", ""),
+            "_priority": fm.get("priority", "P3"),
+        })
+
+    # done 以外は priority + last_updated 順、done は last_updated 降順
+    priority_order = {"P0": 0, "P1": 1, "P2": 2, "P3": 3}
+    for cat_slug, cat in cats_map.items():
+        if cat_slug == "done":
+            cat["projects"].sort(key=lambda p: p.get("_last_updated", ""), reverse=True)
+        else:
+            cat["projects"].sort(key=lambda p: (priority_order.get(p.get("_priority", "P3"), 3), -1 * (p.get("_last_updated", "") > "")))
+        for p in cat["projects"]:
+            p.pop("_last_updated", None)
+            p.pop("_priority", None)
+
+    # 空カテゴリは出さない
+    return [c for c in cats_map.values() if c["projects"]]
+
+
 def parse_projects_overview():
-    """projects-overview.md のテーブルからカテゴリ別案件リストを抽出"""
+    """projects-overview.md のテーブルからカテゴリ別案件リストを抽出（後方互換・廃止予定）"""
     if not PROJECTS_OVERVIEW.exists():
         return []
     text = PROJECTS_OVERVIEW.read_text(encoding="utf-8")
@@ -636,8 +764,11 @@ def find_meeting_notes(project_name):
 
 
 def get_active_projects():
-    """projects-overview.md パース + 各案件のハブmd判定 + 議事録紐付け"""
-    categories = parse_projects_overview()
+    """projects/ 配下のハブmd全スキャン + 各案件のハブmd詳細 + 議事録紐付け（2026-06-02 新方式）"""
+    categories = parse_project_hubs()
+    # フォールバック：もし projects/ スキャンが空なら旧方式（projects-overview.md）
+    if not categories:
+        categories = parse_projects_overview()
     for cat in categories:
         for proj in cat["projects"]:
             proj["hub_info"] = check_hub_md(proj["hub"])
@@ -781,6 +912,8 @@ def main():
     print(f"[collection_stats] total={coll_stats['total'] if coll_stats else 0}")
     tonight = read_tonight(today_str)
     print(f"[tonight] {tonight['summary'] if tonight else 'none'}")
+    schedule = read_schedule(today_str)
+    print(f"[schedule] {len(schedule['events'])} events")
     library = get_library()
     print(f"[library] {len(library)} repos")
 
@@ -814,6 +947,7 @@ def main():
         "oshi": oshi,
         "collection_stats": coll_stats,
         "tonight": tonight,
+        "schedule": schedule,
         "daily_photo": None,
         "library": library,
         # Mission Control（2026-05-30 追加）

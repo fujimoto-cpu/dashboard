@@ -21,9 +21,9 @@
   updateClock();
   setInterval(updateClock, 30 * 1000);
 
-  // ======== テーマタグ（曜日感だけシンプルに） ========
-  let themeTag = '— 朝の3分 —';
-  if (w === 0 || w === 6) themeTag = '🎀 週末モード';
+  // ======== テーマタグ ========
+  let themeTag = '🍑 朝の3分';
+  if (w === 0 || w === 6) themeTag = '🦋 週末モード';
   else if (w === 1) themeTag = '🍵 月曜・今週の3つ';
   else if (w === 5) themeTag = '🌙 金曜・整理の日';
   document.getElementById('theme-tag').textContent = themeTag;
@@ -157,7 +157,68 @@
     // Mission Control（2026-05-30 追加）
     if (data.active_projects) renderActiveProjects(data.active_projects);
     if (data.recent_html) renderRecentHtml(data.recent_html);
-    if (data.static_links) renderStaticLinks(data.static_links);
+    if (data.static_links) renderDynamicStaticLinks(data.static_links);
+
+    // 今日のスケジュール（v3 追加）
+    if (data.schedule) renderSchedule(data.schedule);
+  }
+
+  // ======== スケジュール（HERO） ========
+  function renderSchedule(schedule) {
+    const list = document.getElementById('timeline-list');
+    const meta = document.getElementById('schedule-meta');
+    if (!list) return;
+    const events = schedule.events || [];
+    if (!events.length) {
+      list.innerHTML = `<li class="schedule-empty">${schedule.note_exists ? '今日は予定なし。ゆっくりした朝。' : 'Daily Note 未生成。/ohayo を回すと埋まる。'}</li>`;
+      if (meta) meta.textContent = schedule.note_exists ? '今日は予定なし' : '/ohayo を回すと表示されるよ';
+      return;
+    }
+    const nowH = new Date().getHours();
+    const nowM = new Date().getMinutes();
+    const nowMin = nowH * 60 + nowM;
+    list.innerHTML = events.map(ev => {
+      const [eh, em] = ev.end.split(':').map(Number);
+      const endMin = eh * 60 + em;
+      const passed = endMin < nowMin;
+      const tagCls = ev.tag === 'private' ? 'tag-private' : 'tag-work';
+      return `<li class="timeline-item ${tagCls}${passed ? ' passed' : ''}">
+        <span class="timeline-time">${escapeHtml(ev.start)}–${escapeHtml(ev.end)}</span>
+        <span class="timeline-title">${escapeHtml(ev.title)}</span>
+      </li>`;
+    }).join('');
+    const next = events.find(ev => {
+      const [sh, sm] = ev.start.split(':').map(Number);
+      return sh * 60 + sm > nowMin;
+    });
+    if (meta) {
+      if (next) {
+        meta.textContent = `次は ${next.start} 〜 ${next.title}`;
+      } else {
+        meta.textContent = `今日の予定 ${events.length}件 ・ 全部おわり ✨`;
+      }
+    }
+  }
+
+  // ======== 動的リンク（aggregate.py由来をdynamic-static-links区画に追加） ========
+  function renderDynamicStaticLinks(linksObj) {
+    const wrap = document.getElementById('dynamic-static-links');
+    if (!wrap) return;
+    const isWork = document.body.classList.contains('mode-work');
+    const groups = isWork ? (linksObj.work || []) : (linksObj.private || []);
+    if (!groups.length) {
+      wrap.innerHTML = '';
+      return;
+    }
+    wrap.innerHTML = groups.map(g => `
+      <h3>${escapeHtml(g.group)}</h3>
+      <div class="static-link-grid">
+        ${g.links.map(l => `
+          <a class="static-link-btn" href="${l.url}" target="_blank">
+            <span class="static-link-icon">${l.icon || '🔗'}</span>
+            <span class="static-link-label">${escapeHtml(l.label)}</span>
+          </a>`).join('')}
+      </div>`).join('');
   }
 
   // ======== Mission Control レンダリング ========
@@ -265,14 +326,12 @@
       list.innerHTML = '<li class="placeholder">HTMLが見つかりません</li>';
       return;
     }
-    // 2日以内を「新着」判定
-    const now = new Date();
-    const twoDaysAgo = new Date(now.getTime() - 2 * 24 * 60 * 60 * 1000);
+    // 当日のみ「新着」判定（過剰なピンク塗りを防ぐ）
+    const todayDateStr = `${y}-${pad(m)}-${pad(d)}`;
     let freshCount = 0;
     if (meta) meta.textContent = `${items.length}本`;
     list.innerHTML = items.map(it => {
-      const date = new Date(it.date);
-      const isFresh = date >= twoDaysAgo;
+      const isFresh = it.date === todayDateStr;
       if (isFresh) freshCount++;
       const catEmoji = pickCategoryEmoji(it.category);
       const obsidianLink = it.wiki ? `obsidian://advanced-uri?vault=corin&filepath=${encodeURIComponent(it.wiki + '.md')}` : '';
@@ -304,31 +363,10 @@
     return '📄';
   }
 
-  function renderStaticLinks(linksObj) {
-    const wrap = document.getElementById('static-links-wrap');
-    if (!wrap) return;
-    const isWork = document.body.classList.contains('mode-work');
-    const groups = isWork ? (linksObj.work || []) : (linksObj.private || []);
-    if (!groups.length) {
-      wrap.innerHTML = '<p class="placeholder">リンクが設定されていません</p>';
-      return;
-    }
-    wrap.innerHTML = groups.map(g => `
-      <div class="static-link-group">
-        <h3>${escapeHtml(g.group)}</h3>
-        <div class="static-link-grid">
-          ${g.links.map(l => `
-            <a class="static-link-btn" href="${l.url}" target="_blank">
-              <span class="static-link-icon">${l.icon || '🔗'}</span>
-              <span class="static-link-label">${escapeHtml(l.label)}</span>
-            </a>`).join('')}
-        </div>
-      </div>`).join('');
-  }
-  // モード切替時に重要リンクを再レンダリング
+  // モード切替時に動的リンクを再レンダリング
   document.getElementById('mode-switch')?.addEventListener('change', () => {
     if (window.CORIN_DATA && window.CORIN_DATA.static_links) {
-      renderStaticLinks(window.CORIN_DATA.static_links);
+      renderDynamicStaticLinks(window.CORIN_DATA.static_links);
     }
   });
 
@@ -367,16 +405,16 @@
 
   function renderTonight(tonight) {
     if (!tonight || !tonight.summary) return;
-    const sec = document.getElementById('tonight-section');
-    sec.style.display = '';
+    const sec = document.getElementById('tonight-block');
+    if (sec) sec.style.display = '';
     const text = document.getElementById('tonight-text');
-    text.innerHTML = `<span class="tonight-time">${tonight.time || ''}</span>${tonight.summary}`;
+    if (text) text.innerHTML = `<span class="tonight-time">${tonight.time || ''}</span>${tonight.summary}`;
   }
 
   function renderDailyPhoto(photo) {
     if (!photo || !photo.image) return;
-    const sec = document.getElementById('polaroid-section');
-    sec.style.display = '';
+    const sec = document.getElementById('polaroid-block');
+    if (sec) sec.style.display = '';
     const wrap = document.getElementById('polaroid-wrap');
     wrap.innerHTML = `
       <a class="polaroid" href="${photo.link || '#'}" target="_blank">
@@ -428,7 +466,7 @@
     if (!text) return;
     if (todos.length >= 3) {
       todoInputEl.value = '';
-      todoInputEl.placeholder = '3つまでにしよ！';
+      todoInputEl.placeholder = '3つまで！大事なやつだけ';
       setTimeout(() => { todoInputEl.placeholder = '例: メール返信3件'; }, 1500);
       return;
     }
@@ -457,7 +495,7 @@
   renderTodos();
 
   // ======== 紙吹雪 ========
-  const CONFETTI_COLORS = ['#f08c7a', '#4a9be8', '#3fa86a', '#c8b6e2', '#e8c4d0', '#b8c9a4'];
+  const CONFETTI_COLORS = ['#6cc9a0', '#ff6b9d', '#ffb800', '#9d80ec', '#b8e6d0', '#ffb3cc'];
   function sprinkleConfetti(count = 30) {
     for (let i = 0; i < count; i++) {
       const el = document.createElement('div');
@@ -498,7 +536,7 @@
       clickTimes = clickTimes.filter(t => now - t < 3000);
       logo.style.transition = 'transform 0.2s, color 0.2s';
       logo.style.transform = 'scale(1.2)';
-      logo.style.color = '#EE7B6A';
+      logo.style.color = '#a87a79';
       setTimeout(() => {
         logo.style.transform = '';
         logo.style.color = '';
