@@ -16,14 +16,12 @@
     --ink: #1a1410;
     --ink-soft: #4a3f35;
     --muted: #8a7a6a;
-    --line: #e8dfd1;
+    --line: #ece4d4;
     --accent: #6b5a4a;
     --accent-warm: #a89380;
-    --shadow-sm: 0 1px 3px rgba(60, 40, 20, 0.05);
-    --shadow-md: 0 4px 16px rgba(60, 40, 20, 0.08);
-    --shadow-lg: 0 8px 28px rgba(60, 40, 20, 0.12);
-    --radius: 14px;
-    --radius-sm: 8px;
+    --shadow-sm: 0 1px 2px rgba(60, 40, 20, 0.04);
+    --shadow-md: 0 4px 14px rgba(60, 40, 20, 0.08);
+    --radius: 12px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,49 +30,68 @@
     font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
     background: var(--bg);
     color: var(--ink);
-    line-height: 1.6;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
   }
 
-  .container { max-width: 1180px; margin: 0 auto; padding: 36px 20px 100px; }
+  .container { max-width: 1280px; margin: 0 auto; padding: 28px 20px 80px; }
 
   /* --- header --- */
-  header { margin-bottom: 40px; }
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  .brand-block { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
   .brand {
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 0.25em;
     color: var(--muted);
     font-weight: 600;
     text-transform: uppercase;
-    margin-bottom: 10px;
   }
   h1 {
-    font-size: 32px;
+    font-size: 22px;
     font-weight: 700;
     color: var(--ink);
     letter-spacing: -0.02em;
-    margin-bottom: 6px;
   }
   .sub {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--muted);
+    margin-left: 4px;
     font-weight: 400;
   }
 
+  .nav-back {
+    font-size: 11px;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--card);
+    white-space: nowrap;
+  }
+  .nav-back:hover { background: var(--bg-warm); }
+
   /* --- search --- */
   .search-wrap {
-    margin-top: 22px;
     position: relative;
-    max-width: 420px;
+    margin-bottom: 14px;
+    max-width: 480px;
   }
   .search-input {
     width: 100%;
-    padding: 12px 16px 12px 42px;
+    padding: 10px 14px 10px 38px;
     border: 1px solid var(--line);
     background: var(--card);
-    border-radius: 24px;
-    font-size: 14px;
+    border-radius: 20px;
+    font-size: 13px;
     color: var(--ink);
     font-family: inherit;
     transition: all 0.15s;
@@ -87,167 +104,187 @@
   }
   .search-icon {
     position: absolute;
-    left: 16px;
+    left: 14px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 14px;
+    font-size: 13px;
     color: var(--muted);
   }
 
-  /* --- section --- */
-  .section { margin-top: 44px; }
-  .section-head {
+  /* --- tabs --- */
+  .tabs {
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
+    gap: 4px;
+    overflow-x: auto;
     margin-bottom: 18px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--line);
+    padding-bottom: 4px;
+    scrollbar-width: none;
   }
-  .section-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--ink);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    letter-spacing: -0.01em;
-  }
-  .section-title .emoji { font-size: 20px; }
-  .section-count {
-    font-size: 11px;
-    color: var(--muted);
-    font-variant-numeric: tabular-nums;
-    letter-spacing: 0.05em;
-  }
-
-  /* --- filter chips --- */
-  .chips {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin-bottom: 14px;
-  }
-  .chip {
-    font-size: 12px;
-    padding: 6px 14px;
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    font-size: 13px;
+    padding: 8px 16px;
     border: 1px solid var(--line);
-    border-radius: 18px;
+    border-radius: 20px;
     background: var(--card);
     color: var(--ink-soft);
     cursor: pointer;
     font-family: inherit;
     transition: all 0.15s;
     white-space: nowrap;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
   }
-  .chip.active {
+  .tab .tab-count {
+    font-size: 10px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .tab.active {
     background: var(--ink);
     color: white;
     border-color: var(--ink);
   }
-  .chip:hover:not(.active) {
-    background: var(--bg-warm);
-    border-color: var(--accent-warm);
+  .tab.active .tab-count { color: rgba(255,255,255,0.7); }
+  .tab:hover:not(.active) { background: var(--bg-warm); border-color: var(--accent-warm); }
+
+  /* --- subchips (HTML categories) --- */
+  .subchips {
+    display: none;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .subchips.visible { display: flex; }
+  .subchip {
+    font-size: 11px;
+    padding: 4px 11px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--card);
+    color: var(--muted);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.12s;
+    white-space: nowrap;
+  }
+  .subchip.active { background: var(--ink-soft); color: white; border-color: var(--ink-soft); }
+  .subchip:hover:not(.active) { background: var(--bg-warm); color: var(--ink-soft); }
+
+  /* --- section --- */
+  .section { margin-bottom: 26px; }
+  .section.hidden { display: none; }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink-soft);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .section-count {
+    font-size: 10px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.06em;
   }
 
   /* --- grid --- */
   .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-  .grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
-  @media (max-width: 720px) {
-    .grid, .grid-3 { grid-template-columns: 1fr; }
-    h1 { font-size: 26px; }
-    .container { padding: 24px 16px 80px; }
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
   }
 
-  /* --- card --- */
+  /* --- HTML card --- */
   .card {
     background: var(--card);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    padding: 16px 18px;
-    transition: all 0.18s;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    position: relative;
+    padding: 12px 14px;
+    transition: all 0.15s;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 92px;
   }
   .card:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
     border-color: var(--accent-warm);
   }
-  .card-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 4px;
-  }
   .card-title {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     color: var(--ink);
-    line-height: 1.45;
-    flex: 1;
-    min-width: 0;
+    line-height: 1.4;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    text-decoration: none;
+    flex: 1;
   }
-  .card-date {
+  .card-title:hover { color: var(--accent); }
+  .card-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 10px;
     color: var(--muted);
-    font-variant-numeric: tabular-nums;
-    letter-spacing: 0.04em;
-    white-space: nowrap;
   }
-  .card-meta {
-    font-size: 11px;
+  .card-cat {
     color: var(--accent);
-    margin-top: 6px;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    min-width: 0;
+  }
+  .card-date {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    margin-left: 6px;
   }
   .card-actions {
     display: flex;
-    gap: 6px;
-    margin-top: 10px;
+    gap: 4px;
     flex-wrap: wrap;
   }
   .action {
-    font-size: 10.5px;
-    padding: 3px 8px;
+    font-size: 10px;
+    padding: 2px 7px;
     border: 1px solid var(--line);
-    border-radius: 4px;
+    border-radius: 3px;
     background: var(--bg);
     color: var(--ink-soft);
     text-decoration: none;
-    transition: all 0.12s;
-    letter-spacing: 0.03em;
+    transition: all 0.1s;
   }
   .action:hover { background: var(--ink); color: white; border-color: var(--ink); }
 
-  /* --- simple link card (for static links) --- */
+  /* --- link-card (static items) --- */
   .link-card {
     background: var(--card);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    padding: 18px 20px;
+    padding: 12px 14px;
     text-decoration: none;
     color: inherit;
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    transition: all 0.18s;
+    gap: 3px;
+    transition: all 0.15s;
     position: relative;
+    min-height: 84px;
   }
   .link-card:hover {
     transform: translateY(-2px);
@@ -257,117 +294,130 @@
   .link-card::after {
     content: "↗";
     position: absolute;
-    top: 16px;
-    right: 18px;
-    font-size: 14px;
+    top: 12px;
+    right: 14px;
+    font-size: 12px;
     color: var(--muted);
-    transition: all 0.18s;
+    transition: all 0.15s;
   }
   .link-card:hover::after {
     color: var(--accent);
     transform: translate(2px, -2px);
   }
   .link-name {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     color: var(--ink);
-    padding-right: 24px;
+    padding-right: 20px;
+    line-height: 1.4;
+  }
+  .link-desc {
+    font-size: 11px;
+    color: var(--accent);
+    line-height: 1.4;
   }
   .link-url {
-    font-size: 11px;
+    font-size: 10px;
     color: var(--muted);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-  .link-desc {
-    font-size: 11.5px;
-    color: var(--accent);
     margin-top: 2px;
   }
 
-  .empty { text-align: center; padding: 40px; color: var(--muted); font-size: 13px; }
-  .nav-back {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    color: var(--accent);
-    text-decoration: none;
-    padding: 6px 12px;
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    background: var(--card);
-    margin-top: 14px;
-  }
-  .nav-back:hover { background: var(--bg-warm); }
+  .empty { text-align: center; padding: 30px; color: var(--muted); font-size: 12px; grid-column: 1 / -1; }
 
   footer {
-    margin-top: 60px;
-    padding-top: 20px;
+    margin-top: 40px;
+    padding-top: 16px;
     border-top: 1px solid var(--line);
     text-align: center;
-    font-size: 11px;
+    font-size: 10px;
     color: var(--muted);
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
+  }
+
+  /* mobile */
+  @media (max-width: 640px) {
+    .container { padding: 20px 14px 60px; }
+    h1 { font-size: 18px; }
+    .sub { display: block; margin-left: 0; margin-top: 2px; }
+    .grid { grid-template-columns: 1fr; gap: 8px; }
+    .tabs { margin-bottom: 14px; }
+    .tab { font-size: 12px; padding: 7px 13px; }
   }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <header>
-    <div class="brand">YURIKO · HUB · 2026</div>
-    <h1>🦋 リンク集</h1>
-    <div class="sub">最近のHTML・Notion・Drive・公開ページを一画面で。</div>
-    <div class="search-wrap">
-      <span class="search-icon">🔍</span>
-      <input class="search-input" id="search" type="text" placeholder="タイトル / 案件名 / カテゴリで検索...">
+  <div class="header-row">
+    <div class="brand-block">
+      <div>
+        <div class="brand">YURIKO · HUB</div>
+        <h1>🦋 リンク集<span class="sub">最近のHTML・Notion・Drive・公開ページ</span></h1>
+      </div>
     </div>
     <a class="nav-back" href="index.html">← Mission Control</a>
-  </header>
+  </div>
 
-  <!-- 📄 最近のHTML -->
-  <section class="section">
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input class="search-input" id="search" type="text" placeholder="タイトル・案件名・URLで検索...">
+  </div>
+
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-tab="all">✨ すべて <span class="tab-count" id="cnt-all"></span></button>
+    <button class="tab" data-tab="html">📄 HTML <span class="tab-count" id="cnt-html"></span></button>
+    <button class="tab" data-tab="pages">🌐 公開ページ <span class="tab-count" id="cnt-pages"></span></button>
+    <button class="tab" data-tab="notion">📓 Notion <span class="tab-count" id="cnt-notion"></span></button>
+    <button class="tab" data-tab="drive">📁 Drive <span class="tab-count" id="cnt-drive"></span></button>
+    <button class="tab" data-tab="tools">🔧 ツール <span class="tab-count" id="cnt-tools"></span></button>
+  </div>
+
+  <!-- subchips only for HTML/all -->
+  <div class="subchips" id="subchips"></div>
+
+  <!-- HTML -->
+  <section class="section" id="sec-html">
     <div class="section-head">
-      <div class="section-title"><span class="emoji">📄</span>最近のHTML</div>
+      <div class="section-title">📄 最近のHTML</div>
       <div class="section-count" id="html-count"></div>
     </div>
-    <div class="chips" id="html-chips"></div>
     <div class="grid" id="html-grid"></div>
   </section>
 
-  <!-- 🌐 GitHub Pages 公開URL -->
-  <section class="section">
+  <!-- Pages -->
+  <section class="section" id="sec-pages">
     <div class="section-head">
-      <div class="section-title"><span class="emoji">🌐</span>公開ページ（GitHub Pages）</div>
+      <div class="section-title">🌐 公開ページ</div>
       <div class="section-count" id="pages-count"></div>
     </div>
     <div class="grid" id="pages-grid"></div>
   </section>
 
-  <!-- 📓 Notion -->
-  <section class="section">
+  <!-- Notion -->
+  <section class="section" id="sec-notion">
     <div class="section-head">
-      <div class="section-title"><span class="emoji">📓</span>案件 Notion リンク</div>
+      <div class="section-title">📓 案件 Notion</div>
       <div class="section-count" id="notion-count"></div>
     </div>
     <div class="grid" id="notion-grid"></div>
   </section>
 
-  <!-- 📁 Google Drive -->
-  <section class="section">
+  <!-- Drive -->
+  <section class="section" id="sec-drive">
     <div class="section-head">
-      <div class="section-title"><span class="emoji">📁</span>Google Drive</div>
+      <div class="section-title">📁 Google Drive</div>
       <div class="section-count" id="drive-count"></div>
     </div>
     <div class="grid" id="drive-grid"></div>
   </section>
 
-  <!-- 🔧 よく使う -->
-  <section class="section">
+  <!-- Tools -->
+  <section class="section" id="sec-tools">
     <div class="section-head">
-      <div class="section-title"><span class="emoji">🔧</span>よく使う</div>
+      <div class="section-title">🔧 よく使う</div>
       <div class="section-count" id="tools-count"></div>
     </div>
     <div class="grid" id="tools-grid"></div>
@@ -378,16 +428,16 @@
   </footer>
 </div>
 
-<script src="data.js?v=20260607hub"></script>
+<script src="data.js?v=20260607hub2"></script>
 <script>
-  // ============ Static link data ============
+  // ============ Static data ============
   const PAGES = [
-    { name: "Mission Control（dashboard）", desc: "毎朝のコックピット", url: "https://fujimoto-cpu.github.io/dashboard/" },
-    { name: "経営ダッシュボード（モック）", desc: "KONNEKT 経営数値モック v10", url: "https://fujimoto-cpu.github.io/management-dashboard/" },
+    { name: "Mission Control", desc: "毎朝のコックピット", url: "https://fujimoto-cpu.github.io/dashboard/" },
+    { name: "経営ダッシュボード", desc: "KONNEKT 経営数値モック v10", url: "https://fujimoto-cpu.github.io/management-dashboard/" },
     { name: "IPレポート（週次）", desc: "月曜配信・IP関連ニュース", url: "https://fujimoto-cpu.github.io/ip-report/" },
     { name: "X AIトレンド（日次）", desc: "Xで話題のAI投稿10件", url: "https://fujimoto-cpu.github.io/x-ai-trends/" },
-    { name: "ファッションレポート", desc: "日本・韓国・世界の日次ファッションニュース", url: "https://fujimoto-cpu.github.io/fashion-report/" },
-    { name: "LiteratureNote Reader", desc: "Obsidian文献ノートのスマホ閲覧", url: "https://fujimoto-cpu.github.io/literature/" },
+    { name: "ファッションレポート", desc: "日本・韓国・世界の日次ファッション", url: "https://fujimoto-cpu.github.io/fashion-report/" },
+    { name: "Literature Reader", desc: "文献ノートのスマホ閲覧", url: "https://fujimoto-cpu.github.io/literature/" },
     { name: "RAG ガイド", desc: "社内AI推進・RAG解説", url: "https://fujimoto-cpu.github.io/rag-guide/" },
   ];
 
@@ -395,7 +445,7 @@
     { name: "🗂 マスターインデックス", desc: "全案件リンク横断", url: "https://www.notion.so/34e7f11c9bd0814991faf391588abeb1" },
     { name: "Armillary. 26SS", desc: "プロジェクトリンク一覧", url: "https://www.notion.so/34e7f11c9bd08186a337c5a04caddca3" },
     { name: "LAVANDA", desc: "ボンドロシール・コスメ", url: "https://www.notion.so/3667f11c9bd0817b90c4c480dc0a4620" },
-    { name: "kemio 抹茶（human lounge）", desc: "プロジェクトリンク一覧", url: "https://www.notion.so/3667f11c9bd0819aa4f8dffdca25ad3c" },
+    { name: "kemio 抹茶", desc: "human lounge プロジェクト", url: "https://www.notion.so/3667f11c9bd0819aa4f8dffdca25ad3c" },
   ];
 
   const DRIVE = [
@@ -405,49 +455,60 @@
   const TOOLS = [
     { name: "📊 Mission Control", desc: "毎朝の Cockpit", url: "index.html" },
     { name: "📋 議事録ダッシュボード", desc: "会議メモジャーナル", url: "file:///Users/yuriko/Documents/corin/00_%F0%9F%8F%A2%20company/secretary/outputs/2026-05-31_%E8%AD%B0%E4%BA%8B%E9%8C%B2%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%83%BC%E3%83%89.html" },
-    { name: "🗂 Obsidian Vault を開く", desc: "corin vault ホーム", url: "obsidian://open?vault=corin" },
-    { name: "📁 outputs/ INDEX", desc: "HTML 71本の全件リスト (Obsidian)", url: "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company%2Fsecretary%2Foutputs%2FINDEX.md&openmode=tab" },
+    { name: "🗂 Obsidian Vault", desc: "corin vault を開く", url: "obsidian://open?vault=corin" },
+    { name: "📁 outputs/ INDEX", desc: "HTML 71本の全件リスト", url: "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company%2Fsecretary%2Foutputs%2FINDEX.md&openmode=tab" },
   ];
 
-  // ============ Recent HTML (from data.js) ============
+  // ============ Recent HTML ============
   const recentItems = (window.CORIN_DATA && window.CORIN_DATA.recent_html) || [];
   const categories = [...new Set(recentItems.map(i => i.category).filter(Boolean))];
+
+  let activeTab = "all";
   let activeCategory = "ALL";
   let searchTerm = "";
+
+  // tab counts
+  document.getElementById('cnt-all').textContent = recentItems.length + PAGES.length + NOTION.length + DRIVE.length + TOOLS.length;
+  document.getElementById('cnt-html').textContent = recentItems.length;
+  document.getElementById('cnt-pages').textContent = PAGES.length;
+  document.getElementById('cnt-notion').textContent = NOTION.length;
+  document.getElementById('cnt-drive').textContent = DRIVE.length;
+  document.getElementById('cnt-tools').textContent = TOOLS.length;
 
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
-
   function obsidianUri(wiki) {
     if (!wiki) return null;
     return `obsidian://advanced-uri?vault=corin&filename=${encodeURIComponent(wiki)}&openmode=tab`;
   }
-
-  function buildChips() {
-    const wrap = document.getElementById('html-chips');
-    const allBtn = document.createElement('button');
-    allBtn.className = 'chip active';
-    allBtn.textContent = `すべて (${recentItems.length})`;
-    allBtn.onclick = () => { activeCategory = "ALL"; setActiveChip(allBtn); renderHtml(); };
-    wrap.appendChild(allBtn);
-    categories.forEach(cat => {
-      const btn = document.createElement('button');
-      btn.className = 'chip';
-      const count = recentItems.filter(i => i.category === cat).length;
-      btn.textContent = `${cat.replace(/\s+\d+本$/, '')} (${count})`;
-      btn.onclick = () => { activeCategory = cat; setActiveChip(btn); renderHtml(); };
-      wrap.appendChild(btn);
-    });
-  }
-  function setActiveChip(btn) {
-    document.querySelectorAll('.chip').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  }
-
   function matchesSearch(text) {
     if (!searchTerm) return true;
     return text.toLowerCase().includes(searchTerm.toLowerCase());
+  }
+
+  function buildSubchips() {
+    const wrap = document.getElementById('subchips');
+    wrap.innerHTML = '';
+    const allBtn = document.createElement('button');
+    allBtn.className = 'subchip active';
+    allBtn.textContent = `すべて (${recentItems.length})`;
+    allBtn.onclick = () => { activeCategory = "ALL"; setActiveSubchip(allBtn); renderHtml(); };
+    wrap.appendChild(allBtn);
+    categories.forEach(cat => {
+      const btn = document.createElement('button');
+      btn.className = 'subchip';
+      const count = recentItems.filter(i => i.category === cat).length;
+      const label = cat.replace(/\s+\d+本$/, '').replace(/^[^\s]+\s/, '');
+      btn.textContent = `${label} (${count})`;
+      btn.title = cat;
+      btn.onclick = () => { activeCategory = cat; setActiveSubchip(btn); renderHtml(); };
+      wrap.appendChild(btn);
+    });
+  }
+  function setActiveSubchip(btn) {
+    document.querySelectorAll('.subchip').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
   }
 
   function renderHtml() {
@@ -460,21 +521,22 @@
     });
     count.textContent = `${filtered.length} / ${recentItems.length}`;
     if (filtered.length === 0) {
-      grid.innerHTML = '<div class="empty" style="grid-column:1/-1;">該当なし</div>';
+      grid.innerHTML = '<div class="empty">該当なし</div>';
       return;
     }
     grid.innerHTML = filtered.map(i => {
       const obs = obsidianUri(i.wiki);
+      const cat = (i.category || '').replace(/\s+\d+本$/, '');
       return `
         <div class="card">
-          <div class="card-head">
-            <a class="card-title" href="${i.html_url}" target="_blank">${escapeHtml(i.title || i.wiki || '無題')}</a>
+          <a class="card-title" href="${i.html_url}" target="_blank">${escapeHtml(i.title || i.wiki || '無題')}</a>
+          <div class="card-foot">
+            <span class="card-cat" title="${escapeHtml(cat)}">${escapeHtml(cat)}</span>
             <span class="card-date">${i.date || ''}</span>
           </div>
-          <div class="card-meta">${escapeHtml((i.category || '').replace(/\s+\d+本$/, ''))}</div>
           <div class="card-actions">
-            <a class="action" href="${i.html_url}" target="_blank">HTML</a>
-            ${obs ? `<a class="action" href="${obs}">Obsidian</a>` : ''}
+            <a class="action" href="${i.html_url}" target="_blank">📄 HTML</a>
+            ${obs ? `<a class="action" href="${obs}">📝 Obsidian</a>` : ''}
           </div>
         </div>
       `;
@@ -487,7 +549,7 @@
     const filtered = items.filter(i => matchesSearch(`${i.name} ${i.desc || ''} ${i.url}`));
     count.textContent = `${filtered.length} / ${items.length}`;
     if (filtered.length === 0) {
-      grid.innerHTML = '<div class="empty" style="grid-column:1/-1;">該当なし</div>';
+      grid.innerHTML = '<div class="empty">該当なし</div>';
       return;
     }
     grid.innerHTML = filtered.map(i => `
@@ -499,6 +561,24 @@
     `).join('');
   }
 
+  function applyTabVisibility() {
+    const sections = ['html', 'pages', 'notion', 'drive', 'tools'];
+    sections.forEach(s => {
+      const el = document.getElementById(`sec-${s}`);
+      if (activeTab === 'all' || activeTab === s) {
+        el.classList.remove('hidden');
+      } else {
+        el.classList.add('hidden');
+      }
+    });
+    const subchips = document.getElementById('subchips');
+    if (activeTab === 'html' || activeTab === 'all') {
+      subchips.classList.add('visible');
+    } else {
+      subchips.classList.remove('visible');
+    }
+  }
+
   function renderAll() {
     renderHtml();
     renderStaticGrid('pages-grid', 'pages-count', PAGES);
@@ -507,12 +587,22 @@
     renderStaticGrid('tools-grid', 'tools-count', TOOLS);
   }
 
+  document.querySelectorAll('.tab').forEach(t => {
+    t.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      t.classList.add('active');
+      activeTab = t.dataset.tab;
+      applyTabVisibility();
+    });
+  });
+
   document.getElementById('search').addEventListener('input', (e) => {
     searchTerm = e.target.value;
     renderAll();
   });
 
-  buildChips();
+  buildSubchips();
+  applyTabVisibility();
   renderAll();
 </script>
 </body>
