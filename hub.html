@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#faf6f0">
+<title>🦋 Yuriko Hub — リンク集</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%8B%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #faf6f0;
+    --bg-warm: #f5efe5;
+    --card: #ffffff;
+    --ink: #1a1410;
+    --ink-soft: #4a3f35;
+    --muted: #8a7a6a;
+    --line: #e8dfd1;
+    --accent: #6b5a4a;
+    --accent-warm: #a89380;
+    --shadow-sm: 0 1px 3px rgba(60, 40, 20, 0.05);
+    --shadow-md: 0 4px 16px rgba(60, 40, 20, 0.08);
+    --shadow-lg: 0 8px 28px rgba(60, 40, 20, 0.12);
+    --radius: 14px;
+    --radius-sm: 8px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  .container { max-width: 1180px; margin: 0 auto; padding: 36px 20px 100px; }
+
+  /* --- header --- */
+  header { margin-bottom: 40px; }
+  .brand {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .sub {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  /* --- search --- */
+  .search-wrap {
+    margin-top: 22px;
+    position: relative;
+    max-width: 420px;
+  }
+  .search-input {
+    width: 100%;
+    padding: 12px 16px 12px 42px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    border-radius: 24px;
+    font-size: 14px;
+    color: var(--ink);
+    font-family: inherit;
+    transition: all 0.15s;
+    box-shadow: var(--shadow-sm);
+  }
+  .search-input:focus {
+    outline: none;
+    border-color: var(--accent-warm);
+    box-shadow: var(--shadow-md);
+  }
+  .search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  /* --- section --- */
+  .section { margin-top: 44px; }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: -0.01em;
+  }
+  .section-title .emoji { font-size: 20px; }
+  .section-count {
+    font-size: 11px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.05em;
+  }
+
+  /* --- filter chips --- */
+  .chips {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .chip {
+    font-size: 12px;
+    padding: 6px 14px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--card);
+    color: var(--ink-soft);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .chip.active {
+    background: var(--ink);
+    color: white;
+    border-color: var(--ink);
+  }
+  .chip:hover:not(.active) {
+    background: var(--bg-warm);
+    border-color: var(--accent-warm);
+  }
+
+  /* --- grid --- */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 720px) {
+    .grid, .grid-3 { grid-template-columns: 1fr; }
+    h1 { font-size: 26px; }
+    .container { padding: 24px 16px 80px; }
+  }
+
+  /* --- card --- */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    transition: all 0.18s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-warm);
+  }
+  .card-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+  .card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.45;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .card-date {
+    font-size: 10px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  .card-meta {
+    font-size: 11px;
+    color: var(--accent);
+    margin-top: 6px;
+    letter-spacing: 0.02em;
+  }
+  .card-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .action {
+    font-size: 10.5px;
+    padding: 3px 8px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--bg);
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: all 0.12s;
+    letter-spacing: 0.03em;
+  }
+  .action:hover { background: var(--ink); color: white; border-color: var(--ink); }
+
+  /* --- simple link card (for static links) --- */
+  .link-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: all 0.18s;
+    position: relative;
+  }
+  .link-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-warm);
+  }
+  .link-card::after {
+    content: "↗";
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    font-size: 14px;
+    color: var(--muted);
+    transition: all 0.18s;
+  }
+  .link-card:hover::after {
+    color: var(--accent);
+    transform: translate(2px, -2px);
+  }
+  .link-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    padding-right: 24px;
+  }
+  .link-url {
+    font-size: 11px;
+    color: var(--muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .link-desc {
+    font-size: 11.5px;
+    color: var(--accent);
+    margin-top: 2px;
+  }
+
+  .empty { text-align: center; padding: 40px; color: var(--muted); font-size: 13px; }
+  .nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: var(--card);
+    margin-top: 14px;
+  }
+  .nav-back:hover { background: var(--bg-warm); }
+
+  footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="brand">YURIKO · HUB · 2026</div>
+    <h1>🦋 リンク集</h1>
+    <div class="sub">最近のHTML・Notion・Drive・公開ページを一画面で。</div>
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input class="search-input" id="search" type="text" placeholder="タイトル / 案件名 / カテゴリで検索...">
+    </div>
+    <a class="nav-back" href="index.html">← Mission Control</a>
+  </header>
+
+  <!-- 📄 最近のHTML -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-title"><span class="emoji">📄</span>最近のHTML</div>
+      <div class="section-count" id="html-count"></div>
+    </div>
+    <div class="chips" id="html-chips"></div>
+    <div class="grid" id="html-grid"></div>
+  </section>
+
+  <!-- 🌐 GitHub Pages 公開URL -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-title"><span class="emoji">🌐</span>公開ページ（GitHub Pages）</div>
+      <div class="section-count" id="pages-count"></div>
+    </div>
+    <div class="grid" id="pages-grid"></div>
+  </section>
+
+  <!-- 📓 Notion -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-title"><span class="emoji">📓</span>案件 Notion リンク</div>
+      <div class="section-count" id="notion-count"></div>
+    </div>
+    <div class="grid" id="notion-grid"></div>
+  </section>
+
+  <!-- 📁 Google Drive -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-title"><span class="emoji">📁</span>Google Drive</div>
+      <div class="section-count" id="drive-count"></div>
+    </div>
+    <div class="grid" id="drive-grid"></div>
+  </section>
+
+  <!-- 🔧 よく使う -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-title"><span class="emoji">🔧</span>よく使う</div>
+      <div class="section-count" id="tools-count"></div>
+    </div>
+    <div class="grid" id="tools-grid"></div>
+  </section>
+
+  <footer>
+    🦋 YURIKO HUB · noindex · curated by CORIN
+  </footer>
+</div>
+
+<script src="data.js?v=20260607hub"></script>
+<script>
+  // ============ Static link data ============
+  const PAGES = [
+    { name: "Mission Control（dashboard）", desc: "毎朝のコックピット", url: "https://fujimoto-cpu.github.io/dashboard/" },
+    { name: "経営ダッシュボード（モック）", desc: "KONNEKT 経営数値モック v10", url: "https://fujimoto-cpu.github.io/management-dashboard/" },
+    { name: "IPレポート（週次）", desc: "月曜配信・IP関連ニュース", url: "https://fujimoto-cpu.github.io/ip-report/" },
+    { name: "X AIトレンド（日次）", desc: "Xで話題のAI投稿10件", url: "https://fujimoto-cpu.github.io/x-ai-trends/" },
+    { name: "ファッションレポート", desc: "日本・韓国・世界の日次ファッションニュース", url: "https://fujimoto-cpu.github.io/fashion-report/" },
+    { name: "LiteratureNote Reader", desc: "Obsidian文献ノートのスマホ閲覧", url: "https://fujimoto-cpu.github.io/literature/" },
+    { name: "RAG ガイド", desc: "社内AI推進・RAG解説", url: "https://fujimoto-cpu.github.io/rag-guide/" },
+  ];
+
+  const NOTION = [
+    { name: "🗂 マスターインデックス", desc: "全案件リンク横断", url: "https://www.notion.so/34e7f11c9bd0814991faf391588abeb1" },
+    { name: "Armillary. 26SS", desc: "プロジェクトリンク一覧", url: "https://www.notion.so/34e7f11c9bd08186a337c5a04caddca3" },
+    { name: "LAVANDA", desc: "ボンドロシール・コスメ", url: "https://www.notion.so/3667f11c9bd0817b90c4c480dc0a4620" },
+    { name: "kemio 抹茶（human lounge）", desc: "プロジェクトリンク一覧", url: "https://www.notion.so/3667f11c9bd0819aa4f8dffdca25ad3c" },
+  ];
+
+  const DRIVE = [
+    { name: "81fes 参考素材", desc: "デザイン参考・素材・資料", url: "https://drive.google.com/drive/u/0/folders/1rDIIOrflwP6Q4LD1eelHz7ldOZyI7FUE" },
+  ];
+
+  const TOOLS = [
+    { name: "📊 Mission Control", desc: "毎朝の Cockpit", url: "index.html" },
+    { name: "📋 議事録ダッシュボード", desc: "会議メモジャーナル", url: "file:///Users/yuriko/Documents/corin/00_%F0%9F%8F%A2%20company/secretary/outputs/2026-05-31_%E8%AD%B0%E4%BA%8B%E9%8C%B2%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%83%BC%E3%83%89.html" },
+    { name: "🗂 Obsidian Vault を開く", desc: "corin vault ホーム", url: "obsidian://open?vault=corin" },
+    { name: "📁 outputs/ INDEX", desc: "HTML 71本の全件リスト (Obsidian)", url: "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company%2Fsecretary%2Foutputs%2FINDEX.md&openmode=tab" },
+  ];
+
+  // ============ Recent HTML (from data.js) ============
+  const recentItems = (window.CORIN_DATA && window.CORIN_DATA.recent_html) || [];
+  const categories = [...new Set(recentItems.map(i => i.category).filter(Boolean))];
+  let activeCategory = "ALL";
+  let searchTerm = "";
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function obsidianUri(wiki) {
+    if (!wiki) return null;
+    return `obsidian://advanced-uri?vault=corin&filename=${encodeURIComponent(wiki)}&openmode=tab`;
+  }
+
+  function buildChips() {
+    const wrap = document.getElementById('html-chips');
+    const allBtn = document.createElement('button');
+    allBtn.className = 'chip active';
+    allBtn.textContent = `すべて (${recentItems.length})`;
+    allBtn.onclick = () => { activeCategory = "ALL"; setActiveChip(allBtn); renderHtml(); };
+    wrap.appendChild(allBtn);
+    categories.forEach(cat => {
+      const btn = document.createElement('button');
+      btn.className = 'chip';
+      const count = recentItems.filter(i => i.category === cat).length;
+      btn.textContent = `${cat.replace(/\s+\d+本$/, '')} (${count})`;
+      btn.onclick = () => { activeCategory = cat; setActiveChip(btn); renderHtml(); };
+      wrap.appendChild(btn);
+    });
+  }
+  function setActiveChip(btn) {
+    document.querySelectorAll('.chip').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  function matchesSearch(text) {
+    if (!searchTerm) return true;
+    return text.toLowerCase().includes(searchTerm.toLowerCase());
+  }
+
+  function renderHtml() {
+    const grid = document.getElementById('html-grid');
+    const count = document.getElementById('html-count');
+    const filtered = recentItems.filter(i => {
+      if (activeCategory !== "ALL" && i.category !== activeCategory) return false;
+      const hay = `${i.title || ''} ${i.wiki || ''} ${i.category || ''}`;
+      return matchesSearch(hay);
+    });
+    count.textContent = `${filtered.length} / ${recentItems.length}`;
+    if (filtered.length === 0) {
+      grid.innerHTML = '<div class="empty" style="grid-column:1/-1;">該当なし</div>';
+      return;
+    }
+    grid.innerHTML = filtered.map(i => {
+      const obs = obsidianUri(i.wiki);
+      return `
+        <div class="card">
+          <div class="card-head">
+            <a class="card-title" href="${i.html_url}" target="_blank">${escapeHtml(i.title || i.wiki || '無題')}</a>
+            <span class="card-date">${i.date || ''}</span>
+          </div>
+          <div class="card-meta">${escapeHtml((i.category || '').replace(/\s+\d+本$/, ''))}</div>
+          <div class="card-actions">
+            <a class="action" href="${i.html_url}" target="_blank">HTML</a>
+            ${obs ? `<a class="action" href="${obs}">Obsidian</a>` : ''}
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function renderStaticGrid(elId, countId, items) {
+    const grid = document.getElementById(elId);
+    const count = document.getElementById(countId);
+    const filtered = items.filter(i => matchesSearch(`${i.name} ${i.desc || ''} ${i.url}`));
+    count.textContent = `${filtered.length} / ${items.length}`;
+    if (filtered.length === 0) {
+      grid.innerHTML = '<div class="empty" style="grid-column:1/-1;">該当なし</div>';
+      return;
+    }
+    grid.innerHTML = filtered.map(i => `
+      <a class="link-card" href="${i.url}" target="_blank" rel="noopener">
+        <div class="link-name">${escapeHtml(i.name)}</div>
+        ${i.desc ? `<div class="link-desc">${escapeHtml(i.desc)}</div>` : ''}
+        <div class="link-url">${escapeHtml(i.url.replace(/^https?:\/\//, '').replace(/^file:\/\/\//, '/'))}</div>
+      </a>
+    `).join('');
+  }
+
+  function renderAll() {
+    renderHtml();
+    renderStaticGrid('pages-grid', 'pages-count', PAGES);
+    renderStaticGrid('notion-grid', 'notion-count', NOTION);
+    renderStaticGrid('drive-grid', 'drive-count', DRIVE);
+    renderStaticGrid('tools-grid', 'tools-count', TOOLS);
+  }
+
+  document.getElementById('search').addEventListener('input', (e) => {
+    searchTerm = e.target.value;
+    renderAll();
+  });
+
+  buildChips();
+  renderAll();
+</script>
+</body>
+</html>
