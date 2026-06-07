@@ -330,9 +330,10 @@
   .card-actions {
     display: flex;
     gap: 5px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-top: 4px;
   }
+  .card-actions .action { white-space: nowrap; flex-shrink: 0; }
   .action {
     font-size: 11px;
     font-weight: 600;
@@ -515,7 +516,7 @@
       <div class="section-count" id="html-count"></div>
     </div>
     <div class="hint">
-      💡 <strong>「📋 コピーして開く」</strong>を押す → Chromeのアドレスバーに貼り付け（⌘V）→ Enter で開けるよ。<br>
+      💡 <strong>「📋 コピー」</strong>を押す → Chromeのアドレスバーに貼り付け（⌘V）→ Enter で開けるよ。<br>
       <span style="opacity:0.7;font-size:10px;">※ ブラウザのセキュリティ上、このページから直接 file:// は開けない仕様。コピー経由が唯一の手段。</span>
     </div>
     <div class="grid" id="html-grid"></div>
@@ -653,7 +654,7 @@
             <span class="card-date">${i.date || ''}</span>
           </div>
           <div class="card-actions">
-            <button class="action action-copy" data-copy="${escapeHtml(i.html_url)}">📋 コピーして開く</button>
+            <button class="action action-copy" data-copy="${escapeHtml(i.html_url)}">📋 コピー</button>
             ${obs ? `<a class="action action-obs" href="${obs}">📝 Obsidian</a>` : ''}
           </div>
         </div>
