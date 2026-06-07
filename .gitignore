@@ -1,0 +1,11 @@
+# Editor / OS
+.DS_Store
+__pycache__/
+*.pyc
+
+# Backups
+*.bak
+
+# Local assets (not pushed)
+assets/
+bk/

@@ -241,29 +241,66 @@
   /* --- grid --- */
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
   }
 
   /* --- card base --- */
   .card, .link-card {
     background: var(--card);
     border-radius: var(--radius);
-    padding: 10px 12px 11px 14px;
-    transition: all 0.15s;
+    transition: all 0.18s cubic-bezier(.4,0,.2,1);
     text-decoration: none;
     color: inherit;
     display: flex;
     flex-direction: column;
-    gap: 4px;
     border: 1px solid var(--line);
     border-left-width: 4px;
-    min-height: 86px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card { padding: 0; }
+  .link-card { padding: 12px 14px 13px 16px; gap: 4px; min-height: 86px; }
+  .card:hover, .link-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* --- thumbnail --- */
+  .card-thumb-wrap {
+    aspect-ratio: 16 / 10;
+    width: 100%;
+    overflow: hidden;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
     position: relative;
   }
-  .card:hover, .link-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+  .card-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.5s cubic-bezier(.4,0,.2,1);
+    display: block;
+  }
+  .card:hover .card-thumb { transform: scale(1.06); }
+  .card-thumb-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    background: linear-gradient(135deg, var(--c-html-bg) 0%, #f3d9c8 100%);
+    color: var(--c-html);
+    opacity: 0.7;
+  }
+  .card-body {
+    padding: 10px 12px 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
   }
 
   .section[data-kind="html"]   .card { border-left-color: var(--c-html); }
@@ -645,17 +682,23 @@
     grid.innerHTML = filtered.map(i => {
       const obs = obsidianUri(i.wiki);
       const cat = (i.category || '').replace(/\s+\d+本$/, '');
+      const thumb = i.thumbnail_url
+        ? `<img class="card-thumb" src="${escapeHtml(i.thumbnail_url)}" loading="lazy" alt="">`
+        : `<div class="card-thumb-fallback">📄</div>`;
       return `
         <div class="card">
-          <span class="pill">HTML</span>
-          <a class="card-title" href="${i.html_url}" target="_blank">${escapeHtml(i.title || i.wiki || '無題')}</a>
-          <div class="card-foot">
-            <span class="card-cat" title="${escapeHtml(cat)}">${escapeHtml(cat)}</span>
-            <span class="card-date">${i.date || ''}</span>
-          </div>
-          <div class="card-actions">
-            <button class="action action-copy" data-copy="${escapeHtml(i.html_url)}">📋 コピー</button>
-            ${obs ? `<a class="action action-obs" href="${obs}">📝 Obsidian</a>` : ''}
+          <div class="card-thumb-wrap">${thumb}</div>
+          <div class="card-body">
+            <span class="pill">HTML</span>
+            <a class="card-title" href="${i.html_url}" target="_blank">${escapeHtml(i.title || i.wiki || '無題')}</a>
+            <div class="card-foot">
+              <span class="card-cat" title="${escapeHtml(cat)}">${escapeHtml(cat)}</span>
+              <span class="card-date">${i.date || ''}</span>
+            </div>
+            <div class="card-actions">
+              <button class="action action-copy" data-copy="${escapeHtml(i.html_url)}">📋 コピー</button>
+              ${obs ? `<a class="action action-obs" href="${obs}">📝 Obsidian</a>` : ''}
+            </div>
           </div>
         </div>
       `;

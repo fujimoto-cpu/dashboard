@@ -893,7 +893,8 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 7本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-02_企画テンプレ_自己レビュー_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-02_企画テンプレ_自己レビュー_v1.html",
-      "has_md": false
+      "has_md": false,
+      "thumbnail_url": "thumbs/2026-06-02_v1.webp"
     },
     {
       "date": "2026-06-02",
@@ -902,7 +903,8 @@ window.CORIN_DATA = {
       "category": "📁 案件ドラフト（_ai-drafts/） 11本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_グッズ提案_リファレンス版_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_グッズ提案_リファレンス版_v3.html",
-      "has_md": true
+      "has_md": true,
+      "thumbnail_url": "thumbs/Armillary_26AW_v3.webp"
     },
     {
       "date": "2026-06-02",
@@ -911,7 +913,8 @@ window.CORIN_DATA = {
       "category": "📁 案件ドラフト（_ai-drafts/） 11本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_セッションA_過去販売データ分析_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_セッションA_過去販売データ分析_v1.html",
-      "has_md": false
+      "has_md": false,
+      "thumbnail_url": "thumbs/Armillary_26AW_A_v1.webp"
     },
     {
       "date": "2026-06-01",
@@ -920,7 +923,8 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 7本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-01_企画テンプレ改善提案_CORIN_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-01_企画テンプレ改善提案_CORIN_v1.html",
-      "has_md": true
+      "has_md": true,
+      "thumbnail_url": "thumbs/2026-06-01_CORIN_v1.webp"
     },
     {
       "date": "2026-06-01",
@@ -929,7 +933,8 @@ window.CORIN_DATA = {
       "category": "📁 案件ドラフト（_ai-drafts/） 11本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_イメージボード_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_イメージボード_v3.html",
-      "has_md": false
+      "has_md": false,
+      "thumbnail_url": "thumbs/Armillary_26AW_v3.webp"
     },
     {
       "date": "2026-06-01",
@@ -938,7 +943,8 @@ window.CORIN_DATA = {
       "category": "📁 案件ドラフト（_ai-drafts/） 11本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_グッズ提案_リファレンス版_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_グッズ提案_リファレンス版_v1.html",
-      "has_md": true
+      "has_md": true,
+      "thumbnail_url": "thumbs/Armillary_26AW_v1.webp"
     },
     {
       "date": "2026-05-31",
@@ -947,7 +953,8 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 7本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-05-31_議事録ダッシュボード.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-05-31_議事録ダッシュボード.html",
-      "has_md": true
+      "has_md": true,
+      "thumbnail_url": "thumbs/2026-05-31.webp"
     },
     {
       "date": "2026-05-31",
@@ -956,7 +963,8 @@ window.CORIN_DATA = {
       "category": "🎨 ブランド分析・トレンド（notes/） 35本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/ader-error-brand-analysis.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/ader-error-brand-analysis.html",
-      "has_md": true
+      "has_md": true,
+      "thumbnail_url": "thumbs/ader-error-brand-analysis.webp"
     },
     {
       "date": "2026-05-31",
@@ -965,7 +973,8 @@ window.CORIN_DATA = {
       "category": "🎨 ブランド分析・トレンド（notes/） 35本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/aesop-brand-analysis.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/aesop-brand-analysis.html",
-      "has_md": true
+      "has_md": true,
+      "thumbnail_url": "thumbs/aesop-brand-analysis.webp"
     },
     {
       "date": "2026-05-31",
@@ -983,7 +992,8 @@ window.CORIN_DATA = {
       "category": "🎨 ブランド分析・トレンド（notes/） 35本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html",
-      "has_md": false
+      "has_md": false,
+      "thumbnail_url": "thumbs/apotheke-fragrance-brand-analysis.webp"
     },
     {
       "date": "2026-05-31",
@@ -1001,7 +1011,8 @@ window.CORIN_DATA = {
       "category": "🎨 ブランド分析・トレンド（notes/） 35本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/cullni-brand-analysis.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/cullni-brand-analysis.html",
-      "has_md": false
+      "has_md": false,
+      "thumbnail_url": "thumbs/cullni-brand-analysis.webp"
     },
     {
       "date": "2026-05-31",
@@ -1010,7 +1021,8 @@ window.CORIN_DATA = {
       "category": "🎨 ブランド分析・トレンド（notes/） 35本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/diptyque-brand-analysis.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/diptyque-brand-analysis.html",
-      "has_md": false
+      "has_md": false,
+      "thumbnail_url": "thumbs/diptyque-brand-analysis.webp"
     },
     {
       "date": "2026-05-31",
@@ -1019,7 +1031,8 @@ window.CORIN_DATA = {
       "category": "🎨 ブランド分析・トレンド（notes/） 35本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/fog-brand-analysis.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/fog-brand-analysis.html",
-      "has_md": true
+      "has_md": true,
+      "thumbnail_url": "thumbs/fog-brand-analysis.webp"
     },
     {
       "date": "2026-05-31",
@@ -1028,7 +1041,8 @@ window.CORIN_DATA = {
       "category": "🎨 ブランド分析・トレンド（notes/） 35本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/gentle-monster-brand-analysis.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/gentle-monster-brand-analysis.html",
-      "has_md": true
+      "has_md": true,
+      "thumbnail_url": "thumbs/gentle-monster-brand-analysis.webp"
     },
     {
       "date": "2026-05-31",
@@ -1037,7 +1051,8 @@ window.CORIN_DATA = {
       "category": "🎨 ブランド分析・トレンド（notes/） 35本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/humanrace-brand-analysis.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/humanrace-brand-analysis.html",
-      "has_md": true
+      "has_md": true,
+      "thumbnail_url": "thumbs/humanrace-brand-analysis.webp"
     },
     {
       "date": "2026-05-31",
@@ -1046,7 +1061,8 @@ window.CORIN_DATA = {
       "category": "🎨 ブランド分析・トレンド（notes/） 35本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/index.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/index.html",
-      "has_md": true
+      "has_md": true,
+      "thumbnail_url": "thumbs/index.webp"
     },
     {
       "date": "2026-05-31",
@@ -1055,7 +1071,8 @@ window.CORIN_DATA = {
       "category": "🎨 ブランド分析・トレンド（notes/） 35本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/jacquemus-brand-analysis.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/jacquemus-brand-analysis.html",
-      "has_md": true
+      "has_md": true,
+      "thumbnail_url": "thumbs/jacquemus-brand-analysis.webp"
     },
     {
       "date": "2026-05-31",
@@ -1064,7 +1081,8 @@ window.CORIN_DATA = {
       "category": "🎨 ブランド分析・トレンド（notes/） 35本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/kith-brand-analysis.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/kith-brand-analysis.html",
-      "has_md": true
+      "has_md": true,
+      "thumbnail_url": "thumbs/kith-brand-analysis.webp"
     }
   ],
   "static_links": {
