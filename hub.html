@@ -515,7 +515,8 @@
       <div class="section-count" id="html-count"></div>
     </div>
     <div class="hint">
-      💡 ローカルHTMLはこのWebからは直接開けないよ。<strong>「📋 コピー」</strong>を押してChromeのアドレスバーに貼り付け→Enterで開ける。
+      💡 <strong>「📋 コピーして開く」</strong>を押す → Chromeのアドレスバーに貼り付け（⌘V）→ Enter で開けるよ。<br>
+      <span style="opacity:0.7;font-size:10px;">※ ブラウザのセキュリティ上、このページから直接 file:// は開けない仕様。コピー経由が唯一の手段。</span>
     </div>
     <div class="grid" id="html-grid"></div>
   </section>
@@ -652,9 +653,8 @@
             <span class="card-date">${i.date || ''}</span>
           </div>
           <div class="card-actions">
-            <a class="action action-html" href="${i.html_url}" target="_blank">📄 開く</a>
+            <button class="action action-copy" data-copy="${escapeHtml(i.html_url)}">📋 コピーして開く</button>
             ${obs ? `<a class="action action-obs" href="${obs}">📝 Obsidian</a>` : ''}
-            <button class="action action-copy" data-copy="${escapeHtml(i.html_url)}">📋 コピー</button>
           </div>
         </div>
       `;
