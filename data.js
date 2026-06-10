@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-06-02",
+  "date": "2026-06-10",
   "weather": {
-    "desc": "Patchy rain nearby",
+    "desc": "Partly cloudy",
     "temp": "22",
-    "icon": "🌧"
+    "icon": "☁️"
   },
   "letter": {
-    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はPatchy rain nearby、22度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>ADER ERROR</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はPartly cloudy、22度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Human race</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "ADER ERROR",
-    "tagline": "「エラー」を美学に変える、ソウル発のコンセプト・コレクティブ。匿名の20人チームが生み出す「意図的な失敗」が世界を席巻する。",
-    "insight": "希少性設計と完売率90%超の仕組み",
+    "name": "Human race",
+    "tagline": "ウェルネスを起点に、スキンケア・アパレル・カルチャーを横断するファレル・ウィリアムス創設のライフスタイルブランド。",
+    "insight": "Step 1 — Why の言語化",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/ader-error-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/humanrace-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -79,7 +79,162 @@ window.CORIN_DATA = {
     "note_exists": true
   },
   "daily_photo": null,
-  "library": [],
+  "library": [
+    {
+      "name": "management-dashboard",
+      "description": "経営ダッシュボード（モック）noindex",
+      "url": "https://fujimoto-cpu.github.io/management-dashboard/",
+      "icon": "🦋",
+      "pushed_at": "2026-06-09T09:05:13Z"
+    },
+    {
+      "name": "ip-report",
+      "description": "KONNEKT INTERNATIONAL IP News Daily Report",
+      "url": "https://fujimoto-cpu.github.io/ip-report",
+      "icon": "📰",
+      "pushed_at": "2026-06-08T01:00:43Z"
+    },
+    {
+      "name": "cowork-guide",
+      "description": "",
+      "url": "https://fujimoto-cpu.github.io/cowork-guide/",
+      "icon": "📘",
+      "pushed_at": "2026-06-05T09:09:12Z"
+    },
+    {
+      "name": "pantone",
+      "description": "Pantone Solid Coated quick reference (3,219 colors) with search and CMYK→Pantone lookup",
+      "url": "https://fujimoto-cpu.github.io/pantone/",
+      "icon": "📄",
+      "pushed_at": "2026-06-05T05:50:51Z"
+    },
+    {
+      "name": "am-board-2026",
+      "description": "26AW fashion image board (internal reference, noindex)",
+      "url": "https://fujimoto-cpu.github.io/am-board-2026/",
+      "icon": "📄",
+      "pushed_at": "2026-06-01T10:46:08Z"
+    },
+    {
+      "name": "recall-recorder",
+      "description": "Recall — KONNEKT社内議事録録音アプリ（PWA）",
+      "url": "https://fujimoto-cpu.github.io/recall-recorder/",
+      "icon": "📄",
+      "pushed_at": "2026-05-31T06:47:04Z"
+    },
+    {
+      "name": "graphic-taste-gallery",
+      "description": "グラフィック・テイスト図鑑（noindex）",
+      "url": "https://fujimoto-cpu.github.io/graphic-taste-gallery/",
+      "icon": "📄",
+      "pushed_at": "2026-05-27T10:20:54Z"
+    },
+    {
+      "name": "ai-pulse-survey",
+      "description": "AI Pulse 月次アンケートフォーム（KONNEKT INTERNATIONAL社員向け・noindex公開）",
+      "url": "https://fujimoto-cpu.github.io/ai-pulse-survey/",
+      "icon": "🤖",
+      "pushed_at": "2026-05-27T05:05:52Z"
+    },
+    {
+      "name": "design-howto-atlas",
+      "description": "Design Howto Atlas — 画像から逆引きできる Illustrator/Photoshop デザインノウハウ集（110件・noindex公開）",
+      "url": "https://fujimoto-cpu.github.io/design-howto-atlas/",
+      "icon": "📄",
+      "pushed_at": "2026-05-26T14:26:59Z"
+    },
+    {
+      "name": "literature",
+      "description": "Literature Notes reader",
+      "url": "https://fujimoto-cpu.github.io/literature/",
+      "icon": "📚",
+      "pushed_at": "2026-05-25T23:21:50Z"
+    },
+    {
+      "name": "ai-pulse",
+      "description": "AI Pulse - KONNEKT INTERNATIONAL 社員AI活用度可視化アプリ",
+      "url": "https://fujimoto-cpu.github.io/ai-pulse/",
+      "icon": "🤖",
+      "pushed_at": "2026-05-20T22:19:23Z"
+    },
+    {
+      "name": "bigbang-guide",
+      "description": "👑 BIGBANG 超入門ガイド — K-POPの伝説を何も知らない人が学べるアプリ",
+      "url": "https://fujimoto-cpu.github.io/bigbang-guide/",
+      "icon": "👑",
+      "pushed_at": "2026-05-20T21:58:07Z"
+    },
+    {
+      "name": "x-ai-trends",
+      "description": "",
+      "url": "https://fujimoto-cpu.github.io/x-ai-trends/",
+      "icon": "🤖",
+      "pushed_at": "2026-05-20T21:45:53Z"
+    },
+    {
+      "name": "heike-guide",
+      "description": "🎭 平家終焉 — 蒼月の契り 観劇前ガイド（平家物語超入門）",
+      "url": "https://fujimoto-cpu.github.io/heike-guide/",
+      "icon": "🎭",
+      "pushed_at": "2026-05-20T21:45:53Z"
+    },
+    {
+      "name": "fashion-report",
+      "description": "Daily Fashion Trend Report | Japan × Korea × World",
+      "url": "https://fujimoto-cpu.github.io/fashion-report/",
+      "icon": "👗",
+      "pushed_at": "2026-05-20T21:45:53Z"
+    },
+    {
+      "name": "basketball-rules",
+      "description": "🏀 バスケットボール観戦ガイド",
+      "url": "https://fujimoto-cpu.github.io/basketball-rules/",
+      "icon": "🏀",
+      "pushed_at": "2026-05-20T21:45:53Z"
+    },
+    {
+      "name": "manifesto",
+      "description": "Yuriko's working manifesto",
+      "url": "https://fujimoto-cpu.github.io/manifesto/",
+      "icon": "✊",
+      "pushed_at": "2026-05-20T21:45:53Z"
+    },
+    {
+      "name": "brand-analysis",
+      "description": "Brand Research Library — fashion / lifestyle brand deep dives",
+      "url": "https://fujimoto-cpu.github.io/brand-analysis/",
+      "icon": "🎨",
+      "pushed_at": "2026-05-20T21:45:53Z"
+    },
+    {
+      "name": "artist-knowledge",
+      "description": "Personal artist knowledge archive (private)",
+      "url": "https://fujimoto-cpu.github.io/artist-knowledge/",
+      "icon": "📄",
+      "pushed_at": "2026-05-20T21:40:04Z"
+    },
+    {
+      "name": "reading-monthly",
+      "description": "A private reading journal for Yuriko Fujimoto, edited by CORIN.",
+      "url": "https://fujimoto-cpu.github.io/reading-monthly/",
+      "icon": "📄",
+      "pushed_at": "2026-05-20T18:14:17Z"
+    },
+    {
+      "name": "shopify-connector-guide",
+      "description": "Shopify connector setup guide for KONNEKT INTERNATIONAL",
+      "url": "https://fujimoto-cpu.github.io/shopify-connector-guide/",
+      "icon": "🎀",
+      "pushed_at": "2026-05-19T06:55:08Z"
+    },
+    {
+      "name": "rag-guide",
+      "description": "RAG explainer — KONNEKT INTERNATIONAL AI推進",
+      "url": "https://fujimoto-cpu.github.io/rag-guide/",
+      "icon": "🎀",
+      "pushed_at": "2026-05-14T04:30:10Z"
+    }
+  ],
   "active_projects": [
     {
       "name": "🎨 デザイン・制作",
@@ -230,33 +385,7 @@ window.CORIN_DATA = {
               "deadline": "2026-06-30",
               "tags": "[project-board, LAVANDA, シール, 制作物]",
               "created": "2026-05-31",
-              "last_updated": "2026-05-31"
-            },
-            "links": [],
-            "process_progress": null
-          },
-          "meetings": []
-        },
-        {
-          "name": "LAVANDA（イエロー株式会社）",
-          "hub": "LAVANDA_ドロップシール",
-          "status": "🔄 active",
-          "desc": "filters:",
-          "hub_info": {
-            "exists": true,
-            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/LAVANDA/20260531_ドロップシール/LAVANDA_ドロップシール.md",
-            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/LAVANDA/20260531_%E3%83%89%E3%83%AD%E3%83%83%E3%83%97%E3%82%B7%E3%83%BC%E3%83%AB/LAVANDA_%E3%83%89%E3%83%AD%E3%83%83%E3%83%97%E3%82%B7%E3%83%BC%E3%83%AB.md",
-            "frontmatter": {
-              "type": "project",
-              "案件": "LAVANDA_ドロップシール",
-              "client": "LAVANDA（イエロー株式会社）",
-              "status": "active",
-              "priority": "P1",
-              "start": "2026-05-26",
-              "deadline": "null",
-              "tags": "[project-board, LAVANDA, シール, 制作物]",
-              "created": "2026-05-31",
-              "last_updated": "2026-05-31"
+              "last_updated": "2026-06-04T17"
             },
             "links": [],
             "process_progress": null
@@ -282,7 +411,7 @@ window.CORIN_DATA = {
               "deadline": "2026-12-31",
               "tags": "[project-board, kemio, 抹茶, Human-Lounge, パッケージ, ブランディング]",
               "created": "2026-03-02",
-              "last_updated": "2026-05-31"
+              "last_updated": "2026-06-05"
             },
             "links": [],
             "process_progress": null
@@ -354,6 +483,10 @@ window.CORIN_DATA = {
               {
                 "label": "2026-05-31_イメージ参考ブ",
                 "url": "obsidian://advanced-uri?vault=corin&filepath=2026-05-31_%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E5%8F%82%E8%80%83%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89%E7%94%BB%E5%83%8F.md"
+              },
+              {
+                "label": "2026-06-02_Armilla",
+                "url": "obsidian://advanced-uri?vault=corin&filepath=2026-06-02_Armillary._%E6%9C%AC%E4%BA%BA%E6%89%93%E3%81%A1%E5%90%88%E3%82%8F%E3%81%9B_%E8%AD%B0%E4%BA%8B%E3%83%A1%E3%83%A2.md"
               },
               {
                 "label": "@2026年5月13日_Armill",
@@ -710,6 +843,8 @@ window.CORIN_DATA = {
             }
           },
           "meetings": [
+            "👤️ avex_小島莉央",
+            "👤️ avex_秀太",
             "📍 avex"
           ]
         },
@@ -831,6 +966,7 @@ window.CORIN_DATA = {
             }
           },
           "meetings": [
+            "2026-06-02_Armillary._本人打ち合わせ_議事メモ",
             "@2026年5月13日_Armillary._川田はるくんとの打ち合わせ_議事メモ",
             "@2026年5月13日_Armillary._川田はるくんとの打ち合わせ_議事メモ",
             "👗️ Armillary."
@@ -877,6 +1013,7 @@ window.CORIN_DATA = {
             }
           },
           "meetings": [
+            "2026-06-02_Armillary._本人打ち合わせ_議事メモ",
             "@2026年5月13日_Armillary._川田はるくんとの打ち合わせ_議事メモ",
             "@2026年5月13日_Armillary._川田はるくんとの打ち合わせ_議事メモ",
             "👗️ Armillary."
@@ -887,14 +1024,112 @@ window.CORIN_DATA = {
   ],
   "recent_html": [
     {
+      "date": "2026-06-10",
+      "title": "会議タスク→AI自動リサーチ体制 提案 v1",
+      "wiki": "2026-06-10_会議タスク自動リサーチ体制_提案_v1",
+      "category": "🤖 CORIN出力（outputs/） 18本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-10_会議タスク自動リサーチ体制_提案_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-10_会議タスク自動リサーチ体制_提案_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-06-08",
+      "title": "ビジョン統合ゴールツリー設計案",
+      "wiki": "2026-06-08_ビジョン統合ゴールツリー設計案",
+      "category": "🤖 CORIN出力（outputs/） 18本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-08_ビジョン統合ゴールツリー設計案.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-08_ビジョン統合ゴールツリー設計案.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-06-08",
+      "title": "内田博史【金持ちの習慣】から、ゆりこがまず取り入れるべきこと",
+      "wiki": "2026-06-08_内田博史_まず取り入れるべきこと",
+      "category": "🤖 CORIN出力（outputs/） 18本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-08_内田博史_まず取り入れるべきこと.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-08_内田博史_まず取り入れるべきこと.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-06-07",
+      "title": "Claude Code 基礎〜応用 5ステップ攻略法",
+      "wiki": "2026-06-07_ClaudeCode基礎から応用まで_5ステップ攻略法",
+      "category": "🤖 CORIN出力（outputs/） 18本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_ClaudeCode基礎から応用まで_5ステップ攻略法.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_ClaudeCode基礎から応用まで_5ステップ攻略法.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-06-07",
+      "title": "Corpus2Skill ってなに？ — やさしい解説 2026-06-07",
+      "wiki": "2026-06-07_Corpus2Skillって何_やさしい解説",
+      "category": "🤖 CORIN出力（outputs/） 18本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_Corpus2Skillって何_やさしい解説.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_Corpus2Skillって何_やさしい解説.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-06-07",
+      "title": "Corpus2Skill 導入判断レポート — 2026-06-07",
+      "wiki": "2026-06-07_Corpus2Skill導入判断レポート",
+      "category": "🤖 CORIN出力（outputs/） 18本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_Corpus2Skill導入判断レポート.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_Corpus2Skill導入判断レポート.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-06-07",
+      "title": "好きなもの帳 — 藤本ゆりこ",
+      "wiki": "2026-06-07_ゆりこのカルチャーマップ_v1",
+      "category": "🤖 CORIN出力（outputs/） 18本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_ゆりこのカルチャーマップ_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_ゆりこのカルチャーマップ_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-06-07",
+      "title": "ゆりこのルーツマップ — 音楽軸 v1",
+      "wiki": "2026-06-07_ゆりこのルーツマップ_音楽軸_v1",
+      "category": "🤖 CORIN出力（outputs/） 18本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_ゆりこのルーツマップ_音楽軸_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_ゆりこのルーツマップ_音楽軸_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-06-07",
+      "title": "今週の必読リテラチャー5本 — ビジュアル要約 2026-06-07",
+      "wiki": "2026-06-07_今週の必読リテラチャー5本_ビジュアル要約",
+      "category": "🤖 CORIN出力（outputs/） 18本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_今週の必読リテラチャー5本_ビジュアル要約.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_今週の必読リテラチャー5本_ビジュアル要約.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-06-07",
+      "title": "植田尋（ひろ）カルチャーマップ v1",
+      "wiki": "2026-06-07_植田ひろカルチャーマップ_v1",
+      "category": "🤖 CORIN出力（outputs/） 18本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_植田ひろカルチャーマップ_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_植田ひろカルチャーマップ_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-06-04",
+      "title": "AI活用度 評価制度設計（案） — KONNEKT INTERNATIONAL",
+      "wiki": "2026-06-04_AI活用評価制度設計_社内提案",
+      "category": "🤖 CORIN出力（outputs/） 18本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-04_AI活用評価制度設計_社内提案.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-04_AI活用評価制度設計_社内提案.html",
+      "has_md": true
+    },
+    {
       "date": "2026-06-02",
       "title": "9工程ループ 自己レビュー — CEO（CORIN）v1",
       "wiki": "2026-06-02_企画テンプレ_自己レビュー_v1",
-      "category": "🤖 CORIN出力（outputs/） 7本",
+      "category": "🤖 CORIN出力（outputs/） 18本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-02_企画テンプレ_自己レビュー_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-02_企画テンプレ_自己レビュー_v1.html",
-      "has_md": false,
-      "thumbnail_url": "thumbs/2026-06-02_v1.webp"
+      "has_md": false
     },
     {
       "date": "2026-06-02",
@@ -903,8 +1138,7 @@ window.CORIN_DATA = {
       "category": "📁 案件ドラフト（_ai-drafts/） 11本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_グッズ提案_リファレンス版_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_グッズ提案_リファレンス版_v3.html",
-      "has_md": true,
-      "thumbnail_url": "thumbs/Armillary_26AW_v3.webp"
+      "has_md": true
     },
     {
       "date": "2026-06-02",
@@ -913,18 +1147,16 @@ window.CORIN_DATA = {
       "category": "📁 案件ドラフト（_ai-drafts/） 11本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_セッションA_過去販売データ分析_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_セッションA_過去販売データ分析_v1.html",
-      "has_md": false,
-      "thumbnail_url": "thumbs/Armillary_26AW_A_v1.webp"
+      "has_md": false
     },
     {
       "date": "2026-06-01",
       "title": "企画テンプレ 改善提案 — CEO（CORIN）視点 v1",
       "wiki": "2026-06-01_企画テンプレ改善提案_CORIN_v1",
-      "category": "🤖 CORIN出力（outputs/） 7本",
+      "category": "🤖 CORIN出力（outputs/） 18本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-01_企画テンプレ改善提案_CORIN_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-01_企画テンプレ改善提案_CORIN_v1.html",
-      "has_md": true,
-      "thumbnail_url": "thumbs/2026-06-01_CORIN_v1.webp"
+      "has_md": true
     },
     {
       "date": "2026-06-01",
@@ -933,8 +1165,7 @@ window.CORIN_DATA = {
       "category": "📁 案件ドラフト（_ai-drafts/） 11本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_イメージボード_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_イメージボード_v3.html",
-      "has_md": false,
-      "thumbnail_url": "thumbs/Armillary_26AW_v3.webp"
+      "has_md": false
     },
     {
       "date": "2026-06-01",
@@ -943,18 +1174,16 @@ window.CORIN_DATA = {
       "category": "📁 案件ドラフト（_ai-drafts/） 11本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_グッズ提案_リファレンス版_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_グッズ提案_リファレンス版_v1.html",
-      "has_md": true,
-      "thumbnail_url": "thumbs/Armillary_26AW_v1.webp"
+      "has_md": true
     },
     {
       "date": "2026-05-31",
       "title": "📋 議事録 Journal — corin",
       "wiki": "2026-05-31_議事録ダッシュボード",
-      "category": "🤖 CORIN出力（outputs/） 7本",
+      "category": "🤖 CORIN出力（outputs/） 18本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-05-31_議事録ダッシュボード.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-05-31_議事録ダッシュボード.html",
-      "has_md": true,
-      "thumbnail_url": "thumbs/2026-05-31.webp"
+      "has_md": true
     },
     {
       "date": "2026-05-31",
@@ -963,8 +1192,7 @@ window.CORIN_DATA = {
       "category": "🎨 ブランド分析・トレンド（notes/） 35本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/ader-error-brand-analysis.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/ader-error-brand-analysis.html",
-      "has_md": true,
-      "thumbnail_url": "thumbs/ader-error-brand-analysis.webp"
+      "has_md": true
     },
     {
       "date": "2026-05-31",
@@ -973,116 +1201,7 @@ window.CORIN_DATA = {
       "category": "🎨 ブランド分析・トレンド（notes/） 35本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/aesop-brand-analysis.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/aesop-brand-analysis.html",
-      "has_md": true,
-      "thumbnail_url": "thumbs/aesop-brand-analysis.webp"
-    },
-    {
-      "date": "2026-05-31",
-      "title": "AMBUSH — Brand Analysis \\",
-      "wiki": "ambush-brand-analysis",
-      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
-      "html_path": "",
-      "html_url": "",
       "has_md": true
-    },
-    {
-      "date": "2026-05-31",
-      "title": "APOTHEKE FRAGRANCE — ブランド分析レポート",
-      "wiki": "apotheke-fragrance-brand-analysis",
-      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html",
-      "has_md": false,
-      "thumbnail_url": "thumbs/apotheke-fragrance-brand-analysis.webp"
-    },
-    {
-      "date": "2026-05-31",
-      "title": "Casablanca — Brand Analysis \\",
-      "wiki": "casablanca-brand-analysis",
-      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
-      "html_path": "",
-      "html_url": "",
-      "has_md": true
-    },
-    {
-      "date": "2026-05-31",
-      "title": "CULLNI — ブランド分析レポート",
-      "wiki": "cullni-brand-analysis",
-      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/cullni-brand-analysis.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/cullni-brand-analysis.html",
-      "has_md": false,
-      "thumbnail_url": "thumbs/cullni-brand-analysis.webp"
-    },
-    {
-      "date": "2026-05-31",
-      "title": "Diptyque — ブランド分析レポート",
-      "wiki": "diptyque-brand-analysis",
-      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/diptyque-brand-analysis.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/diptyque-brand-analysis.html",
-      "has_md": false,
-      "thumbnail_url": "thumbs/diptyque-brand-analysis.webp"
-    },
-    {
-      "date": "2026-05-31",
-      "title": "Fear of God — ブランド分析レポート",
-      "wiki": "fog-brand-analysis",
-      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/fog-brand-analysis.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/fog-brand-analysis.html",
-      "has_md": true,
-      "thumbnail_url": "thumbs/fog-brand-analysis.webp"
-    },
-    {
-      "date": "2026-05-31",
-      "title": "Gentle Monster — ブランド分析レポート",
-      "wiki": "gentle-monster-brand-analysis",
-      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/gentle-monster-brand-analysis.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/gentle-monster-brand-analysis.html",
-      "has_md": true,
-      "thumbnail_url": "thumbs/gentle-monster-brand-analysis.webp"
-    },
-    {
-      "date": "2026-05-31",
-      "title": "Humanrace — ブランド分析レポート",
-      "wiki": "humanrace-brand-analysis",
-      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/humanrace-brand-analysis.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/humanrace-brand-analysis.html",
-      "has_md": true,
-      "thumbnail_url": "thumbs/humanrace-brand-analysis.webp"
-    },
-    {
-      "date": "2026-05-31",
-      "title": "ブランド分析 — Brand Research Library",
-      "wiki": "index",
-      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/index.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/index.html",
-      "has_md": true,
-      "thumbnail_url": "thumbs/index.webp"
-    },
-    {
-      "date": "2026-05-31",
-      "title": "Jacquemus — ブランド分析レポート",
-      "wiki": "jacquemus-brand-analysis",
-      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/jacquemus-brand-analysis.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/jacquemus-brand-analysis.html",
-      "has_md": true,
-      "thumbnail_url": "thumbs/jacquemus-brand-analysis.webp"
-    },
-    {
-      "date": "2026-05-31",
-      "title": "KITH — Brand Analysis",
-      "wiki": "kith-brand-analysis",
-      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/kith-brand-analysis.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/kith-brand-analysis.html",
-      "has_md": true,
-      "thumbnail_url": "thumbs/kith-brand-analysis.webp"
     }
   ],
   "static_links": {
