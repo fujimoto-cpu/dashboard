@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-06-10",
+  "date": "2026-06-12",
   "weather": {
-    "desc": "Partly cloudy",
-    "temp": "22",
-    "icon": "☁️"
+    "desc": "Sunny",
+    "temp": "24",
+    "icon": "☀️"
   },
   "letter": {
     "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はPartly cloudy、22度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Human race</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はSunny、24度。<br>金曜日。土日に持ち越さないこと、整理しよ。<br>今日の倉庫から：<strong>Marni</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Human race",
-    "tagline": "ウェルネスを起点に、スキンケア・アパレル・カルチャーを横断するファレル・ウィリアムス創設のライフスタイルブランド。",
-    "insight": "Step 1 — Why の言語化",
+    "name": "Marni",
+    "tagline": "1994年ミラン発。大胆な色彩、職人技、芸術的自由が交差するイタリアン・ラグジュアリー。Consuelo Castiglioni が創設し、Francesco Risso が継承した「着るアート」の哲学。",
+    "insight": "「非常識な組み合わせ」を技術で正当化する",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/humanrace-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/marni-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -80,6 +80,13 @@ window.CORIN_DATA = {
   },
   "daily_photo": null,
   "library": [
+    {
+      "name": "literature",
+      "description": "Literature Notes reader",
+      "url": "https://fujimoto-cpu.github.io/literature/",
+      "icon": "📚",
+      "pushed_at": "2026-06-11T14:09:21Z"
+    },
     {
       "name": "management-dashboard",
       "description": "経営ダッシュボード（モック）noindex",
@@ -142,13 +149,6 @@ window.CORIN_DATA = {
       "url": "https://fujimoto-cpu.github.io/design-howto-atlas/",
       "icon": "📄",
       "pushed_at": "2026-05-26T14:26:59Z"
-    },
-    {
-      "name": "literature",
-      "description": "Literature Notes reader",
-      "url": "https://fujimoto-cpu.github.io/literature/",
-      "icon": "📚",
-      "pushed_at": "2026-05-25T23:21:50Z"
     },
     {
       "name": "ai-pulse",
@@ -385,7 +385,7 @@ window.CORIN_DATA = {
               "deadline": "2026-06-30",
               "tags": "[project-board, LAVANDA, シール, 制作物]",
               "created": "2026-05-31",
-              "last_updated": "2026-06-04T17"
+              "last_updated": "2026-06-12T10:03"
             },
             "links": [],
             "process_progress": null
@@ -1024,6 +1024,15 @@ window.CORIN_DATA = {
   ],
   "recent_html": [
     {
+      "date": "2026-06-12",
+      "title": "KONNEKT AI導入ロードマップ v3｜四半期KPI（2026.07–2027.03）",
+      "wiki": "AI導入ロードマップ_四半期KPI_v1",
+      "category": "🤖 AI推進資料（ai/） 16本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260612_四半期KPI/AI導入ロードマップ_四半期KPI_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260612_四半期KPI/AI導入ロードマップ_四半期KPI_v1.html",
+      "has_md": true
+    },
+    {
       "date": "2026-06-10",
       "title": "会議タスク→AI自動リサーチ体制 提案 v1",
       "wiki": "2026-06-10_会議タスク自動リサーチ体制_提案_v1",
@@ -1031,6 +1040,15 @@ window.CORIN_DATA = {
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-10_会議タスク自動リサーチ体制_提案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-10_会議タスク自動リサーチ体制_提案_v1.html",
       "has_md": true
+    },
+    {
+      "date": "2026-06-09",
+      "title": "GOK x CPD Ticket Design Roughs",
+      "wiki": "GOKCPD_ticket_designs_v1",
+      "category": "📁 案件ドラフト（_ai-drafts/） 12本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/GOK/20260609_GOK_コインパコラボPOPUP/_ai-drafts/GOKCPD_ticket_designs_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/GOK/20260609_GOK_コインパコラボPOPUP/_ai-drafts/GOKCPD_ticket_designs_v1.html",
+      "has_md": false
     },
     {
       "date": "2026-06-08",
@@ -1135,7 +1153,7 @@ window.CORIN_DATA = {
       "date": "2026-06-02",
       "title": "Armillary. 26AW グッズ構成提案 v3 — 11本柱・A+B+C 統合版",
       "wiki": "Armillary_26AW_グッズ提案_リファレンス版_v3",
-      "category": "📁 案件ドラフト（_ai-drafts/） 11本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 12本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_グッズ提案_リファレンス版_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_グッズ提案_リファレンス版_v3.html",
       "has_md": true
@@ -1144,7 +1162,7 @@ window.CORIN_DATA = {
       "date": "2026-06-02",
       "title": "Armillary. 全コレクション 受注期間ランキング",
       "wiki": "Armillary_26AW_セッションA_過去販売データ分析_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 11本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 12本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_セッションA_過去販売データ分析_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_セッションA_過去販売データ分析_v1.html",
       "has_md": false
@@ -1162,7 +1180,7 @@ window.CORIN_DATA = {
       "date": "2026-06-01",
       "title": "Armillary. 26AW イメージボード — 参考ブランド＆画像",
       "wiki": "Armillary_26AW_イメージボード_v3",
-      "category": "📁 案件ドラフト（_ai-drafts/） 11本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 12本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_イメージボード_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_イメージボード_v3.html",
       "has_md": false
@@ -1171,7 +1189,7 @@ window.CORIN_DATA = {
       "date": "2026-06-01",
       "title": "Armillary. 26AW グッズ構成提案 v2 — 10本柱・過去ランキング × 参考ブランド",
       "wiki": "Armillary_26AW_グッズ提案_リファレンス版_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 11本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 12本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_グッズ提案_リファレンス版_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_グッズ提案_リファレンス版_v1.html",
       "has_md": true
@@ -1183,24 +1201,6 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 18本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-05-31_議事録ダッシュボード.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-05-31_議事録ダッシュボード.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-05-31",
-      "title": "ADER ERROR — ブランド分析レポート",
-      "wiki": "ader-error-brand-analysis",
-      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/ader-error-brand-analysis.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/ader-error-brand-analysis.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-05-31",
-      "title": "Aesop — ブランド分析レポート",
-      "wiki": "aesop-brand-analysis",
-      "category": "🎨 ブランド分析・トレンド（notes/） 35本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/aesop-brand-analysis.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/aesop-brand-analysis.html",
       "has_md": true
     }
   ],
