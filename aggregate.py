@@ -786,6 +786,28 @@ def _normalize_for_dedup(title: str) -> str:
     return t.lower()
 
 
+def rebuild_html_index():
+    """scripts/rebuild_index.py を実行して INDEX.md を全件再生成する。
+    get_recent_html() は INDEX.md をパースするため、新規HTMLを取りこぼさないよう
+    aggregate の前段で必ず走らせる（2026-06-14 自動連鎖バグ修正）。"""
+    script = DASHBOARD_ROOT / "scripts" / "rebuild_index.py"
+    if not script.exists():
+        print("[rebuild_index] scripts/rebuild_index.py が見つからない → スキップ")
+        return
+    try:
+        result = subprocess.run(
+            [sys.executable, str(script)],
+            capture_output=True, text=True, timeout=120,
+        )
+        if result.returncode == 0:
+            last = (result.stdout.strip().splitlines() or ["(no output)"])[-1]
+            print(f"[rebuild_index] OK → {last}")
+        else:
+            print(f"[rebuild_index] 失敗(returncode={result.returncode}): {result.stderr.strip()[:200]}")
+    except Exception as e:
+        print(f"[rebuild_index] 例外: {e}")
+
+
 def get_recent_html(limit=20):
     """INDEX.md パース → 新しい順N件 + MD骨子存在判定（バージョン違い重複制御）"""
     if not HTML_INDEX.exists():
@@ -920,6 +942,8 @@ def main():
     letter = make_letter(weather, brand, today_dt)
 
     # === Mission Control データ ===
+    # INDEX.md を先に再生成（新規HTMLを取りこぼさないため・get_recent_html は INDEX.md をパースする）
+    rebuild_html_index()
     active_projects = get_active_projects()
     print(f"[mission-control] active_projects: {sum(len(c['projects']) for c in active_projects)} 件")
     recent_html = get_recent_html(limit=20)
