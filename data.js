@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-06-14",
+  "date": "2026-06-16",
   "weather": {
-    "desc": "Light rain shower",
-    "temp": "22",
-    "icon": "🌧"
+    "desc": "Partly cloudy",
+    "temp": "23",
+    "icon": "☁️"
   },
   "letter": {
-    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はLight rain shower、22度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>KITH</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はPartly cloudy、23度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Diptyque</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "KITH",
-    "tagline": "NYCのクイーンズから生まれた、コラボをDNAに持つモダンストリートライフスタイルの巨人。スニーカー文化を起点に、シリアルバー・BMW・ヴェルサーチまで射程に入れた全方位ブランド。",
-    "insight": "グローバル展開しながらNYCのオーラを失わない",
+    "name": "Diptyque",
+    "tagline": "1961年パリ・サンジェルマン大通り34番地で生まれたフランスのフレグランス・ライフスタイルブランド。3人のアーティストが「キャンドルを実用品からアート作品へ」翻訳し、ニッチ香水という市場カテゴリそのものを発明した。",
+    "insight": "INSIGHT 01",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/kith-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/diptyque-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -81,6 +81,20 @@ window.CORIN_DATA = {
   "daily_photo": null,
   "library": [
     {
+      "name": "konnekted-ip",
+      "description": "KONNEKTED IP提案ブリーフ（社内検討用・noindex）",
+      "url": "https://fujimoto-cpu.github.io/konnekted-ip/",
+      "icon": "📄",
+      "pushed_at": "2026-06-16T10:21:23Z"
+    },
+    {
+      "name": "ip-report",
+      "description": "KONNEKT INTERNATIONAL IP News Daily Report",
+      "url": "https://fujimoto-cpu.github.io/ip-report",
+      "icon": "📰",
+      "pushed_at": "2026-06-15T03:15:23Z"
+    },
+    {
       "name": "literature",
       "description": "Literature Notes reader",
       "url": "https://fujimoto-cpu.github.io/literature/",
@@ -93,13 +107,6 @@ window.CORIN_DATA = {
       "url": "https://fujimoto-cpu.github.io/management-dashboard/",
       "icon": "🦋",
       "pushed_at": "2026-06-09T09:05:13Z"
-    },
-    {
-      "name": "ip-report",
-      "description": "KONNEKT INTERNATIONAL IP News Daily Report",
-      "url": "https://fujimoto-cpu.github.io/ip-report",
-      "icon": "📰",
-      "pushed_at": "2026-06-08T01:00:43Z"
     },
     {
       "name": "cowork-guide",
@@ -339,6 +346,33 @@ window.CORIN_DATA = {
           ]
         },
         {
+          "name": "LAWSON × aoen",
+          "hub": "aoenグッズ提案",
+          "status": "🔄 in-progress",
+          "desc": "",
+          "hub_info": {
+            "exists": true,
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/MD/aoen/20260615_aoenグッズ提案/aoenグッズ提案.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/MD/aoen/20260615_aoen%E3%82%B0%E3%83%83%E3%82%BA%E6%8F%90%E6%A1%88/aoen%E3%82%B0%E3%83%83%E3%82%BA%E6%8F%90%E6%A1%88.md",
+            "frontmatter": {
+              "type": "project",
+              "案件": "aoen",
+              "client": "LAWSON × aoen",
+              "status": "in-progress",
+              "priority": "P0",
+              "start": "2026-06-15",
+              "deadline": "2026-06-15",
+              "stakeholders": "[]",
+              "tags": "[project-board, aoen, グッズ, 提案, コラボ]",
+              "created": "2026-06-15",
+              "last_updated": "2026-06-15"
+            },
+            "links": [],
+            "process_progress": null
+          },
+          "meetings": []
+        },
+        {
           "name": "Ange Charme",
           "hub": "AngeCharme_HAPPYBAG",
           "status": "🔄 in-progress",
@@ -357,12 +391,24 @@ window.CORIN_DATA = {
               "deadline": "2026-06-末",
               "tags": "[project-board, AngeCharme, グッズ, Tシャツ, HAPPYBAG]",
               "created": "2026-06-13",
-              "last_updated": "2026-06-13"
+              "last_updated": "2026-06-15"
             },
             "links": [
               {
                 "label": "AngeCharme アセット Google Drive",
                 "url": "https://drive.google.com/drive/u/0/folders/1cB4xApVN6kJfhHV8TcXR1DN2kRgZwGot"
+              },
+              {
+                "label": "共有リンク",
+                "url": "https://chatgpt.com/share/6a2f1b4f-e9a0-83e8-9f70-a21322cc1450"
+              },
+              {
+                "label": "README",
+                "url": "obsidian://advanced-uri?vault=corin&filepath=README.md"
+              },
+              {
+                "label": "AngeCharme_HAPPYBA",
+                "url": "obsidian://advanced-uri?vault=corin&filepath=AngeCharme_HAPPYBAG_T%E3%82%B7%E3%83%A3%E3%83%84%E3%83%A9%E3%83%95%E4%BB%95%E4%B8%8A%E3%81%92_6%E6%9C%8814%E6%97%A5.md"
               }
             ],
             "process_progress": null
@@ -444,7 +490,7 @@ window.CORIN_DATA = {
               "deadline": "2026-12-31",
               "tags": "[project-board, kemio, 抹茶, Human-Lounge, パッケージ, ブランディング]",
               "created": "2026-03-02",
-              "last_updated": "2026-06-05"
+              "last_updated": "2026-06-14"
             },
             "links": [],
             "process_progress": null
@@ -1057,10 +1103,37 @@ window.CORIN_DATA = {
   ],
   "recent_html": [
     {
+      "date": "2026-06-16",
+      "title": "他社AIナレッジ活用事例集",
+      "wiki": "2026-06-16_他社AIナレッジ活用事例集_v1",
+      "category": "🤖 CORIN出力（outputs/） 23本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-16_他社AIナレッジ活用事例集_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-16_他社AIナレッジ活用事例集_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-06-16",
+      "title": "藤本ゆりこ｜2026上期 実績サマリ（26AW評価面談用）",
+      "wiki": "2026-06-16_26AW評価面談_実績サマリ_v1",
+      "category": "📁 案件ドラフト（_ai-drafts/） 14本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/目標・評価/26AW/_ai-drafts/2026-06-16_26AW評価面談_実績サマリ_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/目標・評価/26AW/_ai-drafts/2026-06-16_26AW評価面談_実績サマリ_v1.html",
+      "has_md": false
+    },
+    {
+      "date": "2026-06-16",
+      "title": "藤本ゆりこ｜2026上期 月次タイムライン（26AW評価面談用）",
+      "wiki": "2026-06-16_26AW評価面談_月次タイムライン_v1",
+      "category": "📁 案件ドラフト（_ai-drafts/） 14本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/目標・評価/26AW/_ai-drafts/2026-06-16_26AW評価面談_月次タイムライン_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/目標・評価/26AW/_ai-drafts/2026-06-16_26AW評価面談_月次タイムライン_v1.html",
+      "has_md": false
+    },
+    {
       "date": "2026-06-14",
       "title": "Cockpit ライフログ統合プラン v1",
       "wiki": "2026-06-14_Cockpitライフログ統合プラン_v1",
-      "category": "🤖 CORIN出力（outputs/） 22本",
+      "category": "🤖 CORIN出力（outputs/） 23本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-14_Cockpitライフログ統合プラン_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-14_Cockpitライフログ統合プラン_v1.html",
       "has_md": true
@@ -1069,7 +1142,7 @@ window.CORIN_DATA = {
       "date": "2026-06-14",
       "title": "タスク実績ログ紐付け設計 v1",
       "wiki": "2026-06-14_タスク実績ログ紐付け設計_v1",
-      "category": "🤖 CORIN出力（outputs/） 22本",
+      "category": "🤖 CORIN出力（outputs/） 23本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-14_タスク実績ログ紐付け設計_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-14_タスク実績ログ紐付け設計_v1.html",
       "has_md": true
@@ -1078,7 +1151,7 @@ window.CORIN_DATA = {
       "date": "2026-06-14",
       "title": "タスク管理システムマップ",
       "wiki": "2026-06-14_タスク管理システムマップ_v1",
-      "category": "🤖 CORIN出力（outputs/） 22本",
+      "category": "🤖 CORIN出力（outputs/） 23本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-14_タスク管理システムマップ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-14_タスク管理システムマップ_v1.html",
       "has_md": true
@@ -1087,7 +1160,7 @@ window.CORIN_DATA = {
       "date": "2026-06-14",
       "title": "目標OS 設計図 v1",
       "wiki": "2026-06-14_目標OS設計図_v1",
-      "category": "🤖 CORIN出力（outputs/） 22本",
+      "category": "🤖 CORIN出力（outputs/） 23本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-14_目標OS設計図_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-14_目標OS設計図_v1.html",
       "has_md": true
@@ -1105,7 +1178,7 @@ window.CORIN_DATA = {
       "date": "2026-06-10",
       "title": "会議タスク→AI自動リサーチ体制 提案 v1",
       "wiki": "2026-06-10_会議タスク自動リサーチ体制_提案_v1",
-      "category": "🤖 CORIN出力（outputs/） 22本",
+      "category": "🤖 CORIN出力（outputs/） 23本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-10_会議タスク自動リサーチ体制_提案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-10_会議タスク自動リサーチ体制_提案_v1.html",
       "has_md": true
@@ -1114,7 +1187,7 @@ window.CORIN_DATA = {
       "date": "2026-06-09",
       "title": "GOK x CPD Ticket Design Roughs",
       "wiki": "GOKCPD_ticket_designs_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 12本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 14本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/GOK/20260609_GOK_コインパコラボPOPUP/_ai-drafts/GOKCPD_ticket_designs_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/GOK/20260609_GOK_コインパコラボPOPUP/_ai-drafts/GOKCPD_ticket_designs_v1.html",
       "has_md": false
@@ -1123,7 +1196,7 @@ window.CORIN_DATA = {
       "date": "2026-06-08",
       "title": "ビジョン統合ゴールツリー設計案",
       "wiki": "2026-06-08_ビジョン統合ゴールツリー設計案",
-      "category": "🤖 CORIN出力（outputs/） 22本",
+      "category": "🤖 CORIN出力（outputs/） 23本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-08_ビジョン統合ゴールツリー設計案.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-08_ビジョン統合ゴールツリー設計案.html",
       "has_md": true
@@ -1132,7 +1205,7 @@ window.CORIN_DATA = {
       "date": "2026-06-08",
       "title": "内田博史【金持ちの習慣】から、ゆりこがまず取り入れるべきこと",
       "wiki": "2026-06-08_内田博史_まず取り入れるべきこと",
-      "category": "🤖 CORIN出力（outputs/） 22本",
+      "category": "🤖 CORIN出力（outputs/） 23本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-08_内田博史_まず取り入れるべきこと.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-08_内田博史_まず取り入れるべきこと.html",
       "has_md": true
@@ -1141,7 +1214,7 @@ window.CORIN_DATA = {
       "date": "2026-06-07",
       "title": "Claude Code 基礎〜応用 5ステップ攻略法",
       "wiki": "2026-06-07_ClaudeCode基礎から応用まで_5ステップ攻略法",
-      "category": "🤖 CORIN出力（outputs/） 22本",
+      "category": "🤖 CORIN出力（outputs/） 23本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_ClaudeCode基礎から応用まで_5ステップ攻略法.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_ClaudeCode基礎から応用まで_5ステップ攻略法.html",
       "has_md": true
@@ -1150,7 +1223,7 @@ window.CORIN_DATA = {
       "date": "2026-06-07",
       "title": "Corpus2Skill ってなに？ — やさしい解説 2026-06-07",
       "wiki": "2026-06-07_Corpus2Skillって何_やさしい解説",
-      "category": "🤖 CORIN出力（outputs/） 22本",
+      "category": "🤖 CORIN出力（outputs/） 23本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_Corpus2Skillって何_やさしい解説.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_Corpus2Skillって何_やさしい解説.html",
       "has_md": true
@@ -1159,7 +1232,7 @@ window.CORIN_DATA = {
       "date": "2026-06-07",
       "title": "Corpus2Skill 導入判断レポート — 2026-06-07",
       "wiki": "2026-06-07_Corpus2Skill導入判断レポート",
-      "category": "🤖 CORIN出力（outputs/） 22本",
+      "category": "🤖 CORIN出力（outputs/） 23本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_Corpus2Skill導入判断レポート.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_Corpus2Skill導入判断レポート.html",
       "has_md": true
@@ -1168,7 +1241,7 @@ window.CORIN_DATA = {
       "date": "2026-06-07",
       "title": "好きなもの帳 — 藤本ゆりこ",
       "wiki": "2026-06-07_ゆりこのカルチャーマップ_v1",
-      "category": "🤖 CORIN出力（outputs/） 22本",
+      "category": "🤖 CORIN出力（outputs/） 23本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_ゆりこのカルチャーマップ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_ゆりこのカルチャーマップ_v1.html",
       "has_md": true
@@ -1177,7 +1250,7 @@ window.CORIN_DATA = {
       "date": "2026-06-07",
       "title": "ゆりこのルーツマップ — 音楽軸 v1",
       "wiki": "2026-06-07_ゆりこのルーツマップ_音楽軸_v1",
-      "category": "🤖 CORIN出力（outputs/） 22本",
+      "category": "🤖 CORIN出力（outputs/） 23本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_ゆりこのルーツマップ_音楽軸_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_ゆりこのルーツマップ_音楽軸_v1.html",
       "has_md": true
@@ -1186,7 +1259,7 @@ window.CORIN_DATA = {
       "date": "2026-06-07",
       "title": "今週の必読リテラチャー5本 — ビジュアル要約 2026-06-07",
       "wiki": "2026-06-07_今週の必読リテラチャー5本_ビジュアル要約",
-      "category": "🤖 CORIN出力（outputs/） 22本",
+      "category": "🤖 CORIN出力（outputs/） 23本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_今週の必読リテラチャー5本_ビジュアル要約.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_今週の必読リテラチャー5本_ビジュアル要約.html",
       "has_md": true
@@ -1195,7 +1268,7 @@ window.CORIN_DATA = {
       "date": "2026-06-07",
       "title": "植田尋（ひろ）カルチャーマップ v1",
       "wiki": "2026-06-07_植田ひろカルチャーマップ_v1",
-      "category": "🤖 CORIN出力（outputs/） 22本",
+      "category": "🤖 CORIN出力（outputs/） 23本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_植田ひろカルチャーマップ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-07_植田ひろカルチャーマップ_v1.html",
       "has_md": true
@@ -1204,37 +1277,10 @@ window.CORIN_DATA = {
       "date": "2026-06-04",
       "title": "AI活用度 評価制度設計（案） — KONNEKT INTERNATIONAL",
       "wiki": "2026-06-04_AI活用評価制度設計_社内提案",
-      "category": "🤖 CORIN出力（outputs/） 22本",
+      "category": "🤖 CORIN出力（outputs/） 23本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-04_AI活用評価制度設計_社内提案.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-04_AI活用評価制度設計_社内提案.html",
       "has_md": true
-    },
-    {
-      "date": "2026-06-02",
-      "title": "9工程ループ 自己レビュー — CEO（CORIN）v1",
-      "wiki": "2026-06-02_企画テンプレ_自己レビュー_v1",
-      "category": "🤖 CORIN出力（outputs/） 22本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-02_企画テンプレ_自己レビュー_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-02_企画テンプレ_自己レビュー_v1.html",
-      "has_md": false
-    },
-    {
-      "date": "2026-06-02",
-      "title": "Armillary. 26AW グッズ構成提案 v3 — 11本柱・A+B+C 統合版",
-      "wiki": "Armillary_26AW_グッズ提案_リファレンス版_v3",
-      "category": "📁 案件ドラフト（_ai-drafts/） 12本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_グッズ提案_リファレンス版_v3.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_グッズ提案_リファレンス版_v3.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-06-02",
-      "title": "Armillary. 全コレクション 受注期間ランキング",
-      "wiki": "Armillary_26AW_セッションA_過去販売データ分析_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 12本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_セッションA_過去販売データ分析_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_セッションA_過去販売データ分析_v1.html",
-      "has_md": false
     }
   ],
   "static_links": {
