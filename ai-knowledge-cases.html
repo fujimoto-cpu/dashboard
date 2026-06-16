@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>他社AIナレッジ活用事例集</title>
+<!-- last_updated: 2026-06-16 -->
+<style>
+  :root{
+    --cream:#faf7f0; --paper:#fff; --ink:#2c2a26; --sub:#6b6760; --line:#e8e2d6;
+    --pink:#e89bb0; --pink-bg:#fceef2; --blue:#7fa8d4; --blue-bg:#eef4fb;
+    --green:#86b89a; --green-bg:#eef6f1; --amber:#e0a96d; --amber-bg:#fbf2e6;
+    --gray-bg:#f2efe9; --shadow:0 2px 14px rgba(60,50,40,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+    background:var(--cream); color:var(--ink); line-height:1.75; padding:30px 16px 80px;}
+  .wrap{max-width:880px;margin:0 auto;}
+  header.hero{text-align:center;padding:14px 0 26px;}
+  .badge{display:inline-block;font-size:12px;letter-spacing:.1em;color:var(--sub);
+    border:1px solid var(--line);border-radius:20px;padding:4px 14px;background:var(--paper);}
+  h1{font-size:29px;font-weight:800;margin:16px 0 8px;letter-spacing:.01em;}
+  .lead{color:var(--sub);font-size:14.5px;max-width:620px;margin:0 auto;}
+  .meta{font-size:12px;color:var(--sub);margin-top:10px;}
+
+  /* 全体の学び */
+  .keylearn{background:var(--paper);border:1px solid var(--line);border-radius:18px;
+    padding:22px 24px;box-shadow:var(--shadow);margin:30px 0 6px;}
+  .keylearn h2{font-size:17px;margin-bottom:14px;padding-left:12px;position:relative;}
+  .keylearn h2::before{content:"";position:absolute;left:0;top:3px;bottom:3px;width:5px;border-radius:3px;background:var(--pink);}
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .three .k{background:var(--cream);border:1px solid var(--line);border-radius:13px;padding:14px 15px;}
+  .three .k .n{font-size:12px;font-weight:800;color:#c25b78;}
+  .three .k h4{font-size:14px;margin:5px 0 4px;}
+  .three .k p{font-size:12px;color:var(--sub);line-height:1.6;}
+
+  /* TOC */
+  .toc{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:26px 0 6px;}
+  .toc a{font-size:12.5px;text-decoration:none;color:var(--ink);background:var(--paper);
+    border:1px solid var(--line);border-radius:20px;padding:6px 14px;transition:.15s;}
+  .toc a:hover{border-color:var(--pink);color:#c25b78;}
+
+  /* company card */
+  .co{background:var(--paper);border:1px solid var(--line);border-radius:20px;
+    box-shadow:var(--shadow);margin:26px 0;overflow:hidden;}
+  .co-head{display:flex;align-items:center;gap:16px;padding:20px 24px;border-bottom:1px solid var(--line);}
+  .co-head .logo{width:62px;height:62px;flex-shrink:0;border-radius:14px;overflow:hidden;
+    border:1px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;}
+  .co-head .logo img{width:100%;height:100%;object-fit:contain;padding:7px;}
+  .co-head .wordmark{display:none;width:100%;height:100%;align-items:center;justify-content:center;
+    color:#fff;font-weight:800;font-size:15px;letter-spacing:.02em;text-align:center;line-height:1.15;padding:4px;}
+  .co-head .ti h3{font-size:20px;font-weight:800;}
+  .co-head .ti .tag{font-size:12.5px;color:var(--sub);margin-top:2px;}
+  .co-head .ti .chip{display:inline-block;font-size:11px;font-weight:700;border-radius:10px;
+    padding:2px 10px;margin-top:7px;}
+  .co-body{padding:22px 24px;}
+  .co-body .lead-line{font-size:14px;margin-bottom:18px;}
+  .co-body .lead-line b{color:#c25b78;}
+  .sec-label{font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--sub);
+    text-transform:uppercase;margin:0 0 10px;}
+
+  /* metrics */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px;}
+  .stat{background:var(--cream);border:1px solid var(--line);border-radius:13px;padding:13px 12px;text-align:center;}
+  .stat .v{font-size:21px;font-weight:800;line-height:1.1;}
+  .stat .l{font-size:11px;color:var(--sub);margin-top:5px;line-height:1.4;}
+
+  /* diagram */
+  .diagram{background:var(--cream);border:1px solid var(--line);border-radius:14px;
+    padding:16px 14px;margin-bottom:20px;}
+  .diagram svg{width:100%;height:auto;display:block;}
+  .diagram .cap{font-size:12px;color:var(--sub);text-align:center;margin-top:8px;}
+
+  /* mechanism list */
+  .mech{list-style:none;}
+  .mech li{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;}
+  .mech li:last-child{border-bottom:none;}
+  .mech .ic{flex-shrink:0;width:24px;text-align:center;font-size:15px;}
+  .mech b{color:var(--ink);}
+
+  .takeaway{background:var(--green-bg);border:1px solid #cfe6d8;border-radius:13px;
+    padding:13px 16px;margin-top:16px;font-size:13px;}
+  .takeaway b{color:#3f7a59;}
+
+  .sources{margin-top:16px;font-size:12px;color:var(--sub);}
+  .sources .sl{font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:10.5px;margin-bottom:6px;}
+  .sources a{color:#3f6da3;text-decoration:none;border-bottom:1px solid #cfe0f2;}
+  .sources a:hover{color:#c25b78;border-color:var(--pink);}
+  .sources .src-note{display:inline-block;margin-left:6px;font-size:11px;color:var(--amber);}
+
+  /* closing */
+  .closing{background:var(--paper);border:1px solid var(--line);border-radius:18px;
+    padding:24px;box-shadow:var(--shadow);margin-top:30px;}
+  .closing h2{font-size:18px;margin-bottom:6px;padding-left:12px;position:relative;}
+  .closing h2::before{content:"";position:absolute;left:0;top:3px;bottom:3px;width:5px;border-radius:3px;background:var(--green);}
+  .closing .sub{font-size:13px;color:var(--sub);margin-bottom:16px;padding-left:12px;}
+  .pat{display:flex;gap:11px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13.5px;}
+  .pat:last-child{border-bottom:none;}
+  .pat .e{flex-shrink:0;width:26px;text-align:center;font-size:16px;}
+  .fail{background:var(--amber-bg);border:1px solid #f0dcc0;border-radius:13px;padding:14px 16px;margin-top:16px;font-size:13px;}
+  .fail b{color:#b07a35;}
+
+  footer{text-align:center;color:var(--sub);font-size:11px;margin-top:42px;line-height:1.8;}
+  @media(max-width:640px){
+    .three,.stats{grid-template-columns:1fr 1fr;} h1{font-size:24px;}
+    .co-head{flex-wrap:wrap;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <span class="badge">CORIN ／ リサーチ資料</span>
+    <h1>他社はAIナレッジを<br>どう「複利」にしているか</h1>
+    <p class="lead">GMO・メルカリ・LINEヤフー・パナソニックコネクト・Sansan の5社を、ナレッジが溜まって効き続ける「仕組み」で1社ずつ図解。一次ソース付き。</p>
+    <p class="meta">2026-06-16 ／ 作成：CORIN ／ 用途：会社ナレッジ複利化プランの土台・評価面談</p>
+  </header>
+
+  <!-- 全体の学び -->
+  <div class="keylearn">
+    <h2>📌 5社に共通する勝ち筋（先に結論）</h2>
+    <div class="three">
+      <div class="k"><div class="n">01</div><h4>溜める場所と<br>使う動線は別物</h4><p>「書いて終わり」は100%形骸化する。書く→通知→即使える、の一筆書きを設計してる。</p></div>
+      <div class="k"><div class="n">02</div><h4>「人が読む用」→<br>「AIが読む用」へ</h4><p>メルカリの核心。ナレッジをAIのコンテキストとして再設計＝聞けば答えが返る構造に。</p></div>
+      <div class="k"><div class="n">03</div><h4>入口ゼロ＋1業務に<br>絞って数値で測る</h4><p>費用は会社負担・対象を定型業務に固定・活用率と削減時間を定点で測り続ける。</p></div>
+    </div>
+  </div>
+
+  <nav class="toc">
+    <a href="#gmo">① GMO</a>
+    <a href="#mercari">② メルカリ</a>
+    <a href="#ly">③ LINEヤフー</a>
+    <a href="#panasonic">④ パナソニック コネクト</a>
+    <a href="#sansan">⑤ Sansan（小規模の手本）</a>
+  </nav>
+
+  <!-- ============ GMO ============ -->
+  <section class="co" id="gmo">
+    <div class="co-head">
+      <div class="logo">
+        <img src="https://logo.clearbit.com/gmo.jp" alt="GMO" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="wordmark" style="background:#008ace">GMO</span>
+      </div>
+      <div class="ti">
+        <h3>GMOインターネットグループ</h3>
+        <div class="tag">全社を巻き込む「AIフライホイール」型</div>
+        <span class="chip" style="background:var(--blue-bg);color:#3f6da3">国内最先端・制度が圧倒的に揃ってる</span>
+      </div>
+    </div>
+    <div class="co-body">
+      <p class="lead-line">入口コストをゼロにして<b>全員に使わせ</b>、コンテストとAI Dayで<b>事例を量産</b>させ、スキルバッジで<b>習熟を可視化</b>。この回転が止まらない「フライホイール」になってる。</p>
+
+      <p class="sec-label">📊 数字（2026年1月時点・公式リリース）</p>
+      <div class="stats">
+        <div class="stat"><div class="v">96.2%</div><div class="l">生成AI業務活用率</div></div>
+        <div class="stat"><div class="v">46.9h</div><div class="l">月の削減/人</div></div>
+        <div class="stat"><div class="v">25万h</div><div class="l">グループ月間削減</div></div>
+        <div class="stat"><div class="v">月1万円</div><div class="l">AIツール支援金/人</div></div>
+      </div>
+
+      <p class="sec-label">🔄 ナレッジが回り続ける仕組み</p>
+      <div class="diagram">
+        <svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" font-family="Hiragino Sans, sans-serif">
+          <defs>
+            <marker id="arrB" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#008ace"/></marker>
+          </defs>
+          <!-- center -->
+          <circle cx="350" cy="125" r="52" fill="#eef4fb" stroke="#008ace" stroke-width="2"/>
+          <text x="350" y="118" text-anchor="middle" font-size="14" font-weight="800" fill="#008ace">AI活用</text>
+          <text x="350" y="138" text-anchor="middle" font-size="14" font-weight="800" fill="#008ace">フライホイール</text>
+          <!-- nodes -->
+          <g font-size="12.5" font-weight="700" fill="#2c2a26">
+            <rect x="270" y="12" width="160" height="42" rx="10" fill="#fff" stroke="#cfe0f2"/>
+            <text x="350" y="29" text-anchor="middle">① 入口ゼロ</text>
+            <text x="350" y="45" text-anchor="middle" font-size="11" font-weight="400" fill="#6b6760">月1万円支援金・全員に付与</text>
+
+            <rect x="500" y="100" width="180" height="50" rx="10" fill="#fff" stroke="#cfe0f2"/>
+            <text x="590" y="120" text-anchor="middle">② 全員が使う</text>
+            <text x="590" y="137" text-anchor="middle" font-size="11" font-weight="400" fill="#6b6760">活用率96.2%</text>
+
+            <rect x="270" y="196" width="160" height="48" rx="10" fill="#fff" stroke="#cfe0f2"/>
+            <text x="350" y="215" text-anchor="middle">③ 事例を量産</text>
+            <text x="350" y="232" text-anchor="middle" font-size="11" font-weight="400" fill="#6b6760">コンテスト・月1AI Day</text>
+
+            <rect x="20" y="100" width="180" height="50" rx="10" fill="#fff" stroke="#cfe0f2"/>
+            <text x="110" y="120" text-anchor="middle">④ 習熟を可視化</text>
+            <text x="110" y="137" text-anchor="middle" font-size="11" font-weight="400" fill="#6b6760">スキルバッジ(管理職必須)</text>
+          </g>
+          <!-- arrows around -->
+          <g fill="none" stroke="#008ace" stroke-width="2" marker-end="url(#arrB)">
+            <path d="M430,40 Q520,55 565,98"/>
+            <path d="M585,150 Q500,205 432,216"/>
+            <path d="M270,220 Q150,205 112,152"/>
+            <path d="M115,98 Q170,55 268,40"/>
+          </g>
+        </svg>
+        <p class="cap">入口を無料化 → 全員使う → 事例が増える → 可視化で競争 → さらに使う、の自己強化ループ</p>
+      </div>
+
+      <p class="sec-label">🧩 ナレッジ複利の核</p>
+      <ul class="mech">
+        <li><span class="ic">🚪</span><div><b>GMO AIブースト支援金</b>：1人月1万円・年間総額10億円規模。有料AIツールの個人負担をゼロに。</div></li>
+        <li><span class="ic">🏆</span><div><b>「AIしあおうぜ」コンテスト</b>（賞金総額1,000万円）と<b>GMO AI Day</b>（毎月第4木曜は全員AI集中）で実践事例を強制的に量産。</div></li>
+        <li><span class="ic">🎖</span><div><b>AIスキルバッジ</b>：社内ポータルに習熟度を表示・管理職は取得必須。2025年4月で483人→9月末1,000人目標。</div></li>
+        <li><span class="ic">📚</span><div><b>GMO Genius</b>（プロンプト集・GPTs・Tipsを集約したポータル）でナレッジを1か所に。</div></li>
+      </ul>
+
+      <div class="takeaway">💡 <b>会社への示唆：</b>KONNEKT も「AIツール費用を会社負担にする」「月1回みんなでAIを触る日を作る」「使えたプロンプトを社内1か所に集める」の3点なら今の規模でも始められる。AI推進の制度設計のお手本。</div>
+
+      <div class="sources">
+        <div class="sl">出典（一次ソース）</div>
+        <a href="https://group.gmo/ai-history/" target="_blank">AI活用の歴史</a>　/
+        <a href="https://group.gmo/news/article/9490/" target="_blank">スキルバッジ化リリース</a>　/
+        <a href="https://group.gmo/news/article/9561/" target="_blank">活用率94%リリース</a>　/
+        <a href="https://group.gmo/news/article/9862/" target="_blank">AIエージェント定点調査</a>　/
+        <a href="https://gai.workstyle-evolution.co.jp/2025/10/06/gmo-ai-productivity-results-43-hours-saved-vibe-coding-adoption/" target="_blank">月43時間削減レポート</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Mercari ============ -->
+  <section class="co" id="mercari">
+    <div class="co-head">
+      <div class="logo">
+        <img src="https://logo.clearbit.com/mercari.com" alt="Mercari" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="wordmark" style="background:#e34234">mercari</span>
+      </div>
+      <div class="ti">
+        <h3>メルカリ</h3>
+        <div class="tag">ナレッジを「AIが読む用」に作り直す型</div>
+        <span class="chip" style="background:var(--pink-bg);color:#c25b78">うちのVaultに一番効く考え方</span>
+      </div>
+    </div>
+    <div class="co-body">
+      <p class="lead-line"><b>Central Knowledge Base</b>としてNotionに社内ナレッジを一元化し、「人が読むため」だけでなく<b>AIが読んで活用できる形に整える</b>方向に舵を切ったのが核心。</p>
+
+      <p class="sec-label">📊 数字（公式エンジニアブログ等）</p>
+      <div class="stats">
+        <div class="stat"><div class="v">75%</div><div class="l">社内AI「Ellie」月次利用率</div></div>
+        <div class="stat"><div class="v">Notion</div><div class="l">全社ナレッジ基盤を一元化</div></div>
+        <div class="stat"><div class="v">1,600人</div><div class="l">毎月Ellieを使う社員</div></div>
+        <div class="stat"><div class="v">3,800</div><div class="l">棚卸しした業務数</div></div>
+      </div>
+
+      <p class="sec-label">🔄 「人が読む」→「AIが読む」への転換</p>
+      <div class="diagram">
+        <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" font-family="Hiragino Sans, sans-serif">
+          <defs>
+            <marker id="arrR" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e34234"/></marker>
+          </defs>
+          <!-- BEFORE -->
+          <text x="120" y="22" text-anchor="middle" font-size="12" font-weight="800" fill="#6b6760">BEFORE：情報が散在</text>
+          <g font-size="11" font-weight="700" fill="#2c2a26">
+            <rect x="30" y="40" width="80" height="30" rx="7" fill="#fff" stroke="#e8e2d6"/><text x="70" y="59" text-anchor="middle">Slack</text>
+            <rect x="130" y="40" width="80" height="30" rx="7" fill="#fff" stroke="#e8e2d6"/><text x="170" y="59" text-anchor="middle">Drive</text>
+            <rect x="30" y="80" width="80" height="30" rx="7" fill="#fff" stroke="#e8e2d6"/><text x="70" y="99" text-anchor="middle">議事録</text>
+            <rect x="130" y="80" width="80" height="30" rx="7" fill="#fff" stroke="#e8e2d6"/><text x="170" y="99" text-anchor="middle">メール</text>
+          </g>
+          <text x="120" y="150" text-anchor="middle" font-size="11" fill="#b07a35">→ AIに聞いても答えが返らない</text>
+
+          <!-- arrow -->
+          <path d="M225,90 L300,90" fill="none" stroke="#e34234" stroke-width="2.5" marker-end="url(#arrR)"/>
+          <text x="263" y="80" text-anchor="middle" font-size="10.5" font-weight="700" fill="#e34234">再設計</text>
+
+          <!-- AFTER -->
+          <rect x="320" y="42" width="150" height="64" rx="12" fill="#fceef2" stroke="#e34234" stroke-width="2"/>
+          <text x="395" y="70" text-anchor="middle" font-size="13" font-weight="800" fill="#e34234">Central KB</text>
+          <text x="395" y="89" text-anchor="middle" font-size="10.5" fill="#6b6760">Notionに一元化</text>
+
+          <path d="M475,74 L545,74" fill="none" stroke="#e34234" stroke-width="2.5" marker-end="url(#arrR)"/>
+          <rect x="555" y="42" width="120" height="64" rx="12" fill="#fff" stroke="#e34234"/>
+          <text x="615" y="70" text-anchor="middle" font-size="13" font-weight="800" fill="#2c2a26">社内AI Ellie</text>
+          <text x="615" y="89" text-anchor="middle" font-size="10.5" fill="#6b6760">聞けば即答</text>
+
+          <text x="500" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="#3f7a59">→ ナレッジ＝AIのコンテキスト</text>
+          <!-- retention loop -->
+          <rect x="320" y="170" width="355" height="36" rx="10" fill="#eef6f1" stroke="#cfe6d8"/>
+          <text x="497" y="192" text-anchor="middle" font-size="11.5" font-weight="700" fill="#3f7a59">使う→役立つ→また使う（毎月1,600人が継続利用）</text>
+        </svg>
+        <p class="cap">散在情報をNotionに一元化＝「AIが読める形」にしたから、社内AIに聞けば答えが返る</p>
+      </div>
+
+      <p class="sec-label">🧩 ナレッジ複利の核</p>
+      <ul class="mech">
+        <li><span class="ic">🧠</span><div><b>Central Knowledge Base</b>：Notionに一元化し、AIが読んで活用できる形に整備。人が探す手間ごとAIに肩代わりさせる方向。</div></li>
+        <li><span class="ic">⚡</span><div><b>社内AI「Ellie」を内製</b>：素早く立ち上げ、月次利用率75%・毎月1,600人が継続利用するほど定着。</div></li>
+        <li><span class="ic">🗂</span><div><b>3,800業務を棚卸し</b>：AI導入の「やり直し作業」を体系的に排除。何をAI化するか先に決めた。</div></li>
+      </ul>
+
+      <div class="takeaway">💡 <b>会社への示唆：</b>KONNEKT が抱える過去の議事録・提案書・ブランド分析を「AIに聞けば答えが返る形」にまとめ直すのが本丸。Drive・Slack・メールに散らばった情報を、AIが読めるナレッジ基盤に集約していく。</div>
+
+      <div class="sources">
+        <div class="sl">出典（一次ソース）</div>
+        <a href="https://engineering.mercari.com/blog/entry/20251213-96e00d1d91/" target="_blank">AI時代のナレッジマネジメント投資</a>　/
+        <a href="https://careers.mercari.com/mercan/articles/49488/" target="_blank">Ellie内製の意図</a>　/
+        <a href="https://business.nikkei.com/atcl/gen/19/00636/022500079/" target="_blank">3,800業務棚卸し（日経）</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LINEヤフー ============ -->
+  <section class="co" id="ly">
+    <div class="co-head">
+      <div class="logo">
+        <img src="https://logo.clearbit.com/lycorp.co.jp" alt="LY" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="wordmark" style="background:#06c755;font-size:13px">LINE<br>ヤフー</span>
+      </div>
+      <div class="ti">
+        <h3>LINEヤフー</h3>
+        <div class="tag">定型業務に絞って「義務化」＋横展開する型</div>
+        <span class="chip" style="background:var(--green-bg);color:#3f7a59">範囲を絞る＝全員の底上げ</span>
+      </div>
+    </div>
+    <div class="co-body">
+      <p class="lead-line">全業務の3割を占める<b>定型作業（議事録・調査・資料作成）</b>に絞ってAI利用を<b>義務化</b>。各部署の<b>生成AI活用推進者</b>が事例を横展開して全社11,000人に広げてる。</p>
+
+      <p class="sec-label">📊 数字（公式リリース）</p>
+      <div class="stats">
+        <div class="stat"><div class="v">11,000人</div><div class="l">対象従業員</div></div>
+        <div class="stat"><div class="v">3割</div><div class="l">が定型業務</div></div>
+        <div class="stat"><div class="v">1,600h</div><div class="l">月削減見込(人事総務)</div></div>
+        <div class="stat"><div class="v">2倍</div><div class="l">3年で生産性目標</div></div>
+      </div>
+
+      <p class="sec-label">🔄 「絞る → 義務化 → 横展開」の流れ</p>
+      <div class="diagram">
+        <svg viewBox="0 0 700 210" xmlns="http://www.w3.org/2000/svg" font-family="Hiragino Sans, sans-serif">
+          <defs>
+            <marker id="arrG" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#06a047"/></marker>
+          </defs>
+          <!-- step1: 絞る -->
+          <text x="105" y="22" text-anchor="middle" font-size="12" font-weight="800" fill="#3f7a59">① 対象を絞る</text>
+          <g font-size="11" font-weight="700" fill="#2c2a26">
+            <rect x="20" y="36" width="170" height="28" rx="7" fill="#fff" stroke="#cfe6d8"/><text x="105" y="54" text-anchor="middle">議事録づくり</text>
+            <rect x="20" y="70" width="170" height="28" rx="7" fill="#fff" stroke="#cfe6d8"/><text x="105" y="88" text-anchor="middle">調査</text>
+            <rect x="20" y="104" width="170" height="28" rx="7" fill="#fff" stroke="#cfe6d8"/><text x="105" y="122" text-anchor="middle">資料作成</text>
+          </g>
+          <!-- arrow -->
+          <path d="M200,84 L255,84" fill="none" stroke="#06a047" stroke-width="2.5" marker-end="url(#arrG)"/>
+          <!-- step2: 義務化 -->
+          <rect x="265" y="52" width="150" height="64" rx="12" fill="#eef6f1" stroke="#06a047" stroke-width="2"/>
+          <text x="340" y="80" text-anchor="middle" font-size="13" font-weight="800" fill="#3f7a59">利用を義務化</text>
+          <text x="340" y="99" text-anchor="middle" font-size="10" fill="#6b6760">「ゼロから作らない」</text>
+          <!-- arrow -->
+          <path d="M420,84 L475,84" fill="none" stroke="#06a047" stroke-width="2.5" marker-end="url(#arrG)"/>
+          <!-- step3: 横展開 -->
+          <text x="585" y="22" text-anchor="middle" font-size="12" font-weight="800" fill="#3f7a59">③ 横展開</text>
+          <circle cx="585" cy="84" r="34" fill="#fff" stroke="#06a047" stroke-width="2"/>
+          <text x="585" y="80" text-anchor="middle" font-size="10.5" font-weight="800" fill="#2c2a26">活用</text>
+          <text x="585" y="95" text-anchor="middle" font-size="10.5" font-weight="800" fill="#2c2a26">推進者</text>
+          <g stroke="#06a047" stroke-width="1.6" fill="none">
+            <path d="M585,118 L585,150"/><path d="M551,84 L515,150"/><path d="M619,84 L655,150"/>
+          </g>
+          <text x="585" y="170" text-anchor="middle" font-size="10.5" fill="#6b6760">各部署へ事例を配る</text>
+          <text x="350" y="195" text-anchor="middle" font-size="11" font-weight="700" fill="#3f7a59">全社11,000人 ／ ガードレール：セキュリティ講習＋テスト合格が利用条件</text>
+        </svg>
+        <p class="cap">全部やろうとせず3業務に固定。だから「全員が同じ底上げ」を実現できる</p>
+      </div>
+
+      <p class="sec-label">🧩 ナレッジ複利の核</p>
+      <ul class="mech">
+        <li><span class="ic">🎯</span><div><b>定型業務に絞って義務化</b>：「まずAIに聞く」「ゼロから資料を作らない」をガイドラインに明記。範囲を固定するから全員が底上げされる。</div></li>
+        <li><span class="ic">📣</span><div><b>生成AI活用推進者を各部署に配置</b>：活用事例を部署横断で共有。ナレッジが部署で孤立しない。</div></li>
+        <li><span class="ic">🛡</span><div><b>ガードレール</b>：セキュリティ講習＋テスト合格を利用条件に。安全と推進を両立。</div></li>
+      </ul>
+
+      <div class="takeaway">💡 <b>会社への示唆：</b>全業務を一気にAI化せず「議事録はAI要約を全員やる」のように<b>定型1〜2業務だけ全社ルール化</b>するのが一番効く。各チームに活用推進者を置く＝まさにゆりこのAI推進ロール。</div>
+
+      <div class="sources">
+        <div class="sl">出典（一次ソース）</div>
+        <a href="https://www.lycorp.co.jp/ja/news/release/018121/" target="_blank">AI活用義務化リリース</a>　/
+        <a href="https://www.lycorp.co.jp/ja/news/release/020104/" target="_blank">人事総務AI活用拡大</a>　/
+        <a href="https://ai-keiei.shift-ai.co.jp/interview-f7-lineyahoo/" target="_blank">活用義務化インタビュー</a>
+        <span class="src-note">※インタビューは二次メディア</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Panasonic Connect ============ -->
+  <section class="co" id="panasonic">
+    <div class="co-head">
+      <div class="logo">
+        <img src="https://logo.clearbit.com/connect.panasonic.com" alt="Panasonic" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="wordmark" style="background:#0049af;font-size:12px">Panasonic<br>Connect</span>
+      </div>
+      <div class="ti">
+        <h3>パナソニック コネクト</h3>
+        <div class="tag">社内ツールにも顧客級のUX投資＋RAG型</div>
+        <span class="chip" style="background:var(--blue-bg);color:#3f6da3">「聞く」から「頼む」へ進化</span>
+      </div>
+    </div>
+    <div class="co-body">
+      <p class="lead-line">社内独自AI<b>ConnectAI</b>を全社約1.16万人へ。社内データを<b>一元基盤</b>に集約し、<b>RAG＋ナレッジグラフ</b>で「聞く」から「頼む」へ。満足度を測ってUXを改善し続ける。</p>
+
+      <p class="sec-label">📊 数字（公式リリース）</p>
+      <div class="stats">
+        <div class="stat"><div class="v">約1.16万人</div><div class="l">全社員に導入</div></div>
+        <div class="stat"><div class="v">240万回</div><div class="l">年間利用回数</div></div>
+        <div class="stat"><div class="v">49.1%</div><div class="l">アクティブ率</div></div>
+        <div class="stat"><div class="v">44.8万h</div><div class="l">年間削減(2024)</div></div>
+      </div>
+
+      <p class="sec-label">🔄 コーパス → RAG → 改善ループ</p>
+      <div class="diagram">
+        <svg viewBox="0 0 700 215" xmlns="http://www.w3.org/2000/svg" font-family="Hiragino Sans, sans-serif">
+          <defs>
+            <marker id="arrP" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0049af"/></marker>
+          </defs>
+          <!-- corpus -->
+          <text x="95" y="20" text-anchor="middle" font-size="12" font-weight="800" fill="#3f6da3">社内データ（一元基盤）</text>
+          <g font-size="10.5" font-weight="700" fill="#2c2a26">
+            <rect x="20" y="32" width="150" height="26" rx="7" fill="#fff" stroke="#cfe0f2"/><text x="95" y="49" text-anchor="middle">構造化データ</text>
+            <rect x="20" y="64" width="150" height="26" rx="7" fill="#fff" stroke="#cfe0f2"/><text x="95" y="81" text-anchor="middle">非構造化データ</text>
+            <rect x="20" y="96" width="150" height="26" rx="7" fill="#fff" stroke="#cfe0f2"/><text x="95" y="113" text-anchor="middle">議事録・資料・マニュアル</text>
+          </g>
+          <path d="M178,77 L228,77" fill="none" stroke="#0049af" stroke-width="2.5" marker-end="url(#arrP)"/>
+          <!-- RAG -->
+          <rect x="238" y="48" width="150" height="58" rx="12" fill="#eef4fb" stroke="#0049af" stroke-width="2"/>
+          <text x="313" y="73" text-anchor="middle" font-size="12.5" font-weight="800" fill="#3f6da3">RAG＋</text>
+          <text x="313" y="91" text-anchor="middle" font-size="12.5" font-weight="800" fill="#3f6da3">ナレッジグラフ</text>
+          <path d="M393,77 L443,77" fill="none" stroke="#0049af" stroke-width="2.5" marker-end="url(#arrP)"/>
+          <!-- ConnectAI -->
+          <rect x="453" y="48" width="140" height="58" rx="12" fill="#fff" stroke="#0049af"/>
+          <text x="523" y="73" text-anchor="middle" font-size="13" font-weight="800" fill="#2c2a26">ConnectAI</text>
+          <text x="523" y="91" text-anchor="middle" font-size="10" fill="#6b6760">「頼む」エージェント</text>
+          <!-- feedback loop -->
+          <path d="M523,108 Q523,165 313,165 Q150,165 95,128" fill="none" stroke="#0049af" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrP)"/>
+          <rect x="360" y="150" width="170" height="30" rx="9" fill="#eef4fb" stroke="#cfe0f2"/>
+          <text x="445" y="170" text-anchor="middle" font-size="10.5" font-weight="700" fill="#3f6da3">満足度を測定→UX改善</text>
+        </svg>
+        <p class="cap">社内ツールにも顧客向けと同じUX投資をして、満足度を測りながら改善し続けるのが勝因</p>
+      </div>
+
+      <p class="sec-label">🧩 ナレッジ複利の核（担当者談の成功3要因）</p>
+      <ul class="mech">
+        <li><span class="ic">🎨</span><div><b>社内ツールにも顧客向けと同じUX投資</b>：使いにくいと使われない＝ナレッジも死ぬ、を理解している。</div></li>
+        <li><span class="ic">🔁</span><div><b>「変化は当たり前」のカルチャー醸成</b>＋満足度スコアを継続収集してUI/UXを改善。</div></li>
+        <li><span class="ic">📢</span><div><b>経営トップの継続的メッセージ発信</b>：一過性で終わらせない。</div></li>
+      </ul>
+
+      <div class="takeaway">💡 <b>会社への示唆：</b>「使いにくい社内ツールは使われず、ナレッジも死ぬ」。KONNEKT で社内AIやナレッジ基盤を入れるなら、導入後に活用率・満足度を測って改善し続ける運用がセット。社長の継続的な発信も効く。</div>
+
+      <div class="sources">
+        <div class="sl">出典（一次ソース）</div>
+        <a href="https://news.panasonic.com/jp/press/jn250707-2" target="_blank">年間44.8万時間削減リリース</a>　/
+        <a href="https://enterprisezine.jp/news/detail/20509" target="_blank">RAG×ナレッジグラフ新技術</a>　/
+        <a href="https://agenda-note.com/conference/detail/id=6731" target="_blank">AI導入成功の3秘訣</a>
+        <span class="src-note">※3秘訣は二次メディア</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Sansan ============ -->
+  <section class="co" id="sansan">
+    <div class="co-head">
+      <div class="logo">
+        <img src="https://logo.clearbit.com/sansan.com" alt="Sansan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="wordmark" style="background:#e60012">Sansan</span>
+      </div>
+      <div class="ti">
+        <h3>Sansan</h3>
+        <div class="tag">小規模でも回せる「Notion集約＋スキル可視化」型</div>
+        <span class="chip" style="background:var(--amber-bg);color:#b07a35">うちが一番マネしやすい規模感</span>
+      </div>
+    </div>
+    <div class="co-body">
+      <p class="lead-line">大がかりな内製AIを作らず、<b>Notionに社内情報を集約</b>＋<b>Notion AI</b>で情報を探す手間を大きく削減。スキルチェックシートで習熟を可視化。<b>身軽に始める手本</b>。</p>
+
+      <p class="sec-label">🔄 既製ツールだけで作る複利</p>
+      <div class="diagram">
+        <svg viewBox="0 0 700 170" xmlns="http://www.w3.org/2000/svg" font-family="Hiragino Sans, sans-serif">
+          <defs>
+            <marker id="arrA" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c9962f"/></marker>
+          </defs>
+          <rect x="30" y="55" width="160" height="56" rx="12" fill="#fbf2e6" stroke="#e0a96d" stroke-width="2"/>
+          <text x="110" y="80" text-anchor="middle" font-size="13" font-weight="800" fill="#b07a35">Notionに集約</text>
+          <text x="110" y="98" text-anchor="middle" font-size="10.5" fill="#6b6760">社内情報を1か所へ</text>
+
+          <path d="M195,83 L255,83" fill="none" stroke="#c9962f" stroke-width="2.5" marker-end="url(#arrA)"/>
+
+          <rect x="265" y="55" width="160" height="56" rx="12" fill="#fff" stroke="#e0a96d"/>
+          <text x="345" y="80" text-anchor="middle" font-size="13" font-weight="800" fill="#2c2a26">Notion AI</text>
+          <text x="345" y="98" text-anchor="middle" font-size="10.5" fill="#6b6760">要約・翻訳・議事録</text>
+
+          <path d="M430,83 L490,83" fill="none" stroke="#c9962f" stroke-width="2.5" marker-end="url(#arrA)"/>
+
+          <rect x="500" y="55" width="170" height="56" rx="12" fill="#eef6f1" stroke="#86b89a"/>
+          <text x="585" y="80" text-anchor="middle" font-size="13" font-weight="800" fill="#3f7a59">探す手間を削減</text>
+          <text x="585" y="98" text-anchor="middle" font-size="10.5" fill="#6b6760">聞けば出てくる</text>
+
+          <text x="350" y="140" text-anchor="middle" font-size="11" font-weight="700" fill="#b07a35">＋ Notion AIスキルチェックシートで習熟を自己評価・可視化</text>
+        </svg>
+        <p class="cap">独自開発ゼロ。既製ツール（Notion＋Notion AI）の組み合わせだけで複利の土台が作れる</p>
+      </div>
+
+      <p class="sec-label">🧩 ナレッジ複利の核</p>
+      <ul class="mech">
+        <li><span class="ic">📦</span><div><b>Notionに集約＋Notion AI</b>：社内情報を1か所にまとめ、要約・翻訳・議事録生成をAIで。情報を探す手間を大きく削減。</div></li>
+        <li><span class="ic">✅</span><div><b>スキルチェックシート</b>：要約・翻訳・議事録・プロンプト作成を自己評価形式でスキル可視化。GMOバッジの軽量版。</div></li>
+      </ul>
+
+      <div class="takeaway">💡 <b>会社への示唆：</b>「独自AIを作らなくていい」証明。KONNEKT も既にNotion DB群がある＝この型の土台はもう持ってる。あとは既製AIに読ませる繋ぎ方を整えるだけで小さく始められる。</div>
+
+      <div class="sources">
+        <div class="sl">出典</div>
+        <a href="https://www.itmedia.co.jp/enterprise/articles/2510/30/news002.html" target="_blank">Sansan Notion AI導入記事（ITmedia）</a>
+        <span class="src-note">※二次メディア（一次は企業談話）</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 閉じ ============ -->
+  <div class="closing">
+    <h2>🪞 5社を並べて見える「複利の作り方」</h2>
+    <p class="sub">規模はバラバラでも、効いてる仕組みは同じ形をしている。</p>
+    <div class="pat"><span class="e">🚪</span><div><b>入口コストをゼロにする</b> — 費用は会社負担、全員にツールを配る（GMO・LINEヤフー）。使わない理由を消す。</div></div>
+    <div class="pat"><span class="e">🧠</span><div><b>「AIが読む用」に作り直す</b> — ナレッジ＝AIのコンテキスト。聞けば答えが返る構造（メルカリ・パナ・Sansan）。</div></div>
+    <div class="pat"><span class="e">🎯</span><div><b>範囲を絞って固定する</b> — 議事録・調査・資料作成など定型1〜3業務に集中（LINEヤフー）。全員が同じ底上げ。</div></div>
+    <div class="pat"><span class="e">🎖</span><div><b>習熟と事例を可視化する</b> — バッジ・コンテスト・スキルシート・活用推進者（GMO・Sansan・LINEヤフー）。</div></div>
+    <div class="pat"><span class="e">📈</span><div><b>数値で測り続ける</b> — 活用率・削減時間を定点観測（GMO96.2%・パナ44.8万h）。投資継続の根拠になる。</div></div>
+
+    <div class="fail">⚠️ <b>逆に「形骸化する」共通理由：</b>①書いて終わりで使う動線がない ②情報が散在したまま ③現場が自分ごとにできてない ④更新コストが高くて誰も直さない ⑤「何をもって成功か」が曖昧。──溜めること自体が目的化すると死ぬ。</div>
+
+    <div class="takeaway" style="margin-top:18px;">🏢 <b>会社（KONNEKT）への示唆：</b>KONNEKT は「AIベースの会社」を掲げてAI推進中。ナレッジを溜める箱（Notion DB等）はあるが、足りないのは<b>①過去資産をAIが読む形に繋ぐ</b>と<b>②全社で使う動線・制度</b>（ツール費用の会社負担・定型業務の共通ルール・活用率の測定）。次はこの3つを軸にした複利化プランで具体化する。</div>
+  </div>
+
+  <footer>
+    CORIN ／ 2026-06-16 作成<br>
+    数値は各社の公式リリース／エンジニアブログを 2026-06-16 に一次照合済み（GMOは2026年1月時点の最新値・パナは2024年実績）。Sansanは二次メディア（ITmedia）。<br>
+    ロゴはClearbit Logo APIを参照（表示できない場合はブランドカラー表記に自動切替）。
+  </footer>
+
+</div>
+</body>
+</html>
