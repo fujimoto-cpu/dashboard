@@ -1,0 +1,1986 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎨 Creative Knowledge Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f4f3f0;
+  --card: #ffffff;
+  --header-bg: #111111;
+  --line: #e8e5df;
+  --text: #111111;
+  --sub: #555555;
+  --mute: #999999;
+  --pool-w: 360px;
+  --header-h: 52px;
+  --radius: 12px;
+  --c-trend: #e8365d;
+  --c-brand: #2563eb;
+  --c-place: #16a34a;
+  --c-food:  #d97706;
+  --c-other: #6b7280;
+}
+
+body { font-family: 'Inter', 'Noto Sans JP', -apple-system, sans-serif; background: var(--bg); color: var(--text); height: 100vh; overflow: hidden; -webkit-font-smoothing: antialiased; }
+
+/* ── Header ── */
+.km-header { height: var(--header-h); background: var(--header-bg); display: flex; align-items: center; padding: 0 20px; gap: 16px; position: relative; z-index: 1000; }
+.km-title { font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; letter-spacing: .12em; text-transform: uppercase; }
+.km-header-actions { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+.km-btn { padding: 7px 16px; border-radius: 6px; font-size: 12px; font-weight: 600; border: none; cursor: pointer; transition: all .15s; letter-spacing: .02em; }
+.km-btn-primary { background: #fff; color: #111; }
+.km-btn-primary:hover { background: #eee; }
+.km-btn-ghost { background: transparent; color: #aaa; border: 1px solid #333; }
+.km-btn-ghost:hover { border-color: #666; color: #fff; }
+.km-btn-settings { background: transparent; border: none; color: #666; font-size: 16px; cursor: pointer; padding: 4px 8px; transition: color .15s; }
+.km-btn-settings:hover { color: #ccc; }
+
+/* ── Body ── */
+.km-body { display: flex; height: calc(100vh - var(--header-h)); }
+
+/* ── Left: material pool ── */
+.km-pool { width: var(--pool-w); flex-shrink: 0; background: var(--card); border-right: 1px solid var(--line); display: flex; flex-direction: column; overflow: hidden; }
+.km-pool-head { padding: 12px 14px 8px; flex-shrink: 0; border-bottom: 1px solid var(--line); }
+.km-pool-head-title { font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--text); display: flex; align-items: center; gap: 6px; margin-bottom: 9px; }
+.km-pool-head-title .count { color: var(--mute); font-weight: 600; }
+.km-pool-search input { width: 100%; padding: 8px 12px; border: 1.5px solid var(--line); border-radius: 8px; font-size: 13px; background: var(--bg); color: var(--text); outline: none; transition: border-color .15s; }
+.km-pool-search input:focus { border-color: var(--text); }
+
+.km-pool-keywords { padding: 9px 14px; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 5px; flex-shrink: 0; max-height: 92px; overflow-y: auto; }
+.km-kw-label { font-size: 9px; font-weight: 800; color: var(--mute); letter-spacing: .07em; text-transform: uppercase; width: 100%; margin-bottom: 1px; }
+.km-kw { padding: 3px 9px; border-radius: 20px; font-size: 11px; font-weight: 700; border: 1.5px solid var(--line); background: transparent; cursor: pointer; color: var(--sub); transition: all .12s; white-space: nowrap; }
+.km-kw:hover { border-color: var(--text); color: var(--text); }
+.km-kw.on { background: var(--c-trend); color: #fff; border-color: var(--c-trend); }
+.km-kw .n { opacity: .6; margin-left: 2px; font-size: 9px; }
+
+.km-pool-grid { flex: 1; overflow-y: auto; padding: 12px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; align-content: start; }
+.km-pool-grid::-webkit-scrollbar { width: 5px; }
+.km-pool-grid::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+
+/* tile: padding-top portrait hack → NEVER overlaps regardless of image */
+.km-tile { position: relative; padding-top: 140%; border-radius: 10px; overflow: hidden; cursor: grab; border: 2px solid transparent; background: var(--bg); transition: transform .12s, box-shadow .12s, border-color .12s; }
+.km-tile:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,.16); }
+.km-tile:active { cursor: grabbing; }
+.km-tile.dragging { opacity: .4; }
+.km-tile.used { border-color: var(--c-place); }
+.km-tile-media { position: absolute; inset: 0; overflow: hidden; }
+.km-tile-media > * { position: absolute; inset: 0; width: 100%; height: 100%; }
+.km-tile-media img { object-fit: cover; }
+.km-tile-skeleton { background: linear-gradient(110deg, #ececec 30%, #f6f6f6 50%, #ececec 70%); }
+.km-tile-swatch { display: flex; }
+.km-tile-swatch div { flex: 1; height: 100%; }
+.km-tile-fail { display: flex; align-items: center; justify-content: center; font-size: 26px; opacity: .35; }
+.km-tile-overlay { position: absolute; left: 0; right: 0; bottom: 0; padding: 16px 8px 6px; background: linear-gradient(transparent, rgba(0,0,0,.8)); color: #fff; font-size: 10px; font-weight: 600; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; pointer-events: none; }
+.km-tile-badge { position: absolute; top: 6px; left: 6px; font-size: 8px; font-weight: 800; letter-spacing: .04em; padding: 2px 6px; border-radius: 5px; color: #fff; text-transform: uppercase; }
+.km-tile-raw { position: absolute; top: 6px; left: 6px; font-size: 8px; font-weight: 800; padding: 2px 6px; border-radius: 5px; background: rgba(0,0,0,.55); color: #fff; letter-spacing: .04em; }
+.km-tile-add { position: absolute; top: 6px; right: 6px; width: 24px; height: 24px; border-radius: 50%; background: rgba(255,255,255,.92); border: none; cursor: pointer; font-size: 15px; font-weight: 700; color: #111; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity .12s; }
+.km-tile:hover .km-tile-add { opacity: 1; }
+.km-tile-check { position: absolute; top: 6px; right: 6px; width: 22px; height: 22px; border-radius: 50%; background: var(--c-place); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+.km-pool-empty { grid-column: 1/-1; text-align: center; color: var(--mute); font-size: 12px; padding: 40px 10px; line-height: 1.7; }
+
+/* video placeholder + play badge (shared) */
+.km-vidph { background: linear-gradient(135deg, #1c1c1c, #3a3a3a); cursor: pointer; }
+.km-play-badge { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 46px; height: 46px; border-radius: 50%; background: rgba(0,0,0,.55); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 18px; padding-left: 3px; cursor: pointer; transition: background .12s, transform .12s; z-index: 2; }
+.km-play-badge:hover { background: rgba(0,0,0,.8); transform: translate(-50%,-50%) scale(1.08); }
+.km-tile-reel { position: absolute; bottom: 6px; left: 6px; font-size: 8px; font-weight: 800; padding: 2px 6px; border-radius: 5px; background: rgba(0,0,0,.6); color: #fff; letter-spacing: .04em; z-index: 2; }
+
+/* trend view (micro-trend cards) */
+.km-trend-head { padding: 12px 18px; background: var(--card); border-bottom: 1px solid var(--line); flex-shrink: 0; font-size: 12px; color: var(--sub); }
+.km-trend-head b { color: var(--text); }
+.km-trend-grid { flex: 1; overflow-y: auto; padding: 18px; display: flex; flex-wrap: wrap; gap: 18px; align-content: flex-start; }
+.km-trend-grid::-webkit-scrollbar { width: 6px; }
+.km-trend-grid::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+.km-tcard { background: var(--card); border: 1.5px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; flex: 1 1 320px; min-width: 290px; max-width: 520px; }
+.km-tcard.draft { border-color: var(--line); }
+.km-tcard-imgs { display: grid; gap: 2px; background: var(--bg); flex-shrink: 0; }
+.km-tcard-img { position: relative; overflow: hidden; background: #ececec; cursor: pointer; }
+.km-tcard-img img, .km-tcard-img .km-tile-skeleton, .km-tcard-img .km-tcard-vid, .km-tcard-img .km-tcard-noimg, .km-tcard-img .km-tile-fail { position: absolute; inset: 0; width: 100%; height: 100%; }
+.km-tcard-img img { object-fit: cover; }
+.km-tcard-img .km-tile-skeleton { position: absolute; inset: 0; }
+.km-tcard-vbadge { position: absolute; top: 4px; right: 4px; width: 20px; height: 20px; border-radius: 50%; background: rgba(0,0,0,.6); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 9px; padding-left: 1px; pointer-events: none; }
+.km-tcard-vid { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #7d7d7d, #9c9c9c); cursor: pointer; }
+.km-tcard-noimg { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #efe9df, #e6ddcc); color: #b8a888; font-size: 30px; }
+.km-tcard-palette { display: flex; height: 22px; flex-shrink: 0; }
+.km-tcard-palette div { flex: 1; position: relative; }
+.km-tcard-palette div:hover::after { content: attr(data-hex); position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: #111; color: #fff; font-size: 8px; padding: 1px 4px; border-radius: 3px; white-space: nowrap; }
+.km-tcard-palette-big { display: flex; }
+.km-tcard-palette-big div { flex: 1; height: 100%; }
+.km-tcard-more { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.5); color: #fff; font-size: 15px; font-weight: 800; }
+.km-tcard-body { padding: 14px 16px 16px; }
+.km-tcard-top { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; flex-wrap: wrap; }
+.km-tcard-word { font-size: 18px; font-weight: 800; line-height: 1.3; color: var(--text); }
+.km-tcard-draft-badge { font-size: 9px; font-weight: 800; letter-spacing: .05em; padding: 3px 8px; border-radius: 5px; background: #fbe7a1; color: #7a5c00; text-transform: uppercase; }
+.km-tcard-ref { font-size: 10px; font-weight: 700; color: var(--c-trend); background: #fdeef2; padding: 3px 8px; border-radius: 5px; }
+.km-tcard-memo { font-size: 12.5px; color: var(--sub); line-height: 1.6; margin-bottom: 10px; }
+.km-tcard-foot { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.km-tcard-count { font-size: 10px; color: var(--mute); font-weight: 600; }
+.km-tcard-srclink { font-size: 10px; color: var(--mute); text-decoration: none; }
+.km-tcard-srclink:hover { color: var(--text); }
+.km-tcard-toboard { margin-left: auto; font-size: 11px; font-weight: 700; border: 1.5px solid var(--text); background: var(--text); color: #fff; border-radius: 7px; padding: 6px 12px; cursor: pointer; transition: opacity .12s; }
+.km-tcard-toboard:hover { opacity: .82; }
+.km-trend-empty { grid-column: 1/-1; text-align: center; color: var(--mute); font-size: 13px; padding: 60px 20px; line-height: 1.8; }
+
+/* trend detail modal */
+.km-detail { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 2500; display: none; align-items: center; justify-content: center; backdrop-filter: blur(2px); }
+.km-detail.open { display: flex; }
+.km-detail-panel { background: var(--card); border-radius: 18px; width: min(720px, 94vw); max-height: 90vh; overflow-y: auto; padding: 26px 28px 30px; box-shadow: 0 20px 70px rgba(0,0,0,.3); position: relative; }
+.km-detail-close { position: absolute; top: 16px; right: 18px; font-size: 22px; background: none; border: none; cursor: pointer; color: var(--mute); }
+.km-detail-close:hover { color: var(--text); }
+.km-detail-word { font-size: 24px; font-weight: 800; line-height: 1.3; margin-bottom: 8px; padding-right: 30px; }
+.km-detail-meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+.km-detail-ref { font-size: 11px; font-weight: 700; color: var(--c-trend); background: #fdeef2; padding: 4px 10px; border-radius: 6px; }
+.km-detail-draft { font-size: 10px; font-weight: 800; padding: 4px 9px; border-radius: 6px; background: #fbe7a1; color: #7a5c00; text-transform: uppercase; }
+.km-detail-memo { font-size: 14px; line-height: 1.7; color: var(--sub); margin-bottom: 16px; }
+.km-detail-palette { display: flex; height: 40px; border-radius: 8px; overflow: hidden; margin-bottom: 18px; border: 1px solid var(--line); }
+.km-detail-palette div { flex: 1; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 3px; font-size: 8px; color: rgba(0,0,0,.45); font-weight: 700; }
+.km-detail-srchead { font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--mute); margin-bottom: 10px; }
+.km-detail-srcs { display: flex; flex-direction: column; gap: 14px; }
+.km-detail-src { display: flex; gap: 14px; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; padding: 10px; }
+.km-detail-src-media { position: relative; width: 110px; height: 110px; flex-shrink: 0; border-radius: 8px; overflow: hidden; background: #ececec; cursor: pointer; }
+.km-detail-src-media img { width: 100%; height: 100%; object-fit: cover; }
+.km-detail-src-media .km-vidph { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.km-detail-src-info { flex: 1; min-width: 0; }
+.km-detail-src-title { font-size: 13px; font-weight: 700; line-height: 1.4; margin-bottom: 4px; }
+.km-detail-src-body { font-size: 11.5px; color: var(--sub); line-height: 1.55; max-height: 64px; overflow: hidden; margin-bottom: 7px; }
+.km-detail-src-links { display: flex; gap: 8px; flex-wrap: wrap; }
+.km-detail-src-link { font-size: 11px; font-weight: 700; text-decoration: none; padding: 4px 10px; border-radius: 6px; border: 1.5px solid var(--line); color: var(--sub); }
+.km-detail-src-link:hover { border-color: var(--text); color: var(--text); }
+.km-detail-src-link.ig { background: linear-gradient(45deg,#f09433,#dc2743,#bc1888); color: #fff; border: none; }
+
+/* video lightbox */
+.km-lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.88); z-index: 3000; display: none; align-items: center; justify-content: center; }
+.km-lightbox.open { display: flex; }
+.km-lightbox-close { position: absolute; top: 16px; right: 22px; font-size: 26px; color: #fff; background: none; border: none; cursor: pointer; z-index: 2; }
+.km-lightbox-inner { display: flex; align-items: center; justify-content: center; }
+.km-lightbox-inner video { max-width: 90vw; max-height: 86vh; border-radius: 10px; background: #000; }
+.km-lightbox-inner iframe { width: min(90vw, 920px); height: min(86vh, 520px); border-radius: 10px; border: none; }
+.km-lightbox-loading { color: #fff; font-size: 13px; }
+
+/* ── Right pane ── */
+.km-right { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+.km-view-tabs { display: flex; padding: 0 18px; background: var(--card); border-bottom: 1px solid var(--line); flex-shrink: 0; gap: 4px; }
+.km-view-tab { padding: 13px 16px; font-size: 12px; font-weight: 700; cursor: pointer; color: var(--mute); border: none; background: none; border-bottom: 2px solid transparent; transition: all .15s; letter-spacing: .04em; }
+.km-view-tab.active { color: var(--text); border-bottom-color: var(--text); }
+.km-view { flex: 1; overflow: hidden; display: none; flex-direction: column; }
+.km-view.active { display: flex; }
+
+/* board sub-tabs (per project) */
+.km-board-tabs { display: flex; align-items: center; gap: 4px; padding: 6px 18px 0; background: var(--card); border-bottom: 1px solid var(--line); flex-shrink: 0; overflow-x: auto; }
+.km-board-tabs::-webkit-scrollbar { display: none; }
+.km-board-tab { padding: 9px 14px; font-size: 12px; font-weight: 700; cursor: pointer; color: var(--mute); border: none; background: none; border-radius: 8px 8px 0 0; transition: all .15s; letter-spacing: .03em; white-space: nowrap; display: flex; align-items: center; gap: 6px; }
+.km-board-tab.active { color: var(--text); background: var(--bg); }
+.km-board-tab .tabn { font-size: 10px; color: var(--mute); font-weight: 600; }
+.km-board-tab-x { border: none; background: none; cursor: pointer; color: var(--mute); font-size: 13px; padding: 0 0 0 2px; }
+.km-board-tab-x:hover { color: var(--c-trend); }
+.km-board-newtab { padding: 8px 12px; font-size: 16px; color: var(--mute); border: none; background: none; cursor: pointer; flex-shrink: 0; }
+.km-board-newtab:hover { color: var(--text); }
+
+/* trend read header */
+.km-trendread { padding: 12px 18px; background: var(--card); border-bottom: 1px solid var(--line); flex-shrink: 0; display: none; }
+.km-trendread.show { display: block; }
+.km-trendread-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.km-trendread-label { font-size: 9px; font-weight: 800; color: var(--mute); letter-spacing: .08em; text-transform: uppercase; }
+.km-palette { display: flex; height: 26px; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); min-width: 160px; }
+.km-palette div { flex: 1; min-width: 18px; position: relative; }
+.km-palette div:hover::after { content: attr(data-hex); position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: #111; color: #fff; font-size: 9px; padding: 2px 5px; border-radius: 3px; white-space: nowrap; margin-bottom: 3px; }
+.km-trendread-kw { display: flex; flex-wrap: wrap; gap: 5px; }
+.km-trendread-kw span { font-size: 11px; font-weight: 700; color: var(--sub); background: var(--bg); border-radius: 20px; padding: 3px 9px; }
+
+/* board drop area */
+.km-board-drop { flex: 1; overflow-y: auto; padding: 18px; position: relative; }
+.km-board-drop::-webkit-scrollbar { width: 6px; }
+.km-board-drop::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+.km-board-drop.drag-over { background: #fff8f9; box-shadow: inset 0 0 0 3px var(--c-trend); }
+.km-board-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; align-items: start; }
+
+.km-bcard { background: var(--card); border: 1.5px solid var(--line); border-radius: var(--radius); overflow: hidden; width: 100%; transition: box-shadow .2s, border-color .2s; }
+.km-bcard:hover { box-shadow: 0 10px 30px rgba(0,0,0,.1); }
+.km-bcard-imgwrap { position: relative; width: 100%; aspect-ratio: 3/2; overflow: hidden; background: var(--bg); }
+.km-bcard-imgwrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.km-bcard-swatch { display: flex; height: 100%; }
+.km-bcard-swatch div { flex: 1; }
+.km-bcard-cat { position: absolute; top: 12px; left: 12px; font-size: 9px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; color: #fff; }
+.km-bcard-del { position: absolute; top: 10px; right: 10px; width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,.9); border: none; cursor: pointer; font-size: 14px; color: #888; display: flex; align-items: center; justify-content: center; transition: all .12s; }
+.km-bcard-del:hover { background: var(--c-trend); color: #fff; }
+.km-bcard-body { padding: 13px 15px 15px; }
+.km-bcard-title { width: 100%; border: none; background: none; font-family: inherit; font-size: 15px; font-weight: 800; color: var(--text); line-height: 1.4; outline: none; padding: 0; margin-bottom: 4px; resize: none; overflow: hidden; }
+.km-bcard-title:focus { background: #fffbe6; border-radius: 4px; }
+.km-bcard-memo { width: 100%; border: none; background: none; font-family: inherit; font-size: 12.5px; color: var(--sub); line-height: 1.55; outline: none; padding: 6px 0 0; resize: none; overflow: hidden; min-height: 20px; }
+.km-bcard-memo:focus { background: #f6f6f6; border-radius: 4px; padding: 6px 8px; }
+.km-bcard-memo::placeholder { color: var(--mute); font-style: italic; }
+.km-bcard-foot { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+.km-bcard-catsel { font-size: 10px; font-weight: 700; border: 1.5px solid var(--line); border-radius: 6px; padding: 3px 6px; background: var(--bg); color: var(--sub); outline: none; cursor: pointer; }
+.km-bcard-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.km-bcard-tag { font-size: 9.5px; padding: 2px 7px; background: var(--bg); border-radius: 20px; color: var(--sub); font-weight: 600; }
+.km-bcard-link { font-size: 10px; color: var(--mute); margin-left: auto; text-decoration: none; }
+.km-bcard-link:hover { color: var(--text); }
+
+/* 実践Tips view */
+.km-ai-grid { flex: 1; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; padding: 18px; overflow-y: auto; align-content: start; }
+.km-ai-card { background: var(--card); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 16px 17px 15px; transition: box-shadow .2s, border-color .2s; }
+.km-ai-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,.08); border-color: #c9c9c9; }
+.km-ai-top { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; flex-wrap: wrap; }
+.km-ai-cat { font-size: 9px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: 4px 9px; border-radius: 6px; color: #fff; background: var(--c-trend); }
+.km-ai-tool { font-size: 10px; font-weight: 700; color: var(--sub); background: var(--bg); border: 1px solid var(--line); border-radius: 20px; padding: 3px 9px; }
+.km-ai-date { font-size: 10px; color: var(--mute); margin-left: auto; }
+.km-ai-title { font-size: 15px; font-weight: 800; color: var(--text); line-height: 1.4; margin-bottom: 10px; }
+.km-ai-key { display: flex; align-items: center; gap: 8px; background: #f3f1fb; border: 1px dashed var(--c-trend); border-radius: 8px; padding: 9px 11px; margin-bottom: 11px; cursor: pointer; transition: background .12s; }
+.km-ai-key:hover { background: #ece8fa; }
+.km-ai-key code { font-size: 13px; font-weight: 700; color: var(--c-trend); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; word-break: break-word; flex: 1; }
+.km-ai-key .km-ai-copy { font-size: 11px; color: var(--mute); white-space: nowrap; }
+.km-ai-tip { font-size: 12.5px; color: var(--sub); line-height: 1.65; margin-bottom: 10px; }
+.km-ai-use { font-size: 11.5px; color: var(--sub); line-height: 1.55; padding-top: 9px; border-top: 1px solid var(--line); }
+.km-ai-use b { color: var(--text); font-weight: 700; }
+.km-ai-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 9px; }
+.km-ai-links a { font-size: 10.5px; color: var(--mute); text-decoration: none; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 4px 9px; }
+.km-ai-links a:hover { color: var(--text); border-color: #c9c9c9; }
+
+.km-board-empty { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--mute); pointer-events: none; padding: 30px; text-align: center; }
+.km-board-empty .big { font-size: 46px; margin-bottom: 14px; opacity: .5; }
+.km-board-empty .t1 { font-size: 14px; font-weight: 700; color: var(--sub); margin-bottom: 6px; }
+.km-board-empty .t2 { font-size: 12px; line-height: 1.7; }
+
+/* map view */
+#km-map { flex: 1; width: 100%; }
+.leaflet-popup-content-wrapper { border-radius: 14px !important; box-shadow: 0 8px 32px rgba(0,0,0,.18) !important; }
+.leaflet-popup-tip-container { display: none; }
+.km-pop { width: 210px; font-family: inherit; }
+.km-pop img { width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 8px; display: block; background: #eee; }
+.km-pop-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; color: #fff; display: inline-block; margin-bottom: 6px; }
+.km-pop h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; line-height: 1.4; }
+.km-pop-memo { font-size: 11px; color: var(--sub); margin-bottom: 8px; line-height: 1.4; }
+.km-pop-btn { width: 100%; padding: 7px 0; border: none; border-radius: 7px; font-size: 11px; font-weight: 700; cursor: pointer; background: var(--text); color: #fff; letter-spacing: .03em; }
+.km-pop-btn.on { background: var(--c-place); }
+
+/* all gallery view */
+.km-filter-bar { display: flex; padding: 8px 16px; gap: 7px; background: var(--card); border-bottom: 1px solid var(--line); flex-shrink: 0; overflow-x: auto; }
+.km-filter-bar::-webkit-scrollbar { display: none; }
+.km-filter-pill { padding: 5px 14px; border-radius: 20px; font-size: 10px; font-weight: 800; border: 1.5px solid var(--line); background: transparent; cursor: pointer; letter-spacing: .06em; text-transform: uppercase; color: var(--sub); white-space: nowrap; transition: all .15s; }
+.km-filter-pill.active { background: var(--text); color: #fff; border-color: var(--text); }
+.km-allgrid { flex: 1; overflow-y: auto; padding: 14px 16px; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); grid-auto-rows: minmax(230px, auto); gap: 14px; align-items: start; }
+.km-allgrid::-webkit-scrollbar { width: 6px; }
+.km-allgrid::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+.km-acard { background: var(--card); border: 1.5px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+.km-acard-media { position: relative; width: 100%; height: 190px; flex: 0 0 190px; overflow: hidden; background: var(--bg); }
+.km-acard-media img, .km-acard-media .km-tile-skeleton, .km-acard-media .km-acard-swatch, .km-acard-media .km-tile-fail { position: absolute; inset: 0; width: 100%; height: 100%; }
+.km-acard-media img { object-fit: cover; }
+.km-acard-swatch { display: flex; }
+.km-acard-swatch div { flex: 1; height: 100%; }
+.km-acard-cat { position: absolute; top: 8px; left: 8px; font-size: 8px; font-weight: 800; text-transform: uppercase; padding: 3px 7px; border-radius: 5px; color: #fff; }
+.km-acard-add { position: absolute; top: 8px; right: 8px; width: 24px; height: 24px; border-radius: 50%; background: rgba(255,255,255,.92); border: none; cursor: pointer; font-size: 15px; font-weight: 700; color: #111; }
+.km-acard-body { padding: 9px 11px 11px; }
+.km-acard-title { font-size: 12px; font-weight: 700; line-height: 1.4; }
+.km-acard-memo { font-size: 11px; color: var(--sub); margin-top: 3px; line-height: 1.4; }
+
+/* CSS: history panel */
+.km-hist-panel { position: fixed; top: var(--header-h); right: 0; bottom: 0; width: min(420px, 96vw); background: var(--card); border-left: 1px solid var(--line); box-shadow: -6px 0 32px rgba(0,0,0,.14); z-index: 2200; overflow-y: auto; transform: translateX(100%); transition: transform .28s cubic-bezier(.4,0,.2,1); display: flex; flex-direction: column; }
+.km-hist-panel.open { transform: translateX(0); }
+.km-hist-panel::-webkit-scrollbar { width: 5px; }
+.km-hist-panel::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+.km-hist-header { padding: 18px 18px 14px; border-bottom: 1px solid var(--line); flex-shrink: 0; display: flex; align-items: flex-start; gap: 10px; }
+.km-hist-header-text { flex: 1; }
+.km-hist-title { font-size: 18px; font-weight: 900; color: var(--text); line-height: 1.3; margin-bottom: 3px; }
+.km-hist-subtitle { font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--c-trend); }
+.km-hist-close { background: none; border: none; font-size: 20px; cursor: pointer; color: var(--mute); flex-shrink: 0; padding: 2px 4px; line-height: 1; }
+.km-hist-close:hover { color: var(--text); }
+.km-hist-body { padding: 16px 18px 24px; display: flex; flex-direction: column; gap: 16px; }
+.km-hist-section { }
+.km-hist-section-label { font-size: 9px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--mute); margin-bottom: 8px; }
+/* bar charts */
+.km-hist-bar-wrap { display: flex; flex-direction: column; gap: 7px; }
+.km-hist-bar-row { }
+.km-hist-bar-label { font-size: 10px; font-weight: 700; color: var(--sub); margin-bottom: 4px; }
+.km-hist-bar-track { height: 8px; background: var(--bg); border-radius: 99px; overflow: hidden; }
+.km-hist-bar-fill { height: 100%; border-radius: 99px; transition: width .5s ease; }
+.km-hist-bar-fill.prev { background: linear-gradient(90deg, #a3a3a3, #737373); }
+.km-hist-bar-fill.curr { background: linear-gradient(90deg, var(--c-trend), #f97316); }
+.km-hist-bar-year { font-size: 10px; color: var(--mute); margin-top: 2px; }
+/* text blocks */
+.km-hist-text { font-size: 12.5px; color: var(--sub); line-height: 1.7; }
+/* timeline */
+.km-hist-timeline { display: flex; flex-direction: column; gap: 0; }
+.km-hist-tl-item { display: flex; gap: 12px; padding-bottom: 14px; position: relative; }
+.km-hist-tl-item:last-child { padding-bottom: 0; }
+.km-hist-tl-item:last-child .km-hist-tl-line { display: none; }
+.km-hist-tl-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 46px; }
+.km-hist-tl-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--c-trend); flex-shrink: 0; margin-top: 4px; }
+.km-hist-tl-line { flex: 1; width: 1.5px; background: var(--line); margin-top: 3px; }
+.km-hist-tl-year { font-size: 9px; font-weight: 800; color: var(--c-trend); letter-spacing: .04em; text-align: center; line-height: 1.2; margin-top: 2px; }
+.km-hist-tl-right { flex: 1; padding-bottom: 2px; }
+.km-hist-tl-event { font-size: 12px; color: var(--text); line-height: 1.6; }
+/* key players */
+.km-hist-players { font-size: 12px; color: var(--sub); line-height: 1.7; }
+/* history btn on tcard */
+.km-tcard-histbtn { font-size: 11px; font-weight: 700; border: 1.5px solid var(--line); background: transparent; color: var(--sub); border-radius: 7px; padding: 6px 10px; cursor: pointer; transition: all .12s; flex-shrink: 0; }
+.km-tcard-histbtn:hover { border-color: var(--c-trend); color: var(--c-trend); background: #fdeef2; }
+.km-tcard-histbtn.has-data { border-color: var(--c-trend); color: var(--c-trend); }
+/* overlay backdrop */
+.km-hist-backdrop { position: fixed; inset: 0; z-index: 2199; display: none; }
+.km-hist-backdrop.open { display: block; }
+
+/* ── Modal / Settings / Toast ── */
+.km-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 2000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(2px); }
+.km-overlay.open { display: flex; }
+.km-modal { background: var(--card); border-radius: 16px; padding: 28px; width: min(460px, 95vw); max-height: 90vh; overflow-y: auto; box-shadow: 0 16px 60px rgba(0,0,0,.25); }
+.km-modal h3 { font-size: 17px; font-weight: 800; margin-bottom: 22px; }
+.km-form-group { margin-bottom: 16px; }
+.km-form-group label { display: block; font-size: 10px; font-weight: 800; color: var(--mute); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .08em; }
+.km-form-group input { width: 100%; padding: 10px 13px; border: 1.5px solid var(--line); border-radius: 8px; font-size: 13px; color: var(--text); background: #fafafa; outline: none; font-family: inherit; }
+.km-form-group input:focus { border-color: var(--text); background: #fff; }
+.km-settings-row { display: flex; align-items: center; gap: 8px; }
+.km-settings-row input { flex: 1; }
+.km-settings-test { font-size: 12px; color: var(--mute); margin-top: 6px; }
+.km-settings-ok { color: #16a34a; font-weight: 600; }
+.km-settings-err { color: #e8365d; font-weight: 600; }
+.km-modal-actions { display: flex; gap: 10px; margin-top: 22px; }
+.km-modal-actions .km-btn { flex: 1; padding: 12px; font-size: 13px; font-weight: 700; }
+.km-modal-actions .km-btn-primary { background: var(--text); color: #fff; }
+.km-modal-actions .km-btn-primary:hover { background: #333; }
+
+.km-toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); background: #111; color: #fff; padding: 11px 22px; border-radius: 8px; font-size: 13px; font-weight: 600; z-index: 9999; opacity: 0; transition: opacity .25s; pointer-events: none; }
+.km-toast.show { opacity: 1; }
+.km-loading { position: fixed; inset: 0; background: #111; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 5000; }
+.km-loading-logo { font-size: 48px; margin-bottom: 16px; }
+.km-loading-text { font-size: 13px; color: #888; letter-spacing: .08em; text-transform: uppercase; }
+</style>
+</head>
+<style>
+/* COLOR view (移植図鑑) */
+.cz-subtabs { display: flex; gap: 8px; flex-wrap: wrap; padding: 12px 18px; background: var(--card); border-bottom: 1px solid var(--line); flex-shrink: 0; }
+.cz-tab { border: 1.5px solid var(--line); background: transparent; border-radius: 999px; padding: 7px 14px; font-size: 12px; font-weight: 700; color: var(--mute); cursor: pointer; font-family: inherit; transition: all .12s; }
+.cz-tab em { font-style: normal; font-size: 10px; margin-left: 5px; opacity: .7; }
+.cz-tab:hover { border-color: var(--text); color: var(--text); }
+.cz-tab.active { background: var(--c-trend); color: #fff; border-color: var(--c-trend); }
+.cz-tab.active em { opacity: .9; }
+.cz-grid { flex: 1; overflow-y: auto; padding: 18px; display: flex; flex-wrap: wrap; gap: 18px; align-content: flex-start; align-items: flex-start; }
+.cz-grid::-webkit-scrollbar { width: 6px; }
+.cz-grid::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+.cz-date { font-size: 11px; font-weight: 700; color: var(--c-trend); background: #fdeef2; border-radius: 6px; padding: 2px 8px; display: inline-block; width: fit-content; margin-bottom: 4px; }
+.cz-empty { grid-column: 1/-1; text-align: center; color: var(--mute); font-size: 13px; padding: 60px 20px; line-height: 1.8; }
+/* ── brand / artist / events / font / tips: shared head + grid ── */
+.km-brand-head { padding: 10px 18px; background: var(--card); border-bottom: 1px solid var(--line); font-size: 12px; color: var(--sub); flex-shrink: 0; }
+.km-brand-grid { flex: 1; overflow-y: auto; padding: 18px; display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 14px; align-content: flex-start; }
+.km-brand-grid::-webkit-scrollbar { width: 6px; }
+.km-brand-grid::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+/* ── km-mc: unified portrait image card ── */
+.km-mc { background: var(--card); border: 1.5px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .15s; cursor: pointer; text-decoration: none; color: inherit; }
+.km-mc:hover { box-shadow: 0 4px 18px rgba(0,0,0,.13); border-color: var(--c-trend,#6366f1); }
+.km-mc-thumb { position: relative; width: 100%; aspect-ratio: 3/4; overflow: hidden; background: var(--bg); flex-shrink: 0; }
+.km-mc-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.km-mc:hover .km-mc-thumb img { transform: scale(1.04); }
+.km-mc-noimg { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
+.km-mc-noimg-emoji { font-size: 36px; opacity: .5; }
+.km-mc-noimg-label { font-size: 9px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; color: rgba(255,255,255,.65); }
+.km-mc-tip-header { width: 100%; aspect-ratio: 3/4; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; flex-shrink: 0; }
+.km-mc-tip-icon { font-size: 46px; }
+.km-mc-tip-tool { font-size: 11px; font-weight: 900; letter-spacing: .09em; text-transform: uppercase; color: rgba(255,255,255,.8); }
+.km-mc-body { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.km-mc-title { font-size: 13px; font-weight: 800; line-height: 1.4; color: var(--text); overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.km-mc-sub { font-size: 11px; color: var(--sub); line-height: 1.55; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; margin-top: 2px; }
+.km-mc-tags { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 3px; }
+.km-mc-tag { font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 20px; background: var(--bg); color: var(--sub); border: 1px solid var(--line); }
+.km-mc-foot { display: flex; align-items: center; gap: 6px; margin-top: auto; padding-top: 6px; }
+.km-brand-analysis-link { font-size: 10px; padding: 2px 6px; border-radius: 4px; background: #f0f0f0; color: #555; text-decoration: none; white-space: nowrap; }
+.km-brand-analysis-link:hover { background: #e0e8ff; color: #3355aa; }
+.km-mc-date { font-size: 10px; color: var(--mute); }
+.km-mc-link { font-size: 10px; font-weight: 700; color: var(--c-trend,#6366f1); text-decoration: none; margin-left: auto; padding: 2px 8px; border: 1.5px solid var(--c-trend,#6366f1); border-radius: 5px; white-space: nowrap; flex-shrink: 0; }
+.km-mc-link:hover { background: var(--c-trend,#6366f1); color: #fff; }
+.km-mc-key { display: flex; align-items: center; gap: 6px; background: #f3f1fb; border: 1px dashed #b8b0f0; border-radius: 7px; padding: 5px 8px; cursor: pointer; margin-top: 4px; }
+.km-mc-key:hover { background: #ece8fa; }
+.km-mc-key code { font-size: 10px; font-weight: 700; color: var(--c-trend,#6366f1); font-family: ui-monospace, monospace; word-break: break-word; flex: 1; }
+.km-mc-use { font-size: 11px; color: var(--sub); line-height: 1.5; border-top: 1px solid var(--line); padding-top: 6px; margin-top: 4px; }
+.km-mc-use b { color: var(--text); font-weight: 700; }
+/* font / events use km-brand-grid via HTML class swap */
+
+/* ── Artist grouped view ── */
+.km-artist-view { flex: 1; overflow-y: auto; }
+.km-artist-view::-webkit-scrollbar { width: 6px; }
+.km-artist-view::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+.km-artist-group { padding: 20px 18px 10px; }
+.km-artist-group-header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 2.5px solid var(--line); }
+.km-artist-group-name { font-size: 22px; font-weight: 900; color: var(--text); letter-spacing: -.02em; }
+.km-artist-group-count { font-size: 12px; font-weight: 700; color: var(--mute); }
+.km-artist-group-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 14px; }
+.km-artist-analysis-badge { position: absolute; top: 6px; right: 6px; background: rgba(0,0,0,.72); color: #fff; font-size: 9px; font-weight: 800; padding: 2px 6px; border-radius: 4px; letter-spacing: .05em; z-index: 1; pointer-events: none; }
+/* Brand card full-name fallback */
+.km-brand-noimg-name { font-size: 12px; font-weight: 900; color: #fff; text-align: center; padding: 0 8px; word-break: break-word; line-height: 1.35; max-height: 80%; overflow: hidden; }
+</style>
+<body>
+
+<div class="km-loading" id="km-loading">
+  <div class="km-loading-logo">🎨</div>
+  <div class="km-loading-text">ライブラリを読み込み中...</div>
+</div>
+
+<div class="km-header">
+  <div class="km-title">🎨 Creative Knowledge Map</div>
+  <div class="km-header-actions">
+    <button class="km-btn km-btn-ghost" onclick="document.getElementById('km-upload-input').click()">⬆ 写真を追加</button>
+    <button class="km-btn-settings" onclick="openSettings()" title="設定">⚙️</button>
+  </div>
+</div>
+<input type="file" id="km-upload-input" accept="image/*" multiple style="display:none" onchange="handleUpload(this.files)">
+
+<div class="km-body">
+
+  <!-- LEFT: material pool -->
+  <div class="km-pool">
+    <div class="km-pool-head">
+      <div class="km-pool-head-title">📥 素材棚 <span class="count" id="pool-count"></span></div>
+      <div class="km-pool-search"><input type="text" id="pool-search" placeholder="タイトル・タグで検索..." oninput="renderPool()"></div>
+    </div>
+    <div class="km-pool-keywords" id="pool-keywords"></div>
+    <div class="km-pool-grid" id="pool-grid"><div class="km-pool-empty">読み込み中...</div></div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="km-right">
+    <div class="km-view-tabs">
+      <button class="km-view-tab active" data-v="board" onclick="switchView('board')">★ ボード</button>
+      <button class="km-view-tab" data-v="trend" onclick="switchView('trend')">🧩 トレンド</button>
+      <button class="km-view-tab" data-v="brand" onclick="switchView('brand')">🏷️ ブランド</button>
+      <button class="km-view-tab" data-v="artist" onclick="switchView('artist')">🎤 アーティスト</button>
+      <button class="km-view-tab" data-v="events" onclick="switchView('events')">🎪 Events</button>
+      <button class="km-view-tab" data-v="font" onclick="switchView('font')">🔤 フォント</button>
+      <button class="km-view-tab" data-v="ai" onclick="switchView('ai')">📝 実践Tips</button>
+      <button class="km-view-tab" data-v="phases" onclick="switchView('phases')">💡 フェーズ別</button>
+      <button class="km-view-tab" data-v="map" onclick="switchView('map')">🗺️ マップ</button>
+      <button class="km-view-tab" data-v="all" onclick="switchView('all')">🖼 ぜんぶ</button>
+    </div>
+
+    <!-- BOARD view -->
+    <div class="km-view active" id="view-board">
+      <div class="km-board-tabs" id="board-tabs"></div>
+      <div class="km-trendread" id="trendread"></div>
+      <div class="km-board-drop" id="board-drop" ondragover="onBoardDragOver(event)" ondragleave="onBoardDragLeave(event)" ondrop="onBoardDrop(event)">
+        <div class="km-board-grid" id="board-grid"></div>
+      </div>
+    </div>
+
+    <!-- TREND view (digested micro-trends = PermanentNote cards) + サブカテゴリ -->
+    <div class="km-view" id="view-trend">
+      <div class="km-trend-head" id="trend-head"></div>
+      <div class="cz-subtabs" id="trend-subtabs"></div>
+      <div class="km-trend-grid" id="trend-grid"></div>
+    </div>
+
+    <!-- BRAND view -->
+    <div class="km-view" id="view-brand">
+      <div class="km-brand-head" id="brand-head"></div>
+      <div class="km-brand-grid" id="brand-grid"><div class="km-trend-empty">読み込み中...</div></div>
+    </div>
+
+    <!-- ARTIST view -->
+    <div class="km-view" id="view-artist">
+      <div class="km-brand-head" id="artist-head"></div>
+      <div class="km-artist-view" id="artist-grid"><div class="km-trend-empty">読み込み中...</div></div>
+    </div>
+
+    <!-- EVENTS view -->
+    <div class="km-view" id="view-events">
+      <div class="km-brand-head" id="events-head"></div>
+      <div class="km-brand-grid" id="events-grid"><div class="km-trend-empty">読み込み中...</div></div>
+    </div>
+
+    <!-- FONT view -->
+    <div class="km-view" id="view-font">
+      <div class="km-brand-head" id="font-head"></div>
+      <div class="km-brand-grid" id="font-grid"><div class="km-trend-empty">読み込み中...</div></div>
+    </div>
+
+    <!-- 実践Tips view -->
+    <div class="km-view" id="view-ai">
+      <div class="km-brand-head" id="ai-head"></div>
+      <div class="km-filter-bar" id="ai-filter-bar"></div>
+      <div class="km-brand-grid" id="ai-grid"><div class="km-trend-empty">読み込み中...</div></div>
+    </div>
+
+    <!-- MAP view -->
+    <!-- PHASES view -->
+    <div class="km-view" id="view-phases" style="overflow-y:auto;padding:24px 28px;"></div>
+
+    <div class="km-view" id="view-map"><div id="km-map"></div></div>
+
+    <!-- ALL view -->
+    <div class="km-view" id="view-all">
+      <div class="km-filter-bar" id="all-filter">
+        <button class="km-filter-pill active" data-cat="all" onclick="setAllCat('all')">ALL</button>
+        <button class="km-filter-pill" data-cat="trend" onclick="setAllCat('trend')">✨ TREND</button>
+        <button class="km-filter-pill" data-cat="brand" onclick="setAllCat('brand')">🏷 BRAND</button>
+        <button class="km-filter-pill" data-cat="place" onclick="setAllCat('place')">📍 PLACE</button>
+        <button class="km-filter-pill" data-cat="food" onclick="setAllCat('food')">☕ FOOD</button>
+      </div>
+      <div class="km-allgrid" id="all-grid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Settings Modal -->
+<div class="km-overlay" id="settings-modal-overlay" onclick="if(event.target===this)closeSettings()">
+  <div class="km-modal">
+    <h3>⚙️ 設定</h3>
+    <div class="km-form-group"><label>Obsidian REST API ベースURL</label><input type="text" id="s-base" value="http://127.0.0.1:27123"></div>
+    <div class="km-form-group"><label>APIキー</label><div class="km-settings-row"><input type="password" id="s-key" placeholder="Obsidian REST APIキー"><button class="km-btn km-btn-ghost" onclick="testConn()">テスト</button></div><div class="km-settings-test" id="s-test"></div></div>
+    <div class="km-form-group"><label>インデックスJSON（素材メタ）</label><input type="text" id="s-index" value="00_🏢 company/cockpit-inspiration/map-index.json"></div>
+    <div class="km-form-group"><label>ボード保存JSON</label><input type="text" id="s-boards" value="00_🏢 company/cockpit-inspiration/boards.json"></div>
+    <div class="km-form-group"><label>インスタ画像フォルダ</label><input type="text" id="s-igdir" value="99_🖼️ picture/instagram"></div>
+    <div class="km-form-group"><label>自分の写真フォルダ（アップロード先）</label><input type="text" id="s-owndir" value="99_🖼️ picture/own"></div>
+    <div class="km-form-group"><label>PermanentNoteフォルダ（トレンドカード）</label><input type="text" id="s-pndir" value="20_📂 zettelkasten/PermanentNote"></div>
+    <div class="km-modal-actions"><button class="km-btn km-btn-ghost" onclick="closeSettings()">キャンセル</button><button class="km-btn km-btn-primary" onclick="saveSettings()">保存</button></div>
+  </div>
+</div>
+
+<!-- Trend detail -->
+<div class="km-detail" id="km-detail" onclick="if(event.target===this)closeDetail()">
+  <div class="km-detail-panel">
+    <button class="km-detail-close" onclick="closeDetail()">✕</button>
+    <div id="km-detail-body"></div>
+  </div>
+</div>
+
+<!-- Video lightbox -->
+<div class="km-lightbox" id="km-lightbox" onclick="if(event.target===this)closePlayer()">
+  <button class="km-lightbox-close" onclick="closePlayer()">✕</button>
+  <div class="km-lightbox-inner" id="km-lightbox-inner"></div>
+</div>
+
+<div class="km-toast" id="km-toast"></div>
+
+<script>
+// ── Config ──
+const cfg = {
+  get base()    { return localStorage.getItem('obsidian-rest-api-base') || 'http://127.0.0.1:27123'; },
+  get key()     { return localStorage.getItem('obsidian-rest-api-key') || ''; },
+  get index()   { return localStorage.getItem('ctl-index-path') || '00_🏢 company/cockpit-inspiration/map-index.json'; },
+  get boards()  { return localStorage.getItem('ctl-boards-path') || '00_🏢 company/cockpit-inspiration/boards.json'; },
+  get igDir()   { return localStorage.getItem('ctl-ig-dir') || '99_🖼️ picture/instagram'; },
+  get ownDir()  { return localStorage.getItem('ctl-own-dir') || '99_🖼️ picture/own'; },
+  get pnDir()   { return localStorage.getItem('ctl-pn-dir') || '20_📂 zettelkasten/PermanentNote'; },
+  get litDir()  { return localStorage.getItem('ctl-lit-dir') || '20_📂 zettelkasten/LiteratureNote'; },
+  get aiKnowhow() { return localStorage.getItem('ctl-aiknowhow-path') || '00_🏢 company/cockpit-inspiration/ai-knowhow.json'; },
+};
+function headers(extra = {}) { return { Authorization: `Bearer ${cfg.key}`, ...extra }; }
+function enc(p) { return encodeURIComponent(p).replace(/%2F/g, '/'); }
+function escHtml(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+// ── Obsidian API ──
+async function obsListDir(dir) {
+  try { const r = await fetch(`${cfg.base}/vault/${enc(dir)}/`, { headers: headers({ Accept: 'application/json' }) });
+    if (!r.ok) return []; const j = await r.json(); return j.files || []; } catch { return []; }
+}
+async function obsGetJSON(path) {
+  try { const r = await fetch(`${cfg.base}/vault/${enc(path)}`, { headers: headers({ Accept: '*/*' }) });
+    if (!r.ok) return null; return JSON.parse(await r.text()); } catch { return null; }
+}
+async function obsGet(path) {
+  try { const r = await fetch(`${cfg.base}/vault/${enc(path)}`, { headers: headers({ Accept: 'text/markdown' }) });
+    if (!r.ok) return null; return await r.text(); } catch { return null; }
+}
+// minimal YAML frontmatter parser (scalars + list fields tags/sources)
+function parseFrontmatter(md) {
+  const m = (md || '').match(/^---\n([\s\S]*?)\n---/);
+  if (!m) return { _body: md || '' };
+  const fm = {}; const lines = m[1].split('\n'); let key = null;
+  for (const line of lines) {
+    const li = line.match(/^([A-Za-z_][\w-]*):\s*(.*)$/);
+    if (li) {
+      key = li[1]; const v = li[2].trim();
+      if (v === '') fm[key] = [];                 // list follows
+      else if (/^\[.*\]$/.test(v)) fm[key] = v.slice(1, -1).split(',').map(s => s.trim().replace(/^["']|["']$/g, '')).filter(Boolean);
+      else fm[key] = v.replace(/^["']|["']$/g, '');
+    } else {
+      const it = line.match(/^\s*-\s*(.+)$/);
+      if (it && key) { if (!Array.isArray(fm[key])) fm[key] = []; fm[key].push(it[1].trim().replace(/^["']|["']$/g, '')); }
+    }
+  }
+  fm._body = (md.slice(m[0].length) || '').trim();
+  return fm;
+}
+async function obsPutJSON(path, data) {
+  const r = await fetch(`${cfg.base}/vault/${enc(path)}`, { method: 'PUT', headers: headers({ 'Content-Type': 'application/json' }), body: JSON.stringify(data, null, 2) });
+  if (!r.ok) throw new Error(`PUT ${path} → ${r.status}`);
+}
+async function obsPutBinary(path, blob) {
+  const r = await fetch(`${cfg.base}/vault/${enc(path)}`, { method: 'PUT', headers: headers({ 'Content-Type': blob.type || 'application/octet-stream' }), body: blob });
+  if (!r.ok) throw new Error(`PUT bin ${path} → ${r.status}`);
+}
+const _imgCache = new Map();
+async function vaultImageURL(path) {
+  if (_imgCache.has(path)) return _imgCache.get(path);
+  try { const r = await fetch(`${cfg.base}/vault/${enc(path)}`, { headers: headers() });
+    if (!r.ok) return null; const url = URL.createObjectURL(await r.blob()); _imgCache.set(path, url); return url; } catch { return null; }
+}
+// capture first frame of a vault video as a thumbnail dataURL (cached)
+const _vthumbCache = new Map();
+async function videoThumb(path) {
+  if (_vthumbCache.has(path)) return _vthumbCache.get(path);
+  const url = await vaultImageURL(path);
+  if (!url) { _vthumbCache.set(path, null); return null; }
+  const data = await new Promise(res => {
+    const v = document.createElement('video');
+    v.muted = true; v.playsInline = true; v.preload = 'metadata'; v.src = url;
+    let done = false; const finish = (val) => { if (!done) { done = true; res(val); } };
+    v.onloadeddata = () => { try { v.currentTime = Math.min(0.15, (v.duration || 1) / 2); } catch { finish(null); } };
+    v.onseeked = () => { try { const c = document.createElement('canvas'); c.width = v.videoWidth || 320; c.height = v.videoHeight || 320; c.getContext('2d').drawImage(v, 0, 0, c.width, c.height); finish(c.toDataURL('image/jpeg', 0.72)); } catch { finish(null); } };
+    v.onerror = () => finish(null);
+    setTimeout(() => finish(null), 6000);
+  });
+  _vthumbCache.set(path, data);
+  return data;
+}
+
+// ── State ──
+const CAT = {
+  trend: { label: 'TREND', color: '#e8365d', emoji: '✨' },
+  brand: { label: 'BRAND', color: '#2563eb', emoji: '🏷' },
+  place: { label: 'PLACE', color: '#16a34a', emoji: '📍' },
+  food:  { label: 'FOOD',  color: '#d97706', emoji: '☕' },
+  other: { label: 'OTHER', color: '#6b7280', emoji: '📌' },
+};
+function catColor(c) { return (CAT[c] || CAT.other).color; }
+const IMG_EXT = /\.(jpe?g|png|webp|gif|avif)$/i;
+const VIDEO_EXT = /\.(mp4|mov|webm|m4v)$/i;
+const MEDIA_EXT = /\.(jpe?g|png|webp|gif|avif|mp4|mov|webm|m4v)$/i;
+function isVid(p) { return VIDEO_EXT.test(p || ''); }
+
+let mapIndex = [];
+let pool = [];
+let boardsData = { boards: {}, active: null };
+let poolTagFilter = null;
+let allCat = 'all';
+let currentView = 'board';
+
+// image source for a metadata entry
+function entryImg(e) {
+  if (e.image_url) return { imgUrl: e.image_url };
+  if (e.shortcode) return { imgPath: `${cfg.igDir}/${e.shortcode}_1.jpg` };
+  if (e.youtube_id) return { imgUrl: `https://img.youtube.com/vi/${e.youtube_id}/hqdefault.jpg` };
+  return {};
+}
+
+// ── Load everything ──
+async function loadAll() {
+  mapIndex = (await obsGetJSON(cfg.index)) || [];
+  boardsData = (await obsGetJSON(cfg.boards)) || { boards: {}, active: null };
+  if (!boardsData.boards || typeof boardsData.boards !== 'object') boardsData = { boards: {}, active: null };
+  if (!Object.keys(boardsData.boards).length) { boardsData.boards['BIGBANG'] = { name: 'BIGBANG', cards: [] }; boardsData.active = 'BIGBANG'; }
+  if (!boardsData.active || !boardsData.boards[boardsData.active]) boardsData.active = Object.keys(boardsData.boards)[0];
+
+  const byShort = {}; mapIndex.forEach(e => { if (e.shortcode) byShort[e.shortcode] = e; });
+  const items = []; const seenShort = new Set();
+
+  const igFiles = await obsListDir(cfg.igDir);
+  igFiles.filter(f => MEDIA_EXT.test(f)).forEach(f => {
+    const m = f.match(/^(.+?)_(\d+)\.[a-z0-9]+$/i);
+    const short = m ? m[1] : f.replace(MEDIA_EXT, '');
+    if (m && m[2] !== '1' && seenShort.has(short)) return;
+    if (m && m[2] === '1') seenShort.add(short);
+    const key = `ig:${short}`;
+    if (items.some(it => it.id === key)) return;
+    const meta = byShort[short] || {};
+    const vid = VIDEO_EXT.test(f);
+    items.push({ id: key, kind: 'ig', imgPath: vid ? null : `${cfg.igDir}/${f}`, videoPath: vid ? `${cfg.igDir}/${f}` : null, isVideo: vid, shortcode: short,
+      title: meta.title || '', cardTitle: meta.card_title || meta.title || '',
+      category: meta.category || 'trend', tags: meta.tags || [], memo: meta.memo || '',
+      colors: meta.colors || [], mdPath: meta.path || null, created: meta.created || '', linked: !!byShort[short] });
+  });
+
+  const ownFiles = await obsListDir(cfg.ownDir);
+  ownFiles.filter(f => MEDIA_EXT.test(f)).forEach(f => {
+    const vid = VIDEO_EXT.test(f);
+    items.push({ id: `own:${f}`, kind: 'own', imgPath: vid ? null : `${cfg.ownDir}/${f}`, videoPath: vid ? `${cfg.ownDir}/${f}` : null, isVideo: vid, shortcode: null,
+      title: '', cardTitle: '', category: 'trend', tags: [], memo: '', colors: [], mdPath: null, created: f.slice(0, 13), linked: false, own: true });
+  });
+
+  mapIndex.forEach(e => {
+    if (e.shortcode && items.some(it => it.shortcode === e.shortcode)) return;
+    if (e.image_url || e.youtube_id || (e.colors && e.colors.length)) {
+      const im = entryImg(e);
+      items.push({ id: `meta:${e.path}`, kind: 'meta', imgUrl: im.imgUrl || '', imgPath: im.imgPath || null,
+        youtubeId: e.youtube_id || null, shortcode: e.shortcode || null, title: e.title || '', cardTitle: e.card_title || e.title || '',
+        category: e.category || 'trend', tags: e.tags || [], memo: e.memo || '', colors: e.colors || [],
+        mdPath: e.path || null, created: e.created || '', linked: true });
+    }
+  });
+
+  items.sort((a, b) => { if (a.own !== b.own) return a.own ? -1 : 1; if (a.linked !== b.linked) return a.linked ? -1 : 1; return (b.created || '').localeCompare(a.created || ''); });
+  pool = items;
+}
+
+function activeBoard() { return boardsData.boards[boardsData.active]; }
+function usedIds() { const b = activeBoard(); if (!b) return new Set(); return new Set(b.cards.map(c => c.poolId).filter(Boolean)); }
+
+// ── Pool render ──
+function renderPoolKeywords() {
+  const freq = {}; pool.forEach(it => (it.tags || []).forEach(t => { freq[t] = (freq[t] || 0) + 1; }));
+  const sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 16);
+  const el = document.getElementById('pool-keywords');
+  if (!sorted.length) { el.innerHTML = ''; return; }
+  el.innerHTML = `<span class="km-kw-label">🔥 今のキーワード</span>` +
+    sorted.map(([t, n]) => `<button class="km-kw ${poolTagFilter === t ? 'on' : ''}" onclick="togglePoolTag('${escHtml(t)}')">#${escHtml(t)}<span class="n">${n}</span></button>`).join('') +
+    (poolTagFilter ? `<button class="km-kw" style="border-color:#e8365d;color:#e8365d" onclick="togglePoolTag(null)">✕ 解除</button>` : '');
+}
+function togglePoolTag(t) { poolTagFilter = (poolTagFilter === t) ? null : t; renderPool(); }
+
+// ── Video / player ──
+function openPlayer(opts) {
+  const lb = document.getElementById('km-lightbox'); const box = document.getElementById('km-lightbox-inner');
+  box.innerHTML = '';
+  if (opts.youtubeId) {
+    box.innerHTML = `<iframe src="https://www.youtube.com/embed/${escHtml(opts.youtubeId)}?autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+    lb.classList.add('open');
+  } else if (opts.videoPath) {
+    box.innerHTML = `<div class="km-lightbox-loading">動画を読み込み中...</div>`;
+    lb.classList.add('open');
+    vaultImageURL(opts.videoPath).then(u => {
+      if (!lb.classList.contains('open')) return;
+      if (u) { const v = document.createElement('video'); v.controls = true; v.autoplay = true; v.playsInline = true; v.src = u; box.innerHTML = ''; box.appendChild(v); }
+      else box.innerHTML = `<div class="km-lightbox-loading">動画を読み込めなかった（API接続を確認してね）</div>`;
+    });
+  }
+}
+function playPool(id) { const it = pool.find(p => p.id === id); if (it) openPlayer({ videoPath: it.videoPath, youtubeId: it.youtubeId }); }
+function closePlayer() { const lb = document.getElementById('km-lightbox'); lb.classList.remove('open'); document.getElementById('km-lightbox-inner').innerHTML = ''; }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePlayer(); });
+
+let _io = null;
+function mediaInto(box, it) {
+  let url = it.imgUrl || null;
+  const finish = (u) => {
+    if (u) { const img = new Image(); img.onload = () => { box.innerHTML = ''; box.appendChild(img); }; img.onerror = () => failBox(box, it); img.src = u; }
+    else if (it.colors && it.colors.length) { box.innerHTML = `<div class="km-tile-swatch">${it.colors.map(c => `<div style="background:${c}"></div>`).join('')}</div>`; }
+    else failBox(box, it);
+  };
+  if (url) finish(url);
+  else if (it.imgPath) vaultImageURL(it.imgPath).then(u => finish(u));
+  else finish(null);
+}
+function failBox(box, it) {
+  if (it.colors && it.colors.length) { box.innerHTML = `<div class="km-tile-swatch">${it.colors.map(c => `<div style="background:${c}"></div>`).join('')}</div>`; }
+  else { box.innerHTML = `<div class="km-tile-fail">🖼</div>`; }
+}
+
+function renderPool() {
+  renderPoolKeywords();
+  const q = (document.getElementById('pool-search').value || '').toLowerCase();
+  let items = pool;
+  if (poolTagFilter) items = items.filter(it => (it.tags || []).includes(poolTagFilter));
+  if (q) items = items.filter(it => (it.title + ' ' + it.cardTitle + ' ' + (it.tags || []).join(' ') + ' ' + it.memo).toLowerCase().includes(q));
+  document.getElementById('pool-count').textContent = `${items.length}枚`;
+  const el = document.getElementById('pool-grid');
+  if (!items.length) { el.innerHTML = `<div class="km-pool-empty">${pool.length ? '該当する素材がないよ' : 'まだ素材がないよ。<br>⬆ 写真を追加 か、インスタ保存画像を読み込むと<br>ここに並ぶよ'}</div>`; return; }
+  const used = usedIds();
+  el.innerHTML = items.map(it => {
+    const isUsed = used.has(it.id);
+    const cat = CAT[it.category] || CAT.other;
+    const label = it.cardTitle || it.title || '';
+    const overlay = label ? `<div class="km-tile-overlay">${escHtml(label)}</div>` : '';
+    const badge = it.own ? `<span class="km-tile-raw">MY PHOTO</span>` : it.linked ? `<span class="km-tile-badge" style="background:${cat.color}">${cat.label}</span>` : `<span class="km-tile-raw">未整理</span>`;
+    const corner = isUsed ? `<div class="km-tile-check">✓</div>` : `<button class="km-tile-add" onclick="event.stopPropagation();addToBoardById('${it.id}')" title="ボードに追加">+</button>`;
+    const playBadge = (it.isVideo || it.youtubeId) ? `<div class="km-play-badge" onclick="event.stopPropagation();playPool('${it.id}')">▶</div>` : '';
+    const reel = it.isVideo ? `<span class="km-tile-reel">REEL</span>` : (it.youtubeId ? `<span class="km-tile-reel">YOUTUBE</span>` : '');
+    const media = it.isVideo ? `<div class="km-tile-media km-vidph"></div>` : `<div class="km-tile-media" data-media="${it.id}"><div class="km-tile-skeleton"></div></div>`;
+    return `<div class="km-tile ${isUsed ? 'used' : ''}" draggable="true" data-id="${it.id}" ondragstart="onTileDragStart(event,'${it.id}')" ondragend="onTileDragEnd(event)" ondblclick="addToBoardById('${it.id}')">
+      ${media}
+      ${badge}${corner}${playBadge}${reel}${overlay}
+    </div>`;
+  }).join('');
+
+  if (_io) _io.disconnect();
+  _io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(ent => { if (!ent.isIntersecting) return; const box = ent.target; obs.unobserve(box);
+      const it = pool.find(p => p.id === box.dataset.media); if (it) mediaInto(box, it); });
+  }, { root: el, rootMargin: '300px' });
+  el.querySelectorAll('.km-tile-media').forEach(b => _io.observe(b));
+}
+
+// ── Drag & drop ──
+function onTileDragStart(e, id) { e.dataTransfer.setData('text/plain', id); e.dataTransfer.effectAllowed = 'copy'; e.currentTarget.classList.add('dragging'); }
+function onTileDragEnd(e) { e.currentTarget.classList.remove('dragging'); }
+function onBoardDragOver(e) { e.preventDefault(); e.dataTransfer.dropEffect = 'copy'; document.getElementById('board-drop').classList.add('drag-over'); }
+function onBoardDragLeave(e) { if (e.target.id === 'board-drop') document.getElementById('board-drop').classList.remove('drag-over'); }
+function onBoardDrop(e) { e.preventDefault(); document.getElementById('board-drop').classList.remove('drag-over'); const id = e.dataTransfer.getData('text/plain'); if (id) addToBoardById(id); }
+
+function addToBoardById(id) {
+  const it = pool.find(p => p.id === id); if (!it) return;
+  const b = activeBoard(); if (!b) { toast('先にボードを作ってね'); return; }
+  if (b.cards.some(c => c.poolId === id)) { toast('もうこのボードにあるよ'); return; }
+  b.cards.unshift({ cid: 'c' + Date.now() + Math.floor(Math.random() * 1000), poolId: id, imgPath: it.imgPath || null, imgUrl: it.imgUrl || null,
+    videoPath: it.videoPath || null, isVideo: !!it.isVideo, youtubeId: it.youtubeId || null,
+    colors: it.colors || [], title: it.cardTitle || it.title || '', category: it.category || 'trend', tags: it.tags || [], memo: '', mdPath: it.mdPath || null });
+  saveBoards(); renderBoard(); renderPool(); if (currentView === 'all') renderAll();
+  toast(it.cardTitle || it.title ? `「${(it.cardTitle || it.title).slice(0, 14)}」を追加` : 'ボードに追加したよ');
+}
+function addEntryToBoard(path) {
+  const e = mapIndex.find(x => x.path === path); if (!e) return;
+  const poolItem = pool.find(p => p.mdPath === path);
+  if (poolItem) return addToBoardById(poolItem.id);
+  const b = activeBoard(); if (!b) return;
+  const im = entryImg(e);
+  const evid = im.imgPath && VIDEO_EXT.test(im.imgPath);
+  b.cards.unshift({ cid: 'c' + Date.now() + Math.floor(Math.random() * 1000), poolId: null, imgPath: evid ? null : (im.imgPath || null), imgUrl: im.imgUrl || null,
+    videoPath: evid ? im.imgPath : null, isVideo: !!evid, youtubeId: e.youtube_id || null,
+    colors: e.colors || [], title: e.card_title || e.title || '', category: e.category || 'trend', tags: e.tags || [], memo: '', mdPath: e.path || null });
+  saveBoards(); renderBoard(); toast('★ ボードに追加したよ');
+}
+function removeCard(cid) { const b = activeBoard(); if (!b) return; b.cards = b.cards.filter(c => c.cid !== cid); saveBoards(); renderBoard(); renderPool(); }
+function updateCard(cid, field, value) { const b = activeBoard(); if (!b) return; const c = b.cards.find(x => x.cid === cid); if (!c) return; c[field] = value; saveBoards(); if (field === 'category') renderBoard(); }
+
+// ── Board render ──
+function renderBoardTabs() {
+  const el = document.getElementById('board-tabs');
+  el.innerHTML = Object.keys(boardsData.boards).map(n => {
+    const b = boardsData.boards[n]; const active = n === boardsData.active;
+    return `<button class="km-board-tab ${active ? 'active' : ''}" onclick="switchBoard('${escHtml(n)}')">${escHtml(n)} <span class="tabn">${b.cards.length}</span>${active ? `<span class="km-board-tab-x" onclick="event.stopPropagation();deleteBoard('${escHtml(n)}')" title="削除">✕</span>` : ''}</button>`;
+  }).join('') + `<button class="km-board-newtab" onclick="newBoard()" title="新規ボード">＋</button>`;
+}
+function renderTrendRead() {
+  const b = activeBoard(); const el = document.getElementById('trendread');
+  if (!b || !b.cards.length) { el.classList.remove('show'); el.innerHTML = ''; return; }
+  const colors = []; b.cards.forEach(c => (c.colors || []).forEach(x => { if (!colors.includes(x)) colors.push(x); }));
+  const freq = {}; b.cards.forEach(c => (c.tags || []).forEach(t => { freq[t] = (freq[t] || 0) + 1; }));
+  const kw = Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 8);
+  if (!colors.length && !kw.length) { el.classList.remove('show'); el.innerHTML = ''; return; }
+  const palette = colors.length ? `<div class="km-palette">${colors.slice(0, 14).map(c => `<div style="background:${c}" data-hex="${c}"></div>`).join('')}</div>` : '';
+  const keywords = kw.length ? `<div class="km-trendread-kw">${kw.map(([t, n]) => `<span>#${escHtml(t)} ${n}</span>`).join('')}</div>` : '';
+  el.innerHTML = `<div class="km-trendread-row"><span class="km-trendread-label">🎨 この提案の色</span>${palette}<span class="km-trendread-label" style="margin-left:8px">🔥 方向性</span>${keywords}</div>`;
+  el.classList.add('show');
+}
+function renderBoard() {
+  renderBoardTabs(); renderTrendRead();
+  const b = activeBoard(); const grid = document.getElementById('board-grid'); const drop = document.getElementById('board-drop');
+  drop.querySelector('.km-board-empty')?.remove();
+  if (!b || !b.cards.length) {
+    grid.innerHTML = '';
+    const empty = document.createElement('div'); empty.className = 'km-board-empty';
+    empty.innerHTML = `<div class="big">🎨</div><div class="t1">左の素材をここにドラッグ</div><div class="t2">「これ次の提案に使えそう」と思った画像を放り込むと<br>トレンドカードになるよ。タイトルやメモは後から書ける。</div>`;
+    drop.appendChild(empty); return;
+  }
+  grid.innerHTML = b.cards.map(c => {
+    const cat = CAT[c.category] || CAT.other;
+    let visual;
+    if (c.isVideo) visual = `<div class="km-bcard-swatch km-vidph"></div><div class="km-play-badge" onclick="openPlayer({videoPath:'${escHtml(c.videoPath)}'})">▶</div><span class="km-tile-reel">REEL</span>`;
+    else if (c.imgPath || c.imgUrl) visual = `<img data-card-img="${c.cid}" alt="">` + (c.youtubeId ? `<div class="km-play-badge" onclick="openPlayer({youtubeId:'${escHtml(c.youtubeId)}'})">▶</div><span class="km-tile-reel">YOUTUBE</span>` : '');
+    else if (c.colors && c.colors.length) visual = `<div class="km-bcard-swatch">${c.colors.map(x => `<div style="background:${x}"></div>`).join('')}</div>`;
+    else visual = `<div class="km-bcard-swatch" style="background:${cat.color}22;align-items:center;justify-content:center;font-size:40px">${cat.emoji}</div>`;
+    const tags = (c.tags || []).slice(0, 5).map(t => `<span class="km-bcard-tag">#${escHtml(t)}</span>`).join('');
+    const link = c.mdPath ? `<a class="km-bcard-link" href="obsidian://open?vault=corin&file=${encodeURIComponent(c.mdPath.replace(/\.md$/, ''))}" title="元ノート">🔗 ノート</a>` : '';
+    return `<div class="km-bcard">
+      <div class="km-bcard-imgwrap">${visual}<span class="km-bcard-cat" style="background:${cat.color}">${cat.label}</span><button class="km-bcard-del" onclick="removeCard('${c.cid}')" title="外す">✕</button></div>
+      <div class="km-bcard-body">
+        <textarea class="km-bcard-title" rows="1" placeholder="象徴的なタイトルを..." oninput="autoGrow(this)" onchange="updateCard('${c.cid}','title',this.value)">${escHtml(c.title)}</textarea>
+        <textarea class="km-bcard-memo" rows="1" placeholder="なぜ使えそう？自分の言葉でメモ..." oninput="autoGrow(this)" onchange="updateCard('${c.cid}','memo',this.value)">${escHtml(c.memo)}</textarea>
+        <div class="km-bcard-foot">
+          <select class="km-bcard-catsel" onchange="updateCard('${c.cid}','category',this.value)">${Object.keys(CAT).map(k => `<option value="${k}" ${k === c.category ? 'selected' : ''}>${CAT[k].emoji} ${CAT[k].label}</option>`).join('')}</select>
+          <div class="km-bcard-tags">${tags}</div>${link}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  b.cards.forEach(async c => { const img = grid.querySelector(`img[data-card-img="${c.cid}"]`); if (!img) return;
+    let url = c.imgUrl || null; if (!url && c.imgPath) url = await vaultImageURL(c.imgPath);
+    if (url) img.src = url; else img.replaceWith(Object.assign(document.createElement('div'), { className: 'km-bcard-swatch', style: 'background:#eee' })); });
+  grid.querySelectorAll('textarea').forEach(autoGrow);
+}
+function autoGrow(t) { t.style.height = 'auto'; t.style.height = t.scrollHeight + 'px'; }
+
+function switchBoard(name) { boardsData.active = name; saveBoards(); renderBoard(); renderPool(); }
+function newBoard() { const name = prompt('新しいボードの名前（案件名など）', ''); if (!name) return;
+  if (boardsData.boards[name]) { toast('その名前はもうあるよ'); switchBoard(name); return; }
+  boardsData.boards[name] = { name, cards: [] }; boardsData.active = name; saveBoards(); renderBoard(); renderPool(); }
+function deleteBoard(name) { const b = boardsData.boards[name];
+  if (b && b.cards.length && !confirm(`「${name}」を削除する？カード${b.cards.length}枚も消えるよ`)) return;
+  delete boardsData.boards[name];
+  if (!Object.keys(boardsData.boards).length) boardsData.boards['新規ボード'] = { name: '新規ボード', cards: [] };
+  boardsData.active = Object.keys(boardsData.boards)[0]; saveBoards(); renderBoard(); renderPool(); }
+
+let _saveTimer = null;
+function saveBoards() { clearTimeout(_saveTimer); _saveTimer = setTimeout(async () => { try { await obsPutJSON(cfg.boards, boardsData); } catch (e) { console.warn('saveBoards failed', e); } }, 400); }
+
+// ── Map view ──
+const CARTO_TILE = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+let map = null; let mapInited = false;
+function createPin(cat) { return L.divIcon({ html: `<div style="width:18px;height:18px;border-radius:50%;background:${catColor(cat)};border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.35)"></div>`, className: '', iconSize: [18, 18], iconAnchor: [9, 9], popupAnchor: [0, -12] }); }
+function initMap() {
+  if (mapInited) return;
+  map = L.map('km-map').setView([35.662, 139.703], 13);
+  L.tileLayer(CARTO_TILE, { subdomains: 'abcd', maxZoom: 19, attribution: '© OpenStreetMap © CARTO' }).addTo(map);
+  map.on('popupopen', (e) => {
+    e.popup._contentNode.querySelectorAll('img[data-pin-img]').forEach(async img => {
+      const u = await vaultImageURL(img.dataset.pinImg); if (u) img.src = u; else img.style.display = 'none';
+    });
+    e.popup._contentNode.querySelectorAll('img[data-pin-md]').forEach(async img => {
+      try {
+        const md = await obsGet(img.dataset.pinMd);
+        const fm = parseFrontmatter(md);
+        let imgPath = Array.isArray(fm.images) && fm.images.find(p => /\.(jpe?g|png|webp|gif)$/i.test(p));
+        if (!imgPath && fm.url) {
+          const scm = fm.url.match(/instagram\.com\/(?:p|reel)\/([A-Za-z0-9_-]+)/);
+          if (scm) imgPath = `${cfg.igDir}/${scm[1]}_1.jpg`;
+        }
+        if (!imgPath && fm.shortcode) imgPath = `${cfg.igDir}/${fm.shortcode}_1.jpg`;
+        if (!imgPath) { img.style.display = 'none'; return; }
+        const u = await vaultImageURL(imgPath);
+        if (u) { img.src = u; img.style.removeProperty('display'); img.style.removeProperty('min-height'); img.style.removeProperty('background'); }
+        else img.style.display = 'none';
+      } catch { img.style.display = 'none'; }
+    });
+  });
+  mapInited = true;
+  renderMapPins();
+}
+let mapMarkers = [];
+function renderMapPins() {
+  if (!map) return;
+  mapMarkers.forEach(m => map.removeLayer(m)); mapMarkers = [];
+  mapIndex.filter(e => e.lat && e.lng).forEach(e => {
+    const cat = CAT[e.category] || CAT.other; const im = entryImg(e);
+    let imgTag = '';
+    if (im.imgUrl) imgTag = `<img src="${im.imgUrl}" onerror="this.style.display='none'">`;
+    else if (im.imgPath) imgTag = `<img data-pin-img="${escHtml(im.imgPath)}">`;
+    else imgTag = `<img data-pin-md="${escHtml(e.path)}" style="background:#eee;min-height:70px">`;
+    const onBoard = (activeBoard()?.cards || []).some(c => c.mdPath === e.path);
+    const html = `<div class="km-pop">${imgTag}<span class="km-pop-cat" style="background:${cat.color}">${cat.label}</span><h4>${escHtml(e.card_title || e.title)}</h4>${e.memo ? `<div class="km-pop-memo">${escHtml(e.memo)}</div>` : ''}<button class="km-pop-btn ${onBoard ? 'on' : ''}" onclick="addEntryToBoard('${escHtml(e.path)}')">${onBoard ? '✓ ボードにある' : `★ ${escHtml(boardsData.active)} に追加`}</button></div>`;
+    const mk = L.marker([e.lat, e.lng], { icon: createPin(e.category) }).addTo(map).bindPopup(html, { maxWidth: 230 });
+    mapMarkers.push(mk);
+  });
+}
+
+// ── ALL gallery view ──
+function setAllCat(c) { allCat = c; document.querySelectorAll('#all-filter .km-filter-pill').forEach(b => b.classList.toggle('active', b.dataset.cat === c)); renderAll(); }
+function renderAll() {
+  const el = document.getElementById('all-grid');
+  let items = allCat === 'all' ? pool : pool.filter(it => it.category === allCat);
+  if (!items.length) { el.innerHTML = `<div class="km-pool-empty" style="grid-column:1/-1">該当する素材がないよ</div>`; return; }
+  const used = usedIds();
+  el.innerHTML = items.map(it => {
+    const cat = CAT[it.category] || CAT.other; const isUsed = used.has(it.id);
+    const corner = isUsed ? '' : `<button class="km-acard-add" onclick="addToBoardById('${it.id}')" title="ボードに追加">+</button>`;
+    const playBadge = (it.isVideo || it.youtubeId) ? `<div class="km-play-badge" onclick="event.stopPropagation();playPool('${it.id}')">▶</div>` : '';
+    const reel = it.isVideo ? `<span class="km-tile-reel">REEL</span>` : (it.youtubeId ? `<span class="km-tile-reel">YOUTUBE</span>` : '');
+    const mediaClass = it.isVideo ? 'km-acard-media km-vidph' : 'km-acard-media';
+    const mediaInner = it.isVideo ? '' : `<div class="km-tile-skeleton"></div>`;
+    const mediaData = it.isVideo ? '' : `data-amedia="${it.id}"`;
+    return `<div class="km-acard">
+      <div class="${mediaClass}" ${mediaData}>${mediaInner}<span class="km-acard-cat" style="background:${cat.color}">${cat.label}</span>${corner}${playBadge}${reel}</div>
+      <div class="km-acard-body"><div class="km-acard-title">${escHtml(it.cardTitle || it.title || '（無題）')}</div>${it.memo ? `<div class="km-acard-memo">${escHtml(it.memo)}</div>` : ''}</div>
+    </div>`;
+  }).join('');
+  // lazy media
+  const io = new IntersectionObserver((entries, obs) => { entries.forEach(ent => { if (!ent.isIntersecting) return; const box = ent.target; obs.unobserve(box);
+    const it = pool.find(p => p.id === box.dataset.amedia); if (it) { const skel = box.querySelector('.km-tile-skeleton'); mediaIntoKeep(box, it, skel); } }); }, { root: el, rootMargin: '300px' });
+  el.querySelectorAll('.km-acard-media').forEach(b => io.observe(b));
+}
+// like mediaInto but preserves the cat pill + add button (only replaces skeleton)
+function mediaIntoKeep(box, it, skel) {
+  const put = (node) => { if (skel) skel.replaceWith(node); else box.insertBefore(node, box.firstChild); };
+  const finish = (u) => {
+    if (u) { const img = new Image(); img.onload = () => put(img); img.onerror = () => { if (it.colors && it.colors.length) put(swatchNode(it.colors)); else put(failNode()); }; img.src = u; }
+    else if (it.colors && it.colors.length) put(swatchNode(it.colors)); else put(failNode());
+  };
+  let url = it.imgUrl || null;
+  if (url) finish(url); else if (it.imgPath) vaultImageURL(it.imgPath).then(finish); else finish(null);
+}
+function swatchNode(colors) { const d = document.createElement('div'); d.className = 'km-acard-swatch'; d.innerHTML = colors.map(c => `<div style="background:${c}"></div>`).join(''); return d; }
+function failNode() { const d = document.createElement('div'); d.className = 'km-tile-fail'; d.style.cssText = 'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:26px;opacity:.35'; d.textContent = '🖼'; return d; }
+
+// ── View switch ──
+function switchView(v) {
+  currentView = v;
+  document.querySelectorAll('.km-view-tab').forEach(b => b.classList.toggle('active', b.dataset.v === v));
+  document.querySelectorAll('.km-view').forEach(el => el.classList.toggle('active', el.id === `view-${v}`));
+  if (v === 'map') { initMap(); setTimeout(() => { map && map.invalidateSize(); renderMapPins(); }, 80); }
+  if (v === 'all') renderAll();
+  if (v === 'board') renderBoard();
+  if (v === 'trend') renderTrends();
+  if (v === 'brand') renderBrands();
+  if (v === 'artist') renderArtists();
+  if (v === 'events') renderEvents();
+  if (v === 'font') renderFonts();
+  if (v === 'ai') renderAiKnowhow();
+  if (v === 'phases') renderPhases();
+}
+
+// ── Trend view (micro-trend = PermanentNote cards) ──
+let trendCards = [];
+let trendsLoaded = false;
+
+async function loadTrends() {
+  trendsLoaded = true;
+  const files = (await obsListDir(cfg.pnDir)).filter(f => f.endsWith('.md'));
+  const cards = [];
+  await Promise.allSettled(files.map(async f => {
+    const md = await obsGet(`${cfg.pnDir}/${f}`);
+    if (!md) return;
+    const fm = parseFrontmatter(md);
+    const tags = fm.tags || [];
+    if (!tags.includes('trend-card')) return;
+    // 補足 section body (strip headings)
+    let memo = (fm._body || '').replace(/^#+\s.*$/gm, '').replace(/^\s*>.*$/gm, '').replace(/\[\[[^\]]*\]\]/g, '').replace(/\n{2,}/g, '\n').trim().slice(0, 220);
+    const sources = (fm.sources || []).map(s => s.replace(/^\[\[|\]\]$/g, '').split('|')[0].trim());
+    cards.push({
+      word: fm.trend || f.replace(/\.md$/, ''), file: f,
+      draft: fm.status === 'ai-draft', memo, sources,
+      images: fm.images || [],
+      palette: fm.colors || [],
+      tags: tags.filter(t => t !== 'trend-card'),
+      cats: Array.isArray(fm.cats) ? fm.cats : null,
+      trendRef: fm.trend_ref || '',
+    });
+  }));
+  cards.sort((a, b) => (a.draft === b.draft) ? a.word.localeCompare(b.word) : (a.draft ? -1 : 1));
+
+  // sources から画像を解決（images が空のカード向け）
+  const needResolve = cards.filter(c => (!c.images || !c.images.length) && c.sources.length);
+  if (needResolve.length) {
+    const stripWL = s => s.replace(/^\[\[/, '').replace(/\]\]$/, '');
+    const allSrcNames = [...new Set(needResolve.flatMap(c => c.sources.map(stripWL)))];
+    const srcImgMap = {};
+    await Promise.allSettled(allSrcNames.map(async name => {
+      const md = await obsGet(`${cfg.litDir}/${name}.md`).catch(() => null);
+      if (!md) return;
+      const fm2 = parseFrontmatter(md);
+      const imgs = extractImgPaths(fm2, md, cfg.igDir);
+      if (imgs.length) srcImgMap[name] = imgs[0];
+    }));
+    for (const c of needResolve) {
+      const resolved = c.sources.map(s => srcImgMap[stripWL(s)]).filter(Boolean);
+      if (resolved.length) c.images = resolved;
+    }
+  }
+
+  trendCards = cards;
+}
+
+// ── Color zukan view (移植: トレンドカード図鑑) ──
+let trendSub = 'all';
+let czDates = null; // sourceName -> 'YYYY-MM-DD'
+// トレンドのサブカテゴリ。all=全部、fashion/goods=用途軸（重ね掛け）、color〜style=デザイン要素軸（排他・czCat）
+const TCATS = { all: '🌐 すべて', fashion: '👗 ファッション', goods: '🎁 グッズ', ai: '🤖 AI制作', color: '🎨 カラー', material: '🫧 素材・質感', motif: '✦ モチーフ・グラフィック', style: '🖐 スタイル・手法' };
+// 用途軸（キーワード自動判定・1枚が色軸とファッション/グッズ/AIに両方所属しうる）
+function isFashion(word, tags, memo) {
+  const s = `${word || ''} ${(tags || []).join(' ')} ${memo || ''}`.toLowerCase();
+  return /fashion|apparel|gorpcore|utilitarian|clean-girl|graphic-tee|western-girly|diy-fashion|editorial-flatlay|editorial-layout|photo-led|photodump|quiet-age|surf|retro-rock|y-culture|aura-photography|naif|26ss|26aw|コーデ|着こなし|tシャツ|ニット|デニム|トップス|ウェア|スタイリング|ファッション|ユーティリタリアン/.test(s);
+}
+function isGoods(word, tags, memo) {
+  const s = `${word || ''} ${(tags || []).join(' ')} ${memo || ''}`.toLowerCase();
+  return /goods|package|cosmetic|metallic-package|space-concept|product|stationery|accessor|グッズ|パッケージ|コスメ|プロダクト|雑貨|アクセ|バッグ|シール|ステッカー|缶バ|キーホルダー|文具|ステーショナリー/.test(s);
+}
+function isAI(word, tags, memo) {
+  const s = `${word || ''} ${(tags || []).join(' ')} ${memo || ''}`.toLowerCase();
+  if (/ai生成|生成ai|画像生成|aiビジュアル|aiルック|aiアート|aiグラフィック|aiファッション|aiデザイン|ai広告|ai×手|ai二刀流|二刀流|midjourney|firefly|stable.diffusion|nano.banana|sketch.to.render|3dプリント|3d print|chatgpt|dall.e|dall-e|sora|runway|kling|seedance|comfyui|controlnet|ai-tool|ai-workflow|aiツール|aiワークフロー|ai活用|text-to-image|text2image|img2img|generative-ai/.test(s)) return true;
+  return (tags||[]).some(t => /^ai[-_]|[-_]ai$|^genai$|^generative/.test(t.toLowerCase()));
+}
+function czCat(word, tags) {
+  const t = (tags || []).join(' ');
+  if (/素材|ジェリー/.test(word) || /material|jelly|translucent/.test(t)) return 'material';
+  if (/color-trend|color-palette|color|pastel|burgundy|mint|lavender|terracotta|yellow|melon|sand|earth/.test(t)) return 'color';
+  if (/カラー|配色|イエロー|ミント|ラベンダー|テラコッタ|バーガンディ|ターコイズ|メロン|ライム|ブルー|アース|伝統色|クラウドダンサー/.test(word)) return 'color';
+  if (/記号|スター|メタル文字|宇宙|レトロフューチャー|シジリズム|クローバー/.test(word)) return 'motif';
+  return 'style';
+}
+function czFmt(d) { const p = d.split('-'); return `${+p[1]}/${+p[2]}`; }
+async function czLoadDates() {
+  if (czDates) return;
+  czDates = {};
+  const names = [...new Set(trendCards.flatMap(c => c.sources))];
+  await Promise.allSettled(names.map(async n => {
+    const md = await obsGet(`${cfg.litDir}/${n}.md`);
+    if (!md) return;
+    const fm = parseFrontmatter(md);
+    const d = (fm.date || '').toString().slice(0, 10);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(d)) czDates[n] = d;
+  }));
+}
+function trendSwitch(k) { trendSub = k; renderTrends(); }
+
+// resolve a source note name → a pool item (for image)
+function sourcePoolItem(noteName) {
+  return pool.find(p => p.mdPath && p.mdPath.split('/').pop().replace(/\.md$/, '') === noteName);
+}
+
+async function renderTrends() {
+  const grid = document.getElementById('trend-grid');
+  const head = document.getElementById('trend-head');
+  if (!trendsLoaded) { grid.innerHTML = `<div class="km-trend-empty">読み込み中...</div>`; await loadTrends(); }
+  const drafts = trendCards.filter(c => c.draft).length;
+  head.innerHTML = `🧩 消化したトレンド <b>${trendCards.length}</b> 枚${drafts ? `（うち下書き ${drafts}）` : ''} ・ 素材を束ねた「今期のテイスト引き出し」`;
+  if (!trendCards.length) {
+    document.getElementById('trend-subtabs').innerHTML = '';
+    grid.innerHTML = `<div class="km-trend-empty">まだトレンドカードがないよ。<br>CORINが保存素材を分析して下書きを並べるか、<br>PermanentNoteに <code>tags: trend-card</code> を付けると出てくるよ</div>`;
+    return;
+  }
+  // サブカテゴリ分類（要素軸=czCat 排他 / 用途軸=fashion・goods 重ね掛け）＋観測日付
+  await czLoadDates();
+  const ELEM = ['color', 'material', 'motif', 'style'];
+  trendCards.forEach(c => {
+    if (Array.isArray(c.cats) && c.cats.length) {
+      // ノートに明示 cats があればそれを正とする（仕組み化の土台）
+      c._cats = c.cats.filter(k => TCATS[k]);
+      if (!c._cats.some(k => ELEM.includes(k))) c._cats.push(czCat(c.word, c.tags)); // 要素軸が無ければ補完
+    } else {
+      // フォールバック：キーワード自動判定（要素軸1つ＋用途軸の重ね掛け）
+      c._cats = [czCat(c.word, c.tags)];
+      if (isFashion(c.word, c.tags, c.memo)) c._cats.push('fashion');
+      if (isGoods(c.word, c.tags, c.memo)) c._cats.push('goods');
+      if (isAI(c.word, c.tags, c.memo)) c._cats.push('ai');
+    }
+    const ds = c.sources.map(s => czDates[s]).filter(Boolean).sort();
+    c._dmin = ds[0] || null; c._dmax = ds[ds.length - 1] || null;
+  });
+  const inSub = (c, k) => k === 'all' ? true : (c._cats || []).includes(k);
+  const counts = {}; Object.keys(TCATS).forEach(k => counts[k] = trendCards.filter(c => inSub(c, k)).length);
+  if (trendSub !== 'all' && !counts[trendSub]) trendSub = 'all';
+  document.getElementById('trend-subtabs').innerHTML = Object.keys(TCATS).map(k => `<button class="cz-tab ${k === trendSub ? 'active' : ''}" onclick="trendSwitch('${k}')">${TCATS[k]} <em>${counts[k]}</em></button>`).join('');
+  const list = trendCards.filter(c => inSub(c, trendSub));
+  const isVid = p => /\.(mp4|mov|webm|m4v)$/i.test(p);
+  grid.innerHTML = list.map((c) => { const ci = trendCards.indexOf(c);
+    // images first, videos last; show up to 6, tiled cleanly (no gaps)
+    const media = (c.images && c.images.length) ? [...c.images.filter(p => !isVid(p)), ...c.images.filter(isVid)] : [];
+    const n = media.length;
+    const showN = n <= 4 ? n : (n === 5 ? 4 : 6);     // clean-tiling counts: 1,2,3,4,6
+    c._show = media.slice(0, showN);
+    const extra = n - showN;
+    const cols = showN <= 3 ? Math.max(1, showN) : (showN === 4 ? 2 : 3);
+    const pal = c.palette || [];
+    let imgs;
+    if (!c._show.length) {
+      imgs = pal.length
+        ? `<div class="km-tcard-img"><div class="km-tcard-palette-big">${pal.map(x => `<div style="background:${escHtml(x)}"></div>`).join('')}</div></div>`
+        : `<div class="km-tcard-img"><div class="km-tcard-noimg">🧩</div></div>`;
+    } else {
+      imgs = c._show.map((s, i) => `<div class="km-tcard-img" data-tsrc="${ci}:${i}"><div class="km-tile-skeleton"></div>${i === c._show.length - 1 && extra > 0 ? `<div class="km-tcard-more">+${extra}</div>` : ''}</div>`).join('');
+    }
+    const rows = Math.ceil((c._show.length || 1) / cols);
+    const rowH = (c._show.length || 0) <= 1 ? 320 : 180;
+    const stripH = rows * rowH + (rows - 1) * 2;
+    const paletteBar = (pal.length && c._show.length) ? `<div class="km-tcard-palette">${pal.map(x => `<div style="background:${escHtml(x)}" data-hex="${escHtml(x)}"></div>`).join('')}</div>` : '';
+    const fileEnc = encodeURIComponent(`${cfg.pnDir}/${c.file}`.replace(/\.md$/, ''));
+    return `<div class="km-tcard ${c.draft ? 'draft' : ''}" onclick="openCardDetail(${ci})" style="cursor:pointer">
+      <div class="km-tcard-imgs" style="grid-template-columns:repeat(${cols},1fr);grid-template-rows:repeat(${rows},${rowH}px);flex:0 0 ${stripH}px;height:${stripH}px">${imgs}</div>
+      ${paletteBar}
+      <div class="km-tcard-body">
+        <div class="km-tcard-top">
+          <span class="km-tcard-word">${escHtml(c.word)}</span>
+          ${c.draft ? `<span class="km-tcard-draft-badge">下書き</span>` : ''}
+          ${c.trendRef ? `<span class="km-tcard-ref">▷ ${escHtml(c.trendRef)}</span>` : ''}
+        </div>
+        ${c._dmin ? `<div class="cz-date">📅 観測 ${c._dmin === c._dmax ? czFmt(c._dmin) : `${czFmt(c._dmin)}〜${czFmt(c._dmax)}`}</div>` : ''}
+        ${c.memo ? `<div class="km-tcard-memo">${escHtml(c.memo)}</div>` : ''}
+        <div class="km-tcard-foot">
+          <span class="km-tcard-count">素材 ${c.sources.length}件 ・ 詳細を見る →</span>
+          <a class="km-tcard-srclink" href="obsidian://open?vault=corin&file=${fileEnc}" title="ノートを開く" onclick="event.stopPropagation()">🔗 ノート</a>
+          <button class="km-tcard-histbtn ${historyData[c.word] ? 'has-data' : ''}" onclick="event.stopPropagation();openHistoryPanel(${JSON.stringify(c.word)})">📅 歴史</button>
+          <button class="km-tcard-toboard" onclick="event.stopPropagation();pushTrendToBoard(${ci})">★ ${escHtml(boardsData.active || '')} へ</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  // resolve thumbnails (eager — trend cards are few)
+  grid.querySelectorAll('.km-tcard-img[data-tsrc]').forEach(box => {
+    const [ci, i] = box.dataset.tsrc.split(':').map(Number); const c = trendCards[ci]; if (!c || !c._show) return;
+    const skel = box.querySelector('.km-tile-skeleton'); if (!skel) return;
+    const path = c._show[i]; if (!path) { skel.replaceWith(failNode()); return; }
+    box.onclick = isVid(path) ? (e) => { e.stopPropagation(); openPlayer({ videoPath: path }); } : null;
+    if (isVid(path)) {
+      videoThumb(path).then(thumb => {
+        if (thumb) { const img = new Image(); img.src = thumb; const wrap = document.createDocumentFragment(); wrap.appendChild(img); const b = document.createElement('div'); b.className = 'km-tcard-vbadge'; b.textContent = '▶'; if (skel.parentNode) { skel.replaceWith(img); box.appendChild(b); } }
+        else { const d = document.createElement('div'); d.className = 'km-tcard-vid'; d.innerHTML = '<div class="km-play-badge" style="width:34px;height:34px;font-size:14px;position:static;transform:none">▶</div>'; if (skel.parentNode) skel.replaceWith(d); }
+      });
+      return;
+    }
+    vaultImageURL(path).then(u => { if (u) { const img = new Image(); img.onload = () => { if (skel.parentNode) skel.replaceWith(img); }; img.onerror = () => { if (skel.parentNode) skel.replaceWith(failNode()); }; img.src = u; } else if (skel.parentNode) skel.replaceWith(failNode()); });
+  });
+}
+
+// ── Trend detail (click card → see materials / instagram / video) ──
+function scFromNote(fm, basename) {
+  const u = fm.url || '';
+  let m = u.match(/instagram\.com\/(?:p|reel|tv)\/([\w-]+)/);
+  if (m) return m[1];
+  m = basename.match(/^IG_([A-Za-z0-9_-]{8,})/);
+  return m ? m[1] : null;
+}
+function closeDetail() { document.getElementById('km-detail').classList.remove('open'); document.getElementById('km-detail-body').innerHTML = ''; }
+
+async function openCardDetail(ci) {
+  const c = trendCards[ci]; if (!c) return;
+  const lb = document.getElementById('km-detail'); const body = document.getElementById('km-detail-body');
+  const pal = c.palette || [];
+  // shortcode -> media path (from card.images, keeps correct extension)
+  const imgBySc = {};
+  (c.images || []).forEach(p => { const m = p.match(/\/([^\/]+)_\d+\.[a-z0-9]+$/i); if (m) imgBySc[m[1]] = p; });
+  body.innerHTML = `
+    <div class="km-detail-word">${escHtml(c.word)}</div>
+    <div class="km-detail-meta">
+      ${c.draft ? `<span class="km-detail-draft">下書き</span>` : ''}
+      ${c.trendRef ? `<span class="km-detail-ref">▷ ${escHtml(c.trendRef)}</span>` : ''}
+      <a class="km-detail-src-link" href="obsidian://open?vault=corin&file=${encodeURIComponent(`${cfg.pnDir}/${c.file}`.replace(/\.md$/, ''))}">🔗 トレンドノート</a>
+    </div>
+    ${c.memo ? `<div class="km-detail-memo">${escHtml(c.memo)}</div>` : ''}
+    ${pal.length ? `<div class="km-detail-palette">${pal.map(x => `<div style="background:${escHtml(x)}">${escHtml(x)}</div>`).join('')}</div>` : ''}
+    <div class="km-detail-srchead">束ねた素材 ${c.sources.length}件</div>
+    <div class="km-detail-srcs" id="km-detail-srcs"></div>`;
+  lb.classList.add('open');
+  const wrap = document.getElementById('km-detail-srcs');
+  wrap.innerHTML = c.sources.map((s, i) => `<div class="km-detail-src" id="dsrc-${i}"><div class="km-detail-src-media" data-i="${i}"></div><div class="km-detail-src-info"><div class="km-detail-src-title">${escHtml(s)}</div><div class="km-detail-src-body" id="dbody-${i}">読み込み中...</div><div class="km-detail-src-links" id="dlinks-${i}"></div></div></div>`).join('');
+
+  // load each source note (caption/body + instagram url) + media
+  c.sources.forEach(async (s, i) => {
+    if (!lb.classList.contains('open')) return;
+    const md = await obsGet(`${cfg.litDir}/${s}.md`);
+    const fm = md ? parseFrontmatter(md) : {};
+    const sc = scFromNote(fm, s);
+    const mediaPath = (sc && imgBySc[sc]) || null;
+    // body excerpt
+    let txt = (fm._body || '').replace(/^#+\s.*$/gm, '').replace(/^\s*>.*$/gm, '').replace(/\[\[[^\]]*\]\]/g, '').replace(/!\[[^\]]*\]\([^)]*\)/g, '').replace(/\n{2,}/g, '\n').trim();
+    const bodyEl = document.getElementById('dbody-' + i); if (bodyEl) bodyEl.textContent = txt ? txt.slice(0, 200) : '（本文なし）';
+    // links
+    const linksEl = document.getElementById('dlinks-' + i);
+    if (linksEl) {
+      const ig = fm.url && /instagram\.com/.test(fm.url) ? `<a class="km-detail-src-link ig" href="${escHtml(fm.url)}" target="_blank" rel="noopener">📷 Instagram</a>` : (fm.url ? `<a class="km-detail-src-link" href="${escHtml(fm.url)}" target="_blank" rel="noopener">🔗 元リンク</a>` : '');
+      linksEl.innerHTML = ig + `<a class="km-detail-src-link" href="obsidian://open?vault=corin&file=${encodeURIComponent(`${cfg.litDir}/${s}`)}">📝 ノート</a>`;
+    }
+    // media
+    const mEl = document.querySelector(`#dsrc-${i} .km-detail-src-media`);
+    if (mEl && mediaPath) {
+      if (isVid(mediaPath)) {
+        mEl.onclick = () => openPlayer({ videoPath: mediaPath });
+        videoThumb(mediaPath).then(t => { if (t) { mEl.innerHTML = `<img src="${t}"><div class="km-tcard-vbadge" style="position:absolute">▶</div>`; } else { mEl.innerHTML = `<div class="km-vidph"><div class="km-play-badge" style="position:static;transform:none;width:30px;height:30px;font-size:12px">▶</div></div>`; } });
+      } else {
+        vaultImageURL(mediaPath).then(u => { if (u && mEl) mEl.innerHTML = `<img src="${u}">`; });
+      }
+    } else if (mEl) { mEl.innerHTML = `<div class="km-tcard-noimg" style="width:100%;height:100%;font-size:22px">🖼</div>`; }
+  });
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
+
+function pushTrendToBoard(ci) {
+  const c = trendCards[ci]; if (!c) return;
+  const b = activeBoard(); if (!b) { toast('先にボードを作ってね'); return; }
+  let added = 0;
+  const media = (c.images && c.images.length) ? c.images : [];
+  if (media.length) {
+    media.forEach(path => {
+      const pid = 'trend:' + path;
+      if (b.cards.some(x => x.poolId === pid)) return;
+      const vid = /\.(mp4|mov|webm|m4v)$/i.test(path);
+      b.cards.unshift({ cid: 'c' + Date.now() + Math.floor(Math.random() * 100000), poolId: pid,
+        imgPath: vid ? null : path, imgUrl: null, videoPath: vid ? path : null, isVideo: vid, youtubeId: null,
+        colors: [], title: c.word, category: 'trend', tags: ['#' + c.word], memo: '', mdPath: null });
+      added++;
+    });
+  } else {
+    c.sources.forEach(s => { const it = sourcePoolItem(s); if (it && !b.cards.some(x => x.poolId === it.id)) { addToBoardSilent(it, c.word); added++; } });
+  }
+  saveBoards(); renderBoard(); renderPool();
+  toast(added ? `「${c.word}」から${added}件を ${boardsData.active} に追加` : 'すでに全部ボードにあるよ');
+}
+function addToBoardSilent(it, trendWord) {
+  const b = activeBoard(); if (!b) return;
+  b.cards.unshift({ cid: 'c' + Date.now() + Math.floor(Math.random() * 100000), poolId: it.id, imgPath: it.imgPath || null, imgUrl: it.imgUrl || null,
+    videoPath: it.videoPath || null, isVideo: !!it.isVideo, youtubeId: it.youtubeId || null,
+    colors: it.colors || [], title: it.cardTitle || it.title || '', category: it.category || 'trend', tags: (it.tags || []).concat(trendWord ? ['#' + trendWord] : []).slice(0, 6), memo: '', mdPath: it.mdPath || null });
+}
+
+// ── Upload ──
+async function handleUpload(files) {
+  if (!files || !files.length) return;
+  if (!cfg.key) { toast('先に⚙️設定でAPIキーを入れてね'); return; }
+  let ok = 0;
+  for (const f of files) { const safe = f.name.replace(/[^\w.\-]/g, '_'); const path = `${cfg.ownDir}/${Date.now()}_${safe}`;
+    try { await obsPutBinary(path, f); ok++; } catch (e) { console.warn('upload failed', e); } }
+  toast(`⬆ ${ok}枚アップしたよ`); await loadAll(); renderPool(); renderBoard(); if (currentView === 'all') renderAll();
+  document.getElementById('km-upload-input').value = '';
+}
+
+// ── Settings ──
+function openSettings() {
+  document.getElementById('s-base').value = cfg.base; document.getElementById('s-key').value = cfg.key;
+  document.getElementById('s-index').value = cfg.index; document.getElementById('s-boards').value = cfg.boards;
+  document.getElementById('s-igdir').value = cfg.igDir; document.getElementById('s-owndir').value = cfg.ownDir;
+  document.getElementById('s-pndir').value = cfg.pnDir;
+  document.getElementById('s-test').textContent = ''; document.getElementById('settings-modal-overlay').classList.add('open');
+}
+function closeSettings() { document.getElementById('settings-modal-overlay').classList.remove('open'); }
+async function testConn() {
+  const base = document.getElementById('s-base').value, key = document.getElementById('s-key').value; const el = document.getElementById('s-test');
+  try { const r = await fetch(`${base}/`, { headers: { Authorization: `Bearer ${key}` } });
+    if (r.ok) { el.className = 'km-settings-test km-settings-ok'; el.textContent = '✅ 接続OK'; } else { el.className = 'km-settings-test km-settings-err'; el.textContent = `❌ エラー: ${r.status}`; }
+  } catch (e) { el.className = 'km-settings-test km-settings-err'; el.textContent = `❌ 接続できません: ${e.message}`; }
+}
+async function saveSettings() {
+  localStorage.setItem('obsidian-rest-api-base', document.getElementById('s-base').value);
+  localStorage.setItem('obsidian-rest-api-key', document.getElementById('s-key').value);
+  localStorage.setItem('ctl-index-path', document.getElementById('s-index').value);
+  localStorage.setItem('ctl-boards-path', document.getElementById('s-boards').value);
+  localStorage.setItem('ctl-ig-dir', document.getElementById('s-igdir').value);
+  localStorage.setItem('ctl-own-dir', document.getElementById('s-owndir').value);
+  localStorage.setItem('ctl-pn-dir', document.getElementById('s-pndir').value);
+  closeSettings(); _imgCache.clear(); trendsLoaded = false; document.getElementById('km-loading').style.display = 'flex';
+  await loadAll(); renderPool(); renderBoard(); if (mapInited) renderMapPins();
+  document.getElementById('km-loading').style.display = 'none'; toast('設定を保存して読み込み直したよ');
+}
+
+// ── Toast ──
+let toastTimer = null;
+function toast(msg) { const el = document.getElementById('km-toast'); el.textContent = msg; el.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 2500); }
+
+// ── Brand view ──
+let brandCards = [], brandsLoaded = false;
+
+function brandAvatarColor(name) {
+  const colors = ['#2563eb','#16a34a','#d97706','#9333ea','#e8365d','#0891b2','#b45309','#be185d'];
+  let h = 0; for (const c of (name || '')) h = (h * 31 + c.charCodeAt(0)) & 0xfffffff;
+  return colors[h % colors.length];
+}
+
+// ── Artist detection helpers ──
+const KNOWN_ARTISTS = {
+  username: {
+    'le_sserafim': 'LE SSERAFIM', 'illit_official': 'ILLIT', 'niziu_info_official': 'NiziU',
+    'niziu_artist_official': 'NiziU', 'newjeans_official': 'NewJeans', 'aespa.official': 'aespa',
+    'aespa_official_jp': 'aespa', 'blackpinkofficial': 'BLACKPINK', 'bts.bighitofficial': 'BTS',
+  },
+  tag: {
+    'boompala': 'LE SSERAFIM', 'le-sserafim': 'LE SSERAFIM', 'le_sserafim': 'LE SSERAFIM',
+    'niziu': 'NiziU', 'illit': 'ILLIT', 'newjeans': 'NewJeans', 'aespa': 'aespa',
+    'blackpink': 'BLACKPINK', 'bts': 'BTS', 'aoen': 'aoen', 'twice': 'TWICE', 'ive': 'IVE',
+    'stayc': 'STAYC', 'itzy': 'ITZY', 'nmixx': 'NMIXX', 'aimi': 'aimi', 'yuki-nakashima': 'NiziU',
+    'bigbang': 'BIGBANG', 'big-bang': 'BIGBANG', 'g-dragon': 'BIGBANG', 'gdragon': 'BIGBANG',
+    'exo': 'EXO', 'shinee': 'SHINee', 'nct': 'NCT', 'got7': 'GOT7', 'monsta-x': 'MONSTA X',
+    'enhypen': 'ENHYPEN', 'tomorrow-x-together': 'TXT', 'txt': 'TXT',
+  },
+  // client名がアーティスト名と一致するケース（projects/ hub MD用）
+  client: {
+    'BIGBANG': 'BIGBANG', 'bigbang': 'BIGBANG',
+    'aoen': 'aoen', 'NiziU': 'NiziU', 'niziu': 'NiziU',
+  },
+};
+function detectArtistName(fm, filename, body) {
+  if (fm.artist && typeof fm.artist === 'string' && fm.artist.trim()) return fm.artist.trim();
+  if (fm.category === 'artist-analysis') {
+    const n = (fm.title || filename.replace(/\.md$/,'')).replace(/\s*アーティスト分析\s*$/,'').trim();
+    return n || null;
+  }
+  if (fm.username && KNOWN_ARTISTS.username[fm.username]) return KNOWN_ARTISTS.username[fm.username];
+  if (fm.author) { const au = (fm.author||'').replace(/^@/,''); if (KNOWN_ARTISTS.username[au]) return KNOWN_ARTISTS.username[au]; }
+  // check client field (for project hub MDs)
+  if (fm.client) { const cl = KNOWN_ARTISTS.client[fm.client] || KNOWN_ARTISTS.client[(fm.client||'').toLowerCase()]; if (cl) return cl; }
+  const tags = Array.isArray(fm.tags) ? fm.tags : [];
+  for (const t of tags) { const m = KNOWN_ARTISTS.tag[t.toLowerCase()]; if (m) return m; }
+  // parse "Artist: NAME" from caption/body
+  const cm = (body||'').match(/Artist:\s*([A-Za-z][^\n@]{2,30}?)[\n@]/);
+  if (cm) return cm[1].trim();
+  return null;
+}
+function extractImgPaths(fm, body, igDir) {
+  const paths = [];
+  if (Array.isArray(fm.images)) { for (const p of fm.images) if (IMG_EXT.test(p)) { paths.push(p); break; } }
+  const sc = fm.shortcode || (() => {
+    const u = fm.url || ''; const m = u.match(/instagram\.com\/(?:p|reel)\/([A-Za-z0-9_-]+)/); return m ? m[1] : null;
+  })();
+  if (sc) { paths.push(`${igDir}/${sc}_1.jpg`); paths.push(`${igDir}/${sc}.jpg`); paths.push(`${igDir}/${sc}_1_thumb.jpg`); }
+  const bm = [...(body||'').matchAll(/!\[\[([^\]]+\.(jpe?g|png|webp|gif|avif))\]\]/gi)];
+  for (const m of bm.slice(0,3)) paths.push(m[1]);
+  return [...new Set(paths)];
+}
+
+async function loadBrands() {
+  brandsLoaded = true;
+  const files = (await obsListDir(cfg.litDir)).filter(f => f.endsWith('.md'));
+  const cards = [];
+  await Promise.allSettled(files.map(async f => {
+    const md = await obsGet(`${cfg.litDir}/${f}`);
+    const fm = parseFrontmatter(md);
+    const isBrand = fm.category === 'brand-analysis'
+      || (Array.isArray(fm.tags) && fm.tags.includes('brand-analysis'))
+      || /ブランド分析/.test(f);
+    if (!isBrand) return;
+    const name = fm.title ? fm.title.replace(/\s*ブランド分析\s*$/, '').trim() : f.replace(/\.md$/, '').replace(/^[🏷️\s]+/, '').replace(/\s*ブランド分析\s*$/, '').trim();
+    const genres = (Array.isArray(fm.tags) ? fm.tags : []).filter(t => t !== 'cd-library' && t !== 'brand-analysis').slice(0, 4);
+    const source = fm.source || null;
+    let imgPaths = extractImgPaths(fm, md, cfg.igDir);
+    let htmlVaultPath = null;
+    // local HTML analysis page → extract first brand image + prepare HTML link
+    const isLocalHtml = source && !source.startsWith('http') && source.includes('.html');
+    if (isLocalHtml) {
+      htmlVaultPath = `00_🏢 company/secretary/notes/${source.replace(/^secretary\/notes\//, '')}`;
+    }
+    if (!imgPaths.length && htmlVaultPath) {
+      try {
+        const r = await fetch(`${cfg.base}/vault/${enc(htmlVaultPath)}`, { headers: headers({ Accept: '*/*' }) });
+        if (r.ok) {
+          const htmlContent = await r.text();
+          const m = htmlContent.match(/src="(brand-images\/[^"]+)"/);
+          if (m) imgPaths = [`00_🏢 company/secretary/notes/${m[1]}`];
+        }
+      } catch(e) {}
+    }
+    const mdPath = `${cfg.litDir}/${f}`;
+    cards.push({ name, genres, date: fm.created || fm.date || '', source, imgPaths, mdPath, htmlVaultPath });
+  }));
+  brandCards = cards.sort((a, b) => a.name.localeCompare(b.name, 'ja'));
+}
+
+async function renderBrands() {
+  const grid = document.getElementById('brand-grid');
+  const head = document.getElementById('brand-head');
+  if (!brandsLoaded) { grid.innerHTML = `<div class="km-trend-empty">読み込み中...</div>`; await loadBrands(); }
+  head.textContent = `${brandCards.length} ブランド`;
+  if (!brandCards.length) {
+    grid.innerHTML = `<div class="km-trend-empty">ブランド分析ノートがまだないよ。<br>LiteratureNote に <code>category: brand-analysis</code> を追加すると自動表示される 🏷️</div>`; return;
+  }
+  const BRAND_COLORS = ['#2563eb','#16a34a','#d97706','#9333ea','#e8365d','#0891b2','#b45309','#be185d'];
+  grid.innerHTML = brandCards.map((c, i) => {
+    const chips = c.genres.map(g => `<span class="km-mc-tag">${escHtml(g)}</span>`).join('');
+    const obsLink = `obsidian://open?vault=corin&file=${encodeURIComponent((c.mdPath||'').replace(/\.md$/,''))}`;
+    // HTML分析ページ優先 → 外部URL → MDノート
+    const htmlObsLink = c.htmlVaultPath ? `obsidian://open?vault=corin&file=${encodeURIComponent(c.htmlVaultPath.replace(/\.html$/,''))}` : null;
+    const href = htmlObsLink || (c.source && /^https?:/.test(c.source) ? c.source : obsLink);
+    const ci = [...(c.name||'')].reduce((h,ch)=>(h*31+ch.charCodeAt(0))&0xfffffff,0) % BRAND_COLORS.length;
+    const noImg = `<div class="km-mc-noimg" style="background:${BRAND_COLORS[ci]}"><div class="km-brand-noimg-name">${escHtml(c.name||'?')}</div></div>`;
+    const hasImgs = c.imgPaths && c.imgPaths.length;
+    const imgAttr = hasImgs ? ` data-brand-imgpaths="${escHtml(JSON.stringify(c.imgPaths))}"` : '';
+    const thumb = hasImgs
+      ? `<div class="km-mc-thumb"${imgAttr}><div class="km-tile-skeleton"></div><img alt="" style="display:none"></div>`
+      : `<div class="km-mc-thumb">${noImg}</div>`;
+    const analysisBtn = c.htmlVaultPath ? `<a class="km-brand-analysis-link" href="${escHtml(htmlObsLink)}" onclick="event.stopPropagation()" title="分析ページを開く">📊 分析</a>` : '';
+    return `<a class="km-mc" href="${escHtml(href)}" target="_blank" rel="noopener">${thumb}<div class="km-mc-body"><div class="km-mc-title">${escHtml(c.name)}</div><div class="km-mc-tags">${chips}</div><div class="km-mc-foot"><span class="km-mc-date">${escHtml(c.date)}</span>${analysisBtn}</div></div></a>`;
+  }).join('');
+  grid.querySelectorAll('[data-brand-imgpaths]').forEach(async thumbDiv => {
+    const paths = JSON.parse(thumbDiv.dataset.brandImgpaths);
+    const img = thumbDiv.querySelector('img');
+    if (!img) return;
+    for (const p of paths) {
+      const u = await vaultImageURL(p);
+      if (u) { img.src = u; img.style.display = ''; const sk = thumbDiv.querySelector('.km-tile-skeleton'); if (sk) sk.remove(); break; }
+    }
+  });
+}
+
+// ── Artist view ──
+let artistCards = {}, artistsLoaded = false; // grouped: { artistName: [card, ...] }
+const ARTIST_TAGS_DETECT = ['artist-analysis','kpop','k-pop','jpop','idol','idol-styling','artist-costume','kpop-merch','entertainment','niziu','illit','le-sserafim','aoen','boompala','newjeans','aespa','blackpink','bts','twice','ive','stayc','itzy','nmixx'];
+
+async function loadArtists() {
+  artistsLoaded = true;
+  const allCards = [];
+
+  // Scan LiteratureNote/
+  const litFiles = (await obsListDir(cfg.litDir)).filter(f => f.endsWith('.md'));
+  await Promise.allSettled(litFiles.map(async f => {
+    const md = await obsGet(`${cfg.litDir}/${f}`);
+    if (!md) return;
+    const fm = parseFrontmatter(md);
+    const isArtist = fm.category === 'artist-analysis'
+      || /アーティスト分析/.test(f)
+      || (Array.isArray(fm.tags) && fm.tags.some(t => ARTIST_TAGS_DETECT.includes(t.toLowerCase())));
+    if (!isArtist) return;
+    const artistName = detectArtistName(fm, f, md) || 'その他';
+    const genres = (Array.isArray(fm.tags) ? fm.tags : []).filter(t => !['instagram','artist-analysis','kpop','k-pop','idol'].includes(t.toLowerCase())).slice(0, 4);
+    const mdPath = `${cfg.litDir}/${f}`;
+    const imgPaths = extractImgPaths(fm, md, cfg.igDir);
+    const memo = md.replace(/^---[\s\S]*?---/, '').replace(/!\[\[[^\]]*\]\]/g,'').replace(/^#+\s.*$/gm,'').replace(/\[\[[^\]]*\]\]/g,'').trim().slice(0, 80);
+    const isAnalysisPage = fm.category === 'artist-analysis' || /アーティスト分析/.test(f);
+    allCards.push({
+      name: fm.title || f.replace(/\.md$/, '').replace(/^[🎤\s]+/, '').replace(/\s*アーティスト分析\s*$/, '').trim(),
+      artistName, genres, date: fm.created || fm.date || '',
+      source: fm.source || null, htmlFile: fm.html_file || null,
+      imgPaths, mdPath, memo, isAnalysisPage,
+    });
+  }));
+
+  // Also scan secretary/outputs/ for ip-brief + artist-tagged notes
+  const outDir = '00_🏢 company/secretary/outputs';
+  try {
+    const outFiles = (await obsListDir(outDir)).filter(f => f.endsWith('.md'));
+    await Promise.allSettled(outFiles.map(async f => {
+      const md = await obsGet(`${outDir}/${f}`);
+      if (!md) return;
+      const fm = parseFrontmatter(md);
+      const tags = Array.isArray(fm.tags) ? fm.tags : [];
+      const isArtist = tags.includes('ip-brief') || fm.artist
+        || tags.some(t => ARTIST_TAGS_DETECT.includes(t.toLowerCase()));
+      if (!isArtist) return;
+      const artistName = detectArtistName(fm, f, md);
+      if (!artistName) return;
+      const genres = tags.filter(t => !['output','ip-brief','KONNEKTED'].includes(t)).slice(0, 4);
+      allCards.push({
+        name: fm.title || f.replace(/\.md$/, '').replace(/\d{4}-\d{2}-\d{2}_/, '').trim(),
+        artistName, genres, date: fm.date || fm.created || '',
+        source: fm.source || null, htmlFile: fm.html_file || null,
+        imgPaths: [], mdPath: `${outDir}/${f}`, memo: '', isAnalysisPage: true,
+      });
+    }));
+  } catch(e) { /* ok if outputs dir empty */ }
+
+  // Scan projects/ hub MDs (type: project + known artist client/tag)
+  const projBase = '00_🏢 company/projects';
+  try {
+    const projTopItems = (await obsListDir(projBase))
+      .map(d => d.replace(/\/$/, ''))
+      .filter(d => d && !d.endsWith('.md') && !d.startsWith('_') && d !== '終了した案件');
+    await Promise.allSettled(projTopItems.map(async topDir => {
+      const subItems = await obsListDir(`${projBase}/${topDir}`).catch(() => []);
+      // collect MDs at this level
+      const mdsHere = subItems.filter(f => f.endsWith('.md'));
+      // collect sub-subdirs (e.g. projects/kemio/20260310_抹茶/)
+      const subDirs = subItems.filter(d => !d.endsWith('.md') && !d.startsWith('_')).map(d => d.replace(/\/$/, ''));
+      const subSubMds = (await Promise.all(subDirs.map(sd =>
+        obsListDir(`${projBase}/${topDir}/${sd}`).then(items =>
+          items.filter(f => f.endsWith('.md')).map(f => `${topDir}/${sd}/${f}`)
+        ).catch(() => [])
+      ))).flat();
+      const allMdPaths = [
+        ...mdsHere.map(f => `${topDir}/${f}`),
+        ...subSubMds,
+      ];
+      await Promise.allSettled(allMdPaths.map(async rel => {
+        const path = `${projBase}/${rel}`;
+        const md = await obsGet(path).catch(() => null);
+        if (!md) return;
+        const fm = parseFrontmatter(md);
+        if (fm.type !== 'project') return;
+        const artistName = detectArtistName(fm, rel.split('/').pop(), md);
+        if (!artistName) return;
+        const tags = Array.isArray(fm.tags) ? fm.tags : [];
+        const genres = tags.filter(t => !['project-board','project'].includes(t.toLowerCase())).slice(0, 4);
+        const title = fm.案件 || fm.title || rel.split('/').pop().replace(/\.md$/, '');
+        allCards.push({
+          name: title,
+          artistName, genres, date: fm.start || fm.created || fm.date || '',
+          source: null, htmlFile: null,
+          imgPaths: [], mdPath: path, memo: '', isAnalysisPage: true,
+        });
+      }));
+    }));
+  } catch(e) { /* ok */ }
+
+  // Group by artistName
+  const grouped = {};
+  for (const c of allCards) {
+    const key = c.artistName || 'その他';
+    if (!grouped[key]) grouped[key] = [];
+    grouped[key].push(c);
+  }
+  artistCards = grouped;
+}
+
+async function renderArtists() {
+  const grid = document.getElementById('artist-grid');
+  const head = document.getElementById('artist-head');
+  if (!artistsLoaded) { grid.innerHTML = `<div class="km-trend-empty">読み込み中...</div>`; await loadArtists(); }
+  const totalCards = Object.values(artistCards).flat().length;
+  head.textContent = `${Object.keys(artistCards).length} アーティスト / ${totalCards} 件`;
+  if (!totalCards) {
+    grid.innerHTML = `<div class="km-trend-empty">アーティスト関連ノートがまだないよ。<br>LiteratureNote に K-POP タグや <code>category: artist-analysis</code> を追加すると自動表示される 🎤</div>`; return;
+  }
+  const ART_COLORS = ['#1d4ed8','#7c3aed','#db2777','#059669','#d97706','#dc2626','#0891b2','#b45309'];
+  const sortedGroups = Object.entries(artistCards).sort(([a],[b]) => {
+    if (a === 'その他') return 1; if (b === 'その他') return -1;
+    return a.localeCompare(b, 'ja');
+  });
+  grid.innerHTML = sortedGroups.map(([artistName, cards]) => {
+    const ci = [...(artistName||'')].reduce((h,ch)=>(h*31+ch.charCodeAt(0))&0xfffffff,0) % ART_COLORS.length;
+    const cardsHtml = cards.map(c => {
+      const chips = c.genres.map(g => `<span class="km-mc-tag">${escHtml(g)}</span>`).join('');
+      const obsLink = `obsidian://open?vault=corin&file=${encodeURIComponent((c.mdPath||'').replace(/\.md$/,''))}`;
+      const href = c.htmlFile || (c.source && /^https?:/.test(c.source) ? c.source : obsLink);
+      const badge = c.isAnalysisPage ? `<div class="km-artist-analysis-badge">分析</div>` : '';
+      const hasImgs = c.imgPaths && c.imgPaths.length;
+      const imgAttr = hasImgs ? ` data-artist-imgpaths="${escHtml(JSON.stringify(c.imgPaths))}"` : '';
+      const noImg = `<div class="km-mc-noimg" style="background:${ART_COLORS[ci]}"><div class="km-mc-noimg-emoji">🎤</div></div>`;
+      const thumb = hasImgs
+        ? `<div class="km-mc-thumb"${imgAttr}><div class="km-tile-skeleton"></div><img alt="" style="display:none">${badge}</div>`
+        : `<div class="km-mc-thumb">${noImg}${badge}</div>`;
+      const subEl = c.memo ? `<div class="km-mc-sub">${escHtml(c.memo)}</div>` : '';
+      return `<a class="km-mc" href="${escHtml(href)}" target="_blank" rel="noopener">${thumb}<div class="km-mc-body"><div class="km-mc-title">${escHtml(c.name)}</div>${subEl}<div class="km-mc-tags">${chips}</div><div class="km-mc-foot"><span class="km-mc-date">${escHtml(c.date)}</span></div></div></a>`;
+    }).join('');
+    return `<div class="km-artist-group"><div class="km-artist-group-header"><span class="km-artist-group-name">🎤 ${escHtml(artistName)}</span><span class="km-artist-group-count">${cards.length} 件</span></div><div class="km-artist-group-cards">${cardsHtml}</div></div>`;
+  }).join('');
+
+  // Async multi-path image loading
+  grid.querySelectorAll('[data-artist-imgpaths]').forEach(async thumbDiv => {
+    const paths = JSON.parse(thumbDiv.dataset.artistImgpaths);
+    const img = thumbDiv.querySelector('img');
+    if (!img) return;
+    for (const p of paths) {
+      const u = await vaultImageURL(p);
+      if (u) { img.src = u; img.style.display = ''; const sk = thumbDiv.querySelector('.km-tile-skeleton'); if (sk) sk.remove(); break; }
+    }
+  });
+}
+
+// ── 実践Tips view ──
+// 正本は vault の ai-knowhow.json（cfg.aiKnowhow）。読めない時用の種データを下に持つ（増やすときは JSON を編集）。
+const AI_KNOWHOW_SEED = [
+  {
+    title: 'ブチャイク手描きキャラのリファレンス検索',
+    category: 'リサーチ',
+    tool: 'Pinterest',
+    keyword: 'crude but charming dog drawing',
+    tip: '「crude but charming」（雑だけど愛嬌ある）の組み合わせがキモ。きれいすぎない、ヘタウマ系・落書き風のテイストが大量に出る。dog の部分はモチーフに差し替え可（cat / bear / rabbit / character）。',
+    use: 'IPグッズ提案の仮ビジュアル探し・ヘタウマキャラのリファレンス収集',
+    links: [{ label: '参考スクショ保存先', path: '00_🏢 company/design/references/swipe_crude-charming-drawing/' }],
+    date: '2026-06-21',
+  },
+  {
+    title: 'Illustratorで有彩色のグレイン（粒状）テクスチャを作る',
+    category: 'デザイン',
+    tool: 'Illustrator',
+    keyword: 'grain texture color screen blend mode',
+    tip: '① 円に放射グラデ＋効果>テクスチャ>粒状（点描・強さ50/コントラスト50）で黒ドット作成。② Cmd+C→Cmd+F でコピー、効果を全削除、塗りを目的色に変更、透明パネルでブレンドモードを「スクリーン」にする。NG：乗算モード / アピアランス内でスクリーン / グラデ最後を透明0%（黒になるので白で代用）/ ラスタライズ効果は300ppi以上に。',
+    use: 'ベタ塗りカラーに粒状のテクスチャ感を足したい時。パッケージ・シール・グッズのマテリアル表現。',
+    links: [{ label: '元メモ（2026-05-06-learnings）', path: '00_🏢 company/secretary/notes/2026-05-06-learnings.md' }],
+    date: '2026-06-21',
+  },
+  {
+    title: 'Photoshopでブレンドイフ：白背景を透明にする',
+    category: 'デザイン',
+    tool: 'Photoshop',
+    keyword: 'Blend If this layer white transparent 0 250',
+    tip: 'レイヤースタイル（ダブルクリック）→「ブレンド条件：このレイヤー」の右側（白）の三角を左にドラッグ → 白いピクセルが消える。Option+ドラッグで三角を2つに分割すると境界がなめらかに。黒消し（左三角を右へ）の逆方向。',
+    use: 'インク・水彩・スタンプなど白背景付き素材をそのまま重ねたい時。',
+    links: [
+      { label: '元ノート（PS ink bleed）', path: '20_📂 zettelkasten/LiteratureNote/🌌 PS_How to make live ink bleed in Photoshop.md' },
+      { label: '黒背景3手法まとめ', path: '20_📂 zettelkasten/StructureNote/syntheses/2026-05-01-photoshop-black-bg-transparency.md' },
+    ],
+    date: '2026-06-21',
+  },
+  {
+    title: 'Photoshopで黒背景の煙・炎・星素材を透明化する（レイヤーマスク法）',
+    category: 'デザイン',
+    tool: 'Photoshop',
+    keyword: 'smoke fire transparent black background layer mask invert paste',
+    tip: '① 全選択→カット ② 新規レイヤー→ラスタライズ→白で塗る ③ レイヤーマスク追加→マスクをAlt+クリック→ペースト → 黒地が透明・煙の白だけ残る。Blend Ifとの違い：こちらは実ピクセル透明化なので書き出し・他ソフト連携でも使える。',
+    use: '煙・炎・星・雪・光など黒背景フリー素材を背景透過で合成したい時。',
+    links: [
+      { label: '元ノート（photoshop-smoke-cutout）', path: '20_📂 zettelkasten/StructureNote/concepts/photoshop-smoke-cutout.md' },
+      { label: '黒背景3手法まとめ', path: '20_📂 zettelkasten/StructureNote/syntheses/2026-05-01-photoshop-black-bg-transparency.md' },
+    ],
+    date: '2026-06-21',
+  },
+];
+let aiCards = [], aiLoaded = false, aiCatFilter = 'all';
+
+const AI_CAT_COLORS = {
+  'デザイン':      '#6366f1',
+  'AI活用':        '#e8365d',
+  'リサーチ':      '#16a34a',
+  'ワークフロー':  '#d97706',
+};
+function aiCatColor(cat) { return AI_CAT_COLORS[cat] || '#6b7280'; }
+
+async function loadAiKnowhow() {
+  aiLoaded = true;
+  const j = await obsGetJSON(cfg.aiKnowhow);
+  aiCards = (Array.isArray(j) && j.length) ? j : AI_KNOWHOW_SEED;
+  aiCards = aiCards.slice().sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+}
+
+function setAiCat(cat) {
+  aiCatFilter = cat;
+  document.querySelectorAll('#ai-filter-bar .km-filter-pill').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+  _renderAiGrid();
+}
+
+function copyKeyword(el, kw) {
+  navigator.clipboard?.writeText(kw).then(() => toast(`📋 「${kw}」をコピーしたよ`)).catch(() => toast('コピーできなかった…手で選んでね'));
+}
+
+function _renderAiGrid() {
+  const grid = document.getElementById('ai-grid');
+  const head = document.getElementById('ai-head');
+  const filtered = aiCatFilter === 'all' ? aiCards : aiCards.filter(c => (c.category || '') === aiCatFilter);
+  head.textContent = `${filtered.length}${aiCatFilter === 'all' ? '' : ' / ' + aiCards.length} Tips ・ デザイン・リサーチ・AI活用の実践引き出し`;
+  if (!filtered.length) {
+    grid.innerHTML = `<div class="km-trend-empty">このカテゴリにはまだTipsがないよ</div>`; return;
+  }
+  const TIP_META = {
+    'デザイン':     { icon: '✏️', color: '#6366f1' },
+    'AI活用':       { icon: '🤖', color: '#e8365d' },
+    'リサーチ':     { icon: '🔍', color: '#16a34a' },
+    'ワークフロー': { icon: '⚙️', color: '#d97706' },
+    'その他':       { icon: '💡', color: '#6b7280' },
+  };
+  grid.innerHTML = filtered.map(c => {
+    const meta = TIP_META[c.category||''] || { icon: '💡', color: '#6b7280' };
+    const kw = c.keyword || '';
+    const keyEl = kw ? `<div class="km-mc-key" onclick="copyKeyword(this, ${JSON.stringify(kw).replace(/"/g, '&quot;')})"><code>${escHtml(kw)}</code></div>` : '';
+    const tipEl = c.tip ? `<div class="km-mc-sub">${escHtml(c.tip.slice(0,100))}${c.tip.length>100?'…':''}</div>` : '';
+    const useEl = c.use ? `<div class="km-mc-use"><b>使いどころ</b>：${escHtml(c.use)}</div>` : '';
+    const toolChip = c.tool ? `<span class="km-mc-tag">${escHtml(c.tool)}</span>` : '';
+    const links = (Array.isArray(c.links) && c.links.length)
+      ? `<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:4px">${c.links.map(l => {
+          const isObs = l.path && !/^https?:/.test(l.path);
+          const href = isObs ? `obsidian://open?vault=corin&file=${encodeURIComponent(String(l.path).replace(/\/$/, ''))}` : (l.path || l.url || '#');
+          return `<a class="km-mc-link" href="${escHtml(href)}"${isObs ? '' : ' target="_blank" rel="noopener"'}>${escHtml(l.label || 'リンク')}</a>`;
+        }).join('')}</div>`
+      : '';
+    return `<div class="km-mc">
+      <div class="km-mc-tip-header" style="background:linear-gradient(140deg,${meta.color}ee,${meta.color}88)">
+        <div class="km-mc-tip-icon">${meta.icon}</div>
+        <div class="km-mc-tip-tool">${escHtml(c.tool || c.category || 'Tips')}</div>
+      </div>
+      <div class="km-mc-body">
+        <div class="km-mc-title">${escHtml(c.title || '')}</div>
+        <div class="km-mc-tags">${toolChip}</div>
+        ${keyEl}${tipEl}${useEl}${links}
+        <div class="km-mc-foot"><span class="km-mc-date">${escHtml(c.date || '')}</span></div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+async function renderAiKnowhow() {
+  const grid = document.getElementById('ai-grid');
+  const filterBar = document.getElementById('ai-filter-bar');
+  if (!aiLoaded) { grid.innerHTML = `<div class="km-trend-empty">読み込み中...</div>`; await loadAiKnowhow(); }
+  if (!aiCards.length) {
+    document.getElementById('ai-head').textContent = '0 Tips';
+    grid.innerHTML = `<div class="km-trend-empty">まだTipsがないよ。<br><code>${escHtml(cfg.aiKnowhow)}</code> に追記すると出てくるよ 📝</div>`; return;
+  }
+  // filter bar
+  const cats = ['全て', ...Array.from(new Set(aiCards.map(c => c.category || 'その他'))).sort()];
+  filterBar.innerHTML = cats.map(cat => {
+    const val = cat === '全て' ? 'all' : cat;
+    return `<button class="km-filter-pill${aiCatFilter === val ? ' active' : ''}" data-cat="${escHtml(val)}" onclick="setAiCat('${escHtml(val)}')">${escHtml(cat)}</button>`;
+  }).join('');
+  _renderAiGrid();
+}
+
+// ── フェーズ別 view ──
+const PHASE_SEED = [
+  { id: 'research', emoji: '🔍', label: '① 調査',       desc: '参考・競合・トレンド収集' },
+  { id: 'concept',  emoji: '💡', label: '② コンセプト',  desc: '世界観・テーマ設計' },
+  { id: 'design',   emoji: '🎨', label: '③ デザイン',    desc: 'ビジュアル制作' },
+  { id: 'check',    emoji: '✅', label: '④ 確認',        desc: 'FBチェック・修正' },
+  { id: 'deliver',  emoji: '📤', label: '⑤ 提出',        desc: '納品・提出' },
+];
+
+function renderPhases() {
+  if (!aiLoaded) { loadAiKnowhow().then(renderPhases); return; }
+  const el = document.getElementById('view-phases');
+  el.innerHTML = PHASE_SEED.map((p, i) => {
+    const tips = aiCards.filter(c => Array.isArray(c.phases) && c.phases.includes(p.id));
+    const tipHtml = tips.length
+      ? tips.map(c => `<div style="font-size:12px;padding:8px 12px;background:var(--card);border-radius:8px;margin-bottom:6px;line-height:1.5">
+          <span style="font-size:10px;background:#2a2a2a;color:#888;padding:2px 7px;border-radius:8px;margin-right:8px">${escHtml(c.category || 'Tips')}</span>${escHtml(c.title)}</div>`).join('')
+      : `<div style="font-size:12px;color:#444;font-style:italic;padding:6px 0">このフェーズのTipsはまだなし</div>`;
+    const sep = i < PHASE_SEED.length - 1 ? '<hr style="border:none;border-top:1px solid var(--line);margin:24px 0">' : '';
+    return `<div>
+      <div style="font-size:15px;font-weight:800;margin-bottom:4px">${p.emoji} ${p.label}</div>
+      <div style="font-size:12px;color:var(--mute);margin-bottom:12px">${p.desc}</div>
+      ${tipHtml}
+    </div>${sep}`;
+  }).join('');
+}
+
+// ── Events view ──
+let evCards = [], eventsLoaded = false;
+const EV_TAGS = new Set(['popup', 'popup-store', 'pop-up', 'ポップアップ', 'イベント告知', 'event', 'exhibition']);
+
+function isEventNote(fm, fname) {
+  if (Array.isArray(fm.tags) && fm.tags.some(t => EV_TAGS.has(t))) return true;
+  return /ポップアップ|popup|pop.?up/i.test(fname);
+}
+
+async function loadEvents() {
+  eventsLoaded = true;
+  if (!brandsLoaded) await loadBrands();
+  const files = (await obsListDir(cfg.litDir)).filter(f => f.endsWith('.md'));
+  const cards = [];
+  await Promise.allSettled(files.map(async f => {
+    const md = await obsGet(`${cfg.litDir}/${f}`);
+    const fm = parseFrontmatter(md);
+    if (!isEventNote(fm, f)) return;
+    const imgPath = Array.isArray(fm.images) && fm.images[0] ? fm.images[0] : null;
+    const uname = (fm.username || fm.title || f.replace(/\.md$/, '')).replace(/_?(official|jp|japan)$/i, '');
+    const zone = fm.map_zone || (Array.isArray(fm.tags) && fm.tags.find(t => /表参道|渋谷|原宿|梅田|銀座|新宿|青山|六本木|名古屋|大阪/.test(t))) || '';
+    const hasBrand = brandCards.some(b => b.name.toLowerCase() === uname.toLowerCase());
+    cards.push({ imgPath, imgUrl: null, uname, zone, date: fm.date || '', hasBrand });
+  }));
+  evCards = cards.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+}
+
+async function renderEvents() {
+  const grid = document.getElementById('events-grid');
+  const head = document.getElementById('events-head');
+  if (!eventsLoaded) { grid.innerHTML = `<div class="km-trend-empty">読み込み中...</div>`; await loadEvents(); }
+  head.textContent = `${evCards.length} イベント`;
+  if (!evCards.length) {
+    grid.innerHTML = `<div class="km-trend-empty">まだ保存されていないよ。<br>IGでポップアップ投稿を保存すると自動で出てくる 🎪</div>`; return;
+  }
+  grid.innerHTML = evCards.map((c, i) => {
+    const zoneEl = c.zone ? `<div class="km-mc-sub">📍 ${escHtml(c.zone)}</div>` : '';
+    const brandBtn = c.hasBrand ? `<span class="km-mc-link" style="cursor:pointer" onclick="event.preventDefault();switchView('brand')">🏷 分析</span>` : '';
+    const noImg = `<div class="km-mc-noimg" style="background:linear-gradient(135deg,#1a1a2e,#16213e)"><div class="km-mc-noimg-emoji">🎪</div></div>`;
+    const thumb = `<div class="km-mc-thumb" id="ev-mc-${i}">${noImg}</div>`;
+    return `<div class="km-mc">${thumb}<div class="km-mc-body"><div class="km-mc-title">${escHtml(c.uname)}</div>${zoneEl}<div class="km-mc-foot"><span class="km-mc-date">${escHtml(c.date)}</span>${brandBtn}</div></div></div>`;
+  }).join('');
+  evCards.forEach(async (c, i) => {
+    if (!c.imgPath && !c.imgUrl) return;
+    const url = c.imgUrl || await vaultImageURL(c.imgPath);
+    if (!url) return;
+    const thumb = document.getElementById(`ev-mc-${i}`);
+    if (!thumb) return;
+    const img = new Image();
+    img.onload = () => { thumb.innerHTML = ''; img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover'; thumb.appendChild(img); };
+    img.src = url;
+  });
+}
+
+// ── Font view ──
+// ファイル名パターンで検出（tags/categoryに統一キーなし）
+let fontCards = [], fontsLoaded = false;
+
+function isFontNote(f) {
+  return /font|フォント|typeface|タイポグラフィ|タイポ|typography/i.test(f);
+}
+
+async function loadFonts() {
+  fontsLoaded = true;
+  const files = (await obsListDir(cfg.litDir)).filter(f => f.endsWith('.md'));
+  const cards = [];
+  await Promise.allSettled(files.map(async f => {
+    if (!isFontNote(f)) return;
+    const md = await obsGet(`${cfg.litDir}/${f}`);
+    const fm = parseFrontmatter(md);
+    const title = fm.title || f.replace(/\.md$/, '');
+    const tags = (Array.isArray(fm.tags) ? fm.tags : []).filter(t => t !== 'tutorial').slice(0, 4);
+    // derive image path: images[] > shortcode > url extraction > body wiki-link
+    let imgPath = Array.isArray(fm.images) && fm.images.find(p => /\.(jpe?g|png|webp|gif)$/i.test(p));
+    if (!imgPath && fm.url) {
+      const scm = fm.url.match(/instagram\.com\/(?:p|reel)\/([A-Za-z0-9_-]+)/);
+      if (scm) imgPath = `${cfg.igDir}/${scm[1]}_1.jpg`;
+    }
+    if (!imgPath && fm.shortcode) imgPath = `${cfg.igDir}/${fm.shortcode}_1.jpg`;
+    if (!imgPath) {
+      const bodyMatch = md.match(/!\[\[([^\]]+\.(?:jpe?g|png|webp|gif))/i);
+      if (bodyMatch) imgPath = bodyMatch[1];
+    }
+    cards.push({ title, tags, date: fm.date || fm.created || '', imgPath: imgPath || null });
+  }));
+  fontCards = cards.sort((a, b) => a.title.localeCompare(b.title, 'ja'));
+}
+
+async function renderFonts() {
+  const grid = document.getElementById('font-grid');
+  const head = document.getElementById('font-head');
+  if (!fontsLoaded) { grid.innerHTML = `<div class="km-trend-empty">読み込み中...</div>`; await loadFonts(); }
+  head.textContent = `${fontCards.length} フォント・タイポグラフィノート`;
+  if (!fontCards.length) {
+    grid.innerHTML = `<div class="km-trend-empty">フォント関連ノートがまだないよ。<br>ファイル名に「フォント」「font」「typeface」「タイポ」を含めると自動で出てくる 🔤</div>`; return;
+  }
+  grid.innerHTML = fontCards.map((c, i) => {
+    const chips = c.tags.map(g => `<span class="km-mc-tag">${escHtml(g)}</span>`).join('');
+    const noImg = `<div class="km-mc-noimg" style="background:#111"><div class="km-mc-noimg-emoji" style="font-size:52px;color:#fff;opacity:.7;font-style:italic;font-weight:900">A</div><div class="km-mc-noimg-label">typeface</div></div>`;
+    const thumb = c.imgPath
+      ? `<div class="km-mc-thumb"><div class="km-tile-skeleton"></div><img data-font-img="${escHtml(c.imgPath)}" alt="" style="display:none"></div>`
+      : `<div class="km-mc-thumb">${noImg}</div>`;
+    return `<div class="km-mc">${thumb}<div class="km-mc-body"><div class="km-mc-title">${escHtml(c.title)}</div><div class="km-mc-tags">${chips}</div><div class="km-mc-foot"><span class="km-mc-date">${escHtml(c.date)}</span></div></div></div>`;
+  }).join('');
+  grid.querySelectorAll('img[data-font-img]').forEach(async img => {
+    const u = await vaultImageURL(img.dataset.fontImg);
+    if (u) { img.src = u; img.style.display = ''; const sk = img.previousElementSibling; if (sk?.classList.contains('km-tile-skeleton')) sk.remove(); }
+  });
+}
+
+// ── JS: history data ──
+const historyData = {
+  "Y3Kシルバー": { prevPeak: "1990年代後半〜2000年代初頭", prevPeakYear: "1997–2003", prevPeakPct: 72, currPct: 88, whyNow: "ChatGPT・生成AI・メタバースの急速普及が「自分とデジタルの境界消滅」という不安と興奮を同時に生み出した。aespaのAIアバター設定とMVがTikTokで爆発し2023年以降グローバルに拡散。", evolution: "前回（Y2K期）はピンク・ラメ・バブリーなシルバーで楽観的興奮が背景。今回はガンメタル・無機質・セカンドスキンシルエットで「AI不安・ディストピア的冷感」が背景。デジタルアバター参照が新要素として加わった。", timeline: [{ year: "1960s", event: "Paco Rabanne・Courrègesがスペースエイジファッションを創始。チェーンメール×シルバーの原点" }, { year: "1997–2003", event: "Y2Kフューチャリズム第1次ピーク。McQueen・ヴェルサーチがメタリックシルバーを展開。Paris Hiltonがシルバードレスを流行させる" }, { year: "2022–2023", event: "Y3Kという語がAesthetics Wiki・TikTokで定義され急拡散。aespaが「Next Level」「Supernova」でY3Kルックを体現しグローバルに拡散" }, { year: "2024", event: "Mugler・Coperni・Diesel・BalenciagaがランウェイでメタリックシルバーPVCを投入。SHIBUYA109がY3Kテーマイベント開催" }, { year: "2025–2026", event: "XG・Lisa（Rockstar MV）・aespa（Armageddon）がグローバル拡散を加速。CANMAKEがY3Kネイルを発売し量販ブランドへ波及" }], keyPlayers: "Coperni・Mugler・Balenciaga・Diesel / aespa・XG・Lisa（BLACKPINK）/ TikTok（#Y3K）・SHIBUYA109 lab." },
+  "バレルジーンズ": { prevPeak: "1990年代〜2000年代前半", prevPeakYear: "1988–2004", prevPeakPct: 65, currPct: 91, whyNow: "スキニージーンズへの15年以上の反動、コロナ禍で定着したリラックスフィット需要、TikTokでのミーム→オシャレ証明への逆転、セレブSNSの即拡散構造が重なった。", evolution: "1990年代版はヒップホップ・スケートの「ストリート機能着」。2020年代版はAlaïaが彫刻的ランウェイ文脈で再解釈し「ハイファッション×日常着」として昇格。TikTokの「ミーム→本人着用」という逆転の流行経路も前回にない現象。", timeline: [{ year: "1990s–2003", event: "スケーター・ラッパー中心にバギーデニムが全盛。その後スキニー台頭で消滅" }, { year: "2021秋", event: "Citizens of HumanityがHorseshoe Jeanを発売。当初「変」と賛否両論" }, { year: "2022–2023", event: "AlaïaがPieter Mulierのデザインで極端なバナナ型デニムを発表。Gigi Hadid等セレブ着用でTikTok爆発" }, { year: "2024春", event: "GUがバレルジーンズを先行発売→即完売→社会現象に。日本国内でZ世代トレンドとして確立" }, { year: "2025–2026", event: "グローバルで「denim trend of 2026」として定着。ホースシューシルエット・ダークウォッシュへと進化中" }], keyPlayers: "Citizens of Humanity（Horseshoe Jean発明）・Alaïa / GU（日本大衆化）/ Gigi Hadid・Jennifer Lopez / TikTok（#barreljeans）" },
+  "サギング（腰パン復権）": { prevPeak: "1990年代後半〜2000年代前半", prevPeakYear: "1993–2007", prevPeakPct: 80, currPct: 62, whyNow: "Z世代のY2K・2000年代ノスタルジアリバイバルが主因。Playboi CartiのBETアワード「パンツ落下」動画がTikTokで爆発的拡散。高腰（ハイウエスト）疲れへの揺り戻しでもある。", evolution: "前回（1990年代）は刑務所カルチャー→ヒップホップという反体制・アウトロー文脈。2026年版は「ノスタルジー消費＋ハイファッション化」が特徴で、Celine・Versace・Dieselがランウェイに取り込み「世代のアイコン的美学」として再文脈化。", timeline: [{ year: "1992–1993", event: "NWA、Snoop Dogg、TupacがウエストコーストヒップホップMVで腰パンを着用、MTV経由で全米に拡散" }, { year: "1996–2000", event: "高校・大学でドレスコード問題化。JNCO・Fubuなど専用ブランドが台頭" }, { year: "2019–2022", event: "WGSNがY2K・90sリバイバルを捕捉。Playboi CartiがTikTokで「超腰パン」スタイルでバズる" }, { year: "2024–2025", event: "CartiのBETアワード動画がTikTokで爆発。GapがLow-rise採用、Citizens of Humanityが「ultra low-rise」を次の主要ビジネスドライバーと明言" }, { year: "2026 S/S", event: "Diesel・Off-White・Balmain・ReformationがランウェイでLow-riseを主軸に採用" }], keyPlayers: "Playboi Carti（TikTokバズの火付け役）/ Diesel・Off-White・Balmain・Celine / WGSN・TikTok" },
+  "テックコア女子": { prevPeak: "1997年〜2004年（Y2Kフューチャリズム期）", prevPeakYear: "1997–2004", prevPeakPct: 60, currPct: 82, whyNow: "AIメタバース・アバター文化の爆発的拡大（2023〜）により「テクノロジーと身体の融合」が実感を伴うテーマに。aespaをはじめとするK-POP第4世代グループがTikTok・Reels経由でY3K審美観をZ世代女性に広めた。", evolution: "前回（Y2Kフューチャリズム）はホログラム＋ビビッドカラーの「明るい未来」志向。今回はより冷色・ディストピア寄りで、バーチャルアバター＝もう一人の自分という概念が加わり、モジュール型実用性要素が女性向けに解釈されている。", timeline: [{ year: "1997–2004", event: "Y2Kフューチャリズムがピーク。Mugler・TLCらでメタリック×PVCが女性ファッションに浸透。映画『マトリックス』もアイコンに" }, { year: "2020–2021", event: "SM Entertainmentがaespaをデビュー。メタバース×アバターコンセプトとテックウェアを組み合わせた衣装がK-POP界に新パラダイムを提示" }, { year: "2022–2023", event: "Y3K審美観が日本・韓国・中国のZ世代に拡散。aespa・XGがY3Kファッションの代名詞に" }, { year: "2024", event: "Gentle Monster・Balenciaga・DieselがY3K路線を強化。TikTokで「techwear girl」「tech core aesthetic」がバイラル" }, { year: "2025–2026", event: "韓国発「テックコア女子」として日本へも波及。デジタルラベンダー＋サイバーライムが看板カラーに" }], keyPlayers: "aespa（SM Entertainment）・XG / Gentle Monster・Balenciaga・Diesel・Mugler / TikTok（#techwear_girl・#Y3K）" },
+  "モジュール式テックウェア": { prevPeak: "2010年代中盤〜後半", prevPeakYear: "2014–2018", prevPeakPct: 68, currPct: 78, whyNow: "Z世代のファストファッション拒否・「1着多用途」志向との相性が完璧に一致。BLACKPINKジェニーがHAMCUSを着用した2025年のMVで新規層への一気貫通が起きた。", evolution: "前回（2014〜2018）はACRONYMを頂点とする「黒づくめのゴスニンジャ」美学が主流で、高価・ニッチ・男性中心。現在はPAF（韓国）・HAMCUS（中国）など非欧米ブランドが牽引し、ジェンダーレス・サステナブル素材・「日常動線に溶け込む可変レイヤリング」へ進化。", timeline: [{ year: "1989–1994", event: "Nike ACG創設。ACRONYM創業（独・Errolson Hugh）。機能服を都市用途へ転換する概念が誕生" }, { year: "2014–2016", event: "Errolson HughがNike ACGをリブランディング。モジュール式ジャケットがメインストリームに接触" }, { year: "2017–2018", event: "低価格コピーブランドが乱立し「モール・ニンジャ」現象でオリジナルの差別性が希薄化。停滞期へ" }, { year: "2018–2022", event: "POST ARCHIVE FACTION（PAF）が韓国から台頭。脱シーズン設計でテックウェアを再定義。LVMH Prize半finalist入り" }, { year: "2024–2026", event: "HAMCUSがジェニーMVで大規模露出。UGGとのコラボでメインストリーム層に到達。「モジュール式」が主流設計言語として再確立" }], keyPlayers: "ACRONYM（Errolson Hugh）・Nike ACG・PAF（韓国）・HAMCUS（中国）/ BLACKPINKジェニー / Hypebeast・Highsnobiety" },
+  "ポエットコア": { prevPeak: "2010年代後半〜2020年代初頭", prevPeakYear: "2018–2021", prevPeakPct: 55, currPct: 85, whyNow: "2023〜2025年のAI生成コンテンツ氾濫への反動として「手書き・手触り・アナログの価値」が再評価。Pinterest検索で「poet aesthetic」が+175%急伸（2025年）。SS2026でPrada/Miu Miu/Tory Burchがランウェイに採用し主流化した。", evolution: "前回（2018-21年）はTumblrの「Dark Academia」と混在しモノトーン・ツイード・図書館的世界観が中心。2026年版は「AI嫌悪・手触りへの執着」という思想的裏付けが加わり、レース・ハイネック・ケープ・万年筆など「詩人的道具立て」が具体化。ダークさより穏やかな文学的柔らかさにシフト。", timeline: [{ year: "2010–2015", event: "Tumblrで詩・文学・ジャーナリングコミュニティが形成。「literary aesthetic」の原型が生まれる" }, { year: "2018–2020", event: "Cottagecore命名。ポエットコア的要素（ブラウス・フローイングスカート）がDark Academia/Cottagecore混合期として潜伏" }, { year: "2020–2022", event: "コロナ禍でスローリビング・内省志向が強化。BookTokが爆発的成長し文学ライフスタイルが一般化" }, { year: "2023–2024", event: "AI生成コンテンツ氾濫への反動でアナログ価値が再評価。Pinterest上でpoetcore検索+75%（2024）" }, { year: "2025–2026", event: "Pinterest 2026トレンド予測に正式選出。Prada・Miu Miu・Tory Burch・Bottega VenetaがランウェイにSS2026で採用" }], keyPlayers: "Miu Miu・Prada・Simone Rocha・Tory Burch / Pinterest（2026 Trend Report）・BookTok / Taylor Swift（ポエット美学の体現者として頻繁に参照）" },
+  "ポストデジタルクラフト": { prevPeak: "2014〜2018年（スキューモーフィズム反動期〜リソグラフ全盛期）", prevPeakYear: "2014–2018", prevPeakPct: 60, currPct: 83, whyNow: "2022年以降のAI画像生成ツール普及により「完璧すぎるビジュアル」が氾濫。Z世代はAI的滑らかさを敏感に察知して飽き始め、人間の手の痕跡こそが「真正性」のシグナルとなった。", evolution: "前回（2014〜18年）はリソグラフ・レタープレスなど「実際の印刷機」による物理的制作が主流。今回はデジタルツール（Procreate・Photoshopブラシ）でアナログ感を「シミュレート」するハイブリッド・クラフトに進化。反AI・反オーバーデザインという明確な思想的意図を持つ点が前回と根本的に異なる。", timeline: [{ year: "2013", event: "AppleがiOS 7でスキューモーフィズムを廃止。テクスチャへの喪失感が生まれる" }, { year: "2014–2018", event: "リソグラフ印刷・ジン文化がベルリン・グラスゴー・東京のインディスタジオで全盛" }, { year: "2019–2021", event: "コロナ禍でDIY手芸（ニット・陶芸・刺繍）が再流行。Z世代が「作ること」に回帰し始める" }, { year: "2022–2023", event: "Midjourney・DALL-E普及でAI生成ビジュアルが爆増。反動としてCraftcoreがデザイン誌でトレンドとして命名" }, { year: "2025–2026", event: "Creative Bloq・Kittl・Envatoが「タクタイル・リベリオン」「アンチAIクラフティング」として一斉命名。2026年最重要デザイントレンドに定着" }], keyPlayers: "Human Made（NIGO）・Verdy・Aries（Sofia Prantera）/ True Grit Texture Supply・RISOTTO Studio / It's Nice That・Creative Bloq（命名メディア）" },
+  "Lo-Fiビジュアル美学": { prevPeak: "2010年代前半（Tumblr黄金期）", prevPeakYear: "2010–2016", prevPeakPct: 70, currPct: 86, whyNow: "AI生成画像の氾濫（2023年〜）に対する「人間性の証明」としてフィルムグレイン・光漏れが機能するように。Meta「Made with AI」タグの誤発動が逆説的にアナログ的傷を真正性バッジとして強化した。", evolution: "前回（2010年代）はTumblrから自然発生した「スローカルチャー・コージー感」で低品質は不可避の副産物。2025〜2026年の復活は意図的・戦略的。Loeweが4K/AIとの対比で「わざと粗くすること」をキャンペーンに採用し、「粗さ＝倫理的オーセンティシティ」へ意味が反転した。", timeline: [{ year: "1992–2002", event: "Lomographyムーブメントがウィーン発で全世界に拡大。「撮るな、感じろ」の哲学でフィルム偶発性を美学として確立" }, { year: "2010–2016", event: "Tumblr黄金期。グレイン・ポラロイド・ソフトグランジが支配的。Cara DelevingneによってTopshopキャンペーンへ波及" }, { year: "2022–2023", event: "Loewe・Bottega VenetaがUGC的lo-fiキャンペーンを採用。AI画像生成の大衆化が同時進行しアナログ傷への対比需要が加速" }, { year: "2024–2026", event: "フィルム現像ラボが世界で312店舗新規開業（2025年）。Envatoのフィルムグレイン素材検索が前月比31%増" }], keyPlayers: "Loewe（FW24 iPhone撮影キャンペーン）・Bottega Veneta・Acne Studios / TikTok #FilmTok（数十億再生）・Lomography / Cara Delevingne（2010年代の火付け役）" },
+  "レトロフューチャー": { prevPeak: "1990年代後半〜2000年代前半（Y2Kピーク期）", prevPeakYear: "1995–2004", prevPeakPct: 78, currPct: 90, whyNow: "AIと量子コンピューティングが現実化した2020年代、人々は「過去が夢見た未来」へのノスタルジアと皮肉を同時に感じている。Charli XCX「BRAT」（2024）やK-POPのビジュアル戦略がコズミックグラデーション・メタリック質感を主流化させた。", evolution: "前回（Y2K）は「2000年への期待とミレニアム不安」が動機でバブリー・ラメ・ポップな明るさが主軸。今回（Y3K）は冷たいメタリック・ホログラフィック・ディストピア的トーンに変化し、K-POP発信というアジア起点のグローバル拡散構造も前回と異なる。", timeline: [{ year: "1995–2000", event: "ミレニアム前夜ピーク。テック企業広告・MTV映像にシルバー・CDロム質感・ホログラムが氾濫" }, { year: "2001–2008", event: "9.11以降の現実回帰とミニマリズム隆盛で急速に廃れる" }, { year: "2019–2021", event: "TikTokとPinterestでZ世代がY2Kアーカイブを再発掘。コロナ禍のノスタルジー需要が加速" }, { year: "2022–2023", event: "K-POP（aespa、NewJeans等）がコズミック世界観をメインビジュアルに採用。WEGOなどファストファッションがY2K製品を大量展開" }, { year: "2024–2026", event: "Charli XCX「BRAT」現象でY3Kが主流化。Louis Vuitton・Prada・Maison MargielaがレトロフューチャーランウェイをCOMMIT" }], keyPlayers: "Louis Vuitton・Prada・Maison Margiela・H&M・WEGO / Charli XCX（BRAT・2024）・aespa・NewJeans / TikTok・Pinterest・Envato Elements" },
+  "サイバーシジリズム": { prevPeak: "1990年代後半〜2000年代前半（ネオトライバルタトゥー全盛期）", prevPeakYear: "1995–2005", prevPeakPct: 75, currPct: 80, whyNow: "Z世代が「クリーンガール」「ミニマリズム」への反動として暗くカオスなマキシマリズムを選んでいる。コロナ禍の閉塞感・経済不安がY2K的な過剰美学と共鳴。TikTokでタトゥー動画が拡散し、デジタル自己とリアル身体の統合願望がグラフィックへ昇華。", evolution: "前回（1990s）は太い黒ベタ・部族の形式模倣・トライバルバンドが主流で「デコレーション」として消費。現代版は極細ラインワーク・カオスマジックのシジル・バイオメカニカル要素・Y2Kゲーム的デジタル回路感を融合し、精緻な線が特徴。", timeline: [{ year: "1995–2005", event: "トライバルタトゥーが大衆文化に爆発的普及。腰骨・二の腕バンドのイメージが定着しその後「ダサい」レッテルで下火に" }, { year: "2018", event: "LA拠点タトゥーアーティストA.i.（@cybersigilism）がスタイルを確立。ベルリンのテクノ地下クラブシーンで広まる" }, { year: "2020–2022", event: "コロナ禍でTikTok拡散が加速。スウェーデン音楽コレクティブDrain Gang（Bladee等）が視覚言語を世界に発信" }, { year: "2023", event: "Billie Eilish・Grimes・Playboi CartiがタトゥーGRに採用。VetementsやBalenciagaがランウェイでラインワークを取り入れ高ファッション化" }, { year: "2024–2026", event: "Minga Londonなど量産ファッションブランドがサイバーシジリズム専用コレクション展開。TikTok#CyberSigilismが数千万再生に到達" }], keyPlayers: "A.i.（@cybersigilism・命名者）・Noel Garcia / Billie Eilish・Grimes・Playboi Carti・Drain Gang / Vetements・Balenciaga・Minga London / 032c magazine" },
+  "クラウドダンサー": { prevPeak: "1990年代後半〜2000年代初頭", prevPeakYear: "1995–2003", prevPeakPct: 68, currPct: 92, whyNow: "SNS過剰刺激・デジタルファティーグへの反動として「静寂・余白・ミニマル」への回帰が起きている。クワイエット・ラグジュアリーが2022〜2023年に社会的トレンドとして定着し、その帰着先として「色を足さない白」という選択が2025〜2026年に昇華。Pantone史上初の白選出（PANTONE 11-4201）がそれを象徴する。", evolution: "1990年代のミニマリズムは「装飾の排除＝モダン」という造形的主張だったが、2026年のクラウドダンサーは「刺激からの撤退・内省・心理的安全」という感情的・社会的メッセージを帯びる。「白＝清潔・ゼロ」から「白＝豊かな余白・意思ある選択」へ意味が変容。", timeline: [{ year: "1995–2003", event: "Calvin Klein・Helmut Lang・Jil Sanderが牽引する90年代ミニマリズムのピーク。白・ベージュ・グレーの無彩色パレットがランウェイを席巻" }, { year: "2022–2023", event: "クワイエット・ラグジュアリーがVogueの「2023年5大トレンド」入り。クリーム・タウプ・ストーンなどニュートラルカラーが再浮上" }, { year: "2024–2025", event: "春夏パリ＆ミラノコレクションでオールホワイトルックが多数登場。SNSのクリーンエステティックが視覚言語として定着" }, { year: "2025年12月", event: "PantoneがCloud Dancer（11-4201）を2026年カラー・オブ・ザ・イヤーに発表。Pantone史上初の白系選出" }], keyPlayers: "Calvin Klein（1990年代の原点）・The Row・Jil Sander・Toteme・Loro Piana / Helmut Lang・Raf Simons・Mary-Kate＆Ashley Olsen / Pantone Color Institute" },
+  "オールホワイトコーデ": { prevPeak: "1990年代後半〜2010年代中盤（ミニマリズム第一波・セリーヌ時代）", prevPeakYear: "1995–2017", prevPeakPct: 72, currPct: 89, whyNow: "2022年以降の「クワイエットラグジュアリー」が下地を作り、パントーン2026年カラー・オブ・ザ・イヤー「Cloud Dancer（オフホワイト）」制定がトレンド確立を後押し。TikTok/Instagramで「クリーンガール・エステティック」がバズり、ロゴ過多のY2Kへの反動として「何も言わないことで語る」審美観をZ世代が選択。", evolution: "前回（90s-2010s）は「生活感の排除・彫刻的なシルエット」が軸で、フィービー・フィロ型の知的ミニマリズムが主体。今回（2025-26）は素材感・レイヤリングの「テクスチャー差」で表情を作る立体的なホワイト。くたっとした素材・あえての垂れ感を混入させる余白の美が加わっている。", timeline: [{ year: "1990年代中盤", event: "ヘルムート・ラング、ジル・サンダーらが90sミニマリズムを確立。白・黒・グレーの無彩色コーデが高感度層に浸透" }, { year: "2008–2017", event: "フィービー・フィロがセリーヌのCDに就任し「セリーヌ・エフェクト」を起こす。クリーンラインの白ニットや白コートがストリートに波及" }, { year: "2022–2023", event: "「クワイエットラグジュアリー」がTikTokで爆発的に広まる。フィービー・フィロが自身ブランド「A1」を2023年10月にローンチし再熱" }, { year: "2025年9月", event: "ジル・サンダーSS26でクリスプなホワイトを軸にした「ミニマリズム再定義」コレクション。トーテムがNYFWで白×黒完全モノクロームコレクションを発表" }, { year: "2026年", event: "パントーン「Cloud Dancer」選定。パリコレFW26でホワイト単色構成が複数ブランドで確認され、SS26-FW26跨ぎでトレンド確立" }], keyPlayers: "Jil Sander（シモーヌ・ベロッティ）・Toteme・The Row・フィービー・フィロ自身ブランド / フィービー・フィロ（セリーヌ2008-17）・ヘルムート・ラング / TikTokの「クリーンガール・エステティック」タグ" },
+  "ジェリー素材": { prevPeak: "1980年代後半〜1990年代前半、および2000年代初頭（Y2K期）", prevPeakYear: "1985–1995 / 2000–2005", prevPeakPct: 65, currPct: 88, whyNow: "Z世代によるY2Kノスタルジア再評価とTikTok上でのバイラル拡散が主因。The Row・Skimsなどのコラボが2024〜2025年に相次ぎ「高級品」として再文脈化。「ジェリーガールサマー」タグで2025年夏にTikTok爆発し2026年春夏の主要トレンドとして定着。", evolution: "前回（80〜90年代）は子供・マス向けの安価な夏物アイテムでキッチュな文脈。今回はThe Row・Chloé・Gucci・Valentino等のラグジュアリーブランドが採用し「高級素材」として格上げ。サステナビリティの文脈で語られる点、「中身を見せる」スタイリングがSNS映えとして積極活用される点が旧来と異なる。", timeline: [{ year: "1979–1980", event: "ブラジルのMelissaが「Melissa Aranha」を発売。石油危機下で革の代替として誕生" }, { year: "1983–1990", event: "ブルームingdale'sがPVCシューズを大量発注しアメリカで大流行。マドンナ・ダイアナ妃が着用し文化的象徴に" }, { year: "1995–2003", event: "Y2KブームでグリッターキャンディカラーのジェリーアクセサリーがMelissaの黄金期に" }, { year: "2024", event: "ジェニファー・ローレンスがThe Rowのネット地ジェリーフラットを着用しバイラル化。Skims・ChloeがSS2025コレクションに採用" }, { year: "2025–2026", event: "TikTokで「Jelly Birkin」「ジェリーガールサマー」が爆発。Gucci・Valentino等ラグジュアリー各社がランウェイに投入し定番トレンド化" }], keyPlayers: "Melissa（原点・ブラジル）・The Row・Skims・Chloé・Gucci・Valentino / Jennifer Lawrence（The Row着用でバイラル）・Rihanna（Fenty Puma）/ TikTok（Jelly Birkin・ジェリーガールサマータグ）" },
+  "3Dプリントプロダクト": { prevPeak: "2012〜2015年（ハイファッション・メイカームーブメント期）", prevPeakYear: "2012–2015", prevPeakPct: 55, currPct: 82, whyNow: "AI画像生成→Meshy AI/Tripo AIによる3Dモデル変換（数秒）→家庭用Bambu Labプリンターで出力、という3工程が2024〜2025年に一般人レベルで完結するように。以前は「3Dモデリングができる人だけ」の領域だったが、AIが技術ハードルを消滅させた。", evolution: "前回（2012〜2015年）はIris van HerpenらのハイファッションデザイナーやMaterialiseなどの産業向け企業が主役で、一般人には無縁の「未来技術ショーケース」。2024〜2026年の復活は「デザインの民主化」が核心。モデリング知識ゼロのクリエイターが独自グッズをSNSで設計・販売できる時代に。", timeline: [{ year: "2010", event: "Iris van HerpenがMaterialiseと共に3Dプリントクチュールを発表。アムステルダムFWに登場し業界に衝撃" }, { year: "2012–2014", event: "van HerpenがパリOC(オートクチュール)に連続参加。MakerBot等でDIYメイカーブームと3Dプリンター普及が同時進行しピーク形成" }, { year: "2015–2022", event: "Gartnerハイプサイクルで「幻滅の谷」へ転落。消費者向けプリンターの品質・速度・素材の限界露呈し沈静化" }, { year: "2023–2024", event: "Meshy AI・Tripo AIが登場。テキスト/画像から数秒でprintable STLを生成。Bambu Labの家庭用高精度プリンターが普及" }, { year: "2026-01", event: "MeshyがCES 2026でAI Creative Labを発表。AI生成3Dモデルをワンクリックで製造パートナー経由の実物商品に変換するプラットフォームを公開" }], keyPlayers: "Iris van Herpen（先駆者）・Materialise・Shapeways / Meshy AI・Tripo AI / VAST・Bambu Lab・MakerWorld" },
+  "ペイント剥離エイジング": { prevPeak: "1990年代後半〜2000年代中期（グランジ・パンク・初期ストリートウェア全盛期）", prevPeakYear: "1993–2008", prevPeakPct: 70, currPct: 85, whyNow: "ポストパンデミック世代のZ世代が「作られた完璧さへの反発」として「リアルで不完全なもの」を求めている。TikTokの#Y2KGenZが2026年に23億ビューを突破し、90年代〜2000年代初期の「生きた痕跡」ある服への憧れが爆発。", evolution: "前回はナチュラルな経年劣化または廉価な機械加工（サンドブラスト・漂白）が主流。現在の復活版は日本のboro技法・手作業エイジング・ディスチャージインクによる工芸的アプローチへ進化。前回は「偶然の副産物」として消費されたが今回は意図的な反消費主義のステートメントとして文脈化。価格帯も量販品から数万〜数十万円のラグジュアリーストリートへ高級化。", timeline: [{ year: "1970s–1980s", event: "バンドTシャツ文化の成立。ツアーを経て自然に色落ち・クラック・剥がれが生じ「使用の痕跡」が真正性の証明となる文化が形成" }, { year: "1993–1996", event: "ニルヴァーナ・パール・ジャムなどグランジムーブメントが頂点。クルト・コバーンのボロボロのカーディガンが世界的アイコンに" }, { year: "1994–2005", event: "Neighborhood・Supremeなど日本・米国の初期ストリートウェアが「ヴィンテージウォッシュ」「ディストレスデニム」を商業化" }, { year: "2019–2022", event: "Yuta HosokawaとCali Thornhill DewittがSaint Michael（Saint MXXXXXX）を2020年に設立。日本のboro技法・手作業エイジングで「工芸品としての劣化美学」を高級ストリートとして再定義" }, { year: "2024–2026", event: "TikTok経由でZ世代の90s/Y2Kノスタルジア爆発。AMIRIのショットガンディストレスT、KAPITALのアンティーク的劣化加工がメインストリームに再浮上" }], keyPlayers: "Saint MXXXXXX（Saint Michael）・KAPITAL・AMIRI・Neighborhood・Supreme・Mastermind Japan / Yuta Hosokawa・Cali Thornhill Dewitt / TikTok（#Y2KGenZ 23億ビュー）" },
+  "手の痕跡": { prevPeak: "2006〜2012年（インディー全盛期）、2020〜2021年（コッテージコア・パンデミック手仕事ブーム）", prevPeakYear: "2006–2012（第一次）、2020–2021（第二次）", prevPeakPct: 62, currPct: 91, whyNow: "ChatGPT/Midjourney以降の生成AI普及（2022〜）により「完璧で均質なビジュアル」が無限・無料に生産可能になった。その結果、手描きのブレ・インク滲み・縫い目など「人間にしか出せない不完全さ」が希少価値へと反転。手仕事デザインはAI生成の10〜50倍のプレミアムを獲得している。", evolution: "前回（2006-2012）は大量消費主義への反動（Etsy経済）、前々回（2020-2021）はパンデミック隔離下のスローライフへの逃避（コッテージコア）。2025-2026版は「AIが生み出す完璧さ」という新しい敵を想定しており、不完全さを戦略的に「信頼・真正性のシグナル」として使う点が根本的に異なる。", timeline: [{ year: "1880–1910", event: "ウィリアム・モリスのアーツ・アンド・クラフツ運動。産業革命の機械生産への反動として「手仕事の美」を提唱。現代に至る「反機械×手の痕跡」の原型" }, { year: "2003–2012", event: "インディースリーズ・ヒップスター全盛期。ジン・シルクスクリーン・Etsy手作り品が流行。2008年金融危機がDIY志向を加速" }, { year: "2020–2022", event: "コロナ禍でコッテージコア爆発。ソーダブレッド・刺繍・ニットが社会現象に。TikTok/Instagram経由で手仕事コンテンツが拡散" }, { year: "2022–2024", event: "ChatGPT・Midjourney・Stable Diffusionの一般普及。AI生成ビジュアルが洪水のように流通し「人間らしさ」への渇望が蓄積" }, { year: "2025–2026", event: "Burberry刺繍ナイト広告・Marniの不規則プリント・AppleのTV手吹きガラスCMなど大手が「意図的な不完全さ」を採用。SXSW 2026が「The Analog Revival」をテーマセッションに採用" }], keyPlayers: "Burberry（Cross-Stitch Knight Lifeキャンペーン）・Marni・Apple（手吹きガラス使用TVイントロ）/ Creative Bloq（タクタイル・リベリオン命名）・SXSW 2026・Etsy / William Morris（1880s）・Richard Sennett「The Craftsman」（2008）" },
+  "くすみカラー総取り": { prevPeak: "2010年代後半（2018〜2020年）", prevPeakYear: "2017–2021", prevPeakPct: 78, currPct: 84, whyNow: "デジタル過飽和・SNS映え疲れへの反動として低彩度が「癒し」として機能。Y2Kのビビッド回帰が落ち着き、Z世代が「静けさ・インテンション」を装いで表明するフェーズに。Pantone2025年カラー「モカムース」、JAFCA2026年カラー「ハートフェルトピンク（くすみ）」が公式後押し。", evolution: "前回（2018〜21年）はSNS映え・パッケージ購買（3CE/コスメ）が牽引し、受動的・プロダクト消費型だった。2026年版は「テクスチャと余白で人格を作る」能動的スタイリング文脈に移行。単体カラーでなくパレット全体設計（テラコッタ＋ミスティブルー＋くすみピンクの組み合わせ）が単位になり、サステナビリティ・ウェルネス・脱ロゴの価値観と不可分に結びついた。", timeline: [{ year: "1970年代", event: "エコ・ヒッピームーブメントを背景にテラコッタ・マスタードイエロー・アボカドグリーンなどアースカラーが初めて大流行" }, { year: "2012〜2015", event: "スカンジナビアン・ミニマリズム（H&M/COS/Acne Studios）が世界市場へ拡大。モノトーン＋ミュートニュートラルが「おとなのミニマル」として定着" }, { year: "2017〜2019", event: "Instagram経由でくすみピンク・グレージュ・ラベンダーが爆発的流行。3CE（韓国コスメ）・THREEがSNS映えくすみコスメを量産" }, { year: "2024〜2025", event: "Pantone2025年カラー「モカムース（暖かみのある低彩度ブラウン）」が発表。くすみトーンが「インテンショナルな選択」として再評価" }, { year: "2026年SS〜AW", event: "低彩度テラコッタ・ミスティブルー・くすみピンクの三色編成が「パレット単位のトレンド」として確立。JAFCA・Pantone・Wunderlabelが収束した予測を発表" }], keyPlayers: "Lemaire・Toteme・Baserange・Auralee（日本）・The Row・COS / Pantone（2025年モカムース）・JAFCA（2026年ハートフェルトピンク）・Coloro / 3CE・THREE・IPSA（2018年ピーク期）" },
+  "くすみアース／淡テラコッタ": { prevPeak: "1990年代後半〜2000年代前半（1997-2005年頃）", prevPeakYear: "1997–2005", prevPeakPct: 65, currPct: 87, whyNow: "Pantone 2025年カラー「モカムース」がアース系の権威付けをした。Z世代のサステナビリティ志向・自然回帰が地球色への共感を高めた。「コルチゾールドレッシング（神経系を落ち着かせる服選び）」が台頭し、低彩度アースが心理的安全色として選ばれた。クワイエットラクシュリーの文脈でロゴより素材・色の上質感が評価されるようになった。", evolution: "前回（1990s）は鮮度の高いテラコッタ・土焼きオレンジが中心でトスカーナ・メキシコ的エキゾチック文脈。今回（2025-26）は彩度をさらに落とした「淡テラコッタ＋クレイ赤」で、熱量を抑えた都市的上品さが特徴。素材もリネン・ウール・ビーガンレザーと繋がり「サステナブル＆上質」の文脈が加わった。", timeline: [{ year: "1997–2005", event: "前回ピーク。アースカラー（セージ・テラコッタ・サンドベージュ）が欧米ファッション・インテリア双方で主流に" }, { year: "2018–2019", event: "クラフト・陶芸ブームとともに静かに再浮上。インテリア・ホームデコ領域からテラコッタが復活" }, { year: "2022–2023", event: "クワイエットラクシュリー・ノームコア台頭。Bottega VenetaのDaniel Leeがニュートラル系アースを高級文脈に引き上げ、ZARAなどに波及" }, { year: "2025–2026", event: "Pantone 2025 CoY「モカムース」が決定打。淡テラコッタ＋クレイ赤がValentino・Hermès・Fendiのランウェイに登場" }], keyPlayers: "Valentino・Hermès・Fendi（2025SS ランウェイ採用）/ Bottega Veneta・Daniel Lee（2018-22年、格上げ役）/ Pantone（Mocha Mousse 2025 CoY）/ ZARA・H&M（マスへの普及役）" },
+  "スカーレットレッド": { prevPeak: "1990年代後半〜2000年代初頭（スーパーモデル全盛期・Valentino Rosso黄金期）", prevPeakYear: "1995–2003", prevPeakPct: 80, currPct: 95, whyNow: "クワイエットラグジュアリー（2022-2024年の無彩色ミニマリズム）への反動として、2025-2026年にファッション界が一斉に「表現の解放」へ転換。SNSのTikTok・Instagramでhead-to-toe red（全身赤コーデ）が視認性・シェア率で優れるため、アルゴリズムに乗りやすいという構造的要因も拍車をかけている。", evolution: "前回（1990s）はValentino Rossoに代表されるドレスアップ・セレモニー文脈の「高貴な赤」で、スーパーモデルが纏う非日常の色だった。2026年版はテーラードセット・ストリートウェア・フルードドレスまで幅広いアイテムでmonochrome red lookが主流。トマトレッド・ポピーレッドという「オレンジ寄り・温かみのある赤」という色相シフトも前回との差異。", timeline: [{ year: "1950年代", event: "Valentino GaravaniがValentino Rosso（独自のスカーレット赤）を開発・初コレクションで発表" }, { year: "1995–2003", event: "Naomi Campbell・Gisele Bündchen・Christy Turlingtonらがヴァレンティノの赤いドレスを着用。スーパーモデル時代の象徴色として前回ピーク" }, { year: "2022–2024", event: "クワイエットラグジュアリー（オールドマネー美学）が席巻。無彩色・ロゴレスが頂点に。赤はほぼ不在" }, { year: "2023", event: "Loeweのトマト型クラッチがSNSでバイラル。「食品インスパイア赤」がカルチャー的許可証になりミーム化" }, { year: "2026 SS", event: "Prada・Celine・Chanel・Valentino・Carolina Herreraが一斉にポピーレッドを採用。モノクロームhead-to-toe redが2026SSの「核色」として確立" }], keyPlayers: "Valentino（歴史的礎）・Prada（2026コンセンサス形成の核）・Celine・Chanel・Balenciaga・Loewe（トマトバッグによる起爆）/ Valentino Garavani・Naomi Campbell・Gigi Hadid / Who What Wear・TikTokアルゴリズム" },
+  "ミントグリーン": { prevPeak: "1990年代後半〜2000年代前半（Y2Kパステル期）", prevPeakYear: "1997–2005", prevPeakPct: 55, currPct: 80, whyNow: "「Quiet Luxury（静かな高級感）」への反動としてパステル&カラーが2025〜2026年に復権。韓国LFでmint検索前年比50%増（2026年初頭）。WGSN/Coloroが「Jelly Mint」をSS26キーカラーに指定したことで業界全体に伝播。", evolution: "前回（Y2K期）はベビーピンクと並ぶ「フェミニン補完色」として脇役的存在だったが、2026年版は単独のシーズンコアカラーとして自立。透明感・ジェル感を加えた「Jelly Mint」というサブトーンが生まれ、よりデジタルネイティブ・キッドルト（大人の子供文化）寄りに進化。サステナブル素材・ジェンダーフルードなシルエットと組み合わさる点も前回との大きな差。", timeline: [{ year: "1997–2003", event: "Y2K期にベビーピンク・ラベンダーと並ぶパステルカラーの一角としてミントグリーン全盛。ネイル・バッグ・携帯カラーなどアクセサリー小物に浸透" }, { year: "2010–2020", event: "Normcore→Quiet Luxuryの流れでニュートラル・アースに押され「古臭いパステル」として停滞期へ" }, { year: "2022–2023", event: "Y2Kリバイバル第1波（TikTok起点）でローライズ・ベビーティーと共にパステル系が再注目されはじめる" }, { year: "2025", event: "WGSNとColoroがSS26キーカラーとして「Jelly Mint」を正式指定。ChanelやDiorのランウェイにミントグリーンが登場" }, { year: "2026", event: "韓国LFでmint検索前年比50%増、国内ブランドが春夏中心カラーとして展開。「Seasonal Core」として定着・ネイルやコスメにも波及" }], keyPlayers: "WGSN / Coloro（Jelly Mint命名・SS26指定）・Chanel・Dior・Armani Privé（ランウェイ露出）/ LF Mall Korea（Seasonal Core展開）/ TikTok Y2Kクリエイター群・Charli XCX（Bratムーブメント起点）" }
+};
+
+// ── JS: history panel logic ──
+(function() {
+  function initHistoryPanel() {
+    var backdrop = document.createElement('div');
+    backdrop.className = 'km-hist-backdrop';
+    backdrop.id = 'km-hist-backdrop';
+    backdrop.onclick = closeHistoryPanel;
+    document.body.appendChild(backdrop);
+    var panel = document.createElement('div');
+    panel.className = 'km-hist-panel';
+    panel.id = 'km-hist-panel';
+    panel.innerHTML = '<div class="km-hist-header"><div class="km-hist-header-text"><div class="km-hist-title" id="km-hist-title"></div><div class="km-hist-subtitle">📅 TREND HISTORY</div></div><button class="km-hist-close" onclick="closeHistoryPanel()">&#x2715;</button></div><div class="km-hist-body" id="km-hist-body"></div>';
+    document.body.appendChild(panel);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHistoryPanel);
+  } else {
+    initHistoryPanel();
+  }
+})();
+
+function openHistoryPanel(trendName) {
+  var d = historyData[trendName];
+  var panel = document.getElementById('km-hist-panel');
+  var backdrop = document.getElementById('km-hist-backdrop');
+  var titleEl = document.getElementById('km-hist-title');
+  var body = document.getElementById('km-hist-body');
+  if (!panel || !body) return;
+  titleEl.textContent = trendName;
+  if (!d) {
+    body.innerHTML = '<div style="color:var(--mute);font-size:13px;padding:20px 0;line-height:1.7;">「' + escHtml(trendName) + '」の歴史データはまだ未登録だよ。<br>CORINに追加を依頼してね。</div>';
+  } else {
+    var tlHtml = d.timeline.map(function(item) {
+      return '<div class="km-hist-tl-item"><div class="km-hist-tl-left"><div class="km-hist-tl-dot"></div><div class="km-hist-tl-year">' + escHtml(item.year) + '</div><div class="km-hist-tl-line"></div></div><div class="km-hist-tl-right"><div class="km-hist-tl-event">' + escHtml(item.event) + '</div></div></div>';
+    }).join('');
+    body.innerHTML =
+      '<div class="km-hist-section"><div class="km-hist-section-label">ピーク強度の比較</div><div class="km-hist-bar-wrap">' +
+      '<div class="km-hist-bar-row"><div class="km-hist-bar-label">前回ピーク（' + escHtml(d.prevPeak) + '）</div><div class="km-hist-bar-track"><div class="km-hist-bar-fill prev" style="width:' + d.prevPeakPct + '%"></div></div><div class="km-hist-bar-year">' + escHtml(d.prevPeakYear) + '</div></div>' +
+      '<div class="km-hist-bar-row"><div class="km-hist-bar-label">現在の流行（2025–2026）</div><div class="km-hist-bar-track"><div class="km-hist-bar-fill curr" style="width:' + d.currPct + '%"></div></div><div class="km-hist-bar-year">2025–2026</div></div>' +
+      '</div></div>' +
+      '<div class="km-hist-section"><div class="km-hist-section-label">🔄 なぜ今リバイバル？</div><div class="km-hist-text">' + escHtml(d.whyNow) + '</div></div>' +
+      '<div class="km-hist-section"><div class="km-hist-section-label">✨ 変容ポイント（前回との違い）</div><div class="km-hist-text">' + escHtml(d.evolution) + '</div></div>' +
+      '<div class="km-hist-section"><div class="km-hist-section-label">📌 出来事タイムライン</div><div class="km-hist-timeline">' + tlHtml + '</div></div>' +
+      '<div class="km-hist-section"><div class="km-hist-section-label">🏷️ キープレイヤー</div><div class="km-hist-players">' + escHtml(d.keyPlayers) + '</div></div>';
+  }
+  panel.classList.add('open');
+  backdrop.classList.add('open');
+}
+
+function closeHistoryPanel() {
+  var panel = document.getElementById('km-hist-panel');
+  var backdrop = document.getElementById('km-hist-backdrop');
+  if (panel) panel.classList.remove('open');
+  if (backdrop) backdrop.classList.remove('open');
+}
+
+// ── Init ──
+async function init() {
+  await loadAll();
+  document.getElementById('km-loading').style.display = 'none';
+  renderPool(); renderBoard();
+  if (!cfg.key) { setTimeout(() => { openSettings(); document.getElementById('s-test').className = 'km-settings-test km-settings-err'; document.getElementById('s-test').textContent = '⚠️ APIキーを入力してね（Cockpit設定から確認できる）'; }, 400); }
+}
+init();
+</script>
+</body>
+</html>
