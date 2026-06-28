@@ -6,8 +6,8 @@ window.CORIN_DATA = {
     "icon": "🌧"
   },
   "letter": {
-    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はPatchy rain nearby、23度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>KITH</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はPatchy rain nearby、23度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>Human race</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "KITH",
-    "tagline": "NYCのクイーンズから生まれた、コラボをDNAに持つモダンストリートライフスタイルの巨人。スニーカー文化を起点に、シリアルバー・BMW・ヴェルサーチまで射程に入れた全方位ブランド。",
-    "insight": "月曜ドロップがブランドの心拍数になる",
+    "name": "Human race",
+    "tagline": "ウェルネスを起点に、スキンケア・アパレル・カルチャーを横断するファレル・ウィリアムス創設のライフスタイルブランド。",
+    "insight": "コンテンツ：「世界観だけ」で売る設計",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/kith-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/humanrace-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -81,6 +81,13 @@ window.CORIN_DATA = {
   "daily_photo": null,
   "library": [
     {
+      "name": "cowork-guide",
+      "description": "",
+      "url": "https://fujimoto-cpu.github.io/cowork-guide/",
+      "icon": "📘",
+      "pushed_at": "2026-06-28T17:04:44Z"
+    },
+    {
       "name": "fashion-report",
       "description": "Daily Fashion Trend Report | Japan × Korea × World",
       "url": "https://fujimoto-cpu.github.io/fashion-report/",
@@ -100,13 +107,6 @@ window.CORIN_DATA = {
       "url": "https://fujimoto-cpu.github.io/konnekted-ip/",
       "icon": "📄",
       "pushed_at": "2026-06-20T18:08:07Z"
-    },
-    {
-      "name": "cowork-guide",
-      "description": "",
-      "url": "https://fujimoto-cpu.github.io/cowork-guide/",
-      "icon": "📘",
-      "pushed_at": "2026-06-17T17:09:08Z"
     },
     {
       "name": "literature",
@@ -1106,6 +1106,15 @@ window.CORIN_DATA = {
   "recent_html": [
     {
       "date": "2026-06-29",
+      "title": "スケジュールの「正本」をどこに置くか — AIと働く前提での提案（たたき）",
+      "wiki": "2026-06-29_スケジュール正本_AI協働提案_たたき_v1",
+      "category": "🤖 CORIN出力（outputs/） 43本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-29_スケジュール正本_AI協働提案_たたき_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-29_スケジュール正本_AI協働提案_たたき_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-06-29",
       "title": "案件・タスク管理システム 全体設計図（漏れ点検版）",
       "wiki": "2026-06-29_案件タスク管理システム設計図_v1",
       "category": "🤖 CORIN出力（outputs/） 43本",
@@ -1160,11 +1169,11 @@ window.CORIN_DATA = {
     },
     {
       "date": "2026-06-23",
-      "title": "AIノウハウ複利化システム 設計提案 v2",
-      "wiki": "2026-06-23_AIノウハウ複利化システム_設計提案_v2",
+      "title": "AIノウハウ複利化システム 設計提案 v4",
+      "wiki": "2026-06-23_AIノウハウ複利化システム_設計提案_v4",
       "category": "🤖 CORIN出力（outputs/） 43本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-23_AIノウハウ複利化システム_設計提案_v2.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-23_AIノウハウ複利化システム_設計提案_v2.html",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-23_AIノウハウ複利化システム_設計提案_v4.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-23_AIノウハウ複利化システム_設計提案_v4.html",
       "has_md": true
     },
     {
@@ -1274,15 +1283,6 @@ window.CORIN_DATA = {
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-20_夜間バッチ処理_ベスト設計10案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-20_夜間バッチ処理_ベスト設計10案_v1.html",
       "has_md": true
-    },
-    {
-      "date": "2026-06-20",
-      "title": "/ohayoループとデザイン前ループの説明",
-      "wiki": "ohayo-loop-explanation_2026-06-20",
-      "category": "🤖 CORIN出力（outputs/） 43本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/ohayo-loop-explanation_2026-06-20.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/ohayo-loop-explanation_2026-06-20.html",
-      "has_md": false
     }
   ],
   "static_links": {
