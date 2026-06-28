@@ -890,7 +890,15 @@ def git_push():
         print("[git] not a git repo, skipping push", file=sys.stderr)
         return
     try:
-        subprocess.run(["git", "-C", str(DASHBOARD_ROOT), "add", "data.js", "oshi_history.json", "links_config.json", "index.html", "style.css", "theme.js", "scripts/"], check=False)
+        # 存在するパスだけを add する（存在しないと git add 全体が
+        # `fatal: pathspec ... did not match any files` で失敗し data.js が staged されない）
+        candidates = ["data.js", "oshi_history.json", "links_config.json",
+                      "index.html", "style.css", "theme.js", "scripts/"]
+        targets = [p for p in candidates if (DASHBOARD_ROOT / p).exists()]
+        if not targets:
+            print("[git] no target files to add, skipping push")
+            return
+        subprocess.run(["git", "-C", str(DASHBOARD_ROOT), "add", *targets], check=False)
         result = subprocess.run(
             ["git", "-C", str(DASHBOARD_ROOT), "diff", "--cached", "--quiet"]
         )
