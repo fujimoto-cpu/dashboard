@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-06-29",
   "weather": {
-    "desc": "Patchy rain nearby",
-    "temp": "23",
-    "icon": "🌧"
+    "desc": "Partly cloudy",
+    "temp": "22",
+    "icon": "☁️"
   },
   "letter": {
-    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はPatchy rain nearby、23度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>Stüssy</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はPartly cloudy、22度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>Human race</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Stüssy",
-    "tagline": "サーフボードに書いたサインが、40年以上続く世界最古のストリートウェアブランドになった。独立系・非上場を貫き、コミュニティを核に成長し続けるOGの解剖。",
-    "insight": "Dior × Stüssy — ラグジュアリーへの格上げとしてのコラボ設計",
+    "name": "Human race",
+    "tagline": "ウェルネスを起点に、スキンケア・アパレル・カルチャーを横断するファレル・ウィリアムス創設のライフスタイルブランド。",
+    "insight": "ナレッジ管理：このノートがPhase 0 の素材になる",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/stussy-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/humanrace-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -76,10 +76,17 @@ window.CORIN_DATA = {
   "tonight": null,
   "schedule": {
     "events": [],
-    "note_exists": false
+    "note_exists": true
   },
   "daily_photo": null,
   "library": [
+    {
+      "name": "ip-report",
+      "description": "KONNEKT INTERNATIONAL IP News Daily Report",
+      "url": "https://fujimoto-cpu.github.io/ip-report",
+      "icon": "📰",
+      "pushed_at": "2026-06-29T00:26:11Z"
+    },
     {
       "name": "cowork-guide",
       "description": "",
@@ -93,13 +100,6 @@ window.CORIN_DATA = {
       "url": "https://fujimoto-cpu.github.io/fashion-report/",
       "icon": "👗",
       "pushed_at": "2026-06-26T00:07:41Z"
-    },
-    {
-      "name": "ip-report",
-      "description": "KONNEKT INTERNATIONAL IP News Daily Report",
-      "url": "https://fujimoto-cpu.github.io/ip-report",
-      "icon": "📰",
-      "pushed_at": "2026-06-22T02:22:38Z"
     },
     {
       "name": "konnekted-ip",
