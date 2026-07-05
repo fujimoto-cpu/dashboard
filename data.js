@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-07-05",
   "weather": {
-    "desc": "Partly cloudy",
-    "temp": "23",
-    "icon": "☁️"
+    "desc": "Patchy rain nearby",
+    "temp": "24",
+    "icon": "🌧"
   },
   "letter": {
     "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はPartly cloudy、23度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>APOTHEKE FRAGRANCE</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はPatchy rain nearby、24度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Sacai</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "APOTHEKE FRAGRANCE",
-    "tagline": "千葉のアトリエで全てを手作りする日本のクラフトフレグランスブランド。古来の日本の感性と現代デザインを橋渡しし、お香で「家に置いてオシャレ」を再定義した。",
-    "insight": "INSIGHT 01",
+    "name": "Sacai",
+    "tagline": "2つを1つにする。阿部千登勢が1999年に東京で始めたハイブリッド解体の実験は、ストリートとラグジュアリーの境界を消し去り、世界的ブランドへと進化した。",
+    "insight": "「拡張しない」勇気 — エディション管理の重要性",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/sacai-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1123,10 +1123,10 @@ window.CORIN_DATA = {
     {
       "date": "2026-07-05",
       "title": "いい言葉集",
-      "wiki": "2026-07-05_いい言葉集_v1",
+      "wiki": "2026-07-05_いい言葉集_v3",
       "category": "🤖 CORIN出力（outputs/） 56本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-05_いい言葉集_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-05_いい言葉集_v1.html",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-05_いい言葉集_v3.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-05_いい言葉集_v3.html",
       "has_md": true
     },
     {
