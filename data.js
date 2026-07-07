@@ -1,13 +1,9 @@
 window.CORIN_DATA = {
   "date": "2026-07-07",
-  "weather": {
-    "desc": "Partly cloudy",
-    "temp": "21",
-    "icon": "☁️"
-  },
+  "weather": null,
   "letter": {
-    "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はPartly cloudy、21度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Human race</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Gentle Monster</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +18,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Human race",
-    "tagline": "ウェルネスを起点に、スキンケア・アパレル・カルチャーを横断するファレル・ウィリアムス創設のライフスタイルブランド。",
-    "insight": "素材選定 = 思想の表明",
+    "name": "Gentle Monster",
+    "tagline": "店舗をキネティックアートに変え、アイウェアを超えたK-ライフスタイル帝国を築いた韓国発の革命的ブランド。",
+    "insight": "マルチブランドで「生活を侵食する」",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/humanrace-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/gentle-monster-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -79,176 +75,7 @@ window.CORIN_DATA = {
     "note_exists": true
   },
   "daily_photo": null,
-  "library": [
-    {
-      "name": "ip-report",
-      "description": "KONNEKT INTERNATIONAL IP News Daily Report",
-      "url": "https://fujimoto-cpu.github.io/ip-report",
-      "icon": "📰",
-      "pushed_at": "2026-07-06T00:24:58Z"
-    },
-    {
-      "name": "recipes",
-      "description": "",
-      "url": "https://fujimoto-cpu.github.io/recipes/",
-      "icon": "📄",
-      "pushed_at": "2026-07-05T08:35:14Z"
-    },
-    {
-      "name": "cowork-guide",
-      "description": "",
-      "url": "https://fujimoto-cpu.github.io/cowork-guide/",
-      "icon": "📘",
-      "pushed_at": "2026-06-30T15:22:01Z"
-    },
-    {
-      "name": "fashion-report",
-      "description": "Daily Fashion Trend Report | Japan × Korea × World",
-      "url": "https://fujimoto-cpu.github.io/fashion-report/",
-      "icon": "👗",
-      "pushed_at": "2026-06-30T00:08:00Z"
-    },
-    {
-      "name": "konnekted-ip",
-      "description": "KONNEKTED IP提案ブリーフ（社内検討用・noindex）",
-      "url": "https://fujimoto-cpu.github.io/konnekted-ip/",
-      "icon": "📄",
-      "pushed_at": "2026-06-20T18:08:07Z"
-    },
-    {
-      "name": "literature",
-      "description": "Literature Notes reader",
-      "url": "https://fujimoto-cpu.github.io/literature/",
-      "icon": "📚",
-      "pushed_at": "2026-06-11T14:09:21Z"
-    },
-    {
-      "name": "management-dashboard",
-      "description": "経営ダッシュボード（モック）noindex",
-      "url": "https://fujimoto-cpu.github.io/management-dashboard/",
-      "icon": "🦋",
-      "pushed_at": "2026-06-09T09:05:13Z"
-    },
-    {
-      "name": "pantone",
-      "description": "Pantone Solid Coated quick reference (3,219 colors) with search and CMYK→Pantone lookup",
-      "url": "https://fujimoto-cpu.github.io/pantone/",
-      "icon": "📄",
-      "pushed_at": "2026-06-05T05:50:51Z"
-    },
-    {
-      "name": "am-board-2026",
-      "description": "26AW fashion image board (internal reference, noindex)",
-      "url": "https://fujimoto-cpu.github.io/am-board-2026/",
-      "icon": "📄",
-      "pushed_at": "2026-06-01T10:46:08Z"
-    },
-    {
-      "name": "recall-recorder",
-      "description": "Recall — KONNEKT社内議事録録音アプリ（PWA）",
-      "url": "https://fujimoto-cpu.github.io/recall-recorder/",
-      "icon": "📄",
-      "pushed_at": "2026-05-31T06:47:04Z"
-    },
-    {
-      "name": "graphic-taste-gallery",
-      "description": "グラフィック・テイスト図鑑（noindex）",
-      "url": "https://fujimoto-cpu.github.io/graphic-taste-gallery/",
-      "icon": "📄",
-      "pushed_at": "2026-05-27T10:20:54Z"
-    },
-    {
-      "name": "ai-pulse-survey",
-      "description": "AI Pulse 月次アンケートフォーム（KONNEKT INTERNATIONAL社員向け・noindex公開）",
-      "url": "https://fujimoto-cpu.github.io/ai-pulse-survey/",
-      "icon": "🤖",
-      "pushed_at": "2026-05-27T05:05:52Z"
-    },
-    {
-      "name": "design-howto-atlas",
-      "description": "Design Howto Atlas — 画像から逆引きできる Illustrator/Photoshop デザインノウハウ集（110件・noindex公開）",
-      "url": "https://fujimoto-cpu.github.io/design-howto-atlas/",
-      "icon": "📄",
-      "pushed_at": "2026-05-26T14:26:59Z"
-    },
-    {
-      "name": "ai-pulse",
-      "description": "AI Pulse - KONNEKT INTERNATIONAL 社員AI活用度可視化アプリ",
-      "url": "https://fujimoto-cpu.github.io/ai-pulse/",
-      "icon": "🤖",
-      "pushed_at": "2026-05-20T22:19:23Z"
-    },
-    {
-      "name": "bigbang-guide",
-      "description": "👑 BIGBANG 超入門ガイド — K-POPの伝説を何も知らない人が学べるアプリ",
-      "url": "https://fujimoto-cpu.github.io/bigbang-guide/",
-      "icon": "👑",
-      "pushed_at": "2026-05-20T21:58:07Z"
-    },
-    {
-      "name": "x-ai-trends",
-      "description": "",
-      "url": "https://fujimoto-cpu.github.io/x-ai-trends/",
-      "icon": "🤖",
-      "pushed_at": "2026-05-20T21:45:53Z"
-    },
-    {
-      "name": "heike-guide",
-      "description": "🎭 平家終焉 — 蒼月の契り 観劇前ガイド（平家物語超入門）",
-      "url": "https://fujimoto-cpu.github.io/heike-guide/",
-      "icon": "🎭",
-      "pushed_at": "2026-05-20T21:45:53Z"
-    },
-    {
-      "name": "basketball-rules",
-      "description": "🏀 バスケットボール観戦ガイド",
-      "url": "https://fujimoto-cpu.github.io/basketball-rules/",
-      "icon": "🏀",
-      "pushed_at": "2026-05-20T21:45:53Z"
-    },
-    {
-      "name": "manifesto",
-      "description": "Yuriko's working manifesto",
-      "url": "https://fujimoto-cpu.github.io/manifesto/",
-      "icon": "✊",
-      "pushed_at": "2026-05-20T21:45:53Z"
-    },
-    {
-      "name": "brand-analysis",
-      "description": "Brand Research Library — fashion / lifestyle brand deep dives",
-      "url": "https://fujimoto-cpu.github.io/brand-analysis/",
-      "icon": "🎨",
-      "pushed_at": "2026-05-20T21:45:53Z"
-    },
-    {
-      "name": "artist-knowledge",
-      "description": "Personal artist knowledge archive (private)",
-      "url": "https://fujimoto-cpu.github.io/artist-knowledge/",
-      "icon": "📄",
-      "pushed_at": "2026-05-20T21:40:04Z"
-    },
-    {
-      "name": "reading-monthly",
-      "description": "A private reading journal for Yuriko Fujimoto, edited by CORIN.",
-      "url": "https://fujimoto-cpu.github.io/reading-monthly/",
-      "icon": "📄",
-      "pushed_at": "2026-05-20T18:14:17Z"
-    },
-    {
-      "name": "shopify-connector-guide",
-      "description": "Shopify connector setup guide for KONNEKT INTERNATIONAL",
-      "url": "https://fujimoto-cpu.github.io/shopify-connector-guide/",
-      "icon": "🎀",
-      "pushed_at": "2026-05-19T06:55:08Z"
-    },
-    {
-      "name": "rag-guide",
-      "description": "RAG explainer — KONNEKT INTERNATIONAL AI推進",
-      "url": "https://fujimoto-cpu.github.io/rag-guide/",
-      "icon": "🎀",
-      "pushed_at": "2026-05-14T04:30:10Z"
-    }
-  ],
+  "library": [],
   "active_projects": [
     {
       "name": "🎨 デザイン・制作",
@@ -1113,18 +940,36 @@ window.CORIN_DATA = {
   "recent_html": [
     {
       "date": "2026-07-07",
+      "title": "ファイル自動整理システム「更地計画」",
+      "wiki": "2026-07-07_ファイル自動整理システム_流れまとめ_v1",
+      "category": "🤖 CORIN出力（outputs/） 64本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-07_ファイル自動整理システム_流れまとめ_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-07_ファイル自動整理システム_流れまとめ_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-07-07",
       "title": "予実「ほぼ自動」ワークフロー計画 v1",
       "wiki": "2026-07-07_予実ほぼ自動ワークフロー計画_v1",
-      "category": "🤖 CORIN出力（outputs/） 62本",
+      "category": "🤖 CORIN出力（outputs/） 64本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-07_予実ほぼ自動ワークフロー計画_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-07_予実ほぼ自動ワークフロー計画_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-07-07",
+      "title": "週次予実 — 時間の地図",
+      "wiki": "2026-07-07_週次予実ビューア_v1",
+      "category": "🤖 CORIN出力（outputs/） 64本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/週次予実/2026-07-07_週次予実ビューア_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/週次予実/2026-07-07_週次予実ビューア_v1.html",
       "has_md": true
     },
     {
       "date": "2026-07-06",
       "title": "7/1（水）作業ログ × スクリーンログ 突き合わせ",
       "wiki": "2026-07-06_7-1作業ログ×スクリーンログ突き合わせ_v1",
-      "category": "🤖 CORIN出力（outputs/） 62本",
+      "category": "🤖 CORIN出力（outputs/） 64本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_7-1作業ログ×スクリーンログ突き合わせ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_7-1作業ログ×スクリーンログ突き合わせ_v1.html",
       "has_md": true
@@ -1133,7 +978,7 @@ window.CORIN_DATA = {
       "date": "2026-07-06",
       "title": "7/2（木）作業ログ × スクリーンログ 突き合わせ",
       "wiki": "2026-07-06_7-2作業ログ×スクリーンログ突き合わせ_v1",
-      "category": "🤖 CORIN出力（outputs/） 62本",
+      "category": "🤖 CORIN出力（outputs/） 64本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_7-2作業ログ×スクリーンログ突き合わせ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_7-2作業ログ×スクリーンログ突き合わせ_v1.html",
       "has_md": true
@@ -1142,7 +987,7 @@ window.CORIN_DATA = {
       "date": "2026-07-06",
       "title": "7/3（金）作業ログ × スクリーンログ 突き合わせ",
       "wiki": "2026-07-06_7-3作業ログ×スクリーンログ突き合わせ_v1",
-      "category": "🤖 CORIN出力（outputs/） 62本",
+      "category": "🤖 CORIN出力（outputs/） 64本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_7-3作業ログ×スクリーンログ突き合わせ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_7-3作業ログ×スクリーンログ突き合わせ_v1.html",
       "has_md": true
@@ -1151,7 +996,7 @@ window.CORIN_DATA = {
       "date": "2026-07-06",
       "title": "Claude全社使用量レポート 2026-04〜06",
       "wiki": "2026-07-06_Claude全社使用量レポート_v1",
-      "category": "🤖 CORIN出力（outputs/） 62本",
+      "category": "🤖 CORIN出力（outputs/） 64本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_Claude全社使用量レポート_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_Claude全社使用量レポート_v1.html",
       "has_md": true
@@ -1160,7 +1005,7 @@ window.CORIN_DATA = {
       "date": "2026-07-05",
       "title": "6/30（火）作業ログ × スクリーンログ 突き合わせ",
       "wiki": "2026-07-05_6-30作業ログ×スクリーンログ突き合わせ_v1",
-      "category": "🤖 CORIN出力（outputs/） 62本",
+      "category": "🤖 CORIN出力（outputs/） 64本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-05_6-30作業ログ×スクリーンログ突き合わせ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-05_6-30作業ログ×スクリーンログ突き合わせ_v1.html",
       "has_md": true
@@ -1169,7 +1014,7 @@ window.CORIN_DATA = {
       "date": "2026-07-05",
       "title": "いい言葉集",
       "wiki": "2026-07-05_いい言葉集_v3",
-      "category": "🤖 CORIN出力（outputs/） 62本",
+      "category": "🤖 CORIN出力（outputs/） 64本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-05_いい言葉集_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-05_いい言葉集_v3.html",
       "has_md": true
@@ -1178,7 +1023,7 @@ window.CORIN_DATA = {
       "date": "2026-07-05",
       "title": "1日で人生を立て直す — Dan Koeメソッド解説 & ゆりこ活用ガイド",
       "wiki": "2026-07-05_ダンコー_1日で人生を立て直す_v1",
-      "category": "🤖 CORIN出力（outputs/） 62本",
+      "category": "🤖 CORIN出力（outputs/） 64本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-05_ダンコー_1日で人生を立て直す_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-05_ダンコー_1日で人生を立て直す_v1.html",
       "has_md": true
@@ -1187,7 +1032,7 @@ window.CORIN_DATA = {
       "date": "2026-07-04",
       "title": "CORINトークン節約診断 — 質を変えずに4〜6割減らす設計図",
       "wiki": "2026-07-04_CORINトークン節約診断_v1",
-      "category": "🤖 CORIN出力（outputs/） 62本",
+      "category": "🤖 CORIN出力（outputs/） 64本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-04_CORINトークン節約診断_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-04_CORINトークン節約診断_v1.html",
       "has_md": true
@@ -1196,7 +1041,7 @@ window.CORIN_DATA = {
       "date": "2026-07-03",
       "title": "Vault複利診断 v2 — 蓄積は完成、還流が断線（提案11本）",
       "wiki": "2026-07-03_Vault複利診断_改善提案11本_v2",
-      "category": "🤖 CORIN出力（outputs/） 62本",
+      "category": "🤖 CORIN出力（outputs/） 64本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-03_Vault複利診断_改善提案11本_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-03_Vault複利診断_改善提案11本_v2.html",
       "has_md": true
@@ -1205,7 +1050,7 @@ window.CORIN_DATA = {
       "date": "2026-07-03",
       "title": "Vault複利診断 v3 — 16の提案を「ある日の場面」で説明",
       "wiki": "2026-07-03_Vault複利診断_改善提案16本_v3",
-      "category": "🤖 CORIN出力（outputs/） 62本",
+      "category": "🤖 CORIN出力（outputs/） 64本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-03_Vault複利診断_改善提案16本_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-03_Vault複利診断_改善提案16本_v3.html",
       "has_md": true
@@ -1214,7 +1059,7 @@ window.CORIN_DATA = {
       "date": "2026-07-03",
       "title": "K-POP Tour Logo Reference 2023–2026",
       "wiki": "2026-07-03_kpop_tour_logo_reference",
-      "category": "🤖 CORIN出力（outputs/） 62本",
+      "category": "🤖 CORIN出力（outputs/） 64本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-03_kpop_tour_logo_reference.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-03_kpop_tour_logo_reference.html",
       "has_md": false
@@ -1223,7 +1068,7 @@ window.CORIN_DATA = {
       "date": "2026-06-30",
       "title": "ARG 企画引き出しカード",
       "wiki": "2026-06-30_ARG企画引き出しカード_v1",
-      "category": "🤖 CORIN出力（outputs/） 62本",
+      "category": "🤖 CORIN出力（outputs/） 64本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-30_ARG企画引き出しカード_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-30_ARG企画引き出しカード_v1.html",
       "has_md": true
@@ -1232,7 +1077,7 @@ window.CORIN_DATA = {
       "date": "2026-06-29",
       "title": "スケジュールの「正本」をどこに置くか — AIと働く前提での提案（たたき）",
       "wiki": "2026-06-29_スケジュール正本_AI協働提案_たたき_v1",
-      "category": "🤖 CORIN出力（outputs/） 62本",
+      "category": "🤖 CORIN出力（outputs/） 64本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-29_スケジュール正本_AI協働提案_たたき_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-29_スケジュール正本_AI協働提案_たたき_v1.html",
       "has_md": true
@@ -1241,7 +1086,7 @@ window.CORIN_DATA = {
       "date": "2026-06-29",
       "title": "予実管理ワークフロー — サブさんへの週報を\"副産物\"にする",
       "wiki": "2026-06-29_予実管理ワークフロー_提案_v1",
-      "category": "🤖 CORIN出力（outputs/） 62本",
+      "category": "🤖 CORIN出力（outputs/） 64本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-29_予実管理ワークフロー_提案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-29_予実管理ワークフロー_提案_v1.html",
       "has_md": true
@@ -1250,7 +1095,7 @@ window.CORIN_DATA = {
       "date": "2026-06-29",
       "title": "MeetingMind — UIモック v3",
       "wiki": "2026-06-29_会議文字起こしツール_UIモック_v1",
-      "category": "🤖 CORIN出力（outputs/） 62本",
+      "category": "🤖 CORIN出力（outputs/） 64本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-29_会議文字起こしツール_UIモック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-29_会議文字起こしツール_UIモック_v1.html",
       "has_md": true
@@ -1259,7 +1104,7 @@ window.CORIN_DATA = {
       "date": "2026-06-29",
       "title": "実績タイムライン提案 — 予定と現実を一本でつなぐ",
       "wiki": "2026-06-29_実績タイムライン_時間管理提案_v1",
-      "category": "🤖 CORIN出力（outputs/） 62本",
+      "category": "🤖 CORIN出力（outputs/） 64本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-29_実績タイムライン_時間管理提案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-29_実績タイムライン_時間管理提案_v1.html",
       "has_md": true
@@ -1268,27 +1113,9 @@ window.CORIN_DATA = {
       "date": "2026-06-29",
       "title": "案件・タスク管理システム 全体設計図（漏れ点検版）",
       "wiki": "2026-06-29_案件タスク管理システム設計図_v1",
-      "category": "🤖 CORIN出力（outputs/） 62本",
+      "category": "🤖 CORIN出力（outputs/） 64本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-29_案件タスク管理システム設計図_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-29_案件タスク管理システム設計図_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-06-29",
-      "title": "2026-W26 予実レポート — 今週の時間の地図",
-      "wiki": "2026-W26_予実レポート",
-      "category": "🤖 CORIN出力（outputs/） 62本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/週次予実/2026-W26_予実レポート.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/週次予実/2026-W26_予実レポート.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-06-29",
-      "title": "2026-W27 予実レポート — 今週の時間の地図",
-      "wiki": "2026-W27_予実レポート",
-      "category": "🤖 CORIN出力（outputs/） 62本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/週次予実/2026-W27_予実レポート.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/週次予実/2026-W27_予実レポート.html",
       "has_md": true
     }
   ],
