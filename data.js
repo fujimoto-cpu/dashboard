@@ -1,9 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-07-07",
-  "weather": null,
+  "weather": {
+    "desc": "Light Rain Shower",
+    "temp": "22",
+    "icon": "🌧"
+  },
   "letter": {
-    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Gentle Monster</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はLight Rain Shower、22度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Maison Kitsuné</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -18,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Gentle Monster",
-    "tagline": "店舗をキネティックアートに変え、アイウェアを超えたK-ライフスタイル帝国を築いた韓国発の革命的ブランド。",
-    "insight": "マルチブランドで「生活を侵食する」",
+    "name": "Maison Kitsuné",
+    "tagline": "ファッション・音楽・カフェを一体化したパリ×東京発のライフスタイルブランド。2002年設立、年商9,400万ユーロ。",
+    "insight": "「スロー＆ステディ」成長モデルの有効性",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/gentle-monster-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/maison-kitsune-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -75,7 +79,176 @@ window.CORIN_DATA = {
     "note_exists": true
   },
   "daily_photo": null,
-  "library": [],
+  "library": [
+    {
+      "name": "ip-report",
+      "description": "KONNEKT INTERNATIONAL IP News Daily Report",
+      "url": "https://fujimoto-cpu.github.io/ip-report",
+      "icon": "📰",
+      "pushed_at": "2026-07-06T00:24:58Z"
+    },
+    {
+      "name": "recipes",
+      "description": "",
+      "url": "https://fujimoto-cpu.github.io/recipes/",
+      "icon": "📄",
+      "pushed_at": "2026-07-05T08:35:14Z"
+    },
+    {
+      "name": "cowork-guide",
+      "description": "",
+      "url": "https://fujimoto-cpu.github.io/cowork-guide/",
+      "icon": "📘",
+      "pushed_at": "2026-06-30T15:22:01Z"
+    },
+    {
+      "name": "fashion-report",
+      "description": "Daily Fashion Trend Report | Japan × Korea × World",
+      "url": "https://fujimoto-cpu.github.io/fashion-report/",
+      "icon": "👗",
+      "pushed_at": "2026-06-30T00:08:00Z"
+    },
+    {
+      "name": "konnekted-ip",
+      "description": "KONNEKTED IP提案ブリーフ（社内検討用・noindex）",
+      "url": "https://fujimoto-cpu.github.io/konnekted-ip/",
+      "icon": "📄",
+      "pushed_at": "2026-06-20T18:08:07Z"
+    },
+    {
+      "name": "literature",
+      "description": "Literature Notes reader",
+      "url": "https://fujimoto-cpu.github.io/literature/",
+      "icon": "📚",
+      "pushed_at": "2026-06-11T14:09:21Z"
+    },
+    {
+      "name": "management-dashboard",
+      "description": "経営ダッシュボード（モック）noindex",
+      "url": "https://fujimoto-cpu.github.io/management-dashboard/",
+      "icon": "🦋",
+      "pushed_at": "2026-06-09T09:05:13Z"
+    },
+    {
+      "name": "pantone",
+      "description": "Pantone Solid Coated quick reference (3,219 colors) with search and CMYK→Pantone lookup",
+      "url": "https://fujimoto-cpu.github.io/pantone/",
+      "icon": "📄",
+      "pushed_at": "2026-06-05T05:50:51Z"
+    },
+    {
+      "name": "am-board-2026",
+      "description": "26AW fashion image board (internal reference, noindex)",
+      "url": "https://fujimoto-cpu.github.io/am-board-2026/",
+      "icon": "📄",
+      "pushed_at": "2026-06-01T10:46:08Z"
+    },
+    {
+      "name": "recall-recorder",
+      "description": "Recall — KONNEKT社内議事録録音アプリ（PWA）",
+      "url": "https://fujimoto-cpu.github.io/recall-recorder/",
+      "icon": "📄",
+      "pushed_at": "2026-05-31T06:47:04Z"
+    },
+    {
+      "name": "graphic-taste-gallery",
+      "description": "グラフィック・テイスト図鑑（noindex）",
+      "url": "https://fujimoto-cpu.github.io/graphic-taste-gallery/",
+      "icon": "📄",
+      "pushed_at": "2026-05-27T10:20:54Z"
+    },
+    {
+      "name": "ai-pulse-survey",
+      "description": "AI Pulse 月次アンケートフォーム（KONNEKT INTERNATIONAL社員向け・noindex公開）",
+      "url": "https://fujimoto-cpu.github.io/ai-pulse-survey/",
+      "icon": "🤖",
+      "pushed_at": "2026-05-27T05:05:52Z"
+    },
+    {
+      "name": "design-howto-atlas",
+      "description": "Design Howto Atlas — 画像から逆引きできる Illustrator/Photoshop デザインノウハウ集（110件・noindex公開）",
+      "url": "https://fujimoto-cpu.github.io/design-howto-atlas/",
+      "icon": "📄",
+      "pushed_at": "2026-05-26T14:26:59Z"
+    },
+    {
+      "name": "ai-pulse",
+      "description": "AI Pulse - KONNEKT INTERNATIONAL 社員AI活用度可視化アプリ",
+      "url": "https://fujimoto-cpu.github.io/ai-pulse/",
+      "icon": "🤖",
+      "pushed_at": "2026-05-20T22:19:23Z"
+    },
+    {
+      "name": "bigbang-guide",
+      "description": "👑 BIGBANG 超入門ガイド — K-POPの伝説を何も知らない人が学べるアプリ",
+      "url": "https://fujimoto-cpu.github.io/bigbang-guide/",
+      "icon": "👑",
+      "pushed_at": "2026-05-20T21:58:07Z"
+    },
+    {
+      "name": "x-ai-trends",
+      "description": "",
+      "url": "https://fujimoto-cpu.github.io/x-ai-trends/",
+      "icon": "🤖",
+      "pushed_at": "2026-05-20T21:45:53Z"
+    },
+    {
+      "name": "heike-guide",
+      "description": "🎭 平家終焉 — 蒼月の契り 観劇前ガイド（平家物語超入門）",
+      "url": "https://fujimoto-cpu.github.io/heike-guide/",
+      "icon": "🎭",
+      "pushed_at": "2026-05-20T21:45:53Z"
+    },
+    {
+      "name": "basketball-rules",
+      "description": "🏀 バスケットボール観戦ガイド",
+      "url": "https://fujimoto-cpu.github.io/basketball-rules/",
+      "icon": "🏀",
+      "pushed_at": "2026-05-20T21:45:53Z"
+    },
+    {
+      "name": "manifesto",
+      "description": "Yuriko's working manifesto",
+      "url": "https://fujimoto-cpu.github.io/manifesto/",
+      "icon": "✊",
+      "pushed_at": "2026-05-20T21:45:53Z"
+    },
+    {
+      "name": "brand-analysis",
+      "description": "Brand Research Library — fashion / lifestyle brand deep dives",
+      "url": "https://fujimoto-cpu.github.io/brand-analysis/",
+      "icon": "🎨",
+      "pushed_at": "2026-05-20T21:45:53Z"
+    },
+    {
+      "name": "artist-knowledge",
+      "description": "Personal artist knowledge archive (private)",
+      "url": "https://fujimoto-cpu.github.io/artist-knowledge/",
+      "icon": "📄",
+      "pushed_at": "2026-05-20T21:40:04Z"
+    },
+    {
+      "name": "reading-monthly",
+      "description": "A private reading journal for Yuriko Fujimoto, edited by CORIN.",
+      "url": "https://fujimoto-cpu.github.io/reading-monthly/",
+      "icon": "📄",
+      "pushed_at": "2026-05-20T18:14:17Z"
+    },
+    {
+      "name": "shopify-connector-guide",
+      "description": "Shopify connector setup guide for KONNEKT INTERNATIONAL",
+      "url": "https://fujimoto-cpu.github.io/shopify-connector-guide/",
+      "icon": "🎀",
+      "pushed_at": "2026-05-19T06:55:08Z"
+    },
+    {
+      "name": "rag-guide",
+      "description": "RAG explainer — KONNEKT INTERNATIONAL AI推進",
+      "url": "https://fujimoto-cpu.github.io/rag-guide/",
+      "icon": "🎀",
+      "pushed_at": "2026-05-14T04:30:10Z"
+    }
+  ],
   "active_projects": [
     {
       "name": "🎨 デザイン・制作",
