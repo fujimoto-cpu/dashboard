@@ -7,7 +7,7 @@ window.CORIN_DATA = {
   },
   "letter": {
     "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はPatchy rain nearby、24度。<br>金曜日。土日に持ち越さないこと、整理しよ。<br>今日の倉庫から：<strong>MAISON SPECIAL</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はPatchy rain nearby、24度。<br>金曜日。土日に持ち越さないこと、整理しよ。<br>今日の倉庫から：<strong>APOTHEKE FRAGRANCE</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "MAISON SPECIAL",
-    "tagline": "「SPECIAL IS YOUR STANDARD.」を掲げ、創業 5 年で年商 45 億円を達成した日本発のクラフトファッションブランド。\"プライムオーバー\" という独自シルエットで、ZARA 史上初の日本ブランドコラボを果たした注目株。",
-    "insight": "タグラインで世界観を決め切る",
+    "name": "APOTHEKE FRAGRANCE",
+    "tagline": "千葉のアトリエで全てを手作りする日本のクラフトフレグランスブランド。古来の日本の感性と現代デザインを橋渡しし、お香で「家に置いてオシャレ」を再定義した。",
+    "insight": "INSIGHT 01",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/maison-special-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -79,7 +79,176 @@ window.CORIN_DATA = {
     "note_exists": true
   },
   "daily_photo": null,
-  "library": [],
+  "library": [
+    {
+      "name": "ip-report",
+      "description": "KONNEKT INTERNATIONAL IP News Daily Report",
+      "url": "https://fujimoto-cpu.github.io/ip-report",
+      "icon": "📰",
+      "pushed_at": "2026-07-06T00:24:58Z"
+    },
+    {
+      "name": "recipes",
+      "description": "",
+      "url": "https://fujimoto-cpu.github.io/recipes/",
+      "icon": "📄",
+      "pushed_at": "2026-07-05T08:35:14Z"
+    },
+    {
+      "name": "cowork-guide",
+      "description": "",
+      "url": "https://fujimoto-cpu.github.io/cowork-guide/",
+      "icon": "📘",
+      "pushed_at": "2026-06-30T15:22:01Z"
+    },
+    {
+      "name": "fashion-report",
+      "description": "Daily Fashion Trend Report | Japan × Korea × World",
+      "url": "https://fujimoto-cpu.github.io/fashion-report/",
+      "icon": "👗",
+      "pushed_at": "2026-06-30T00:08:00Z"
+    },
+    {
+      "name": "konnekted-ip",
+      "description": "KONNEKTED IP提案ブリーフ（社内検討用・noindex）",
+      "url": "https://fujimoto-cpu.github.io/konnekted-ip/",
+      "icon": "📄",
+      "pushed_at": "2026-06-20T18:08:07Z"
+    },
+    {
+      "name": "literature",
+      "description": "Literature Notes reader",
+      "url": "https://fujimoto-cpu.github.io/literature/",
+      "icon": "📚",
+      "pushed_at": "2026-06-11T14:09:21Z"
+    },
+    {
+      "name": "management-dashboard",
+      "description": "経営ダッシュボード（モック）noindex",
+      "url": "https://fujimoto-cpu.github.io/management-dashboard/",
+      "icon": "🦋",
+      "pushed_at": "2026-06-09T09:05:13Z"
+    },
+    {
+      "name": "pantone",
+      "description": "Pantone Solid Coated quick reference (3,219 colors) with search and CMYK→Pantone lookup",
+      "url": "https://fujimoto-cpu.github.io/pantone/",
+      "icon": "📄",
+      "pushed_at": "2026-06-05T05:50:51Z"
+    },
+    {
+      "name": "am-board-2026",
+      "description": "26AW fashion image board (internal reference, noindex)",
+      "url": "https://fujimoto-cpu.github.io/am-board-2026/",
+      "icon": "📄",
+      "pushed_at": "2026-06-01T10:46:08Z"
+    },
+    {
+      "name": "recall-recorder",
+      "description": "Recall — KONNEKT社内議事録録音アプリ（PWA）",
+      "url": "https://fujimoto-cpu.github.io/recall-recorder/",
+      "icon": "📄",
+      "pushed_at": "2026-05-31T06:47:04Z"
+    },
+    {
+      "name": "graphic-taste-gallery",
+      "description": "グラフィック・テイスト図鑑（noindex）",
+      "url": "https://fujimoto-cpu.github.io/graphic-taste-gallery/",
+      "icon": "📄",
+      "pushed_at": "2026-05-27T10:20:54Z"
+    },
+    {
+      "name": "ai-pulse-survey",
+      "description": "AI Pulse 月次アンケートフォーム（KONNEKT INTERNATIONAL社員向け・noindex公開）",
+      "url": "https://fujimoto-cpu.github.io/ai-pulse-survey/",
+      "icon": "🤖",
+      "pushed_at": "2026-05-27T05:05:52Z"
+    },
+    {
+      "name": "design-howto-atlas",
+      "description": "Design Howto Atlas — 画像から逆引きできる Illustrator/Photoshop デザインノウハウ集（110件・noindex公開）",
+      "url": "https://fujimoto-cpu.github.io/design-howto-atlas/",
+      "icon": "📄",
+      "pushed_at": "2026-05-26T14:26:59Z"
+    },
+    {
+      "name": "ai-pulse",
+      "description": "AI Pulse - KONNEKT INTERNATIONAL 社員AI活用度可視化アプリ",
+      "url": "https://fujimoto-cpu.github.io/ai-pulse/",
+      "icon": "🤖",
+      "pushed_at": "2026-05-20T22:19:23Z"
+    },
+    {
+      "name": "bigbang-guide",
+      "description": "👑 BIGBANG 超入門ガイド — K-POPの伝説を何も知らない人が学べるアプリ",
+      "url": "https://fujimoto-cpu.github.io/bigbang-guide/",
+      "icon": "👑",
+      "pushed_at": "2026-05-20T21:58:07Z"
+    },
+    {
+      "name": "x-ai-trends",
+      "description": "",
+      "url": "https://fujimoto-cpu.github.io/x-ai-trends/",
+      "icon": "🤖",
+      "pushed_at": "2026-05-20T21:45:53Z"
+    },
+    {
+      "name": "heike-guide",
+      "description": "🎭 平家終焉 — 蒼月の契り 観劇前ガイド（平家物語超入門）",
+      "url": "https://fujimoto-cpu.github.io/heike-guide/",
+      "icon": "🎭",
+      "pushed_at": "2026-05-20T21:45:53Z"
+    },
+    {
+      "name": "basketball-rules",
+      "description": "🏀 バスケットボール観戦ガイド",
+      "url": "https://fujimoto-cpu.github.io/basketball-rules/",
+      "icon": "🏀",
+      "pushed_at": "2026-05-20T21:45:53Z"
+    },
+    {
+      "name": "manifesto",
+      "description": "Yuriko's working manifesto",
+      "url": "https://fujimoto-cpu.github.io/manifesto/",
+      "icon": "✊",
+      "pushed_at": "2026-05-20T21:45:53Z"
+    },
+    {
+      "name": "brand-analysis",
+      "description": "Brand Research Library — fashion / lifestyle brand deep dives",
+      "url": "https://fujimoto-cpu.github.io/brand-analysis/",
+      "icon": "🎨",
+      "pushed_at": "2026-05-20T21:45:53Z"
+    },
+    {
+      "name": "artist-knowledge",
+      "description": "Personal artist knowledge archive (private)",
+      "url": "https://fujimoto-cpu.github.io/artist-knowledge/",
+      "icon": "📄",
+      "pushed_at": "2026-05-20T21:40:04Z"
+    },
+    {
+      "name": "reading-monthly",
+      "description": "A private reading journal for Yuriko Fujimoto, edited by CORIN.",
+      "url": "https://fujimoto-cpu.github.io/reading-monthly/",
+      "icon": "📄",
+      "pushed_at": "2026-05-20T18:14:17Z"
+    },
+    {
+      "name": "shopify-connector-guide",
+      "description": "Shopify connector setup guide for KONNEKT INTERNATIONAL",
+      "url": "https://fujimoto-cpu.github.io/shopify-connector-guide/",
+      "icon": "🎀",
+      "pushed_at": "2026-05-19T06:55:08Z"
+    },
+    {
+      "name": "rag-guide",
+      "description": "RAG explainer — KONNEKT INTERNATIONAL AI推進",
+      "url": "https://fujimoto-cpu.github.io/rag-guide/",
+      "icon": "🎀",
+      "pushed_at": "2026-05-14T04:30:10Z"
+    }
+  ],
   "active_projects": [
     {
       "name": "🎨 デザイン・制作",
@@ -139,33 +308,6 @@ window.CORIN_DATA = {
           ]
         },
         {
-          "name": "LAWSON × aoen",
-          "hub": "aoenグッズ提案",
-          "status": "🔄 in-progress",
-          "desc": "",
-          "hub_info": {
-            "exists": true,
-            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/MD/aoen/20260615_aoenグッズ提案/aoenグッズ提案.md",
-            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/MD/aoen/20260615_aoen%E3%82%B0%E3%83%83%E3%82%BA%E6%8F%90%E6%A1%88/aoen%E3%82%B0%E3%83%83%E3%82%BA%E6%8F%90%E6%A1%88.md",
-            "frontmatter": {
-              "type": "project",
-              "案件": "aoen",
-              "client": "LAWSON × aoen",
-              "status": "in-progress",
-              "priority": "P0",
-              "start": "2026-06-15",
-              "deadline": "2026-06-15",
-              "stakeholders": "[]",
-              "tags": "[project-board, aoen, グッズ, 提案, コラボ]",
-              "created": "2026-06-15",
-              "last_updated": "2026-06-15"
-            },
-            "links": [],
-            "process_progress": null
-          },
-          "meetings": []
-        },
-        {
           "name": "BIGBANG",
           "hub": "BIGBANG_案件メモ",
           "status": "🔄 in-progress",
@@ -208,6 +350,221 @@ window.CORIN_DATA = {
             "2026-05-21_BIGBANG_MTG_議事メモ",
             "2026-05-21_BIGBANG_MTG_議事メモ_別音源"
           ]
+        },
+        {
+          "name": "LAWSON × aoen",
+          "hub": "aoenグッズ提案",
+          "status": "🔄 in-progress",
+          "desc": "",
+          "hub_info": {
+            "exists": true,
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/MD/aoen/20260615_aoenグッズ提案/aoenグッズ提案.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/MD/aoen/20260615_aoen%E3%82%B0%E3%83%83%E3%82%BA%E6%8F%90%E6%A1%88/aoen%E3%82%B0%E3%83%83%E3%82%BA%E6%8F%90%E6%A1%88.md",
+            "frontmatter": {
+              "type": "project",
+              "案件": "aoen",
+              "client": "LAWSON × aoen",
+              "status": "in-progress",
+              "priority": "P0",
+              "start": "2026-06-15",
+              "deadline": "2026-06-15",
+              "stakeholders": "[]",
+              "tags": "[project-board, aoen, グッズ, 提案, コラボ]",
+              "created": "2026-06-15",
+              "last_updated": "2026-06-15"
+            },
+            "links": [],
+            "process_progress": null
+          },
+          "meetings": []
+        },
+        {
+          "name": "Ange Charme",
+          "hub": "AngeCharme_HAPPYBAG",
+          "status": "🔄 in-progress",
+          "desc": "",
+          "hub_info": {
+            "exists": true,
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AngeCharme/20260613_AngeCharme_HAPPYBAG_Tシャツ/AngeCharme_HAPPYBAG.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/AngeCharme/20260613_AngeCharme_HAPPYBAG_T%E3%82%B7%E3%83%A3%E3%83%84/AngeCharme_HAPPYBAG.md",
+            "frontmatter": {
+              "type": "project",
+              "案件": "AngeCharme_HAPPYBAG",
+              "client": "Ange Charme",
+              "status": "in-progress",
+              "priority": "P1",
+              "start": "2026-06-13",
+              "deadline": "2026-06-末",
+              "tags": "[project-board, AngeCharme, グッズ, Tシャツ, HAPPYBAG]",
+              "created": "2026-06-13",
+              "last_updated": "2026-06-15"
+            },
+            "links": [
+              {
+                "label": "AngeCharme アセット Google Drive",
+                "url": "https://drive.google.com/drive/u/0/folders/1cB4xApVN6kJfhHV8TcXR1DN2kRgZwGot"
+              },
+              {
+                "label": "共有リンク",
+                "url": "https://chatgpt.com/share/6a2f1b4f-e9a0-83e8-9f70-a21322cc1450"
+              },
+              {
+                "label": "README",
+                "url": "obsidian://advanced-uri?vault=corin&filepath=README.md"
+              },
+              {
+                "label": "AngeCharme_HAPPYBA",
+                "url": "obsidian://advanced-uri?vault=corin&filepath=AngeCharme_HAPPYBAG_T%E3%82%B7%E3%83%A3%E3%83%84%E3%83%A9%E3%83%95%E4%BB%95%E4%B8%8A%E3%81%92_6%E6%9C%8814%E6%97%A5.md"
+              }
+            ],
+            "process_progress": null
+          },
+          "meetings": [
+            "👗️ Ange charme"
+          ]
+        },
+        {
+          "name": "avex (LDH)",
+          "hub": "LDH_DVDバンドル",
+          "status": "🔄 in-progress",
+          "desc": "う",
+          "hub_info": {
+            "exists": true,
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/MD/LDH/DVDバンドル/LDH_DVDバンドル.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/MD/LDH/DVD%E3%83%90%E3%83%B3%E3%83%89%E3%83%AB/LDH_DVD%E3%83%90%E3%83%B3%E3%83%89%E3%83%AB.md",
+            "frontmatter": {
+              "type": "project",
+              "案件": "LDH_DVDバンドル",
+              "client": "avex (LDH)",
+              "status": "in-progress",
+              "priority": "P1",
+              "start": "2026-07-09",
+              "deadline": "2026-11-15",
+              "stakeholders": "[]",
+              "tags": "[project-board, avex, LDH, グッズ, 提案, DVDバンドル]",
+              "created": "2026-07-09",
+              "last_updated": "2026-07-09"
+            },
+            "links": [],
+            "process_progress": null
+          },
+          "meetings": [
+            "👤️ avex_小島莉央",
+            "👤️ avex_秀太",
+            "📍 avex"
+          ]
+        },
+        {
+          "name": "ONE Championship",
+          "hub": "ONE_Samurai",
+          "status": "🔄 in-progress",
+          "desc": "filters:",
+          "hub_info": {
+            "exists": true,
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/ONE/20260529_ONE_Samurai/ONE_Samurai.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/ONE/20260529_ONE_Samurai/ONE_Samurai.md",
+            "frontmatter": {
+              "type": "project",
+              "案件": "ONE_Samurai",
+              "client": "ONE Championship",
+              "status": "in-progress",
+              "priority": "P1",
+              "start": "2026-05-29",
+              "deadline": "2026-08-08",
+              "tags": "[project-board, ONE, Tシャツ, サプリメント, グッズ, 格闘技]",
+              "created": "2026-05-29",
+              "last_updated": "2026-06-02"
+            },
+            "links": [],
+            "process_progress": null
+          },
+          "meetings": [
+            "2026-05-29_ONE社内打ち合わせ_議事メモ"
+          ]
+        },
+        {
+          "name": "LAVANDA（イエロー株式会社）",
+          "hub": "LAVANDA_ボンドロシール",
+          "status": "🔄 active",
+          "desc": "filters:",
+          "hub_info": {
+            "exists": true,
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/LAVANDA/20260513_ボンドロシール/LAVANDA_ボンドロシール.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/LAVANDA/20260513_%E3%83%9C%E3%83%B3%E3%83%89%E3%83%AD%E3%82%B7%E3%83%BC%E3%83%AB/LAVANDA_%E3%83%9C%E3%83%B3%E3%83%89%E3%83%AD%E3%82%B7%E3%83%BC%E3%83%AB.md",
+            "frontmatter": {
+              "type": "project",
+              "案件": "LAVANDA_ボンドロシール",
+              "client": "LAVANDA（イエロー株式会社）",
+              "status": "active",
+              "priority": "P1",
+              "start": "2026-05-13",
+              "deadline": "2026-06-30",
+              "tags": "[project-board, LAVANDA, シール, 制作物]",
+              "created": "2026-05-31",
+              "last_updated": "2026-06-12T10:03"
+            },
+            "links": [],
+            "process_progress": null
+          },
+          "meetings": []
+        },
+        {
+          "name": "kemio / Award",
+          "hub": "kemio抹茶ブランド",
+          "status": "🔄 in-progress",
+          "desc": "filters:",
+          "hub_info": {
+            "exists": true,
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/kemio/20260310_kemio抹茶ブランド/kemio抹茶ブランド.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/kemio/20260310_kemio%E6%8A%B9%E8%8C%B6%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89/kemio%E6%8A%B9%E8%8C%B6%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89.md",
+            "frontmatter": {
+              "type": "project",
+              "案件": "kemio抹茶",
+              "client": "kemio / Award",
+              "status": "in-progress",
+              "priority": "P1",
+              "start": "2026-03-02",
+              "deadline": "2026-12-31",
+              "tags": "[project-board, kemio, 抹茶, Human-Lounge, パッケージ, ブランディング]",
+              "created": "2026-03-02",
+              "last_updated": "2026-07-09"
+            },
+            "links": [],
+            "process_progress": null
+          },
+          "meetings": [
+            "2026-05-29_kemio抹茶_打ち合わせ_議事メモ",
+            "@2026年3月2日_Award様kemioさん抹茶ブランド打ち合わせ_議事メモ",
+            "Human Lounge（kemio抹茶ブランド）",
+            "kemioストア_8thコレクション",
+            "👗️ kemio store"
+          ]
+        },
+        {
+          "name": "KONNEKT（社内評価）",
+          "hub": "26AW_評価シート",
+          "status": "🔄 active",
+          "desc": "filters:",
+          "hub_info": {
+            "exists": true,
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/目標・評価/26AW/26AW_評価シート.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/%E7%9B%AE%E6%A8%99%E3%83%BB%E8%A9%95%E4%BE%A1/26AW/26AW_%E8%A9%95%E4%BE%A1%E3%82%B7%E3%83%BC%E3%83%88.md",
+            "frontmatter": {
+              "type": "project",
+              "案件": "26AW_評価シート",
+              "client": "KONNEKT（社内評価）",
+              "status": "active",
+              "priority": "P1",
+              "start": "2026-04-01",
+              "deadline": "2026-09-30",
+              "tags": "[project-board, 評価, 目標, 半期, 社内]",
+              "created": "2026-05-31",
+              "last_updated": "2026-05-31"
+            },
+            "links": [],
+            "process_progress": null
+          },
+          "meetings": []
         },
         {
           "name": "Armillary.（KONNEKT自社ブランド）",
@@ -272,23 +629,107 @@ window.CORIN_DATA = {
           "meetings": []
         },
         {
-          "name": "KONNEKT（社内評価）",
-          "hub": "26AW_評価シート",
+          "name": "Dole / CityCamp",
+          "hub": "Dole_coconut",
           "status": "🔄 active",
           "desc": "filters:",
           "hub_info": {
             "exists": true,
-            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/目標・評価/26AW/26AW_評価シート.md",
-            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/%E7%9B%AE%E6%A8%99%E3%83%BB%E8%A9%95%E4%BE%A1/26AW/26AW_%E8%A9%95%E4%BE%A1%E3%82%B7%E3%83%BC%E3%83%88.md",
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/20260507_Dole_coconut/Dole_coconut.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/20260507_Dole_coconut/Dole_coconut.md",
             "frontmatter": {
               "type": "project",
-              "案件": "26AW_評価シート",
-              "client": "KONNEKT（社内評価）",
+              "案件": "Dole_coconut",
+              "client": "Dole / CityCamp",
               "status": "active",
-              "priority": "P1",
-              "start": "2026-04-01",
-              "deadline": "2026-09-30",
-              "tags": "[project-board, 評価, 目標, 半期, 社内]",
+              "priority": "P2",
+              "start": "2026-05-07",
+              "deadline": "null",
+              "tags": "[project-board, Dole, ブランディング, 制作物]",
+              "created": "2026-05-31",
+              "last_updated": "2026-05-31"
+            },
+            "links": [],
+            "process_progress": {
+              "K": "⬜",
+              "0": "⬜",
+              "0-1": "⬜",
+              "A": "⬜",
+              "B": "⬜",
+              "C": "⬜",
+              "Z": "⬜",
+              "V": "⬜",
+              "Y": "⬜",
+              "R-mid": "⬜",
+              "R-final": "⬜",
+              "completed_count": 0,
+              "in_progress_count": 0,
+              "total_count": 11
+            }
+          },
+          "meetings": [
+            "🏢 CityCamp株式会社"
+          ]
+        },
+        {
+          "name": "ZO_FRIENDS × I'm donut?",
+          "hub": "ZOAxIm_donut",
+          "status": "🔄 active",
+          "desc": "filters:",
+          "hub_info": {
+            "exists": true,
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/20260413_ZOAxI'm_donut/ZOAxIm_donut.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/20260413_ZOAxI%27m_donut/ZOAxIm_donut.md",
+            "frontmatter": {
+              "type": "project",
+              "案件": "ZOAxIm_donut",
+              "client": "ZO_FRIENDS × I'm donut?",
+              "status": "active",
+              "priority": "P2",
+              "start": "2026-04-13",
+              "deadline": "null",
+              "tags": "[project-board, imdonut, ZOA, グッズ, コラボ, シール]",
+              "created": "2026-05-31",
+              "last_updated": "2026-05-31"
+            },
+            "links": [],
+            "process_progress": {
+              "K": "⬜",
+              "0": "⬜",
+              "0-1": "⬜",
+              "A": "⬜",
+              "B": "⬜",
+              "C": "⬜",
+              "Z": "⬜",
+              "V": "⬜",
+              "Y": "⬜",
+              "R-mid": "⬜",
+              "R-final": "⬜",
+              "completed_count": 0,
+              "in_progress_count": 0,
+              "total_count": 11
+            }
+          },
+          "meetings": []
+        },
+        {
+          "name": "GOK",
+          "hub": "GOK_20260426_カット編集",
+          "status": "🔄 active",
+          "desc": "filters:",
+          "hub_info": {
+            "exists": true,
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/GOK/20260426_カット編集/GOK_20260426_カット編集.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/GOK/20260426_%E3%82%AB%E3%83%83%E3%83%88%E7%B7%A8%E9%9B%86/GOK_20260426_%E3%82%AB%E3%83%83%E3%83%88%E7%B7%A8%E9%9B%86.md",
+            "frontmatter": {
+              "type": "project",
+              "案件": "GOK_20260426_カット編集",
+              "client": "GOK",
+              "status": "active",
+              "priority": "P2",
+              "start": "2026-04-26",
+              "deadline": "null",
+              "tags": "[project-board, GOK, レタッチ, 動画編集, 制作物]",
               "created": "2026-05-31",
               "last_updated": "2026-05-31"
             },
@@ -298,25 +739,51 @@ window.CORIN_DATA = {
           "meetings": []
         },
         {
-          "name": "kemio / Award",
-          "hub": "kemio抹茶ブランド",
-          "status": "🔄 in-progress",
+          "name": "社内（Konnekted）",
+          "hub": "ちからさんUX調査",
+          "status": "🔄 active",
           "desc": "filters:",
           "hub_info": {
             "exists": true,
-            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/kemio/20260310_kemio抹茶ブランド/kemio抹茶ブランド.md",
-            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/kemio/20260310_kemio%E6%8A%B9%E8%8C%B6%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89/kemio%E6%8A%B9%E8%8C%B6%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89.md",
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/Konnekted_UX改善/20260507_ちからさんUX調査/ちからさんUX調査.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/Konnekted_UX%E6%94%B9%E5%96%84/20260507_%E3%81%A1%E3%81%8B%E3%82%89%E3%81%95%E3%82%93UX%E8%AA%BF%E6%9F%BB/%E3%81%A1%E3%81%8B%E3%82%89%E3%81%95%E3%82%93UX%E8%AA%BF%E6%9F%BB.md",
             "frontmatter": {
               "type": "project",
-              "案件": "kemio抹茶",
-              "client": "kemio / Award",
-              "status": "in-progress",
-              "priority": "P1",
-              "start": "2026-03-02",
-              "deadline": "2026-12-31",
-              "tags": "[project-board, kemio, 抹茶, Human-Lounge, パッケージ, ブランディング]",
-              "created": "2026-03-02",
-              "last_updated": "2026-07-09"
+              "案件": "ちからさんUX調査",
+              "client": "社内（Konnekted）",
+              "status": "active",
+              "priority": "P2",
+              "start": "2026-05-07",
+              "deadline": "null",
+              "tags": "[project-board, Konnekted, UX調査, リサーチ, 社内]",
+              "created": "2026-05-31",
+              "last_updated": "2026-05-31"
+            },
+            "links": [],
+            "process_progress": null
+          },
+          "meetings": []
+        },
+        {
+          "name": "kemio",
+          "hub": "kemio-store",
+          "status": "🔄 active",
+          "desc": "filters:",
+          "hub_info": {
+            "exists": true,
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/kemio/kemio-store/kemio-store.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/kemio/kemio-store/kemio-store.md",
+            "frontmatter": {
+              "type": "project",
+              "案件": "kemio-store",
+              "client": "kemio",
+              "status": "active",
+              "priority": "P2",
+              "start": "null",
+              "deadline": "null",
+              "tags": "[project-board, kemio, グッズ, EC, 制作物]",
+              "created": "2026-05-31",
+              "last_updated": "2026-05-31"
             },
             "links": [],
             "process_progress": null
@@ -327,136 +794,6 @@ window.CORIN_DATA = {
             "Human Lounge（kemio抹茶ブランド）",
             "kemioストア_8thコレクション",
             "👗️ kemio store"
-          ]
-        },
-        {
-          "name": "LAVANDA（イエロー株式会社）",
-          "hub": "LAVANDA_ボンドロシール",
-          "status": "🔄 active",
-          "desc": "filters:",
-          "hub_info": {
-            "exists": true,
-            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/LAVANDA/20260513_ボンドロシール/LAVANDA_ボンドロシール.md",
-            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/LAVANDA/20260513_%E3%83%9C%E3%83%B3%E3%83%89%E3%83%AD%E3%82%B7%E3%83%BC%E3%83%AB/LAVANDA_%E3%83%9C%E3%83%B3%E3%83%89%E3%83%AD%E3%82%B7%E3%83%BC%E3%83%AB.md",
-            "frontmatter": {
-              "type": "project",
-              "案件": "LAVANDA_ボンドロシール",
-              "client": "LAVANDA（イエロー株式会社）",
-              "status": "active",
-              "priority": "P1",
-              "start": "2026-05-13",
-              "deadline": "2026-06-30",
-              "tags": "[project-board, LAVANDA, シール, 制作物]",
-              "created": "2026-05-31",
-              "last_updated": "2026-06-12T10:03"
-            },
-            "links": [],
-            "process_progress": null
-          },
-          "meetings": []
-        },
-        {
-          "name": "ONE Championship",
-          "hub": "ONE_Samurai",
-          "status": "🔄 in-progress",
-          "desc": "filters:",
-          "hub_info": {
-            "exists": true,
-            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/ONE/20260529_ONE_Samurai/ONE_Samurai.md",
-            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/ONE/20260529_ONE_Samurai/ONE_Samurai.md",
-            "frontmatter": {
-              "type": "project",
-              "案件": "ONE_Samurai",
-              "client": "ONE Championship",
-              "status": "in-progress",
-              "priority": "P1",
-              "start": "2026-05-29",
-              "deadline": "2026-08-08",
-              "tags": "[project-board, ONE, Tシャツ, サプリメント, グッズ, 格闘技]",
-              "created": "2026-05-29",
-              "last_updated": "2026-06-02"
-            },
-            "links": [],
-            "process_progress": null
-          },
-          "meetings": [
-            "2026-05-29_ONE社内打ち合わせ_議事メモ"
-          ]
-        },
-        {
-          "name": "avex (LDH)",
-          "hub": "LDH_DVDバンドル",
-          "status": "🔄 in-progress",
-          "desc": "う",
-          "hub_info": {
-            "exists": true,
-            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/MD/LDH/DVDバンドル/LDH_DVDバンドル.md",
-            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/MD/LDH/DVD%E3%83%90%E3%83%B3%E3%83%89%E3%83%AB/LDH_DVD%E3%83%90%E3%83%B3%E3%83%89%E3%83%AB.md",
-            "frontmatter": {
-              "type": "project",
-              "案件": "LDH_DVDバンドル",
-              "client": "avex (LDH)",
-              "status": "in-progress",
-              "priority": "P1",
-              "start": "2026-07-09",
-              "deadline": "2026-11-15",
-              "stakeholders": "[]",
-              "tags": "[project-board, avex, LDH, グッズ, 提案, DVDバンドル]",
-              "created": "2026-07-09",
-              "last_updated": "2026-07-09"
-            },
-            "links": [],
-            "process_progress": null
-          },
-          "meetings": [
-            "👤️ avex_小島莉央",
-            "👤️ avex_秀太",
-            "📍 avex"
-          ]
-        },
-        {
-          "name": "Ange Charme",
-          "hub": "AngeCharme_HAPPYBAG",
-          "status": "🔄 in-progress",
-          "desc": "",
-          "hub_info": {
-            "exists": true,
-            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AngeCharme/20260613_AngeCharme_HAPPYBAG_Tシャツ/AngeCharme_HAPPYBAG.md",
-            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/AngeCharme/20260613_AngeCharme_HAPPYBAG_T%E3%82%B7%E3%83%A3%E3%83%84/AngeCharme_HAPPYBAG.md",
-            "frontmatter": {
-              "type": "project",
-              "案件": "AngeCharme_HAPPYBAG",
-              "client": "Ange Charme",
-              "status": "in-progress",
-              "priority": "P1",
-              "start": "2026-06-13",
-              "deadline": "2026-06-末",
-              "tags": "[project-board, AngeCharme, グッズ, Tシャツ, HAPPYBAG]",
-              "created": "2026-06-13",
-              "last_updated": "2026-06-15"
-            },
-            "links": [
-              {
-                "label": "AngeCharme アセット Google Drive",
-                "url": "https://drive.google.com/drive/u/0/folders/1cB4xApVN6kJfhHV8TcXR1DN2kRgZwGot"
-              },
-              {
-                "label": "共有リンク",
-                "url": "https://chatgpt.com/share/6a2f1b4f-e9a0-83e8-9f70-a21322cc1450"
-              },
-              {
-                "label": "README",
-                "url": "obsidian://advanced-uri?vault=corin&filepath=README.md"
-              },
-              {
-                "label": "AngeCharme_HAPPYBA",
-                "url": "obsidian://advanced-uri?vault=corin&filepath=AngeCharme_HAPPYBAG_T%E3%82%B7%E3%83%A3%E3%83%84%E3%83%A9%E3%83%95%E4%BB%95%E4%B8%8A%E3%81%92_6%E6%9C%8814%E6%97%A5.md"
-              }
-            ],
-            "process_progress": null
-          },
-          "meetings": [
-            "👗️ Ange charme"
           ]
         },
         {
@@ -504,174 +841,6 @@ window.CORIN_DATA = {
             "𝕏 （無題） (Biz_Producer_9482)",
             "🌌 PS_58100 poster design challenge"
           ]
-        },
-        {
-          "name": "kemio",
-          "hub": "kemio-store",
-          "status": "🔄 active",
-          "desc": "filters:",
-          "hub_info": {
-            "exists": true,
-            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/kemio/kemio-store/kemio-store.md",
-            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/kemio/kemio-store/kemio-store.md",
-            "frontmatter": {
-              "type": "project",
-              "案件": "kemio-store",
-              "client": "kemio",
-              "status": "active",
-              "priority": "P2",
-              "start": "null",
-              "deadline": "null",
-              "tags": "[project-board, kemio, グッズ, EC, 制作物]",
-              "created": "2026-05-31",
-              "last_updated": "2026-05-31"
-            },
-            "links": [],
-            "process_progress": null
-          },
-          "meetings": [
-            "2026-05-29_kemio抹茶_打ち合わせ_議事メモ",
-            "@2026年3月2日_Award様kemioさん抹茶ブランド打ち合わせ_議事メモ",
-            "Human Lounge（kemio抹茶ブランド）",
-            "kemioストア_8thコレクション",
-            "👗️ kemio store"
-          ]
-        },
-        {
-          "name": "社内（Konnekted）",
-          "hub": "ちからさんUX調査",
-          "status": "🔄 active",
-          "desc": "filters:",
-          "hub_info": {
-            "exists": true,
-            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/Konnekted_UX改善/20260507_ちからさんUX調査/ちからさんUX調査.md",
-            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/Konnekted_UX%E6%94%B9%E5%96%84/20260507_%E3%81%A1%E3%81%8B%E3%82%89%E3%81%95%E3%82%93UX%E8%AA%BF%E6%9F%BB/%E3%81%A1%E3%81%8B%E3%82%89%E3%81%95%E3%82%93UX%E8%AA%BF%E6%9F%BB.md",
-            "frontmatter": {
-              "type": "project",
-              "案件": "ちからさんUX調査",
-              "client": "社内（Konnekted）",
-              "status": "active",
-              "priority": "P2",
-              "start": "2026-05-07",
-              "deadline": "null",
-              "tags": "[project-board, Konnekted, UX調査, リサーチ, 社内]",
-              "created": "2026-05-31",
-              "last_updated": "2026-05-31"
-            },
-            "links": [],
-            "process_progress": null
-          },
-          "meetings": []
-        },
-        {
-          "name": "Dole / CityCamp",
-          "hub": "Dole_coconut",
-          "status": "🔄 active",
-          "desc": "filters:",
-          "hub_info": {
-            "exists": true,
-            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/20260507_Dole_coconut/Dole_coconut.md",
-            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/20260507_Dole_coconut/Dole_coconut.md",
-            "frontmatter": {
-              "type": "project",
-              "案件": "Dole_coconut",
-              "client": "Dole / CityCamp",
-              "status": "active",
-              "priority": "P2",
-              "start": "2026-05-07",
-              "deadline": "null",
-              "tags": "[project-board, Dole, ブランディング, 制作物]",
-              "created": "2026-05-31",
-              "last_updated": "2026-05-31"
-            },
-            "links": [],
-            "process_progress": {
-              "K": "⬜",
-              "0": "⬜",
-              "0-1": "⬜",
-              "A": "⬜",
-              "B": "⬜",
-              "C": "⬜",
-              "Z": "⬜",
-              "V": "⬜",
-              "Y": "⬜",
-              "R-mid": "⬜",
-              "R-final": "⬜",
-              "completed_count": 0,
-              "in_progress_count": 0,
-              "total_count": 11
-            }
-          },
-          "meetings": [
-            "🏢 CityCamp株式会社"
-          ]
-        },
-        {
-          "name": "GOK",
-          "hub": "GOK_20260426_カット編集",
-          "status": "🔄 active",
-          "desc": "filters:",
-          "hub_info": {
-            "exists": true,
-            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/GOK/20260426_カット編集/GOK_20260426_カット編集.md",
-            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/GOK/20260426_%E3%82%AB%E3%83%83%E3%83%88%E7%B7%A8%E9%9B%86/GOK_20260426_%E3%82%AB%E3%83%83%E3%83%88%E7%B7%A8%E9%9B%86.md",
-            "frontmatter": {
-              "type": "project",
-              "案件": "GOK_20260426_カット編集",
-              "client": "GOK",
-              "status": "active",
-              "priority": "P2",
-              "start": "2026-04-26",
-              "deadline": "null",
-              "tags": "[project-board, GOK, レタッチ, 動画編集, 制作物]",
-              "created": "2026-05-31",
-              "last_updated": "2026-05-31"
-            },
-            "links": [],
-            "process_progress": null
-          },
-          "meetings": []
-        },
-        {
-          "name": "ZO_FRIENDS × I'm donut?",
-          "hub": "ZOAxIm_donut",
-          "status": "🔄 active",
-          "desc": "filters:",
-          "hub_info": {
-            "exists": true,
-            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/20260413_ZOAxI'm_donut/ZOAxIm_donut.md",
-            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/20260413_ZOAxI%27m_donut/ZOAxIm_donut.md",
-            "frontmatter": {
-              "type": "project",
-              "案件": "ZOAxIm_donut",
-              "client": "ZO_FRIENDS × I'm donut?",
-              "status": "active",
-              "priority": "P2",
-              "start": "2026-04-13",
-              "deadline": "null",
-              "tags": "[project-board, imdonut, ZOA, グッズ, コラボ, シール]",
-              "created": "2026-05-31",
-              "last_updated": "2026-05-31"
-            },
-            "links": [],
-            "process_progress": {
-              "K": "⬜",
-              "0": "⬜",
-              "0-1": "⬜",
-              "A": "⬜",
-              "B": "⬜",
-              "C": "⬜",
-              "Z": "⬜",
-              "V": "⬜",
-              "Y": "⬜",
-              "R-mid": "⬜",
-              "R-final": "⬜",
-              "completed_count": 0,
-              "in_progress_count": 0,
-              "total_count": 11
-            }
-          },
-          "meetings": []
         },
         {
           "name": "小山慶一郎（NEWS）／Starto",
@@ -752,6 +921,129 @@ window.CORIN_DATA = {
       "name": "✅ 完了案件",
       "slug": "done",
       "projects": [
+        {
+          "name": "avex",
+          "hub": "avex往訪",
+          "status": "📦 archived",
+          "desc": "**案件タイプ判定**：（要記入 — 継続シーズン提案 / 新ブランド立ち上げ / リブランディング / コラボ案件 / 過去テンプレ流用 / 小規模アイテム追",
+          "hub_info": {
+            "exists": true,
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/20260521_avex往訪/avex往訪.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/20260521_avex%E5%BE%80%E8%A8%AA/avex%E5%BE%80%E8%A8%AA.md",
+            "frontmatter": {
+              "type": "project",
+              "案件": "avex往訪",
+              "client": "avex",
+              "status": "archived",
+              "priority": "P3",
+              "start": "2026-05-21",
+              "deadline": "null",
+              "tags": "[project-board, archived, avex, 往訪, 議事録]",
+              "created": "2026-05-31",
+              "last_updated": "2026-05-31"
+            },
+            "links": [],
+            "process_progress": {
+              "K": "⬜",
+              "0": "⬜",
+              "0-1": "⬜",
+              "A": "⬜",
+              "B": "⬜",
+              "C": "⬜",
+              "Z": "⬜",
+              "V": "⬜",
+              "Y": "⬜",
+              "R-mid": "⬜",
+              "R-final": "⬜",
+              "completed_count": 0,
+              "in_progress_count": 0,
+              "total_count": 11
+            }
+          },
+          "meetings": [
+            "👤️ avex_小島莉央",
+            "👤️ avex_秀太",
+            "📍 avex"
+          ]
+        },
+        {
+          "name": "GOK",
+          "hub": "GOK_20260225",
+          "status": "📦 archived",
+          "desc": "",
+          "hub_info": {
+            "exists": true,
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/GOK/20260225_GOK/GOK_20260225.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/GOK/20260225_GOK/GOK_20260225.md",
+            "frontmatter": {
+              "type": "project",
+              "案件": "GOK_20260225",
+              "client": "GOK",
+              "status": "archived",
+              "priority": "P3",
+              "start": "2026-02-25",
+              "deadline": "null",
+              "tags": "[project-board, archived, GOK, キャラクター, 制作物]",
+              "created": "2026-05-31",
+              "last_updated": "2026-05-31"
+            },
+            "links": [],
+            "process_progress": null
+          },
+          "meetings": []
+        },
+        {
+          "name": "GOK",
+          "hub": "GOK_20260227",
+          "status": "📦 archived",
+          "desc": "",
+          "hub_info": {
+            "exists": true,
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/GOK/20260227_GOK/GOK_20260227.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/GOK/20260227_GOK/GOK_20260227.md",
+            "frontmatter": {
+              "type": "project",
+              "案件": "GOK_20260227",
+              "client": "GOK",
+              "status": "archived",
+              "priority": "P3",
+              "start": "2026-02-27",
+              "deadline": "null",
+              "tags": "[project-board, archived, GOK, Tシャツ, 制作物]",
+              "created": "2026-05-31",
+              "last_updated": "2026-05-31"
+            },
+            "links": [],
+            "process_progress": null
+          },
+          "meetings": []
+        },
+        {
+          "name": "AAA",
+          "hub": "AAA_20260507_売上分析",
+          "status": "📦 archived",
+          "desc": "",
+          "hub_info": {
+            "exists": true,
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AAA/20260507_売上分析/AAA_20260507_売上分析.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/AAA/20260507_%E5%A3%B2%E4%B8%8A%E5%88%86%E6%9E%90/AAA_20260507_%E5%A3%B2%E4%B8%8A%E5%88%86%E6%9E%90.md",
+            "frontmatter": {
+              "type": "project",
+              "案件": "AAA_20260507_売上分析",
+              "client": "AAA",
+              "status": "archived",
+              "priority": "P3",
+              "start": "2026-05-07",
+              "deadline": "null",
+              "tags": "[project-board, archived, AAA, 分析, 売上分析]",
+              "created": "2026-05-31",
+              "last_updated": "2026-05-31"
+            },
+            "links": [],
+            "process_progress": null
+          },
+          "meetings": []
+        },
         {
           "name": "Armillary.",
           "hub": "AM_HAPPYBOX",
@@ -842,129 +1134,6 @@ window.CORIN_DATA = {
             "@2026年5月13日_Armillary._川田はるくんとの打ち合わせ_議事メモ",
             "👗️ Armillary."
           ]
-        },
-        {
-          "name": "AAA",
-          "hub": "AAA_20260507_売上分析",
-          "status": "📦 archived",
-          "desc": "",
-          "hub_info": {
-            "exists": true,
-            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AAA/20260507_売上分析/AAA_20260507_売上分析.md",
-            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/AAA/20260507_%E5%A3%B2%E4%B8%8A%E5%88%86%E6%9E%90/AAA_20260507_%E5%A3%B2%E4%B8%8A%E5%88%86%E6%9E%90.md",
-            "frontmatter": {
-              "type": "project",
-              "案件": "AAA_20260507_売上分析",
-              "client": "AAA",
-              "status": "archived",
-              "priority": "P3",
-              "start": "2026-05-07",
-              "deadline": "null",
-              "tags": "[project-board, archived, AAA, 分析, 売上分析]",
-              "created": "2026-05-31",
-              "last_updated": "2026-05-31"
-            },
-            "links": [],
-            "process_progress": null
-          },
-          "meetings": []
-        },
-        {
-          "name": "GOK",
-          "hub": "GOK_20260225",
-          "status": "📦 archived",
-          "desc": "",
-          "hub_info": {
-            "exists": true,
-            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/GOK/20260225_GOK/GOK_20260225.md",
-            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/GOK/20260225_GOK/GOK_20260225.md",
-            "frontmatter": {
-              "type": "project",
-              "案件": "GOK_20260225",
-              "client": "GOK",
-              "status": "archived",
-              "priority": "P3",
-              "start": "2026-02-25",
-              "deadline": "null",
-              "tags": "[project-board, archived, GOK, キャラクター, 制作物]",
-              "created": "2026-05-31",
-              "last_updated": "2026-05-31"
-            },
-            "links": [],
-            "process_progress": null
-          },
-          "meetings": []
-        },
-        {
-          "name": "GOK",
-          "hub": "GOK_20260227",
-          "status": "📦 archived",
-          "desc": "",
-          "hub_info": {
-            "exists": true,
-            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/GOK/20260227_GOK/GOK_20260227.md",
-            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/GOK/20260227_GOK/GOK_20260227.md",
-            "frontmatter": {
-              "type": "project",
-              "案件": "GOK_20260227",
-              "client": "GOK",
-              "status": "archived",
-              "priority": "P3",
-              "start": "2026-02-27",
-              "deadline": "null",
-              "tags": "[project-board, archived, GOK, Tシャツ, 制作物]",
-              "created": "2026-05-31",
-              "last_updated": "2026-05-31"
-            },
-            "links": [],
-            "process_progress": null
-          },
-          "meetings": []
-        },
-        {
-          "name": "avex",
-          "hub": "avex往訪",
-          "status": "📦 archived",
-          "desc": "**案件タイプ判定**：（要記入 — 継続シーズン提案 / 新ブランド立ち上げ / リブランディング / コラボ案件 / 過去テンプレ流用 / 小規模アイテム追",
-          "hub_info": {
-            "exists": true,
-            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/20260521_avex往訪/avex往訪.md",
-            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/20260521_avex%E5%BE%80%E8%A8%AA/avex%E5%BE%80%E8%A8%AA.md",
-            "frontmatter": {
-              "type": "project",
-              "案件": "avex往訪",
-              "client": "avex",
-              "status": "archived",
-              "priority": "P3",
-              "start": "2026-05-21",
-              "deadline": "null",
-              "tags": "[project-board, archived, avex, 往訪, 議事録]",
-              "created": "2026-05-31",
-              "last_updated": "2026-05-31"
-            },
-            "links": [],
-            "process_progress": {
-              "K": "⬜",
-              "0": "⬜",
-              "0-1": "⬜",
-              "A": "⬜",
-              "B": "⬜",
-              "C": "⬜",
-              "Z": "⬜",
-              "V": "⬜",
-              "Y": "⬜",
-              "R-mid": "⬜",
-              "R-final": "⬜",
-              "completed_count": 0,
-              "in_progress_count": 0,
-              "total_count": 11
-            }
-          },
-          "meetings": [
-            "👤️ avex_小島莉央",
-            "👤️ avex_秀太",
-            "📍 avex"
-          ]
         }
       ]
     }
@@ -974,16 +1143,25 @@ window.CORIN_DATA = {
       "date": "2026-07-10",
       "title": "KONNEKT AI活用 7-9月ロードマップ ＆ KPI（図解）",
       "wiki": "2026-07-10_AI四半期ロードマップ_KPI図解_社長向け_v1",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-10_AI四半期ロードマップ_KPI図解_社長向け_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-10_AI四半期ロードマップ_KPI図解_社長向け_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-07-10",
+      "title": "AI特命推進室 進捗とこれから（2026-07-10）",
+      "wiki": "2026-07-10_AI推進_ゆうさん報告プレゼン_複利フェーズ_v1",
+      "category": "🤖 CORIN出力（outputs/） 69本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-10_AI推進_ゆうさん報告プレゼン_複利フェーズ_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-10_AI推進_ゆうさん報告プレゼン_複利フェーズ_v1.html",
       "has_md": true
     },
     {
       "date": "2026-07-09",
       "title": "社員のAI活用ノウハウを、会社の資産にする — ご提案",
       "wiki": "2026-07-09_AIナレッジ複利化_社長向け提案_v3",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-09_AIナレッジ複利化_社長向け提案_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-09_AIナレッジ複利化_社長向け提案_v3.html",
       "has_md": true
@@ -992,7 +1170,7 @@ window.CORIN_DATA = {
       "date": "2026-07-09",
       "title": "Claude全社使用量レポート 2026-04〜07(第1週)",
       "wiki": "2026-07-09_Claude全社使用量レポート_2026年7月第1週_v1",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-09_Claude全社使用量レポート_2026年7月第1週_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-09_Claude全社使用量レポート_2026年7月第1週_v1.html",
       "has_md": true
@@ -1001,7 +1179,7 @@ window.CORIN_DATA = {
       "date": "2026-07-09",
       "title": "GMO AI活用実態調査 最新ベンチマーク（2026年6月調査）",
       "wiki": "2026-07-09_GMO_AI活用実態調査_最新ベンチマーク_v1",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-09_GMO_AI活用実態調査_最新ベンチマーク_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-09_GMO_AI活用実態調査_最新ベンチマーク_v1.html",
       "has_md": true
@@ -1010,7 +1188,7 @@ window.CORIN_DATA = {
       "date": "2026-07-07",
       "title": "ファイル自動整理システム「更地計画」",
       "wiki": "2026-07-07_ファイル自動整理システム_流れまとめ_v1",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-07_ファイル自動整理システム_流れまとめ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-07_ファイル自動整理システム_流れまとめ_v1.html",
       "has_md": true
@@ -1019,7 +1197,7 @@ window.CORIN_DATA = {
       "date": "2026-07-07",
       "title": "予実「ほぼ自動」ワークフロー計画 v1",
       "wiki": "2026-07-07_予実ほぼ自動ワークフロー計画_v1",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-07_予実ほぼ自動ワークフロー計画_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-07_予実ほぼ自動ワークフロー計画_v1.html",
       "has_md": true
@@ -1028,7 +1206,7 @@ window.CORIN_DATA = {
       "date": "2026-07-07",
       "title": "週次予実 — 時間の地図",
       "wiki": "2026-07-07_週次予実ビューア_v1",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/週次予実/2026-07-07_週次予実ビューア_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/週次予実/2026-07-07_週次予実ビューア_v1.html",
       "has_md": true
@@ -1037,7 +1215,7 @@ window.CORIN_DATA = {
       "date": "2026-07-06",
       "title": "7/1（水）作業ログ × スクリーンログ 突き合わせ",
       "wiki": "2026-07-06_7-1作業ログ×スクリーンログ突き合わせ_v1",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_7-1作業ログ×スクリーンログ突き合わせ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_7-1作業ログ×スクリーンログ突き合わせ_v1.html",
       "has_md": true
@@ -1046,7 +1224,7 @@ window.CORIN_DATA = {
       "date": "2026-07-06",
       "title": "7/2（木）作業ログ × スクリーンログ 突き合わせ",
       "wiki": "2026-07-06_7-2作業ログ×スクリーンログ突き合わせ_v1",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_7-2作業ログ×スクリーンログ突き合わせ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_7-2作業ログ×スクリーンログ突き合わせ_v1.html",
       "has_md": true
@@ -1055,7 +1233,7 @@ window.CORIN_DATA = {
       "date": "2026-07-06",
       "title": "7/3（金）作業ログ × スクリーンログ 突き合わせ",
       "wiki": "2026-07-06_7-3作業ログ×スクリーンログ突き合わせ_v1",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_7-3作業ログ×スクリーンログ突き合わせ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_7-3作業ログ×スクリーンログ突き合わせ_v1.html",
       "has_md": true
@@ -1064,7 +1242,7 @@ window.CORIN_DATA = {
       "date": "2026-07-06",
       "title": "Claude全社使用量レポート 2026-04〜06",
       "wiki": "2026-07-06_Claude全社使用量レポート_v1",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_Claude全社使用量レポート_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_Claude全社使用量レポート_v1.html",
       "has_md": true
@@ -1073,7 +1251,7 @@ window.CORIN_DATA = {
       "date": "2026-07-05",
       "title": "6/30（火）作業ログ × スクリーンログ 突き合わせ",
       "wiki": "2026-07-05_6-30作業ログ×スクリーンログ突き合わせ_v1",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-05_6-30作業ログ×スクリーンログ突き合わせ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-05_6-30作業ログ×スクリーンログ突き合わせ_v1.html",
       "has_md": true
@@ -1082,7 +1260,7 @@ window.CORIN_DATA = {
       "date": "2026-07-05",
       "title": "いい言葉集",
       "wiki": "2026-07-05_いい言葉集_v3",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-05_いい言葉集_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-05_いい言葉集_v3.html",
       "has_md": true
@@ -1091,7 +1269,7 @@ window.CORIN_DATA = {
       "date": "2026-07-05",
       "title": "1日で人生を立て直す — Dan Koeメソッド解説 & ゆりこ活用ガイド",
       "wiki": "2026-07-05_ダンコー_1日で人生を立て直す_v1",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-05_ダンコー_1日で人生を立て直す_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-05_ダンコー_1日で人生を立て直す_v1.html",
       "has_md": true
@@ -1100,7 +1278,7 @@ window.CORIN_DATA = {
       "date": "2026-07-04",
       "title": "CORINトークン節約診断 — 質を変えずに4〜6割減らす設計図",
       "wiki": "2026-07-04_CORINトークン節約診断_v1",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-04_CORINトークン節約診断_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-04_CORINトークン節約診断_v1.html",
       "has_md": true
@@ -1109,7 +1287,7 @@ window.CORIN_DATA = {
       "date": "2026-07-03",
       "title": "Vault複利診断 v2 — 蓄積は完成、還流が断線（提案11本）",
       "wiki": "2026-07-03_Vault複利診断_改善提案11本_v2",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-03_Vault複利診断_改善提案11本_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-03_Vault複利診断_改善提案11本_v2.html",
       "has_md": true
@@ -1118,7 +1296,7 @@ window.CORIN_DATA = {
       "date": "2026-07-03",
       "title": "Vault複利診断 v3 — 16の提案を「ある日の場面」で説明",
       "wiki": "2026-07-03_Vault複利診断_改善提案16本_v3",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-03_Vault複利診断_改善提案16本_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-03_Vault複利診断_改善提案16本_v3.html",
       "has_md": true
@@ -1127,7 +1305,7 @@ window.CORIN_DATA = {
       "date": "2026-07-03",
       "title": "K-POP Tour Logo Reference 2023–2026",
       "wiki": "2026-07-03_kpop_tour_logo_reference",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-03_kpop_tour_logo_reference.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-03_kpop_tour_logo_reference.html",
       "has_md": false
@@ -1136,18 +1314,9 @@ window.CORIN_DATA = {
       "date": "2026-06-30",
       "title": "ARG 企画引き出しカード",
       "wiki": "2026-06-30_ARG企画引き出しカード_v1",
-      "category": "🤖 CORIN出力（outputs/） 68本",
+      "category": "🤖 CORIN出力（outputs/） 69本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-30_ARG企画引き出しカード_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-30_ARG企画引き出しカード_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-06-29",
-      "title": "スケジュールの「正本」をどこに置くか — AIと働く前提での提案（たたき）",
-      "wiki": "2026-06-29_スケジュール正本_AI協働提案_たたき_v1",
-      "category": "🤖 CORIN出力（outputs/） 68本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-29_スケジュール正本_AI協働提案_たたき_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-29_スケジュール正本_AI協働提案_たたき_v1.html",
       "has_md": true
     }
   ],
