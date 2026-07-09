@@ -7,7 +7,7 @@ window.CORIN_DATA = {
   },
   "letter": {
     "ascii": " /) /)\n(  • •)\n⊃ 🍵",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はClear 、25度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>KITH</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はClear 、25度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Maison Kitsuné</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "KITH",
-    "tagline": "NYCのクイーンズから生まれた、コラボをDNAに持つモダンストリートライフスタイルの巨人。スニーカー文化を起点に、シリアルバー・BMW・ヴェルサーチまで射程に入れた全方位ブランド。",
-    "insight": "KITH Treatsはマーケティング費ゼロのPR装置",
+    "name": "Maison Kitsuné",
+    "tagline": "ファッション・音楽・カフェを一体化したパリ×東京発のライフスタイルブランド。2002年設立、年商9,400万ユーロ。",
+    "insight": "「スロー＆ステディ」成長モデルの有効性",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/kith-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/maison-kitsune-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1142,10 +1142,10 @@ window.CORIN_DATA = {
     {
       "date": "2026-07-09",
       "title": "社員のAI活用ノウハウを、会社の資産にする — ご提案",
-      "wiki": "2026-07-09_AIナレッジ複利化_社長向け提案_v2",
+      "wiki": "2026-07-09_AIナレッジ複利化_社長向け提案_v3",
       "category": "🤖 CORIN出力（outputs/） 67本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-09_AIナレッジ複利化_社長向け提案_v2.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-09_AIナレッジ複利化_社長向け提案_v2.html",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-09_AIナレッジ複利化_社長向け提案_v3.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-09_AIナレッジ複利化_社長向け提案_v3.html",
       "has_md": true
     },
     {
@@ -1155,6 +1155,15 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 67本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-09_Claude全社使用量レポート_2026年7月第1週_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-09_Claude全社使用量レポート_2026年7月第1週_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-07-09",
+      "title": "GMO AI活用実態調査 最新ベンチマーク（2026年6月調査）",
+      "wiki": "2026-07-09_GMO_AI活用実態調査_最新ベンチマーク_v1",
+      "category": "🤖 CORIN出力（outputs/） 67本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-09_GMO_AI活用実態調査_最新ベンチマーク_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-09_GMO_AI活用実態調査_最新ベンチマーク_v1.html",
       "has_md": true
     },
     {
@@ -1308,15 +1317,6 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 67本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-29_予実管理ワークフロー_提案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-29_予実管理ワークフロー_提案_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-06-29",
-      "title": "MeetingMind — UIモック v3",
-      "wiki": "2026-06-29_会議文字起こしツール_UIモック_v1",
-      "category": "🤖 CORIN出力（outputs/） 67本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-29_会議文字起こしツール_UIモック_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-06-29_会議文字起こしツール_UIモック_v1.html",
       "has_md": true
     }
   ],
