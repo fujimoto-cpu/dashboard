@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-07-10",
   "weather": {
-    "desc": "Partly cloudy",
-    "temp": "27",
+    "desc": "Partly Cloudy ",
+    "temp": "25",
     "icon": "☁️"
   },
   "letter": {
     "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はPartly cloudy、27度。<br>金曜日。土日に持ち越さないこと、整理しよ。<br>今日の倉庫から：<strong>Sacai</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はPartly Cloudy 、25度。<br>金曜日。土日に持ち越さないこと、整理しよ。<br>今日の倉庫から：<strong>Marni</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Sacai",
-    "tagline": "2つを1つにする。阿部千登勢が1999年に東京で始めたハイブリッド解体の実験は、ストリートとラグジュアリーの境界を消し去り、世界的ブランドへと進化した。",
-    "insight": "スニーカーコラボ戦略 — 大衆への間口とラグジュアリーの両立",
+    "name": "Marni",
+    "tagline": "1994年ミラン発。大胆な色彩、職人技、芸術的自由が交差するイタリアン・ラグジュアリー。Consuelo Castiglioni が創設し、Francesco Risso が継承した「着るアート」の哲学。",
+    "insight": "「非常識な組み合わせ」を技術で正当化する",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/sacai-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/marni-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -273,7 +273,7 @@ window.CORIN_DATA = {
               "deadline": "2026-05-25",
               "tags": "[project-board, LDH, IP, グッズ, 提案資料]",
               "created": "2026-05-13",
-              "last_updated": "2026-05-24"
+              "last_updated": "2026-07-10"
             },
             "links": [
               {
@@ -303,6 +303,7 @@ window.CORIN_DATA = {
             }
           },
           "meetings": [
+            "2026-07-09_LDH_BDグッズ_デザインレビュー_議事メモ",
             "📄 LDH_BDグッズ提案_ハブmd",
             "📰 web_cyzo_2024-09-24_f5ve「Underground」の先進性とLDH流昇華"
           ]
