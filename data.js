@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-07-12",
   "weather": {
-    "desc": "Patchy rain nearby",
-    "temp": "25",
-    "icon": "🌧"
+    "desc": "Partly cloudy",
+    "temp": "27",
+    "icon": "☁️"
   },
   "letter": {
-    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はPatchy rain nearby、25度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Gentle Monster</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はPartly cloudy、27度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Maison Kitsuné</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Gentle Monster",
-    "tagline": "店舗をキネティックアートに変え、アイウェアを超えたK-ライフスタイル帝国を築いた韓国発の革命的ブランド。",
-    "insight": "マルチブランドで「生活を侵食する」",
+    "name": "Maison Kitsuné",
+    "tagline": "ファッション・音楽・カフェを一体化したパリ×東京発のライフスタイルブランド。2002年設立、年商9,400万ユーロ。",
+    "insight": "「スロー＆ステディ」成長モデルの有効性",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/gentle-monster-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/maison-kitsune-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1142,6 +1142,15 @@ window.CORIN_DATA = {
   ],
   "recent_html": [
     {
+      "date": "2026-07-12",
+      "title": "Cockpit 世界観モック 4案",
+      "wiki": "2026-07-12_コックピット世界観モック_v1",
+      "category": "🤖 AI推進資料（ai/） 17本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260613_task_cockpit/_ai-drafts/2026-07-12_コックピット世界観モック_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260613_task_cockpit/_ai-drafts/2026-07-12_コックピット世界観モック_v1.html",
+      "has_md": true
+    },
+    {
       "date": "2026-07-11",
       "title": "7/10（金）作業ログ × スクリーンログ 突き合わせ",
       "wiki": "2026-07-11_7-10作業ログ×スクリーンログ突き合わせ_v1",
@@ -1310,15 +1319,6 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 85本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_7-1作業ログ×スクリーンログ突き合わせ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_7-1作業ログ×スクリーンログ突き合わせ_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-07-06",
-      "title": "7/2（木）作業ログ × スクリーンログ 突き合わせ",
-      "wiki": "2026-07-06_7-2作業ログ×スクリーンログ突き合わせ_v1",
-      "category": "🤖 CORIN出力（outputs/） 85本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_7-2作業ログ×スクリーンログ突き合わせ_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-06_7-2作業ログ×スクリーンログ突き合わせ_v1.html",
       "has_md": true
     }
   ],
