@@ -7,7 +7,7 @@ window.CORIN_DATA = {
   },
   "letter": {
     "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はClear 、26度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Cactus Plant Flea Market</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はClear 、26度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Cactus Plant Flea Market</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -24,7 +24,7 @@ window.CORIN_DATA = {
   "brand": {
     "name": "Cactus Plant Flea Market",
     "tagline": "「洗練を拒否すること」がステートメント。ポストモダンな反抗とDIY精神でストリートウェアの権威性を解体するブランド。",
-    "insight": "Step 1 — Why の言語化（沈黙で語る）",
+    "insight": "創業者の人脈設計から学ぶ「最初のコラボ選び」",
     "image_url": null,
     "local_path": "00_🏢 company/secretary/notes/cpfm-brand-analysis.html"
   },
@@ -1159,7 +1159,7 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 94本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-15_3Dドレスアップゲーム風キャラデザイン_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-15_3Dドレスアップゲーム風キャラデザイン_v1.html",
-      "has_md": false
+      "has_md": true
     },
     {
       "date": "2026-07-15",
