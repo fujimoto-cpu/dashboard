@@ -6,8 +6,8 @@ window.CORIN_DATA = {
     "icon": "☀️"
   },
   "letter": {
-    "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はSunny、31度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>APOTHEKE FRAGRANCE</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はSunny、31度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Ae sop</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "APOTHEKE FRAGRANCE",
-    "tagline": "千葉のアトリエで全てを手作りする日本のクラフトフレグランスブランド。古来の日本の感性と現代デザインを橋渡しし、お香で「家に置いてオシャレ」を再定義した。",
-    "insight": "INSIGHT 01",
+    "name": "Ae sop",
+    "tagline": "「製品は完全に機能的。パッケージと店舗空間でのみ感情的体験を作る。」——1987年メルボルン発、哲学と建築が融合したスキンケアの最高峰。",
+    "insight": "「余白」でラグジュアリーを伝える",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/aesop-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1155,7 +1155,7 @@ window.CORIN_DATA = {
       "date": "2026-07-14",
       "title": "ITOGUCHI 糸口 — 知識つながりクイズ モックv1",
       "wiki": "2026-07-14_知識つながりクイズ_ITOGUCHI_モックv1",
-      "category": "🤖 CORIN出力（outputs/） 86本",
+      "category": "🤖 CORIN出力（outputs/） 87本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-14_知識つながりクイズ_ITOGUCHI_モックv1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-14_知識つながりクイズ_ITOGUCHI_モックv1.html",
       "has_md": true
@@ -1164,16 +1164,25 @@ window.CORIN_DATA = {
       "date": "2026-07-14",
       "title": "見積もりの「30%」、実は2種類ある",
       "wiki": "2026-07-14_見積もり30%基準の違い_v1",
-      "category": "🤖 CORIN出力（outputs/） 86本",
+      "category": "🤖 CORIN出力（outputs/） 87本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-14_見積もり30%基準の違い_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-14_見積もり30%基準の違い_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-07-14",
+      "title": "レモネードやさんで考える「30%」の話",
+      "wiki": "2026-07-14_見積もり30%基準の違い_v2",
+      "category": "🤖 CORIN出力（outputs/） 87本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-14_見積もり30%基準の違い_v2.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-14_見積もり30%基準の違い_v2.html",
       "has_md": true
     },
     {
       "date": "2026-07-13",
       "title": "コックピット再設計 モック v2",
       "wiki": "2026-07-13_コックピット再設計モック_v2",
-      "category": "🤖 CORIN出力（outputs/） 86本",
+      "category": "🤖 CORIN出力（outputs/） 87本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-13_コックピット再設計モック_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-13_コックピット再設計モック_v2.html",
       "has_md": true
@@ -1182,7 +1191,7 @@ window.CORIN_DATA = {
       "date": "2026-07-13",
       "title": "タスクコックピット 作り替え計画（ゆりこ用サマリー）",
       "wiki": "2026-07-13_コックピット設計書_ゆりこ向けサマリー_v1",
-      "category": "🤖 CORIN出力（outputs/） 86本",
+      "category": "🤖 CORIN出力（outputs/） 87本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-13_コックピット設計書_ゆりこ向けサマリー_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-13_コックピット設計書_ゆりこ向けサマリー_v1.html",
       "has_md": true
@@ -1191,7 +1200,7 @@ window.CORIN_DATA = {
       "date": "2026-07-12",
       "title": "コックピット再設計 たたき台 v1",
       "wiki": "2026-07-12_コックピット再設計たたき台_v1",
-      "category": "🤖 CORIN出力（outputs/） 86本",
+      "category": "🤖 CORIN出力（outputs/） 87本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-12_コックピット再設計たたき台_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-12_コックピット再設計たたき台_v1.html",
       "has_md": true
@@ -1263,7 +1272,7 @@ window.CORIN_DATA = {
       "date": "2026-07-11",
       "title": "7/10（金）作業ログ × スクリーンログ 突き合わせ",
       "wiki": "2026-07-11_7-10作業ログ×スクリーンログ突き合わせ_v1",
-      "category": "🤖 CORIN出力（outputs/） 86本",
+      "category": "🤖 CORIN出力（outputs/） 87本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-11_7-10作業ログ×スクリーンログ突き合わせ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-11_7-10作業ログ×スクリーンログ突き合わせ_v1.html",
       "has_md": true
@@ -1272,7 +1281,7 @@ window.CORIN_DATA = {
       "date": "2026-07-11",
       "title": "7/11（土）作業ログ × スクリーンログ 突き合わせ",
       "wiki": "2026-07-11_7-11作業ログ×スクリーンログ突き合わせ_v1",
-      "category": "🤖 CORIN出力（outputs/） 86本",
+      "category": "🤖 CORIN出力（outputs/） 87本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-11_7-11作業ログ×スクリーンログ突き合わせ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-11_7-11作業ログ×スクリーンログ突き合わせ_v1.html",
       "has_md": true
@@ -1281,7 +1290,7 @@ window.CORIN_DATA = {
       "date": "2026-07-11",
       "title": "7/7（火）作業ログ × スクリーンログ 突き合わせ",
       "wiki": "2026-07-11_7-7作業ログ×スクリーンログ突き合わせ_v1",
-      "category": "🤖 CORIN出力（outputs/） 86本",
+      "category": "🤖 CORIN出力（outputs/） 87本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-11_7-7作業ログ×スクリーンログ突き合わせ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-11_7-7作業ログ×スクリーンログ突き合わせ_v1.html",
       "has_md": true
@@ -1290,7 +1299,7 @@ window.CORIN_DATA = {
       "date": "2026-07-11",
       "title": "7/8（水）作業ログ × スクリーンログ 突き合わせ",
       "wiki": "2026-07-11_7-8作業ログ×スクリーンログ突き合わせ_v1",
-      "category": "🤖 CORIN出力（outputs/） 86本",
+      "category": "🤖 CORIN出力（outputs/） 87本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-11_7-8作業ログ×スクリーンログ突き合わせ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-11_7-8作業ログ×スクリーンログ突き合わせ_v1.html",
       "has_md": true
@@ -1299,7 +1308,7 @@ window.CORIN_DATA = {
       "date": "2026-07-11",
       "title": "7/9（木）作業ログ × スクリーンログ 突き合わせ",
       "wiki": "2026-07-11_7-9作業ログ×スクリーンログ突き合わせ_v1",
-      "category": "🤖 CORIN出力（outputs/） 86本",
+      "category": "🤖 CORIN出力（outputs/） 87本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-11_7-9作業ログ×スクリーンログ突き合わせ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-11_7-9作業ログ×スクリーンログ突き合わせ_v1.html",
       "has_md": true
@@ -1308,7 +1317,7 @@ window.CORIN_DATA = {
       "date": "2026-07-11",
       "title": "Claudeでアプリを作る人たち — リファレンス集",
       "wiki": "2026-07-11_Claudeでアプリを作る人リファレンス集_v10",
-      "category": "🤖 CORIN出力（outputs/） 86本",
+      "category": "🤖 CORIN出力（outputs/） 87本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-11_Claudeでアプリを作る人リファレンス集_v10.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-11_Claudeでアプリを作る人リファレンス集_v10.html",
       "has_md": true
@@ -1317,18 +1326,9 @@ window.CORIN_DATA = {
       "date": "2026-07-10",
       "title": "KONNEKT AI活用 7-9月ロードマップ ＆ KPI（図解）",
       "wiki": "2026-07-10_AI四半期ロードマップ_KPI図解_社長向け_v1",
-      "category": "🤖 CORIN出力（outputs/） 86本",
+      "category": "🤖 CORIN出力（outputs/） 87本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-10_AI四半期ロードマップ_KPI図解_社長向け_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-10_AI四半期ロードマップ_KPI図解_社長向け_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-07-10",
-      "title": "KONNEKT AI活用 進捗と7-9月ロードマップ（社長向け提案）",
-      "wiki": "2026-07-10_AI四半期ロードマップ_KPI図解_社長向け_v2",
-      "category": "🤖 CORIN出力（outputs/） 86本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-10_AI四半期ロードマップ_KPI図解_社長向け_v2.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-10_AI四半期ロードマップ_KPI図解_社長向け_v2.html",
       "has_md": true
     }
   ],
