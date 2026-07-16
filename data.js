@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-07-16",
+  "date": "2026-07-17",
   "weather": {
-    "desc": "Partly cloudy",
-    "temp": "30",
+    "desc": "Partly Cloudy ",
+    "temp": "27",
     "icon": "☁️"
   },
   "letter": {
     "ascii": " /) /)\n(  • •)\n⊃ 🍵",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はPartly cloudy、30度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Ae sop</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はPartly Cloudy 、27度。<br>金曜日。土日に持ち越さないこと、整理しよ。<br>今日の倉庫から：<strong>Sacai</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Ae sop",
-    "tagline": "「製品は完全に機能的。パッケージと店舗空間でのみ感情的体験を作る。」——1987年メルボルン発、哲学と建築が融合したスキンケアの最高峰。",
-    "insight": "ストア空間がブランドの最強広告",
+    "name": "Sacai",
+    "tagline": "2つを1つにする。阿部千登勢が1999年に東京で始めたハイブリッド解体の実験は、ストリートとラグジュアリーの境界を消し去り、世界的ブランドへと進化した。",
+    "insight": "スニーカーコラボ戦略 — 大衆への間口とラグジュアリーの両立",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/aesop-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/sacai-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -76,7 +76,7 @@ window.CORIN_DATA = {
   "tonight": null,
   "schedule": {
     "events": [],
-    "note_exists": true
+    "note_exists": false
   },
   "daily_photo": null,
   "library": [
@@ -692,47 +692,6 @@ window.CORIN_DATA = {
           ]
         },
         {
-          "name": "ZO_FRIENDS × I'm donut?",
-          "hub": "ZOAxIm_donut",
-          "status": "🔄 active",
-          "desc": "filters:",
-          "hub_info": {
-            "exists": true,
-            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/20260413_ZOAxI'm_donut/ZOAxIm_donut.md",
-            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/20260413_ZOAxI%27m_donut/ZOAxIm_donut.md",
-            "frontmatter": {
-              "type": "project",
-              "案件": "ZOAxIm_donut",
-              "client": "ZO_FRIENDS × I'm donut?",
-              "status": "active",
-              "priority": "P2",
-              "start": "2026-04-13",
-              "deadline": "null",
-              "tags": "[project-board, imdonut, ZOA, グッズ, コラボ, シール]",
-              "created": "2026-05-31",
-              "last_updated": "2026-07-16"
-            },
-            "links": [],
-            "process_progress": {
-              "K": "⬜",
-              "0": "⬜",
-              "0-1": "⬜",
-              "A": "⬜",
-              "B": "⬜",
-              "C": "⬜",
-              "Z": "⬜",
-              "V": "⬜",
-              "Y": "⬜",
-              "R-mid": "⬜",
-              "R-final": "⬜",
-              "completed_count": 0,
-              "in_progress_count": 0,
-              "total_count": 11
-            }
-          },
-          "meetings": []
-        },
-        {
           "name": "GOK",
           "hub": "GOK_20260426_カット編集",
           "status": "🔄 active",
@@ -815,6 +774,73 @@ window.CORIN_DATA = {
             "kemioストア_8thコレクション",
             "👗️ kemio store"
           ]
+        },
+        {
+          "name": "ZO_FRIENDS × I'm donut?",
+          "hub": "ZOAxIm_donut",
+          "status": "🔄 active",
+          "desc": "filters:",
+          "hub_info": {
+            "exists": true,
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/20260413_I'm_donut/ZOAxI'm_donut/ZOAxIm_donut.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/20260413_I%27m_donut/ZOAxI%27m_donut/ZOAxIm_donut.md",
+            "frontmatter": {
+              "type": "project",
+              "案件": "ZOAxIm_donut",
+              "client": "ZO_FRIENDS × I'm donut?",
+              "status": "active",
+              "priority": "P2",
+              "start": "2026-04-13",
+              "deadline": "null",
+              "tags": "[project-board, imdonut, ZOA, グッズ, コラボ, シール]",
+              "created": "2026-05-31",
+              "last_updated": "2026-07-16"
+            },
+            "links": [],
+            "process_progress": {
+              "K": "⬜",
+              "0": "⬜",
+              "0-1": "⬜",
+              "A": "⬜",
+              "B": "⬜",
+              "C": "⬜",
+              "Z": "⬜",
+              "V": "⬜",
+              "Y": "⬜",
+              "R-mid": "⬜",
+              "R-final": "⬜",
+              "completed_count": 0,
+              "in_progress_count": 0,
+              "total_count": 11
+            }
+          },
+          "meetings": []
+        },
+        {
+          "name": "I'm donut? × ドラミちゃん",
+          "hub": "ドラミちゃんコラボ_ボンドロシール",
+          "status": "🔄 in-progress",
+          "desc": "filters:",
+          "hub_info": {
+            "exists": true,
+            "path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/20260413_I'm_donut/20260715_ドラミちゃんコラボ_ボンドロシール/ドラミちゃんコラボ_ボンドロシール.md",
+            "obsidian_uri": "obsidian://advanced-uri?vault=corin&filepath=00_%F0%9F%8F%A2%20company/projects/20260413_I%27m_donut/20260715_%E3%83%89%E3%83%A9%E3%83%9F%E3%81%A1%E3%82%83%E3%82%93%E3%82%B3%E3%83%A9%E3%83%9C_%E3%83%9C%E3%83%B3%E3%83%89%E3%83%AD%E3%82%B7%E3%83%BC%E3%83%AB/%E3%83%89%E3%83%A9%E3%83%9F%E3%81%A1%E3%82%83%E3%82%93%E3%82%B3%E3%83%A9%E3%83%9C_%E3%83%9C%E3%83%B3%E3%83%89%E3%83%AD%E3%82%B7%E3%83%BC%E3%83%AB.md",
+            "frontmatter": {
+              "type": "project",
+              "案件": "ドラミちゃんコラボ",
+              "client": "I'm donut? × ドラミちゃん",
+              "status": "in-progress",
+              "priority": "P2",
+              "start": "2026-07-15",
+              "deadline": "null",
+              "tags": "[project-board, imdonut, ドラミちゃん, コラボ, ボンドロシール, グッズ]",
+              "created": "2026-07-16",
+              "last_updated": "2026-07-16"
+            },
+            "links": [],
+            "process_progress": null
+          },
+          "meetings": []
         },
         {
           "name": "81 Produce / 81fes",
@@ -1160,6 +1186,15 @@ window.CORIN_DATA = {
   ],
   "recent_html": [
     {
+      "date": "2026-07-17",
+      "title": "KONNEKT AI情報ハブ モック v1",
+      "wiki": "2026-07-17_AI情報ハブ_モック_v1",
+      "category": "🤖 CORIN出力（outputs/） 97本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-17_AI情報ハブ_モック_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-17_AI情報ハブ_モック_v1.html",
+      "has_md": true
+    },
+    {
       "date": "2026-07-15",
       "title": "トゥインクル☆コーデ｜キャラクターデザイン",
       "wiki": "2026-07-15_3Dドレスアップゲーム風キャラデザイン_v1",
@@ -1171,10 +1206,10 @@ window.CORIN_DATA = {
     {
       "date": "2026-07-15",
       "title": "アパレル素材事典",
-      "wiki": "2026-07-15_アパレル素材事典_v3",
+      "wiki": "2026-07-15_アパレル素材事典_v4",
       "category": "🤖 CORIN出力（outputs/） 97本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-15_アパレル素材事典_v3.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-15_アパレル素材事典_v3.html",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-15_アパレル素材事典_v4.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-15_アパレル素材事典_v4.html",
       "has_md": true
     },
     {
@@ -1328,15 +1363,6 @@ window.CORIN_DATA = {
       "category": "🤖 AI推進資料（ai/） 23本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260613_task_cockpit/_ai-drafts/2026-07-12_MEADOW_Journalモック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260613_task_cockpit/_ai-drafts/2026-07-12_MEADOW_Journalモック_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-07-12",
-      "title": "Cockpit 世界観モック 4案",
-      "wiki": "2026-07-12_コックピット世界観モック_v1",
-      "category": "🤖 AI推進資料（ai/） 23本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260613_task_cockpit/_ai-drafts/2026-07-12_コックピット世界観モック_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260613_task_cockpit/_ai-drafts/2026-07-12_コックピット世界観モック_v1.html",
       "has_md": true
     }
   ],
