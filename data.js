@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-07-16",
   "weather": {
-    "desc": "Sunny",
-    "temp": "26",
-    "icon": "☀️"
+    "desc": "Partly cloudy",
+    "temp": "27",
+    "icon": "☁️"
   },
   "letter": {
-    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はSunny、26度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>CULL NI</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はPartly cloudy、27度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>CULL NI</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -24,7 +24,7 @@ window.CORIN_DATA = {
   "brand": {
     "name": "CULL NI",
     "tagline": "「素敵な1日を」をコンセプトに、ドレス×カジュアルという独自領域を切り拓いた日本のメンズブランド。気の利いたディテールと品の良い仕立てで、20-30代の感度高い層を魅了する。",
-    "insight": "ハイブリッド領域の独占",
+    "insight": "ブランド名に意味を込める",
     "image_url": null,
     "local_path": "00_🏢 company/secretary/notes/cullni-brand-analysis.html"
   },
@@ -85,7 +85,7 @@ window.CORIN_DATA = {
       "description": "",
       "url": "https://fujimoto-cpu.github.io/itoguchi/",
       "icon": "📄",
-      "pushed_at": "2026-07-15T17:06:17Z"
+      "pushed_at": "2026-07-16T00:36:42Z"
     },
     {
       "name": "tokyo-map",
