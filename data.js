@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-07-29",
+  "date": "2026-07-30",
   "weather": {
-    "desc": "Sunny",
-    "temp": "27",
-    "icon": "☀️"
+    "desc": "Partly Cloudy ",
+    "temp": "28",
+    "icon": "☁️"
   },
   "letter": {
-    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はSunny、27度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Gentle Monster</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はPartly Cloudy 、28度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Stone Island</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Gentle Monster",
-    "tagline": "店舗をキネティックアートに変え、アイウェアを超えたK-ライフスタイル帝国を築いた韓国発の革命的ブランド。",
-    "insight": "アジア発のグローバルブランドの作り方",
+    "name": "Stone Island",
+    "tagline": "「素材研究がデザイン。機能が美しさ」——コンパスバッジとテキスタイル実験で40年以上ファッションの境界を拡張し続けるイタリア発ブランド。",
+    "insight": "コンパスバッジ：「見える人だけに見える」ブランディング",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/gentle-monster-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/stoneisland-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -76,7 +76,7 @@ window.CORIN_DATA = {
   "tonight": null,
   "schedule": {
     "events": [],
-    "note_exists": true
+    "note_exists": false
   },
   "daily_photo": null,
   "library": [
