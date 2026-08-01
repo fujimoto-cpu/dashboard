@@ -6,8 +6,8 @@ window.CORIN_DATA = {
     "icon": "☀️"
   },
   "letter": {
-    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はSunny、27度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>APOTHEKE FRAGRANCE</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はSunny、27度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>ADER ERROR</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "APOTHEKE FRAGRANCE",
-    "tagline": "千葉のアトリエで全てを手作りする日本のクラフトフレグランスブランド。古来の日本の感性と現代デザインを橋渡しし、お香で「家に置いてオシャレ」を再定義した。",
-    "insight": "INSIGHT 01",
+    "name": "ADER ERROR",
+    "tagline": "「エラー」を美学に変える、ソウル発のコンセプト・コレクティブ。匿名の20人チームが生み出す「意図的な失敗」が世界を席巻する。",
+    "insight": "希少性設計と完売率90%超の仕組み",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/ader-error-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -81,6 +81,20 @@ window.CORIN_DATA = {
   "daily_photo": null,
   "library": [
     {
+      "name": "cowork-guide",
+      "description": "",
+      "url": "https://fujimoto-cpu.github.io/cowork-guide/",
+      "icon": "📘",
+      "pushed_at": "2026-08-01T05:24:45Z"
+    },
+    {
+      "name": "ai-pulse-survey",
+      "description": "AI Pulse 月次アンケートフォーム（KONNEKT INTERNATIONAL社員向け・noindex公開）",
+      "url": "https://fujimoto-cpu.github.io/ai-pulse-survey/",
+      "icon": "🤖",
+      "pushed_at": "2026-08-01T05:14:51Z"
+    },
+    {
       "name": "tokyo-map",
       "description": "",
       "url": "https://fujimoto-cpu.github.io/tokyo-map/",
@@ -121,13 +135,6 @@ window.CORIN_DATA = {
       "url": "https://fujimoto-cpu.github.io/recipes/",
       "icon": "📄",
       "pushed_at": "2026-07-18T20:33:45Z"
-    },
-    {
-      "name": "cowork-guide",
-      "description": "",
-      "url": "https://fujimoto-cpu.github.io/cowork-guide/",
-      "icon": "📘",
-      "pushed_at": "2026-07-18T14:49:59Z"
     },
     {
       "name": "fashion-report",
@@ -184,13 +191,6 @@ window.CORIN_DATA = {
       "url": "https://fujimoto-cpu.github.io/graphic-taste-gallery/",
       "icon": "📄",
       "pushed_at": "2026-05-27T10:20:54Z"
-    },
-    {
-      "name": "ai-pulse-survey",
-      "description": "AI Pulse 月次アンケートフォーム（KONNEKT INTERNATIONAL社員向け・noindex公開）",
-      "url": "https://fujimoto-cpu.github.io/ai-pulse-survey/",
-      "icon": "🤖",
-      "pushed_at": "2026-05-27T05:05:52Z"
     },
     {
       "name": "design-howto-atlas",
@@ -1235,7 +1235,7 @@ window.CORIN_DATA = {
       "date": "2026-08-01",
       "title": "経理AI「クラ」— どこにお金がかかるのか（上司報告用）",
       "wiki": "2026-08-01_経理AI_有料機能マップ_上司報告用_v1",
-      "category": "🤖 AI推進資料（ai/） 38本",
+      "category": "🤖 AI推進資料（ai/） 37本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-01_経理AI_有料機能マップ_上司報告用_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-01_経理AI_有料機能マップ_上司報告用_v1.html",
       "has_md": true
@@ -1244,7 +1244,7 @@ window.CORIN_DATA = {
       "date": "2026-08-01",
       "title": "クラ — 経理の承認ワークベンチ（モック v12）",
       "wiki": "2026-08-01_経理AI報告ダッシュボード_モック_v12",
-      "category": "🤖 AI推進資料（ai/） 38本",
+      "category": "🤖 AI推進資料（ai/） 37本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-01_経理AI報告ダッシュボード_モック_v12.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-01_経理AI報告ダッシュボード_モック_v12.html",
       "has_md": true
@@ -1253,7 +1253,7 @@ window.CORIN_DATA = {
       "date": "2026-07-31",
       "title": "経理AIアシスタント — 朝の報告（モック v1）",
       "wiki": "2026-07-31_経理AI報告ダッシュボード_モック_v1",
-      "category": "🤖 AI推進資料（ai/） 38本",
+      "category": "🤖 AI推進資料（ai/） 37本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v1.html",
       "has_md": false
@@ -1262,7 +1262,7 @@ window.CORIN_DATA = {
       "date": "2026-07-31",
       "title": "経理AIアシスタント — 朝の報告（モック v2・実データ版）",
       "wiki": "2026-07-31_経理AI報告ダッシュボード_モック_v2",
-      "category": "🤖 AI推進資料（ai/） 38本",
+      "category": "🤖 AI推進資料（ai/） 37本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v2.html",
       "has_md": false
@@ -1271,7 +1271,7 @@ window.CORIN_DATA = {
       "date": "2026-07-31",
       "title": "経理AI — 今朝の報告（モック v3・TaskForge準拠）",
       "wiki": "2026-07-31_経理AI報告ダッシュボード_モック_v3",
-      "category": "🤖 AI推進資料（ai/） 38本",
+      "category": "🤖 AI推進資料（ai/） 37本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v3.html",
       "has_md": false
@@ -1280,7 +1280,7 @@ window.CORIN_DATA = {
       "date": "2026-07-31",
       "title": "経理AI ダッシュボード（モック v4・設計版）",
       "wiki": "2026-07-31_経理AI報告ダッシュボード_モック_v4",
-      "category": "🤖 AI推進資料（ai/） 38本",
+      "category": "🤖 AI推進資料（ai/） 37本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v4.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v4.html",
       "has_md": false
@@ -1289,7 +1289,7 @@ window.CORIN_DATA = {
       "date": "2026-07-31",
       "title": "経理AI ダッシュボード（モック v5・業務フロー版）",
       "wiki": "2026-07-31_経理AI報告ダッシュボード_モック_v5",
-      "category": "🤖 AI推進資料（ai/） 38本",
+      "category": "🤖 AI推進資料（ai/） 37本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v5.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v5.html",
       "has_md": false
