@@ -6,8 +6,8 @@ window.CORIN_DATA = {
     "icon": "☀️"
   },
   "letter": {
-    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はSunny、27度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Sporty &amp; Rich</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はSunny、27度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>APOTHEKE FRAGRANCE</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Sporty &amp; Rich",
-    "tagline": "70年代テニスクラブのライフスタイルとヴィンテージスポーツ美学を融合させた、Emily Oberg創設のウェルネスファッションブランド。",
-    "insight": "ドロップ販売で希少性を設計する",
+    "name": "APOTHEKE FRAGRANCE",
+    "tagline": "千葉のアトリエで全てを手作りする日本のクラフトフレグランスブランド。古来の日本の感性と現代デザインを橋渡しし、お香で「家に置いてオシャレ」を再定義した。",
+    "insight": "INSIGHT 01",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/sportyrich-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1224,9 +1224,18 @@ window.CORIN_DATA = {
   "recent_html": [
     {
       "date": "2026-08-01",
+      "title": "AI情報ハブ｜GAS設定 手順書",
+      "wiki": "2026-08-01_AI情報ハブ_GAS設定手順書_v1",
+      "category": "🤖 CORIN出力（outputs/） 131本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-01_AI情報ハブ_GAS設定手順書_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-01_AI情報ハブ_GAS設定手順書_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-08-01",
       "title": "経理AI「クラ」— どこにお金がかかるのか（上司報告用）",
       "wiki": "2026-08-01_経理AI_有料機能マップ_上司報告用_v1",
-      "category": "🤖 AI推進資料（ai/） 37本",
+      "category": "🤖 AI推進資料（ai/） 38本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-01_経理AI_有料機能マップ_上司報告用_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-01_経理AI_有料機能マップ_上司報告用_v1.html",
       "has_md": true
@@ -1235,7 +1244,7 @@ window.CORIN_DATA = {
       "date": "2026-08-01",
       "title": "クラ — 経理の承認ワークベンチ（モック v12）",
       "wiki": "2026-08-01_経理AI報告ダッシュボード_モック_v12",
-      "category": "🤖 AI推進資料（ai/） 37本",
+      "category": "🤖 AI推進資料（ai/） 38本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-01_経理AI報告ダッシュボード_モック_v12.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-01_経理AI報告ダッシュボード_モック_v12.html",
       "has_md": true
@@ -1244,7 +1253,7 @@ window.CORIN_DATA = {
       "date": "2026-07-31",
       "title": "経理AIアシスタント — 朝の報告（モック v1）",
       "wiki": "2026-07-31_経理AI報告ダッシュボード_モック_v1",
-      "category": "🤖 AI推進資料（ai/） 37本",
+      "category": "🤖 AI推進資料（ai/） 38本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v1.html",
       "has_md": false
@@ -1253,7 +1262,7 @@ window.CORIN_DATA = {
       "date": "2026-07-31",
       "title": "経理AIアシスタント — 朝の報告（モック v2・実データ版）",
       "wiki": "2026-07-31_経理AI報告ダッシュボード_モック_v2",
-      "category": "🤖 AI推進資料（ai/） 37本",
+      "category": "🤖 AI推進資料（ai/） 38本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v2.html",
       "has_md": false
@@ -1262,7 +1271,7 @@ window.CORIN_DATA = {
       "date": "2026-07-31",
       "title": "経理AI — 今朝の報告（モック v3・TaskForge準拠）",
       "wiki": "2026-07-31_経理AI報告ダッシュボード_モック_v3",
-      "category": "🤖 AI推進資料（ai/） 37本",
+      "category": "🤖 AI推進資料（ai/） 38本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v3.html",
       "has_md": false
@@ -1271,7 +1280,7 @@ window.CORIN_DATA = {
       "date": "2026-07-31",
       "title": "経理AI ダッシュボード（モック v4・設計版）",
       "wiki": "2026-07-31_経理AI報告ダッシュボード_モック_v4",
-      "category": "🤖 AI推進資料（ai/） 37本",
+      "category": "🤖 AI推進資料（ai/） 38本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v4.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v4.html",
       "has_md": false
@@ -1280,7 +1289,7 @@ window.CORIN_DATA = {
       "date": "2026-07-31",
       "title": "経理AI ダッシュボード（モック v5・業務フロー版）",
       "wiki": "2026-07-31_経理AI報告ダッシュボード_モック_v5",
-      "category": "🤖 AI推進資料（ai/） 37本",
+      "category": "🤖 AI推進資料（ai/） 38本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v5.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v5.html",
       "has_md": false
@@ -1289,7 +1298,7 @@ window.CORIN_DATA = {
       "date": "2026-07-30",
       "title": "Claude全社使用量レポート 2026-04〜07(7月28日時点)",
       "wiki": "2026-07-30_Claude全社使用量レポート_2026年7月28日時点_v1",
-      "category": "🤖 CORIN出力（outputs/） 130本",
+      "category": "🤖 CORIN出力（outputs/） 131本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-30_Claude全社使用量レポート_2026年7月28日時点_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-30_Claude全社使用量レポート_2026年7月28日時点_v1.html",
       "has_md": true
@@ -1298,7 +1307,7 @@ window.CORIN_DATA = {
       "date": "2026-07-28",
       "title": "TaskForge をもっと楽しく・使いやすくする4案",
       "wiki": "2026-07-28_TaskForge改善アイデア_v1",
-      "category": "🤖 CORIN出力（outputs/） 130本",
+      "category": "🤖 CORIN出力（outputs/） 131本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-28_TaskForge改善アイデア_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-28_TaskForge改善アイデア_v1.html",
       "has_md": true
@@ -1307,7 +1316,7 @@ window.CORIN_DATA = {
       "date": "2026-07-28",
       "title": "ファッションの仕様書づくり、AIってどこで使えるの？",
       "wiki": "2026-07-28_ファッション仕様書AI活用フロー_デザイナーCD比較_v1",
-      "category": "🤖 CORIN出力（outputs/） 130本",
+      "category": "🤖 CORIN出力（outputs/） 131本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-28_ファッション仕様書AI活用フロー_デザイナーCD比較_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-28_ファッション仕様書AI活用フロー_デザイナーCD比較_v1.html",
       "has_md": true
@@ -1316,7 +1325,7 @@ window.CORIN_DATA = {
       "date": "2026-07-26",
       "title": "GU 2026AW 配色リサーチ",
       "wiki": "2026-07-26_GU_2026AW配色リサーチ",
-      "category": "🤖 CORIN出力（outputs/） 130本",
+      "category": "🤖 CORIN出力（outputs/） 131本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-26_GU_2026AW配色リサーチ.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-26_GU_2026AW配色リサーチ.html",
       "has_md": true
@@ -1325,7 +1334,7 @@ window.CORIN_DATA = {
       "date": "2026-07-25",
       "title": "リテラチャー週次分析 2026-W30｜SNS起点のトレンドと取り入れ方",
       "wiki": "2026-07-25_リテラチャー週次分析_SNS起点トレンド_v1",
-      "category": "🤖 CORIN出力（outputs/） 130本",
+      "category": "🤖 CORIN出力（outputs/） 131本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-25_リテラチャー週次分析_SNS起点トレンド_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-25_リテラチャー週次分析_SNS起点トレンド_v1.html",
       "has_md": true
@@ -1334,7 +1343,7 @@ window.CORIN_DATA = {
       "date": "2026-07-24",
       "title": "AI活用サーベイ 2026年6月 ダッシュボード｜KONNEKT",
       "wiki": "2026-07-24_AI活用サーベイ_2026年6月_ダッシュボード_v1",
-      "category": "🤖 CORIN出力（outputs/） 130本",
+      "category": "🤖 CORIN出力（outputs/） 131本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-24_AI活用サーベイ_2026年6月_ダッシュボード_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-24_AI活用サーベイ_2026年6月_ダッシュボード_v1.html",
       "has_md": true
@@ -1343,7 +1352,7 @@ window.CORIN_DATA = {
       "date": "2026-07-22",
       "title": "「私がCDになる」話、整理してみた",
       "wiki": "2026-07-22_CDキャリア提案_ゆりこ理解用_v1",
-      "category": "🤖 CORIN出力（outputs/） 130本",
+      "category": "🤖 CORIN出力（outputs/） 131本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-22_CDキャリア提案_ゆりこ理解用_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-22_CDキャリア提案_ゆりこ理解用_v1.html",
       "has_md": false
@@ -1352,7 +1361,7 @@ window.CORIN_DATA = {
       "date": "2026-07-22",
       "title": "クリエイティブディレクターという役割の提案｜藤本有璃子",
       "wiki": "2026-07-22_CDキャリア提案_社内向け_v1",
-      "category": "🤖 CORIN出力（outputs/） 130本",
+      "category": "🤖 CORIN出力（outputs/） 131本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-22_CDキャリア提案_社内向け_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-22_CDキャリア提案_社内向け_v1.html",
       "has_md": true
@@ -1361,7 +1370,7 @@ window.CORIN_DATA = {
       "date": "2026-07-20",
       "title": "実績タイムライン A3 決定版",
       "wiki": "2026-07-20_実績タイムライン_A3決定版_v1",
-      "category": "🤖 CORIN出力（outputs/） 130本",
+      "category": "🤖 CORIN出力（outputs/） 131本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-20_実績タイムライン_A3決定版_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-20_実績タイムライン_A3決定版_v1.html",
       "has_md": false
@@ -1370,7 +1379,7 @@ window.CORIN_DATA = {
       "date": "2026-07-20",
       "title": "実績タイムライン A ブラッシュアップ",
       "wiki": "2026-07-20_実績タイムライン_Aブラッシュアップ_v1",
-      "category": "🤖 CORIN出力（outputs/） 130本",
+      "category": "🤖 CORIN出力（outputs/） 131本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-20_実績タイムライン_Aブラッシュアップ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-20_実績タイムライン_Aブラッシュアップ_v1.html",
       "has_md": false
@@ -1379,7 +1388,7 @@ window.CORIN_DATA = {
       "date": "2026-07-20",
       "title": "Cockpit実装イメージ v2",
       "wiki": "2026-07-20_実績タイムライン_Cockpit実装イメージ_v2",
-      "category": "🤖 CORIN出力（outputs/） 130本",
+      "category": "🤖 CORIN出力（outputs/） 131本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-20_実績タイムライン_Cockpit実装イメージ_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-20_実績タイムライン_Cockpit実装イメージ_v2.html",
       "has_md": false
@@ -1388,18 +1397,9 @@ window.CORIN_DATA = {
       "date": "2026-07-20",
       "title": "Cockpit実装イメージ v5 — MD正本・確信度可視化",
       "wiki": "2026-07-20_実績タイムライン_Cockpit実装イメージ_v5",
-      "category": "🤖 CORIN出力（outputs/） 130本",
+      "category": "🤖 CORIN出力（outputs/） 131本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-20_実績タイムライン_Cockpit実装イメージ_v5.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-20_実績タイムライン_Cockpit実装イメージ_v5.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-07-20",
-      "title": "Cockpit実装イメージ v6 — 予定/実績の分離＋タスク自動紐付け",
-      "wiki": "2026-07-20_実績タイムライン_Cockpit実装イメージ_v6",
-      "category": "🤖 CORIN出力（outputs/） 130本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-20_実績タイムライン_Cockpit実装イメージ_v6.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-20_実績タイムライン_Cockpit実装イメージ_v6.html",
       "has_md": true
     }
   ],
