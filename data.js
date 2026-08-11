@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-08-10",
+  "date": "2026-08-11",
   "weather": {
-    "desc": "Partly Cloudy ",
-    "temp": "26",
-    "icon": "☁️"
+    "desc": "Light rain shower",
+    "temp": "24",
+    "icon": "🌧"
   },
   "letter": {
     "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はPartly Cloudy 、26度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>Ae sop</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はLight rain shower、24度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>CULL NI</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Ae sop",
-    "tagline": "「製品は完全に機能的。パッケージと店舗空間でのみ感情的体験を作る。」——1987年メルボルン発、哲学と建築が融合したスキンケアの最高峰。",
-    "insight": "文学的テキストで製品を格上げ",
+    "name": "CULL NI",
+    "tagline": "「素敵な1日を」をコンセプトに、ドレス×カジュアルという独自領域を切り拓いた日本のメンズブランド。気の利いたディテールと品の良い仕立てで、20-30代の感度高い層を魅了する。",
+    "insight": "ハイブリッド領域の独占",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/aesop-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/cullni-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -85,14 +85,21 @@ window.CORIN_DATA = {
       "description": "Literature Notes reader",
       "url": "https://fujimoto-cpu.github.io/literature/",
       "icon": "📚",
-      "pushed_at": "2026-08-08T23:05:15Z"
+      "pushed_at": "2026-08-11T06:38:24Z"
     },
     {
       "name": "recipes",
       "description": "",
       "url": "https://fujimoto-cpu.github.io/recipes/",
       "icon": "📄",
-      "pushed_at": "2026-08-08T10:42:37Z"
+      "pushed_at": "2026-08-11T06:35:16Z"
+    },
+    {
+      "name": "ip-report",
+      "description": "KONNEKT INTERNATIONAL IP News Daily Report",
+      "url": "https://fujimoto-cpu.github.io/ip-report",
+      "icon": "📰",
+      "pushed_at": "2026-08-10T00:33:42Z"
     },
     {
       "name": "cowork-guide",
@@ -128,13 +135,6 @@ window.CORIN_DATA = {
       "url": "https://fujimoto-cpu.github.io/artist-knowledge/",
       "icon": "📄",
       "pushed_at": "2026-07-27T17:59:21Z"
-    },
-    {
-      "name": "ip-report",
-      "description": "KONNEKT INTERNATIONAL IP News Daily Report",
-      "url": "https://fujimoto-cpu.github.io/ip-report",
-      "icon": "📰",
-      "pushed_at": "2026-07-27T08:48:23Z"
     },
     {
       "name": "chizu",
