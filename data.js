@@ -6,7 +6,7 @@ window.CORIN_DATA = {
     "icon": "🌧"
   },
   "letter": {
-    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
+    "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
     "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はPatchy rain nearby、27度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Maison Kitsuné</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
@@ -24,7 +24,7 @@ window.CORIN_DATA = {
   "brand": {
     "name": "Maison Kitsuné",
     "tagline": "ファッション・音楽・カフェを一体化したパリ×東京発のライフスタイルブランド。2002年設立、年商9,400万ユーロ。",
-    "insight": "「販売前に体験を作る」マルチチャネル戦略",
+    "insight": "アジア市場ファーストの地政学的戦略",
     "image_url": null,
     "local_path": "00_🏢 company/secretary/notes/maison-kitsune-brand-analysis.html"
   },
@@ -1227,10 +1227,19 @@ window.CORIN_DATA = {
   ],
   "recent_html": [
     {
+      "date": "2026-08-19",
+      "title": "Armillary. 靖国ブリーフ",
+      "wiki": "Armillary_26AW_靖国神社ブリーフ_v2",
+      "category": "📁 案件ドラフト（_ai-drafts/） 18本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_靖国神社ブリーフ_v2.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_靖国神社ブリーフ_v2.html",
+      "has_md": true
+    },
+    {
       "date": "2026-08-18",
       "title": "AI活用ダッシュボード 2026.07",
       "wiki": "2026-08-18_AI活用サーベイ_2026年7月_ダッシュボード_v1",
-      "category": "🤖 CORIN出力（outputs/） 135本",
+      "category": "🤖 CORIN出力（outputs/） 136本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-18_AI活用サーベイ_2026年7月_ダッシュボード_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-18_AI活用サーベイ_2026年7月_ダッシュボード_v1.html",
       "has_md": true
@@ -1245,19 +1254,10 @@ window.CORIN_DATA = {
       "has_md": true
     },
     {
-      "date": "2026-08-18",
-      "title": "Armillary. 靖国ブリーフ",
-      "wiki": "Armillary_26AW_靖国神社ブリーフ_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 18本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_靖国神社ブリーフ_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_靖国神社ブリーフ_v1.html",
-      "has_md": true
-    },
-    {
       "date": "2026-08-07",
       "title": "誕生日カスタマイズグッズ アイデア22案",
       "wiki": "2026-08-07_誕生日カスタマイズグッズ_アイデア22案_v1",
-      "category": "🤖 CORIN出力（outputs/） 135本",
+      "category": "🤖 CORIN出力（outputs/） 136本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-07_誕生日カスタマイズグッズ_アイデア22案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-07_誕生日カスタマイズグッズ_アイデア22案_v1.html",
       "has_md": true
@@ -1266,7 +1266,7 @@ window.CORIN_DATA = {
       "date": "2026-08-03",
       "title": "2026-W31 予実レポート — 今週の時間の地図",
       "wiki": "2026-W31_予実レポート",
-      "category": "🤖 CORIN出力（outputs/） 135本",
+      "category": "🤖 CORIN出力（outputs/） 136本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/週次予実/2026-W31_予実レポート.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/週次予実/2026-W31_予実レポート.html",
       "has_md": true
@@ -1275,7 +1275,7 @@ window.CORIN_DATA = {
       "date": "2026-08-01",
       "title": "AI情報ハブ｜GAS設定 手順書",
       "wiki": "2026-08-01_AI情報ハブ_GAS設定手順書_v1",
-      "category": "🤖 CORIN出力（outputs/） 135本",
+      "category": "🤖 CORIN出力（outputs/） 136本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-01_AI情報ハブ_GAS設定手順書_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-01_AI情報ハブ_GAS設定手順書_v1.html",
       "has_md": true
@@ -1356,7 +1356,7 @@ window.CORIN_DATA = {
       "date": "2026-07-30",
       "title": "Claude全社使用量レポート 2026-04〜07(7月28日時点)",
       "wiki": "2026-07-30_Claude全社使用量レポート_2026年7月28日時点_v1",
-      "category": "🤖 CORIN出力（outputs/） 135本",
+      "category": "🤖 CORIN出力（outputs/） 136本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-30_Claude全社使用量レポート_2026年7月28日時点_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-30_Claude全社使用量レポート_2026年7月28日時点_v1.html",
       "has_md": true
@@ -1365,7 +1365,7 @@ window.CORIN_DATA = {
       "date": "2026-07-28",
       "title": "TaskForge をもっと楽しく・使いやすくする4案",
       "wiki": "2026-07-28_TaskForge改善アイデア_v1",
-      "category": "🤖 CORIN出力（outputs/） 135本",
+      "category": "🤖 CORIN出力（outputs/） 136本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-28_TaskForge改善アイデア_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-28_TaskForge改善アイデア_v1.html",
       "has_md": true
@@ -1374,7 +1374,7 @@ window.CORIN_DATA = {
       "date": "2026-07-28",
       "title": "ファッションの仕様書づくり、AIってどこで使えるの？",
       "wiki": "2026-07-28_ファッション仕様書AI活用フロー_デザイナーCD比較_v1",
-      "category": "🤖 CORIN出力（outputs/） 135本",
+      "category": "🤖 CORIN出力（outputs/） 136本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-28_ファッション仕様書AI活用フロー_デザイナーCD比較_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-28_ファッション仕様書AI活用フロー_デザイナーCD比較_v1.html",
       "has_md": true
@@ -1383,7 +1383,7 @@ window.CORIN_DATA = {
       "date": "2026-07-26",
       "title": "GU 2026AW 配色リサーチ",
       "wiki": "2026-07-26_GU_2026AW配色リサーチ",
-      "category": "🤖 CORIN出力（outputs/） 135本",
+      "category": "🤖 CORIN出力（outputs/） 136本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-26_GU_2026AW配色リサーチ.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-26_GU_2026AW配色リサーチ.html",
       "has_md": true
@@ -1392,7 +1392,7 @@ window.CORIN_DATA = {
       "date": "2026-07-25",
       "title": "リテラチャー週次分析 2026-W30｜SNS起点のトレンドと取り入れ方",
       "wiki": "2026-07-25_リテラチャー週次分析_SNS起点トレンド_v1",
-      "category": "🤖 CORIN出力（outputs/） 135本",
+      "category": "🤖 CORIN出力（outputs/） 136本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-25_リテラチャー週次分析_SNS起点トレンド_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-25_リテラチャー週次分析_SNS起点トレンド_v1.html",
       "has_md": true
@@ -1401,7 +1401,7 @@ window.CORIN_DATA = {
       "date": "2026-07-24",
       "title": "AI活用サーベイ 2026年6月 ダッシュボード｜KONNEKT",
       "wiki": "2026-07-24_AI活用サーベイ_2026年6月_ダッシュボード_v1",
-      "category": "🤖 CORIN出力（outputs/） 135本",
+      "category": "🤖 CORIN出力（outputs/） 136本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-24_AI活用サーベイ_2026年6月_ダッシュボード_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-24_AI活用サーベイ_2026年6月_ダッシュボード_v1.html",
       "has_md": true
