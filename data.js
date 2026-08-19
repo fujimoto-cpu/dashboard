@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-08-19",
   "weather": {
-    "desc": "Patchy rain nearby",
+    "desc": "Cloudy ",
     "temp": "27",
-    "icon": "🌧"
+    "icon": "☁️"
   },
   "letter": {
-    "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はPatchy rain nearby、27度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Maison Kitsuné</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はCloudy 、27度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>KITH</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Maison Kitsuné",
-    "tagline": "ファッション・音楽・カフェを一体化したパリ×東京発のライフスタイルブランド。2002年設立、年商9,400万ユーロ。",
-    "insight": "アジア市場ファーストの地政学的戦略",
+    "name": "KITH",
+    "tagline": "NYCのクイーンズから生まれた、コラボをDNAに持つモダンストリートライフスタイルの巨人。スニーカー文化を起点に、シリアルバー・BMW・ヴェルサーチまで射程に入れた全方位ブランド。",
+    "insight": "「特別さを保つ」ための意図的な制約",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/maison-kitsune-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/kith-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1228,6 +1228,15 @@ window.CORIN_DATA = {
   "recent_html": [
     {
       "date": "2026-08-19",
+      "title": "ループエンジニアリング",
+      "wiki": "2026-08-19_ループエンジニアリング_図解_v1",
+      "category": "🤖 CORIN出力（outputs/） 136本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-19_ループエンジニアリング_図解_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-19_ループエンジニアリング_図解_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-08-19",
       "title": "Armillary. 靖国ブリーフ",
       "wiki": "Armillary_26AW_靖国神社ブリーフ_v2",
       "category": "📁 案件ドラフト（_ai-drafts/） 18本",
@@ -1395,15 +1404,6 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 136本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-25_リテラチャー週次分析_SNS起点トレンド_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-25_リテラチャー週次分析_SNS起点トレンド_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-07-24",
-      "title": "AI活用サーベイ 2026年6月 ダッシュボード｜KONNEKT",
-      "wiki": "2026-07-24_AI活用サーベイ_2026年6月_ダッシュボード_v1",
-      "category": "🤖 CORIN出力（outputs/） 136本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-24_AI活用サーベイ_2026年6月_ダッシュボード_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-24_AI活用サーベイ_2026年6月_ダッシュボード_v1.html",
       "has_md": true
     }
   ],
