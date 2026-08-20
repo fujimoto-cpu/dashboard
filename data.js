@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-08-19",
+  "date": "2026-08-20",
   "weather": {
-    "desc": "Cloudy ",
+    "desc": "Overcast ",
     "temp": "27",
     "icon": "☁️"
   },
   "letter": {
-    "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はCloudy 、27度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Cactus Plant Flea Market</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はOvercast 、27度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>CULL NI</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Cactus Plant Flea Market",
-    "tagline": "「洗練を拒否すること」がステートメント。ポストモダンな反抗とDIY精神でストリートウェアの権威性を解体するブランド。",
-    "insight": "Step 4 — デザイン方向性（「引かない」美学）",
+    "name": "CULL NI",
+    "tagline": "「素敵な1日を」をコンセプトに、ドレス×カジュアルという独自領域を切り拓いた日本のメンズブランド。気の利いたディテールと品の良い仕立てで、20-30代の感度高い層を魅了する。",
+    "insight": "ジェンダーレス・エージレスへの拡張",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/cpfm-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/cullni-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1227,6 +1227,15 @@ window.CORIN_DATA = {
   ],
   "recent_html": [
     {
+      "date": "2026-08-20",
+      "title": "Armillary. スウェットパンツ確認シート",
+      "wiki": "AM_26AW_スウェットパンツ_サンプル確認シート_v1",
+      "category": "📁 案件ドラフト（_ai-drafts/） 19本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/AM_26AW_スウェットパンツ_サンプル確認シート_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/AM_26AW_スウェットパンツ_サンプル確認シート_v1.html",
+      "has_md": true
+    },
+    {
       "date": "2026-08-19",
       "title": "ループエンジニアリング",
       "wiki": "2026-08-19_ループエンジニアリング_図解_v1",
@@ -1248,7 +1257,7 @@ window.CORIN_DATA = {
       "date": "2026-08-19",
       "title": "Armillary. 靖国ブリーフ",
       "wiki": "Armillary_26AW_靖国神社ブリーフ_v2",
-      "category": "📁 案件ドラフト（_ai-drafts/） 18本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 19本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_靖国神社ブリーフ_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_靖国神社ブリーフ_v2.html",
       "has_md": true
@@ -1266,7 +1275,7 @@ window.CORIN_DATA = {
       "date": "2026-08-18",
       "title": "BIGBANG デザイン費 修正内訳",
       "wiki": "2026-08-18_avexデザイン費修正内訳_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 18本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 19本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/20260521_BIGBANG/_ai-drafts/2026-08-18_avexデザイン費修正内訳_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/20260521_BIGBANG/_ai-drafts/2026-08-18_avexデザイン費修正内訳_v1.html",
       "has_md": true
@@ -1395,15 +1404,6 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 136本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-28_ファッション仕様書AI活用フロー_デザイナーCD比較_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-28_ファッション仕様書AI活用フロー_デザイナーCD比較_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-07-26",
-      "title": "GU 2026AW 配色リサーチ",
-      "wiki": "2026-07-26_GU_2026AW配色リサーチ",
-      "category": "🤖 CORIN出力（outputs/） 136本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-26_GU_2026AW配色リサーチ.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-07-26_GU_2026AW配色リサーチ.html",
       "has_md": true
     }
   ],
