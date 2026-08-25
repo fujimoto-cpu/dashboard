@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-08-25",
   "weather": {
-    "desc": "Sunny",
-    "temp": "28",
+    "desc": "Clear ",
+    "temp": "27",
     "icon": "☀️"
   },
   "letter": {
-    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はSunny、28度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Sacai</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はClear 、27度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Fear of God</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Sacai",
-    "tagline": "2つを1つにする。阿部千登勢が1999年に東京で始めたハイブリッド解体の実験は、ストリートとラグジュアリーの境界を消し去り、世界的ブランドへと進化した。",
-    "insight": "日本生産の「プレミアム化」戦略",
+    "name": "Fear of God",
+    "tagline": "宗教的敬虔さ × LAストリート × 高級素材。聖書的世界観から生まれたラグジュアリーストリートの頂点。",
+    "insight": "セレブ着用→マス認知の流れ設計",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/sacai-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/fog-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1287,16 +1287,34 @@ window.CORIN_DATA = {
       "date": "2026-08-25",
       "title": "クラ 8月の実データ",
       "wiki": "2026-08-25_クラ_8月実データ版_v21",
-      "category": "🤖 AI推進資料（ai/） 41本",
+      "category": "🤖 AI推進資料（ai/） 43本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_クラ_8月実データ版_v21.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_クラ_8月実データ版_v21.html",
       "has_md": true
     },
     {
       "date": "2026-08-25",
+      "title": "クラ — 経理の承認ワークベンチ（モック v20）",
+      "wiki": "2026-08-25_クラ_承認ワークベンチ_実データ版_v22",
+      "category": "🤖 AI推進資料（ai/） 43本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_クラ_承認ワークベンチ_実データ版_v22.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_クラ_承認ワークベンチ_実データ版_v22.html",
+      "has_md": false
+    },
+    {
+      "date": "2026-08-25",
+      "title": "仕訳まで行く道筋",
+      "wiki": "2026-08-25_経理AI_仕訳まで行く道筋_v1",
+      "category": "🤖 AI推進資料（ai/） 43本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_経理AI_仕訳まで行く道筋_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_経理AI_仕訳まで行く道筋_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-08-25",
       "title": "請求書が集まるしくみ",
       "wiki": "2026-08-25_経理AI_実装プラン_v1",
-      "category": "🤖 AI推進資料（ai/） 41本",
+      "category": "🤖 AI推進資料（ai/） 43本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_経理AI_実装プラン_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_経理AI_実装プラン_v1.html",
       "has_md": true
@@ -1323,7 +1341,7 @@ window.CORIN_DATA = {
       "date": "2026-08-19",
       "title": "AX 業務改善台帳",
       "wiki": "AX業務改善台帳_たたき_v1",
-      "category": "🤖 AI推進資料（ai/） 41本",
+      "category": "🤖 AI推進資料（ai/） 43本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260819_AX業務改善台帳/AX業務改善台帳_たたき_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260819_AX業務改善台帳/AX業務改善台帳_たたき_v1.html",
       "has_md": true
@@ -1386,28 +1404,10 @@ window.CORIN_DATA = {
       "date": "2026-08-01",
       "title": "経理AI「クラ」— どこにお金がかかるのか（上司報告用）",
       "wiki": "2026-08-01_経理AI_有料機能マップ_上司報告用_v1",
-      "category": "🤖 AI推進資料（ai/） 41本",
+      "category": "🤖 AI推進資料（ai/） 43本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-01_経理AI_有料機能マップ_上司報告用_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-01_経理AI_有料機能マップ_上司報告用_v1.html",
       "has_md": true
-    },
-    {
-      "date": "2026-08-01",
-      "title": "クラ — 経理の承認ワークベンチ（モック v12）",
-      "wiki": "2026-08-01_経理AI報告ダッシュボード_モック_v12",
-      "category": "🤖 AI推進資料（ai/） 41本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-01_経理AI報告ダッシュボード_モック_v12.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-01_経理AI報告ダッシュボード_モック_v12.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-08-01",
-      "title": "会社Gmailに、添付PDFを読めるAIツールをつなぎたい",
-      "wiki": "会社Gmail添付PDF許可依頼_管理者向け資料_v1",
-      "category": "🤖 AI推進資料（ai/） 41本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260801_会社Gmail添付PDF許可依頼/会社Gmail添付PDF許可依頼_管理者向け資料_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260801_会社Gmail添付PDF許可依頼/会社Gmail添付PDF許可依頼_管理者向け資料_v1.html",
-      "has_md": false
     }
   ],
   "static_links": {
