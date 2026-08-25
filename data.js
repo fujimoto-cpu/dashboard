@@ -1,9 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-08-25",
-  "weather": null,
+  "weather": {
+    "desc": "Sunny",
+    "temp": "28",
+    "icon": "☀️"
+  },
   "letter": {
-    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Stüssy</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はSunny、28度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Ae sop</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -18,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Stüssy",
-    "tagline": "サーフボードに書いたサインが、40年以上続く世界最古のストリートウェアブランドになった。独立系・非上場を貫き、コミュニティを核に成長し続けるOGの解剖。",
-    "insight": "40年「クール」であり続けた方程式 — 変えないことの戦略",
+    "name": "Ae sop",
+    "tagline": "「製品は完全に機能的。パッケージと店舗空間でのみ感情的体験を作る。」——1987年メルボルン発、哲学と建築が融合したスキンケアの最高峰。",
+    "insight": "文学的テキストで製品を格上げ",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/stussy-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/aesop-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -634,7 +638,7 @@ window.CORIN_DATA = {
               "deadline": "null",
               "tags": "[project-board, armillary, 26AW, ブランド, シーズン提案, ユニセックス]",
               "created": "2026-05-30",
-              "last_updated": "2026-05-31"
+              "last_updated": "2026-08-25"
             },
             "links": [
               {
@@ -650,16 +654,16 @@ window.CORIN_DATA = {
                 "url": "obsidian://advanced-uri?vault=corin&filepath=2026-05-31_%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E5%8F%82%E8%80%83%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89%E7%94%BB%E5%83%8F.md"
               },
               {
+                "label": "2026-08-25_Armilla",
+                "url": "obsidian://advanced-uri?vault=corin&filepath=2026-08-25_Armillary._THINK_%E3%83%8B%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E7%A2%BA%E8%AA%8D%E3%83%BB%E4%BF%AE%E6%AD%A3%E6%89%93%E3%81%A1%E5%90%88%E3%82%8F%E3%81%9B_%E8%AD%B0%E4%BA%8B%E3%83%A1%E3%83%A2.md"
+              },
+              {
                 "label": "2026-06-02_Armilla",
                 "url": "obsidian://advanced-uri?vault=corin&filepath=2026-06-02_Armillary._%E6%9C%AC%E4%BA%BA%E6%89%93%E3%81%A1%E5%90%88%E3%82%8F%E3%81%9B_%E8%AD%B0%E4%BA%8B%E3%83%A1%E3%83%A2.md"
               },
               {
                 "label": "@2026年5月13日_Armill",
                 "url": "obsidian://advanced-uri?vault=corin&filepath=%402026%E5%B9%B45%E6%9C%8813%E6%97%A5_Armillary._%E5%B7%9D%E7%94%B0%E3%81%AF%E3%82%8B%E3%81%8F%E3%82%93%E3%81%A8%E3%81%AE%E6%89%93%E3%81%A1%E5%90%88%E3%82%8F%E3%81%9B_%E8%AD%B0%E4%BA%8B%E3%83%A1%E3%83%A2.md"
-              },
-              {
-                "label": "2026-07-14_AMLY202",
-                "url": "obsidian://advanced-uri?vault=corin&filepath=2026-07-14_AMLY2026AW_MD%E3%83%9E%E3%83%83%E3%83%97%E5%86%85%E5%AE%B9.md"
               }
             ],
             "process_progress": {
@@ -1169,6 +1173,7 @@ window.CORIN_DATA = {
           },
           "meetings": [
             "2026-06-02_Armillary._本人打ち合わせ_議事メモ",
+            "2026-08-25_Armillary._THINK_ニットサンプル確認・修正打ち合わせ_議事メモ",
             "@2026年5月13日_Armillary._川田はるくんとの打ち合わせ_議事メモ",
             "👗️ Armillary."
           ]
@@ -1215,6 +1220,7 @@ window.CORIN_DATA = {
           },
           "meetings": [
             "2026-06-02_Armillary._本人打ち合わせ_議事メモ",
+            "2026-08-25_Armillary._THINK_ニットサンプル確認・修正打ち合わせ_議事メモ",
             "@2026年5月13日_Armillary._川田はるくんとの打ち合わせ_議事メモ",
             "👗️ Armillary."
           ]
@@ -1278,6 +1284,15 @@ window.CORIN_DATA = {
       "has_md": true
     },
     {
+      "date": "2026-08-25",
+      "title": "請求書が集まるしくみ",
+      "wiki": "2026-08-25_経理AI_実装プラン_v1",
+      "category": "🤖 AI推進資料（ai/） 40本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_経理AI_実装プラン_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_経理AI_実装プラン_v1.html",
+      "has_md": true
+    },
+    {
       "date": "2026-08-20",
       "title": "Armillary. スウェットパンツ確認シート",
       "wiki": "AM_26AW_スウェットパンツ_サンプル確認シート_v1",
@@ -1299,7 +1314,7 @@ window.CORIN_DATA = {
       "date": "2026-08-19",
       "title": "AX 業務改善台帳",
       "wiki": "AX業務改善台帳_たたき_v1",
-      "category": "🤖 AI推進資料（ai/） 39本",
+      "category": "🤖 AI推進資料（ai/） 40本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260819_AX業務改善台帳/AX業務改善台帳_たたき_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260819_AX業務改善台帳/AX業務改善台帳_たたき_v1.html",
       "has_md": true
@@ -1362,7 +1377,7 @@ window.CORIN_DATA = {
       "date": "2026-08-01",
       "title": "経理AI「クラ」— どこにお金がかかるのか（上司報告用）",
       "wiki": "2026-08-01_経理AI_有料機能マップ_上司報告用_v1",
-      "category": "🤖 AI推進資料（ai/） 39本",
+      "category": "🤖 AI推進資料（ai/） 40本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-01_経理AI_有料機能マップ_上司報告用_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-01_経理AI_有料機能マップ_上司報告用_v1.html",
       "has_md": true
@@ -1371,7 +1386,7 @@ window.CORIN_DATA = {
       "date": "2026-08-01",
       "title": "クラ — 経理の承認ワークベンチ（モック v12）",
       "wiki": "2026-08-01_経理AI報告ダッシュボード_モック_v12",
-      "category": "🤖 AI推進資料（ai/） 39本",
+      "category": "🤖 AI推進資料（ai/） 40本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-01_経理AI報告ダッシュボード_モック_v12.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-01_経理AI報告ダッシュボード_モック_v12.html",
       "has_md": true
@@ -1380,7 +1395,7 @@ window.CORIN_DATA = {
       "date": "2026-08-01",
       "title": "会社Gmailに、添付PDFを読めるAIツールをつなぎたい",
       "wiki": "会社Gmail添付PDF許可依頼_管理者向け資料_v1",
-      "category": "🤖 AI推進資料（ai/） 39本",
+      "category": "🤖 AI推進資料（ai/） 40本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260801_会社Gmail添付PDF許可依頼/会社Gmail添付PDF許可依頼_管理者向け資料_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260801_会社Gmail添付PDF許可依頼/会社Gmail添付PDF許可依頼_管理者向け資料_v1.html",
       "has_md": false
@@ -1389,18 +1404,9 @@ window.CORIN_DATA = {
       "date": "2026-07-31",
       "title": "経理AIアシスタント — 朝の報告（モック v1）",
       "wiki": "2026-07-31_経理AI報告ダッシュボード_モック_v1",
-      "category": "🤖 AI推進資料（ai/） 39本",
+      "category": "🤖 AI推進資料（ai/） 40本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v1.html",
-      "has_md": false
-    },
-    {
-      "date": "2026-07-31",
-      "title": "経理AIアシスタント — 朝の報告（モック v2・実データ版）",
-      "wiki": "2026-07-31_経理AI報告ダッシュボード_モック_v2",
-      "category": "🤖 AI推進資料（ai/） 39本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v2.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-07-31_経理AI報告ダッシュボード_モック_v2.html",
       "has_md": false
     }
   ],
