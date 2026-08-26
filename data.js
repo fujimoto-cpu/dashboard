@@ -6,8 +6,8 @@ window.CORIN_DATA = {
     "icon": "☀️"
   },
   "letter": {
-    "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はClear 、28度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Cactus Plant Flea Market</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はClear 、28度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Fear of God</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Cactus Plant Flea Market",
-    "tagline": "「洗練を拒否すること」がステートメント。ポストモダンな反抗とDIY精神でストリートウェアの権威性を解体するブランド。",
-    "insight": "Step 2 — ポジション（3ブランド交点）",
+    "name": "Fear of God",
+    "tagline": "宗教的敬虔さ × LAストリート × 高級素材。聖書的世界観から生まれたラグジュアリーストリートの頂点。",
+    "insight": "\"Sacred Casual\"という美学の言語化",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/cpfm-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/fog-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1280,6 +1280,15 @@ window.CORIN_DATA = {
       "has_md": true
     },
     {
+      "date": "2026-08-26",
+      "title": "LAVANDA 客層の推し被り",
+      "wiki": "2026-08-26_LAVANDA_フォロワー推し被り分析_v1",
+      "category": "📁 案件ドラフト（_ai-drafts/） 20本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/LAVANDA/20260825_グラフィック・仕様書一式_9月7日締め/_ai-drafts/2026-08-26_LAVANDA_フォロワー推し被り分析_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/LAVANDA/20260825_グラフィック・仕様書一式_9月7日締め/_ai-drafts/2026-08-26_LAVANDA_フォロワー推し被り分析_v1.html",
+      "has_md": true
+    },
+    {
       "date": "2026-08-25",
       "title": "AIカンパニー リファレンス",
       "wiki": "2026-08-25_AIカンパニー_デザインリファレンス_v1",
@@ -1382,7 +1391,7 @@ window.CORIN_DATA = {
       "date": "2026-08-20",
       "title": "Armillary. スウェットパンツ確認シート",
       "wiki": "AM_26AW_スウェットパンツ_サンプル確認シート_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 19本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 20本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/AM_26AW_スウェットパンツ_サンプル確認シート_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/AM_26AW_スウェットパンツ_サンプル確認シート_v1.html",
       "has_md": true
@@ -1409,7 +1418,7 @@ window.CORIN_DATA = {
       "date": "2026-08-19",
       "title": "Armillary. 靖国ブリーフ",
       "wiki": "Armillary_26AW_靖国神社ブリーフ_v2",
-      "category": "📁 案件ドラフト（_ai-drafts/） 19本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 20本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_靖国神社ブリーフ_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_靖国神社ブリーフ_v2.html",
       "has_md": true
@@ -1427,7 +1436,7 @@ window.CORIN_DATA = {
       "date": "2026-08-18",
       "title": "BIGBANG デザイン費 修正内訳",
       "wiki": "2026-08-18_avexデザイン費修正内訳_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 19本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 20本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/20260521_BIGBANG/_ai-drafts/2026-08-18_avexデザイン費修正内訳_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/20260521_BIGBANG/_ai-drafts/2026-08-18_avexデザイン費修正内訳_v1.html",
       "has_md": true
@@ -1439,15 +1448,6 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 146本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-07_誕生日カスタマイズグッズ_アイデア22案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-07_誕生日カスタマイズグッズ_アイデア22案_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-08-03",
-      "title": "2026-W31 予実レポート — 今週の時間の地図",
-      "wiki": "2026-W31_予実レポート",
-      "category": "🤖 CORIN出力（outputs/） 146本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/週次予実/2026-W31_予実レポート.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/週次予実/2026-W31_予実レポート.html",
       "has_md": true
     }
   ],
