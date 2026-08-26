@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-08-25",
+  "date": "2026-08-26",
   "weather": {
-    "desc": "Clear ",
-    "temp": "27",
+    "desc": "Sunny",
+    "temp": "28",
     "icon": "☀️"
   },
   "letter": {
-    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はClear 、27度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Fear of God</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はSunny、28度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Gentle Monster</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Fear of God",
-    "tagline": "宗教的敬虔さ × LAストリート × 高級素材。聖書的世界観から生まれたラグジュアリーストリートの頂点。",
-    "insight": "セレブ着用→マス認知の流れ設計",
+    "name": "Gentle Monster",
+    "tagline": "店舗をキネティックアートに変え、アイウェアを超えたK-ライフスタイル帝国を築いた韓国発の革命的ブランド。",
+    "insight": "店舗＝ブランドの最大メディア",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/fog-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/gentle-monster-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -76,7 +76,7 @@ window.CORIN_DATA = {
   "tonight": null,
   "schedule": {
     "events": [],
-    "note_exists": true
+    "note_exists": false
   },
   "daily_photo": null,
   "library": [
