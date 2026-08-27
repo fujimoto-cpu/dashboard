@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-08-27",
   "weather": {
-    "desc": "Patchy rain nearby",
+    "desc": "Overcast ",
     "temp": "28",
-    "icon": "🌧"
+    "icon": "☁️"
   },
   "letter": {
-    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はPatchy rain nearby、28度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Gentle Monster</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はOvercast 、28度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Mad happy</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Gentle Monster",
-    "tagline": "店舗をキネティックアートに変え、アイウェアを超えたK-ライフスタイル帝国を築いた韓国発の革命的ブランド。",
-    "insight": "「完成しない」ことをブランドアイデンティティにする",
+    "name": "Mad happy",
+    "tagline": "\"Optimism is a practice.\" ——メンタルヘルスを哲学の核に据えた、ロサンゼルス発ライフスタイルブランド。",
+    "insight": "\"Optimism\" というブランド語の持続力",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/gentle-monster-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/madhappy-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1283,7 +1283,7 @@ window.CORIN_DATA = {
       "date": "2026-08-27",
       "title": "Claude と Notion のアドレス統一",
       "wiki": "説明会スライド_アカウントと権限_モック_v1",
-      "category": "🤖 AI推進資料（ai/） 47本",
+      "category": "🤖 AI推進資料（ai/） 48本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/説明会スライド_アカウントと権限_モック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/説明会スライド_アカウントと権限_モック_v1.html",
       "has_md": true
@@ -1292,7 +1292,7 @@ window.CORIN_DATA = {
       "date": "2026-08-27",
       "title": "KONNEKT への集約",
       "wiki": "説明会スライド_アカウントと権限_モック_v3",
-      "category": "🤖 AI推進資料（ai/） 47本",
+      "category": "🤖 AI推進資料（ai/） 48本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/説明会スライド_アカウントと権限_モック_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/説明会スライド_アカウントと権限_モック_v3.html",
       "has_md": true
@@ -1301,9 +1301,18 @@ window.CORIN_DATA = {
       "date": "2026-08-27",
       "title": "YR アカウントの方の使い方",
       "wiki": "説明会スライド_アカウントと権限_モック_v4",
-      "category": "🤖 AI推進資料（ai/） 47本",
+      "category": "🤖 AI推進資料（ai/） 48本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/説明会スライド_アカウントと権限_モック_v4.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/説明会スライド_アカウントと権限_モック_v4.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-08-27",
+      "title": "アカウントと共有設定の2枚",
+      "wiki": "説明会スライド_アカウントと権限_モック_v5",
+      "category": "🤖 AI推進資料（ai/） 48本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/説明会スライド_アカウントと権限_モック_v5.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/説明会スライド_アカウントと権限_モック_v5.html",
       "has_md": true
     },
     {
@@ -1391,7 +1400,7 @@ window.CORIN_DATA = {
       "date": "2026-08-25",
       "title": "クラ 8月の実データ",
       "wiki": "2026-08-25_クラ_8月実データ版_v21",
-      "category": "🤖 AI推進資料（ai/） 47本",
+      "category": "🤖 AI推進資料（ai/） 48本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_クラ_8月実データ版_v21.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_クラ_8月実データ版_v21.html",
       "has_md": true
@@ -1400,7 +1409,7 @@ window.CORIN_DATA = {
       "date": "2026-08-25",
       "title": "クラ — 経理の承認ワークベンチ（モック v20）",
       "wiki": "2026-08-25_クラ_承認ワークベンチ_実データ版_v22",
-      "category": "🤖 AI推進資料（ai/） 47本",
+      "category": "🤖 AI推進資料（ai/） 48本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_クラ_承認ワークベンチ_実データ版_v22.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_クラ_承認ワークベンチ_実データ版_v22.html",
       "has_md": false
@@ -1409,7 +1418,7 @@ window.CORIN_DATA = {
       "date": "2026-08-25",
       "title": "仕訳まで行く道筋",
       "wiki": "2026-08-25_経理AI_仕訳まで行く道筋_v1",
-      "category": "🤖 AI推進資料（ai/） 47本",
+      "category": "🤖 AI推進資料（ai/） 48本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_経理AI_仕訳まで行く道筋_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_経理AI_仕訳まで行く道筋_v1.html",
       "has_md": true
@@ -1418,7 +1427,7 @@ window.CORIN_DATA = {
       "date": "2026-08-25",
       "title": "請求書が集まるしくみ",
       "wiki": "2026-08-25_経理AI_実装プラン_v1",
-      "category": "🤖 AI推進資料（ai/） 47本",
+      "category": "🤖 AI推進資料（ai/） 48本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_経理AI_実装プラン_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_経理AI_実装プラン_v1.html",
       "has_md": true
@@ -1439,15 +1448,6 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 147本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-19_ループエンジニアリング_図解_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-19_ループエンジニアリング_図解_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-08-19",
-      "title": "AX 業務改善台帳",
-      "wiki": "AX業務改善台帳_たたき_v1",
-      "category": "🤖 AI推進資料（ai/） 47本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260819_AX業務改善台帳/AX業務改善台帳_たたき_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260819_AX業務改善台帳/AX業務改善台帳_たたき_v1.html",
       "has_md": true
     }
   ],
