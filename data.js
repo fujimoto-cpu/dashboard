@@ -6,8 +6,8 @@ window.CORIN_DATA = {
     "icon": "☁️"
   },
   "letter": {
-    "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はOvercast 、28度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Casablanca</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はOvercast 、28度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Mad happy</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Casablanca",
-    "tagline": "パリとモロッコの間に浮かぶ、享楽的ラグジュアリー。Charaf Tajerが2018年に創設したCasablancaは、Art Deco・テニスコート・シルクプリントという独自の美学で、ラグジュアリーメンズウェアの新しい地平を切り拓いた。",
-    "insight": "コラボを「エントリー層獲得」のインフラとして使う",
+    "name": "Mad happy",
+    "tagline": "\"Optimism is a practice.\" ——メンタルヘルスを哲学の核に据えた、ロサンゼルス発ライフスタイルブランド。",
+    "insight": "コミュニティ型マーケティングの設計",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/casablanca-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/madhappy-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -76,7 +76,7 @@ window.CORIN_DATA = {
   "tonight": null,
   "schedule": {
     "events": [],
-    "note_exists": false
+    "note_exists": true
   },
   "daily_photo": null,
   "library": [
@@ -1280,6 +1280,15 @@ window.CORIN_DATA = {
       "has_md": true
     },
     {
+      "date": "2026-08-27",
+      "title": "Claude と Notion のアドレス統一",
+      "wiki": "説明会スライド_アカウントと権限_モック_v1",
+      "category": "🤖 AI推進資料（ai/） 44本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/説明会スライド_アカウントと権限_モック_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/説明会スライド_アカウントと権限_モック_v1.html",
+      "has_md": true
+    },
+    {
       "date": "2026-08-26",
       "title": "Armillary. と LAVANDA の客はどう違うか",
       "wiki": "2026-08-26_Armillary調査とLAVANDA比較_v1",
@@ -1364,7 +1373,7 @@ window.CORIN_DATA = {
       "date": "2026-08-25",
       "title": "クラ 8月の実データ",
       "wiki": "2026-08-25_クラ_8月実データ版_v21",
-      "category": "🤖 AI推進資料（ai/） 43本",
+      "category": "🤖 AI推進資料（ai/） 44本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_クラ_8月実データ版_v21.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_クラ_8月実データ版_v21.html",
       "has_md": true
@@ -1373,7 +1382,7 @@ window.CORIN_DATA = {
       "date": "2026-08-25",
       "title": "クラ — 経理の承認ワークベンチ（モック v20）",
       "wiki": "2026-08-25_クラ_承認ワークベンチ_実データ版_v22",
-      "category": "🤖 AI推進資料（ai/） 43本",
+      "category": "🤖 AI推進資料（ai/） 44本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_クラ_承認ワークベンチ_実データ版_v22.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_クラ_承認ワークベンチ_実データ版_v22.html",
       "has_md": false
@@ -1382,7 +1391,7 @@ window.CORIN_DATA = {
       "date": "2026-08-25",
       "title": "仕訳まで行く道筋",
       "wiki": "2026-08-25_経理AI_仕訳まで行く道筋_v1",
-      "category": "🤖 AI推進資料（ai/） 43本",
+      "category": "🤖 AI推進資料（ai/） 44本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_経理AI_仕訳まで行く道筋_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_経理AI_仕訳まで行く道筋_v1.html",
       "has_md": true
@@ -1391,7 +1400,7 @@ window.CORIN_DATA = {
       "date": "2026-08-25",
       "title": "請求書が集まるしくみ",
       "wiki": "2026-08-25_経理AI_実装プラン_v1",
-      "category": "🤖 AI推進資料（ai/） 43本",
+      "category": "🤖 AI推進資料（ai/） 44本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_経理AI_実装プラン_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_経理AI_実装プラン_v1.html",
       "has_md": true
@@ -1418,7 +1427,7 @@ window.CORIN_DATA = {
       "date": "2026-08-19",
       "title": "AX 業務改善台帳",
       "wiki": "AX業務改善台帳_たたき_v1",
-      "category": "🤖 AI推進資料（ai/） 43本",
+      "category": "🤖 AI推進資料（ai/） 44本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260819_AX業務改善台帳/AX業務改善台帳_たたき_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260819_AX業務改善台帳/AX業務改善台帳_たたき_v1.html",
       "has_md": true
@@ -1439,15 +1448,6 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 147本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-18_AI活用サーベイ_2026年7月_ダッシュボード_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-18_AI活用サーベイ_2026年7月_ダッシュボード_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-08-18",
-      "title": "BIGBANG デザイン費 修正内訳",
-      "wiki": "2026-08-18_avexデザイン費修正内訳_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 20本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/20260521_BIGBANG/_ai-drafts/2026-08-18_avexデザイン費修正内訳_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/20260521_BIGBANG/_ai-drafts/2026-08-18_avexデザイン費修正内訳_v1.html",
       "has_md": true
     }
   ],
