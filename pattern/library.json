@@ -1,0 +1,587 @@
+{
+  "roles": {
+    "base": {
+      "ja": "地",
+      "desc": "いちばん面積の大きい明るい地色"
+    },
+    "hairline": {
+      "ja": "細線白",
+      "desc": "格子に走る白の細線"
+    },
+    "mid": {
+      "ja": "中間帯",
+      "desc": "地と濃色をつなぐ中間のグレー帯"
+    },
+    "band": {
+      "ja": "太帯",
+      "desc": "柄の主役になる太い帯（ブラウン系が多い）"
+    },
+    "darkline": {
+      "ja": "最暗線",
+      "desc": "いちばん濃い細線。柄を締める"
+    },
+    "accent": {
+      "ja": "主役色",
+      "desc": "色味を決める帯（ブルー/ピンク/ライラック等）"
+    },
+    "accentDeep": {
+      "ja": "主役色_濃",
+      "desc": "主役色の濃い方"
+    }
+  },
+  "ways": {
+    "A2_whispy_choco": {
+      "label": "ウィスピーブルー × チョコレート（A′案）",
+      "source": "cottonary｜Whispy Blue 13-4014 × Chocolate Torte 19-1109 / トーンイントーン",
+      "colors": {
+        "base": "#F0EDE6",
+        "hairline": "#FBF9F4",
+        "mid": "#A8A29B",
+        "band": "#6B4A3F",
+        "darkline": "#3A2721",
+        "accent": "#B8C9D6",
+        "accentDeep": "#7E97A8"
+      }
+    },
+    "B_lilac_slate": {
+      "label": "ライラック × スレートグレー（B案）",
+      "source": "nugu__official スライド5｜ライラック×スレートグレー×ラベンダーグレー / トーンオントーン",
+      "colors": {
+        "base": "#F2F0F4",
+        "hairline": "#FCFAFD",
+        "mid": "#A5A2AB",
+        "band": "#8A8494",
+        "darkline": "#423E4A",
+        "accent": "#C9BEDA",
+        "accentDeep": "#9186A8"
+      }
+    },
+    "E_pink_brown": {
+      "label": "ピンク × ブラウン（E案）",
+      "source": "amuse.bkk｜pink & brown（PANTONE 12-2907 Pink Marshmallow） / トーンイントーン",
+      "colors": {
+        "base": "#F4EFEA",
+        "hairline": "#FDF9F5",
+        "mid": "#AFA29B",
+        "band": "#7A5348",
+        "darkline": "#3E2A22",
+        "accent": "#EDC9CE",
+        "accentDeep": "#C99AA0"
+      }
+    },
+    "F_greyscale": {
+      "label": "グレースケール（F案）",
+      "source": "nugu__official スライド4｜ライトグレー×グレー×チャコール / トーンオントーン",
+      "colors": {
+        "base": "#F1F0EE",
+        "hairline": "#FBFAF9",
+        "mid": "#ABA9A6",
+        "band": "#7C7A77",
+        "darkline": "#3B3A38",
+        "accent": "#C6C4C1",
+        "accentDeep": "#8E8C89"
+      }
+    },
+    "lavanda_orig": {
+      "label": "ティール × ブラウン（LAVANDA現行）",
+      "source": "ゆりこの実データから同定（2026-09-09・62パス未一致0で実証）",
+      "colors": {
+        "base": "#E8E3D8",
+        "hairline": "#F0EDE6",
+        "mid": "#7D746E",
+        "band": "#5C4039",
+        "darkline": "#2F2320",
+        "accent": "#62838E",
+        "accentDeep": "#2F5359"
+      }
+    },
+    "corin_grey": {
+      "label": "グレー × クリーム",
+      "source": "2026-09-09 CORIN作成",
+      "colors": {
+        "base": "#F2EDE2",
+        "hairline": "#FAF8F4",
+        "mid": "#8F8D86",
+        "band": "#3A2118",
+        "darkline": "#161819",
+        "accent": "#A6A39B",
+        "accentDeep": "#3A4244"
+      }
+    },
+    "corin_blue": {
+      "label": "ブルー × ブラウン",
+      "source": "2026-09-09 CORIN作成",
+      "colors": {
+        "base": "#EAE5DA",
+        "hairline": "#F0EDE4",
+        "mid": "#7D746D",
+        "band": "#5C4038",
+        "darkline": "#2E2320",
+        "accent": "#7FA9BA",
+        "accentDeep": "#2A6E7C"
+      }
+    }
+  },
+  "setts": {
+    "corin_grey_ortho": {
+      "label": "CORIN自作 グレー×クリーム",
+      "note": "2026-09-09作成。1440pt角。織り目つき。LAVANDA提案の初期検討で使用",
+      "bias": false,
+      "thread_px": 6,
+      "yarn_px": 6,
+      "twill": 2,
+      "half": [
+        [
+          "CREAM",
+          9
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "CREAM",
+          9
+        ],
+        [
+          "BROWN",
+          2
+        ],
+        [
+          "CREAM",
+          9
+        ],
+        [
+          "BROWN",
+          4
+        ],
+        [
+          "CREAM",
+          4
+        ],
+        [
+          "BROWN",
+          4
+        ],
+        [
+          "GRAY",
+          9
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "GRAY",
+          8
+        ],
+        [
+          "GRAY2",
+          4
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "GRAY",
+          9
+        ],
+        [
+          "DARK",
+          8
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "DARK",
+          10
+        ],
+        [
+          "DARK2",
+          5
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "DARK",
+          11
+        ],
+        [
+          "BLACK",
+          2
+        ],
+        [
+          "DARK",
+          4
+        ]
+      ],
+      "role_map": {
+        "CREAM": "base",
+        "WHITE": "hairline",
+        "GRAY": "mid",
+        "GRAY2": "accent",
+        "BROWN": "band",
+        "DARK": "accentDeep",
+        "DARK2": "accent",
+        "BLACK": "darkline"
+      }
+    },
+    "corin_blue_bias": {
+      "label": "CORIN自作 ブルー×ブラウン",
+      "note": "2026-09-09作成。1476pt角。45度は糸番号を(x+y)/(x-y)で取る方式なのでリピートする",
+      "bias": true,
+      "thread_px": 6,
+      "yarn_px": 3,
+      "twill": 2,
+      "half": [
+        [
+          "CREAM",
+          15
+        ],
+        [
+          "DARKBR",
+          2
+        ],
+        [
+          "CREAM",
+          12
+        ],
+        [
+          "DARKBR",
+          3
+        ],
+        [
+          "BROWN",
+          14
+        ],
+        [
+          "DARKBR",
+          3
+        ],
+        [
+          "CREAM",
+          6
+        ],
+        [
+          "DARKBR",
+          2
+        ],
+        [
+          "GRAY",
+          12
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "BLUE",
+          8
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "BLUE",
+          10
+        ],
+        [
+          "TEAL",
+          6
+        ],
+        [
+          "BLUE",
+          6
+        ],
+        [
+          "DARKBR",
+          3
+        ],
+        [
+          "BROWN",
+          8
+        ],
+        [
+          "DARKBR",
+          10
+        ]
+      ],
+      "role_map": {
+        "CREAM": "base",
+        "WHITE": "hairline",
+        "GRAY": "mid",
+        "BROWN": "band",
+        "DARKBR": "darkline",
+        "BLUE": "accent",
+        "TEAL": "accentDeep"
+      }
+    },
+    "block_bold": {
+      "label": "大柄ブロック（面で見せる）",
+      "note": "2026-09-10 CORIN作成。大26/中16/細2 の3階層。四隅=明るい大面、中心=濃い面",
+      "bias": false,
+      "half": [
+        [
+          "BASE",
+          26
+        ],
+        [
+          "DARKLINE",
+          2
+        ],
+        [
+          "BASE",
+          26
+        ],
+        [
+          "BAND",
+          16
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "BAND",
+          16
+        ],
+        [
+          "DEEP",
+          20
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "DEEP",
+          11
+        ]
+      ],
+      "role_map": {
+        "BASE": "base",
+        "WHITE": "hairline",
+        "BAND": "band",
+        "DEEP": "accentDeep",
+        "DARKLINE": "darkline"
+      }
+    },
+    "twin_line": {
+      "label": "細ツインライン（きちんと感）",
+      "note": "2026-09-10 CORIN作成。細線を2本組で走らせる伝統的な作り。スーツ地寄り",
+      "bias": false,
+      "half": [
+        [
+          "BASE",
+          18
+        ],
+        [
+          "DARKLINE",
+          1
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "DARKLINE",
+          1
+        ],
+        [
+          "BASE",
+          18
+        ],
+        [
+          "MID",
+          12
+        ],
+        [
+          "WHITE",
+          1
+        ],
+        [
+          "MID",
+          12
+        ],
+        [
+          "BAND",
+          8
+        ],
+        [
+          "ACCENT",
+          2
+        ],
+        [
+          "BAND",
+          8
+        ],
+        [
+          "DEEP",
+          14
+        ],
+        [
+          "WHITE",
+          1
+        ],
+        [
+          "DEEP",
+          14
+        ],
+        [
+          "DARKLINE",
+          1
+        ],
+        [
+          "DEEP",
+          6
+        ]
+      ],
+      "role_map": {
+        "BASE": "base",
+        "WHITE": "hairline",
+        "MID": "mid",
+        "BAND": "band",
+        "ACCENT": "accent",
+        "DEEP": "accentDeep",
+        "DARKLINE": "darkline"
+      }
+    },
+    "glen_over": {
+      "label": "グレンチェック風（細かい市松＋帯）",
+      "note": "2026-09-10 CORIN作成。4本ずつの細かい市松を地にして、大きな帯を1本重ねる",
+      "bias": false,
+      "half": [
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "DARKLINE",
+          2
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "ACCENT",
+          4
+        ],
+        [
+          "BAND",
+          8
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "BAND",
+          9
+        ]
+      ],
+      "role_map": {
+        "BASE": "base",
+        "WHITE": "hairline",
+        "MID": "mid",
+        "BAND": "band",
+        "ACCENT": "accent",
+        "DARKLINE": "darkline"
+      }
+    }
+  }
+}
