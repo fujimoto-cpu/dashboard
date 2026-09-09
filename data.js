@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-09-08",
+  "date": "2026-09-10",
   "weather": {
-    "desc": "Patchy rain nearby",
-    "temp": "27",
+    "desc": "Light rain shower",
+    "temp": "24",
     "icon": "🌧"
   },
   "letter": {
-    "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はPatchy rain nearby、27度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>LOEWE</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はLight rain shower、24度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Maison Kitsuné</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "LOEWE",
-    "tagline": "「職人技はLoeweの心臓」——1846年創設、スペイン最古のラグジュアリーハウスがJonathan Andersonのもとでアートとユーモアを武器にラグジュアリーの再定義を続けている。",
-    "insight": "ユーモアをラグジュアリーに導入する",
+    "name": "Maison Kitsuné",
+    "tagline": "ファッション・音楽・カフェを一体化したパリ×東京発のライフスタイルブランド。2002年設立、年商9,400万ユーロ。",
+    "insight": "「二元性」をそのままブランドDNAにする",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/loewe-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/maison-kitsune-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -76,7 +76,7 @@ window.CORIN_DATA = {
   "tonight": null,
   "schedule": {
     "events": [],
-    "note_exists": true
+    "note_exists": false
   },
   "daily_photo": null,
   "library": [
@@ -1280,6 +1280,15 @@ window.CORIN_DATA = {
   ],
   "recent_html": [
     {
+      "date": "2026-09-10",
+      "title": "AI文字起こし完全版 — Notion×ローカルWhisper",
+      "wiki": "2026-09-10_AI文字起こし完全版_Notion×ローカルWhisper_まとめ_v1",
+      "category": "🤖 CORIN出力（outputs/） 149本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-10_AI文字起こし完全版_Notion×ローカルWhisper_まとめ_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-10_AI文字起こし完全版_Notion×ローカルWhisper_まとめ_v1.html",
+      "has_md": true
+    },
+    {
       "date": "2026-09-02",
       "title": "LAVANDA ロンT 色と書体の引き出し",
       "wiki": "2026-09-02_LAVANDAロンT_色味フォント参考ボード_v1",
@@ -1292,7 +1301,7 @@ window.CORIN_DATA = {
       "date": "2026-09-01",
       "title": "声で貯める、社長の頭のなか",
       "wiki": "2026-09-01_ゆうさん_声で思考を蓄積する仕組み_プラン_v1",
-      "category": "🤖 CORIN出力（outputs/） 148本",
+      "category": "🤖 CORIN出力（outputs/） 149本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-01_ゆうさん_声で思考を蓄積する仕組み_プラン_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-01_ゆうさん_声で思考を蓄積する仕組み_プラン_v1.html",
       "has_md": true
@@ -1301,7 +1310,7 @@ window.CORIN_DATA = {
       "date": "2026-08-27",
       "title": "Corin. バーチャルオフィス",
       "wiki": "2026-08-27_CORINバーチャルオフィス_v3",
-      "category": "🤖 CORIN出力（outputs/） 148本",
+      "category": "🤖 CORIN出力（outputs/） 149本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-27_CORINバーチャルオフィス_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-27_CORINバーチャルオフィス_v3.html",
       "has_md": true
@@ -1346,7 +1355,7 @@ window.CORIN_DATA = {
       "date": "2026-08-26",
       "title": "Armillary. と LAVANDA の客はどう違うか",
       "wiki": "2026-08-26_Armillary調査とLAVANDA比較_v1",
-      "category": "🤖 CORIN出力（outputs/） 148本",
+      "category": "🤖 CORIN出力（outputs/） 149本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-26_Armillary調査とLAVANDA比較_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-26_Armillary調査とLAVANDA比較_v1.html",
       "has_md": true
@@ -1355,7 +1364,7 @@ window.CORIN_DATA = {
       "date": "2026-08-26",
       "title": "ブランド横断オーディエンス分析",
       "wiki": "2026-08-26_ブランド横断IGオーディエンス分析_全件プラン_v1",
-      "category": "🤖 CORIN出力（outputs/） 148本",
+      "category": "🤖 CORIN出力（outputs/） 149本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-26_ブランド横断IGオーディエンス分析_全件プラン_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-26_ブランド横断IGオーディエンス分析_全件プラン_v1.html",
       "has_md": true
@@ -1373,7 +1382,7 @@ window.CORIN_DATA = {
       "date": "2026-08-25",
       "title": "AIカンパニー リファレンス",
       "wiki": "2026-08-25_AIカンパニー_デザインリファレンス_v1",
-      "category": "🤖 CORIN出力（outputs/） 148本",
+      "category": "🤖 CORIN出力（outputs/） 149本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_AIカンパニー_デザインリファレンス_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_AIカンパニー_デザインリファレンス_v1.html",
       "has_md": true
@@ -1382,7 +1391,7 @@ window.CORIN_DATA = {
       "date": "2026-08-25",
       "title": "AIキャッチアップ 8月号",
       "wiki": "2026-08-25_AI最新事情キャッチアップ_v1",
-      "category": "🤖 CORIN出力（outputs/） 148本",
+      "category": "🤖 CORIN出力（outputs/） 149本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_AI最新事情キャッチアップ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_AI最新事情キャッチアップ_v1.html",
       "has_md": true
@@ -1391,7 +1400,7 @@ window.CORIN_DATA = {
       "date": "2026-08-25",
       "title": "CORIN オフィス見取り図",
       "wiki": "2026-08-25_CORINオフィス_見取り図_v1",
-      "category": "🤖 CORIN出力（outputs/） 148本",
+      "category": "🤖 CORIN出力（outputs/） 149本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_CORINオフィス_見取り図_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_CORINオフィス_見取り図_v1.html",
       "has_md": true
@@ -1400,7 +1409,7 @@ window.CORIN_DATA = {
       "date": "2026-08-25",
       "title": "114件のインプット棚卸し",
       "wiki": "2026-08-25_インプット棚卸し_v1",
-      "category": "🤖 CORIN出力（outputs/） 148本",
+      "category": "🤖 CORIN出力（outputs/） 149本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_インプット棚卸し_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_インプット棚卸し_v1.html",
       "has_md": true
@@ -1409,7 +1418,7 @@ window.CORIN_DATA = {
       "date": "2026-08-25",
       "title": "バーチャルAIオフィス リファレンス",
       "wiki": "2026-08-25_バーチャルAIオフィス_デザインリファレンス_v1",
-      "category": "🤖 CORIN出力（outputs/） 148本",
+      "category": "🤖 CORIN出力（outputs/） 149本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_バーチャルAIオフィス_デザインリファレンス_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_バーチャルAIオフィス_デザインリファレンス_v1.html",
       "has_md": true
@@ -1418,7 +1427,7 @@ window.CORIN_DATA = {
       "date": "2026-08-25",
       "title": "夜間バッチの配線図",
       "wiki": "2026-08-25_夜間バッチの配線図_v1",
-      "category": "🤖 CORIN出力（outputs/） 148本",
+      "category": "🤖 CORIN出力（outputs/） 149本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_夜間バッチの配線図_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_夜間バッチの配線図_v1.html",
       "has_md": true
@@ -1448,15 +1457,6 @@ window.CORIN_DATA = {
       "category": "🤖 AI推進資料（ai/） 48本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_経理AI_仕訳まで行く道筋_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_経理AI_仕訳まで行く道筋_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-08-25",
-      "title": "請求書が集まるしくみ",
-      "wiki": "2026-08-25_経理AI_実装プラン_v1",
-      "category": "🤖 AI推進資料（ai/） 48本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_経理AI_実装プラン_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260731_経理AI化/_ai-drafts/2026-08-25_経理AI_実装プラン_v1.html",
       "has_md": true
     }
   ],
