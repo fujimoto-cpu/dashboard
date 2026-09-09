@@ -20,6 +20,12 @@
       ]
     },
     {
+      "group": "🧵 制作ツール",
+      "links": [
+        {"label": "柄ジェネレーター", "icon": "🧵", "url": "https://fujimoto-cpu.github.io/dashboard/pattern/"}
+      ]
+    },
+    {
       "group": "🌐 リンク集（Notion）",
       "links": [
         {"label": "マスターインデックス", "icon": "🗺", "url": "https://www.notion.so/34e7f11c9bd0814991faf391588abeb1"}
