@@ -120,6 +120,136 @@
         "accent": "#7FA9BA",
         "accentDeep": "#2A6E7C"
       }
+    },
+    "ES1_raindrops_umber": {
+      "label": "レインドロップス × バーントアンバー",
+      "source": "Lit｜uni___media PANTONE 11-1400 Raindrops on Roses ＋ wwdesignagency misty blue/dusty rose/burnt umber / トーンイントーン",
+      "colors": {
+        "base": "#F6EDE9",
+        "hairline": "#FDF8F6",
+        "mid": "#C3ADA7",
+        "band": "#8A5A42",
+        "darkline": "#3B2A24",
+        "accent": "#EFD5D3",
+        "accentDeep": "#C79A94"
+      }
+    },
+    "ES2_veiled_sage": {
+      "label": "ヴェイルドヴィスタ × セージ",
+      "source": "Lit｜uni___media PANTONE 12-6000 Veiled Vista ＋ nugu__official セージグリーン×ベージュ / トーンオントーン",
+      "colors": {
+        "base": "#EFF1EA",
+        "hairline": "#FBFCF8",
+        "mid": "#AFB5A6",
+        "band": "#6E7A63",
+        "darkline": "#2F362A",
+        "accent": "#CBD8C4",
+        "accentDeep": "#8CA084"
+      }
+    },
+    "ES3_quiet_violet": {
+      "label": "クワイエットヴァイオレット × スレート",
+      "source": "Lit｜uni___media PANTONE 16-3610 Quiet Violet ＋ nugu__official ライラック×スレートグレー（既存B案の春版）",
+      "colors": {
+        "base": "#F3F0F4",
+        "hairline": "#FCFAFD",
+        "mid": "#ADA5B3",
+        "band": "#7E7288",
+        "darkline": "#3A3341",
+        "accent": "#C7B7D2",
+        "accentDeep": "#9B8AA6"
+      }
+    },
+    "ES4_butter_choco": {
+      "label": "バターイエロー × チョコレート",
+      "source": "Lit｜amuse.bkk banana & choco（PANTONE 19-1432 Chocolate Fondant）＋ cottonary Pastel Yellow 11-0616 / トーンイントーン",
+      "colors": {
+        "base": "#F7F0DC",
+        "hairline": "#FEFBF0",
+        "mid": "#BFAE8E",
+        "band": "#6B4A38",
+        "darkline": "#33221A",
+        "accent": "#F0DFA0",
+        "accentDeep": "#C2A85C"
+      }
+    },
+    "ES5_stalactite_taupe": {
+      "label": "スタラクタイト × ウォームトープ",
+      "source": "Lit｜uni___media PANTONE 11-4101 Stalactite ＋ inspiredbythis Caramel Café × Whispy Blue / 意外性コンビ",
+      "colors": {
+        "base": "#EDEFEE",
+        "hairline": "#FBFCFC",
+        "mid": "#A9AEB0",
+        "band": "#8A7259",
+        "darkline": "#33291F",
+        "accent": "#C6D6DE",
+        "accentDeep": "#8AA5B4"
+      }
+    },
+    "ES6_mint_sand": {
+      "label": "ミント × サンドベージュ",
+      "source": "Lit｜wearwave.style 2026SS韓国ブランド（HERETIC＝ミント）＋ blackup_kr 春レイヤード ブラウン×サンド",
+      "colors": {
+        "base": "#F1EEE4",
+        "hairline": "#FCFAF4",
+        "mid": "#B6B3A4",
+        "band": "#8C7B62",
+        "darkline": "#2E2A20",
+        "accent": "#BFE0D2",
+        "accentDeep": "#7FB8A2"
+      }
+    },
+    "ES8_charcoal_blush": {
+      "label": "チャコール × ペールピンク",
+      "source": "Lit｜uni___media PANTONE 11-1400 Raindrops on Roses ＋ amuse.bkk grey & pink（ゆりこ指示：黒に近いグレー×春色）",
+      "colors": {
+        "base": "#F5F0EC",
+        "hairline": "#FCFAF8",
+        "mid": "#ADA8A6",
+        "band": "#4A4B4D",
+        "darkline": "#1D1E20",
+        "accent": "#F0D4D6",
+        "accentDeep": "#C48F97"
+      }
+    },
+    "ES9_charcoal_butter": {
+      "label": "チャコール × バターイエロー",
+      "source": "Lit｜cottonary Pastel Yellow 11-0616 ＋ orilu.xoxo Unsalted Butter（ゆりこ指示：黒に近いグレー×春色）",
+      "colors": {
+        "base": "#F7F2E0",
+        "hairline": "#FEFCF3",
+        "mid": "#A9A79E",
+        "band": "#46484A",
+        "darkline": "#1C1D1F",
+        "accent": "#F1E0A2",
+        "accentDeep": "#B79A4F"
+      }
+    },
+    "ES10_charcoal_mint": {
+      "label": "チャコール × ミントグリーン",
+      "source": "Lit｜wearwave.style HERETIC のミント ＋ nugu__official ピンク×ミント×ベージュ（ゆりこ指示：黒に近いグレー×春色）",
+      "colors": {
+        "base": "#EFF2EE",
+        "hairline": "#FBFDFB",
+        "mid": "#A4A9A6",
+        "band": "#45484A",
+        "darkline": "#1B1D1E",
+        "accent": "#C2E1D3",
+        "accentDeep": "#6DA793"
+      }
+    },
+    "ES7_blush_olive": {
+      "label": "ブラッシュピンク × ミュートオリーブ",
+      "source": "Lit｜wwdesignagency muted pink & olive（soft clay red / blush pink / burnt wine red / muted olive）",
+      "colors": {
+        "base": "#F4EEE9",
+        "hairline": "#FCF8F5",
+        "mid": "#BCAFA2",
+        "band": "#6F6F4E",
+        "darkline": "#3A2A2A",
+        "accent": "#E8C9C2",
+        "accentDeep": "#A8563F"
+      }
     }
   },
   "setts": {
@@ -229,7 +359,8 @@
         "DARK": "accentDeep",
         "DARK2": "accent",
         "BLACK": "darkline"
-      }
+      },
+      "palette": "corin_grey_ortho_colors"
     },
     "corin_blue_bias": {
       "label": "CORIN自作 ブルー×ブラウン",
@@ -320,12 +451,16 @@
         "DARKBR": "darkline",
         "BLUE": "accent",
         "TEAL": "accentDeep"
-      }
+      },
+      "palette": "corin_blue_bias_colors"
     },
     "block_bold": {
       "label": "大柄ブロック（面で見せる）",
       "note": "2026-09-10 CORIN作成。大26/中16/細2 の3階層。四隅=明るい大面、中心=濃い面",
       "bias": false,
+      "thread_px": 6,
+      "yarn_px": 6,
+      "twill": 2,
       "half": [
         [
           "BASE",
@@ -376,6 +511,9 @@
       "label": "細ツインライン（きちんと感）",
       "note": "2026-09-10 CORIN作成。細線を2本組で走らせる伝統的な作り。スーツ地寄り",
       "bias": false,
+      "thread_px": 6,
+      "yarn_px": 6,
+      "twill": 2,
       "half": [
         [
           "BASE",
@@ -456,6 +594,9 @@
       "label": "グレンチェック風（細かい市松＋帯）",
       "note": "2026-09-10 CORIN作成。4本ずつの細かい市松を地にして、大きな帯を1本重ねる",
       "bias": false,
+      "thread_px": 6,
+      "yarn_px": 6,
+      "twill": 2,
       "half": [
         [
           "BASE",
