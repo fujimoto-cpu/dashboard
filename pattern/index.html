@@ -1759,7 +1759,7 @@ function rcA3SVG(){
    +`<g id="柄面" clip-path="url(#rca3)">`;
   for(let i=0;i<Math.ceil(fw/W);i++)for(let j=0;j<Math.ceil(fh/H);j++)
     s+=`<g transform="translate(${q(fx+i*W)} ${q(fy+j*H)})`
-      +(Math.abs(sc-1)<1e-9?'':` scale(${sc.toFixed(6)})`)+`>${t.body}</g>`;
+      +(Math.abs(sc-1)<1e-9?'':` scale(${sc.toFixed(6)})`)+`">${t.body}</g>`;
   const pal=[...new Set(RC.colors.map(c=>RC.map[c.hex]||c.hex))];
   return a3Page(s+`</g>`, pal, PT, `A3縦 実寸 ${RC.name||'読み込んだ柄'} / 1リピート${cm(Wmm)}`);
 }
