@@ -293,7 +293,8 @@
         <button data-v="45">45度に回して使う</button>
       </div>
       <p class="hint">45度で使うと、丈の方向には柄が約1.41倍おおきく出ます。
-        書き出すSVGはどちらも直交（Illustratorで「パターンの変形」だけ回して使います）。</p>
+        <b>A3実寸はこの向きで焼き込んで書き出します</b>（イラレで回さなくてOK）。
+        パターン用SVGは直交のまま（スウォッチに登録して「パターンの変形」で回す用）。</p>
       <label>出力解像度 (dpi)</label>
       <input type="number" id="dpi" value="300" min="72" step="10">
       <div class="calc" id="calc"></div>
@@ -575,6 +576,16 @@ const lum=h=>hex2rgb(h).reduce((x,y)=>x+y,0);
    桁を固定すると 15.0cm と 0.05cm が並んで読みにくくなるため */
 const cmv=mm=>+(Math.round(mm/10*100)/100);      // 数値だけ
 const cm=mm=>cmv(mm)+'cm';                        // 単位つき
+/* ── 書き出しの単位は pt ──────────────────────────────────────
+   Illustrator は SVG の <pattern> の中身に mm→pt の文書スケールを掛けない。
+   mm で書くと綾織のセルだけが 72/25.4 = 2.83倍 に膨らむ
+   （2026-09-10 実測：指定2mm → 5.67mm）。最初から pt で書けば
+   WebKit と Illustrator の見た目が一致する（実測 セル 3.965mm / 仕様 4.000mm）。
+   画面プレビューは mm のまま（U=1）。 */
+const PT=72/25.4;
+/* pattern / clipPath の id はページ内で衝突させない
+   （box1・box2・棚サムネが同時に出るため）。ドット側の DUID と同じ考え方 */
+let TUID=0;
 /* k<1 で暗く、k>1 で明るく。派生色（8色目以降）を作るのに使う */
 function shade(h,k){const c=hex2rgb(h);return rgb2hex(c.map(v=>k<=1?v*k:v+(255-v)*(k-1)));}
 function toCMYK(h){const [r,g,b]=hex2rgb(h).map(v=>v/255);
@@ -622,89 +633,94 @@ const TWILL=2;
 function twillGrid(n, unit, want){
   const f=[want,1,0.5,0.25].find(v => n % (2*TWILL*v) === 0) || 0.25;
   const cell=unit*f, m=2*TWILL, P=m*cell;
-  let rects='';
+  const cells=[];
   for(let i=0;i<m;i++)for(let j=0;j<m;j++)
     if(!(((i+j)%m)<TWILL))          // 経糸が上でない＝緯糸が見えるセル
-      rects+=`<rect x="${(i*cell).toFixed(4)}" y="${(j*cell).toFixed(4)}" width="${cell.toFixed(4)}" height="${cell.toFixed(4)}" fill="#fff"/>`;
-  return {cell,P,rects,f};
+      cells.push([i*cell, j*cell]);
+  return {cell,P,cells,f};
+}
+/* 1周期ぶんの綾織セルを、指定色で塗った rect にする（8個で済む。
+   セルを1つずつ全面に描くと数十万パスになり Illustrator が実用にならない） */
+function twillCells(tw, fill){
+  return tw.cells.map(([x,y])=>
+    `<rect x="${x.toFixed(4)}" y="${y.toFixed(4)}" `+
+    `width="${tw.cell.toFixed(4)}" height="${tw.cell.toFixed(4)}" fill="${fill}"/>`).join('');
+}
+/* 緯糸の色ごとに「綾織セルだけを塗る pattern」を定義する。
+   ★mask を使わない理由（2026-09-10 実測）
+     Illustrator は「mask の掛かったグループを並べて使う」ができない。
+     defs を複製しても <use> にしても、1枚目のタイル以外は緯糸が丸ごと落ちる
+     （＝横縞だけ／縦縞だけになる）。pattern 塗りなら経糸も綾織も残る。
+     見た目は mask 版と同一（WebKit で一致を確認済み）。
+   patternUnits="userSpaceOnUse" なので、同じ座標系にある緯糸は
+   何本あっても位相がそろう（帯ごとにズレない）。 */
+function twillDefs(uid, order, tw, a2){
+  if(!(a2>0.001)) return '';
+  return order.map((nm,ci)=>
+    `<pattern id="${uid}p${ci}" width="${tw.P.toFixed(4)}" height="${tw.P.toFixed(4)}" `+
+    `patternUnits="userSpaceOnUse">${twillCells(tw, colorOf(nm))}</pattern>`).join('');
 }
 
-/* ── 柄のSVG ──────────────────────────────────────────────────
+/* ── 柄のSVG（1リピート・直交）─────────────────────────────────
    経糸(縦縞)を敷き、その上に緯糸(横縞)を重ねる。緯糸は2枚：
-     ① マスクなし  不透明度 a1 = 0.5 - 0.5s
-     ② 綾織マスク  不透明度 a2 = s / (0.5 + 0.5s)
+     ① 綾織なし  不透明度 a1 = 0.5 - 0.5s
+     ② 綾織つき  不透明度 a2 = s / (0.5 + 0.5s)
    合成後の緯糸の重みは 緯糸セル 0.5+0.5s ／ 経糸セル 0.5-0.5s。
      s=0 → 0.5 / 0.5 ＝ フラットな50/50ブレンドと数学的に一致
      s=1 → 1.0 / 0.0 ＝ 完全な2/2綾織
-   両端が既存の2状態と一致するので、強さをどこに置いても色が狂わない。 */
-function patternSVG(sizeMM, withPalette){
+   両端が既存の2状態と一致するので、強さをどこに置いても色が狂わない。
+
+   45度はここでは焼き込まない（タイリングできない。辺長＝縞周期×√2 が必要で
+   √2は無理数）。パターン用SVGは直交のまま登録して、Illustrator の
+   「パターンの変形」だけ回して使う。A3実寸は tartanA3() が焼き込む。
+
+   U … 1 なら mm で書く（画面プレビュー）／ PT なら pt で書く（書き出し） */
+function patternSVG(sizeMM, withPalette, U){
+  U=U||1;
+  const S=sizeMM*U, un=(U===1)?'mm':'pt';
   const th=mirror(HALF), rs=runs(th), n=th.length;
-  const unit=sizeMM/n;
+  const unit=S/n;
   const order=usedNames();
   const ground=colorOf(order[0]);
-  /* 45度はSVGでは原理的にタイリングできない（辺長＝縞周期×√2 が必要で√2は無理数）。
-     UIから外し、常に直交で書き出す。45度で使いたいときは Illustrator 側で
-     パターン登録 →「パターンの変形」だけ回転する（ダウンロード欄に案内あり） */
-  const rot=0;
   const s=+$('#str').value/100;
   const tw=twillGrid(n, unit, +$('#fine').value);
   const a1=0.5-0.5*s, a2=(s<=0)?0:(s/(0.5+0.5*s));
-  const totalH=sizeMM;
-  const span=sizeMM*2;
+  const uid='t'+(++TUID);
 
-  let s2=`<svg xmlns="http://www.w3.org/2000/svg" width="${sizeMM}mm" height="${totalH}mm" viewBox="0 0 ${sizeMM} ${totalH}">`;
+  let s2=`<svg xmlns="http://www.w3.org/2000/svg" width="${S}${un}" height="${S}${un}" viewBox="0 0 ${S} ${S}">`;
   s2+=`<title>柄 ${cur.label} / ${LIB.ways[wayKey].label} / 綾線${Math.round(s*100)}%</title>`;
-  s2+=`<defs><clipPath id="tile"><rect width="${sizeMM}" height="${sizeMM}"/></clipPath>`;
-  if(a2>0){
-    // 1周期だけ pattern で定義して mask 経由で使う。実体のパスは8個で済む
-    //（セルを1つずつ描くと数十万パスになりIllustratorが実用にならない）
-    s2+=`<pattern id="twillcells" width="${tw.P.toFixed(4)}" height="${tw.P.toFixed(4)}" patternUnits="userSpaceOnUse">${tw.rects}</pattern>`
-      +`<mask id="twillmask" maskUnits="userSpaceOnUse" x="0" y="0" width="${sizeMM}" height="${sizeMM}">`
-      +`<rect width="${sizeMM}" height="${sizeMM}" fill="url(#twillcells)"/></mask>`;
-  }
-  s2+=`</defs><g clip-path="url(#tile)">`;
-  // 直交は縞がタイル内に収まるので地色もタイルぴったりでいい（45度だけはみ出しを埋める）
-  s2+= rot
-    ? `<rect x="${-span}" y="${-span}" width="${span*3}" height="${span*3}" fill="${ground}"/>`
-    : `<rect width="${sizeMM}" height="${sizeMM}" fill="${ground}"/>`;
+  s2+=`<defs><clipPath id="${uid}c"><rect width="${S}" height="${S}"/></clipPath>`
+    + twillDefs(uid, order, tw, a2)
+    + `</defs><g clip-path="url(#${uid}c)">`;
+  s2+=`<rect width="${S}" height="${S}" fill="${ground}"/>`;
 
-  const g=()=> rot? `<g transform="rotate(${rot} ${sizeMM/2} ${sizeMM/2})">`:'<g>';
-  const warpRect=(x,w)=> rot
-    ? `<rect x="${x.toFixed(3)}" y="${-span}" width="${w.toFixed(3)}" height="${span*2}"/>`
-    : `<rect x="${x.toFixed(3)}" y="0" width="${w.toFixed(3)}" height="${sizeMM}"/>`;
-  const weftRect=(y,h,fill)=> rot
-    ? `<rect x="${-span}" y="${y.toFixed(3)}" width="${span*2}" height="${h.toFixed(3)}"${fill?` fill="${fill}"`:''}/>`
-    : `<rect x="0" y="${y.toFixed(3)}" width="${sizeMM}" height="${h.toFixed(3)}"${fill?` fill="${fill}"`:''}/>`;
-
-  // 経糸（縦縞）— マスクを掛けないので色グループのままでいい
-  s2+=`<g id="経糸">`+g();
+  // 経糸（縦縞）
+  s2+=`<g id="経糸">`;
   order.forEach(nm=>{
     s2+=`<g fill="${colorOf(nm)}">`;
-    rs.forEach(([c,st,l])=>{ if(c===nm) s2+=warpRect(st*unit, l*unit); });
+    rs.forEach(([c,st,l])=>{ if(c===nm)
+      s2+=`<rect x="${(st*unit).toFixed(3)}" y="0" width="${(l*unit).toFixed(3)}" height="${S}"/>`; });
     s2+=`</g>`;});
-  s2+=`</g></g>`;
+  s2+=`</g>`;
 
-  // 緯糸①（マスクなし）★経糸と【同じ角度】で回す。
-  //   経糸が縦縞・緯糸が横縞で既に直交しているので、同じ角度だけ回せば直交関係が保たれる。
-  //   ここを rot-90 にすると両方が同じ向きに重なり、格子が消えて一方向の縞になる。
+  // 緯糸①（綾織なし）
   if(a1>0.001){
-    s2+=`<g id="緯糸_フラット" opacity="${a1.toFixed(4)}">`+g();
+    s2+=`<g id="緯糸_フラット" opacity="${a1.toFixed(4)}">`;
     order.forEach(nm=>{
       s2+=`<g fill="${colorOf(nm)}">`;
-      rs.forEach(([c,st,l])=>{ if(c===nm) s2+=weftRect(st*unit, l*unit); });
+      rs.forEach(([c,st,l])=>{ if(c===nm)
+        s2+=`<rect x="0" y="${(st*unit).toFixed(3)}" width="${S}" height="${(l*unit).toFixed(3)}"/>`; });
       s2+=`</g>`;});
-    s2+=`</g></g>`;
+    s2+=`</g>`;
   }
-  // 緯糸②（綾織マスク）★マスクは【回転していない外側】に掛け、縞だけ回す。
-  //   柄と綾織を同じ座標系で計算すると階段状のジグザグになる。
+  // 緯糸②（綾織つき）— 色ごとの pattern で塗る（mask は使わない・上の twillDefs 参照）
   if(a2>0.001){
-    s2+=`<g id="緯糸_綾織マスク" mask="url(#twillmask)" opacity="${a2.toFixed(4)}">`+g();
-    // ★マスクを掛ける側は色グループを作らずフラットに並べる。
-    //   Illustrator は mask を不透明マスクに変換するとき、グループが入れ子だと
-    //   サブグループごとに掛け直して綾織の位相が崩れる（実測 55% → 87%）
-    order.forEach(nm=>{ const fill=colorOf(nm);
-      rs.forEach(([c,st,l])=>{ if(c===nm) s2+=weftRect(st*unit, l*unit, fill); });});
-    s2+=`</g></g>`;
+    s2+=`<g id="緯糸_綾織" opacity="${a2.toFixed(4)}">`;
+    order.forEach((nm,ci)=>{
+      rs.forEach(([c,st,l])=>{ if(c===nm)
+        s2+=`<rect x="0" y="${(st*unit).toFixed(3)}" width="${S}" `+
+            `height="${(l*unit).toFixed(3)}" fill="url(#${uid}p${ci})"/>`; });});
+    s2+=`</g>`;
   }
   s2+=`</g>`;
 
@@ -715,22 +731,121 @@ function patternSVG(sizeMM, withPalette){
    紙に出してボディに当てる用。左下に使っている色を正方形で並べる。
    白っぽい色は紙や柄に埋もれるので黒枠を付ける（ゆりこ指示） */
 const A3W=420, A3H=297, SQ=15, SQGAP=3, A3M=10;
-function paletteRects(cols){
+/* U … 1 なら mm 座標（ドット側・色替え側）／ PT なら pt 座標（タータンA3） */
+function paletteRects(cols, U){
+  U=U||1;
+  const q=v=>+(v*U).toFixed(3);
   return `<g id="カラーパレット">`+cols.map((c,i)=>{
     const white=lum(c)>=735;   // ほぼ白（各チャンネル平均245以上）
-    return `<rect x="${A3M+i*(SQ+SQGAP)}" y="${A3H-A3M-SQ}" width="${SQ}" height="${SQ}" `+
-           `fill="${c}"${white?' stroke="#000000" stroke-width="0.4"':''}/>`;
+    return `<rect x="${q(A3M+i*(SQ+SQGAP))}" y="${q(A3H-A3M-SQ)}" width="${q(SQ)}" height="${q(SQ)}" `+
+           `fill="${c}"${white?` stroke="#000000" stroke-width="${q(0.4)}"`:''}/>`;
   }).join('')+`</g>`;
+}
+/* ── タータンA3（縦 297×420mm）─────────────────────────────────
+   ★2026-09-10 ゆりこ指示で「縦」＋「下のパレット帯には柄を入れない」に変更。
+     版組みは Python 版（build_a3_pages.py＝ゆりこがOKした見本）に合わせる。
+   ★同日 作り直し。旧版（bk/ 参照）は patternSVG の中身を <defs> ごとタイル数ぶん
+     複製して並べていた。これは Illustrator で必ず崩れる：
+       ・id（clipPath / pattern / mask）がタイル数ぶん重複する
+       ・mask 付きグループは並べて使えないので、1枚目以外の緯糸が丸ごと落ちる
+         → 横縞だけ／縦縞だけの紙が出てくる（ゆりこ報告の1・2枚目がこれ）
+     いまは【縞を柄面に直接描く】。タイルの複製も <use> も mask も使わない。
+   ※ドット側・色替え側のA3（landscape・A3W/A3H）はそのまま。混ぜない。 */
+const TA_W=297, TA_H=420, TA_M=10;          // A3縦・外周マージン(mm)
+const TA_CHIP=24, TA_STEP=30, TA_GAP=8;     // パレットの正方形・間隔・柄面とのアキ
+/* 柄を敷く面。下にパレット帯のぶんだけアキを作る（柄はここに入れない） */
+function tartanFace(){
+  return {x:TA_M, y:TA_M, w:TA_W-TA_M*2,
+          h:TA_H-TA_M-TA_CHIP-TA_GAP-TA_M};
+}
+function tartanPalette(cols){
+  const q=v=>+(v*PT).toFixed(3);
+  return `<g id="カラーパレット">`+cols.map((c,i)=>
+    `<rect x="${q(TA_M+i*TA_STEP)}" y="${q(TA_H-TA_M-TA_CHIP)}" `+
+    `width="${q(TA_CHIP)}" height="${q(TA_CHIP)}" fill="${c}" `+
+    `stroke="#000000" stroke-width="${q(0.15)}"/>`).join('')+`</g>`;
 }
 function tartanA3(){
   const sizeMM=+$('#rep').value*10;
-  const inner=patternSVG(sizeMM,false).replace(/^<svg[^>]*>/,'').replace(/<\/svg>$/,'');
-  let s=`<svg xmlns="http://www.w3.org/2000/svg" width="${A3W}mm" height="${A3H}mm" viewBox="0 0 ${A3W} ${A3H}">`
-   +`<defs><clipPath id="a3"><rect width="${A3W}" height="${A3H}"/></clipPath></defs>`
-   +`<g clip-path="url(#a3)">`;
-  for(let i=0;i<Math.ceil(A3W/sizeMM);i++)for(let j=0;j<Math.ceil(A3H/sizeMM);j++)
-    s+=`<g transform="translate(${i*sizeMM} ${j*sizeMM})">${inner}</g>`;
-  return s+`</g>`+paletteRects(paletteColors())+`</svg>`;
+  const bias=(DIR===45);
+  const F=tartanFace();
+  const W=TA_W*PT, H=TA_H*PT, S=sizeMM*PT;
+  const fx=F.x*PT, fy=F.y*PT, fw=F.w*PT, fh=F.h*PT;
+  const th=mirror(HALF), rs=runs(th), n=th.length;
+  const unit=S/n;
+  const order=usedNames();
+  const ground=colorOf(order[0]);
+  const st=+$('#str').value/100;
+  const tw=twillGrid(n, unit, +$('#fine').value);
+  const a1=0.5-0.5*st, a2=(st<=0)?0:(st/(0.5+0.5*st));
+  const uid='a'+(++TUID);
+  const cx=fx+fw/2, cy=fy+fh/2;             // 回転の中心は柄面の中心
+  const q=v=>+v.toFixed(3);
+
+  /* 回転しても柄面を覆う範囲。★開始位置はリピートの倍数に丸める。
+     綾織の周期 P は unit の整数倍で、S は P の整数倍（画面の「✓ N周期でリピート」）。
+     だから S の倍数から始めれば、糸の位相と綾織セルの位相が必ずそろう。 */
+  const need=bias? Math.hypot(fw,fh) : Math.max(fw,fh);
+  const reps=Math.ceil(need/S)+2, span=reps*S;
+  const x0=Math.floor((cx-span/2)/S)*S, y0=Math.floor((cy-span/2)/S)*S;
+
+  /* ★45度は transform で回さず【座標に焼き込む】（2026-09-10 実測で判明）
+       <g transform="rotate(45)"> の中で pattern 塗りを使うと、Illustrator は
+       パターンだけ回さずに置く（＝「パターンの変形」を外したときの挙動）。
+       すると綾織セルが糸の向きと合わず、細い緯糸が飛んで格子が片方向に潰れる。
+       WebKit は一緒に回すので画面では正しく見え、紙だけ崩れる＝気づきにくい。
+     だから回転はグループに掛けず、四隅を回した polygon として出す。
+       ・transform が無いので、どのレンダラでも同じ座標系＝同じ見た目
+       ・綾織セルは紙面に対して軸平行のまま残る。これは Python 版
+         （_engine_bias.py：綾織は画面座標で決める）と同じ考え方で、
+         斜めに回した綾織が階段状にジグザグになるのを避けられる */
+  const shape=(x,y,w,h,fill)=>{
+    const f=fill?` fill="${fill}"`:'';
+    if(!bias) return `<rect x="${q(x)}" y="${q(y)}" width="${q(w)}" height="${q(h)}"${f}/>`;
+    const k=Math.SQRT1_2;                       // cos45 = sin45
+    const p=(px,py)=>{ const dx=px-cx, dy=py-cy;
+      return `${q(cx+dx*k-dy*k)},${q(cy+dx*k+dy*k)}`; };
+    return `<polygon points="${p(x,y)} ${p(x+w,y)} ${p(x+w,y+h)} ${p(x,y+h)}"${f}/>`;
+  };
+
+  const warp=[], wf1=[], wf2=[];
+  order.forEach((nm,ci)=>{
+    const col=colorOf(nm);
+    let a='', b='', c2='';
+    for(let k=0;k<reps;k++) rs.forEach(([cn,s1,l])=>{
+      if(cn!==nm) return;
+      const o=k*S+s1*unit, w=l*unit;
+      a +=shape(x0+o, y0, w, span);
+      b +=shape(x0, y0+o, span, w);
+      c2+=shape(x0, y0+o, span, w, `url(#${uid}p${ci})`);
+    });
+    warp.push(`<g fill="${col}">${a}</g>`);
+    wf1.push(`<g fill="${col}">${b}</g>`);
+    wf2.push(c2);
+  });
+
+  /* ★width/height も pt で書く。ここを mm にすると viewBox(pt) との比で
+     25.4/72 の暗黙スケールが掛かり、pt で書いた意味がなくなる。
+     ★回転グループは持たない（上の shape() が座標に焼き込んでいる）。 */
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${q(W)}pt" height="${q(H)}pt" `
+   +`viewBox="0 0 ${q(W)} ${q(H)}">`
+   +`<title>A3縦 実寸 ${cur.label} / ${LIB.ways[wayKey].label} / 1リピート${cm(sizeMM)} / `
+   +`${bias?'45度バイアス':'直交'} / 綾線${Math.round(st*100)}%</title>`
+   +`<defs><clipPath id="${uid}c">`
+   +`<rect x="${q(fx)}" y="${q(fy)}" width="${q(fw)}" height="${q(fh)}"/></clipPath>`
+   + twillDefs(uid, order, tw, a2)
+   +`</defs>`
+   +`<rect width="${q(W)}" height="${q(H)}" fill="#FFFFFF"/>`
+   +`<g id="柄面" clip-path="url(#${uid}c)">`
+   +`<rect x="${q(fx)}" y="${q(fy)}" width="${q(fw)}" height="${q(fh)}" fill="${ground}"/>`
+   +`<g id="経糸">${warp.join('')}</g>`
+   + (a1>0.001?`<g id="緯糸_フラット" opacity="${a1.toFixed(4)}">${wf1.join('')}</g>`:'')
+   + (a2>0.001?`<g id="緯糸_綾織" opacity="${a2.toFixed(4)}">${wf2.join('')}</g>`:'')
+   +`</g>`
+   +`<rect x="${q(fx)}" y="${q(fy)}" width="${q(fw)}" height="${q(fh)}" `
+   +`fill="none" stroke="#000000" stroke-width="${q(0.15)}"/>`
+   + tartanPalette(paletteColors())
+   +`</svg>`;
 }
 
 /* パレットは「面積の大きい順 → 明るい順」で重複を除いた色 */
@@ -986,7 +1101,8 @@ try{ new ResizeObserver(syncBarWidth).observe($('#box1')); }catch(e){}
 
 const tName=()=>`${cur.key}_${wayKey}_綾線${Math.round(+$('#str').value)}`;
 function dlSVG(){
-  save(new Blob([patternSVG(+$('#rep').value*10,false)],{type:'image/svg+xml;charset=utf-8'}),
+  // ★書き出しは pt（Illustrator で綾織セルが2.83倍に膨らむのを防ぐ・PT の定義参照）
+  save(new Blob([patternSVG(+$('#rep').value*10,false,PT)],{type:'image/svg+xml;charset=utf-8'}),
        `${tName()}_パターン用.svg`);
 }
 function dlA3(){
@@ -1283,7 +1399,9 @@ const HOWTO=`<b>Illustratorでの使い方</b><br>
 <b>45度で使いたいとき</b>は、図形にパターンを適用してから
 「オブジェクト &gt; 変形 &gt; 回転」で角度45°、<b>「パターンの変形」だけチェック</b>
 （「オブジェクトの変形」のチェックは外す）。これなら継ぎ目が出ません。<br>
-A3は実寸。紙に出してボディに当てると大きさが掴めます。<b>左下に使った色の見本つき</b>。`;
+A3は実寸。紙に出してボディに当てると大きさが掴めます。<b>左下に使った色の見本つき</b>。<br>
+<b>A3は「使う向き」を焼き込んで書き出します</b>。45度を選んでいれば45度で出るので、
+イラレ側で回す必要はありません（そのまま開いて印刷）。`;
 $('#howto').innerHTML=HOWTO;
 $('#howto2').innerHTML=HOWTO;
 $('#howto3').innerHTML=HOWTO+'<br>元のファイルは書き換えません（別名で保存されます）。';

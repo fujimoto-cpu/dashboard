@@ -31,7 +31,7 @@
   },
   "ways": {
     "A2_whispy_choco": {
-      "label": "ウィスピーブルー × チョコレート（A′案）",
+      "label": "ウィスピーブルー × チョコレート",
       "source": "cottonary｜Whispy Blue 13-4014 × Chocolate Torte 19-1109 / トーンイントーン",
       "colors": {
         "base": "#F0EDE6",
@@ -44,7 +44,7 @@
       }
     },
     "B_lilac_slate": {
-      "label": "ライラック × スレートグレー（B案）",
+      "label": "ライラック × スレートグレー",
       "source": "nugu__official スライド5｜ライラック×スレートグレー×ラベンダーグレー / トーンオントーン",
       "colors": {
         "base": "#F2F0F4",
@@ -57,7 +57,7 @@
       }
     },
     "E_pink_brown": {
-      "label": "ピンク × ブラウン（E案）",
+      "label": "ピンク × ブラウン",
       "source": "amuse.bkk｜pink & brown（PANTONE 12-2907 Pink Marshmallow） / トーンイントーン",
       "colors": {
         "base": "#F4EFEA",
@@ -70,7 +70,7 @@
       }
     },
     "F_greyscale": {
-      "label": "グレースケール（F案）",
+      "label": "グレースケール",
       "source": "nugu__official スライド4｜ライトグレー×グレー×チャコール / トーンオントーン",
       "colors": {
         "base": "#F1F0EE",
