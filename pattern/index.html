@@ -727,20 +727,11 @@ function patternSVG(sizeMM, withPalette, U){
   return s2+`</svg>`;
 }
 
-/* ── A3実寸（420×297mm）──────────────────────────────────────
-   紙に出してボディに当てる用。左下に使っている色を正方形で並べる。
-   白っぽい色は紙や柄に埋もれるので黒枠を付ける（ゆりこ指示） */
-const A3W=420, A3H=297, SQ=15, SQGAP=3, A3M=10;
-/* U … 1 なら mm 座標（ドット側・色替え側）／ PT なら pt 座標（タータンA3） */
-function paletteRects(cols, U){
-  U=U||1;
-  const q=v=>+(v*U).toFixed(3);
-  return `<g id="カラーパレット">`+cols.map((c,i)=>{
-    const white=lum(c)>=735;   // ほぼ白（各チャンネル平均245以上）
-    return `<rect x="${q(A3M+i*(SQ+SQGAP))}" y="${q(A3H-A3M-SQ)}" width="${q(SQ)}" height="${q(SQ)}" `+
-           `fill="${c}"${white?` stroke="#000000" stroke-width="${q(0.4)}"`:''}/>`;
-  }).join('')+`</g>`;
-}
+/* ── A3実寸 ────────────────────────────────────────────────────
+   紙に出してボディに当てる用。下の白帯に使っている色を正方形で並べる。
+   2026-09-10 まで A3横（420×297）で柄の上にパレットを重ねていたが、
+   ゆりこ指示で【A3縦・柄面と白帯を分ける】に統一した（下の TA_* / a3Page）。
+   横向きの旧レイアウト（paletteRects / A3W / A3H / SQ）は使う所が無くなったので削除。 */
 /* ── タータンA3（縦 297×420mm）─────────────────────────────────
    ★2026-09-10 ゆりこ指示で「縦」＋「下のパレット帯には柄を入れない」に変更。
      版組みは Python 版（build_a3_pages.py＝ゆりこがOKした見本）に合わせる。
@@ -750,7 +741,8 @@ function paletteRects(cols, U){
        ・mask 付きグループは並べて使えないので、1枚目以外の緯糸が丸ごと落ちる
          → 横縞だけ／縦縞だけの紙が出てくる（ゆりこ報告の1・2枚目がこれ）
      いまは【縞を柄面に直接描く】。タイルの複製も <use> も mask も使わない。
-   ※ドット側・色替え側のA3（landscape・A3W/A3H）はそのまま。混ぜない。 */
+   ※版組み（TA_* / a3Page / a3Palette）はドット側・色替え側のA3と共通。
+     3つとも A3縦で、下の白帯には柄を入れない。 */
 const TA_W=297, TA_H=420, TA_M=10;          // A3縦・外周マージン(mm)
 const TA_CHIP=24, TA_STEP=30, TA_GAP=8;     // パレットの正方形・間隔・柄面とのアキ
 /* 柄を敷く面。下にパレット帯のぶんだけアキを作る（柄はここに入れない） */
@@ -758,12 +750,31 @@ function tartanFace(){
   return {x:TA_M, y:TA_M, w:TA_W-TA_M*2,
           h:TA_H-TA_M-TA_CHIP-TA_GAP-TA_M};
 }
-function tartanPalette(cols){
-  const q=v=>+(v*PT).toFixed(3);
+/* 下の白帯に色見本を並べる。U … 1 なら mm 座標／ PT なら pt 座標。
+   HEXの文字は入れない（2026-09-10 ゆりこ確定）。 */
+function a3Palette(cols, U){
+  U=U||1;
+  const q=v=>+(v*U).toFixed(3);
   return `<g id="カラーパレット">`+cols.map((c,i)=>
     `<rect x="${q(TA_M+i*TA_STEP)}" y="${q(TA_H-TA_M-TA_CHIP)}" `+
     `width="${q(TA_CHIP)}" height="${q(TA_CHIP)}" fill="${c}" `+
     `stroke="#000000" stroke-width="${q(0.15)}"/>`).join('')+`</g>`;
+}
+/* A3縦の紙＋柄面の枠。柄面の中身（inner）は呼ぶ側が作る。
+   タータン／ドット／色替え の3つで同じ版組みを使う（2026-09-10 ゆりこ指示「縦に揃える」）*/
+function a3Page(innerSVG, pal, U, title){
+  U=U||1;
+  const F=tartanFace(), q=v=>+(v*U).toFixed(3);
+  const un=(U===1)?'mm':'pt';
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${q(TA_W)}${un}" height="${q(TA_H)}${un}" `
+   +`viewBox="0 0 ${q(TA_W)} ${q(TA_H)}">`
+   +(title?`<title>${title}</title>`:'')
+   +`<rect width="${q(TA_W)}" height="${q(TA_H)}" fill="#FFFFFF"/>`
+   +innerSVG
+   +`<rect x="${q(F.x)}" y="${q(F.y)}" width="${q(F.w)}" height="${q(F.h)}" `
+   +`fill="none" stroke="#000000" stroke-width="${q(0.15)}"/>`
+   +a3Palette(pal, U)
+   +`</svg>`;
 }
 function tartanA3(){
   const sizeMM=+$('#rep').value*10;
@@ -824,28 +835,22 @@ function tartanA3(){
     wf2.push(c2);
   });
 
-  /* ★width/height も pt で書く。ここを mm にすると viewBox(pt) との比で
-     25.4/72 の暗黙スケールが掛かり、pt で書いた意味がなくなる。
+  /* ★紙は pt で書く。mm にすると viewBox(pt) との比で 25.4/72 の暗黙スケールが
+     掛かり、pt で書いた意味がなくなる（a3Page が単位を揃えて出す）。
      ★回転グループは持たない（上の shape() が座標に焼き込んでいる）。 */
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${q(W)}pt" height="${q(H)}pt" `
-   +`viewBox="0 0 ${q(W)} ${q(H)}">`
-   +`<title>A3縦 実寸 ${cur.label} / ${LIB.ways[wayKey].label} / 1リピート${cm(sizeMM)} / `
-   +`${bias?'45度バイアス':'直交'} / 綾線${Math.round(st*100)}%</title>`
-   +`<defs><clipPath id="${uid}c">`
+  const inner=`<defs><clipPath id="${uid}c">`
    +`<rect x="${q(fx)}" y="${q(fy)}" width="${q(fw)}" height="${q(fh)}"/></clipPath>`
    + twillDefs(uid, order, tw, a2)
    +`</defs>`
-   +`<rect width="${q(W)}" height="${q(H)}" fill="#FFFFFF"/>`
    +`<g id="柄面" clip-path="url(#${uid}c)">`
    +`<rect x="${q(fx)}" y="${q(fy)}" width="${q(fw)}" height="${q(fh)}" fill="${ground}"/>`
    +`<g id="経糸">${warp.join('')}</g>`
    + (a1>0.001?`<g id="緯糸_フラット" opacity="${a1.toFixed(4)}">${wf1.join('')}</g>`:'')
    + (a2>0.001?`<g id="緯糸_綾織" opacity="${a2.toFixed(4)}">${wf2.join('')}</g>`:'')
-   +`</g>`
-   +`<rect x="${q(fx)}" y="${q(fy)}" width="${q(fw)}" height="${q(fh)}" `
-   +`fill="none" stroke="#000000" stroke-width="${q(0.15)}"/>`
-   + tartanPalette(paletteColors())
-   +`</svg>`;
+   +`</g>`;
+  return a3Page(inner, paletteColors(), PT,
+    `A3縦 実寸 ${cur.label} / ${LIB.ways[wayKey].label} / 1リピート${cm(sizeMM)} / `
+    +`${bias?'45度バイアス':'直交'} / 綾線${Math.round(st*100)}%`);
 }
 
 /* パレットは「面積の大きい順 → 明るい順」で重複を除いた色 */
@@ -1345,15 +1350,25 @@ function dotChips(){
     inp.oninput=e=>{ DOT.colors[+e.target.dataset.i]=e.target.value.toUpperCase();
       e.target.parentElement.style.background=e.target.value; dotRender(); };});
 }
+/* ドットのA3実寸。タータンと同じ版組みに揃える（A3縦・柄面＋下の白帯パレット）。
+   2026-09-10 ゆりこ指示。ドットは円だけで <pattern> を使っていないので、
+   単位は mm のままでいい（Illustrator でパターンが膨らむ問題は起きない）。 */
+function dotA3SVG(){
+  const F=tartanFace(), g=dotGeom();
+  // 柄面ぶんのドット面を作って、中身だけ柄面の位置へ移す
+  const inner=dotSVG({w:F.w,h:F.h})
+    .replace(/^<svg[^>]*>/,'').replace(/<\/svg>$/,'');
+  const tag=`ドット ${DOT.stagger?'千鳥':'等間隔'} / ピッチ${g.pitch.toFixed(2)}mm / 径${g.dia.toFixed(2)}mm`;
+  return a3Page(`<g id="柄面" transform="translate(${F.x} ${F.y})">${inner}</g>`,
+    [$('#dbg').value.toUpperCase(), ...DOT.colors], 1, `A3縦 実寸 ${tag}`);
+}
 function dotDL(kind){
   const g=dotGeom(), dpi=Math.max(72,+$('#ddpi').value||300);
   const tag=`${DOT.stagger?'千鳥':'等間隔'}_丈${g.lenCM}cmに${g.per}個_ピッチ${g.pitch.toFixed(1)}mm`;
   if(kind==='svg')
     save(new Blob([dotSVG()],{type:'image/svg+xml;charset=utf-8'}),`ドット_${tag}_パターン用.svg`);
   else if(kind==='a3'){
-    const body=dotSVG({w:A3W,h:A3H}).replace(/<\/svg>$/,'')
-      +paletteRects([$('#dbg').value.toUpperCase(),...DOT.colors])+'</svg>';
-    save(new Blob([body],{type:'image/svg+xml;charset=utf-8'}),`ドット_${tag}_A3実寸.svg`);
+    save(new Blob([dotA3SVG()],{type:'image/svg+xml;charset=utf-8'}),`ドット_${tag}_A3実寸.svg`);
   }
   else{
     const w=Math.round(g.tileW/25.4*dpi), h=Math.round(g.tileH/25.4*dpi);
@@ -1705,9 +1720,13 @@ function rcInner(){
   c.removeAttribute('style'); c.removeAttribute('width'); c.removeAttribute('height');
   const vb=(c.getAttribute('viewBox')||'').split(/[\s,]+/).map(Number);
   const w=vb[2]||100, h=vb[3]||vb[2]||100;
+  /* ★<defs> は先頭に限らず拾う（2026-09-10 修正）。
+     このツール自身の書き出しは <title> が先に来るので、先頭固定だと拾えず、
+     A3でタイルを並べたときに defs（＝pattern/clipPath の id）が複製されて
+     Illustrator で崩れる（旧 tartanA3 と同じ事故）。 */
   let defs='', body=c.innerHTML;
-  const m=body.match(/^\s*<defs>([\s\S]*?)<\/defs>([\s\S]*)$/);
-  if(m){ defs=m[1]; body=m[2]; }
+  const m=body.match(/<defs>([\s\S]*?)<\/defs>/);
+  if(m){ defs=m[1]; body=body.replace(m[0],''); }
   return {inner:c.innerHTML, defs, body, w, h};
 }
 function rcTileSVG(){
@@ -1716,15 +1735,33 @@ function rcTileSVG(){
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}mm" height="${H.toFixed(2)}mm" `
         +`viewBox="0 0 ${t.w} ${t.h}">${t.inner}</svg>`;
 }
+/* 読み込んだ柄のA3実寸。タータン・ドットと同じ版組みに揃える
+   （A3縦・柄面＋下の白帯パレット。2026-09-10 ゆりこ指示）。
+   ★タイルごとに <defs> を複製しない。複製すると id が重複して
+     Illustrator で崩れる（旧 tartanA3 で実際に起きた。詳細は tartanA3 のコメント）。
+     defs は柄面の外に1回だけ出して、タイルは body だけ並べる。
+   ⚠ 読み込んだSVG が mask を使っている場合（このツールの 2026-09-10 より前の
+     書き出し等）は、mask 付きグループを並べる形になるので Illustrator では
+     1枚目以外が崩れる。その場合は元の柄を新しい書き出しで作り直す。 */
 function rcA3SVG(){
   const t=rcInner(); if(!t) return '';
-  const W=rcSize(), H=W*t.h/t.w, sc=W/t.w;
-  let s=`<svg xmlns="http://www.w3.org/2000/svg" width="${A3W}mm" height="${A3H}mm" viewBox="0 0 ${A3W} ${A3H}">`
-   +`<defs><clipPath id="a3"><rect width="${A3W}" height="${A3H}"/></clipPath></defs><g clip-path="url(#a3)">`;
-  for(let i=0;i<Math.ceil(A3W/W);i++)for(let j=0;j<Math.ceil(A3H/H);j++)
-    s+=`<g transform="translate(${(i*W).toFixed(3)} ${(j*H).toFixed(3)}) scale(${sc.toFixed(6)})">${t.inner}</g>`;
+  const F=tartanFace(), q=v=>+v.toFixed(3);
+  /* ★紙も pt で作る。このツールの書き出し（pt）を読み込んだときに scale が
+     ちょうど 1 になり、scale 付きグループを挟まずに済む。
+     Illustrator は scale の掛かったグループの中の <pattern> を一緒に拡縮しない
+     ので、mm の紙に pt の柄を載せると綾織のセルだけ 2.83倍 になって出る（実測）。
+     ⚠ よその柄（mm/px）を読み込んで、かつその柄が <pattern> を使っている場合は
+       scale が 1 にならないので、綾織の目が変わる可能性は残る。 */
+  const Wmm=rcSize(), W=Wmm*PT, H=W*t.h/t.w, sc=W/t.w;
+  const fx=F.x*PT, fy=F.y*PT, fw=F.w*PT, fh=F.h*PT;
+  let s=`<defs>${t.defs}<clipPath id="rca3">`
+   +`<rect x="${q(fx)}" y="${q(fy)}" width="${q(fw)}" height="${q(fh)}"/></clipPath></defs>`
+   +`<g id="柄面" clip-path="url(#rca3)">`;
+  for(let i=0;i<Math.ceil(fw/W);i++)for(let j=0;j<Math.ceil(fh/H);j++)
+    s+=`<g transform="translate(${q(fx+i*W)} ${q(fy+j*H)})`
+      +(Math.abs(sc-1)<1e-9?'':` scale(${sc.toFixed(6)})`)+`>${t.body}</g>`;
   const pal=[...new Set(RC.colors.map(c=>RC.map[c.hex]||c.hex))];
-  return s+`</g>`+paletteRects(pal)+`</svg>`;
+  return a3Page(s+`</g>`, pal, PT, `A3縦 実寸 ${RC.name||'読み込んだ柄'} / 1リピート${cm(Wmm)}`);
 }
 function drawRcTile(){
   const t=rcInner(); if(!t){ $('#rctile').innerHTML=''; return; }
