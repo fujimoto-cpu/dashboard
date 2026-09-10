@@ -1218,7 +1218,7 @@ function thumbDot(bg,dot,stagger,size){
   return s+`</g></svg>`;
 }
 function openTartan(sk,wk){
-  wayKey=wk; $('#way').value=wk;
+  wayKey=wk; buildWays();   /* 配色は #ways のボタン群で持つ（#way という要素は無い） */
   pickSett(sk);
   goTab('make');
 }
