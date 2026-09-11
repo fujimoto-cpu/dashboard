@@ -723,6 +723,168 @@
         "ACCENT": "accent",
         "DARKLINE": "darkline"
       }
+    },
+    "lavanda_27es_a": {
+      "label": "27ES タータン A（中央＝太帯）",
+      "note": "ゆりこの実データ アセット 1.svg から糸の並びを復元（2026-09-11）。1リピート 112.10mm・45度バイアス。元データのパターン定義 /Matrix から角度・スケールを確定",
+      "bias": true,
+      "thread_px": 6,
+      "yarn_px": 3,
+      "twill": 2,
+      "half": [
+        [
+          "DARKLINE",
+          1
+        ],
+        [
+          "BASE",
+          45
+        ],
+        [
+          "DARKLINE",
+          3
+        ],
+        [
+          "BASE",
+          6
+        ],
+        [
+          "DARKLINE",
+          2
+        ],
+        [
+          "MID",
+          12
+        ],
+        [
+          "HAIRLINE",
+          2
+        ],
+        [
+          "ACCENT",
+          8
+        ],
+        [
+          "HAIRLINE",
+          2
+        ],
+        [
+          "ACCENT",
+          10
+        ],
+        [
+          "ACCENTDEEP",
+          6
+        ],
+        [
+          "ACCENT",
+          6
+        ],
+        [
+          "DARKLINE",
+          3
+        ],
+        [
+          "BAND",
+          8
+        ],
+        [
+          "DARKLINE",
+          10
+        ]
+      ],
+      "role_map": {
+        "DARKLINE": "darkline",
+        "BASE": "base",
+        "MID": "mid",
+        "HAIRLINE": "hairline",
+        "ACCENT": "accent",
+        "ACCENTDEEP": "accentDeep",
+        "BAND": "band"
+      }
+    },
+    "lavanda_27es_b": {
+      "label": "27ES タータン B（中央に細線）",
+      "note": "ゆりこの実データ アセット 2.svg から復元（2026-09-11）。Aと同じ骨格で、中央の太帯19本に細線が入っている。1リピート 117.10mm・45度バイアス",
+      "bias": true,
+      "thread_px": 6,
+      "yarn_px": 3,
+      "twill": 2,
+      "half": [
+        [
+          "DARKLINE",
+          1
+        ],
+        [
+          "BASE",
+          45
+        ],
+        [
+          "DARKLINE",
+          3
+        ],
+        [
+          "BASE",
+          6
+        ],
+        [
+          "DARKLINE",
+          2
+        ],
+        [
+          "MID",
+          12
+        ],
+        [
+          "HAIRLINE",
+          2
+        ],
+        [
+          "BAND",
+          8
+        ],
+        [
+          "HAIRLINE",
+          2
+        ],
+        [
+          "BAND",
+          10
+        ],
+        [
+          "ACCENTDEEP",
+          6
+        ],
+        [
+          "BAND",
+          6
+        ],
+        [
+          "DARKLINE",
+          3
+        ],
+        [
+          "ACCENT",
+          8
+        ],
+        [
+          "ACCENTDEEP",
+          8
+        ],
+        [
+          "HAIRLINE",
+          2
+        ]
+      ],
+      "role_map": {
+        "DARKLINE": "darkline",
+        "BASE": "base",
+        "MID": "mid",
+        "HAIRLINE": "hairline",
+        "BAND": "band",
+        "ACCENTDEEP": "accentDeep",
+        "ACCENT": "accent"
+      }
     }
   }
 }
