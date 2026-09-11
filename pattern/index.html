@@ -415,8 +415,18 @@
           間隔に対する割合。大きくするほど詰まります。</p>
       </div>
       <div id="dgapbox" hidden>
-        <label>余白 (cm) <span style="color:var(--sub);font-weight:400">ドットのふちどうしの間</span></label>
-        <input type="number" id="dgap" value="0.80" min="0" step="0.05">
+        <!-- 丈・ドット幅・個数 の3つを指定できるようにする。
+             個数を入れると余白が決まり、余白を動かすと個数が追従する（双方向） -->
+        <div class="row">
+          <div>
+            <label>入れたい個数 <span style="color:var(--sub);font-weight:400">丈に縦いくつ</span></label>
+            <input type="number" id="dcnt" value="33" min="1" step="1">
+          </div>
+          <div>
+            <label>余白 (cm) <span style="color:var(--sub);font-weight:400">ドットのふちどうしの間</span></label>
+            <input type="number" id="dgap" value="0.80" min="0" step="0.05">
+          </div>
+        </div>
         <p class="hint" id="dfithint" style="margin-top:6px"></p>
         <button class="mini" id="dfit" style="margin-top:6px">丈にきっちり収める</button>
       </div>
@@ -1495,6 +1505,9 @@ function dotRender(){
   $('#ddiav').textContent=`${+$('#ddia').value}%（直径 ${cm(g.dia)}）`;
   if(DOT.mode==='size'){
     const f=dotFit(g);
+    /* 個数欄は他の入力（丈・幅・余白）に追従させる。
+       入力中の欄は上書きしない（打っている途中の数字が消えるため） */
+    if(document.activeElement!==$('#dcnt')) $('#dcnt').value=Math.max(1,Math.round(g.per));
     $('#dfithint').innerHTML = Math.abs(f.n-g.per)<0.02
       ? `丈 ${g.lenCM}cm にちょうど <b>${f.n}個</b> 並びます。`
       : `いまは丈 ${g.lenCM}cm に <b>${g.per.toFixed(1)}個</b>（端が半端に切れます）。`+
@@ -1616,6 +1629,20 @@ $('#dfit').onclick=()=>{
   /* 3桁で入れる。0.01cm 刻みに丸めると丈に対して端が半個ぶんズレて
      「きっちり」にならない（54個のつもりが53.8個になる） */
   $('#dgap').value=(f.gap/10).toFixed(3);
+  dotRender();
+};
+/* 入れたい個数 → 余白を逆算する（丈とドット幅は固定のまま）。
+   45度で使うときは丈方向の周期が √2 倍になるので dotFit と同じ式を使う */
+$('#dcnt').oninput=()=>{
+  const g=dotGeom();
+  const n=Math.max(1,Math.round(+$('#dcnt').value||1));
+  const pitch=g.lenCM*10/n*(DOT.dir?Math.SQRT2:1);
+  const gap=pitch-g.dia;
+  if(gap<0){
+    $('#dfithint').innerHTML=`<span class="warn">⚠ ドット幅 ${cm(g.dia)} では ${n}個 は入りません（丈 ${g.lenCM}cm）。幅を細くしてください</span>`;
+    return;                              // 入らない指定では余白を書き換えない
+  }
+  $('#dgap').value=(gap/10).toFixed(3);  // 3桁。丸めると丈に対して端がズレる
   dotRender();
 };
 ['dlen','dper','ddia','ddpi','dwid','dgap'].forEach(id=>$('#'+id).oninput=dotRender);
