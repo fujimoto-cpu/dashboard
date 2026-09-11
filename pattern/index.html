@@ -158,6 +158,16 @@
   details.fine{margin-top:7px}
   details.fine summary{font-size:11.5px;color:var(--sub);cursor:pointer;list-style:revert}
   .slid output{width:44px;text-align:right;flex:0 0 auto;color:var(--ink)}
+  /* 地といちばん効いている色の入れかえ */
+  .swaprow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .swaprow>span{font-size:12px;color:#6f6f7a}
+  .swaprow #swaps{display:flex;gap:6px;flex-wrap:wrap}
+  .swapb{display:flex;align-items:center;gap:6px;padding:5px 10px;font-size:12px;
+         border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;color:#3a3a42}
+  .swapb i{width:14px;height:14px;border-radius:4px;display:inline-block;border:1px solid rgba(0,0,0,.12)}
+  .swapb.on{border-color:var(--accent);background:#f3efff;color:var(--accent);font-weight:600}
+  .swapb:hover{border-color:var(--accent)}
+
   /* 配色の候補案 */
   .cands{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:10px}
   .cand{padding:0;margin:0;width:100%;text-align:left;cursor:pointer;background:#fff;
@@ -267,6 +277,12 @@
       <div class="ways" id="ways"></div>
       <div class="chips" id="chips"></div>
       <p class="hint">クリックで色を変えられます。増やす／減らすは右の「糸の並び」で帯を選んでから。</p>
+      <!-- 地といちばん効いている色を入れかえる。面積の大きい地が濃くなるので、
+           同じ柄・同じ配色のまま「濃い地バージョン」が一発で見られる -->
+      <div class="swaprow">
+        <span>地と入れかえる</span>
+        <div id="swaps"></div>
+      </div>
     </div>
 
     <div class="card">
@@ -637,10 +653,21 @@ function roleOf(name){
   const m=/^([^*\s]+)(?:\s*\*\s*([\d.]+))?$/.exec(roleMap[name]||'');
   return m ? {role:m[1], k:m[2]?+m[2]:null} : {role:null, k:null};
 }
+/* SWAP … 地（base）と入れかえる役割。null なら入れかえなし。
+   色そのものでなく【役割】を入れかえるので、配色を切り替えても入れかえが続く。
+   面積のいちばん大きい地が濃くなる＝同じ柄のまま「濃い地バージョン」が見られる */
+let SWAP=null;
+function swapRole(role){
+  if(!SWAP) return role;
+  if(role==='base') return SWAP;
+  if(role===SWAP)   return 'base';
+  return role;
+}
 function colorOf(name){
   if(override[name]) return override[name];
   const {role,k}=roleOf(name);
-  const base=(role && LIB.ways[wayKey].colors[role]) || '#CCCCCC';
+  const r=swapRole(role);
+  const base=(r && LIB.ways[wayKey].colors[r]) || '#CCCCCC';
   return k ? shade(base, k) : base;
 }
 /* この柄が使っている色名（明るい順）。同じ色でも名前が違えば別に並ぶ＝チップの数 */
@@ -1109,7 +1136,26 @@ function buildBand(){
   if(uf) uf.onclick=()=>{ delete override[HALF[sel][0]]; refresh(); };
 }
 
-function refresh(){ buildBar(); buildBand(); buildChips(); render(); }
+/* 地と入れかえる候補ボタン。その柄が実際に使っている役割だけ出す
+   （使っていない役割を押せても何も起きないので） */
+function buildSwaps(){
+  const el=$('#swaps'); if(!el) return;
+  const ja={accent:'主役色', band:'太帯', accentDeep:'主役色_濃', mid:'中間帯'};
+  const used=new Set();
+  HALF.forEach(([nm])=>{ const {role}=roleOf(nm); if(role && role!=='base') used.add(role); });
+  const cands=['accent','band','accentDeep','mid'].filter(r=>used.has(r));
+  el.innerHTML=cands.map(r=>{
+    const c=LIB.ways[wayKey].colors[r]||'#CCC';
+    return `<button class="swapb${SWAP===r?' on':''}" data-r="${r}" title="地と${ja[r]}を入れかえる">
+      <i style="background:${c}"></i>${ja[r]}</button>`;
+  }).join('') || '<span style="font-size:12px;color:#9a9aa4">（この柄には入れかえ先がありません）</span>';
+  el.querySelectorAll('button').forEach(b=>b.onclick=()=>{
+    SWAP = (SWAP===b.dataset.r) ? null : b.dataset.r;   // もう一度押すと元に戻る
+    override={};                                        // 手で指定した色は捨てる（入れかえが見えなくなるため）
+    refresh();
+  });
+}
+function refresh(){ buildBar(); buildBand(); buildChips(); buildSwaps(); render(); }
 
 /* 帯そのものをドラッグ＝太さ変更、動かさずに離す＝選択。
    ポインタは #bar に捕まえる（buildBar が中の div を作り直すので、
