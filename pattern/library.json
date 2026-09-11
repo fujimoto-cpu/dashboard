@@ -1,946 +1,946 @@
 {
- "roles": {
-  "base": {
-   "ja": "地",
-   "desc": "いちばん面積の大きい明るい地色"
+  "roles": {
+    "base": {
+      "ja": "地",
+      "desc": "いちばん面積の大きい明るい地色"
+    },
+    "hairline": {
+      "ja": "細線白",
+      "desc": "格子に走る白の細線"
+    },
+    "mid": {
+      "ja": "中間帯",
+      "desc": "地と濃色をつなぐ中間のグレー帯"
+    },
+    "band": {
+      "ja": "太帯",
+      "desc": "柄の主役になる太い帯（ブラウン系が多い）"
+    },
+    "darkline": {
+      "ja": "最暗線",
+      "desc": "いちばん濃い細線。柄を締める"
+    },
+    "accent": {
+      "ja": "主役色",
+      "desc": "色味を決める帯（ブルー/ピンク/ライラック等）"
+    },
+    "accentDeep": {
+      "ja": "主役色_濃",
+      "desc": "主役色の濃い方"
+    }
   },
-  "hairline": {
-   "ja": "細線白",
-   "desc": "格子に走る白の細線"
+  "ways": {
+    "A2_whispy_choco": {
+      "label": "ウィスピーブルー × チョコレート",
+      "source": "cottonary｜Whispy Blue 13-4014 × Chocolate Torte 19-1109 / トーンイントーン",
+      "colors": {
+        "base": "#F0EDE6",
+        "hairline": "#FBF9F4",
+        "mid": "#A8A29B",
+        "band": "#6B4A3F",
+        "darkline": "#3A2721",
+        "accent": "#B8C9D6",
+        "accentDeep": "#7E97A8"
+      }
+    },
+    "B_lilac_slate": {
+      "label": "ライラック × スレートグレー",
+      "source": "nugu__official スライド5｜ライラック×スレートグレー×ラベンダーグレー / トーンオントーン",
+      "colors": {
+        "base": "#F2F0F4",
+        "hairline": "#FCFAFD",
+        "mid": "#A5A2AB",
+        "band": "#8A8494",
+        "darkline": "#423E4A",
+        "accent": "#C9BEDA",
+        "accentDeep": "#9186A8"
+      }
+    },
+    "E_pink_brown": {
+      "label": "ピンク × ブラウン",
+      "source": "amuse.bkk｜pink & brown（PANTONE 12-2907 Pink Marshmallow） / トーンイントーン",
+      "colors": {
+        "base": "#F4EFEA",
+        "hairline": "#FDF9F5",
+        "mid": "#AFA29B",
+        "band": "#7A5348",
+        "darkline": "#3E2A22",
+        "accent": "#EDC9CE",
+        "accentDeep": "#C99AA0"
+      }
+    },
+    "F_greyscale": {
+      "label": "グレースケール",
+      "source": "nugu__official スライド4｜ライトグレー×グレー×チャコール / トーンオントーン",
+      "colors": {
+        "base": "#F1F0EE",
+        "hairline": "#FBFAF9",
+        "mid": "#ABA9A6",
+        "band": "#7C7A77",
+        "darkline": "#3B3A38",
+        "accent": "#C6C4C1",
+        "accentDeep": "#8E8C89"
+      }
+    },
+    "lavanda_orig": {
+      "label": "ティール × ブラウン（LAVANDA現行）",
+      "source": "ゆりこの実データから同定（2026-09-09・62パス未一致0で実証）",
+      "colors": {
+        "base": "#E8E3D8",
+        "hairline": "#F0EDE6",
+        "mid": "#7D746E",
+        "band": "#5C4039",
+        "darkline": "#2F2320",
+        "accent": "#62838E",
+        "accentDeep": "#2F5359"
+      }
+    },
+    "corin_grey": {
+      "label": "グレー × クリーム",
+      "source": "2026-09-09 CORIN作成",
+      "colors": {
+        "base": "#F2EDE2",
+        "hairline": "#FAF8F4",
+        "mid": "#8F8D86",
+        "band": "#3A2118",
+        "darkline": "#161819",
+        "accent": "#A6A39B",
+        "accentDeep": "#3A4244"
+      }
+    },
+    "corin_blue": {
+      "label": "ブルー × ブラウン",
+      "source": "2026-09-09 CORIN作成",
+      "colors": {
+        "base": "#EAE5DA",
+        "hairline": "#F0EDE4",
+        "mid": "#7D746D",
+        "band": "#5C4038",
+        "darkline": "#2E2320",
+        "accent": "#7FA9BA",
+        "accentDeep": "#2A6E7C"
+      }
+    },
+    "ES1_raindrops_umber": {
+      "label": "レインドロップス × バーントアンバー",
+      "source": "Lit｜uni___media PANTONE 11-1400 Raindrops on Roses ＋ wwdesignagency misty blue/dusty rose/burnt umber / トーンイントーン",
+      "colors": {
+        "base": "#F6EDE9",
+        "hairline": "#FDF8F6",
+        "mid": "#C3ADA7",
+        "band": "#8A5A42",
+        "darkline": "#3B2A24",
+        "accent": "#EFD5D3",
+        "accentDeep": "#C79A94"
+      }
+    },
+    "ES2_veiled_sage": {
+      "label": "ヴェイルドヴィスタ × セージ",
+      "source": "Lit｜uni___media PANTONE 12-6000 Veiled Vista ＋ nugu__official セージグリーン×ベージュ / トーンオントーン",
+      "colors": {
+        "base": "#EFF1EA",
+        "hairline": "#FBFCF8",
+        "mid": "#AFB5A6",
+        "band": "#6E7A63",
+        "darkline": "#2F362A",
+        "accent": "#CBD8C4",
+        "accentDeep": "#8CA084"
+      }
+    },
+    "ES3_quiet_violet": {
+      "label": "クワイエットヴァイオレット × スレート",
+      "source": "Lit｜uni___media PANTONE 16-3610 Quiet Violet ＋ nugu__official ライラック×スレートグレー（既存B案の春版）",
+      "colors": {
+        "base": "#F3F0F4",
+        "hairline": "#FCFAFD",
+        "mid": "#ADA5B3",
+        "band": "#7E7288",
+        "darkline": "#3A3341",
+        "accent": "#C7B7D2",
+        "accentDeep": "#9B8AA6"
+      }
+    },
+    "ES4_butter_choco": {
+      "label": "バターイエロー × チョコレート",
+      "source": "Lit｜amuse.bkk banana & choco（PANTONE 19-1432 Chocolate Fondant）＋ cottonary Pastel Yellow 11-0616 / トーンイントーン",
+      "colors": {
+        "base": "#F7F0DC",
+        "hairline": "#FEFBF0",
+        "mid": "#BFAE8E",
+        "band": "#6B4A38",
+        "darkline": "#33221A",
+        "accent": "#F0DFA0",
+        "accentDeep": "#C2A85C"
+      }
+    },
+    "ES5_stalactite_taupe": {
+      "label": "スタラクタイト × ウォームトープ",
+      "source": "Lit｜uni___media PANTONE 11-4101 Stalactite ＋ inspiredbythis Caramel Café × Whispy Blue / 意外性コンビ",
+      "colors": {
+        "base": "#EDEFEE",
+        "hairline": "#FBFCFC",
+        "mid": "#A9AEB0",
+        "band": "#8A7259",
+        "darkline": "#33291F",
+        "accent": "#C6D6DE",
+        "accentDeep": "#8AA5B4"
+      }
+    },
+    "ES6_mint_sand": {
+      "label": "ミント × サンドベージュ",
+      "source": "Lit｜wearwave.style 2026SS韓国ブランド（HERETIC＝ミント）＋ blackup_kr 春レイヤード ブラウン×サンド",
+      "colors": {
+        "base": "#F1EEE4",
+        "hairline": "#FCFAF4",
+        "mid": "#B6B3A4",
+        "band": "#8C7B62",
+        "darkline": "#2E2A20",
+        "accent": "#BFE0D2",
+        "accentDeep": "#7FB8A2"
+      }
+    },
+    "ES8_charcoal_blush": {
+      "label": "チャコール × ペールピンク",
+      "source": "Lit｜uni___media PANTONE 11-1400 Raindrops on Roses ＋ amuse.bkk grey & pink（ゆりこ指示：黒に近いグレー×春色）",
+      "colors": {
+        "base": "#F5F0EC",
+        "hairline": "#FCFAF8",
+        "mid": "#ADA8A6",
+        "band": "#4A4B4D",
+        "darkline": "#1D1E20",
+        "accent": "#F0D4D6",
+        "accentDeep": "#C48F97"
+      }
+    },
+    "ES9_charcoal_butter": {
+      "label": "チャコール × バターイエロー",
+      "source": "Lit｜cottonary Pastel Yellow 11-0616 ＋ orilu.xoxo Unsalted Butter（ゆりこ指示：黒に近いグレー×春色）",
+      "colors": {
+        "base": "#F7F2E0",
+        "hairline": "#FEFCF3",
+        "mid": "#A9A79E",
+        "band": "#46484A",
+        "darkline": "#1C1D1F",
+        "accent": "#F1E0A2",
+        "accentDeep": "#B79A4F"
+      }
+    },
+    "ES10_charcoal_mint": {
+      "label": "チャコール × ミントグリーン",
+      "source": "Lit｜wearwave.style HERETIC のミント ＋ nugu__official ピンク×ミント×ベージュ（ゆりこ指示：黒に近いグレー×春色）",
+      "colors": {
+        "base": "#EFF2EE",
+        "hairline": "#FBFDFB",
+        "mid": "#A4A9A6",
+        "band": "#45484A",
+        "darkline": "#1B1D1E",
+        "accent": "#C2E1D3",
+        "accentDeep": "#6DA793"
+      }
+    },
+    "ES7_blush_olive": {
+      "label": "ブラッシュピンク × ミュートオリーブ",
+      "source": "Lit｜wwdesignagency muted pink & olive（soft clay red / blush pink / burnt wine red / muted olive）",
+      "colors": {
+        "base": "#F4EEE9",
+        "hairline": "#FCF8F5",
+        "mid": "#BCAFA2",
+        "band": "#6F6F4E",
+        "darkline": "#3A2A2A",
+        "accent": "#E8C9C2",
+        "accentDeep": "#A8563F"
+      }
+    }
   },
-  "mid": {
-   "ja": "中間帯",
-   "desc": "地と濃色をつなぐ中間のグレー帯"
-  },
-  "band": {
-   "ja": "太帯",
-   "desc": "柄の主役になる太い帯（ブラウン系が多い）"
-  },
-  "darkline": {
-   "ja": "最暗線",
-   "desc": "いちばん濃い細線。柄を締める"
-  },
-  "accent": {
-   "ja": "主役色",
-   "desc": "色味を決める帯（ブルー/ピンク/ライラック等）"
-  },
-  "accentDeep": {
-   "ja": "主役色_濃",
-   "desc": "主役色の濃い方"
+  "setts": {
+    "corin_grey_ortho": {
+      "ways": [
+        "corin_grey",
+        "corin_blue",
+        "lavanda_orig",
+        "A2_whispy_choco",
+        "B_lilac_slate",
+        "F_greyscale"
+      ],
+      "label": "CORIN自作 グレー×クリーム",
+      "note": "2026-09-09作成。1440pt角。織り目つき。LAVANDA提案の初期検討で使用",
+      "bias": false,
+      "thread_px": 6,
+      "yarn_px": 6,
+      "twill": 2,
+      "half": [
+        [
+          "CREAM",
+          9
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "CREAM",
+          9
+        ],
+        [
+          "BROWN",
+          2
+        ],
+        [
+          "CREAM",
+          9
+        ],
+        [
+          "BROWN",
+          4
+        ],
+        [
+          "CREAM",
+          4
+        ],
+        [
+          "BROWN",
+          4
+        ],
+        [
+          "GRAY",
+          9
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "GRAY",
+          8
+        ],
+        [
+          "GRAY2",
+          4
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "GRAY",
+          9
+        ],
+        [
+          "DARK",
+          8
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "DARK",
+          10
+        ],
+        [
+          "DARK2",
+          5
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "DARK",
+          11
+        ],
+        [
+          "BLACK",
+          2
+        ],
+        [
+          "DARK",
+          4
+        ]
+      ],
+      "role_map": {
+        "CREAM": "base",
+        "WHITE": "hairline",
+        "GRAY": "mid",
+        "GRAY2": "accent",
+        "BROWN": "band",
+        "DARK": "accentDeep",
+        "DARK2": "accent",
+        "BLACK": "darkline"
+      },
+      "palette": "corin_grey_ortho_colors"
+    },
+    "corin_blue_bias": {
+      "ways": [
+        "corin_grey",
+        "corin_blue",
+        "lavanda_orig",
+        "A2_whispy_choco",
+        "B_lilac_slate",
+        "F_greyscale"
+      ],
+      "label": "CORIN自作 ブルー×ブラウン",
+      "note": "2026-09-09作成。1476pt角。45度は糸番号を(x+y)/(x-y)で取る方式なのでリピートする",
+      "bias": true,
+      "thread_px": 6,
+      "yarn_px": 3,
+      "twill": 2,
+      "half": [
+        [
+          "CREAM",
+          15
+        ],
+        [
+          "DARKBR",
+          2
+        ],
+        [
+          "CREAM",
+          12
+        ],
+        [
+          "DARKBR",
+          3
+        ],
+        [
+          "BROWN",
+          14
+        ],
+        [
+          "DARKBR",
+          3
+        ],
+        [
+          "CREAM",
+          6
+        ],
+        [
+          "DARKBR",
+          2
+        ],
+        [
+          "GRAY",
+          12
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "BLUE",
+          8
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "BLUE",
+          10
+        ],
+        [
+          "TEAL",
+          6
+        ],
+        [
+          "BLUE",
+          6
+        ],
+        [
+          "DARKBR",
+          3
+        ],
+        [
+          "BROWN",
+          8
+        ],
+        [
+          "DARKBR",
+          10
+        ]
+      ],
+      "role_map": {
+        "CREAM": "base",
+        "WHITE": "hairline",
+        "GRAY": "mid",
+        "BROWN": "band",
+        "DARKBR": "darkline",
+        "BLUE": "accent",
+        "TEAL": "accentDeep"
+      },
+      "palette": "corin_blue_bias_colors"
+    },
+    "block_bold": {
+      "ways": [
+        "corin_grey",
+        "corin_blue",
+        "lavanda_orig",
+        "A2_whispy_choco",
+        "B_lilac_slate",
+        "F_greyscale"
+      ],
+      "label": "大柄ブロック（面で見せる）",
+      "note": "2026-09-10 CORIN作成。大26/中16/細2 の3階層。四隅=明るい大面、中心=濃い面",
+      "bias": false,
+      "thread_px": 6,
+      "yarn_px": 6,
+      "twill": 2,
+      "half": [
+        [
+          "BASE",
+          26
+        ],
+        [
+          "DARKLINE",
+          2
+        ],
+        [
+          "BASE",
+          26
+        ],
+        [
+          "BAND",
+          16
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "BAND",
+          16
+        ],
+        [
+          "DEEP",
+          20
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "DEEP",
+          11
+        ]
+      ],
+      "role_map": {
+        "BASE": "base",
+        "WHITE": "hairline",
+        "BAND": "band",
+        "DEEP": "accentDeep",
+        "DARKLINE": "darkline"
+      }
+    },
+    "twin_line": {
+      "ways": [
+        "corin_grey",
+        "corin_blue",
+        "lavanda_orig",
+        "A2_whispy_choco",
+        "B_lilac_slate",
+        "F_greyscale"
+      ],
+      "label": "細ツインライン（きちんと感）",
+      "note": "2026-09-10 CORIN作成。細線を2本組で走らせる伝統的な作り。スーツ地寄り",
+      "bias": false,
+      "thread_px": 6,
+      "yarn_px": 6,
+      "twill": 2,
+      "half": [
+        [
+          "BASE",
+          18
+        ],
+        [
+          "DARKLINE",
+          1
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "DARKLINE",
+          1
+        ],
+        [
+          "BASE",
+          18
+        ],
+        [
+          "MID",
+          12
+        ],
+        [
+          "WHITE",
+          1
+        ],
+        [
+          "MID",
+          12
+        ],
+        [
+          "BAND",
+          8
+        ],
+        [
+          "ACCENT",
+          2
+        ],
+        [
+          "BAND",
+          8
+        ],
+        [
+          "DEEP",
+          14
+        ],
+        [
+          "WHITE",
+          1
+        ],
+        [
+          "DEEP",
+          14
+        ],
+        [
+          "DARKLINE",
+          1
+        ],
+        [
+          "DEEP",
+          6
+        ]
+      ],
+      "role_map": {
+        "BASE": "base",
+        "WHITE": "hairline",
+        "MID": "mid",
+        "BAND": "band",
+        "ACCENT": "accent",
+        "DEEP": "accentDeep",
+        "DARKLINE": "darkline"
+      }
+    },
+    "glen_over": {
+      "ways": [
+        "corin_grey",
+        "corin_blue",
+        "lavanda_orig",
+        "A2_whispy_choco",
+        "B_lilac_slate",
+        "F_greyscale"
+      ],
+      "label": "グレンチェック風（細かい市松＋帯）",
+      "note": "2026-09-10 CORIN作成。4本ずつの細かい市松を地にして、大きな帯を1本重ねる",
+      "bias": false,
+      "thread_px": 6,
+      "yarn_px": 6,
+      "twill": 2,
+      "half": [
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "DARKLINE",
+          2
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "BASE",
+          4
+        ],
+        [
+          "MID",
+          4
+        ],
+        [
+          "ACCENT",
+          4
+        ],
+        [
+          "BAND",
+          8
+        ],
+        [
+          "WHITE",
+          2
+        ],
+        [
+          "BAND",
+          9
+        ]
+      ],
+      "role_map": {
+        "BASE": "base",
+        "WHITE": "hairline",
+        "MID": "mid",
+        "BAND": "band",
+        "ACCENT": "accent",
+        "DARKLINE": "darkline"
+      }
+    },
+    "lavanda_27es_a": {
+      "ways": [
+        "lavanda_orig",
+        "ES3_quiet_violet",
+        "ES5_stalactite_taupe",
+        "ES6_mint_sand",
+        "ES4_butter_choco",
+        "ES9_charcoal_butter"
+      ],
+      "label": "27ES タータン A（中央＝太帯）",
+      "note": "ゆりこの実データ アセット 1.svg から糸の並びを復元（2026-09-11）。1リピート 112.10mm・45度バイアス。元データのパターン定義 /Matrix から角度・スケールを確定",
+      "bias": true,
+      "thread_px": 6,
+      "yarn_px": 3,
+      "twill": 2,
+      "half": [
+        [
+          "DARKLINE",
+          1
+        ],
+        [
+          "BASE",
+          45
+        ],
+        [
+          "DARKLINE",
+          3
+        ],
+        [
+          "BASE",
+          6
+        ],
+        [
+          "DARKLINE",
+          2
+        ],
+        [
+          "MID",
+          12
+        ],
+        [
+          "HAIRLINE",
+          2
+        ],
+        [
+          "ACCENT",
+          8
+        ],
+        [
+          "HAIRLINE",
+          2
+        ],
+        [
+          "ACCENT",
+          10
+        ],
+        [
+          "ACCENTDEEP",
+          6
+        ],
+        [
+          "ACCENT",
+          6
+        ],
+        [
+          "DARKLINE",
+          3
+        ],
+        [
+          "BAND",
+          8
+        ],
+        [
+          "DARKLINE",
+          10
+        ]
+      ],
+      "role_map": {
+        "DARKLINE": "darkline",
+        "BASE": "base",
+        "MID": "mid",
+        "HAIRLINE": "hairline",
+        "ACCENT": "accent",
+        "ACCENTDEEP": "accentDeep",
+        "BAND": "band"
+      }
+    },
+    "lavanda_27es_b": {
+      "ways": [
+        "lavanda_orig",
+        "ES3_quiet_violet",
+        "ES5_stalactite_taupe",
+        "ES6_mint_sand",
+        "ES4_butter_choco",
+        "ES9_charcoal_butter"
+      ],
+      "label": "27ES タータン B（中央に細線）",
+      "note": "ゆりこの実データ アセット 2.svg から復元（2026-09-11）。Aと同じ骨格で、中央の太帯19本に細線が入っている。1リピート 117.10mm・45度バイアス",
+      "bias": true,
+      "thread_px": 6,
+      "yarn_px": 3,
+      "twill": 2,
+      "half": [
+        [
+          "DARKLINE",
+          1
+        ],
+        [
+          "BASE",
+          45
+        ],
+        [
+          "DARKLINE",
+          3
+        ],
+        [
+          "BASE",
+          6
+        ],
+        [
+          "DARKLINE",
+          2
+        ],
+        [
+          "MID",
+          12
+        ],
+        [
+          "HAIRLINE",
+          2
+        ],
+        [
+          "BAND",
+          8
+        ],
+        [
+          "HAIRLINE",
+          2
+        ],
+        [
+          "BAND",
+          10
+        ],
+        [
+          "ACCENTDEEP",
+          6
+        ],
+        [
+          "BAND",
+          6
+        ],
+        [
+          "DARKLINE",
+          3
+        ],
+        [
+          "ACCENT",
+          8
+        ],
+        [
+          "ACCENTDEEP",
+          8
+        ],
+        [
+          "HAIRLINE",
+          2
+        ]
+      ],
+      "role_map": {
+        "DARKLINE": "darkline",
+        "BASE": "base",
+        "MID": "mid",
+        "HAIRLINE": "hairline",
+        "BAND": "band",
+        "ACCENTDEEP": "accentDeep",
+        "ACCENT": "accent"
+      }
+    }
   }
- },
- "ways": {
-  "A2_whispy_choco": {
-   "label": "ウィスピーブルー × チョコレート",
-   "source": "cottonary｜Whispy Blue 13-4014 × Chocolate Torte 19-1109 / トーンイントーン",
-   "colors": {
-    "base": "#F0EDE6",
-    "hairline": "#FBF9F4",
-    "mid": "#A8A29B",
-    "band": "#6B4A3F",
-    "darkline": "#3A2721",
-    "accent": "#B8C9D6",
-    "accentDeep": "#7E97A8"
-   }
-  },
-  "B_lilac_slate": {
-   "label": "ライラック × スレートグレー",
-   "source": "nugu__official スライド5｜ライラック×スレートグレー×ラベンダーグレー / トーンオントーン",
-   "colors": {
-    "base": "#F2F0F4",
-    "hairline": "#FCFAFD",
-    "mid": "#A5A2AB",
-    "band": "#8A8494",
-    "darkline": "#423E4A",
-    "accent": "#C9BEDA",
-    "accentDeep": "#9186A8"
-   }
-  },
-  "E_pink_brown": {
-   "label": "ピンク × ブラウン",
-   "source": "amuse.bkk｜pink & brown（PANTONE 12-2907 Pink Marshmallow） / トーンイントーン",
-   "colors": {
-    "base": "#F4EFEA",
-    "hairline": "#FDF9F5",
-    "mid": "#AFA29B",
-    "band": "#7A5348",
-    "darkline": "#3E2A22",
-    "accent": "#EDC9CE",
-    "accentDeep": "#C99AA0"
-   }
-  },
-  "F_greyscale": {
-   "label": "グレースケール",
-   "source": "nugu__official スライド4｜ライトグレー×グレー×チャコール / トーンオントーン",
-   "colors": {
-    "base": "#F1F0EE",
-    "hairline": "#FBFAF9",
-    "mid": "#ABA9A6",
-    "band": "#7C7A77",
-    "darkline": "#3B3A38",
-    "accent": "#C6C4C1",
-    "accentDeep": "#8E8C89"
-   }
-  },
-  "lavanda_orig": {
-   "label": "ティール × ブラウン（LAVANDA現行）",
-   "source": "ゆりこの実データから同定（2026-09-09・62パス未一致0で実証）",
-   "colors": {
-    "base": "#E8E3D8",
-    "hairline": "#F0EDE6",
-    "mid": "#7D746E",
-    "band": "#5C4039",
-    "darkline": "#2F2320",
-    "accent": "#62838E",
-    "accentDeep": "#2F5359"
-   }
-  },
-  "corin_grey": {
-   "label": "グレー × クリーム",
-   "source": "2026-09-09 CORIN作成",
-   "colors": {
-    "base": "#F2EDE2",
-    "hairline": "#FAF8F4",
-    "mid": "#8F8D86",
-    "band": "#3A2118",
-    "darkline": "#161819",
-    "accent": "#A6A39B",
-    "accentDeep": "#3A4244"
-   }
-  },
-  "corin_blue": {
-   "label": "ブルー × ブラウン",
-   "source": "2026-09-09 CORIN作成",
-   "colors": {
-    "base": "#EAE5DA",
-    "hairline": "#F0EDE4",
-    "mid": "#7D746D",
-    "band": "#5C4038",
-    "darkline": "#2E2320",
-    "accent": "#7FA9BA",
-    "accentDeep": "#2A6E7C"
-   }
-  },
-  "ES1_raindrops_umber": {
-   "label": "レインドロップス × バーントアンバー",
-   "source": "Lit｜uni___media PANTONE 11-1400 Raindrops on Roses ＋ wwdesignagency misty blue/dusty rose/burnt umber / トーンイントーン",
-   "colors": {
-    "base": "#F6EDE9",
-    "hairline": "#FDF8F6",
-    "mid": "#C3ADA7",
-    "band": "#8A5A42",
-    "darkline": "#3B2A24",
-    "accent": "#EFD5D3",
-    "accentDeep": "#C79A94"
-   }
-  },
-  "ES2_veiled_sage": {
-   "label": "ヴェイルドヴィスタ × セージ",
-   "source": "Lit｜uni___media PANTONE 12-6000 Veiled Vista ＋ nugu__official セージグリーン×ベージュ / トーンオントーン",
-   "colors": {
-    "base": "#EFF1EA",
-    "hairline": "#FBFCF8",
-    "mid": "#AFB5A6",
-    "band": "#6E7A63",
-    "darkline": "#2F362A",
-    "accent": "#CBD8C4",
-    "accentDeep": "#8CA084"
-   }
-  },
-  "ES3_quiet_violet": {
-   "label": "クワイエットヴァイオレット × スレート",
-   "source": "Lit｜uni___media PANTONE 16-3610 Quiet Violet ＋ nugu__official ライラック×スレートグレー（既存B案の春版）",
-   "colors": {
-    "base": "#F3F0F4",
-    "hairline": "#FCFAFD",
-    "mid": "#ADA5B3",
-    "band": "#7E7288",
-    "darkline": "#3A3341",
-    "accent": "#C7B7D2",
-    "accentDeep": "#9B8AA6"
-   }
-  },
-  "ES4_butter_choco": {
-   "label": "バターイエロー × チョコレート",
-   "source": "Lit｜amuse.bkk banana & choco（PANTONE 19-1432 Chocolate Fondant）＋ cottonary Pastel Yellow 11-0616 / トーンイントーン",
-   "colors": {
-    "base": "#F7F0DC",
-    "hairline": "#FEFBF0",
-    "mid": "#BFAE8E",
-    "band": "#6B4A38",
-    "darkline": "#33221A",
-    "accent": "#F0DFA0",
-    "accentDeep": "#C2A85C"
-   }
-  },
-  "ES5_stalactite_taupe": {
-   "label": "スタラクタイト × ウォームトープ",
-   "source": "Lit｜uni___media PANTONE 11-4101 Stalactite ＋ inspiredbythis Caramel Café × Whispy Blue / 意外性コンビ",
-   "colors": {
-    "base": "#EDEFEE",
-    "hairline": "#FBFCFC",
-    "mid": "#A9AEB0",
-    "band": "#8A7259",
-    "darkline": "#33291F",
-    "accent": "#C6D6DE",
-    "accentDeep": "#8AA5B4"
-   }
-  },
-  "ES6_mint_sand": {
-   "label": "ミント × サンドベージュ",
-   "source": "Lit｜wearwave.style 2026SS韓国ブランド（HERETIC＝ミント）＋ blackup_kr 春レイヤード ブラウン×サンド",
-   "colors": {
-    "base": "#F1EEE4",
-    "hairline": "#FCFAF4",
-    "mid": "#B6B3A4",
-    "band": "#8C7B62",
-    "darkline": "#2E2A20",
-    "accent": "#BFE0D2",
-    "accentDeep": "#7FB8A2"
-   }
-  },
-  "ES8_charcoal_blush": {
-   "label": "チャコール × ペールピンク",
-   "source": "Lit｜uni___media PANTONE 11-1400 Raindrops on Roses ＋ amuse.bkk grey & pink（ゆりこ指示：黒に近いグレー×春色）",
-   "colors": {
-    "base": "#F5F0EC",
-    "hairline": "#FCFAF8",
-    "mid": "#ADA8A6",
-    "band": "#4A4B4D",
-    "darkline": "#1D1E20",
-    "accent": "#F0D4D6",
-    "accentDeep": "#C48F97"
-   }
-  },
-  "ES9_charcoal_butter": {
-   "label": "チャコール × バターイエロー",
-   "source": "Lit｜cottonary Pastel Yellow 11-0616 ＋ orilu.xoxo Unsalted Butter（ゆりこ指示：黒に近いグレー×春色）",
-   "colors": {
-    "base": "#F7F2E0",
-    "hairline": "#FEFCF3",
-    "mid": "#A9A79E",
-    "band": "#46484A",
-    "darkline": "#1C1D1F",
-    "accent": "#F1E0A2",
-    "accentDeep": "#B79A4F"
-   }
-  },
-  "ES10_charcoal_mint": {
-   "label": "チャコール × ミントグリーン",
-   "source": "Lit｜wearwave.style HERETIC のミント ＋ nugu__official ピンク×ミント×ベージュ（ゆりこ指示：黒に近いグレー×春色）",
-   "colors": {
-    "base": "#EFF2EE",
-    "hairline": "#FBFDFB",
-    "mid": "#A4A9A6",
-    "band": "#45484A",
-    "darkline": "#1B1D1E",
-    "accent": "#C2E1D3",
-    "accentDeep": "#6DA793"
-   }
-  },
-  "ES7_blush_olive": {
-   "label": "ブラッシュピンク × ミュートオリーブ",
-   "source": "Lit｜wwdesignagency muted pink & olive（soft clay red / blush pink / burnt wine red / muted olive）",
-   "colors": {
-    "base": "#F4EEE9",
-    "hairline": "#FCF8F5",
-    "mid": "#BCAFA2",
-    "band": "#6F6F4E",
-    "darkline": "#3A2A2A",
-    "accent": "#E8C9C2",
-    "accentDeep": "#A8563F"
-   }
-  }
- },
- "setts": {
-  "corin_grey_ortho": {
-   "label": "CORIN自作 グレー×クリーム",
-   "note": "2026-09-09作成。1440pt角。織り目つき。LAVANDA提案の初期検討で使用",
-   "bias": false,
-   "thread_px": 6,
-   "yarn_px": 6,
-   "twill": 2,
-   "half": [
-    [
-     "CREAM",
-     9
-    ],
-    [
-     "WHITE",
-     2
-    ],
-    [
-     "CREAM",
-     9
-    ],
-    [
-     "BROWN",
-     2
-    ],
-    [
-     "CREAM",
-     9
-    ],
-    [
-     "BROWN",
-     4
-    ],
-    [
-     "CREAM",
-     4
-    ],
-    [
-     "BROWN",
-     4
-    ],
-    [
-     "GRAY",
-     9
-    ],
-    [
-     "WHITE",
-     2
-    ],
-    [
-     "GRAY",
-     8
-    ],
-    [
-     "GRAY2",
-     4
-    ],
-    [
-     "WHITE",
-     2
-    ],
-    [
-     "GRAY",
-     9
-    ],
-    [
-     "DARK",
-     8
-    ],
-    [
-     "WHITE",
-     2
-    ],
-    [
-     "DARK",
-     10
-    ],
-    [
-     "DARK2",
-     5
-    ],
-    [
-     "WHITE",
-     2
-    ],
-    [
-     "DARK",
-     11
-    ],
-    [
-     "BLACK",
-     2
-    ],
-    [
-     "DARK",
-     4
-    ]
-   ],
-   "role_map": {
-    "CREAM": "base",
-    "WHITE": "hairline",
-    "GRAY": "mid",
-    "GRAY2": "accent",
-    "BROWN": "band",
-    "DARK": "accentDeep",
-    "DARK2": "accent",
-    "BLACK": "darkline"
-   },
-   "palette": "corin_grey_ortho_colors",
-   "ways": [
-    "corin_grey",
-    "corin_blue",
-    "lavanda_orig",
-    "A2_whispy_choco",
-    "B_lilac_slate",
-    "F_greyscale"
-   ]
-  },
-  "corin_blue_bias": {
-   "label": "CORIN自作 ブルー×ブラウン",
-   "note": "2026-09-09作成。1476pt角。45度は糸番号を(x+y)/(x-y)で取る方式なのでリピートする",
-   "bias": true,
-   "thread_px": 6,
-   "yarn_px": 3,
-   "twill": 2,
-   "half": [
-    [
-     "CREAM",
-     15
-    ],
-    [
-     "DARKBR",
-     2
-    ],
-    [
-     "CREAM",
-     12
-    ],
-    [
-     "DARKBR",
-     3
-    ],
-    [
-     "BROWN",
-     14
-    ],
-    [
-     "DARKBR",
-     3
-    ],
-    [
-     "CREAM",
-     6
-    ],
-    [
-     "DARKBR",
-     2
-    ],
-    [
-     "GRAY",
-     12
-    ],
-    [
-     "WHITE",
-     2
-    ],
-    [
-     "BLUE",
-     8
-    ],
-    [
-     "WHITE",
-     2
-    ],
-    [
-     "BLUE",
-     10
-    ],
-    [
-     "TEAL",
-     6
-    ],
-    [
-     "BLUE",
-     6
-    ],
-    [
-     "DARKBR",
-     3
-    ],
-    [
-     "BROWN",
-     8
-    ],
-    [
-     "DARKBR",
-     10
-    ]
-   ],
-   "role_map": {
-    "CREAM": "base",
-    "WHITE": "hairline",
-    "GRAY": "mid",
-    "BROWN": "band",
-    "DARKBR": "darkline",
-    "BLUE": "accent",
-    "TEAL": "accentDeep"
-   },
-   "palette": "corin_blue_bias_colors",
-   "ways": [
-    "corin_grey",
-    "corin_blue",
-    "lavanda_orig",
-    "A2_whispy_choco",
-    "B_lilac_slate",
-    "F_greyscale"
-   ]
-  },
-  "block_bold": {
-   "label": "大柄ブロック（面で見せる）",
-   "note": "2026-09-10 CORIN作成。大26/中16/細2 の3階層。四隅=明るい大面、中心=濃い面",
-   "bias": false,
-   "thread_px": 6,
-   "yarn_px": 6,
-   "twill": 2,
-   "half": [
-    [
-     "BASE",
-     26
-    ],
-    [
-     "DARKLINE",
-     2
-    ],
-    [
-     "BASE",
-     26
-    ],
-    [
-     "BAND",
-     16
-    ],
-    [
-     "WHITE",
-     2
-    ],
-    [
-     "BAND",
-     16
-    ],
-    [
-     "DEEP",
-     20
-    ],
-    [
-     "WHITE",
-     2
-    ],
-    [
-     "DEEP",
-     11
-    ]
-   ],
-   "role_map": {
-    "BASE": "base",
-    "WHITE": "hairline",
-    "BAND": "band",
-    "DEEP": "accentDeep",
-    "DARKLINE": "darkline"
-   },
-   "ways": [
-    "corin_grey",
-    "corin_blue",
-    "lavanda_orig",
-    "A2_whispy_choco",
-    "B_lilac_slate",
-    "F_greyscale"
-   ]
-  },
-  "twin_line": {
-   "label": "細ツインライン（きちんと感）",
-   "note": "2026-09-10 CORIN作成。細線を2本組で走らせる伝統的な作り。スーツ地寄り",
-   "bias": false,
-   "thread_px": 6,
-   "yarn_px": 6,
-   "twill": 2,
-   "half": [
-    [
-     "BASE",
-     18
-    ],
-    [
-     "DARKLINE",
-     1
-    ],
-    [
-     "BASE",
-     4
-    ],
-    [
-     "DARKLINE",
-     1
-    ],
-    [
-     "BASE",
-     18
-    ],
-    [
-     "MID",
-     12
-    ],
-    [
-     "WHITE",
-     1
-    ],
-    [
-     "MID",
-     12
-    ],
-    [
-     "BAND",
-     8
-    ],
-    [
-     "ACCENT",
-     2
-    ],
-    [
-     "BAND",
-     8
-    ],
-    [
-     "DEEP",
-     14
-    ],
-    [
-     "WHITE",
-     1
-    ],
-    [
-     "DEEP",
-     14
-    ],
-    [
-     "DARKLINE",
-     1
-    ],
-    [
-     "DEEP",
-     6
-    ]
-   ],
-   "role_map": {
-    "BASE": "base",
-    "WHITE": "hairline",
-    "MID": "mid",
-    "BAND": "band",
-    "ACCENT": "accent",
-    "DEEP": "accentDeep",
-    "DARKLINE": "darkline"
-   },
-   "ways": [
-    "corin_grey",
-    "corin_blue",
-    "lavanda_orig",
-    "A2_whispy_choco",
-    "B_lilac_slate",
-    "F_greyscale"
-   ]
-  },
-  "glen_over": {
-   "label": "グレンチェック風（細かい市松＋帯）",
-   "note": "2026-09-10 CORIN作成。4本ずつの細かい市松を地にして、大きな帯を1本重ねる",
-   "bias": false,
-   "thread_px": 6,
-   "yarn_px": 6,
-   "twill": 2,
-   "half": [
-    [
-     "BASE",
-     4
-    ],
-    [
-     "MID",
-     4
-    ],
-    [
-     "BASE",
-     4
-    ],
-    [
-     "MID",
-     4
-    ],
-    [
-     "BASE",
-     4
-    ],
-    [
-     "MID",
-     4
-    ],
-    [
-     "BASE",
-     4
-    ],
-    [
-     "MID",
-     4
-    ],
-    [
-     "BASE",
-     4
-    ],
-    [
-     "MID",
-     4
-    ],
-    [
-     "BASE",
-     4
-    ],
-    [
-     "MID",
-     4
-    ],
-    [
-     "DARKLINE",
-     2
-    ],
-    [
-     "BASE",
-     4
-    ],
-    [
-     "MID",
-     4
-    ],
-    [
-     "BASE",
-     4
-    ],
-    [
-     "MID",
-     4
-    ],
-    [
-     "BASE",
-     4
-    ],
-    [
-     "MID",
-     4
-    ],
-    [
-     "BASE",
-     4
-    ],
-    [
-     "MID",
-     4
-    ],
-    [
-     "BASE",
-     4
-    ],
-    [
-     "MID",
-     4
-    ],
-    [
-     "BASE",
-     4
-    ],
-    [
-     "MID",
-     4
-    ],
-    [
-     "ACCENT",
-     4
-    ],
-    [
-     "BAND",
-     8
-    ],
-    [
-     "WHITE",
-     2
-    ],
-    [
-     "BAND",
-     9
-    ]
-   ],
-   "role_map": {
-    "BASE": "base",
-    "WHITE": "hairline",
-    "MID": "mid",
-    "BAND": "band",
-    "ACCENT": "accent",
-    "DARKLINE": "darkline"
-   },
-   "ways": [
-    "corin_grey",
-    "corin_blue",
-    "lavanda_orig",
-    "A2_whispy_choco",
-    "B_lilac_slate",
-    "F_greyscale"
-   ]
-  },
-  "lavanda_27es_a": {
-   "label": "27ES タータン A（中央＝太帯）",
-   "note": "ゆりこの実データ アセット 1.svg から糸の並びを復元（2026-09-11）。1リピート 112.10mm・45度バイアス。元データのパターン定義 /Matrix から角度・スケールを確定",
-   "bias": true,
-   "thread_px": 6,
-   "yarn_px": 3,
-   "twill": 2,
-   "half": [
-    [
-     "DARKLINE",
-     1
-    ],
-    [
-     "BASE",
-     45
-    ],
-    [
-     "DARKLINE",
-     3
-    ],
-    [
-     "BASE",
-     6
-    ],
-    [
-     "DARKLINE",
-     2
-    ],
-    [
-     "MID",
-     12
-    ],
-    [
-     "HAIRLINE",
-     2
-    ],
-    [
-     "ACCENT",
-     8
-    ],
-    [
-     "HAIRLINE",
-     2
-    ],
-    [
-     "ACCENT",
-     10
-    ],
-    [
-     "ACCENTDEEP",
-     6
-    ],
-    [
-     "ACCENT",
-     6
-    ],
-    [
-     "DARKLINE",
-     3
-    ],
-    [
-     "BAND",
-     8
-    ],
-    [
-     "DARKLINE",
-     10
-    ]
-   ],
-   "role_map": {
-    "DARKLINE": "darkline",
-    "BASE": "base",
-    "MID": "mid",
-    "HAIRLINE": "hairline",
-    "ACCENT": "accent",
-    "ACCENTDEEP": "accentDeep",
-    "BAND": "band"
-   },
-   "ways": [
-    "lavanda_orig",
-    "ES3_quiet_violet",
-    "ES5_stalactite_taupe",
-    "ES6_mint_sand",
-    "ES4_butter_choco",
-    "ES9_charcoal_butter"
-   ]
-  },
-  "lavanda_27es_b": {
-   "label": "27ES タータン B（中央に細線）",
-   "note": "ゆりこの実データ アセット 2.svg から復元（2026-09-11）。Aと同じ骨格で、中央の太帯19本に細線が入っている。1リピート 117.10mm・45度バイアス",
-   "bias": true,
-   "thread_px": 6,
-   "yarn_px": 3,
-   "twill": 2,
-   "half": [
-    [
-     "DARKLINE",
-     1
-    ],
-    [
-     "BASE",
-     45
-    ],
-    [
-     "DARKLINE",
-     3
-    ],
-    [
-     "BASE",
-     6
-    ],
-    [
-     "DARKLINE",
-     2
-    ],
-    [
-     "MID",
-     12
-    ],
-    [
-     "HAIRLINE",
-     2
-    ],
-    [
-     "BAND",
-     8
-    ],
-    [
-     "HAIRLINE",
-     2
-    ],
-    [
-     "BAND",
-     10
-    ],
-    [
-     "ACCENTDEEP",
-     6
-    ],
-    [
-     "BAND",
-     6
-    ],
-    [
-     "DARKLINE",
-     3
-    ],
-    [
-     "ACCENT",
-     8
-    ],
-    [
-     "ACCENTDEEP",
-     8
-    ],
-    [
-     "HAIRLINE",
-     2
-    ]
-   ],
-   "role_map": {
-    "DARKLINE": "darkline",
-    "BASE": "base",
-    "MID": "mid",
-    "HAIRLINE": "hairline",
-    "BAND": "band",
-    "ACCENTDEEP": "accentDeep",
-    "ACCENT": "accent"
-   },
-   "ways": [
-    "lavanda_orig",
-    "ES3_quiet_violet",
-    "ES5_stalactite_taupe",
-    "ES6_mint_sand",
-    "ES4_butter_choco",
-    "ES9_charcoal_butter"
-   ]
-  }
- }
 }
