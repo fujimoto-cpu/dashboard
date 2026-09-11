@@ -158,6 +158,13 @@
   details.fine{margin-top:7px}
   details.fine summary{font-size:11.5px;color:var(--sub);cursor:pointer;list-style:revert}
   .slid output{width:44px;text-align:right;flex:0 0 auto;color:var(--ink)}
+  /* 自動で決まった値。入力欄ではないことが見て分かるように、枠でなく塗りで出す */
+  .autoout{margin:14px 0 4px;padding:10px 12px;border-radius:12px;background:#f3f0ff;
+           border:1px dashed #c9bdf0;font-size:12.5px;line-height:1.7;color:#4a4358}
+  .autoout b{color:var(--accent);font-size:14px}
+  .autoout .lb{color:var(--sub);margin-right:4px}
+  .autoout .warn{color:#c0562f}
+
   /* 地といちばん効いている色の入れかえ */
   .swaprow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px}
   .swaprow>span{font-size:12px;color:#6f6f7a}
@@ -389,11 +396,13 @@
 
     <div class="card">
       <h2>2. 実寸</h2>
-      <label>決め方</label>
+      <label>自分で決めるもの <span style="color:var(--sub);font-weight:400">残りは自動で出ます</span></label>
       <div class="segs" id="dmode">
-        <button class="on" data-v="count">丈に何個並ぶか</button>
-        <button data-v="size">ドットの幅</button>
+        <button class="on" data-v="pct">個数と大きさ％</button>
+        <button data-v="gap">個数とドット幅</button>
+        <button data-v="count">ドット幅と余白</button>
       </div>
+      <p class="hint" id="dmodehint" style="margin-top:6px"></p>
       <div class="row" style="margin-top:12px">
         <div>
           <label>アイテム丈 (cm)</label>
@@ -415,21 +424,14 @@
           間隔に対する割合。大きくするほど詰まります。</p>
       </div>
       <div id="dgapbox" hidden>
-        <!-- 丈・ドット幅・個数 の3つを指定できるようにする。
-             個数を入れると余白が決まり、余白を動かすと個数が追従する（双方向） -->
-        <div class="row">
-          <div>
-            <label>入れたい個数 <span style="color:var(--sub);font-weight:400">丈に縦いくつ</span></label>
-            <input type="number" id="dcnt" value="33" min="1" step="1">
-          </div>
-          <div>
-            <label>余白 (cm) <span style="color:var(--sub);font-weight:400">ドットのふちどうしの間</span></label>
-            <input type="number" id="dgap" value="0.80" min="0" step="0.05">
-          </div>
-        </div>
+        <label>余白 (cm) <span style="color:var(--sub);font-weight:400">ドットのふちどうしの間</span></label>
+        <input type="number" id="dgap" value="0.80" min="0" step="0.05">
         <p class="hint" id="dfithint" style="margin-top:6px"></p>
         <button class="mini" id="dfit" style="margin-top:6px">丈にきっちり収める</button>
       </div>
+      <!-- 自動で決まった値をここに出す。入力欄と見た目を変えて
+           「これは自分で入れた数字ではない」と分かるようにする -->
+      <div class="autoout" id="dauto"></div>
       <label>使う向き</label>
       <div class="segs" id="ddir">
         <button class="on" data-v="0">そのまま</button>
@@ -1419,21 +1421,34 @@ function buildShelf(){
    0.866 = √3/2 は千鳥の行ピッチ係数。これで縦横も斜めも間隔が等しくなる。
    ロジックの元 → projects/LAVANDA/…/03_チェック・ドット_プリントパターン/_generate_dot_svg.py */
 const ROWK=Math.sqrt(3)/2;
-/* mode … 'count' = 丈に何個並ぶかで決める（ピッチが先・径は割合）
-          'size'  = ドットの幅で決める（径が先・余白でピッチが決まる）
-   どちらでも最後に出るのは pitch と dia の2つだけ。描画側は何も変わらない */
-let DOT={stagger:false, dir:0, colors:['#6B4A3F'], mode:'count'};
+/* ドットの実寸は 丈・個数・ドット幅・余白 の4つで決まり、
+   丈 = 個数 ×（幅＋余白） の関係があるので、自由に決められるのは3つまで。
+   「どれを自分で決めるか」でモードを分け、残りの1つは必ず自動で出す。
+     'pct'   … 個数と大きさ％ → 【自動】ドット幅・余白
+     'gap'   … 個数とドット幅 → 【自動】余白
+     'count' … ドット幅と余白 → 【自動】個数
+   どのモードでも最後に出るのは pitch と dia の2つだけ。描画側は何も変わらない */
+let DOT={stagger:false, dir:0, colors:['#6B4A3F'], mode:'pct'};
+const DOTMODE={
+  pct:   {auto:'ドット幅と余白', hint:'丈・個数・大きさ％を決めると、<b>ドット幅と余白</b>が自動で出ます。'},
+  gap:   {auto:'余白',           hint:'丈・個数・ドット幅を決めると、<b>余白</b>が自動で出ます。'},
+  count: {auto:'個数',           hint:'丈・ドット幅・余白を決めると、<b>丈に並ぶ個数</b>が自動で出ます（半端になることがあります）。'}
+};
 
 function dotGeom(){
   const lenCM=Math.max(1,+$('#dlen').value||70);
   /* 45度に回すと、正方格子の「縦に並ぶ行」の間隔は ピッチ÷√2 になる */
   const rk=DOT.dir?Math.SQRT2:1;
   let pitch, dia, per;
-  if(DOT.mode==='size'){
+  if(DOT.mode==='count'){                                // 幅と余白 → 個数が自動
     dia   =Math.max(0.5,(+$('#dwid').value||0.5)*10);   // mm
     pitch =dia+Math.max(0,(+$('#dgap').value||0)*10);   // 余白ぶんだけ間隔が開く
     per   =lenCM*10/(pitch/rk);                          // 丈に並ぶ数（割り切れないので小数）
-  }else{
+  }else if(DOT.mode==='gap'){                            // 個数と幅 → 余白が自動
+    per   =Math.max(1,+$('#dper').value||8);
+    pitch =lenCM*10/per*rk;
+    dia   =Math.max(0.5,(+$('#dwid').value||0.5)*10);
+  }else{                                                 // pct: 個数と％ → 幅・余白が自動
     per   =Math.max(1,+$('#dper').value||8);
     pitch =lenCM*10/per*rk;   // 丈に per 個そろえたいので、45度のときは √2 倍
     dia   =pitch*(+$('#ddia').value/100);
@@ -1445,9 +1460,11 @@ function dotGeom(){
 /* SVGの説明文とファイル名。決め方によって「何で指定したか」を残す（正本1か所） */
 const dotDesc=g=>`ドット ${DOT.stagger?'千鳥':'等間隔'} / ピッチ${g.pitch.toFixed(2)}mm`
   +` / 径${g.dia.toFixed(2)}mm / 余白${g.gap.toFixed(2)}mm`;
-const dotTag=g=>`${DOT.stagger?'千鳥':'等間隔'}_`+(DOT.mode==='size'
+const dotTag=g=>`${DOT.stagger?'千鳥':'等間隔'}_`+(DOT.mode==='count'
   ? `幅${cmv(g.dia)}cm_余白${cmv(g.gap)}cm`
-  : `丈${g.lenCM}cmに${g.per}個`)+`_ピッチ${g.pitch.toFixed(1)}mm`;
+  : DOT.mode==='gap'
+    ? `丈${g.lenCM}cmに${Math.round(g.per)}個_幅${cmv(g.dia)}cm`
+    : `丈${g.lenCM}cmに${Math.round(g.per)}個`)+`_ピッチ${g.pitch.toFixed(1)}mm`;
 /* 丈にちょうど収まる個数（整数）と、そのときの余白（mm） */
 function dotFit(g){
   const n=Math.max(1,Math.round(g.per));
@@ -1503,11 +1520,24 @@ function dotSVG(over,rot){
 function dotRender(){
   const g=dotGeom(), dpi=Math.max(72,+$('#ddpi').value||300);
   $('#ddiav').textContent=`${+$('#ddia').value}%（直径 ${cm(g.dia)}）`;
-  if(DOT.mode==='size'){
+  /* 自動で決まった値を1か所にまとめて出す。
+     入力欄には出さない＝「自分で入れた数字」と「計算で出た数字」が混ざらない */
+  const au=[];
+  if(DOT.mode==='pct'){
+    au.push(['ドット幅', cm(g.dia)], ['余白', cm(g.gap)]);
+  }else if(DOT.mode==='gap'){
+    au.push(['余白', g.gap>=0? cm(g.gap) : null]);
+  }else{
+    const half=Math.abs(g.per-Math.round(g.per))>=0.02;
+    au.push(['丈に並ぶ個数', `${g.per.toFixed(1)}個${half?'（端が半端に切れます）':''}`]);
+  }
+  $('#dauto').innerHTML = `<span class="lb">自動で決まりました →</span> `+
+    au.map(([k,v])=> v===null
+      ? `<span class="warn">${k}がマイナスです。ドット幅が間隔より大きいので、幅を細くするか個数を減らしてください</span>`
+      : `<span class="lb">${k}</span><b>${v}</b>`).join(' ／ ');
+
+  if(DOT.mode==='count'){
     const f=dotFit(g);
-    /* 個数欄は他の入力（丈・幅・余白）に追従させる。
-       入力中の欄は上書きしない（打っている途中の数字が消えるため） */
-    if(document.activeElement!==$('#dcnt')) $('#dcnt').value=Math.max(1,Math.round(g.per));
     $('#dfithint').innerHTML = Math.abs(f.n-g.per)<0.02
       ? `丈 ${g.lenCM}cm にちょうど <b>${f.n}個</b> 並びます。`
       : `いまは丈 ${g.lenCM}cm に <b>${g.per.toFixed(1)}個</b>（端が半端に切れます）。`+
@@ -1604,21 +1634,29 @@ $('#ddir').querySelectorAll('button').forEach(b=>b.onclick=()=>{ setDotDir(+b.da
    いまの寸法をそのまま相手側の入力欄に書き写してから切り替える */
 function setDotMode(v){
   if(v===DOT.mode) return;
+  /* 切り替えても見た目が変わらないよう、いまの寸法を次のモードの入力欄に移す */
   const g=dotGeom();
-  if(v==='size'){
+  const n=Math.max(1,Math.round(g.per));                  // 個数は整数しか置けない
+  const pitchN=g.lenCM*10/n*(DOT.dir?Math.SQRT2:1);
+  if(v==='count'){
     $('#dwid').value=(g.dia/10).toFixed(2);
     $('#dgap').value=Math.max(0,g.gap/10).toFixed(2);
-  }else{
-    const n=Math.max(1,Math.round(g.per));               // 個数は整数しか置けない
-    const pitch=g.lenCM*10/n*(DOT.dir?Math.SQRT2:1);
+  }else if(v==='gap'){
     $('#dper').value=n;
-    $('#ddia').value=Math.round(Math.min(90,Math.max(5,g.dia/pitch*100)));
+    $('#dwid').value=(g.dia/10).toFixed(2);
+  }else{
+    $('#dper').value=n;
+    $('#ddia').value=Math.round(Math.min(90,Math.max(5,g.dia/pitchN*100)));
   }
   DOT.mode=v;
   $('#dmode').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x.dataset.v===v));
-  const sz=v==='size';
-  $('#dperbox').hidden=sz;  $('#dwidbox').hidden=!sz;
-  $('#dpctbox').hidden=sz;  $('#dgapbox').hidden=!sz;
+  /* 自分で決める欄だけ出す。自動になるものは入力欄を出さない
+     （出しっぱなしだと「どれが効いているのか」が分からなくなる） */
+  $('#dperbox').hidden = (v==='count');          // 個数
+  $('#dwidbox').hidden = (v==='pct');            // ドット幅
+  $('#dpctbox').hidden = (v!=='pct');            // 大きさ％
+  $('#dgapbox').hidden = (v!=='count');          // 余白
+  $('#dmodehint').innerHTML = DOTMODE[v].hint;
   dotRender();
 }
 $('#dmode').querySelectorAll('button').forEach(b=>b.onclick=()=>setDotMode(b.dataset.v));
@@ -1631,24 +1669,12 @@ $('#dfit').onclick=()=>{
   $('#dgap').value=(f.gap/10).toFixed(3);
   dotRender();
 };
-/* 入れたい個数 → 余白を逆算する（丈とドット幅は固定のまま）。
-   45度で使うときは丈方向の周期が √2 倍になるので dotFit と同じ式を使う */
-$('#dcnt').oninput=()=>{
-  const g=dotGeom();
-  const n=Math.max(1,Math.round(+$('#dcnt').value||1));
-  const pitch=g.lenCM*10/n*(DOT.dir?Math.SQRT2:1);
-  const gap=pitch-g.dia;
-  if(gap<0){
-    $('#dfithint').innerHTML=`<span class="warn">⚠ ドット幅 ${cm(g.dia)} では ${n}個 は入りません（丈 ${g.lenCM}cm）。幅を細くしてください</span>`;
-    return;                              // 入らない指定では余白を書き換えない
-  }
-  $('#dgap').value=(gap/10).toFixed(3);  // 3桁。丸めると丈に対して端がズレる
-  dotRender();
-};
 ['dlen','dper','ddia','ddpi','dwid','dgap'].forEach(id=>$('#'+id).oninput=dotRender);
 $('#dbg').oninput=e=>{ $('#dbgchip').style.background=e.target.value; dotRender(); };
 $('#dbgchip').style.background=$('#dbg').value;
-setDotDir(0); dotChips(); dotRender();
+setDotDir(0); dotChips();
+$('#dmodehint').innerHTML=DOTMODE[DOT.mode].hint;   // 初期表示にもヒントを出す
+dotRender();
 
 /* ダウンロード3種の使い方。チェックとドットで同じ文面を使う（正本1か所） */
 const HOWTO=`<b>Illustratorでの使い方</b><br>
