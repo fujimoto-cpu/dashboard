@@ -259,7 +259,8 @@
 <div id="tab-shelf">
   <div class="shelfhead">
     <h2>チェック</h2>
-    <p>押すとその柄と配色で開きます。そこから太さも色も直せます。</p>
+    <p>押すとその柄と配色で開きます。そこから太さも色も直せます。
+      <button class="mini" id="allwaysShelf" onclick="toggleAllWays()"></button></p>
   </div>
   <div id="shelfCheck"></div>
   <div class="shelfhead" style="padding-top:14px">
@@ -275,6 +276,7 @@
     <div class="card">
       <h2>1. 配色 <em id="ncol"></em></h2>
       <div class="ways" id="ways"></div>
+      <button class="mini" id="allways" style="margin-top:6px"></button>
       <div class="chips" id="chips"></div>
       <p class="hint">クリックで色を変えられます。増やす／減らすは右の「糸の並び」で帯を選んでから。</p>
       <!-- 地といちばん効いている色を入れかえる。面積の大きい地が濃くなるので、
@@ -983,7 +985,10 @@ function render(){
 /* ── 配色チップ（この柄が使う色を全部並べる） ───────────────── */
 /* 配色は色の帯で選ぶ（名前を出さない）。名前は hover で見えれば十分 */
 function buildWays(){
-  $('#ways').innerHTML=Object.entries(LIB.ways).map(([k,v])=>
+  const show=waysFor(cur);
+  // いま選んでいる配色が候補外なら、消えてしまわないよう先頭に足す
+  const list=show.includes(wayKey)? show : [wayKey, ...show];
+  $('#ways').innerHTML=list.map(k=>[k,LIB.ways[k]]).filter(([,v])=>v).map(([k,v])=>
     `<button class="wayb${k===wayKey?' on':''}" data-k="${k}" title="${v.label}">`+
     Object.values(v.colors).map(c=>`<i style="background:${c}"></i>`).join('')+
     `</button>`).join('');
@@ -1282,6 +1287,8 @@ fetch('library.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
   });
   syncTimes();
   pickSett(Object.keys(d.setts)[0]);
+  const ab=$('#allways'); if(ab) ab.onclick=toggleAllWays;
+  syncAllWaysBtn();
   buildShelf();
 }).catch(e=>{
   document.body.insertAdjacentHTML('afterbegin',
@@ -1356,12 +1363,33 @@ function openDot(wk,stagger){
 }
 /* 柄ごとに1グループ。同じ行に並ぶのは【同じ柄の配色違い】、
    グループが変われば【柄そのものが違う】。並べただけだと区別がつかないため */
+/* その柄で見せる配色を絞る。
+   全部（17種）並べると選べないので、柄ごとに6つだけ出す（library.json の setts[].ways）。
+   指定が無い柄は先頭6つ。SHOWALL で全部に切り替えられる＝候補は捨てていない */
+let SHOWALL=false;
+function waysFor(sett){
+  const all=Object.keys(LIB.ways);
+  if(SHOWALL) return all;
+  const pick=(sett&&sett.ways||[]).filter(k=>LIB.ways[k]);
+  return pick.length? pick : all.slice(0,6);
+}
+function toggleAllWays(){
+  SHOWALL=!SHOWALL;
+  buildShelf(); if(cur) buildWays();
+  syncAllWaysBtn();
+}
+function syncAllWaysBtn(){
+  const n=Object.keys(LIB.ways).length;
+  const b=$('#allways'); if(b) b.textContent = SHOWALL? `よく使う6つだけにする` : `ぜんぶの配色を見る（${n}種）`;
+  const s=$('#allwaysShelf'); if(s) s.textContent = SHOWALL? `よく使う6つだけにする` : `ぜんぶの配色を見る（${n}種）`;
+}
 function buildShelf(){
   const wk=Object.keys(LIB.ways);
   $('#shelfCheck').innerHTML=Object.entries(LIB.setts).map(([s,v])=>{
     const full=v.half.reduce((a,b)=>a+b[1],0)*2-2;
-    return `<div class="grp"><h3>${v.label}<span>糸 ${full}本 ・ 配色ちがい ${wk.length}種</span></h3>
-      <div class="shelf">`+wk.map(w=>
+    const ws=waysFor(v);
+    return `<div class="grp"><h3>${v.label}<span>糸 ${full}本 ・ 配色ちがい ${ws.length}種</span></h3>
+      <div class="shelf">`+ws.map(w=>
       `<button class="thumb" onclick="openTartan('${s}','${w}')">
         <div class="im">${thumbTartan(v,w,120)}</div>
         <b>${LIB.ways[w].label}</b></button>`).join('')+`</div></div>`;
