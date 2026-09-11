@@ -104,6 +104,8 @@
              background:#fff;color:var(--ink);border:1px solid var(--line);
              font-size:14px;font-weight:500;line-height:1}
   .hint{margin:6px 0 0;font-size:11.5px;color:var(--sub);line-height:1.55}
+  .hint .warn{color:#d98452}
+  [hidden]{display:none!important}
   .note{margin-top:10px;padding:9px 11px;background:#f7f4fd;border-radius:10px;
         font-size:11px;line-height:1.7;color:var(--sub)}
   .note b{color:var(--ink);font-weight:600}
@@ -219,6 +221,13 @@
   button.pick{width:26px;height:26px;margin:0;padding:0;flex:0 0 auto;border-radius:6px;
               border:1px solid rgba(0,0,0,.15);cursor:pointer}
   button.pick:hover{box-shadow:0 0 0 2px var(--ink);filter:none}
+  /* 帯パネルの色ボタン（中の input type=color を透明にして丸ごと押させる） */
+  .cbtn{position:relative;width:34px;height:26px;flex:0 0 auto;border-radius:6px;
+        border:1px solid rgba(0,0,0,.15);overflow:hidden;cursor:pointer;display:inline-block}
+  .cbtn input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;
+              border:0;padding:0;margin:0}
+  .bandrow .hex{width:92px;font:12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+                text-transform:uppercase}
   textarea{width:100%;min-height:120px;padding:10px;border:1px solid var(--line);
            border-radius:9px;font:12px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;
            background:#fff;color:var(--ink);resize:vertical}
@@ -362,20 +371,37 @@
 
     <div class="card">
       <h2>2. 実寸</h2>
-      <div class="row">
+      <label>決め方</label>
+      <div class="segs" id="dmode">
+        <button class="on" data-v="count">丈に何個並ぶか</button>
+        <button data-v="size">ドットの幅</button>
+      </div>
+      <div class="row" style="margin-top:12px">
         <div>
           <label>アイテム丈 (cm)</label>
           <input type="number" id="dlen" value="70" min="1" step="1">
         </div>
-        <div>
+        <div id="dperbox">
           <label>ドットが丈に縦いくつ並ぶか</label>
           <input type="number" id="dper" value="54" min="1" step="1">
         </div>
+        <div id="dwidbox" hidden>
+          <label>ドット幅 (cm)</label>
+          <input type="number" id="dwid" value="0.50" min="0.05" step="0.05">
+        </div>
       </div>
-      <label>ドットの大きさ <span id="ddiav" style="color:var(--accent);font-weight:600"></span></label>
-      <input type="range" id="ddia" min="5" max="90" step="1" value="38">
-      <p style="margin:4px 0 0;font-size:11.5px;color:var(--sub)">
-        間隔に対する割合。大きくするほど詰まります。</p>
+      <div id="dpctbox">
+        <label>ドットの大きさ <span id="ddiav" style="color:var(--accent);font-weight:600"></span></label>
+        <input type="range" id="ddia" min="5" max="90" step="1" value="38">
+        <p style="margin:4px 0 0;font-size:11.5px;color:var(--sub)">
+          間隔に対する割合。大きくするほど詰まります。</p>
+      </div>
+      <div id="dgapbox" hidden>
+        <label>余白 (cm) <span style="color:var(--sub);font-weight:400">ドットのふちどうしの間</span></label>
+        <input type="number" id="dgap" value="0.80" min="0" step="0.05">
+        <p class="hint" id="dfithint" style="margin-top:6px"></p>
+        <button class="mini" id="dfit" style="margin-top:6px">丈にきっちり収める</button>
+      </div>
       <label>使う向き</label>
       <div class="segs" id="ddir">
         <button class="on" data-v="0">そのまま</button>
@@ -992,10 +1018,11 @@ function buildBand(){
   const k2=roleOf(nm).k;
   const used=HALF.filter(([c])=>c===nm).length;
   const others=usedNames().filter(x=>x!==nm);
+  const now=colorOf(nm), free=!!override[nm];
   $('#bandbox').innerHTML=
     `<div class="bandrow">
-      <span class="sw" style="background:${colorOf(nm)};width:24px;height:24px"></span>
-      <b>${roleJa(nm)}</b>
+      <span class="sw" id="bhsw" style="background:${now};width:24px;height:24px"></span>
+      <b id="bhnm">${roleJa(nm)}</b>
       <span class="dim">同じ色の帯 ${used}本</span>
       <span style="flex:1"></span>
       <span class="dim">太さ</span>
@@ -1013,12 +1040,24 @@ function buildBand(){
       <span class="pickrow">${others.map(o=>
         `<button class="pick" data-o="${o}" title="${roleJa(o)}" style="background:${colorOf(o)}"></button>`).join('')}</span>
     </div>`:''}
+    <div class="bandrow">
+      <span class="dim" style="width:34px">色</span>
+      <span class="cbtn" id="bcw" style="background:${now}"><input type="color" id="bc" value="${now}"></span>
+      <input class="n hex" id="bhex" value="${now}" maxlength="7" spellcheck="false">
+      <span class="dim">${used>1
+        ?`同じ色の ${used}本 がまとめて変わる（1本だけなら先に「別の色にする」）`
+        :`この帯だけ変わる`}</span>
+    </div>
     ${k2!=null?`<div class="bandrow">
       <span class="dim" style="width:34px">濃さ</span>
-      <input type="range" id="dv" min="40" max="160" step="2" value="${Math.round(k2*100)}" style="flex:1;max-width:260px">
-      <span style="width:42px">${Math.round(k2*100)}%</span>
-      <span class="dim">配色を切り替えても付いてきます</span>
-    </div>`:''}`;
+      <input type="range" id="dv" min="20" max="200" step="1" value="${Math.round(k2*100)}"
+             style="flex:1;max-width:260px"${free?' disabled':''}>
+      <span style="width:42px" id="dvv">${Math.round(k2*100)}%</span>
+      ${free
+        ? `<span class="dim">いまは選んだ色を使用中</span><button class="mini" id="unfree">濃さに戻す</button>`
+        : `<span class="dim">配色を切り替えても付いてきます</span>`}
+    </div>`:''}
+    ${free?`<div class="bandrow"><span class="dim">※ 直接えらんだ色は、配色パレットを切り替えると外れます</span></div>`:''}`;
 
   $('#bn').oninput=e=>{HALF[sel][1]=Math.max(1,Math.min(60,+e.target.value||1));buildBar();render();};
   $('#split').onclick=()=>{
@@ -1035,8 +1074,39 @@ function buildBand(){
   $('#insL').onclick=()=>{ HALF.splice(sel,0,[HALF[sel][0],2]); refresh(); };
   $('#insR').onclick=()=>{ HALF.splice(sel+1,0,[HALF[sel][0],2]); sel=sel+1; refresh(); };
   const dl=$('#del'); if(dl) dl.onclick=()=>{ HALF.splice(sel,1); sel=Math.min(sel,HALF.length-1); refresh(); };
-  const dv=$('#dv'); if(dv) dv.oninput=e=>{
-    const cn=HALF[sel][0]; roleMap[cn]=`${roleOf(cn).role}*${(+e.target.value/100).toFixed(2)}`; refresh(); };
+
+  /* ★スライダー・色ピッカーを動かしている最中に bandbox を作り直さない。
+     作り直すと掴んでいる input そのものが消えて、ドラッグが1目盛りで切れる
+     （「濃さのバーが動かない」の原因・2026-09-11 修正）。
+     動かしている間は「柄・帯・チップ」だけ描き直して、パネルは離してから組み直す */
+  const paintHead=v=>{ $('#bhsw').style.background=v; $('#bhnm').textContent=roleJa(HALF[sel][0]); };
+  const live=()=>{ buildBar(); buildChips(); render(); };
+
+  const dv=$('#dv');
+  if(dv) dv.oninput=e=>{
+    const cn=HALF[sel][0];
+    roleMap[cn]=`${roleOf(cn).role}*${(+e.target.value/100).toFixed(2)}`;
+    $('#dvv').textContent=`${e.target.value}%`;
+    paintHead(colorOf(cn)); live();
+  };
+  if(dv) dv.onchange=()=>buildBand();          // 離した時だけパネルを組み直す
+
+  /* 色を直接えらぶ（役割パレットに無い色も使えるようにする） */
+  const bc=$('#bc'), bhex=$('#bhex');
+  const setFree=(v,fromHex)=>{
+    v=v.toUpperCase(); const cn=HALF[sel][0];
+    override[cn]=v;
+    $('#bcw').style.background=v;
+    if(fromHex) bc.value=v; else bhex.value=v;
+    paintHead(v); live();
+  };
+  bc.oninput=e=>setFree(e.target.value,false);
+  bc.onchange=()=>buildBand();                 // 離したら「濃さに戻す」等を出し直す
+  bhex.oninput=e=>{ const v=e.target.value.trim();
+    if(/^#[0-9a-fA-F]{6}$/.test(v)) setFree(v,true); };
+  bhex.onchange=()=>buildBand();
+  const uf=$('#unfree');
+  if(uf) uf.onclick=()=>{ delete override[HALF[sel][0]]; refresh(); };
 }
 
 function refresh(){ buildBar(); buildBand(); buildChips(); render(); }
@@ -1087,8 +1157,16 @@ $('#copy').onclick=()=>{
     .map(k=>`    ${k}: ${roleMap[k]}${roleOf(k).k?`   # ${roleJa(k)} の派生`:''}`).join('\n');
   // ★ローカル日付で出す（toISOString だと UTC になって深夜に前日の日付が入る）
   const d=new Date(), ymd=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  // 直接えらんだ色は role_map で表せない（役割でなく生の色のため）。
+  // 黙って消えると「あの色どこ行った」になるので、コメントで必ず持ち出す
+  const ovn=usedNames().filter(n=>override[n]);
+  const ov=ovn.length
+    ? `# 直接えらんだ色（配色「${LIB.ways[wayKey].label}」に上書きしていたぶん）\n`+
+      `# この色で固定したいときは、CORIN に「この色で固定して」と言ってください。\n`+
+      ovn.map(n=>`#   ${n}: "${override[n]}"`).join('\n')+'\n'
+    : '';
   const y=`# ${cur.label} を編集したもの（${ymd}）\n`+
-    `# setts.yaml に1本追記する。CORIN に渡せば入れてくれます。\n`+
+    `# setts.yaml に1本追記する。CORIN に渡せば入れてくれます。\n`+ov+
     `${cur.key}_edit:\n  label: "${cur.label}（編集版）"\n  bias: ${!!cur.bias}\n`+
     `  half:\n${lines}\n  role_map:\n${rm}\n`;
   const t=$('#yaml'); t.value=y; t.style.display='block'; t.select();
@@ -1257,19 +1335,40 @@ function buildShelf(){
    0.866 = √3/2 は千鳥の行ピッチ係数。これで縦横も斜めも間隔が等しくなる。
    ロジックの元 → projects/LAVANDA/…/03_チェック・ドット_プリントパターン/_generate_dot_svg.py */
 const ROWK=Math.sqrt(3)/2;
-let DOT={stagger:false, dir:0, colors:['#6B4A3F']};
+/* mode … 'count' = 丈に何個並ぶかで決める（ピッチが先・径は割合）
+          'size'  = ドットの幅で決める（径が先・余白でピッチが決まる）
+   どちらでも最後に出るのは pitch と dia の2つだけ。描画側は何も変わらない */
+let DOT={stagger:false, dir:0, colors:['#6B4A3F'], mode:'count'};
 
 function dotGeom(){
   const lenCM=Math.max(1,+$('#dlen').value||70);
-  const per  =Math.max(1,+$('#dper').value||8);
-  /* 45度に回すと、正方格子の「縦に並ぶ行」の間隔は ピッチ÷√2 になる。
-     丈に per 個そろえたいので、ピッチはその逆で √2 倍にする */
-  const pitch=lenCM*10/per*(DOT.dir?Math.SQRT2:1);  // mm
-  const dia  =pitch*(+$('#ddia').value/100);
-  const k    =DOT.colors.length;
-  const rowP =pitch*ROWK;
-  return {lenCM,per,pitch,dia,k,rowP,
+  /* 45度に回すと、正方格子の「縦に並ぶ行」の間隔は ピッチ÷√2 になる */
+  const rk=DOT.dir?Math.SQRT2:1;
+  let pitch, dia, per;
+  if(DOT.mode==='size'){
+    dia   =Math.max(0.5,(+$('#dwid').value||0.5)*10);   // mm
+    pitch =dia+Math.max(0,(+$('#dgap').value||0)*10);   // 余白ぶんだけ間隔が開く
+    per   =lenCM*10/(pitch/rk);                          // 丈に並ぶ数（割り切れないので小数）
+  }else{
+    per   =Math.max(1,+$('#dper').value||8);
+    pitch =lenCM*10/per*rk;   // 丈に per 個そろえたいので、45度のときは √2 倍
+    dia   =pitch*(+$('#ddia').value/100);
+  }
+  const k=DOT.colors.length, rowP=pitch*ROWK;
+  return {lenCM,per,pitch,dia,gap:pitch-dia,k,rowP,
           tileW:pitch*k, tileH:DOT.stagger? rowP*2*k : pitch*k};
+}
+/* SVGの説明文とファイル名。決め方によって「何で指定したか」を残す（正本1か所） */
+const dotDesc=g=>`ドット ${DOT.stagger?'千鳥':'等間隔'} / ピッチ${g.pitch.toFixed(2)}mm`
+  +` / 径${g.dia.toFixed(2)}mm / 余白${g.gap.toFixed(2)}mm`;
+const dotTag=g=>`${DOT.stagger?'千鳥':'等間隔'}_`+(DOT.mode==='size'
+  ? `幅${cmv(g.dia)}cm_余白${cmv(g.gap)}cm`
+  : `丈${g.lenCM}cmに${g.per}個`)+`_ピッチ${g.pitch.toFixed(1)}mm`;
+/* 丈にちょうど収まる個数（整数）と、そのときの余白（mm） */
+function dotFit(g){
+  const n=Math.max(1,Math.round(g.per));
+  const pitch=g.lenCM*10/n*(DOT.dir?Math.SQRT2:1);
+  return {n, pitch, gap:pitch-g.dia};
 }
 /* 指定した範囲（W×H mm）に対して一度だけ中心を作る。
    外側1周ぶんも作ってクリップするので、端で切れたドットが隣のタイルと繋がる。
@@ -1304,7 +1403,7 @@ function dotSVG(over,rot){
   const D=rot? Math.hypot(W,H)+g.pitch*2 : 0;
   const cs=dotCenters(g, rot?D:W, rot?D:H);
   let s=`<svg xmlns="http://www.w3.org/2000/svg" width="${W}mm" height="${H}mm" viewBox="0 0 ${W} ${H}">`
-   +`<title>ドット ${DOT.stagger?'千鳥':'等間隔'} / ピッチ${g.pitch.toFixed(2)}mm / 径${g.dia.toFixed(2)}mm</title>`
+   +`<title>${dotDesc(g)}</title>`
    +`<defs><clipPath id="${cid}"><rect width="${W}" height="${H}"/></clipPath></defs>`
    +`<rect width="${W}" height="${H}" fill="${bg}"/><g clip-path="url(#${cid})">`;
   if(rot) s+=`<g transform="rotate(45 ${W/2} ${H/2}) translate(${((W-D)/2).toFixed(3)} ${((H-D)/2).toFixed(3)})">`;
@@ -1320,6 +1419,15 @@ function dotSVG(over,rot){
 function dotRender(){
   const g=dotGeom(), dpi=Math.max(72,+$('#ddpi').value||300);
   $('#ddiav').textContent=`${+$('#ddia').value}%（直径 ${cm(g.dia)}）`;
+  if(DOT.mode==='size'){
+    const f=dotFit(g);
+    $('#dfithint').innerHTML = Math.abs(f.n-g.per)<0.02
+      ? `丈 ${g.lenCM}cm にちょうど <b>${f.n}個</b> 並びます。`
+      : `いまは丈 ${g.lenCM}cm に <b>${g.per.toFixed(1)}個</b>（端が半端に切れます）。`+
+        (f.gap>=0
+          ? `<b>${f.n}個</b>できっちり収めるなら余白 <b>${cm(f.gap)}</b>。`
+          : `<span class="warn">幅が大きすぎて ${f.n}個 では入りません。</span>`);
+  }
   /* タイルは13mm角とかなので、1枚を画面幅いっぱいに拡大しても密度が分からない。
      主役のプレビューは「15cm角の生地を見たときの見え方」にする */
   const AREA=300, rot=DOT.dir===45;
@@ -1328,14 +1436,16 @@ function dotRender(){
   $('#dt2').textContent=`${cmv(g.tileW)}×${cm(g.tileH)}`;
   $('#dbox2').innerHTML=dotSVG(); fitSVG($('#dbox2'));   // タイルは常に直交（書き出す形）
   const pw=Math.round(g.tileW/25.4*dpi), ph=Math.round(g.tileH/25.4*dpi);
+  const perTxt = DOT.mode==='size' ? g.per.toFixed(1) : g.per;
   $('#dcalc').innerHTML=
-    `間隔（ピッチ）= <b>${cm(g.pitch)}</b>（丈 ${g.lenCM}cm に ${g.per}個`+
+    `間隔（ピッチ）= <b>${cm(g.pitch)}</b>（丈 ${g.lenCM}cm に ${perTxt}個`+
       (DOT.dir?` / 45度なので縦の間隔は ${cm(g.pitch/Math.SQRT2)}`:'')+`）<br>`+
-    `ドット直径 = <b>${cm(g.dia)}</b><br>`+
+    `ドット直径 = <b>${cm(g.dia)}</b> ／ 余白 = <b>${cm(g.gap)}</b><br>`+
     `1リピート = <b>${cmv(g.tileW)}×${cm(g.tileH)}</b>`+
     `（${DOT.stagger?'千鳥':'等間隔'}${g.k>1?` / ${g.k}色`:''}）<br>`+
     `書き出し <b>${pw}×${ph}px</b>`+
-    (g.dia>=g.pitch?`<br><span class="warn">⚠ ドットが間隔より大きいので重なります</span>`:'')+
+    (g.gap<0?`<br><span class="warn">⚠ ドットが間隔より大きいので重なります</span>`
+      :g.gap<0.5?`<br><span class="warn">⚠ 余白がほぼゼロ。ドットのふちがくっついて見えます</span>`:'')+
     (g.dia<0.3?`<br><span class="warn">⚠ ドットが小さすぎて印刷で潰れます（0.03cm未満）</span>`:'');
   $('#dtbl').innerHTML=[['地',$('#dbg').value.toUpperCase()],
       ...DOT.colors.map((c,i)=>[`ドット${DOT.colors.length>1?i+1:''}`,c])]
@@ -1358,13 +1468,13 @@ function dotA3SVG(){
   // 柄面ぶんのドット面を作って、中身だけ柄面の位置へ移す
   const inner=dotSVG({w:F.w,h:F.h})
     .replace(/^<svg[^>]*>/,'').replace(/<\/svg>$/,'');
-  const tag=`ドット ${DOT.stagger?'千鳥':'等間隔'} / ピッチ${g.pitch.toFixed(2)}mm / 径${g.dia.toFixed(2)}mm`;
+  const tag=dotDesc(g);
   return a3Page(`<g id="柄面" transform="translate(${F.x} ${F.y})">${inner}</g>`,
     [$('#dbg').value.toUpperCase(), ...DOT.colors], 1, `A3縦 実寸 ${tag}`);
 }
 function dotDL(kind){
   const g=dotGeom(), dpi=Math.max(72,+$('#ddpi').value||300);
-  const tag=`${DOT.stagger?'千鳥':'等間隔'}_丈${g.lenCM}cmに${g.per}個_ピッチ${g.pitch.toFixed(1)}mm`;
+  const tag=dotTag(g);
   if(kind==='svg')
     save(new Blob([dotSVG()],{type:'image/svg+xml;charset=utf-8'}),`ドット_${tag}_パターン用.svg`);
   else if(kind==='a3'){
@@ -1403,7 +1513,38 @@ function setDotDir(v){
         : '書き出すSVGはどちらも直交（Illustratorで「パターンの変形」だけ回して使います）。');
 }
 $('#ddir').querySelectorAll('button').forEach(b=>b.onclick=()=>{ setDotDir(+b.dataset.v); dotRender(); });
-['dlen','dper','ddia','ddpi'].forEach(id=>$('#'+id).oninput=dotRender);
+/* 決め方の切り替え。切り替えた瞬間に柄が飛ばないよう、
+   いまの寸法をそのまま相手側の入力欄に書き写してから切り替える */
+function setDotMode(v){
+  if(v===DOT.mode) return;
+  const g=dotGeom();
+  if(v==='size'){
+    $('#dwid').value=(g.dia/10).toFixed(2);
+    $('#dgap').value=Math.max(0,g.gap/10).toFixed(2);
+  }else{
+    const n=Math.max(1,Math.round(g.per));               // 個数は整数しか置けない
+    const pitch=g.lenCM*10/n*(DOT.dir?Math.SQRT2:1);
+    $('#dper').value=n;
+    $('#ddia').value=Math.round(Math.min(90,Math.max(5,g.dia/pitch*100)));
+  }
+  DOT.mode=v;
+  $('#dmode').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x.dataset.v===v));
+  const sz=v==='size';
+  $('#dperbox').hidden=sz;  $('#dwidbox').hidden=!sz;
+  $('#dpctbox').hidden=sz;  $('#dgapbox').hidden=!sz;
+  dotRender();
+}
+$('#dmode').querySelectorAll('button').forEach(b=>b.onclick=()=>setDotMode(b.dataset.v));
+/* 幅はそのままに、余白だけ動かして丈にちょうど収める */
+$('#dfit').onclick=()=>{
+  const f=dotFit(dotGeom());
+  if(f.gap<0) return;                    // 幅が大きすぎて入らないときは触らない
+  /* 3桁で入れる。0.01cm 刻みに丸めると丈に対して端が半個ぶんズレて
+     「きっちり」にならない（54個のつもりが53.8個になる） */
+  $('#dgap').value=(f.gap/10).toFixed(3);
+  dotRender();
+};
+['dlen','dper','ddia','ddpi','dwid','dgap'].forEach(id=>$('#'+id).oninput=dotRender);
 $('#dbg').oninput=e=>{ $('#dbgchip').style.background=e.target.value; dotRender(); };
 $('#dbgchip').style.background=$('#dbg').value;
 setDotDir(0); dotChips(); dotRender();
