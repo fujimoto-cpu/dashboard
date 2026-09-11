@@ -86,7 +86,9 @@
     width:100%;padding:7px 10px;border:1px solid var(--line);border-radius:9px;
     font:inherit;background:#fff;color:var(--ink)}
   input[type=range]{width:100%;accent-color:var(--accent)}
-  .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  /* ラベルが2行に折り返しても入力枠の高さが揃うように下端で揃える
+     （「ドットが丈に縦いくつ並ぶか」のような長いラベルで枠がずれていた） */
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:end}
   .calc{margin-top:11px;padding:10px 11px;background:#f7f4fd;border-radius:10px;
         font-size:12px;line-height:1.75}
   .calc b{color:var(--accent);font-weight:600}
