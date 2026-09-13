@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-09-13",
   "weather": {
-    "desc": "Clear ",
-    "temp": "26",
-    "icon": "☀️"
+    "desc": "Patchy rain nearby",
+    "temp": "27",
+    "icon": "🌧"
   },
   "letter": {
-    "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はClear 、26度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Casablanca</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はPatchy rain nearby、27度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>APOTHEKE FRAGRANCE</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Casablanca",
-    "tagline": "パリとモロッコの間に浮かぶ、享楽的ラグジュアリー。Charaf Tajerが2018年に創設したCasablancaは、Art Deco・テニスコート・シルクプリントという独自の美学で、ラグジュアリーメンズウェアの新しい地平を切り拓いた。",
-    "insight": "コレクションごとに「地理×思想」で世界を旅させる",
+    "name": "APOTHEKE FRAGRANCE",
+    "tagline": "千葉のアトリエで全てを手作りする日本のクラフトフレグランスブランド。古来の日本の感性と現代デザインを橋渡しし、お香で「家に置いてオシャレ」を再定義した。",
+    "insight": "INSIGHT 01",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/casablanca-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1281,9 +1281,18 @@ window.CORIN_DATA = {
   "recent_html": [
     {
       "date": "2026-09-13",
+      "title": "Bloom に合うセリフ体",
+      "wiki": "2026-09-13_Druk系ロゴに合うセリフ体_v1",
+      "category": "🤖 CORIN出力（outputs/） 153本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-13_Druk系ロゴに合うセリフ体_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-13_Druk系ロゴに合うセリフ体_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-09-13",
       "title": "Mori 分析とゆりこ版ジャーナリング設計",
       "wiki": "2026-09-13_Mori分析とゆりこ版ジャーナリング設計_v1",
-      "category": "🤖 CORIN出力（outputs/） 152本",
+      "category": "🤖 CORIN出力（outputs/） 153本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-13_Mori分析とゆりこ版ジャーナリング設計_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-13_Mori分析とゆりこ版ジャーナリング設計_v1.html",
       "has_md": true
@@ -1301,7 +1310,7 @@ window.CORIN_DATA = {
       "date": "2026-09-10",
       "title": "AI文字起こし完全版 — Notion×ローカルWhisper",
       "wiki": "2026-09-10_AI文字起こし完全版_Notion×ローカルWhisper_まとめ_v1",
-      "category": "🤖 CORIN出力（outputs/） 152本",
+      "category": "🤖 CORIN出力（outputs/） 153本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-10_AI文字起こし完全版_Notion×ローカルWhisper_まとめ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-10_AI文字起こし完全版_Notion×ローカルWhisper_まとめ_v1.html",
       "has_md": true
@@ -1310,7 +1319,7 @@ window.CORIN_DATA = {
       "date": "2026-09-10",
       "title": "アーリースプリングの糸色",
       "wiki": "2026-09-10_アーリースプリング配色リサーチ_v2",
-      "category": "🤖 CORIN出力（outputs/） 152本",
+      "category": "🤖 CORIN出力（outputs/） 153本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-10_アーリースプリング配色リサーチ_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-10_アーリースプリング配色リサーチ_v2.html",
       "has_md": true
@@ -1319,7 +1328,7 @@ window.CORIN_DATA = {
       "date": "2026-09-10",
       "title": "KONNEKT受付システム 要件定義",
       "wiki": "2026-09-10_受付システム_要件定義_v1",
-      "category": "🤖 CORIN出力（outputs/） 152本",
+      "category": "🤖 CORIN出力（outputs/） 153本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-10_受付システム_要件定義_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-10_受付システム_要件定義_v1.html",
       "has_md": true
@@ -1346,7 +1355,7 @@ window.CORIN_DATA = {
       "date": "2026-09-01",
       "title": "声で貯める、社長の頭のなか",
       "wiki": "2026-09-01_ゆうさん_声で思考を蓄積する仕組み_プラン_v1",
-      "category": "🤖 CORIN出力（outputs/） 152本",
+      "category": "🤖 CORIN出力（outputs/） 153本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-01_ゆうさん_声で思考を蓄積する仕組み_プラン_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-01_ゆうさん_声で思考を蓄積する仕組み_プラン_v1.html",
       "has_md": true
@@ -1355,7 +1364,7 @@ window.CORIN_DATA = {
       "date": "2026-08-27",
       "title": "Corin. バーチャルオフィス",
       "wiki": "2026-08-27_CORINバーチャルオフィス_v3",
-      "category": "🤖 CORIN出力（outputs/） 152本",
+      "category": "🤖 CORIN出力（outputs/） 153本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-27_CORINバーチャルオフィス_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-27_CORINバーチャルオフィス_v3.html",
       "has_md": true
@@ -1400,7 +1409,7 @@ window.CORIN_DATA = {
       "date": "2026-08-26",
       "title": "Armillary. と LAVANDA の客はどう違うか",
       "wiki": "2026-08-26_Armillary調査とLAVANDA比較_v1",
-      "category": "🤖 CORIN出力（outputs/） 152本",
+      "category": "🤖 CORIN出力（outputs/） 153本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-26_Armillary調査とLAVANDA比較_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-26_Armillary調査とLAVANDA比較_v1.html",
       "has_md": true
@@ -1409,7 +1418,7 @@ window.CORIN_DATA = {
       "date": "2026-08-26",
       "title": "ブランド横断オーディエンス分析",
       "wiki": "2026-08-26_ブランド横断IGオーディエンス分析_全件プラン_v1",
-      "category": "🤖 CORIN出力（outputs/） 152本",
+      "category": "🤖 CORIN出力（outputs/） 153本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-26_ブランド横断IGオーディエンス分析_全件プラン_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-26_ブランド横断IGオーディエンス分析_全件プラン_v1.html",
       "has_md": true
@@ -1427,7 +1436,7 @@ window.CORIN_DATA = {
       "date": "2026-08-25",
       "title": "AIカンパニー リファレンス",
       "wiki": "2026-08-25_AIカンパニー_デザインリファレンス_v1",
-      "category": "🤖 CORIN出力（outputs/） 152本",
+      "category": "🤖 CORIN出力（outputs/） 153本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_AIカンパニー_デザインリファレンス_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_AIカンパニー_デザインリファレンス_v1.html",
       "has_md": true
@@ -1436,7 +1445,7 @@ window.CORIN_DATA = {
       "date": "2026-08-25",
       "title": "AIキャッチアップ 8月号",
       "wiki": "2026-08-25_AI最新事情キャッチアップ_v1",
-      "category": "🤖 CORIN出力（outputs/） 152本",
+      "category": "🤖 CORIN出力（outputs/） 153本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_AI最新事情キャッチアップ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_AI最新事情キャッチアップ_v1.html",
       "has_md": true
@@ -1445,18 +1454,9 @@ window.CORIN_DATA = {
       "date": "2026-08-25",
       "title": "CORIN オフィス見取り図",
       "wiki": "2026-08-25_CORINオフィス_見取り図_v1",
-      "category": "🤖 CORIN出力（outputs/） 152本",
+      "category": "🤖 CORIN出力（outputs/） 153本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_CORINオフィス_見取り図_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_CORINオフィス_見取り図_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-08-25",
-      "title": "114件のインプット棚卸し",
-      "wiki": "2026-08-25_インプット棚卸し_v1",
-      "category": "🤖 CORIN出力（outputs/） 152本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_インプット棚卸し_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_インプット棚卸し_v1.html",
       "has_md": true
     }
   ],
