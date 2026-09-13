@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-09-13",
   "weather": {
-    "desc": "Partly Cloudy ",
-    "temp": "24",
-    "icon": "☁️"
+    "desc": "Sunny",
+    "temp": "26",
+    "icon": "☀️"
   },
   "letter": {
     "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はPartly Cloudy 、24度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Human race</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はSunny、26度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Sacai</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Human race",
-    "tagline": "ウェルネスを起点に、スキンケア・アパレル・カルチャーを横断するファレル・ウィリアムス創設のライフスタイルブランド。",
-    "insight": "Step 3 — タグラインの設計",
+    "name": "Sacai",
+    "tagline": "2つを1つにする。阿部千登勢が1999年に東京で始めたハイブリッド解体の実験は、ストリートとラグジュアリーの境界を消し去り、世界的ブランドへと進化した。",
+    "insight": "CDGアルムナイネットワークの活用",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/humanrace-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/sacai-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1280,6 +1280,15 @@ window.CORIN_DATA = {
   ],
   "recent_html": [
     {
+      "date": "2026-09-13",
+      "title": "KONNEKT受付システム 要件定義",
+      "wiki": "受付システム_要件定義_v1",
+      "category": "🤖 AI推進資料（ai/） 49本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260909_受付システム/受付システム_要件定義_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260909_受付システム/受付システム_要件定義_v1.html",
+      "has_md": true
+    },
+    {
       "date": "2026-09-10",
       "title": "AI文字起こし完全版 — Notion×ローカルWhisper",
       "wiki": "2026-09-10_AI文字起こし完全版_Notion×ローカルWhisper_まとめ_v1",
@@ -1346,7 +1355,7 @@ window.CORIN_DATA = {
       "date": "2026-08-27",
       "title": "Claude と Notion のアドレス統一",
       "wiki": "説明会スライド_アカウントと権限_モック_v1",
-      "category": "🤖 AI推進資料（ai/） 48本",
+      "category": "🤖 AI推進資料（ai/） 49本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/説明会スライド_アカウントと権限_モック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/説明会スライド_アカウントと権限_モック_v1.html",
       "has_md": true
@@ -1355,7 +1364,7 @@ window.CORIN_DATA = {
       "date": "2026-08-27",
       "title": "KONNEKT への集約",
       "wiki": "説明会スライド_アカウントと権限_モック_v3",
-      "category": "🤖 AI推進資料（ai/） 48本",
+      "category": "🤖 AI推進資料（ai/） 49本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/説明会スライド_アカウントと権限_モック_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/説明会スライド_アカウントと権限_モック_v3.html",
       "has_md": true
@@ -1364,7 +1373,7 @@ window.CORIN_DATA = {
       "date": "2026-08-27",
       "title": "YR アカウントの方の使い方",
       "wiki": "説明会スライド_アカウントと権限_モック_v4",
-      "category": "🤖 AI推進資料（ai/） 48本",
+      "category": "🤖 AI推進資料（ai/） 49本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/説明会スライド_アカウントと権限_モック_v4.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/説明会スライド_アカウントと権限_モック_v4.html",
       "has_md": true
@@ -1373,7 +1382,7 @@ window.CORIN_DATA = {
       "date": "2026-08-27",
       "title": "アカウントと共有設定の2枚",
       "wiki": "説明会スライド_アカウントと権限_モック_v5",
-      "category": "🤖 AI推進資料（ai/） 48本",
+      "category": "🤖 AI推進資料（ai/） 49本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/説明会スライド_アカウントと権限_モック_v5.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260515_議事録集約システム/説明会スライド_アカウントと権限_モック_v5.html",
       "has_md": true
@@ -1448,15 +1457,6 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 151本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_バーチャルAIオフィス_デザインリファレンス_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_バーチャルAIオフィス_デザインリファレンス_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-08-25",
-      "title": "夜間バッチの配線図",
-      "wiki": "2026-08-25_夜間バッチの配線図_v1",
-      "category": "🤖 CORIN出力（outputs/） 151本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_夜間バッチの配線図_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-08-25_夜間バッチの配線図_v1.html",
       "has_md": true
     }
   ],
