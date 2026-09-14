@@ -95,6 +95,58 @@
         "accentDeep": "#2F5359"
       }
     },
+    "lavanda_swap": {
+      "label": "【入替】LAVANDA現行 地と柄を反転（テラコッタ地×ティール柄）",
+      "source": "2026-09-14 CORIN作成。太帯(band)の色相・彩度を地に使い明度55%でしっかり存在感を出す。 柄(band)は元の地色。主役色/主役色濃は彩度を60%に抑えて地と調和させる（ES3_swapと同じロジック）",
+      "colors": {
+        "base": "#A77C71",
+        "hairline": "#F0EDE6",
+        "mid": "#7D746E",
+        "band": "#E8E3D8",
+        "darkline": "#2F2320",
+        "accent": "#62888E",
+        "accentDeep": "#3D484B"
+      }
+    },
+    "lavanda_accentpop": {
+      "label": "【差し色】LAVANDA現行 主役色濃をプラムに",
+      "source": "2026-09-14 CORIN作成。base/mid/band/darkline/accentは据え置き、accentDeep（面積2.4%）だけプラムに差し替え",
+      "colors": {
+        "base": "#E8E3D8",
+        "hairline": "#F0EDE6",
+        "mid": "#7D746E",
+        "band": "#5C4039",
+        "darkline": "#2F2320",
+        "accent": "#62838E",
+        "accentDeep": "#8B4A6B"
+      }
+    },
+    "lavanda_accentpop2": {
+      "label": "【差し色②】LAVANDA現行 主役色濃をミントグリーンに",
+      "source": "2026-09-14 CORIN作成。差し色バリエーションその2。accentDeepだけミントグリーンに差し替え（アーリースプリング向け）",
+      "colors": {
+        "base": "#E8E3D8",
+        "hairline": "#F0EDE6",
+        "mid": "#7D746E",
+        "band": "#5C4039",
+        "darkline": "#2F2320",
+        "accent": "#62838E",
+        "accentDeep": "#6FA88C"
+      }
+    },
+    "lavanda_minimal": {
+      "label": "【減色】LAVANDA現行 4トーンに圧縮",
+      "source": "2026-09-14 CORIN作成。中間帯(mid)→太帯(band)、主役色濃(accentDeep)→最暗線(darkline) に統合。7役割→実質4トーンに圧縮",
+      "colors": {
+        "base": "#E8E3D8",
+        "hairline": "#E8E3D8",
+        "mid": "#5C4039",
+        "band": "#5C4039",
+        "darkline": "#2F2320",
+        "accent": "#62838E",
+        "accentDeep": "#2F2320"
+      }
+    },
     "corin_grey": {
       "label": "グレー × クリーム",
       "source": "2026-09-09 CORIN作成",
@@ -148,16 +200,16 @@
       }
     },
     "ES3_quiet_violet": {
-      "label": "クワイエットヴァイオレット × スレート",
-      "source": "Lit｜uni___media PANTONE 16-3610 Quiet Violet ＋ nugu__official ライラック×スレートグレー（既存B案の春版）",
+      "label": "クワイエットヴァイオレット × バーントアンバー",
+      "source": "Lit｜uni___media PANTONE 16-3610 Quiet Violet ＋ nugu__official ライラック×スレートグレー（既存B案の春版）。 2026-09-14 ゆりこFB修正：紫が強すぎる（IG参考「深みのあるブルー×ブラウンのチェック柄」osrs_official._）を受け、 太帯・最暗線・主役色濃をスレート系からバーントアンバー系に変更し、主役色(accent)のライラックとの対比で 「バイオレット×ブラウン」の2色構成に。QuickLookで実画像を見て確定（band完全に茶色にする案の方が 紫寄りにミックスした案よりコントラストが出て良かった）",
       "colors": {
         "base": "#F3F0F4",
         "hairline": "#FCFAFD",
         "mid": "#ADA5B3",
-        "band": "#7E7288",
-        "darkline": "#3A3341",
+        "band": "#6B4A3F",
+        "darkline": "#33221A",
         "accent": "#C7B7D2",
-        "accentDeep": "#9B8AA6"
+        "accentDeep": "#8C6E63"
       }
     },
     "ES4_butter_choco": {
@@ -249,6 +301,162 @@
         "darkline": "#3A2A2A",
         "accent": "#E8C9C2",
         "accentDeep": "#A8563F"
+      }
+    },
+    "ES3_swap": {
+      "label": "【入替】ES3 地と柄を反転（テラコッタブラウン地×バイオレット柄）",
+      "source": "2026-09-14 v8修正（ゆりこFB：「バランス悪い」＝バイオレットの彩度が高すぎて地の茶色から浮いて うるさく見えていた）。主役色濃(バイオレット)の彩度を42%→24%に落として地と調和させつつ、 彩度18%まで落とすと紫の主張が消えて意味がなくなるためS24%で確定（QuickLookで見比べ）",
+      "colors": {
+        "base": "#AF7B6A",
+        "hairline": "#FCFAFD",
+        "mid": "#ADA5B3",
+        "band": "#F3F0F4",
+        "darkline": "#634436",
+        "accent": "#DACDC8",
+        "accentDeep": "#9D7AAE"
+      }
+    },
+    "ES3_accentpop": {
+      "label": "【差し色】ES3 主役色濃のみマスタードに",
+      "source": "2026-09-14 v2修正（ゆりこFB：v1は accent(面積9.7%)ごと差し替えて主張しすぎ）。 accent は据え置き・accentDeep（面積2.4%）だけ差し色にして面積を絞る。 2026-09-14 base/band/darklineをオリジナルの茶色化に合わせて更新",
+      "colors": {
+        "base": "#F3F0F4",
+        "hairline": "#FCFAFD",
+        "mid": "#ADA5B3",
+        "band": "#6B4A3F",
+        "darkline": "#33221A",
+        "accent": "#C7B7D2",
+        "accentDeep": "#B5842A"
+      }
+    },
+    "ES3_accentpop2": {
+      "label": "【差し色②】ES3 主役色濃をセージグリーンに",
+      "source": "2026-09-14 ゆりこ指示で差し色バリエーションをもう1系統追加。オリジナル(base/hairline/mid/band/darkline/accent)は 一切変更せず、accentDeep（面積2.4%）だけセージグリーンに。アーリースプリングらしい差し色として選定",
+      "colors": {
+        "base": "#F3F0F4",
+        "hairline": "#FCFAFD",
+        "mid": "#ADA5B3",
+        "band": "#6B4A3F",
+        "darkline": "#33221A",
+        "accent": "#C7B7D2",
+        "accentDeep": "#7A8B5C"
+      }
+    },
+    "ES3_minimal": {
+      "label": "【減色】ES3 4トーンに圧縮",
+      "source": "ES3_quiet_violet の mid→band・accentDeep→darkline に統合。 2026-09-14 base/band/darklineをオリジナルの茶色化に合わせて更新",
+      "colors": {
+        "base": "#F3F0F4",
+        "hairline": "#F3F0F4",
+        "mid": "#6B4A3F",
+        "band": "#6B4A3F",
+        "darkline": "#33221A",
+        "accent": "#C7B7D2",
+        "accentDeep": "#33221A"
+      }
+    },
+    "ES5_swap": {
+      "label": "【入替】ES5 地と柄を反転（濃トープ地×薄グレー柄）",
+      "source": "2026-09-14 v4修正（ゆりこFB：v3は反転が弱すぎ・地が薄い。QuickLookで実画像を見て検証）。 band(柄)の色相・彩度をそのまま使い明度だけ60%に設定。band(新柄)は元base色そのまま採用",
+      "colors": {
+        "base": "#AF9983",
+        "hairline": "#FBFCFC",
+        "mid": "#A9AEB0",
+        "band": "#EDEFEE",
+        "darkline": "#33291F",
+        "accent": "#C8D5DC",
+        "accentDeep": "#85A8B9"
+      }
+    },
+    "ES5_accentpop": {
+      "label": "【差し色】ES5 主役色濃のみテラコッタに",
+      "source": "2026-09-14 v2修正（ゆりこFB：v1は accent(面積9.7%)ごと差し替えて主張しすぎ）。 accent は据え置き・accentDeep（面積2.4%）だけ差し色にして面積を絞る",
+      "colors": {
+        "base": "#EDEFEE",
+        "hairline": "#FBFCFC",
+        "mid": "#A9AEB0",
+        "band": "#8A7259",
+        "darkline": "#33291F",
+        "accent": "#C6D6DE",
+        "accentDeep": "#9C5A45"
+      }
+    },
+    "ES5_accentpop2": {
+      "label": "【差し色②】ES5 主役色濃をマスタードに",
+      "source": "2026-09-14 ゆりこ指示で差し色バリエーションをもう1系統追加。オリジナルは一切変更せず、 accentDeep（面積2.4%）だけマスタードに。アーリースプリングらしい差し色として選定",
+      "colors": {
+        "base": "#EDEFEE",
+        "hairline": "#FBFCFC",
+        "mid": "#A9AEB0",
+        "band": "#8A7259",
+        "darkline": "#33291F",
+        "accent": "#C6D6DE",
+        "accentDeep": "#C99A3D"
+      }
+    },
+    "ES5_minimal": {
+      "label": "【減色】ES5 4トーンに圧縮",
+      "source": "ES5_stalactite_taupe の mid→band・accentDeep→darkline に統合",
+      "colors": {
+        "base": "#EDEFEE",
+        "hairline": "#EDEFEE",
+        "mid": "#8A7259",
+        "band": "#8A7259",
+        "darkline": "#33291F",
+        "accent": "#C6D6DE",
+        "accentDeep": "#33291F"
+      }
+    },
+    "ES6_swap": {
+      "label": "【入替】ES6 地と柄を反転（濃サンド地×薄グレー柄）",
+      "source": "2026-09-14 v4修正（ゆりこFB：v3は反転が弱すぎ・地が薄い。QuickLookで実画像を見て検証）。 band(柄)の色相・彩度をそのまま使い明度だけ60%に設定。band(新柄)は元base色そのまま採用",
+      "colors": {
+        "base": "#AB9C87",
+        "hairline": "#FCFAF4",
+        "mid": "#B6B3A4",
+        "band": "#F1EEE4",
+        "darkline": "#2E2A20",
+        "accent": "#C2DDD3",
+        "accentDeep": "#79BEA1"
+      }
+    },
+    "ES6_accentpop": {
+      "label": "【差し色】ES6 主役色濃のみコーラルに",
+      "source": "2026-09-14 v2修正（ゆりこFB：v1は accent(面積9.7%)ごと差し替えて主張しすぎ）。 accent は据え置き・accentDeep（面積2.4%）だけ差し色にして面積を絞る",
+      "colors": {
+        "base": "#F1EEE4",
+        "hairline": "#FCFAF4",
+        "mid": "#B6B3A4",
+        "band": "#8C7B62",
+        "darkline": "#2E2A20",
+        "accent": "#BFE0D2",
+        "accentDeep": "#B0563E"
+      }
+    },
+    "ES6_accentpop2": {
+      "label": "【差し色②】ES6 主役色濃を桜ピンクに",
+      "source": "2026-09-14 ゆりこ指示で差し色バリエーションをもう1系統追加。最初ネイビーを試したが アーリースプリングの季節感に合わないとのFBで桜ピンクに変更。オリジナルは一切変更せず、 accentDeep（面積2.4%）だけ桜ピンクに",
+      "colors": {
+        "base": "#F1EEE4",
+        "hairline": "#FCFAF4",
+        "mid": "#B6B3A4",
+        "band": "#8C7B62",
+        "darkline": "#2E2A20",
+        "accent": "#BFE0D2",
+        "accentDeep": "#D98CA8"
+      }
+    },
+    "ES6_minimal": {
+      "label": "【減色】ES6 4トーンに圧縮",
+      "source": "ES6_mint_sand の mid→band・accentDeep→darkline に統合",
+      "colors": {
+        "base": "#F1EEE4",
+        "hairline": "#F1EEE4",
+        "mid": "#8C7B62",
+        "band": "#8C7B62",
+        "darkline": "#2E2A20",
+        "accent": "#BFE0D2",
+        "accentDeep": "#2E2A20"
       }
     }
   },
@@ -762,6 +970,166 @@
         "BAND": "band",
         "ACCENT": "accent",
         "DARKLINE": "darkline"
+      }
+    },
+    "windowpane": {
+      "ways": [
+        "corin_grey",
+        "corin_blue",
+        "lavanda_orig",
+        "A2_whispy_choco",
+        "B_lilac_slate",
+        "F_greyscale"
+      ],
+      "label": "ウィンドウペン（大きな窓格子）",
+      "note": "2026-09-14 CORIN作成。既存7柄が全部マルチストライプの密な柄だったので、対比として1〜3本の細い線だけで大きな正方形を作るミニマルなタータンにした。地が主役で線は添えるだけ",
+      "bias": false,
+      "thread_px": 6,
+      "yarn_px": 6,
+      "twill": 2,
+      "half": [
+        [
+          "BASE",
+          60
+        ],
+        [
+          "DARKLINE",
+          1
+        ],
+        [
+          "BASE",
+          58
+        ],
+        [
+          "HAIRLINE",
+          1
+        ],
+        [
+          "DARKLINE",
+          1
+        ]
+      ],
+      "role_map": {
+        "BASE": "base",
+        "HAIRLINE": "hairline",
+        "DARKLINE": "darkline"
+      }
+    },
+    "buffalo_bold": {
+      "ways": [
+        "corin_grey",
+        "corin_blue",
+        "lavanda_orig",
+        "A2_whispy_choco",
+        "B_lilac_slate",
+        "F_greyscale"
+      ],
+      "label": "バッファローチェック（太い2色市松）",
+      "note": "2026-09-14 CORIN作成。地色と太帯をほぼ半々で大きく市松に割った力強い柄。太帯のまん中に極細のダークラインを1本だけ通して織りの表情を足した",
+      "bias": false,
+      "thread_px": 6,
+      "yarn_px": 6,
+      "twill": 2,
+      "half": [
+        [
+          "BASE",
+          60
+        ],
+        [
+          "BAND",
+          60
+        ],
+        [
+          "DARKLINE",
+          1
+        ]
+      ],
+      "role_map": {
+        "BASE": "base",
+        "BAND": "band",
+        "DARKLINE": "darkline"
+      }
+    },
+    "pencil_grid": {
+      "ways": [
+        "corin_grey",
+        "corin_blue",
+        "lavanda_orig",
+        "A2_whispy_choco",
+        "B_lilac_slate",
+        "F_greyscale"
+      ],
+      "label": "ペンシルグリッド（細かい鉛筆格子）",
+      "note": "2026-09-14 CORIN作成。地色に細線を一定間隔（16本ごと）で重ねただけの、シャツ地寄りの繊細な格子。ウィンドウペンよりさらに細かく均一",
+      "bias": false,
+      "thread_px": 6,
+      "yarn_px": 6,
+      "twill": 2,
+      "half": [
+        [
+          "BASE",
+          15
+        ],
+        [
+          "HAIRLINE",
+          1
+        ],
+        [
+          "BASE",
+          15
+        ],
+        [
+          "HAIRLINE",
+          1
+        ],
+        [
+          "BASE",
+          15
+        ],
+        [
+          "HAIRLINE",
+          1
+        ],
+        [
+          "BASE",
+          15
+        ],
+        [
+          "HAIRLINE",
+          1
+        ],
+        [
+          "BASE",
+          15
+        ],
+        [
+          "HAIRLINE",
+          1
+        ],
+        [
+          "BASE",
+          15
+        ],
+        [
+          "HAIRLINE",
+          1
+        ],
+        [
+          "BASE",
+          15
+        ],
+        [
+          "HAIRLINE",
+          1
+        ],
+        [
+          "BASE",
+          9
+        ]
+      ],
+      "role_map": {
+        "BASE": "base",
+        "HAIRLINE": "hairline"
       }
     },
     "lavanda_27es_a": {
