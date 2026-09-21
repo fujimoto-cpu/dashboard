@@ -7,7 +7,7 @@ window.CORIN_DATA = {
   },
   "letter": {
     "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はTorrential rain shower、26度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>Jacq emus</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はTorrential rain shower、26度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>Fear of God</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Jacq emus",
-    "tagline": "南フランスのプロヴァンスに根ざした感情的ミニマリズム。19-20歳で独学創業、世界的ラグジュアリーブランドへ成長したSimon Porte Jacquemusの軌跡。",
-    "insight": "プロポーション操作による「記憶に残る形」の創出",
+    "name": "Fear of God",
+    "tagline": "宗教的敬虔さ × LAストリート × 高級素材。聖書的世界観から生まれたラグジュアリーストリートの頂点。",
+    "insight": "スポーツとラグジュアリーを垂直に接続する",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/jacquemus-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/fog-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
