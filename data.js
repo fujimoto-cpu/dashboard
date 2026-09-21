@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-09-21",
   "weather": {
-    "desc": "Moderate or heavy rain shower",
-    "temp": "27",
-    "icon": "🌧"
+    "desc": "Fog",
+    "temp": "24",
+    "icon": "🌫"
   },
   "letter": {
-    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はModerate or heavy rain shower、27度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>APOTHEKE FRAGRANCE</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はFog、24度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>ADER ERROR</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "APOTHEKE FRAGRANCE",
-    "tagline": "千葉のアトリエで全てを手作りする日本のクラフトフレグランスブランド。古来の日本の感性と現代デザインを橋渡しし、お香で「家に置いてオシャレ」を再定義した。",
-    "insight": "INSIGHT 01",
+    "name": "ADER ERROR",
+    "tagline": "「エラー」を美学に変える、ソウル発のコンセプト・コレクティブ。匿名の20人チームが生み出す「意図的な失敗」が世界を席巻する。",
+    "insight": "「ミス」をデザイン言語にする",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/ader-error-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -81,18 +81,18 @@ window.CORIN_DATA = {
   "daily_photo": null,
   "library": [
     {
+      "name": "recipes",
+      "description": "",
+      "url": "https://fujimoto-cpu.github.io/recipes/",
+      "icon": "📄",
+      "pushed_at": "2026-09-21T01:05:59Z"
+    },
+    {
       "name": "ip-report",
       "description": "KONNEKT INTERNATIONAL IP News Daily Report",
       "url": "https://fujimoto-cpu.github.io/ip-report",
       "icon": "📰",
       "pushed_at": "2026-09-21T00:30:50Z"
-    },
-    {
-      "name": "recipes",
-      "description": "",
-      "url": "https://fujimoto-cpu.github.io/recipes/",
-      "icon": "📄",
-      "pushed_at": "2026-09-14T23:36:32Z"
     },
     {
       "name": "literature",
@@ -1284,7 +1284,7 @@ window.CORIN_DATA = {
       "date": "2026-09-21",
       "title": "AI時代のデータ蓄積 — 貯める箱の3条件",
       "wiki": "2026-09-21_AI時代のデータ蓄積_図解_v2",
-      "category": "🤖 CORIN出力（outputs/） 171本",
+      "category": "🤖 CORIN出力（outputs/） 172本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-21_AI時代のデータ蓄積_図解_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-21_AI時代のデータ蓄積_図解_v2.html",
       "has_md": true
@@ -1293,16 +1293,25 @@ window.CORIN_DATA = {
       "date": "2026-09-21",
       "title": "PMサポートさん",
       "wiki": "2026-09-21_PMサポートさん_設計とビフォーアフター_v1",
-      "category": "🤖 CORIN出力（outputs/） 171本",
+      "category": "🤖 CORIN出力（outputs/） 172本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-21_PMサポートさん_設計とビフォーアフター_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-21_PMサポートさん_設計とビフォーアフター_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-09-21",
+      "title": "スクショか、操作ログか",
+      "wiki": "2026-09-21_画面記録_ComputerHistory乗り換え比較_v1",
+      "category": "🤖 CORIN出力（outputs/） 172本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-21_画面記録_ComputerHistory乗り換え比較_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-21_画面記録_ComputerHistory乗り換え比較_v1.html",
       "has_md": true
     },
     {
       "date": "2026-09-20",
       "title": "意匠チェックの計画",
       "wiki": "2026-09-20_意匠チェックをKONNEKTの当たり前にする計画_v2",
-      "category": "🤖 CORIN出力（outputs/） 171本",
+      "category": "🤖 CORIN出力（outputs/） 172本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-20_意匠チェックをKONNEKTの当たり前にする計画_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-20_意匠チェックをKONNEKTの当たり前にする計画_v2.html",
       "has_md": true
@@ -1329,7 +1338,7 @@ window.CORIN_DATA = {
       "date": "2026-09-18",
       "title": "ブリスター風アクキーの権利",
       "wiki": "2026-09-18_ブリスター風アクキーの権利まとめ_v1",
-      "category": "🤖 CORIN出力（outputs/） 171本",
+      "category": "🤖 CORIN出力（outputs/） 172本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-18_ブリスター風アクキーの権利まとめ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-18_ブリスター風アクキーの権利まとめ_v1.html",
       "has_md": true
@@ -1338,7 +1347,7 @@ window.CORIN_DATA = {
       "date": "2026-09-16",
       "title": "AIに渡せる判断",
       "wiki": "2026-09-16_AIに渡せる判断とは_ゆりこの仕事に置き換えた1枚_v1",
-      "category": "🤖 CORIN出力（outputs/） 171本",
+      "category": "🤖 CORIN出力（outputs/） 172本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_AIに渡せる判断とは_ゆりこの仕事に置き換えた1枚_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_AIに渡せる判断とは_ゆりこの仕事に置き換えた1枚_v1.html",
       "has_md": true
@@ -1347,7 +1356,7 @@ window.CORIN_DATA = {
       "date": "2026-09-16",
       "title": "MD事業部ボード",
       "wiki": "2026-09-16_MD事業部ボード_実データ版モック_v2",
-      "category": "🤖 CORIN出力（outputs/） 171本",
+      "category": "🤖 CORIN出力（outputs/） 172本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_MD事業部ボード_実データ版モック_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_MD事業部ボード_実データ版モック_v2.html",
       "has_md": true
@@ -1356,7 +1365,7 @@ window.CORIN_DATA = {
       "date": "2026-09-16",
       "title": "請求書突合の88時間",
       "wiki": "2026-09-16_例外の多い業務をAIに渡す_石井氏X投稿の図解_v1",
-      "category": "🤖 CORIN出力（outputs/） 171本",
+      "category": "🤖 CORIN出力（outputs/） 172本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_例外の多い業務をAIに渡す_石井氏X投稿の図解_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_例外の多い業務をAIに渡す_石井氏X投稿の図解_v1.html",
       "has_md": true
@@ -1365,7 +1374,7 @@ window.CORIN_DATA = {
       "date": "2026-09-16",
       "title": "型集をつくる",
       "wiki": "2026-09-16_型集プラン_v1",
-      "category": "🤖 CORIN出力（outputs/） 171本",
+      "category": "🤖 CORIN出力（outputs/） 172本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_型集プラン_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_型集プラン_v1.html",
       "has_md": true
@@ -1374,7 +1383,7 @@ window.CORIN_DATA = {
       "date": "2026-09-16",
       "title": "型は集めない、当てる",
       "wiki": "2026-09-16_型集プラン_v2",
-      "category": "🤖 CORIN出力（outputs/） 171本",
+      "category": "🤖 CORIN出力（outputs/） 172本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_型集プラン_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_型集プラン_v2.html",
       "has_md": true
@@ -1383,7 +1392,7 @@ window.CORIN_DATA = {
       "date": "2026-09-16",
       "title": "新体制フローのNotion運用",
       "wiki": "2026-09-16_新体制フロー_Notion運用設計_v1",
-      "category": "🤖 CORIN出力（outputs/） 171本",
+      "category": "🤖 CORIN出力（outputs/） 172本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_新体制フロー_Notion運用設計_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_新体制フロー_Notion運用設計_v1.html",
       "has_md": true
@@ -1392,7 +1401,7 @@ window.CORIN_DATA = {
       "date": "2026-09-16",
       "title": "新しい進め方の説明",
       "wiki": "2026-09-16_新体制フロー_社内説明用_v1",
-      "category": "🤖 CORIN出力（outputs/） 171本",
+      "category": "🤖 CORIN出力（outputs/） 172本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_新体制フロー_社内説明用_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_新体制フロー_社内説明用_v1.html",
       "has_md": true
@@ -1401,7 +1410,7 @@ window.CORIN_DATA = {
       "date": "2026-09-16",
       "title": "人が更新しない案件管理",
       "wiki": "2026-09-16_社員ポータル_人が更新しない案件管理_v4",
-      "category": "🤖 CORIN出力（outputs/） 171本",
+      "category": "🤖 CORIN出力（outputs/） 172本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_社員ポータル_人が更新しない案件管理_v4.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_社員ポータル_人が更新しない案件管理_v4.html",
       "has_md": true
@@ -1410,7 +1419,7 @@ window.CORIN_DATA = {
       "date": "2026-09-16",
       "title": "案件が進むサイクル",
       "wiki": "2026-09-16_社員ポータル_案件が進むサイクル_v5",
-      "category": "🤖 CORIN出力（outputs/） 171本",
+      "category": "🤖 CORIN出力（outputs/） 172本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_社員ポータル_案件が進むサイクル_v5.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_社員ポータル_案件が進むサイクル_v5.html",
       "has_md": true
@@ -1419,7 +1428,7 @@ window.CORIN_DATA = {
       "date": "2026-09-16",
       "title": "社員ポータル 画面仕様",
       "wiki": "2026-09-16_社員ポータル_画面仕様_v3",
-      "category": "🤖 CORIN出力（outputs/） 171本",
+      "category": "🤖 CORIN出力（outputs/） 172本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_社員ポータル_画面仕様_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_社員ポータル_画面仕様_v3.html",
       "has_md": true
@@ -1428,7 +1437,7 @@ window.CORIN_DATA = {
       "date": "2026-09-16",
       "title": "社員ポータル モック",
       "wiki": "2026-09-16_社員ポータル_統合案モック_v1",
-      "category": "🤖 CORIN出力（outputs/） 171本",
+      "category": "🤖 CORIN出力（outputs/） 172本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_社員ポータル_統合案モック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_社員ポータル_統合案モック_v1.html",
       "has_md": true
@@ -1437,7 +1446,7 @@ window.CORIN_DATA = {
       "date": "2026-09-16",
       "title": "社員ポータル構想 2案比較",
       "wiki": "2026-09-16_社員ポータル構想_2案比較_v1",
-      "category": "🤖 CORIN出力（outputs/） 171本",
+      "category": "🤖 CORIN出力（outputs/） 172本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_社員ポータル構想_2案比較_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_社員ポータル構想_2案比較_v1.html",
       "has_md": true
@@ -1446,18 +1455,9 @@ window.CORIN_DATA = {
       "date": "2026-09-16",
       "title": "毎朝9時の経理AI",
       "wiki": "2026-09-16_経理の未仕訳をAIに渡す_やぎ氏X投稿の図解_v1",
-      "category": "🤖 CORIN出力（outputs/） 171本",
+      "category": "🤖 CORIN出力（outputs/） 172本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_経理の未仕訳をAIに渡す_やぎ氏X投稿の図解_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-16_経理の未仕訳をAIに渡す_やぎ氏X投稿の図解_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-09-15",
-      "title": "AI活用ダッシュボード 2026.08（速報）",
-      "wiki": "2026-09-15_AI活用サーベイ_2026年8月_ダッシュボード_v1",
-      "category": "🤖 CORIN出力（outputs/） 171本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-15_AI活用サーベイ_2026年8月_ダッシュボード_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-15_AI活用サーベイ_2026年8月_ダッシュボード_v1.html",
       "has_md": true
     }
   ],
