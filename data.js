@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-09-22",
   "weather": {
-    "desc": "Sunny",
+    "desc": "Overcast ",
     "temp": "25",
-    "icon": "☀️"
+    "icon": "☁️"
   },
   "letter": {
     "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はSunny、25度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>AMBUSH</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はOvercast 、25度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Aimé Leon Dore</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "AMBUSH",
-    "tagline": "東京を拠点に、Yoon Ahn と VERBAL が 2008 年に設立。大胆なオーバーサイズジュエリーから全身アパレルへと拡張し、Dior MenとNikeのコンサルタントとして高級ファッション界にまで橋渡しした、音楽×ジュエリー×ストリートの交差点。",
-    "insight": "Insight 01",
+    "name": "Aimé Leon Dore",
+    "tagline": "クイーンズ育ちのギリシャ系NYCデザイナーが創り出した「ブルックリン・プレップ」。ストリートと知性が交差するニューヨークの美意識を体現するライフスタイルブランド。",
+    "insight": "「クイーンズのリアル」をブランドストーリーにした手法",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/ambush-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/ald-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -46,6 +46,13 @@ window.CORIN_DATA = {
   },
   "daily_photo": null,
   "library": [
+    {
+      "name": "tokyo-map",
+      "description": "",
+      "url": "https://fujimoto-cpu.github.io/tokyo-map/",
+      "icon": "📄",
+      "pushed_at": "2026-09-22T04:27:38Z"
+    },
     {
       "name": "literature",
       "description": "Literature Notes reader",
@@ -80,13 +87,6 @@ window.CORIN_DATA = {
       "url": "https://fujimoto-cpu.github.io/cowork-guide/",
       "icon": "📘",
       "pushed_at": "2026-08-03T12:45:18Z"
-    },
-    {
-      "name": "tokyo-map",
-      "description": "",
-      "url": "https://fujimoto-cpu.github.io/tokyo-map/",
-      "icon": "📄",
-      "pushed_at": "2026-07-28T00:00:17Z"
     },
     {
       "name": "itoguchi",
