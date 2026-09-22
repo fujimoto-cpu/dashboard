@@ -1,13 +1,9 @@
 window.CORIN_DATA = {
-  "date": "2026-09-22",
-  "weather": {
-    "desc": "Light rain shower",
-    "temp": "26",
-    "icon": "🌧"
-  },
+  "date": "2026-09-23",
+  "weather": null,
   "letter": {
     "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はLight rain shower、26度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Diptyque</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Diptyque</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -42,7 +38,7 @@ window.CORIN_DATA = {
   "tonight": null,
   "schedule": {
     "events": [],
-    "note_exists": true
+    "note_exists": false
   },
   "daily_photo": null,
   "library": [
