@@ -6,8 +6,8 @@ window.CORIN_DATA = {
     "icon": "☀️"
   },
   "letter": {
-    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はSunny、24度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>LOEWE</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はSunny、24度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Ae sop</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "LOEWE",
-    "tagline": "「職人技はLoeweの心臓」——1846年創設、スペイン最古のラグジュアリーハウスがJonathan Andersonのもとでアートとユーモアを武器にラグジュアリーの再定義を続けている。",
-    "insight": "アート引用でブランドを知的に見せる",
+    "name": "Ae sop",
+    "tagline": "「製品は完全に機能的。パッケージと店舗空間でのみ感情的体験を作る。」——1987年メルボルン発、哲学と建築が融合したスキンケアの最高峰。",
+    "insight": "kemioブランドへの具体的な応用",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/loewe-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/aesop-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1248,9 +1248,18 @@ window.CORIN_DATA = {
   "recent_html": [
     {
       "date": "2026-09-24",
+      "title": "AIアンケートの1か月",
+      "wiki": "2026-09-24_AIアンケート_1か月の流れ_v1",
+      "category": "🤖 CORIN出力（outputs/） 188本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート_1か月の流れ_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート_1か月の流れ_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-09-24",
       "title": "AIアンケートv2プラン",
       "wiki": "2026-09-24_AIアンケートv2プラン_v1",
-      "category": "🤖 CORIN出力（outputs/） 187本",
+      "category": "🤖 CORIN出力（outputs/） 188本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケートv2プラン_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケートv2プラン_v1.html",
       "has_md": true
@@ -1259,7 +1268,7 @@ window.CORIN_DATA = {
       "date": "2026-09-24",
       "title": "AIアンケート変更イメージ",
       "wiki": "index",
-      "category": "🤖 CORIN出力（outputs/） 187本",
+      "category": "🤖 CORIN出力（outputs/） 188本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート変更イメージ/index.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート変更イメージ/index.html",
       "has_md": true
@@ -1268,7 +1277,7 @@ window.CORIN_DATA = {
       "date": "2026-09-24",
       "title": "AI活用ダッシュボード 変更後イメージ",
       "wiki": "sheet_after",
-      "category": "🤖 CORIN出力（outputs/） 187本",
+      "category": "🤖 CORIN出力（outputs/） 188本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート変更イメージ/sheet_after.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート変更イメージ/sheet_after.html",
       "has_md": false
@@ -1277,7 +1286,7 @@ window.CORIN_DATA = {
       "date": "2026-09-24",
       "title": "AI活用 月次アンケート",
       "wiki": "survey_after",
-      "category": "🤖 CORIN出力（outputs/） 187本",
+      "category": "🤖 CORIN出力（outputs/） 188本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート変更イメージ/survey_after.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート変更イメージ/survey_after.html",
       "has_md": false
@@ -1286,7 +1295,7 @@ window.CORIN_DATA = {
       "date": "2026-09-24",
       "title": "AIアンケート改善ビフォアフ",
       "wiki": "2026-09-24_AIアンケート改善_ビフォアフ_v1",
-      "category": "🤖 CORIN出力（outputs/） 187本",
+      "category": "🤖 CORIN出力（outputs/） 188本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート改善_ビフォアフ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート改善_ビフォアフ_v1.html",
       "has_md": true
@@ -1295,7 +1304,7 @@ window.CORIN_DATA = {
       "date": "2026-09-23",
       "title": "きろくシステム全体図",
       "wiki": "2026-09-23_きろくシステム全体図_v1",
-      "category": "🤖 CORIN出力（outputs/） 187本",
+      "category": "🤖 CORIN出力（outputs/） 188本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-23_きろくシステム全体図_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-23_きろくシステム全体図_v1.html",
       "has_md": true
@@ -1304,7 +1313,7 @@ window.CORIN_DATA = {
       "date": "2026-09-22",
       "title": "点呼",
       "wiki": "2026-09-22_PMの任せ方_点呼_v1",
-      "category": "🤖 CORIN出力（outputs/） 187本",
+      "category": "🤖 CORIN出力（outputs/） 188本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-22_PMの任せ方_点呼_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-22_PMの任せ方_点呼_v1.html",
       "has_md": true
@@ -1313,7 +1322,7 @@ window.CORIN_DATA = {
       "date": "2026-09-22",
       "title": "TaskForge 4案 2ヶ月後レビュー",
       "wiki": "2026-09-22_TaskForge4案_2ヶ月後レビュー_v1",
-      "category": "🤖 CORIN出力（outputs/） 187本",
+      "category": "🤖 CORIN出力（outputs/） 188本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-22_TaskForge4案_2ヶ月後レビュー_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-22_TaskForge4案_2ヶ月後レビュー_v1.html",
       "has_md": true
@@ -1322,7 +1331,7 @@ window.CORIN_DATA = {
       "date": "2026-09-22",
       "title": "通知UI改善案",
       "wiki": "2026-09-22_TaskForge通知UI改善案_v1",
-      "category": "🤖 CORIN出力（outputs/） 187本",
+      "category": "🤖 CORIN出力（outputs/） 188本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-22_TaskForge通知UI改善案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-22_TaskForge通知UI改善案_v1.html",
       "has_md": true
@@ -1331,7 +1340,7 @@ window.CORIN_DATA = {
       "date": "2026-09-22",
       "title": "あのときと同じ",
       "wiki": "2026-09-22_ジャーナル_あのときと同じ_モック_v1",
-      "category": "🤖 CORIN出力（outputs/） 187本",
+      "category": "🤖 CORIN出力（outputs/） 188本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-22_ジャーナル_あのときと同じ_モック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-22_ジャーナル_あのときと同じ_モック_v1.html",
       "has_md": true
@@ -1340,7 +1349,7 @@ window.CORIN_DATA = {
       "date": "2026-09-22",
       "title": "全体構想マップ",
       "wiki": "2026-09-22_全体構想マップ_v2",
-      "category": "🤖 CORIN出力（outputs/） 187本",
+      "category": "🤖 CORIN出力（outputs/） 188本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-22_全体構想マップ_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-22_全体構想マップ_v2.html",
       "has_md": true
@@ -1358,7 +1367,7 @@ window.CORIN_DATA = {
       "date": "2026-09-21",
       "title": "AI時代のデータ蓄積 — 貯める箱の3条件",
       "wiki": "2026-09-21_AI時代のデータ蓄積_図解_v2",
-      "category": "🤖 CORIN出力（outputs/） 187本",
+      "category": "🤖 CORIN出力（outputs/） 188本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-21_AI時代のデータ蓄積_図解_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-21_AI時代のデータ蓄積_図解_v2.html",
       "has_md": true
@@ -1367,7 +1376,7 @@ window.CORIN_DATA = {
       "date": "2026-09-21",
       "title": "Jev — 判断だけをするAI",
       "wiki": "2026-09-21_Jev_判断だけのAI_図解_v1",
-      "category": "🤖 CORIN出力（outputs/） 187本",
+      "category": "🤖 CORIN出力（outputs/） 188本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-21_Jev_判断だけのAI_図解_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-21_Jev_判断だけのAI_図解_v1.html",
       "has_md": true
@@ -1376,7 +1385,7 @@ window.CORIN_DATA = {
       "date": "2026-09-21",
       "title": "PMサポートさん",
       "wiki": "2026-09-21_PMサポートさん_設計とビフォーアフター_v1",
-      "category": "🤖 CORIN出力（outputs/） 187本",
+      "category": "🤖 CORIN出力（outputs/） 188本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-21_PMサポートさん_設計とビフォーアフター_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-21_PMサポートさん_設計とビフォーアフター_v1.html",
       "has_md": true
@@ -1385,7 +1394,7 @@ window.CORIN_DATA = {
       "date": "2026-09-21",
       "title": "スクショか、操作ログか",
       "wiki": "2026-09-21_画面記録_ComputerHistory乗り換え比較_v1",
-      "category": "🤖 CORIN出力（outputs/） 187本",
+      "category": "🤖 CORIN出力（outputs/） 188本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-21_画面記録_ComputerHistory乗り換え比較_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-21_画面記録_ComputerHistory乗り換え比較_v1.html",
       "has_md": true
@@ -1394,7 +1403,7 @@ window.CORIN_DATA = {
       "date": "2026-09-20",
       "title": "意匠チェックの計画",
       "wiki": "2026-09-20_意匠チェックをKONNEKTの当たり前にする計画_v2",
-      "category": "🤖 CORIN出力（outputs/） 187本",
+      "category": "🤖 CORIN出力（outputs/） 188本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-20_意匠チェックをKONNEKTの当たり前にする計画_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-20_意匠チェックをKONNEKTの当たり前にする計画_v2.html",
       "has_md": true
@@ -1416,15 +1425,6 @@ window.CORIN_DATA = {
       "html_path": "/Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/2026-09-20_ジャーナルビューアUIモック_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/2026-09-20_ジャーナルビューアUIモック_v2.html",
       "has_md": false
-    },
-    {
-      "date": "2026-09-18",
-      "title": "ブリスター風アクキーの権利",
-      "wiki": "2026-09-18_ブリスター風アクキーの権利まとめ_v1",
-      "category": "🤖 CORIN出力（outputs/） 187本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-18_ブリスター風アクキーの権利まとめ_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-18_ブリスター風アクキーの権利まとめ_v1.html",
-      "has_md": true
     }
   ],
   "static_links": {
