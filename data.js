@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-09-25",
+  "date": "2026-09-26",
   "weather": {
-    "desc": "Overcast ",
+    "desc": "Light rain shower",
     "temp": "25",
-    "icon": "☁️"
+    "icon": "🌧"
   },
   "letter": {
-    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はOvercast 、25度。<br>金曜日。土日に持ち越さないこと、整理しよ。<br>今日の倉庫から：<strong>KITH</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はLight rain shower、25度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>LOEWE</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "KITH",
-    "tagline": "NYCのクイーンズから生まれた、コラボをDNAに持つモダンストリートライフスタイルの巨人。スニーカー文化を起点に、シリアルバー・BMW・ヴェルサーチまで射程に入れた全方位ブランド。",
-    "insight": "KITH Treatsはマーケティング費ゼロのPR装置",
+    "name": "LOEWE",
+    "tagline": "「職人技はLoeweの心臓」——1846年創設、スペイン最古のラグジュアリーハウスがJonathan Andersonのもとでアートとユーモアを武器にラグジュアリーの再定義を続けている。",
+    "insight": "職人技を現代的に語る方法",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/kith-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/loewe-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -42,7 +42,7 @@ window.CORIN_DATA = {
   "tonight": null,
   "schedule": {
     "events": [],
-    "note_exists": true
+    "note_exists": false
   },
   "daily_photo": null,
   "library": [
@@ -1247,10 +1247,28 @@ window.CORIN_DATA = {
   ],
   "recent_html": [
     {
+      "date": "2026-09-26",
+      "title": "ポータルのWBS",
+      "wiki": "AIポータル_WBSで仕事の流れを統一_v1",
+      "category": "🤖 AI推進資料（ai/） 57本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_WBSで仕事の流れを統一_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_WBSで仕事の流れを統一_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-09-26",
+      "title": "業務フローから考えるポータル",
+      "wiki": "AIポータル_業務フローから考えるUX_v1",
+      "category": "🤖 AI推進資料（ai/） 57本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_業務フローから考えるUX_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_業務フローから考えるUX_v1.html",
+      "has_md": false
+    },
+    {
       "date": "2026-09-25",
       "title": "PMの一日で組み直すポータル",
       "wiki": "AIポータル_PMの一日で組み直す_v1",
-      "category": "🤖 AI推進資料（ai/） 54本",
+      "category": "🤖 AI推進資料（ai/） 57本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_PMの一日で組み直す_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_PMの一日で組み直す_v1.html",
       "has_md": true
@@ -1259,16 +1277,25 @@ window.CORIN_DATA = {
       "date": "2026-09-25",
       "title": "商談のあと一本道",
       "wiki": "AIポータル_商談のあと一本道_v1",
-      "category": "🤖 AI推進資料（ai/） 54本",
+      "category": "🤖 AI推進資料（ai/） 57本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_商談のあと一本道_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_商談のあと一本道_v1.html",
       "has_md": false
     },
     {
       "date": "2026-09-25",
+      "title": "案件ごとの受信箱",
+      "wiki": "AIポータル_案件ごとの受信箱_v1",
+      "category": "🤖 AI推進資料（ai/） 57本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_案件ごとの受信箱_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_案件ごとの受信箱_v1.html",
+      "has_md": false
+    },
+    {
+      "date": "2026-09-25",
       "title": "AIポータル 簡素化プラン",
       "wiki": "AIポータル_簡素化プラン_v1",
-      "category": "🤖 AI推進資料（ai/） 54本",
+      "category": "🤖 AI推進資料（ai/） 57本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_簡素化プラン_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_簡素化プラン_v1.html",
       "has_md": true
@@ -1397,33 +1424,6 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 194本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-22_TaskForge通知UI改善案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-22_TaskForge通知UI改善案_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-09-22",
-      "title": "あのときと同じ",
-      "wiki": "2026-09-22_ジャーナル_あのときと同じ_モック_v1",
-      "category": "🤖 CORIN出力（outputs/） 194本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-22_ジャーナル_あのときと同じ_モック_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-22_ジャーナル_あのときと同じ_モック_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-09-22",
-      "title": "全体構想マップ",
-      "wiki": "2026-09-22_全体構想マップ_v2",
-      "category": "🤖 CORIN出力（outputs/） 194本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-22_全体構想マップ_v2.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-22_全体構想マップ_v2.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-09-22",
-      "title": "KONNEKTポータル UIイメージ",
-      "wiki": "OJTツール_UIイメージ_v1",
-      "category": "🤖 AI推進資料（ai/） 54本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260901_OJTツール/OJTツール_UIイメージ_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260901_OJTツール/OJTツール_UIイメージ_v1.html",
       "has_md": true
     }
   ],
