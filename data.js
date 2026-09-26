@@ -2,12 +2,12 @@ window.CORIN_DATA = {
   "date": "2026-09-26",
   "weather": {
     "desc": "Patchy rain nearby",
-    "temp": "21",
+    "temp": "22",
     "icon": "🌧"
   },
   "letter": {
-    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はPatchy rain nearby、21度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Stone Island</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はPatchy rain nearby、22度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Marni</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Stone Island",
-    "tagline": "「素材研究がデザイン。機能が美しさ」——コンパスバッジとテキスタイル実験で40年以上ファッションの境界を拡張し続けるイタリア発ブランド。",
-    "insight": "「素材が先、デザインは後」という設計順序",
+    "name": "Marni",
+    "tagline": "1994年ミラン発。大胆な色彩、職人技、芸術的自由が交差するイタリアン・ラグジュアリー。Consuelo Castiglioni が創設し、Francesco Risso が継承した「着るアート」の哲学。",
+    "insight": "「一貫性」こそが最大の差別化",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/stoneisland-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/marni-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1250,7 +1250,7 @@ window.CORIN_DATA = {
       "date": "2026-09-26",
       "title": "提案書の自動下書きプラン",
       "wiki": "2026-09-26_AIポータル_提案書の自動下書きと2案件シミュレーション_v1",
-      "category": "🤖 CORIN出力（outputs/） 198本",
+      "category": "🤖 CORIN出力（outputs/） 199本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_AIポータル_提案書の自動下書きと2案件シミュレーション_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_AIポータル_提案書の自動下書きと2案件シミュレーション_v1.html",
       "has_md": true
@@ -1259,7 +1259,7 @@ window.CORIN_DATA = {
       "date": "2026-09-26",
       "title": "AIポータル改善案",
       "wiki": "2026-09-26_AIポータル改善案_v1",
-      "category": "🤖 CORIN出力（outputs/） 198本",
+      "category": "🤖 CORIN出力（outputs/） 199本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_AIポータル改善案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_AIポータル改善案_v1.html",
       "has_md": true
@@ -1268,10 +1268,19 @@ window.CORIN_DATA = {
       "date": "2026-09-26",
       "title": "プロジェクト路線図",
       "wiki": "2026-09-26_プロジェクト路線図_モック_v1",
-      "category": "🤖 CORIN出力（outputs/） 198本",
+      "category": "🤖 CORIN出力（outputs/） 199本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_プロジェクト路線図_モック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_プロジェクト路線図_モック_v1.html",
       "has_md": false
+    },
+    {
+      "date": "2026-09-26",
+      "title": "提案書ライブラリ",
+      "wiki": "2026-09-26_提案書ライブラリ_プラン_v1",
+      "category": "🤖 CORIN出力（outputs/） 199本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_提案書ライブラリ_プラン_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_提案書ライブラリ_プラン_v1.html",
+      "has_md": true
     },
     {
       "date": "2026-09-26",
@@ -1376,7 +1385,7 @@ window.CORIN_DATA = {
       "date": "2026-09-24",
       "title": "AIアンケートの1か月",
       "wiki": "2026-09-24_AIアンケート_1か月の流れ_v1",
-      "category": "🤖 CORIN出力（outputs/） 198本",
+      "category": "🤖 CORIN出力（outputs/） 199本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート_1か月の流れ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート_1か月の流れ_v1.html",
       "has_md": true
@@ -1385,7 +1394,7 @@ window.CORIN_DATA = {
       "date": "2026-09-24",
       "title": "AIアンケートv2プラン",
       "wiki": "2026-09-24_AIアンケートv2プラン_v1",
-      "category": "🤖 CORIN出力（outputs/） 198本",
+      "category": "🤖 CORIN出力（outputs/） 199本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケートv2プラン_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケートv2プラン_v1.html",
       "has_md": true
@@ -1394,7 +1403,7 @@ window.CORIN_DATA = {
       "date": "2026-09-24",
       "title": "AIアンケート変更イメージ",
       "wiki": "index",
-      "category": "🤖 CORIN出力（outputs/） 198本",
+      "category": "🤖 CORIN出力（outputs/） 199本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート変更イメージ/index.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート変更イメージ/index.html",
       "has_md": true
@@ -1403,7 +1412,7 @@ window.CORIN_DATA = {
       "date": "2026-09-24",
       "title": "AI活用ダッシュボード 変更後イメージ",
       "wiki": "sheet_after",
-      "category": "🤖 CORIN出力（outputs/） 198本",
+      "category": "🤖 CORIN出力（outputs/） 199本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート変更イメージ/sheet_after.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート変更イメージ/sheet_after.html",
       "has_md": false
@@ -1412,19 +1421,10 @@ window.CORIN_DATA = {
       "date": "2026-09-24",
       "title": "AI活用 月次アンケート",
       "wiki": "survey_after",
-      "category": "🤖 CORIN出力（outputs/） 198本",
+      "category": "🤖 CORIN出力（outputs/） 199本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート変更イメージ/survey_after.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート変更イメージ/survey_after.html",
       "has_md": false
-    },
-    {
-      "date": "2026-09-24",
-      "title": "AIアンケート改善ビフォアフ",
-      "wiki": "2026-09-24_AIアンケート改善_ビフォアフ_v1",
-      "category": "🤖 CORIN出力（outputs/） 198本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート改善_ビフォアフ_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート改善_ビフォアフ_v1.html",
-      "has_md": true
     }
   ],
   "static_links": {
