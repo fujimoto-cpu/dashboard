@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-09-26",
   "weather": {
-    "desc": "Patchy rain nearby",
+    "desc": "Light rain shower",
     "temp": "25",
     "icon": "🌧"
   },
   "letter": {
     "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はPatchy rain nearby、25度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Mad happy</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はLight rain shower、25度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Jacq emus</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Mad happy",
-    "tagline": "\"Optimism is a practice.\" ——メンタルヘルスを哲学の核に据えた、ロサンゼルス発ライフスタイルブランド。",
-    "insight": "財団モデルによるブランド差別化",
+    "name": "Jacq emus",
+    "tagline": "南フランスのプロヴァンスに根ざした感情的ミニマリズム。19-20歳で独学創業、世界的ラグジュアリーブランドへ成長したSimon Porte Jacquemusの軌跡。",
+    "insight": "プロポーション操作による「記憶に残る形」の創出",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/madhappy-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/jacquemus-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1250,7 +1250,7 @@ window.CORIN_DATA = {
       "date": "2026-09-26",
       "title": "AIが先に動くPM業務",
       "wiki": "AIポータル_AIが先に動くPM業務_v1",
-      "category": "🤖 AI推進資料（ai/） 62本",
+      "category": "🤖 AI推進資料（ai/） 63本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_AIが先に動くPM業務_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_AIが先に動くPM業務_v1.html",
       "has_md": true
@@ -1259,7 +1259,7 @@ window.CORIN_DATA = {
       "date": "2026-09-26",
       "title": "ポータルのWBS",
       "wiki": "AIポータル_WBSで仕事の流れを統一_v1",
-      "category": "🤖 AI推進資料（ai/） 62本",
+      "category": "🤖 AI推進資料（ai/） 63本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_WBSで仕事の流れを統一_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_WBSで仕事の流れを統一_v1.html",
       "has_md": true
@@ -1268,16 +1268,25 @@ window.CORIN_DATA = {
       "date": "2026-09-26",
       "title": "やることだけのポータル",
       "wiki": "AIポータル_やることだけのポータル_v1",
-      "category": "🤖 AI推進資料（ai/） 62本",
+      "category": "🤖 AI推進資料（ai/） 63本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_やることだけのポータル_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_やることだけのポータル_v1.html",
       "has_md": true
     },
     {
       "date": "2026-09-26",
+      "title": "プロジェクト単位の画面",
+      "wiki": "AIポータル_プロジェクト単位で見る画面_v1",
+      "category": "🤖 AI推進資料（ai/） 63本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_プロジェクト単位で見る画面_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_プロジェクト単位で見る画面_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-09-26",
       "title": "ポータル全体プラン",
       "wiki": "AIポータル_全体プラン_要件から組み直す_v1",
-      "category": "🤖 AI推進資料（ai/） 62本",
+      "category": "🤖 AI推進資料（ai/） 63本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_全体プラン_要件から組み直す_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_全体プラン_要件から組み直す_v1.html",
       "has_md": true
@@ -1286,7 +1295,7 @@ window.CORIN_DATA = {
       "date": "2026-09-26",
       "title": "業務フローから考えるポータル",
       "wiki": "AIポータル_業務フローから考えるUX_v1",
-      "category": "🤖 AI推進資料（ai/） 62本",
+      "category": "🤖 AI推進資料（ai/） 63本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_業務フローから考えるUX_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_業務フローから考えるUX_v1.html",
       "has_md": false
@@ -1295,7 +1304,7 @@ window.CORIN_DATA = {
       "date": "2026-09-26",
       "title": "要件定義の評価と実装プラン",
       "wiki": "AIポータル_要件定義の評価と実装プラン_v1",
-      "category": "🤖 AI推進資料（ai/） 62本",
+      "category": "🤖 AI推進資料（ai/） 63本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_要件定義の評価と実装プラン_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_要件定義の評価と実装プラン_v1.html",
       "has_md": true
@@ -1304,7 +1313,7 @@ window.CORIN_DATA = {
       "date": "2026-09-25",
       "title": "PMの一日で組み直すポータル",
       "wiki": "AIポータル_PMの一日で組み直す_v1",
-      "category": "🤖 AI推進資料（ai/） 62本",
+      "category": "🤖 AI推進資料（ai/） 63本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_PMの一日で組み直す_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_PMの一日で組み直す_v1.html",
       "has_md": true
@@ -1313,7 +1322,7 @@ window.CORIN_DATA = {
       "date": "2026-09-25",
       "title": "商談のあと一本道",
       "wiki": "AIポータル_商談のあと一本道_v1",
-      "category": "🤖 AI推進資料（ai/） 62本",
+      "category": "🤖 AI推進資料（ai/） 63本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_商談のあと一本道_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_商談のあと一本道_v1.html",
       "has_md": false
@@ -1322,7 +1331,7 @@ window.CORIN_DATA = {
       "date": "2026-09-25",
       "title": "案件ごとの受信箱",
       "wiki": "AIポータル_案件ごとの受信箱_v1",
-      "category": "🤖 AI推進資料（ai/） 62本",
+      "category": "🤖 AI推進資料（ai/） 63本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_案件ごとの受信箱_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_案件ごとの受信箱_v1.html",
       "has_md": false
@@ -1331,7 +1340,7 @@ window.CORIN_DATA = {
       "date": "2026-09-25",
       "title": "AIポータル 簡素化プラン",
       "wiki": "AIポータル_簡素化プラン_v1",
-      "category": "🤖 AI推進資料（ai/） 62本",
+      "category": "🤖 AI推進資料（ai/） 63本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_簡素化プラン_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/AIポータル_簡素化プラン_v1.html",
       "has_md": true
@@ -1415,15 +1424,6 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 194本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_PMサポートさん_点呼UIたたき_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_PMサポートさん_点呼UIたたき_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-09-24",
-      "title": "PMサポートさんの画面",
-      "wiki": "2026-09-24_PMサポートさん_点呼UIたたき_v2",
-      "category": "🤖 CORIN出力（outputs/） 194本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_PMサポートさん_点呼UIたたき_v2.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_PMサポートさん_点呼UIたたき_v2.html",
       "has_md": true
     }
   ],
