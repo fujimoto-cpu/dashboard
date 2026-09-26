@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-09-26",
   "weather": {
-    "desc": "Light rain shower",
-    "temp": "22",
-    "icon": "🌧"
+    "desc": "Overcast ",
+    "temp": "21",
+    "icon": "☁️"
   },
   "letter": {
-    "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はLight rain shower、22度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Diptyque</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はOvercast 、21度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Diptyque</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
