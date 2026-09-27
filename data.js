@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-09-27",
+  "date": "2026-09-28",
   "weather": {
-    "desc": "Cloudy ",
-    "temp": "23",
-    "icon": "☁️"
+    "desc": "Patchy rain nearby",
+    "temp": "24",
+    "icon": "🌧"
   },
   "letter": {
-    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はCloudy 、23度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>APOTHEKE FRAGRANCE</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はPatchy rain nearby、24度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>Sporty &amp; Rich</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "APOTHEKE FRAGRANCE",
-    "tagline": "千葉のアトリエで全てを手作りする日本のクラフトフレグランスブランド。古来の日本の感性と現代デザインを橋渡しし、お香で「家に置いてオシャレ」を再定義した。",
-    "insight": "INSIGHT 01",
+    "name": "Sporty &amp; Rich",
+    "tagline": "70年代テニスクラブのライフスタイルとヴィンテージスポーツ美学を融合させた、Emily Oberg創設のウェルネスファッションブランド。",
+    "insight": "SNS発ブランドの設計手法",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/sportyrich-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1247,10 +1247,19 @@ window.CORIN_DATA = {
   ],
   "recent_html": [
     {
+      "date": "2026-09-28",
+      "title": "案件の見える範囲",
+      "wiki": "2026-09-28_案件の見える範囲_提案_v2",
+      "category": "🤖 CORIN出力（outputs/） 203本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-28_案件の見える範囲_提案_v2.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-28_案件の見える範囲_提案_v2.html",
+      "has_md": true
+    },
+    {
       "date": "2026-09-27",
       "title": "AI見張りの配り方",
       "wiki": "2026-09-27_AI見張りの配り方_図解_v1",
-      "category": "🤖 CORIN出力（outputs/） 202本",
+      "category": "🤖 CORIN出力（outputs/） 203本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-27_AI見張りの配り方_図解_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-27_AI見張りの配り方_図解_v1.html",
       "has_md": true
@@ -1259,25 +1268,16 @@ window.CORIN_DATA = {
       "date": "2026-09-27",
       "title": "ポータルの穴と直し方",
       "wiki": "2026-09-27_ポータルの穴と直し方_図解_v1",
-      "category": "🤖 CORIN出力（outputs/） 202本",
+      "category": "🤖 CORIN出力（outputs/） 203本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-27_ポータルの穴と直し方_図解_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-27_ポータルの穴と直し方_図解_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-09-27",
-      "title": "案件の見える範囲",
-      "wiki": "2026-09-27_案件の見える範囲_提案_v1",
-      "category": "🤖 CORIN出力（outputs/） 202本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-27_案件の見える範囲_提案_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-27_案件の見える範囲_提案_v1.html",
       "has_md": true
     },
     {
       "date": "2026-09-26",
       "title": "提案書の自動下書きプラン",
       "wiki": "2026-09-26_AIポータル_提案書の自動下書きと2案件シミュレーション_v1",
-      "category": "🤖 CORIN出力（outputs/） 202本",
+      "category": "🤖 CORIN出力（outputs/） 203本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_AIポータル_提案書の自動下書きと2案件シミュレーション_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_AIポータル_提案書の自動下書きと2案件シミュレーション_v1.html",
       "has_md": true
@@ -1286,7 +1286,7 @@ window.CORIN_DATA = {
       "date": "2026-09-26",
       "title": "AIポータル改善案",
       "wiki": "2026-09-26_AIポータル改善案_v1",
-      "category": "🤖 CORIN出力（outputs/） 202本",
+      "category": "🤖 CORIN出力（outputs/） 203本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_AIポータル改善案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_AIポータル改善案_v1.html",
       "has_md": true
@@ -1295,7 +1295,7 @@ window.CORIN_DATA = {
       "date": "2026-09-26",
       "title": "プロジェクト路線図",
       "wiki": "2026-09-26_プロジェクト路線図_モック_v1",
-      "category": "🤖 CORIN出力（outputs/） 202本",
+      "category": "🤖 CORIN出力（outputs/） 203本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_プロジェクト路線図_モック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_プロジェクト路線図_モック_v1.html",
       "has_md": false
@@ -1304,7 +1304,7 @@ window.CORIN_DATA = {
       "date": "2026-09-26",
       "title": "提案書ライブラリ",
       "wiki": "2026-09-26_提案書ライブラリ_プラン_v1",
-      "category": "🤖 CORIN出力（outputs/） 202本",
+      "category": "🤖 CORIN出力（outputs/） 203本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_提案書ライブラリ_プラン_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_提案書ライブラリ_プラン_v1.html",
       "has_md": true
@@ -1421,7 +1421,7 @@ window.CORIN_DATA = {
       "date": "2026-09-24",
       "title": "AIアンケートの1か月",
       "wiki": "2026-09-24_AIアンケート_1か月の流れ_v1",
-      "category": "🤖 CORIN出力（outputs/） 202本",
+      "category": "🤖 CORIN出力（outputs/） 203本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート_1か月の流れ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-24_AIアンケート_1か月の流れ_v1.html",
       "has_md": true
