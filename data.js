@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-09-28",
   "weather": {
-    "desc": "Patchy rain nearby",
+    "desc": "Light rain shower",
     "temp": "24",
     "icon": "🌧"
   },
   "letter": {
     "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はPatchy rain nearby、24度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>CULL NI</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はLight rain shower、24度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>Aimé Leon Dore</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "CULL NI",
-    "tagline": "「素敵な1日を」をコンセプトに、ドレス×カジュアルという独自領域を切り拓いた日本のメンズブランド。気の利いたディテールと品の良い仕立てで、20-30代の感度高い層を魅了する。",
-    "insight": "ジェンダーレス・エージレスへの拡張",
+    "name": "Aimé Leon Dore",
+    "tagline": "クイーンズ育ちのギリシャ系NYCデザイナーが創り出した「ブルックリン・プレップ」。ストリートと知性が交差するニューヨークの美意識を体現するライフスタイルブランド。",
+    "insight": "「クイーンズのリアル」をブランドストーリーにした手法",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/cullni-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/ald-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
