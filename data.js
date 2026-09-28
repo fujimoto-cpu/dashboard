@@ -6,8 +6,8 @@ window.CORIN_DATA = {
     "icon": "🌧"
   },
   "letter": {
-    "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はLight rain shower、26度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>Diptyque</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はLight rain shower、26度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>Maison Kitsuné</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Diptyque",
-    "tagline": "1961年パリ・サンジェルマン大通り34番地で生まれたフランスのフレグランス・ライフスタイルブランド。3人のアーティストが「キャンドルを実用品からアート作品へ」翻訳し、ニッチ香水という市場カテゴリそのものを発明した。",
-    "insight": "INSIGHT 01",
+    "name": "Maison Kitsuné",
+    "tagline": "ファッション・音楽・カフェを一体化したパリ×東京発のライフスタイルブランド。2002年設立、年商9,400万ユーロ。",
+    "insight": "「スロー＆ステディ」成長モデルの有効性",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/diptyque-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/maison-kitsune-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1250,7 +1250,7 @@ window.CORIN_DATA = {
       "date": "2026-09-28",
       "title": "AIポータル再設計案",
       "wiki": "2026-09-28_AIポータル再設計_社員はポータルだけ_v1",
-      "category": "🤖 CORIN出力（outputs/） 203本",
+      "category": "🤖 CORIN出力（outputs/） 204本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-28_AIポータル再設計_社員はポータルだけ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-28_AIポータル再設計_社員はポータルだけ_v1.html",
       "has_md": true
@@ -1259,7 +1259,7 @@ window.CORIN_DATA = {
       "date": "2026-09-28",
       "title": "案件の見える範囲",
       "wiki": "2026-09-28_案件の見える範囲_決まった形_v5",
-      "category": "🤖 CORIN出力（outputs/） 203本",
+      "category": "🤖 CORIN出力（outputs/） 204本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-28_案件の見える範囲_決まった形_v5.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-28_案件の見える範囲_決まった形_v5.html",
       "has_md": true
@@ -1277,7 +1277,7 @@ window.CORIN_DATA = {
       "date": "2026-09-27",
       "title": "AI見張りの配り方",
       "wiki": "2026-09-27_AI見張りの配り方_図解_v1",
-      "category": "🤖 CORIN出力（outputs/） 203本",
+      "category": "🤖 CORIN出力（outputs/） 204本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-27_AI見張りの配り方_図解_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-27_AI見張りの配り方_図解_v1.html",
       "has_md": true
@@ -1286,7 +1286,7 @@ window.CORIN_DATA = {
       "date": "2026-09-27",
       "title": "ポータルの穴と直し方",
       "wiki": "2026-09-27_ポータルの穴と直し方_図解_v1",
-      "category": "🤖 CORIN出力（outputs/） 203本",
+      "category": "🤖 CORIN出力（outputs/） 204本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-27_ポータルの穴と直し方_図解_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-27_ポータルの穴と直し方_図解_v1.html",
       "has_md": true
@@ -1295,7 +1295,7 @@ window.CORIN_DATA = {
       "date": "2026-09-26",
       "title": "提案書の自動下書きプラン",
       "wiki": "2026-09-26_AIポータル_提案書の自動下書きと2案件シミュレーション_v1",
-      "category": "🤖 CORIN出力（outputs/） 203本",
+      "category": "🤖 CORIN出力（outputs/） 204本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_AIポータル_提案書の自動下書きと2案件シミュレーション_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_AIポータル_提案書の自動下書きと2案件シミュレーション_v1.html",
       "has_md": true
@@ -1304,7 +1304,7 @@ window.CORIN_DATA = {
       "date": "2026-09-26",
       "title": "AIポータル改善案",
       "wiki": "2026-09-26_AIポータル改善案_v1",
-      "category": "🤖 CORIN出力（outputs/） 203本",
+      "category": "🤖 CORIN出力（outputs/） 204本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_AIポータル改善案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_AIポータル改善案_v1.html",
       "has_md": true
@@ -1313,7 +1313,7 @@ window.CORIN_DATA = {
       "date": "2026-09-26",
       "title": "プロジェクト路線図",
       "wiki": "2026-09-26_プロジェクト路線図_モック_v1",
-      "category": "🤖 CORIN出力（outputs/） 203本",
+      "category": "🤖 CORIN出力（outputs/） 204本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_プロジェクト路線図_モック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_プロジェクト路線図_モック_v1.html",
       "has_md": false
@@ -1322,7 +1322,7 @@ window.CORIN_DATA = {
       "date": "2026-09-26",
       "title": "提案書ライブラリ",
       "wiki": "2026-09-26_提案書ライブラリ_プラン_v1",
-      "category": "🤖 CORIN出力（outputs/） 203本",
+      "category": "🤖 CORIN出力（outputs/） 204本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_提案書ライブラリ_プラン_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-26_提案書ライブラリ_プラン_v1.html",
       "has_md": true
