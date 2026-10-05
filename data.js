@@ -7,7 +7,7 @@ window.CORIN_DATA = {
   },
   "letter": {
     "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はSunny、23度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>Cactus Plant Flea Market</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はSunny、23度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>APOTHEKE FRAGRANCE</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Cactus Plant Flea Market",
-    "tagline": "「洗練を拒否すること」がステートメント。ポストモダンな反抗とDIY精神でストリートウェアの権威性を解体するブランド。",
-    "insight": "EC設計：「告知なし」が最強のマーケティング",
+    "name": "APOTHEKE FRAGRANCE",
+    "tagline": "千葉のアトリエで全てを手作りする日本のクラフトフレグランスブランド。古来の日本の感性と現代デザインを橋渡しし、お香で「家に置いてオシャレ」を再定義した。",
+    "insight": "INSIGHT 01",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/cpfm-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1249,11 +1249,11 @@ window.CORIN_DATA = {
     {
       "date": "2026-10-05",
       "title": "バースデーBOX調査",
-      "wiki": "2026-10-05_アイドル_KPOP_バースデーBOX調査",
+      "wiki": "2026-10-05_アイドル_KPOP_バースデーBOX調査_v2",
       "category": "🤖 CORIN出力（outputs/） 225本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-05_アイドル_KPOP_バースデーBOX調査.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-05_アイドル_KPOP_バースデーBOX調査.html",
-      "has_md": true
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-05_アイドル_KPOP_バースデーBOX調査_v2.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-05_アイドル_KPOP_バースデーBOX調査_v2.html",
+      "has_md": false
     },
     {
       "date": "2026-10-05",
@@ -1277,7 +1277,7 @@ window.CORIN_DATA = {
       "date": "2026-10-05",
       "title": "Armillary. SNS運用ボード モック",
       "wiki": "Armillary_SNS運用ボード_モック_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 35本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 36本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_モック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_モック_v1.html",
       "has_md": false
@@ -1286,9 +1286,18 @@ window.CORIN_DATA = {
       "date": "2026-10-05",
       "title": "Armillary. SNS Board",
       "wiki": "Armillary_SNS運用ボード_モック_v7",
-      "category": "📁 案件ドラフト（_ai-drafts/） 35本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 36本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_モック_v7.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_モック_v7.html",
+      "has_md": false
+    },
+    {
+      "date": "2026-10-05",
+      "title": "Armillary. SNS運用ボード",
+      "wiki": "Armillary_SNS運用ボード_モック_v9",
+      "category": "📁 案件ドラフト（_ai-drafts/） 36本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_モック_v9.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_モック_v9.html",
       "has_md": false
     },
     {
@@ -1415,15 +1424,6 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 225本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-30_社内ポータル機能比較_ソウゾウ×案件ナビ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-30_社内ポータル機能比較_ソウゾウ×案件ナビ_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-09-29",
-      "title": "案件ナビのAIの1時間",
-      "wiki": "2026-09-29_案件ナビ_AIの1時間_図解_v1",
-      "category": "🤖 CORIN出力（outputs/） 225本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-29_案件ナビ_AIの1時間_図解_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-09-29_案件ナビ_AIの1時間_図解_v1.html",
       "has_md": true
     }
   ],
