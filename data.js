@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-10-07",
+  "date": "2026-10-08",
   "weather": {
-    "desc": "Light drizzle",
+    "desc": "Patchy rain nearby",
     "temp": "22",
-    "icon": "☁️"
+    "icon": "🌧"
   },
   "letter": {
-    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はLight drizzle、22度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>KITH</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はPatchy rain nearby、22度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>MAISON SPECIAL</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "KITH",
-    "tagline": "NYCのクイーンズから生まれた、コラボをDNAに持つモダンストリートライフスタイルの巨人。スニーカー文化を起点に、シリアルバー・BMW・ヴェルサーチまで射程に入れた全方位ブランド。",
-    "insight": "Ronnie Fiegの物語がKITHそのもの",
+    "name": "MAISON SPECIAL",
+    "tagline": "「SPECIAL IS YOUR STANDARD.」を掲げ、創業 5 年で年商 45 億円を達成した日本発のクラフトファッションブランド。\"プライムオーバー\" という独自シルエットで、ZARA 史上初の日本ブランドコラボを果たした注目株。",
+    "insight": "プロダクトアウト × 10名チームの仕組み化",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/kith-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/maison-special-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -42,7 +42,7 @@ window.CORIN_DATA = {
   "tonight": null,
   "schedule": {
     "events": [],
-    "note_exists": true
+    "note_exists": false
   },
   "daily_photo": null,
   "library": [
@@ -1247,6 +1247,24 @@ window.CORIN_DATA = {
   ],
   "recent_html": [
     {
+      "date": "2026-10-08",
+      "title": "26SS SNS投稿の記録",
+      "wiki": "26SS_SNS投稿実績_時系列_v1",
+      "category": "📁 案件ドラフト（_ai-drafts/） 45本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20251125_AM_26SS/_ai-drafts/26SS_SNS投稿実績_時系列_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20251125_AM_26SS/_ai-drafts/26SS_SNS投稿実績_時系列_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-10-08",
+      "title": "Armillary. SNS運用ボード",
+      "wiki": "Armillary_SNS運用ボード_モック_v42",
+      "category": "📁 案件ドラフト（_ai-drafts/） 45本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_モック_v42.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_モック_v42.html",
+      "has_md": true
+    },
+    {
       "date": "2026-10-07",
       "title": "Armillary 撮影やることマップ",
       "wiki": "2026-10-07_Armillary撮影打ち合わせ_やることマップ_v1",
@@ -1265,15 +1283,6 @@ window.CORIN_DATA = {
       "has_md": false
     },
     {
-      "date": "2026-10-07",
-      "title": "Armillary. SNS運用ボード",
-      "wiki": "Armillary_SNS運用ボード_モック_v33",
-      "category": "📁 案件ドラフト（_ai-drafts/） 33本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_モック_v33.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_モック_v33.html",
-      "has_md": true
-    },
-    {
       "date": "2026-10-06",
       "title": "ボードとAIポータルの関係",
       "wiki": "2026-10-06_ボードとAIポータルの関係_図解_v1",
@@ -1286,7 +1295,7 @@ window.CORIN_DATA = {
       "date": "2026-10-06",
       "title": "接続テスト",
       "wiki": "Armillary_運用ボード_接続テスト_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 33本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 45本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_運用ボード_接続テスト_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_運用ボード_接続テスト_v1.html",
       "has_md": false
@@ -1331,7 +1340,7 @@ window.CORIN_DATA = {
       "date": "2026-10-05",
       "title": "Armillary. 販売日そろえ比較",
       "wiki": "Armillary_26AW_SNS販売日そろえ比較_v2",
-      "category": "📁 案件ドラフト（_ai-drafts/） 33本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 45本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_SNS販売日そろえ比較_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_SNS販売日そろえ比較_v2.html",
       "has_md": true
@@ -1340,7 +1349,7 @@ window.CORIN_DATA = {
       "date": "2026-10-05",
       "title": "Armillary. SNS過去分析",
       "wiki": "Armillary_26AW_SNS過去分析と施策提案_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 33本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 45本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_SNS過去分析と施策提案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_SNS過去分析と施策提案_v1.html",
       "has_md": true
@@ -1415,15 +1424,6 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 227本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_男性KPOPアクキー・キーチェーン集.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_男性KPOPアクキー・キーチェーン集.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-10-01",
-      "title": "男性KPOPシンプル構成グッズ",
-      "wiki": "2026-10-01_男性KPOPシンプル構成グッズ",
-      "category": "🤖 CORIN出力（outputs/） 227本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_男性KPOPシンプル構成グッズ.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_男性KPOPシンプル構成グッズ.html",
       "has_md": true
     }
   ],
