@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-10-07",
   "weather": {
-    "desc": "Patchy rain nearby",
+    "desc": "Overcast ",
     "temp": "22",
-    "icon": "🌧"
+    "icon": "☁️"
   },
   "letter": {
-    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はPatchy rain nearby、22度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Jacq emus</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はOvercast 、22度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Cactus Plant Flea Market</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Jacq emus",
-    "tagline": "南フランスのプロヴァンスに根ざした感情的ミニマリズム。19-20歳で独学創業、世界的ラグジュアリーブランドへ成長したSimon Porte Jacquemusの軌跡。",
-    "insight": "感情（ノスタルジア・喜び・光）をビジュアル言語に変換する",
+    "name": "Cactus Plant Flea Market",
+    "tagline": "「洗練を拒否すること」がステートメント。ポストモダンな反抗とDIY精神でストリートウェアの権威性を解体するブランド。",
+    "insight": "コンテンツ：バイラルの設計（McDonald's）",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/jacquemus-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/cpfm-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1248,11 +1248,20 @@ window.CORIN_DATA = {
   "recent_html": [
     {
       "date": "2026-10-07",
+      "title": "受付システムUI一覧",
+      "wiki": "受付システムUI一覧",
+      "category": "🤖 AI推進資料（ai/） 64本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260909_受付システム/references/他社UI参考/20261007_有名企業の受付画面38枚/受付システムUI一覧.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260909_受付システム/references/他社UI参考/20261007_有名企業の受付画面38枚/受付システムUI一覧.html",
+      "has_md": false
+    },
+    {
+      "date": "2026-10-07",
       "title": "Armillary. SNS運用ボード",
-      "wiki": "Armillary_SNS運用ボード_モック_v25",
-      "category": "📁 案件ドラフト（_ai-drafts/） 36本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_モック_v25.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_モック_v25.html",
+      "wiki": "Armillary_SNS運用ボード_モック_v32",
+      "category": "📁 案件ドラフト（_ai-drafts/） 34本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_モック_v32.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_モック_v32.html",
       "has_md": true
     },
     {
@@ -1268,7 +1277,7 @@ window.CORIN_DATA = {
       "date": "2026-10-06",
       "title": "接続テスト",
       "wiki": "Armillary_運用ボード_接続テスト_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 36本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 34本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_運用ボード_接続テスト_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_運用ボード_接続テスト_v1.html",
       "has_md": false
@@ -1313,7 +1322,7 @@ window.CORIN_DATA = {
       "date": "2026-10-05",
       "title": "Armillary. 販売日そろえ比較",
       "wiki": "Armillary_26AW_SNS販売日そろえ比較_v2",
-      "category": "📁 案件ドラフト（_ai-drafts/） 36本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 34本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_SNS販売日そろえ比較_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_SNS販売日そろえ比較_v2.html",
       "has_md": true
@@ -1322,7 +1331,7 @@ window.CORIN_DATA = {
       "date": "2026-10-05",
       "title": "Armillary. SNS過去分析",
       "wiki": "Armillary_26AW_SNS過去分析と施策提案_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 36本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 34本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_SNS過去分析と施策提案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_SNS過去分析と施策提案_v1.html",
       "has_md": true
@@ -1415,15 +1424,6 @@ window.CORIN_DATA = {
       "category": "🤖 CORIN出力（outputs/） 226本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_男性KPOP肖像なしグッズ.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_男性KPOP肖像なしグッズ.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-10-01",
-      "title": "聖水ポップアップと男性KPOPグッズ",
-      "wiki": "2026-10-01_聖水ポップアップと男性KPOPトレンドグッズ",
-      "category": "🤖 CORIN出力（outputs/） 226本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_聖水ポップアップと男性KPOPトレンドグッズ.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_聖水ポップアップと男性KPOPトレンドグッズ.html",
       "has_md": true
     }
   ],
