@@ -2,12 +2,12 @@ window.CORIN_DATA = {
   "date": "2026-10-08",
   "weather": {
     "desc": "Patchy rain nearby",
-    "temp": "22",
+    "temp": "23",
     "icon": "🌧"
   },
   "letter": {
-    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はPatchy rain nearby、22度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>MAISON SPECIAL</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はPatchy rain nearby、23度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Aimé Leon Dore</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "MAISON SPECIAL",
-    "tagline": "「SPECIAL IS YOUR STANDARD.」を掲げ、創業 5 年で年商 45 億円を達成した日本発のクラフトファッションブランド。\"プライムオーバー\" という独自シルエットで、ZARA 史上初の日本ブランドコラボを果たした注目株。",
-    "insight": "プロダクトアウト × 10名チームの仕組み化",
+    "name": "Aimé Leon Dore",
+    "tagline": "クイーンズ育ちのギリシャ系NYCデザイナーが創り出した「ブルックリン・プレップ」。ストリートと知性が交差するニューヨークの美意識を体現するライフスタイルブランド。",
+    "insight": "「コラボレーター」から「インサイダー」へ昇格する道筋",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/maison-special-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/ald-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -42,7 +42,7 @@ window.CORIN_DATA = {
   "tonight": null,
   "schedule": {
     "events": [],
-    "note_exists": false
+    "note_exists": true
   },
   "daily_photo": null,
   "library": [
@@ -51,7 +51,7 @@ window.CORIN_DATA = {
       "description": "Literature Notes reader",
       "url": "https://fujimoto-cpu.github.io/literature/",
       "icon": "📚",
-      "pushed_at": "2026-10-06T19:47:25Z"
+      "pushed_at": "2026-10-07T23:40:42Z"
     },
     {
       "name": "recipes",
@@ -1248,9 +1248,18 @@ window.CORIN_DATA = {
   "recent_html": [
     {
       "date": "2026-10-08",
+      "title": "フェスブース テイスト提案",
+      "wiki": "2026-10-08_フェスブース_テイスト提案_v1",
+      "category": "🤖 CORIN出力（outputs/） 228本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-08_フェスブース_テイスト提案_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-08_フェスブース_テイスト提案_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-10-08",
       "title": "26SS SNS投稿の記録",
       "wiki": "26SS_SNS投稿実績_時系列_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 45本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 35本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20251125_AM_26SS/_ai-drafts/26SS_SNS投稿実績_時系列_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20251125_AM_26SS/_ai-drafts/26SS_SNS投稿実績_時系列_v1.html",
       "has_md": true
@@ -1258,17 +1267,17 @@ window.CORIN_DATA = {
     {
       "date": "2026-10-08",
       "title": "Armillary. SNS運用ボード",
-      "wiki": "Armillary_SNS運用ボード_モック_v42",
-      "category": "📁 案件ドラフト（_ai-drafts/） 45本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_モック_v42.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_モック_v42.html",
-      "has_md": true
+      "wiki": "Armillary_SNS運用ボード_Artifact版79_2026-10-08",
+      "category": "📁 案件ドラフト（_ai-drafts/） 35本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_Artifact版79_2026-10-08.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_Artifact版79_2026-10-08.html",
+      "has_md": false
     },
     {
       "date": "2026-10-07",
       "title": "Armillary 撮影やることマップ",
       "wiki": "2026-10-07_Armillary撮影打ち合わせ_やることマップ_v1",
-      "category": "🤖 CORIN出力（outputs/） 227本",
+      "category": "🤖 CORIN出力（outputs/） 228本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-07_Armillary撮影打ち合わせ_やることマップ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-07_Armillary撮影打ち合わせ_やることマップ_v1.html",
       "has_md": true
@@ -1286,7 +1295,7 @@ window.CORIN_DATA = {
       "date": "2026-10-06",
       "title": "ボードとAIポータルの関係",
       "wiki": "2026-10-06_ボードとAIポータルの関係_図解_v1",
-      "category": "🤖 CORIN出力（outputs/） 227本",
+      "category": "🤖 CORIN出力（outputs/） 228本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-06_ボードとAIポータルの関係_図解_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-06_ボードとAIポータルの関係_図解_v1.html",
       "has_md": true
@@ -1295,7 +1304,7 @@ window.CORIN_DATA = {
       "date": "2026-10-06",
       "title": "接続テスト",
       "wiki": "Armillary_運用ボード_接続テスト_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 45本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 35本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_運用ボード_接続テスト_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_運用ボード_接続テスト_v1.html",
       "has_md": false
@@ -1304,7 +1313,7 @@ window.CORIN_DATA = {
       "date": "2026-10-05",
       "title": "AI合流図",
       "wiki": "2026-10-05_AI合流図_VaultとNotion_v1",
-      "category": "🤖 CORIN出力（outputs/） 227本",
+      "category": "🤖 CORIN出力（outputs/） 228本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-05_AI合流図_VaultとNotion_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-05_AI合流図_VaultとNotion_v1.html",
       "has_md": true
@@ -1313,7 +1322,7 @@ window.CORIN_DATA = {
       "date": "2026-10-05",
       "title": "バースデーBOX調査",
       "wiki": "2026-10-05_アイドル_KPOP_バースデーBOX調査_v3",
-      "category": "🤖 CORIN出力（outputs/） 227本",
+      "category": "🤖 CORIN出力（outputs/） 228本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-05_アイドル_KPOP_バースデーBOX調査_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-05_アイドル_KPOP_バースデーBOX調査_v3.html",
       "has_md": false
@@ -1322,7 +1331,7 @@ window.CORIN_DATA = {
       "date": "2026-10-05",
       "title": "案件ヒストリー 画面イメージ",
       "wiki": "2026-10-05_案件ヒストリー_全社展開_画面イメージ_v1",
-      "category": "🤖 CORIN出力（outputs/） 227本",
+      "category": "🤖 CORIN出力（outputs/） 228本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-05_案件ヒストリー_全社展開_画面イメージ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-05_案件ヒストリー_全社展開_画面イメージ_v1.html",
       "has_md": true
@@ -1331,7 +1340,7 @@ window.CORIN_DATA = {
       "date": "2026-10-05",
       "title": "社内ポータル参考記事マップ",
       "wiki": "2026-10-05_社内ポータル拡張_参考記事マップ_v1",
-      "category": "🤖 CORIN出力（outputs/） 227本",
+      "category": "🤖 CORIN出力（outputs/） 228本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-05_社内ポータル拡張_参考記事マップ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-05_社内ポータル拡張_参考記事マップ_v1.html",
       "has_md": true
@@ -1340,7 +1349,7 @@ window.CORIN_DATA = {
       "date": "2026-10-05",
       "title": "Armillary. 販売日そろえ比較",
       "wiki": "Armillary_26AW_SNS販売日そろえ比較_v2",
-      "category": "📁 案件ドラフト（_ai-drafts/） 45本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 35本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_SNS販売日そろえ比較_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_SNS販売日そろえ比較_v2.html",
       "has_md": true
@@ -1349,7 +1358,7 @@ window.CORIN_DATA = {
       "date": "2026-10-05",
       "title": "Armillary. SNS過去分析",
       "wiki": "Armillary_26AW_SNS過去分析と施策提案_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 45本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 35本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_SNS過去分析と施策提案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_26AW_SNS過去分析と施策提案_v1.html",
       "has_md": true
@@ -1358,7 +1367,7 @@ window.CORIN_DATA = {
       "date": "2026-10-04",
       "title": "ChatGPTとClaudeの特徴比較",
       "wiki": "2026-10-04_ChatGPTとClaudeの特徴比較_v1",
-      "category": "🤖 CORIN出力（outputs/） 227本",
+      "category": "🤖 CORIN出力（outputs/） 228本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-04_ChatGPTとClaudeの特徴比較_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-04_ChatGPTとClaudeの特徴比較_v1.html",
       "has_md": true
@@ -1367,7 +1376,7 @@ window.CORIN_DATA = {
       "date": "2026-10-04",
       "title": "Dots と Claude Tag",
       "wiki": "2026-10-04_ChatGPTドットとClaudeTagの特徴比較_v1",
-      "category": "🤖 CORIN出力（outputs/） 227本",
+      "category": "🤖 CORIN出力（outputs/） 228本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-04_ChatGPTドットとClaudeTagの特徴比較_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-04_ChatGPTドットとClaudeTagの特徴比較_v1.html",
       "has_md": true
@@ -1376,7 +1385,7 @@ window.CORIN_DATA = {
       "date": "2026-10-01",
       "title": "KPOP変わり種グッズ集",
       "wiki": "2026-10-01_KPOP変わり種グッズ集_KiiiKiii_aespa",
-      "category": "🤖 CORIN出力（outputs/） 227本",
+      "category": "🤖 CORIN出力（outputs/） 228本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_KPOP変わり種グッズ集_KiiiKiii_aespa.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_KPOP変わり種グッズ集_KiiiKiii_aespa.html",
       "has_md": true
@@ -1385,7 +1394,7 @@ window.CORIN_DATA = {
       "date": "2026-10-01",
       "title": "たすくまデータの流れ",
       "wiki": "2026-10-01_たすくまのデータはいつどこで更新されるか_v1",
-      "category": "🤖 CORIN出力（outputs/） 227本",
+      "category": "🤖 CORIN出力（outputs/） 228本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_たすくまのデータはいつどこで更新されるか_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_たすくまのデータはいつどこで更新されるか_v1.html",
       "has_md": true
@@ -1394,7 +1403,7 @@ window.CORIN_DATA = {
       "date": "2026-10-01",
       "title": "たすくまの記録の行き先",
       "wiki": "2026-10-01_たすくまの記録がMDに入るしくみ_v1",
-      "category": "🤖 CORIN出力（outputs/） 227本",
+      "category": "🤖 CORIN出力（outputs/） 228本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_たすくまの記録がMDに入るしくみ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_たすくまの記録がMDに入るしくみ_v1.html",
       "has_md": true
@@ -1403,7 +1412,7 @@ window.CORIN_DATA = {
       "date": "2026-10-01",
       "title": "KPOPグッズ調査まとめ",
       "wiki": "2026-10-01_今日のKPOPグッズ調査_まとめ",
-      "category": "🤖 CORIN出力（outputs/） 227本",
+      "category": "🤖 CORIN出力（outputs/） 228本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_今日のKPOPグッズ調査_まとめ.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_今日のKPOPグッズ調査_まとめ.html",
       "has_md": true
@@ -1412,18 +1421,9 @@ window.CORIN_DATA = {
       "date": "2026-10-01",
       "title": "平日と休日のながれ図",
       "wiki": "2026-10-01_平日と休日のながれ図_v1",
-      "category": "🤖 CORIN出力（outputs/） 227本",
+      "category": "🤖 CORIN出力（outputs/） 228本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_平日と休日のながれ図_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_平日と休日のながれ図_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-10-01",
-      "title": "男性KPOPアクキー・キーチェーン集",
-      "wiki": "2026-10-01_男性KPOPアクキー・キーチェーン集",
-      "category": "🤖 CORIN出力（outputs/） 227本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_男性KPOPアクキー・キーチェーン集.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-01_男性KPOPアクキー・キーチェーン集.html",
       "has_md": true
     }
   ],
