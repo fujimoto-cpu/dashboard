@@ -6,8 +6,8 @@ window.CORIN_DATA = {
     "icon": "☁️"
   },
   "letter": {
-    "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はCloudy 、22度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Marni</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はCloudy 、22度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Human race</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Marni",
-    "tagline": "1994年ミラン発。大胆な色彩、職人技、芸術的自由が交差するイタリアン・ラグジュアリー。Consuelo Castiglioni が創設し、Francesco Risso が継承した「着るアート」の哲学。",
-    "insight": "クリエイティブ・ディレクター交代の教科書",
+    "name": "Human race",
+    "tagline": "ウェルネスを起点に、スキンケア・アパレル・カルチャーを横断するファレル・ウィリアムス創設のライフスタイルブランド。",
+    "insight": "ナレッジ管理：このノートがPhase 0 の素材になる",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/marni-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/humanrace-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1250,7 +1250,7 @@ window.CORIN_DATA = {
       "date": "2026-10-18",
       "title": "データ棚卸しマップ",
       "wiki": "2026-10-18_データ棚卸しマップ_v1",
-      "category": "🤖 CORIN出力（outputs/） 243本",
+      "category": "🤖 CORIN出力（outputs/） 244本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-18_データ棚卸しマップ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-18_データ棚卸しマップ_v1.html",
       "has_md": true
@@ -1268,7 +1268,7 @@ window.CORIN_DATA = {
       "date": "2026-10-12",
       "title": "ChatGPT dots 図解",
       "wiki": "2026-10-12_ChatGPT_dots_図解まとめ_v1",
-      "category": "🤖 CORIN出力（outputs/） 243本",
+      "category": "🤖 CORIN出力（outputs/） 244本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-12_ChatGPT_dots_図解まとめ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-12_ChatGPT_dots_図解まとめ_v1.html",
       "has_md": true
@@ -1349,7 +1349,7 @@ window.CORIN_DATA = {
       "date": "2026-10-09",
       "title": "SNS運用ボード 改善モック",
       "wiki": "2026-10-09_SNS運用ボード_UI改善モック_v1",
-      "category": "🤖 CORIN出力（outputs/） 243本",
+      "category": "🤖 CORIN出力（outputs/） 244本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-09_SNS運用ボード_UI改善モック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-09_SNS運用ボード_UI改善モック_v1.html",
       "has_md": true
@@ -1358,7 +1358,7 @@ window.CORIN_DATA = {
       "date": "2026-10-08",
       "title": "ポータルFB反映モック",
       "wiki": "2026-10-08_ナレッジポータル_FB反映モック_v1",
-      "category": "🤖 CORIN出力（outputs/） 243本",
+      "category": "🤖 CORIN出力（outputs/） 244本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-08_ナレッジポータル_FB反映モック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-08_ナレッジポータル_FB反映モック_v1.html",
       "has_md": false
@@ -1367,7 +1367,7 @@ window.CORIN_DATA = {
       "date": "2026-10-08",
       "title": "フェスブース テイスト提案",
       "wiki": "2026-10-08_フェスブース_テイスト提案_v1",
-      "category": "🤖 CORIN出力（outputs/） 243本",
+      "category": "🤖 CORIN出力（outputs/） 244本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-08_フェスブース_テイスト提案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-08_フェスブース_テイスト提案_v1.html",
       "has_md": true
@@ -1394,7 +1394,7 @@ window.CORIN_DATA = {
       "date": "2026-10-07",
       "title": "Armillary 撮影やることマップ",
       "wiki": "2026-10-07_Armillary撮影打ち合わせ_やることマップ_v1",
-      "category": "🤖 CORIN出力（outputs/） 243本",
+      "category": "🤖 CORIN出力（outputs/） 244本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-07_Armillary撮影打ち合わせ_やることマップ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-07_Armillary撮影打ち合わせ_やることマップ_v1.html",
       "has_md": true
@@ -1412,7 +1412,7 @@ window.CORIN_DATA = {
       "date": "2026-10-06",
       "title": "ボードとAIポータルの関係",
       "wiki": "2026-10-06_ボードとAIポータルの関係_図解_v1",
-      "category": "🤖 CORIN出力（outputs/） 243本",
+      "category": "🤖 CORIN出力（outputs/） 244本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-06_ボードとAIポータルの関係_図解_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-06_ボードとAIポータルの関係_図解_v1.html",
       "has_md": true
