@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-10-18",
   "weather": {
-    "desc": "Sunny",
+    "desc": "Cloudy ",
     "temp": "22",
-    "icon": "☀️"
+    "icon": "☁️"
   },
   "letter": {
-    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はSunny、22度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>KITH</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はCloudy 、22度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Aimé Leon Dore</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "KITH",
-    "tagline": "NYCのクイーンズから生まれた、コラボをDNAに持つモダンストリートライフスタイルの巨人。スニーカー文化を起点に、シリアルバー・BMW・ヴェルサーチまで射程に入れた全方位ブランド。",
-    "insight": "コラボ相手の選び方がブランドステートメントになる",
+    "name": "Aimé Leon Dore",
+    "tagline": "クイーンズ育ちのギリシャ系NYCデザイナーが創り出した「ブルックリン・プレップ」。ストリートと知性が交差するニューヨークの美意識を体現するライフスタイルブランド。",
+    "insight": "カフェ・場所とブランドを一体化する",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/kith-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/ald-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1247,10 +1247,19 @@ window.CORIN_DATA = {
   ],
   "recent_html": [
     {
+      "date": "2026-10-18",
+      "title": "データ棚卸しマップ",
+      "wiki": "2026-10-18_データ棚卸しマップ_v1",
+      "category": "🤖 CORIN出力（outputs/） 242本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-18_データ棚卸しマップ_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-18_データ棚卸しマップ_v1.html",
+      "has_md": true
+    },
+    {
       "date": "2026-10-12",
       "title": "ChatGPT dots 図解",
       "wiki": "2026-10-12_ChatGPT_dots_図解まとめ_v1",
-      "category": "🤖 CORIN出力（outputs/） 241本",
+      "category": "🤖 CORIN出力（outputs/） 242本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-12_ChatGPT_dots_図解まとめ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-12_ChatGPT_dots_図解まとめ_v1.html",
       "has_md": true
@@ -1331,7 +1340,7 @@ window.CORIN_DATA = {
       "date": "2026-10-09",
       "title": "SNS運用ボード 改善モック",
       "wiki": "2026-10-09_SNS運用ボード_UI改善モック_v1",
-      "category": "🤖 CORIN出力（outputs/） 241本",
+      "category": "🤖 CORIN出力（outputs/） 242本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-09_SNS運用ボード_UI改善モック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-09_SNS運用ボード_UI改善モック_v1.html",
       "has_md": true
@@ -1340,7 +1349,7 @@ window.CORIN_DATA = {
       "date": "2026-10-08",
       "title": "ポータルFB反映モック",
       "wiki": "2026-10-08_ナレッジポータル_FB反映モック_v1",
-      "category": "🤖 CORIN出力（outputs/） 241本",
+      "category": "🤖 CORIN出力（outputs/） 242本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-08_ナレッジポータル_FB反映モック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-08_ナレッジポータル_FB反映モック_v1.html",
       "has_md": false
@@ -1349,7 +1358,7 @@ window.CORIN_DATA = {
       "date": "2026-10-08",
       "title": "フェスブース テイスト提案",
       "wiki": "2026-10-08_フェスブース_テイスト提案_v1",
-      "category": "🤖 CORIN出力（outputs/） 241本",
+      "category": "🤖 CORIN出力（outputs/） 242本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-08_フェスブース_テイスト提案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-08_フェスブース_テイスト提案_v1.html",
       "has_md": true
@@ -1376,7 +1385,7 @@ window.CORIN_DATA = {
       "date": "2026-10-07",
       "title": "Armillary 撮影やることマップ",
       "wiki": "2026-10-07_Armillary撮影打ち合わせ_やることマップ_v1",
-      "category": "🤖 CORIN出力（outputs/） 241本",
+      "category": "🤖 CORIN出力（outputs/） 242本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-07_Armillary撮影打ち合わせ_やることマップ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-07_Armillary撮影打ち合わせ_やることマップ_v1.html",
       "has_md": true
@@ -1394,7 +1403,7 @@ window.CORIN_DATA = {
       "date": "2026-10-06",
       "title": "ボードとAIポータルの関係",
       "wiki": "2026-10-06_ボードとAIポータルの関係_図解_v1",
-      "category": "🤖 CORIN出力（outputs/） 241本",
+      "category": "🤖 CORIN出力（outputs/） 242本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-06_ボードとAIポータルの関係_図解_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-06_ボードとAIポータルの関係_図解_v1.html",
       "has_md": true
@@ -1412,19 +1421,10 @@ window.CORIN_DATA = {
       "date": "2026-10-05",
       "title": "AI合流図",
       "wiki": "2026-10-05_AI合流図_VaultとNotion_v1",
-      "category": "🤖 CORIN出力（outputs/） 241本",
+      "category": "🤖 CORIN出力（outputs/） 242本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-05_AI合流図_VaultとNotion_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-05_AI合流図_VaultとNotion_v1.html",
       "has_md": true
-    },
-    {
-      "date": "2026-10-05",
-      "title": "バースデーBOX調査",
-      "wiki": "2026-10-05_アイドル_KPOP_バースデーBOX調査_v3",
-      "category": "🤖 CORIN出力（outputs/） 241本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-05_アイドル_KPOP_バースデーBOX調査_v3.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-05_アイドル_KPOP_バースデーBOX調査_v3.html",
-      "has_md": false
     }
   ],
   "static_links": {
