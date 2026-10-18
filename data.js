@@ -6,8 +6,8 @@ window.CORIN_DATA = {
     "icon": "☀️"
   },
   "letter": {
-    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はSunny、22度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>AMBUSH</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はSunny、22度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>APOTHEKE FRAGRANCE</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "AMBUSH",
-    "tagline": "東京を拠点に、Yoon Ahn と VERBAL が 2008 年に設立。大胆なオーバーサイズジュエリーから全身アパレルへと拡張し、Dior MenとNikeのコンサルタントとして高級ファッション界にまで橋渡しした、音楽×ジュエリー×ストリートの交差点。",
-    "insight": "Insight 01",
+    "name": "APOTHEKE FRAGRANCE",
+    "tagline": "千葉のアトリエで全てを手作りする日本のクラフトフレグランスブランド。古来の日本の感性と現代デザインを橋渡しし、お香で「家に置いてオシャレ」を再定義した。",
+    "insight": "INSIGHT 01",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/ambush-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1250,7 +1250,7 @@ window.CORIN_DATA = {
       "date": "2026-10-18",
       "title": "データ棚卸しマップ",
       "wiki": "2026-10-18_データ棚卸しマップ_v1",
-      "category": "🤖 CORIN出力（outputs/） 245本",
+      "category": "🤖 CORIN出力（outputs/） 246本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-18_データ棚卸しマップ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-18_データ棚卸しマップ_v1.html",
       "has_md": true
@@ -1259,16 +1259,34 @@ window.CORIN_DATA = {
       "date": "2026-10-18",
       "title": "dotsでAI秘書革命",
       "wiki": "2026-10-18_中田敦彦_dotsでAI秘書革命_v1",
-      "category": "🤖 CORIN出力（outputs/） 245本",
+      "category": "🤖 CORIN出力（outputs/） 246本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-18_中田敦彦_dotsでAI秘書革命_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-18_中田敦彦_dotsでAI秘書革命_v1.html",
       "has_md": true
     },
     {
       "date": "2026-10-18",
+      "title": "自作音声入力の作り方まとめ",
+      "wiki": "2026-10-18_自作音声入力で精度を上げる話_v1",
+      "category": "🤖 CORIN出力（outputs/） 246本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-18_自作音声入力で精度を上げる話_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-18_自作音声入力で精度を上げる話_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-10-18",
+      "title": "dotsでAI秘書革命",
+      "wiki": "_携帯確認用_dots",
+      "category": "🎨 ブランド分析・トレンド（notes/） 38本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/2026-10-18_データ棚卸し/_携帯確認用_dots.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/2026-10-18_データ棚卸し/_携帯確認用_dots.html",
+      "has_md": false
+    },
+    {
+      "date": "2026-10-18",
       "title": "データ棚卸しマップ",
       "wiki": "_携帯確認用_v2",
-      "category": "🎨 ブランド分析・トレンド（notes/） 37本",
+      "category": "🎨 ブランド分析・トレンド（notes/） 38本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/2026-10-18_データ棚卸し/_携帯確認用_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/notes/2026-10-18_データ棚卸し/_携帯確認用_v2.html",
       "has_md": false
@@ -1277,7 +1295,7 @@ window.CORIN_DATA = {
       "date": "2026-10-12",
       "title": "ChatGPT dots 図解",
       "wiki": "2026-10-12_ChatGPT_dots_図解まとめ_v1",
-      "category": "🤖 CORIN出力（outputs/） 245本",
+      "category": "🤖 CORIN出力（outputs/） 246本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-12_ChatGPT_dots_図解まとめ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-12_ChatGPT_dots_図解まとめ_v1.html",
       "has_md": true
@@ -1358,7 +1376,7 @@ window.CORIN_DATA = {
       "date": "2026-10-09",
       "title": "SNS運用ボード 改善モック",
       "wiki": "2026-10-09_SNS運用ボード_UI改善モック_v1",
-      "category": "🤖 CORIN出力（outputs/） 245本",
+      "category": "🤖 CORIN出力（outputs/） 246本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-09_SNS運用ボード_UI改善モック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-09_SNS運用ボード_UI改善モック_v1.html",
       "has_md": true
@@ -1367,7 +1385,7 @@ window.CORIN_DATA = {
       "date": "2026-10-08",
       "title": "ポータルFB反映モック",
       "wiki": "2026-10-08_ナレッジポータル_FB反映モック_v1",
-      "category": "🤖 CORIN出力（outputs/） 245本",
+      "category": "🤖 CORIN出力（outputs/） 246本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-08_ナレッジポータル_FB反映モック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-08_ナレッジポータル_FB反映モック_v1.html",
       "has_md": false
@@ -1376,7 +1394,7 @@ window.CORIN_DATA = {
       "date": "2026-10-08",
       "title": "フェスブース テイスト提案",
       "wiki": "2026-10-08_フェスブース_テイスト提案_v1",
-      "category": "🤖 CORIN出力（outputs/） 245本",
+      "category": "🤖 CORIN出力（outputs/） 246本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-08_フェスブース_テイスト提案_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-08_フェスブース_テイスト提案_v1.html",
       "has_md": true
@@ -1403,27 +1421,9 @@ window.CORIN_DATA = {
       "date": "2026-10-07",
       "title": "Armillary 撮影やることマップ",
       "wiki": "2026-10-07_Armillary撮影打ち合わせ_やることマップ_v1",
-      "category": "🤖 CORIN出力（outputs/） 245本",
+      "category": "🤖 CORIN出力（outputs/） 246本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-07_Armillary撮影打ち合わせ_やることマップ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-07_Armillary撮影打ち合わせ_やることマップ_v1.html",
-      "has_md": true
-    },
-    {
-      "date": "2026-10-07",
-      "title": "受付システムUI一覧",
-      "wiki": "受付システムUI一覧",
-      "category": "🤖 AI推進資料（ai/） 81本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260909_受付システム/references/他社UI参考/20261007_有名企業の受付画面38枚/受付システムUI一覧.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260909_受付システム/references/他社UI参考/20261007_有名企業の受付画面38枚/受付システムUI一覧.html",
-      "has_md": false
-    },
-    {
-      "date": "2026-10-06",
-      "title": "ボードとAIポータルの関係",
-      "wiki": "2026-10-06_ボードとAIポータルの関係_図解_v1",
-      "category": "🤖 CORIN出力（outputs/） 245本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-06_ボードとAIポータルの関係_図解_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-06_ボードとAIポータルの関係_図解_v1.html",
       "has_md": true
     }
   ],
