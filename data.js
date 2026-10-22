@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
   "date": "2026-10-22",
   "weather": {
-    "desc": "Sunny",
-    "temp": "23",
-    "icon": "☀️"
+    "desc": "Light drizzle",
+    "temp": "21",
+    "icon": "☁️"
   },
   "letter": {
     "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はSunny、23度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>CULL NI</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はLight drizzle、21度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>ADER ERROR</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "CULL NI",
-    "tagline": "「素敵な1日を」をコンセプトに、ドレス×カジュアルという独自領域を切り拓いた日本のメンズブランド。気の利いたディテールと品の良い仕立てで、20-30代の感度高い層を魅了する。",
-    "insight": "ハイブリッド領域の独占",
+    "name": "ADER ERROR",
+    "tagline": "「エラー」を美学に変える、ソウル発のコンセプト・コレクティブ。匿名の20人チームが生み出す「意図的な失敗」が世界を席巻する。",
+    "insight": "リテール空間=ブランドの哲学の立体化",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/cullni-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/ader-error-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -647,7 +647,7 @@ window.CORIN_DATA = {
               "deadline": "null",
               "tags": "[project-board, armillary, 26AW, ブランド, シーズン提案, ユニセックス]",
               "created": "2026-05-30",
-              "last_updated": "2026-10-21"
+              "last_updated": "2026-10-22"
             },
             "links": [
               {
@@ -1248,6 +1248,15 @@ window.CORIN_DATA = {
   "recent_html": [
     {
       "date": "2026-10-22",
+      "title": "lit週次まとめ W43",
+      "wiki": "2026-10-22_lit週次まとめ_W43_見本_v1",
+      "category": "🤖 CORIN出力（outputs/） 247本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-22_lit週次まとめ_W43_見本_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-22_lit週次まとめ_W43_見本_v1.html",
+      "has_md": true
+    },
+    {
+      "date": "2026-10-22",
       "title": "メンズ｜目元レタッチ確認",
       "wiki": "メンズ_目元レタッチ_確認一覧_v2",
       "category": "📁 案件ドラフト（_ai-drafts/） 41本",
@@ -1277,7 +1286,7 @@ window.CORIN_DATA = {
       "date": "2026-10-18",
       "title": "データ棚卸しマップ",
       "wiki": "2026-10-18_データ棚卸しマップ_v1",
-      "category": "🤖 CORIN出力（outputs/） 246本",
+      "category": "🤖 CORIN出力（outputs/） 247本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-18_データ棚卸しマップ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-18_データ棚卸しマップ_v1.html",
       "has_md": true
@@ -1286,7 +1295,7 @@ window.CORIN_DATA = {
       "date": "2026-10-18",
       "title": "dotsでAI秘書革命",
       "wiki": "2026-10-18_中田敦彦_dotsでAI秘書革命_v1",
-      "category": "🤖 CORIN出力（outputs/） 246本",
+      "category": "🤖 CORIN出力（outputs/） 247本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-18_中田敦彦_dotsでAI秘書革命_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-18_中田敦彦_dotsでAI秘書革命_v1.html",
       "has_md": true
@@ -1295,7 +1304,7 @@ window.CORIN_DATA = {
       "date": "2026-10-18",
       "title": "自作音声入力の作り方まとめ",
       "wiki": "2026-10-18_自作音声入力で精度を上げる話_v1",
-      "category": "🤖 CORIN出力（outputs/） 246本",
+      "category": "🤖 CORIN出力（outputs/） 247本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-18_自作音声入力で精度を上げる話_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-18_自作音声入力で精度を上げる話_v1.html",
       "has_md": true
@@ -1331,7 +1340,7 @@ window.CORIN_DATA = {
       "date": "2026-10-12",
       "title": "ChatGPT dots 図解",
       "wiki": "2026-10-12_ChatGPT_dots_図解まとめ_v1",
-      "category": "🤖 CORIN出力（outputs/） 246本",
+      "category": "🤖 CORIN出力（outputs/） 247本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-12_ChatGPT_dots_図解まとめ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-12_ChatGPT_dots_図解まとめ_v1.html",
       "has_md": true
@@ -1412,19 +1421,10 @@ window.CORIN_DATA = {
       "date": "2026-10-09",
       "title": "SNS運用ボード 改善モック",
       "wiki": "2026-10-09_SNS運用ボード_UI改善モック_v1",
-      "category": "🤖 CORIN出力（outputs/） 246本",
+      "category": "🤖 CORIN出力（outputs/） 247本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-09_SNS運用ボード_UI改善モック_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-09_SNS運用ボード_UI改善モック_v1.html",
       "has_md": true
-    },
-    {
-      "date": "2026-10-08",
-      "title": "ポータルFB反映モック",
-      "wiki": "2026-10-08_ナレッジポータル_FB反映モック_v1",
-      "category": "🤖 CORIN出力（outputs/） 246本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-08_ナレッジポータル_FB反映モック_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-08_ナレッジポータル_FB反映モック_v1.html",
-      "has_md": false
     }
   ],
   "static_links": {
