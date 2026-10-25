@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-10-23",
+  "date": "2026-10-25",
   "weather": {
-    "desc": "Light drizzle",
-    "temp": "20",
-    "icon": "☁️"
+    "desc": "Light rain shower",
+    "temp": "25",
+    "icon": "🌧"
   },
   "letter": {
-    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はLight drizzle、20度。<br>金曜日。土日に持ち越さないこと、整理しよ。<br>今日の倉庫から：<strong>CULL NI</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はLight rain shower、25度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Mad happy</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "CULL NI",
-    "tagline": "「素敵な1日を」をコンセプトに、ドレス×カジュアルという独自領域を切り拓いた日本のメンズブランド。気の利いたディテールと品の良い仕立てで、20-30代の感度高い層を魅了する。",
-    "insight": "シグネチャーアイテムの毎シーズン更新",
+    "name": "Mad happy",
+    "tagline": "\"Optimism is a practice.\" ——メンタルヘルスを哲学の核に据えた、ロサンゼルス発ライフスタイルブランド。",
+    "insight": "パーパス × 製品設計の完全統合",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/cullni-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/madhappy-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1247,6 +1247,24 @@ window.CORIN_DATA = {
   ],
   "recent_html": [
     {
+      "date": "2026-10-24",
+      "title": "名刺を登録 \\",
+      "wiki": "画面プレビュー_v1",
+      "category": "🤖 AI推進資料（ai/） 83本",
+      "html_path": "",
+      "html_url": "",
+      "has_md": true
+    },
+    {
+      "date": "2026-10-23",
+      "title": "見積から、次の提案へ。｜見積・原価ライブラリの図解",
+      "wiki": "2026-10-23_見積と原価ライブラリ_図解_v2",
+      "category": "🤖 AI推進資料（ai/） 83本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/2026-10-23_見積と原価ライブラリ_図解_v2.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/2026-10-23_見積と原価ライブラリ_図解_v2.html",
+      "has_md": true
+    },
+    {
       "date": "2026-10-22",
       "title": "lit週次まとめ W43",
       "wiki": "2026-10-22_lit週次まとめ_W43_見本_v1",
@@ -1349,7 +1367,7 @@ window.CORIN_DATA = {
       "date": "2026-10-12",
       "title": "SNS運用ボード 新UI",
       "wiki": "newui_real_test",
-      "category": "🤖 AI推進資料（ai/） 81本",
+      "category": "🤖 AI推進資料（ai/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20261010_SNS運用ボード_新UI実装/src2/codex_review/newui_real_test.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20261010_SNS運用ボード_新UI実装/src2/codex_review/newui_real_test.html",
       "has_md": false
@@ -1358,7 +1376,7 @@ window.CORIN_DATA = {
       "date": "2026-10-12",
       "title": "SNS運用ボード 改善モック",
       "wiki": "app_mockdata",
-      "category": "🤖 AI推進資料（ai/） 81本",
+      "category": "🤖 AI推進資料（ai/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20261010_SNS運用ボード_新UI実装/src2/out/app_mockdata.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20261010_SNS運用ボード_新UI実装/src2/out/app_mockdata.html",
       "has_md": false
@@ -1367,7 +1385,7 @@ window.CORIN_DATA = {
       "date": "2026-10-11",
       "title": "layer3",
       "wiki": "layer3",
-      "category": "🤖 AI推進資料（ai/） 81本",
+      "category": "🤖 AI推進資料（ai/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20261010_SNS運用ボード_新UI実装/src/layer3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20261010_SNS運用ボード_新UI実装/src/layer3.html",
       "has_md": false
@@ -1376,7 +1394,7 @@ window.CORIN_DATA = {
       "date": "2026-10-11",
       "title": "layer4",
       "wiki": "layer4",
-      "category": "🤖 AI推進資料（ai/） 81本",
+      "category": "🤖 AI推進資料（ai/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20261010_SNS運用ボード_新UI実装/src/layer4.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20261010_SNS運用ボード_新UI実装/src/layer4.html",
       "has_md": false
@@ -1385,7 +1403,7 @@ window.CORIN_DATA = {
       "date": "2026-10-11",
       "title": "Armillary. SNS運用ボード",
       "wiki": "orig_運用中のコピー",
-      "category": "🤖 AI推進資料（ai/） 81本",
+      "category": "🤖 AI推進資料（ai/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20261010_SNS運用ボード_新UI実装/src/orig_運用中のコピー.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20261010_SNS運用ボード_新UI実装/src/orig_運用中のコピー.html",
       "has_md": false
@@ -1394,7 +1412,7 @@ window.CORIN_DATA = {
       "date": "2026-10-11",
       "title": "test",
       "wiki": "test",
-      "category": "🤖 AI推進資料（ai/） 81本",
+      "category": "🤖 AI推進資料（ai/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20261010_SNS運用ボード_新UI実装/src/test.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20261010_SNS運用ボード_新UI実装/src/test.html",
       "has_md": false
@@ -1403,28 +1421,10 @@ window.CORIN_DATA = {
       "date": "2026-10-10",
       "title": "今日、ここから。",
       "wiki": "konnekt-notion-mock_v6",
-      "category": "🤖 AI推進資料（ai/） 81本",
+      "category": "🤖 AI推進資料（ai/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/konnekt-notion-mock_v6.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/konnekt-notion-mock_v6.html",
       "has_md": false
-    },
-    {
-      "date": "2026-10-10",
-      "title": "Konnekt Notion Mock V6",
-      "wiki": "konnekt-notion-preview_v6",
-      "category": "🤖 AI推進資料（ai/） 81本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/konnekt-notion-preview_v6.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/konnekt-notion-preview_v6.html",
-      "has_md": false
-    },
-    {
-      "date": "2026-10-09",
-      "title": "SNS運用ボード 改善モック",
-      "wiki": "2026-10-09_SNS運用ボード_UI改善モック_v1",
-      "category": "🤖 CORIN出力（outputs/） 248本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-09_SNS運用ボード_UI改善モック_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-10-09_SNS運用ボード_UI改善モック_v1.html",
-      "has_md": true
     }
   ],
   "static_links": {
