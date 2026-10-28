@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-10-28",
+  "date": "2026-10-29",
   "weather": {
-    "desc": "Patchy rain nearby",
-    "temp": "20",
-    "icon": "🌧"
+    "desc": "Light drizzle",
+    "temp": "18",
+    "icon": "☁️"
   },
   "letter": {
-    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はPatchy rain nearby、20度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Stüssy</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はLight drizzle、18度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>APOTHEKE FRAGRANCE</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Stüssy",
-    "tagline": "サーフボードに書いたサインが、40年以上続く世界最古のストリートウェアブランドになった。独立系・非上場を貫き、コミュニティを核に成長し続けるOGの解剖。",
-    "insight": "40年「クール」であり続けた方程式 — 変えないことの戦略",
+    "name": "APOTHEKE FRAGRANCE",
+    "tagline": "千葉のアトリエで全てを手作りする日本のクラフトフレグランスブランド。古来の日本の感性と現代デザインを橋渡しし、お香で「家に置いてオシャレ」を再定義した。",
+    "insight": "INSIGHT 01",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/stussy-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -42,7 +42,7 @@ window.CORIN_DATA = {
   "tonight": null,
   "schedule": {
     "events": [],
-    "note_exists": false
+    "note_exists": true
   },
   "daily_photo": null,
   "library": [
@@ -647,7 +647,7 @@ window.CORIN_DATA = {
               "deadline": "null",
               "tags": "[project-board, armillary, 26AW, ブランド, シーズン提案, ユニセックス]",
               "created": "2026-05-30",
-              "last_updated": "2026-10-27"
+              "last_updated": "2026-10-28"
             },
             "links": [
               {
