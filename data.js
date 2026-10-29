@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-10-29",
+  "date": "2026-10-30",
   "weather": {
-    "desc": "Light drizzle",
-    "temp": "18",
-    "icon": "☁️"
+    "desc": "Light rain",
+    "temp": "20",
+    "icon": "🌧"
   },
   "letter": {
-    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はLight drizzle、18度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>APOTHEKE FRAGRANCE</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はLight rain、20度。<br>金曜日。土日に持ち越さないこと、整理しよ。<br>今日の倉庫から：<strong>MAISON SPECIAL</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "APOTHEKE FRAGRANCE",
-    "tagline": "千葉のアトリエで全てを手作りする日本のクラフトフレグランスブランド。古来の日本の感性と現代デザインを橋渡しし、お香で「家に置いてオシャレ」を再定義した。",
-    "insight": "INSIGHT 01",
+    "name": "MAISON SPECIAL",
+    "tagline": "「SPECIAL IS YOUR STANDARD.」を掲げ、創業 5 年で年商 45 億円を達成した日本発のクラフトファッションブランド。\"プライムオーバー\" という独自シルエットで、ZARA 史上初の日本ブランドコラボを果たした注目株。",
+    "insight": "タグラインで世界観を決め切る",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/maison-special-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1247,6 +1247,15 @@ window.CORIN_DATA = {
   ],
   "recent_html": [
     {
+      "date": "2026-10-29",
+      "title": "CK Birthday Bash — フォント5案",
+      "wiki": "フォント5案_比較_v1",
+      "category": "📁 案件ドラフト（_ai-drafts/） 42本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/20261026_CrystalKay_birthday/_ai-drafts/20261029_CK_BIRTHDAY_BASH_フォント5案/フォント5案_比較_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/20261026_CrystalKay_birthday/_ai-drafts/20261029_CK_BIRTHDAY_BASH_フォント5案/フォント5案_比較_v1.html",
+      "has_md": false
+    },
+    {
       "date": "2026-10-24",
       "title": "名刺を登録 \\",
       "wiki": "画面プレビュー_v1",
@@ -1277,7 +1286,7 @@ window.CORIN_DATA = {
       "date": "2026-10-22",
       "title": "メンズ｜目元レタッチ確認",
       "wiki": "メンズ_目元レタッチ_確認一覧_v2",
-      "category": "📁 案件ドラフト（_ai-drafts/） 41本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 42本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261021_mens-retouch-batch/メンズ_目元レタッチ_確認一覧_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261021_mens-retouch-batch/メンズ_目元レタッチ_確認一覧_v2.html",
       "has_md": false
@@ -1286,7 +1295,7 @@ window.CORIN_DATA = {
       "date": "2026-10-22",
       "title": "目元の修正確認｜0095の目頭下を再調整",
       "wiki": "メンズ_目元再調整_3枚比較_v3",
-      "category": "📁 案件ドラフト（_ai-drafts/） 41本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 42本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261021_mens-retouch-batch/メンズ_目元再調整_3枚比較_v3.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261021_mens-retouch-batch/メンズ_目元再調整_3枚比較_v3.html",
       "has_md": false
@@ -1295,7 +1304,7 @@ window.CORIN_DATA = {
       "date": "2026-10-21",
       "title": "Armillary. SNS運用ボード",
       "wiki": "Armillary_SNS運用ボード_Artifact版_時刻入力修正_2026-10-21",
-      "category": "📁 案件ドラフト（_ai-drafts/） 41本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 42本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_Artifact版_時刻入力修正_2026-10-21.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/Armillary_SNS運用ボード_Artifact版_時刻入力修正_2026-10-21.html",
       "has_md": false
@@ -1415,15 +1424,6 @@ window.CORIN_DATA = {
       "category": "🤖 AI推進資料（ai/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20261010_SNS運用ボード_新UI実装/src/test.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20261010_SNS運用ボード_新UI実装/src/test.html",
-      "has_md": false
-    },
-    {
-      "date": "2026-10-10",
-      "title": "今日、ここから。",
-      "wiki": "konnekt-notion-mock_v6",
-      "category": "🤖 AI推進資料（ai/） 83本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/konnekt-notion-mock_v6.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/konnekt-notion-mock_v6.html",
       "has_md": false
     }
   ],
