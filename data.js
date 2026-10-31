@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-10-30",
+  "date": "2026-10-31",
   "weather": {
-    "desc": "Light rain",
-    "temp": "20",
-    "icon": "🌧"
+    "desc": "Sunny",
+    "temp": "22",
+    "icon": "☀️"
   },
   "letter": {
-    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
-    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はLight rain、20度。<br>金曜日。土日に持ち越さないこと、整理しよ。<br>今日の倉庫から：<strong>MAISON SPECIAL</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はSunny、22度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Gentle Monster</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "MAISON SPECIAL",
-    "tagline": "「SPECIAL IS YOUR STANDARD.」を掲げ、創業 5 年で年商 45 億円を達成した日本発のクラフトファッションブランド。\"プライムオーバー\" という独自シルエットで、ZARA 史上初の日本ブランドコラボを果たした注目株。",
-    "insight": "タグラインで世界観を決め切る",
+    "name": "Gentle Monster",
+    "tagline": "店舗をキネティックアートに変え、アイウェアを超えたK-ライフスタイル帝国を築いた韓国発の革命的ブランド。",
+    "insight": "店舗＝ブランドの最大メディア",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/maison-special-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/gentle-monster-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -42,7 +42,7 @@ window.CORIN_DATA = {
   "tonight": null,
   "schedule": {
     "events": [],
-    "note_exists": true
+    "note_exists": false
   },
   "daily_photo": null,
   "library": [
