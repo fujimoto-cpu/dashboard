@@ -2,12 +2,12 @@ window.CORIN_DATA = {
   "date": "2026-11-12",
   "weather": {
     "desc": "Partly Cloudy ",
-    "temp": "17",
+    "temp": "18",
     "icon": "☁️"
   },
   "letter": {
-    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はPartly Cloudy 、17度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Stone Island</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はPartly Cloudy 、18度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>APOTHEKE FRAGRANCE</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Stone Island",
-    "tagline": "「素材研究がデザイン。機能が美しさ」——コンパスバッジとテキスタイル実験で40年以上ファッションの境界を拡張し続けるイタリア発ブランド。",
-    "insight": "機能がビジュアルになる：Ice Jacketの設計哲学",
+    "name": "APOTHEKE FRAGRANCE",
+    "tagline": "千葉のアトリエで全てを手作りする日本のクラフトフレグランスブランド。古来の日本の感性と現代デザインを橋渡しし、お香で「家に置いてオシャレ」を再定義した。",
+    "insight": "INSIGHT 01",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/stoneisland-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -51,7 +51,7 @@ window.CORIN_DATA = {
       "description": "Literature Notes reader",
       "url": "https://fujimoto-cpu.github.io/literature/",
       "icon": "📚",
-      "pushed_at": "2026-11-10T19:41:33Z"
+      "pushed_at": "2026-11-11T19:38:58Z"
     },
     {
       "name": "recipes",
@@ -1250,7 +1250,7 @@ window.CORIN_DATA = {
       "date": "2026-11-12",
       "title": "営業ポータル — UI案 v17",
       "wiki": "営業ポータル作り直し_UI案_v17",
-      "category": "🤖 AI推進資料（ai/） 106本",
+      "category": "🤖 AI推進資料（ai/） 107本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/営業ポータル作り直し_UI案_v17.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/営業ポータル作り直し_UI案_v17.html",
       "has_md": true
