@@ -6,8 +6,8 @@ window.CORIN_DATA = {
     "icon": "☀️"
   },
   "letter": {
-    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はSunny、18度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Aimé Leon Dore</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はSunny、18度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>ADER ERROR</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Aimé Leon Dore",
-    "tagline": "クイーンズ育ちのギリシャ系NYCデザイナーが創り出した「ブルックリン・プレップ」。ストリートと知性が交差するニューヨークの美意識を体現するライフスタイルブランド。",
-    "insight": "「コラボレーター」から「インサイダー」へ昇格する道筋",
+    "name": "ADER ERROR",
+    "tagline": "「エラー」を美学に変える、ソウル発のコンセプト・コレクティブ。匿名の20人チームが生み出す「意図的な失敗」が世界を席巻する。",
+    "insight": "匿名性が作るブランドの神秘性",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/ald-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/ader-error-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1250,7 +1250,7 @@ window.CORIN_DATA = {
       "date": "2026-11-12",
       "title": "営業ポータル — UI案 v17",
       "wiki": "営業ポータル作り直し_UI案_v17",
-      "category": "🤖 AI推進資料（ai/） 109本",
+      "category": "🤖 AI推進資料（ai/） 110本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/営業ポータル作り直し_UI案_v17.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/ai/20260916_社員ポータル/_ai-drafts/営業ポータル作り直し_UI案_v17.html",
       "has_md": true
