@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-11-15",
+  "date": "2026-11-16",
   "weather": {
-    "desc": "Light drizzle",
+    "desc": "Clear ",
     "temp": "20",
-    "icon": "☁️"
+    "icon": "☀️"
   },
   "letter": {
-    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はLight drizzle、20度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>AMBUSH</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
+    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はClear 、20度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>ADER ERROR</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "AMBUSH",
-    "tagline": "東京を拠点に、Yoon Ahn と VERBAL が 2008 年に設立。大胆なオーバーサイズジュエリーから全身アパレルへと拡張し、Dior MenとNikeのコンサルタントとして高級ファッション界にまで橋渡しした、音楽×ジュエリー×ストリートの交差点。",
-    "insight": "Insight 01",
+    "name": "ADER ERROR",
+    "tagline": "「エラー」を美学に変える、ソウル発のコンセプト・コレクティブ。匿名の20人チームが生み出す「意図的な失敗」が世界を席巻する。",
+    "insight": "「ミス」をデザイン言語にする",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/ambush-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/ader-error-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
