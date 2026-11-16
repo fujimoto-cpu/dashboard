@@ -2,12 +2,12 @@ window.CORIN_DATA = {
   "date": "2026-11-16",
   "weather": {
     "desc": "Patchy rain nearby",
-    "temp": "20",
+    "temp": "19",
     "icon": "🌧"
   },
   "letter": {
-    "ascii": " /)/)\n( ≧ ▽≦)\n⊃  🎶",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はPatchy rain nearby、20度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>Sacai</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はPatchy rain nearby、19度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>Aimé Leon Dore</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Sacai",
-    "tagline": "2つを1つにする。阿部千登勢が1999年に東京で始めたハイブリッド解体の実験は、ストリートとラグジュアリーの境界を消し去り、世界的ブランドへと進化した。",
-    "insight": "「矛盾の共存」をビジュアルで表現する技術",
+    "name": "Aimé Leon Dore",
+    "tagline": "クイーンズ育ちのギリシャ系NYCデザイナーが創り出した「ブルックリン・プレップ」。ストリートと知性が交差するニューヨークの美意識を体現するライフスタイルブランド。",
+    "insight": "異文化を横断するカルチャーブリッジの設計",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/sacai-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/ald-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1250,10 +1250,19 @@ window.CORIN_DATA = {
       "date": "2026-11-16",
       "title": "TRIBE 高井さん 調査報告",
       "wiki": "tribe_v2_template",
-      "category": "🤖 CORIN出力（outputs/） 254本",
+      "category": "🤖 CORIN出力（outputs/） 255本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-13_TRIBE高井さん_調査報告_img/tribe_v2_template.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-13_TRIBE高井さん_調査報告_img/tribe_v2_template.html",
       "has_md": false
+    },
+    {
+      "date": "2026-11-16",
+      "title": "Chat・Work・Codex の違い",
+      "wiki": "2026-11-16_ChatGPTのChat・Work・Codex比較_v1",
+      "category": "🤖 CORIN出力（outputs/） 255本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-16_ChatGPTのChat・Work・Codex比較_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-16_ChatGPTのChat・Work・Codex比較_v1.html",
+      "has_md": true
     },
     {
       "date": "2026-11-16",
@@ -1277,7 +1286,7 @@ window.CORIN_DATA = {
       "date": "2026-11-11",
       "title": "Claude全社使用量 4月〜10月",
       "wiki": "2026-11-11_Claude全社使用量レポート_2026年4月から10月_v2",
-      "category": "🤖 CORIN出力（outputs/） 254本",
+      "category": "🤖 CORIN出力（outputs/） 255本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-11_Claude全社使用量レポート_2026年4月から10月_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-11_Claude全社使用量レポート_2026年4月から10月_v2.html",
       "has_md": true
@@ -1286,7 +1295,7 @@ window.CORIN_DATA = {
       "date": "2026-11-10",
       "title": "Claude全社使用量 9月・10月",
       "wiki": "2026-11-10_Claude全社使用量レポート_2026年9月10月_v2",
-      "category": "🤖 CORIN出力（outputs/） 254本",
+      "category": "🤖 CORIN出力（outputs/） 255本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-10_Claude全社使用量レポート_2026年9月10月_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-10_Claude全社使用量レポート_2026年9月10月_v2.html",
       "has_md": true
@@ -1415,15 +1424,6 @@ window.CORIN_DATA = {
       "category": "📁 案件ドラフト（_ai-drafts/） 82本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261105_shuta-F-quality/F_AI補正比較_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261105_shuta-F-quality/F_AI補正比較_v1.html",
-      "has_md": false
-    },
-    {
-      "date": "2026-11-05",
-      "title": "案F — アップの画質比較",
-      "wiki": "F_画質比較_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 82本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261105_shuta-F-quality/F_画質比較_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261105_shuta-F-quality/F_画質比較_v1.html",
       "has_md": false
     }
   ],
