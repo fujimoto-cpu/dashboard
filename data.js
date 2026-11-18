@@ -1,5 +1,5 @@
 window.CORIN_DATA = {
-  "date": "2026-11-16",
+  "date": "2026-11-18",
   "weather": {
     "desc": "Patchy rain nearby",
     "temp": "19",
@@ -7,7 +7,7 @@ window.CORIN_DATA = {
   },
   "letter": {
     "ascii": " /) /)\n(  • •)\n⊃ 🍵",
-    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はPatchy rain nearby、19度。<br>月曜だね。今週の3つ、決めにいこ。/monday 待ってるよ。<br>今日の倉庫から：<strong>Aimé Leon Dore</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はPatchy rain nearby、19度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>APOTHEKE FRAGRANCE</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Aimé Leon Dore",
-    "tagline": "クイーンズ育ちのギリシャ系NYCデザイナーが創り出した「ブルックリン・プレップ」。ストリートと知性が交差するニューヨークの美意識を体現するライフスタイルブランド。",
-    "insight": "異文化を横断するカルチャーブリッジの設計",
+    "name": "APOTHEKE FRAGRANCE",
+    "tagline": "千葉のアトリエで全てを手作りする日本のクラフトフレグランスブランド。古来の日本の感性と現代デザインを橋渡しし、お香で「家に置いてオシャレ」を再定義した。",
+    "insight": "INSIGHT 01",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/ald-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/apotheke-fragrance-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -42,7 +42,7 @@ window.CORIN_DATA = {
   "tonight": null,
   "schedule": {
     "events": [],
-    "note_exists": true
+    "note_exists": false
   },
   "daily_photo": null,
   "library": [
@@ -1247,6 +1247,15 @@ window.CORIN_DATA = {
   ],
   "recent_html": [
     {
+      "date": "2026-11-17",
+      "title": "CK BIRTHDAY BASH 2027｜年号リファレンス",
+      "wiki": "CK_2027_年号リファレンス_v1",
+      "category": "📁 案件ドラフト（_ai-drafts/） 83本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/20261026_CrystalKay_birthday/_ai-drafts/20261117_ロゴ2027追加案/CK_2027_年号リファレンス_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/20261026_CrystalKay_birthday/_ai-drafts/20261117_ロゴ2027追加案/CK_2027_年号リファレンス_v1.html",
+      "has_md": false
+    },
+    {
       "date": "2026-11-16",
       "title": "TRIBE 高井さん 調査報告",
       "wiki": "tribe_v2_template",
@@ -1268,7 +1277,7 @@ window.CORIN_DATA = {
       "date": "2026-11-16",
       "title": "LAVANDA ユーザー提供画像一覧",
       "wiki": "ユーザー提供画像_クリック一覧_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 82本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/LAVANDA/_ai-drafts/20261104_27SPRING_グラフィック20案/31_ユーザー提供画像一覧_20261116/ユーザー提供画像_クリック一覧_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/LAVANDA/_ai-drafts/20261104_27SPRING_グラフィック20案/31_ユーザー提供画像一覧_20261116/ユーザー提供画像_クリック一覧_v1.html",
       "has_md": false
@@ -1304,7 +1313,7 @@ window.CORIN_DATA = {
       "date": "2026-11-08",
       "title": "MEADOW. — 好きと、日々の記録",
       "wiki": "index_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 82本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261108_MEADOW記録アプリ/app_v1/public/index_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261108_MEADOW記録アプリ/app_v1/public/index_v1.html",
       "has_md": false
@@ -1313,7 +1322,7 @@ window.CORIN_DATA = {
       "date": "2026-11-07",
       "title": "忘れそうな用事を知らせる。好きな記録を、あとで使えるようにする。",
       "wiki": "meadow-capture-design_v6",
-      "category": "📁 案件ドラフト（_ai-drafts/） 82本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261107_Tuckii風アプリ設計/meadow-capture-design_v6.html",
       "html_url": "file:///Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261107_Tuckii風アプリ設計/meadow-capture-design_v6.html",
       "has_md": false
@@ -1322,7 +1331,7 @@ window.CORIN_DATA = {
       "date": "2026-11-07",
       "title": "何ができる？ 毎日の用事と記録を助ける仕組み",
       "wiki": "meadow-capture-preview_v6",
-      "category": "📁 案件ドラフト（_ai-drafts/） 82本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261107_Tuckii風アプリ設計/meadow-capture-preview_v6.html",
       "html_url": "file:///Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261107_Tuckii風アプリ設計/meadow-capture-preview_v6.html",
       "has_md": false
@@ -1331,7 +1340,7 @@ window.CORIN_DATA = {
       "date": "2026-11-07",
       "title": "meadow-daily-check-panel_v1",
       "wiki": "meadow-daily-check-panel_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 82本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261107_Tuckii風アプリ設計/meadow-daily-check-panel_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261107_Tuckii風アプリ設計/meadow-daily-check-panel_v1.html",
       "has_md": false
@@ -1340,7 +1349,7 @@ window.CORIN_DATA = {
       "date": "2026-11-07",
       "title": "MEADOW. 会社PCのMDをAIが見に行く",
       "wiki": "meadow-life-studio-preview_v8",
-      "category": "📁 案件ドラフト（_ai-drafts/） 82本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261107_記憶と未来をつなぐ構想/meadow-life-studio-preview_v8.html",
       "html_url": "file:///Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261107_記憶と未来をつなぐ構想/meadow-life-studio-preview_v8.html",
       "has_md": false
@@ -1349,7 +1358,7 @@ window.CORIN_DATA = {
       "date": "2026-11-07",
       "title": "会社PCのMDを、AIが見に行く。",
       "wiki": "meadow-life-studio_v8",
-      "category": "📁 案件ドラフト（_ai-drafts/） 82本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261107_記憶と未来をつなぐ構想/meadow-life-studio_v8.html",
       "html_url": "file:///Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261107_記憶と未来をつなぐ構想/meadow-life-studio_v8.html",
       "has_md": false
@@ -1358,7 +1367,7 @@ window.CORIN_DATA = {
       "date": "2026-11-07",
       "title": "meadow-local-md-map_v1",
       "wiki": "meadow-local-md-map_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 82本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261107_記憶と未来をつなぐ構想/meadow-local-md-map_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261107_記憶と未来をつなぐ構想/meadow-local-md-map_v1.html",
       "has_md": false
@@ -1367,7 +1376,7 @@ window.CORIN_DATA = {
       "date": "2026-11-07",
       "title": "meadow-storage-explainer_v1",
       "wiki": "meadow-storage-explainer_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 82本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261107_記憶と未来をつなぐ構想/meadow-storage-explainer_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261107_記憶と未来をつなぐ構想/meadow-storage-explainer_v1.html",
       "has_md": false
@@ -1376,7 +1385,7 @@ window.CORIN_DATA = {
       "date": "2026-11-05",
       "title": "秀太さん — Pinterest参考の追加3案",
       "wiki": "Pinterest3案プレビュー_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 82本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261104_shuta-pinterest-3styles/Pinterest3案プレビュー_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261104_shuta-pinterest-3styles/Pinterest3案プレビュー_v1.html",
       "has_md": false
@@ -1385,7 +1394,7 @@ window.CORIN_DATA = {
       "date": "2026-11-05",
       "title": "F・10LOOK 映像確認",
       "wiki": "F_映像確認_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 82本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261105_shuta-F-10looks-correct/F_映像確認_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261105_shuta-F-10looks-correct/F_映像確認_v1.html",
       "has_md": false
@@ -1394,7 +1403,7 @@ window.CORIN_DATA = {
       "date": "2026-11-05",
       "title": "案F｜全10LOOK・改稿版",
       "wiki": "F_全編プレビュー_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 82本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261105_shuta-F-full-refine/F_全編プレビュー_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261105_shuta-F-full-refine/F_全編プレビュー_v1.html",
       "has_md": false
@@ -1403,7 +1412,7 @@ window.CORIN_DATA = {
       "date": "2026-11-05",
       "title": "Armillary. — 曲の聴き比べ",
       "wiki": "F_曲の聴き比べ_v2",
-      "category": "📁 案件ドラフト（_ai-drafts/） 82本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261105_shuta-F-music-refresh/F_曲の聴き比べ_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261105_shuta-F-music-refresh/F_曲の聴き比べ_v2.html",
       "has_md": false
@@ -1412,18 +1421,9 @@ window.CORIN_DATA = {
       "date": "2026-11-05",
       "title": "F — 回転素材なし・アップテンポ",
       "wiki": "F_全編プレビュー_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 82本",
+      "category": "📁 案件ドラフト（_ai-drafts/） 83本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261105_shuta-F-no-rotation/F_全編プレビュー_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261105_shuta-F-no-rotation/F_全編プレビュー_v1.html",
-      "has_md": false
-    },
-    {
-      "date": "2026-11-05",
-      "title": "案F｜AI補正テスト",
-      "wiki": "F_AI補正比較_v1",
-      "category": "📁 案件ドラフト（_ai-drafts/） 82本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261105_shuta-F-quality/F_AI補正比較_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/projects/AM/20260519_AM_26AW/_ai-drafts/20261105_shuta-F-quality/F_AI補正比較_v1.html",
       "has_md": false
     }
   ],
