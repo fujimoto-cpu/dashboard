@@ -6,8 +6,8 @@ window.CORIN_DATA = {
     "icon": "🌧"
   },
   "letter": {
-    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はPatchy rain nearby、14度。<br>金曜日。土日に持ち越さないこと、整理しよ。<br>今日の倉庫から：<strong>Mad happy</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": " /)/) ˚｡´☆\n( . .) ☆´˚｡\n⊃  ❤️ ☆",
+    "html": "<p class='letter-greeting'>ゆりこ、おはよ！</p><p class='letter-text'>今日はPatchy rain nearby、14度。<br>金曜日。土日に持ち越さないこと、整理しよ。<br>今日の倉庫から：<strong>ADER ERROR</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Mad happy",
-    "tagline": "\"Optimism is a practice.\" ——メンタルヘルスを哲学の核に据えた、ロサンゼルス発ライフスタイルブランド。",
-    "insight": "財団モデルによるブランド差別化",
+    "name": "ADER ERROR",
+    "tagline": "「エラー」を美学に変える、ソウル発のコンセプト・コレクティブ。匿名の20人チームが生み出す「意図的な失敗」が世界を席巻する。",
+    "insight": "カラーシグネチャーの強度",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/madhappy-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/ader-error-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -1249,11 +1249,11 @@ window.CORIN_DATA = {
     {
       "date": "2026-11-20",
       "title": "TRIBE 高井さんの実績",
-      "wiki": "2026-11-20_TRIBE高井さん_実績とコネクト活用_v1",
-      "category": "🤖 CORIN出力（outputs/） 256本",
-      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-20_TRIBE高井さん_実績とコネクト活用_v1.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-20_TRIBE高井さん_実績とコネクト活用_v1.html",
-      "has_md": true
+      "wiki": "tribe_send_v2_template",
+      "category": "🤖 CORIN出力（outputs/） 257本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-13_TRIBE高井さん_調査報告_img/tribe_send_v2_template.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-13_TRIBE高井さん_調査報告_img/tribe_send_v2_template.html",
+      "has_md": false
     },
     {
       "date": "2026-11-17",
@@ -1268,7 +1268,7 @@ window.CORIN_DATA = {
       "date": "2026-11-16",
       "title": "TRIBE 高井さん 調査報告",
       "wiki": "tribe_v2_template",
-      "category": "🤖 CORIN出力（outputs/） 256本",
+      "category": "🤖 CORIN出力（outputs/） 257本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-13_TRIBE高井さん_調査報告_img/tribe_v2_template.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-13_TRIBE高井さん_調査報告_img/tribe_v2_template.html",
       "has_md": false
@@ -1277,7 +1277,7 @@ window.CORIN_DATA = {
       "date": "2026-11-16",
       "title": "Chat・Work・Codex の違い",
       "wiki": "2026-11-16_ChatGPTのChat・Work・Codex比較_v1",
-      "category": "🤖 CORIN出力（outputs/） 256本",
+      "category": "🤖 CORIN出力（outputs/） 257本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-16_ChatGPTのChat・Work・Codex比較_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-16_ChatGPTのChat・Work・Codex比較_v1.html",
       "has_md": true
@@ -1304,7 +1304,7 @@ window.CORIN_DATA = {
       "date": "2026-11-11",
       "title": "Claude全社使用量 4月〜10月",
       "wiki": "2026-11-11_Claude全社使用量レポート_2026年4月から10月_v2",
-      "category": "🤖 CORIN出力（outputs/） 256本",
+      "category": "🤖 CORIN出力（outputs/） 257本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-11_Claude全社使用量レポート_2026年4月から10月_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-11_Claude全社使用量レポート_2026年4月から10月_v2.html",
       "has_md": true
@@ -1313,7 +1313,7 @@ window.CORIN_DATA = {
       "date": "2026-11-10",
       "title": "Claude全社使用量 9月・10月",
       "wiki": "2026-11-10_Claude全社使用量レポート_2026年9月10月_v2",
-      "category": "🤖 CORIN出力（outputs/） 256本",
+      "category": "🤖 CORIN出力（outputs/） 257本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-10_Claude全社使用量レポート_2026年9月10月_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-10_Claude全社使用量レポート_2026年9月10月_v2.html",
       "has_md": true
