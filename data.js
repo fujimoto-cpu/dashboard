@@ -1,13 +1,13 @@
 window.CORIN_DATA = {
-  "date": "2026-11-25",
+  "date": "2026-11-28",
   "weather": {
-    "desc": "Sunny",
-    "temp": "13",
-    "icon": "☀️"
+    "desc": "Light drizzle",
+    "temp": "21",
+    "icon": "☁️"
   },
   "letter": {
-    "ascii": " /) /)\n(  • •)\n⊃ 🍵",
-    "html": "<p class='letter-greeting'>おはよ、ゆりこ。</p><p class='letter-text'>今日はSunny、13度。<br>今日も70%ルールでいこう。完璧じゃなくていいよ。<br>今日の倉庫から：<strong>Cactus Plant Flea Market</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
+    "ascii": "  (\\(\\\n(o- .•)❤️\no_(\")(\" )",
+    "html": "<p class='letter-greeting'>ゆりこ！おはよう〜</p><p class='letter-text'>今日はLight drizzle、21度。<br>週末。仕事は把握だけ、自分のために動こ。<br>今日の倉庫から：<strong>Maison Kitsuné</strong> のこと思い出してね。<br>いってらっしゃい！</p><p class='letter-sign'>— CORIN</p>"
   },
   "ai": {
     "summary": "X AIトレンド本日のレポート（HTMLで全10件解説）"
@@ -22,11 +22,11 @@ window.CORIN_DATA = {
     "summary": "• **Claude Mythos Preview — セキュリティ特化AIがゼロデイ脆弱性を数千件発見** — @AnthropicAI<br>• **Claude Excel×PowerPoint 共有コンテキスト機能リリース** — @masahirochaen<br>• **LACMA Art + Tech Lab — アーティスト向け$50Kグラント（締切4/22）** — @AnthropicAI"
   },
   "brand": {
-    "name": "Cactus Plant Flea Market",
-    "tagline": "「洗練を拒否すること」がステートメント。ポストモダンな反抗とDIY精神でストリートウェアの権威性を解体するブランド。",
-    "insight": "Step 1 — Why の言語化（沈黙で語る）",
+    "name": "Maison Kitsuné",
+    "tagline": "ファッション・音楽・カフェを一体化したパリ×東京発のライフスタイルブランド。2002年設立、年商9,400万ユーロ。",
+    "insight": "アジア市場ファーストの地政学的戦略",
     "image_url": null,
-    "local_path": "00_🏢 company/secretary/notes/cpfm-brand-analysis.html"
+    "local_path": "00_🏢 company/secretary/notes/maison-kitsune-brand-analysis.html"
   },
   "ip": {
     "url": "https://fujimoto-cpu.github.io/ip-news-reporter/"
@@ -47,18 +47,18 @@ window.CORIN_DATA = {
   "daily_photo": null,
   "library": [
     {
-      "name": "literature",
-      "description": "Literature Notes reader",
-      "url": "https://fujimoto-cpu.github.io/literature/",
-      "icon": "📚",
-      "pushed_at": "2026-11-23T19:45:30Z"
-    },
-    {
       "name": "recipes",
       "description": "",
       "url": "https://fujimoto-cpu.github.io/recipes/",
       "icon": "📄",
-      "pushed_at": "2026-10-01T19:50:16Z"
+      "pushed_at": "2026-11-27T21:55:47Z"
+    },
+    {
+      "name": "literature",
+      "description": "Literature Notes reader",
+      "url": "https://fujimoto-cpu.github.io/literature/",
+      "icon": "📚",
+      "pushed_at": "2026-11-25T19:42:21Z"
     },
     {
       "name": "tokyo-map",
@@ -1247,10 +1247,19 @@ window.CORIN_DATA = {
   ],
   "recent_html": [
     {
+      "date": "2026-11-26",
+      "title": "TRIBE契約書 図解つき",
+      "wiki": "2026-11-26_TRIBE契約書_図解つき本文_v1",
+      "category": "🤖 CORIN出力（outputs/） 258本",
+      "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-26_TRIBE契約書_図解つき本文_v1.html",
+      "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-26_TRIBE契約書_図解つき本文_v1.html",
+      "has_md": true
+    },
+    {
       "date": "2026-11-24",
       "title": "TRIBE契約書まとめ",
       "wiki": "2026-11-24_TRIBE契約書まとめ_v1",
-      "category": "🤖 CORIN出力（outputs/） 257本",
+      "category": "🤖 CORIN出力（outputs/） 258本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-24_TRIBE契約書まとめ_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-24_TRIBE契約書まとめ_v1.html",
       "has_md": true
@@ -1304,7 +1313,7 @@ window.CORIN_DATA = {
       "date": "2026-11-20",
       "title": "TRIBE 高井さんの実績",
       "wiki": "tribe_send_v2_template",
-      "category": "🤖 CORIN出力（outputs/） 257本",
+      "category": "🤖 CORIN出力（outputs/） 258本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-13_TRIBE高井さん_調査報告_img/tribe_send_v2_template.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-13_TRIBE高井さん_調査報告_img/tribe_send_v2_template.html",
       "has_md": false
@@ -1322,7 +1331,7 @@ window.CORIN_DATA = {
       "date": "2026-11-16",
       "title": "TRIBE 高井さん 調査報告",
       "wiki": "tribe_v2_template",
-      "category": "🤖 CORIN出力（outputs/） 257本",
+      "category": "🤖 CORIN出力（outputs/） 258本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-13_TRIBE高井さん_調査報告_img/tribe_v2_template.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-13_TRIBE高井さん_調査報告_img/tribe_v2_template.html",
       "has_md": false
@@ -1331,7 +1340,7 @@ window.CORIN_DATA = {
       "date": "2026-11-16",
       "title": "Chat・Work・Codex の違い",
       "wiki": "2026-11-16_ChatGPTのChat・Work・Codex比較_v1",
-      "category": "🤖 CORIN出力（outputs/） 257本",
+      "category": "🤖 CORIN出力（outputs/） 258本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-16_ChatGPTのChat・Work・Codex比較_v1.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-16_ChatGPTのChat・Work・Codex比較_v1.html",
       "has_md": true
@@ -1358,7 +1367,7 @@ window.CORIN_DATA = {
       "date": "2026-11-11",
       "title": "Claude全社使用量 4月〜10月",
       "wiki": "2026-11-11_Claude全社使用量レポート_2026年4月から10月_v2",
-      "category": "🤖 CORIN出力（outputs/） 257本",
+      "category": "🤖 CORIN出力（outputs/） 258本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-11_Claude全社使用量レポート_2026年4月から10月_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-11_Claude全社使用量レポート_2026年4月から10月_v2.html",
       "has_md": true
@@ -1367,7 +1376,7 @@ window.CORIN_DATA = {
       "date": "2026-11-10",
       "title": "Claude全社使用量 9月・10月",
       "wiki": "2026-11-10_Claude全社使用量レポート_2026年9月10月_v2",
-      "category": "🤖 CORIN出力（outputs/） 257本",
+      "category": "🤖 CORIN出力（outputs/） 258本",
       "html_path": "/Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-10_Claude全社使用量レポート_2026年9月10月_v2.html",
       "html_url": "file:///Users/yuriko/Documents/corin/00_🏢 company/secretary/outputs/2026-11-10_Claude全社使用量レポート_2026年9月10月_v2.html",
       "has_md": true
@@ -1415,15 +1424,6 @@ window.CORIN_DATA = {
       "category": "📁 案件ドラフト（_ai-drafts/） 88本",
       "html_path": "/Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261107_記憶と未来をつなぐ構想/meadow-life-studio-preview_v8.html",
       "html_url": "file:///Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261107_記憶と未来をつなぐ構想/meadow-life-studio-preview_v8.html",
-      "has_md": false
-    },
-    {
-      "date": "2026-11-07",
-      "title": "会社PCのMDを、AIが見に行く。",
-      "wiki": "meadow-life-studio_v8",
-      "category": "📁 案件ドラフト（_ai-drafts/） 88本",
-      "html_path": "/Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261107_記憶と未来をつなぐ構想/meadow-life-studio_v8.html",
-      "html_url": "file:///Users/yuriko/Documents/corin/01_🏠 private/meadow/_ai-drafts/20261107_記憶と未来をつなぐ構想/meadow-life-studio_v8.html",
       "has_md": false
     }
   ],
